@@ -57,6 +57,36 @@ declare global {
 
 
 import {
+  AppBlog as AppBlog
+} from './pages/app-blog/app-blog';
+
+declare global {
+  interface HTMLAppBlogElement extends AppBlog, HTMLStencilElement {
+  }
+  var HTMLAppBlogElement: {
+    prototype: HTMLAppBlogElement;
+    new (): HTMLAppBlogElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-blog": HTMLAppBlogElement;
+  }
+  interface ElementTagNameMap {
+    "app-blog": HTMLAppBlogElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-blog": JSXElements.AppBlogAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppBlogAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './pages/app-home/app-home';
 
