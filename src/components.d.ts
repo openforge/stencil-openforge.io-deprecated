@@ -27,6 +27,36 @@ import {
 } from '@stencil/router';
 
 import {
+  AppAbout as AppAbout
+} from './pages/app-about/app-about';
+
+declare global {
+  interface HTMLAppAboutElement extends AppAbout, HTMLStencilElement {
+  }
+  var HTMLAppAboutElement: {
+    prototype: HTMLAppAboutElement;
+    new (): HTMLAppAboutElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-about": HTMLAppAboutElement;
+  }
+  interface ElementTagNameMap {
+    "app-about": HTMLAppAboutElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-about": JSXElements.AppAboutAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppAboutAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './pages/app-home/app-home';
 
