@@ -11,7 +11,7 @@ describe('app', () => {
     beforeEach(async () => {
       await render({
         components: [AppHome],
-        html: '<app-home></app-home>'
+        html: '<app-home></app-home>',
       });
     });
   });

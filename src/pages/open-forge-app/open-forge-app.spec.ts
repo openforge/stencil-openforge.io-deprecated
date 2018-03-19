@@ -11,7 +11,7 @@ describe('open-forge-app', () => {
     beforeEach(async () => {
       await render({
         components: [OpenForgeApp],
-        html: '<open-forge-app></open-forge-app>'
+        html: '<open-forge-app></open-forge-app>',
       });
     });
   });
