@@ -15,8 +15,7 @@ export class OpenForgeApp {
 
         <main>
           <stencil-router>
-            <stencil-route url='/' component='app-home' exact={true}>
-            </stencil-route>
+            <stencil-route url='/' component='app-home' exact={true}/>
           </stencil-router>
         </main>
       </div>
