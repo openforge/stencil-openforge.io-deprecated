@@ -87,6 +87,36 @@ declare global {
 
 
 import {
+  AppContact as AppContact
+} from './pages/app-contact/app-contact';
+
+declare global {
+  interface HTMLAppContactElement extends AppContact, HTMLStencilElement {
+  }
+  var HTMLAppContactElement: {
+    prototype: HTMLAppContactElement;
+    new (): HTMLAppContactElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-contact": HTMLAppContactElement;
+  }
+  interface ElementTagNameMap {
+    "app-contact": HTMLAppContactElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-contact": JSXElements.AppContactAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppContactAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './pages/app-home/app-home';
 
