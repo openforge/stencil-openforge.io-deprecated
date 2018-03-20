@@ -147,6 +147,36 @@ declare global {
 
 
 import {
+  AppOurWork as AppOurWork
+} from './pages/app-our-work/app-our-work';
+
+declare global {
+  interface HTMLAppOurWorkElement extends AppOurWork, HTMLStencilElement {
+  }
+  var HTMLAppOurWorkElement: {
+    prototype: HTMLAppOurWorkElement;
+    new (): HTMLAppOurWorkElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-our-work": HTMLAppOurWorkElement;
+  }
+  interface ElementTagNameMap {
+    "app-our-work": HTMLAppOurWorkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-our-work": JSXElements.AppOurWorkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOurWorkAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
   OpenForgeApp as OpenForgeApp
 } from './pages/open-forge-app/open-forge-app';
 

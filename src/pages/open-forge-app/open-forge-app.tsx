@@ -18,6 +18,11 @@ export class OpenForgeApp {
             <stencil-route url="/about" component="app-about" exact={true} />
             <stencil-route url="/blog" component="app-blog" exact={true} />
             <stencil-route
+              url="/our-work"
+              component="app-our-work"
+              exact={true}
+            />
+            <stencil-route
               url="/contact"
               component="app-contact"
               exact={true}
