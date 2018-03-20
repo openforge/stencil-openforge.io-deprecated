@@ -147,6 +147,36 @@ declare global {
 
 
 import {
+  AppOurServices as AppOurServices
+} from './pages/app-our-services/app-our-services';
+
+declare global {
+  interface HTMLAppOurServicesElement extends AppOurServices, HTMLStencilElement {
+  }
+  var HTMLAppOurServicesElement: {
+    prototype: HTMLAppOurServicesElement;
+    new (): HTMLAppOurServicesElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-our-services": HTMLAppOurServicesElement;
+  }
+  interface ElementTagNameMap {
+    "app-our-services": HTMLAppOurServicesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-our-services": JSXElements.AppOurServicesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOurServicesAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
   AppOurWork as AppOurWork
 } from './pages/app-our-work/app-our-work';
 

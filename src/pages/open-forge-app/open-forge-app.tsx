@@ -23,6 +23,11 @@ export class OpenForgeApp {
               exact={true}
             />
             <stencil-route
+              url="/our-services"
+              component="app-our-services"
+              exact={true}
+            />
+            <stencil-route
               url="/contact"
               component="app-contact"
               exact={true}
