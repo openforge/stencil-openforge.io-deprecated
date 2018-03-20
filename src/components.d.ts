@@ -27,6 +27,96 @@ import {
 } from '@stencil/router';
 
 import {
+  AppAbout as AppAbout
+} from './pages/app-about/app-about';
+
+declare global {
+  interface HTMLAppAboutElement extends AppAbout, HTMLStencilElement {
+  }
+  var HTMLAppAboutElement: {
+    prototype: HTMLAppAboutElement;
+    new (): HTMLAppAboutElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-about": HTMLAppAboutElement;
+  }
+  interface ElementTagNameMap {
+    "app-about": HTMLAppAboutElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-about": JSXElements.AppAboutAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppAboutAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
+  AppBlog as AppBlog
+} from './pages/app-blog/app-blog';
+
+declare global {
+  interface HTMLAppBlogElement extends AppBlog, HTMLStencilElement {
+  }
+  var HTMLAppBlogElement: {
+    prototype: HTMLAppBlogElement;
+    new (): HTMLAppBlogElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-blog": HTMLAppBlogElement;
+  }
+  interface ElementTagNameMap {
+    "app-blog": HTMLAppBlogElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-blog": JSXElements.AppBlogAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppBlogAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
+  AppContact as AppContact
+} from './pages/app-contact/app-contact';
+
+declare global {
+  interface HTMLAppContactElement extends AppContact, HTMLStencilElement {
+  }
+  var HTMLAppContactElement: {
+    prototype: HTMLAppContactElement;
+    new (): HTMLAppContactElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-contact": HTMLAppContactElement;
+  }
+  interface ElementTagNameMap {
+    "app-contact": HTMLAppContactElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-contact": JSXElements.AppContactAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppContactAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './pages/app-home/app-home';
 
@@ -50,6 +140,66 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
+  AppOurServices as AppOurServices
+} from './pages/app-our-services/app-our-services';
+
+declare global {
+  interface HTMLAppOurServicesElement extends AppOurServices, HTMLStencilElement {
+  }
+  var HTMLAppOurServicesElement: {
+    prototype: HTMLAppOurServicesElement;
+    new (): HTMLAppOurServicesElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-our-services": HTMLAppOurServicesElement;
+  }
+  interface ElementTagNameMap {
+    "app-our-services": HTMLAppOurServicesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-our-services": JSXElements.AppOurServicesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOurServicesAttributes extends HTMLAttributes {
+      match?: MatchResults;
+    }
+  }
+}
+
+
+import {
+  AppOurWork as AppOurWork
+} from './pages/app-our-work/app-our-work';
+
+declare global {
+  interface HTMLAppOurWorkElement extends AppOurWork, HTMLStencilElement {
+  }
+  var HTMLAppOurWorkElement: {
+    prototype: HTMLAppOurWorkElement;
+    new (): HTMLAppOurWorkElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-our-work": HTMLAppOurWorkElement;
+  }
+  interface ElementTagNameMap {
+    "app-our-work": HTMLAppOurWorkElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-our-work": JSXElements.AppOurWorkAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOurWorkAttributes extends HTMLAttributes {
       match?: MatchResults;
     }
   }

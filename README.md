@@ -1,6 +1,11 @@
 
-# main-website
-The home of OpenForge.io, built using Stencil.js!
+# OpenForge
+
+OpenForge is a design & development agency that specializes in mobile and web applications using latest technologies such as Ionic, Stencil.js, Node.js, MongoDB, React.js, and more!
+
+Our mission is to inspire creative applications world wide through consulting, application development, and opensource contributions.  Our knowledge is your knowledge - let's make the world a better place together!
+
+Finally, we don't just talk about beautiful code - we live it!   Please see below for our homage page and how we built it :) 
 
 ## Development
 
@@ -24,6 +29,11 @@ This project uses:
 `package.json` defines an npm script for linting. To lint the project at any time, simply run the script with
 ```
 $ npm run lint
+```
+
+And to run, simply 
+```
+$ npm start
 ```
 
 #### Versioning & Changelog
