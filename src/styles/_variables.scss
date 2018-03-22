@@ -1,5 +1,29 @@
 // Fonts
-
 $font-muli: 'Muli', sans-serif;
 $font-roboto: 'Roboto', sans-serif;
 $font-roboto-condensed: 'Roboto Condensed', sans-serif;
+
+// Colors
+$gray-500: #9fa3a7 !default;
+$gray-600: #6d6e71 !default;
+$gray-800: #282828 !default;
+$blue: #638593 !default;
+$indigo: #323c47 !default;
+$red: #dc3545 !default; // TODO
+$orange: #fa8928 !default;
+$yellow: #d8aa0c !default;
+$green: #28a745 !default; // TODO
+$primary: $orange !default;
+$info: $blue !default;
+
+// Type
+$font-family-sans-serif: $font-muli, Arial, sans-serif !default;
+$line-height-base: 2 !default;
+$headings-font-weight: 600 !default;
+$headings-line-height: 1.4 !default;
+
+// Navbar
+$navbar-padding-y: 1rem !default;
+$navbar-nav-link-padding-x: 1.5rem !default;
+$navbar-dark-hover-color: rgba($yellow, 0.75) !default;
+$navbar-dark-active-color: $yellow !default;

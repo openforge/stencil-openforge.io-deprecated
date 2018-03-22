@@ -51,6 +51,7 @@ declare global {
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
       match?: MatchResults;
+      
     }
   }
 }
@@ -80,6 +81,7 @@ declare global {
   }
   namespace JSXElements {
     export interface OpenForgeAppAttributes extends HTMLAttributes {
+      
       
     }
   }

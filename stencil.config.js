@@ -5,8 +5,8 @@ exports.config = {
   plugins: [
     sass({
       injectGlobalPaths: [
-        'src/styles/variables.scss',
-        'src/styles/mixins.scss',
+        'src/styles/_variables.scss',
+        'src/styles/_mixins.scss',
       ]
     })
   ]

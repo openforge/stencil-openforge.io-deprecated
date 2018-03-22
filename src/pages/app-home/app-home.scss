@@ -1,3 +1,39 @@
-.app-home {
-  padding: 10px;
+@import '../../styles/main';
+
+.intro {
+  background: url('../../assets/background-intro.jpg') top center;
+  background-size: cover;
+  height: 100vh;
+  @include media-breakpoint-down(lg) {
+    background-position: 70% center;
+  }
+  @include media-breakpoint-down(xs) {
+    background-position: 65% center;
+  }
+
+  .container,
+  .row {
+    height: 100%;
+  }
+
+  h2 {
+    color: $white;
+    font-size: 3.4rem;
+    margin-bottom: 1rem;
+    @include media-breakpoint-down(lg) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    color: $gray-500;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: $orange;
+    font-weight: $font-weight-bold;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
 }

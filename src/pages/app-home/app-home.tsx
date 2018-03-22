@@ -10,12 +10,23 @@ export class AppHome {
 
   render() {
     return (
-      <div class="app-home">
-        <p>
-          Welcome to the OpenForge. Check out the stencil docs on{' '}
-          <a href="https://stenciljs.com">stenciljs.com</a> to get started.
-        </p>
-      </div>
+      <section class="intro">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-md-8 col-lg-6 col-xl-5">
+              <h2>We are thinkers, makers &amp; doers</h2>
+
+              <p>
+                Work with our team of highly skilled consultants, developers,
+                and designers to develop solutions and processes to fit your
+                requirements.
+              </p>
+
+              <a href="">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
     );
   }
 }
