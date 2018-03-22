@@ -1,6 +1,4 @@
-@import '../../styles/main';
-
-// Intro
+// intro
 .intro {
   background: url('../../assets/background-intro.jpg') top center;
   background-size: cover;
@@ -38,7 +36,7 @@
   }
 }
 
-// Approach
+// approach
 .approach {
   padding: 5rem 0 7rem;
   @include media-breakpoint-down(sm) {
