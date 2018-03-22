@@ -16,6 +16,21 @@ $green: #28a745 !default; // TODO
 $primary: $orange !default;
 $info: $blue !default;
 
+// Grid breakpoints + containers
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1400px
+) !default;
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1300px
+) !default;
+
 // Type
 $font-family-sans-serif: $font-muli, Arial, sans-serif !default;
 $line-height-base: 2 !default;

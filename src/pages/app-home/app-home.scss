@@ -1,5 +1,6 @@
 @import '../../styles/main';
 
+// Intro
 .intro {
   background: url('../../assets/background-intro.jpg') top center;
   background-size: cover;
@@ -20,7 +21,7 @@
     color: $white;
     font-size: 3.4rem;
     margin-bottom: 1rem;
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(sm) {
       font-size: 2.2rem;
     }
   }
@@ -34,6 +35,74 @@
     color: $orange;
     font-weight: $font-weight-bold;
     letter-spacing: 0.2em;
-    text-transform: uppercase;
+  }
+}
+
+// Approach
+.approach {
+  padding: 5rem 0 7rem;
+  @include media-breakpoint-down(sm) {
+    padding: 3em 0;
+  }
+
+  h2 {
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    margin: 0 auto 5rem;
+    max-width: 700px;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75em;
+      margin: 0 auto 3rem;
+    }
+
+    span {
+      color: $orange;
+      display: block;
+      font-family: $font-roboto;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+
+  h3 {
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 0.25rem;
+    }
+
+    span {
+      display: block;
+      font-family: $font-roboto;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  }
+  .content:nth-child(1) h3 span {
+    color: $orange;
+  }
+  .content:nth-child(2) h3 span {
+    color: $blue;
+  }
+  .content:nth-child(3) h3 span {
+    color: $yellow;
+  }
+
+  p {
+    color: $gray-600;
+    margin-bottom: 3em;
+  }
+
+  .img-container {
+    min-width: 60px;
+    margin-right: 20px;
   }
 }
