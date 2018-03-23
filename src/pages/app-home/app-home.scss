@@ -38,7 +38,7 @@
 
 // approach
 .approach {
-  padding: 5rem 0 7rem;
+  padding: 6rem 0;
   @include media-breakpoint-down(sm) {
     padding: 3em 0;
   }
@@ -102,5 +102,37 @@
   .img-container {
     min-width: 60px;
     margin-right: 20px;
+  }
+}
+
+// cta 1
+.cta-1 {
+  background: $orange;
+  padding: 5rem 0;
+
+  h2 {
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75em;
+      margin: 0 auto 2rem;
+    }
+  }
+}
+
+// cta 2
+.cta-2 {
+  background: url('../../assets/background-cta.jpg') top center;
+  background-size: cover;
+  padding: 5rem 0;
+
+  h2 {
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75em;
+    }
+  }
+
+  hr {
+    border-color: rgba($white, 0.33);
+    margin: 3rem auto;
+    width: 50%;
   }
 }

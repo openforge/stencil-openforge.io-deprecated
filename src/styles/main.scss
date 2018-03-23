@@ -1,3 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600,700|Roboto+Condensed:700|Roboto:700');
 
 @import 'node_modules/bootstrap/scss/bootstrap';
+
+button.btn-primary {
+  background: lighten($orange, 5%);
+  border-color: $white;
+  color: $white;
+  font-weight: 700;
+  text-transform: uppercase;
+}

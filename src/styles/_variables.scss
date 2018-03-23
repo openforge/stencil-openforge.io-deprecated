@@ -18,6 +18,9 @@ $green: #28a745 !default; // TODO
 $primary: $orange !default;
 $info: $blue !default;
 
+// Options
+$enable-gradients: true !default;
+
 // Grid breakpoints + containers
 $grid-breakpoints: (
   xs: 0,
@@ -38,6 +41,9 @@ $font-family-sans-serif: $font-muli, Arial, sans-serif !default;
 $line-height-base: 2 !default;
 $headings-font-weight: 600 !default;
 $headings-line-height: 1.4 !default;
+
+// Buttons
+$btn-padding-x: 3rem !default;
 
 // Navbar
 $navbar-padding-y: 1rem !default;

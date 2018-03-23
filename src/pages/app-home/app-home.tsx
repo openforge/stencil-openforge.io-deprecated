@@ -11,6 +11,7 @@ export class AppHome {
   render() {
     return (
       <div>
+        {/* intro */}
         <section class="intro">
           <div class="container">
             <div class="row align-items-center">
@@ -31,6 +32,7 @@ export class AppHome {
           </div>
         </section>
 
+        {/* approach */}
         <section class="approach">
           <div class="container">
             <h2>
@@ -99,6 +101,24 @@ export class AppHome {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* cta-1 */}
+        <section class="cta cta-1 bg-gradient-primary px-2 text-center text-white">
+          <div class="d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
+            <h2 class="mr-sm-0 mr-md-5">Need a team for your project?</h2>
+            <button class="btn btn-primary align-self-center">
+              Get in touch
+            </button>
+          </div>
+        </section>
+
+        {/* cta-2 */}
+        <section class="cta cta-2 px-2 text-white text-center">
+          <h2 class="mb-4">Ready to work with us?</h2>
+          <p>Contact us now (or keep going) to learn more.</p>
+          <hr />
+          <button class="btn btn-primary">Contact us</button>
         </section>
       </div>
     );

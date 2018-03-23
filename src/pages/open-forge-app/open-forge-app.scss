@@ -2,7 +2,10 @@
 
 nav {
   margin: 0 auto;
-  max-width: 1400px;
+  transition: background 0.3s ease-in;
+  &.background {
+    background: $black;
+  }
 }
 
 .navbar-brand {
