@@ -32,7 +32,7 @@
   a {
     color: $orange;
     font-weight: $font-weight-bold;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.2rem;
   }
 }
 
@@ -40,7 +40,7 @@
 .approach {
   padding: 6rem 0;
   @include media-breakpoint-down(sm) {
-    padding: 3em 0;
+    padding: 3rem 0;
   }
 
   h2 {
@@ -50,7 +50,7 @@
     max-width: 700px;
     text-align: center;
     @include media-breakpoint-down(sm) {
-      font-size: 1.75em;
+      font-size: 1.75rem;
       margin: 0 auto 3rem;
     }
 
@@ -70,7 +70,7 @@
 
   h3 {
     font-weight: 400;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
     @include media-breakpoint-down(md) {
       margin-bottom: 0.25rem;
     }
@@ -80,7 +80,7 @@
       font-family: $font-roboto;
       font-size: 1rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.05rem;
       text-transform: uppercase;
     }
   }
@@ -96,7 +96,7 @@
 
   p {
     color: $gray-600;
-    margin-bottom: 3em;
+    margin-bottom: 3rem;
   }
 
   .img-container {
@@ -112,7 +112,7 @@
 
   h2 {
     @include media-breakpoint-down(sm) {
-      font-size: 1.75em;
+      font-size: 1.75rem;
       margin: 0 auto 2rem;
     }
   }
@@ -126,7 +126,7 @@
 
   h2 {
     @include media-breakpoint-down(sm) {
-      font-size: 1.75em;
+      font-size: 1.75rem;
     }
   }
 
@@ -134,5 +134,67 @@
     border-color: rgba($white, 0.33);
     margin: 3rem auto;
     width: 50%;
+  }
+}
+
+// footer
+footer {
+  background: $black;
+  color: $white;
+  padding: 5rem 0 2rem;
+
+  h2 {
+    color: $orange;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  p,
+  a {
+    color: $white;
+    display: block;
+    font-size: 0.8em;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    margin-bottom: 5rem;
+    padding: 0 3rem;
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+  .content:nth-child(1) {
+    border-right: 1px solid rgba($white, 0.33);
+    @include media-breakpoint-down(sm) {
+      border-right: none;
+    }
+  }
+  .content:nth-child(2) {
+    border-right: 1px solid rgba($white, 0.33);
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      border-right: none;
+    }
+
+    a {
+      border-bottom: 3px solid rgba($orange, 0);
+      margin: 0 auto 2rem;
+      max-width: 180px;
+      padding-bottom: 1rem;
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom: 3px solid $orange;
+      }
+      &:last-child {
+        margin-bottom: 0;
+        max-width: 250px;
+      }
+    }
+  }
+  .content:nth-child(3) {
+    button {
+    }
   }
 }
