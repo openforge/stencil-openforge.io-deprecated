@@ -1,17 +1,17 @@
 import { render } from '@stencil/core/testing';
 
-import { HeroSpace } from './hero-space';
+import { AppAbout } from './app-about';
 
 describe('app', () => {
   it('should build', () => {
-    expect(new HeroSpace()).toBeTruthy();
+    expect(new AppAbout()).toBeTruthy();
   });
 
   describe('rendering', () => {
     beforeEach(async () => {
       await render({
-        components: [HeroSpace],
-        html: '<hero-space></hero-space>',
+        components: [AppAbout],
+        html: '<app-about></app-about>',
       });
     });
   });

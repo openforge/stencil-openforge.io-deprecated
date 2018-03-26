@@ -27,7 +27,39 @@ import {
 } from '@stencil/router';
 
 import {
-  heroSpace as HeroSpace
+  CallToAction as CallToAction
+} from './components/call-to-action/call-to-action';
+
+declare global {
+  interface HTMLCallToActionElement extends CallToAction, HTMLStencilElement {
+  }
+  var HTMLCallToActionElement: {
+    prototype: HTMLCallToActionElement;
+    new (): HTMLCallToActionElement;
+  };
+  interface HTMLElementTagNameMap {
+    "call-to-action": HTMLCallToActionElement;
+  }
+  interface ElementTagNameMap {
+    "call-to-action": HTMLCallToActionElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "call-to-action": JSXElements.CallToActionAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CallToActionAttributes extends HTMLAttributes {
+      linkUrl?: string;
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
+  HeroSpace as HeroSpace
 } from './components/hero-space/hero-space';
 
 declare global {
@@ -50,6 +82,39 @@ declare global {
   }
   namespace JSXElements {
     export interface HeroSpaceAttributes extends HTMLAttributes {
+      backgroundUrl?: string;
+      linkUrl?: string;
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
+  AppAbout as AppAbout
+} from './pages/app-about/app-about';
+
+declare global {
+  interface HTMLAppAboutElement extends AppAbout, HTMLStencilElement {
+  }
+  var HTMLAppAboutElement: {
+    prototype: HTMLAppAboutElement;
+    new (): HTMLAppAboutElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-about": HTMLAppAboutElement;
+  }
+  interface ElementTagNameMap {
+    "app-about": HTMLAppAboutElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-about": JSXElements.AppAboutAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppAboutAttributes extends HTMLAttributes {
       match?: MatchResults;
       
     }

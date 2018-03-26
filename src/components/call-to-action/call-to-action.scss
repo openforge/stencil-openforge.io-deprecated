@@ -1,0 +1,14 @@
+// cta
+.cta {
+  background: $orange;
+  background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
+  padding: 5rem 0;
+
+  h3 {
+    font-size: 2rem;
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75rem;
+      margin: 0 auto 2rem;
+    }
+  }
+}

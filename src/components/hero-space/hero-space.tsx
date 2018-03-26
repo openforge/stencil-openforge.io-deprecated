@@ -5,8 +5,15 @@ import { MatchResults } from '@stencil/router';
   tag: 'hero-space',
   styleUrl: 'hero-space.scss',
 })
-export class heroSpace {
+export class HeroSpace {
   @Prop() match: MatchResults;
+  @Prop() linkUrl: string;
+  @Prop() backgroundUrl: string;
+
+  componentDidLoad() {
+    const element = document.querySelector('header.hero') as HTMLElement;
+    element.style.backgroundImage = `url('${this.backgroundUrl}')`;
+  }
 
   render() {
     return (
@@ -14,17 +21,19 @@ export class heroSpace {
         <div class="container">
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-8 col-lg-6">
-              <h2>We are thinkers, makers &amp; doers</h2>
+              <h2>
+                <slot name="header" />
+              </h2>
 
               <p>
-                Work with our team of highly skilled consultants, developers,
-                and designers to develop solutions and processes to fit your
-                requirements.
+                <slot name="body" />
               </p>
 
-              <a class="btn btn-primary" href="">
-                Learn More
-              </a>
+              <stencil-route-link url={this.linkUrl}>
+                <a class="btn btn-primary">
+                  <slot name="link" />
+                </a>
+              </stencil-route-link>
             </div>
           </div>
         </div>

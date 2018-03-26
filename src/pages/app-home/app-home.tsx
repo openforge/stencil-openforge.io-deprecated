@@ -12,13 +12,24 @@ export class AppHome {
     return (
       <div>
         {/* header - hero */}
-        <hero-space />
+        <hero-space
+          link-url="/about"
+          background-url="../../assets/bg-hero-woman-writing.jpg"
+        >
+          <span slot="header">We are thinkers, makers &amp; doers</span>
+          <span slot="body">
+            Work with our team of highly skilled consultants, developers, and
+            designers to develop solutions and processes to fit your
+            requirements.
+          </span>
+          <span slot="link">Learn More</span>
+        </hero-space>
 
         {/* section - approach */}
         <section class="approach">
           <div class="container">
             <h2>
-              <span>Our Approach</span>
+              <span class="small">Our Approach</span>
               We use the latest technology to build your business. Let's show
               you how!
             </h2>
@@ -27,7 +38,7 @@ export class AppHome {
               <div class="content col-sm-12 col-md-4">
                 <i class="fa fa-comment-o" aria-hidden="true" />
                 <h3>
-                  <span>First </span>Consulting
+                  <span class="small">First </span>Consulting
                 </h3>
                 <p>
                   Are you ready to challenge your assumptions? We'll help you
@@ -38,7 +49,7 @@ export class AppHome {
               <div class="content col-sm-12 col-md-4">
                 <i class="fa fa-smile-o" aria-hidden="true" />
                 <h3>
-                  <span>Second </span>User experience Design
+                  <span class="small">Second </span>User experience Design
                 </h3>
                 <p>
                   Whether you're looking to design an interactive user interface
@@ -49,7 +60,7 @@ export class AppHome {
               <div class="content col-sm-12 col-md-4">
                 <i class="fa fa-code" aria-hidden="true" />
                 <h3>
-                  <span>Third </span>Development
+                  <span class="small">Third </span>Development
                 </h3>
                 <p>
                   We're experts in mobile and web app development. We specialize
@@ -62,20 +73,16 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <aside class="cta px-2 text-center text-white">
-          <div class="d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
-            <h3 class="mr-sm-0 mr-md-5">Need a team for your project?</h3>
-            <button class="btn btn-primary align-self-center">
-              Get in touch
-            </button>
-          </div>
-        </aside>
+        <call-to-action link-url="/about">
+          <span slot="header">Need a team for your project?</span>
+          <span slot="link">Get in touch</span>
+        </call-to-action>
 
         {/* section - process */}
         <section class="section process">
           <header class="d-flex flex-column justify-content-center">
             <h2>
-              <span>Our Process</span>
+              <span class="small">Our Process</span>
               Creative Solutions to Real World Problems
             </h2>
             <p>Our process is important to us and our clients</p>
@@ -149,20 +156,16 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <aside class="cta px-2 text-center text-white">
-          <div class="d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
-            <h3 class="mr-sm-0 mr-md-5">Want more details on our process?</h3>
-            <button class="btn btn-primary align-self-center">
-              Learn more
-            </button>
-          </div>
-        </aside>
+        <call-to-action link-url="/about">
+          <span slot="header">Want more details on our process?</span>
+          <span slot="link">Learn more</span>
+        </call-to-action>
 
         {/* section - development */}
         <section class="section development">
           <header class="d-flex flex-column justify-content-center">
             <h2>
-              <span>Our Development</span>
+              <span class="small">Our Development</span>
               Software You Can Always Trust
             </h2>
             <p>
@@ -237,14 +240,10 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <aside class="cta px-2 text-center text-white">
-          <div class="d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
-            <h3 class="mr-sm-0 mr-md-5">Want to learn more about us?</h3>
-            <button class="btn btn-primary align-self-center">
-              Get to know us
-            </button>
-          </div>
-        </aside>
+        <call-to-action link-url="/about">
+          <span slot="header">Want to learn more about us?</span>
+          <span slot="link">Get to know us</span>
+        </call-to-action>
 
         {/* footer */}
         <footer>

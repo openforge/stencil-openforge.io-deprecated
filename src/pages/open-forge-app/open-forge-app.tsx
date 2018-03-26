@@ -1,10 +1,35 @@
-import { Component } from '@stencil/core';
+import { Component, Listen } from '@stencil/core';
 
 @Component({
   tag: 'open-forge-app',
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  navbarEl: HTMLElement;
+  mainEl: HTMLElement;
+  isScrolled = false;
+
+  componentDidLoad() {
+    this.navbarEl = document.querySelector('nav.navbar');
+    this.mainEl = document.querySelector('main');
+  }
+
+  @Listen('window:scroll')
+  handleScroll() {
+    this.setIsScrolled();
+
+    if (this.isScrolled && !this.navbarEl.classList.contains('background')) {
+      this.navbarEl.classList.add('background');
+    } else if (!this.isScrolled) {
+      this.navbarEl.classList.remove('background');
+    }
+  }
+
+  setIsScrolled() {
+    const dimensions = this.mainEl.getBoundingClientRect();
+    this.isScrolled = dimensions.top < 0;
+  }
+
   render() {
     return (
       <div>
@@ -66,6 +91,7 @@ export class OpenForgeApp {
         <main>
           <stencil-router>
             <stencil-route url="/" component="app-home" exact={true} />
+            <stencil-route url="/about" component="app-about" exact={true} />
           </stencil-router>
         </main>
       </div>
