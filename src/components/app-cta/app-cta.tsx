@@ -2,10 +2,10 @@ import { Component, Prop } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
-  tag: 'call-to-action',
-  styleUrl: 'call-to-action.scss',
+  tag: 'app-cta',
+  styleUrl: 'app-cta.scss',
 })
-export class CallToAction {
+export class AppCta {
   @Prop() match: MatchResults;
   @Prop() linkUrl: string;
 

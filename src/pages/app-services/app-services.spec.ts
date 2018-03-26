@@ -1,17 +1,17 @@
 import { render } from '@stencil/core/testing';
 
-import { CallToAction } from './call-to-action';
+import { AppServices } from './app-services';
 
 describe('app', () => {
   it('should build', () => {
-    expect(new CallToAction()).toBeTruthy();
+    expect(new AppServices()).toBeTruthy();
   });
 
   describe('rendering', () => {
     beforeEach(async () => {
       await render({
-        components: [CallToAction],
-        html: '<call-to-action></call-to-action>',
+        components: [AppServices],
+        html: '<app-services></app-services>',
       });
     });
   });

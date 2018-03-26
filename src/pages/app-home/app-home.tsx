@@ -12,7 +12,7 @@ export class AppHome {
     return (
       <div>
         {/* header - hero */}
-        <hero-space
+        <app-hero
           link-url="/about"
           background-url="../../assets/bg-hero-woman-writing.jpg"
         >
@@ -23,7 +23,7 @@ export class AppHome {
             requirements.
           </span>
           <span slot="link">Learn More</span>
-        </hero-space>
+        </app-hero>
 
         {/* section - approach */}
         <section class="approach">
@@ -73,10 +73,10 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <call-to-action link-url="/about">
+        <app-cta link-url="/about">
           <span slot="header">Need a team for your project?</span>
           <span slot="link">Get in touch</span>
-        </call-to-action>
+        </app-cta>
 
         {/* section - process */}
         <section class="section process">
@@ -156,10 +156,10 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <call-to-action link-url="/about">
+        <app-cta link-url="/about">
           <span slot="header">Want more details on our process?</span>
           <span slot="link">Learn more</span>
-        </call-to-action>
+        </app-cta>
 
         {/* section - development */}
         <section class="section development">
@@ -240,79 +240,13 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <call-to-action link-url="/about">
+        <app-cta link-url="/about">
           <span slot="header">Want to learn more about us?</span>
           <span slot="link">Get to know us</span>
-        </call-to-action>
+        </app-cta>
 
         {/* footer */}
-        <footer>
-          <div class="container">
-            <div class="row">
-              <div class="content col-sm-12 col-md-4">
-                <h2>Our Headquarters</h2>
-                <p>
-                  OpenForge<br />
-                  1040 N 2nd St.<br />
-                  Philadelphia, PA 19123
-                </p>
-                <a href="mailto:hello@webjunto.com">hello@webjunto.com</a>
-                <a href="https://www.webjunto.com" target="_blank">
-                  Work at Webjunto
-                </a>
-                <a href="/career">Career Opportunities</a>
-              </div>
-              <div class="content col-sm-12 col-md-4">
-                <h2>Our Partners</h2>
-                <a href="https://ionicframework.com/" target="_blank">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/logo-ionic.png"
-                    alt="Ionic"
-                  />
-                </a>
-                <a href="http://www.215marketing.com/" target="_blank">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/logo-215marketing.png"
-                    alt="215 Marketing"
-                  />
-                </a>
-                <a href="https://www.goemerchant.com/" target="_blank">
-                  <img
-                    class="img-fluid"
-                    src="../../assets/logo-goemerchant.png"
-                    alt="goEmerchant Payment Processing"
-                  />
-                </a>
-              </div>
-              <div class="content col-sm-12 col-md-4">
-                <h2>Subscribe to Blog via Email</h2>
-                <p>
-                  Enter your email address to subscribe to our blog and receive
-                  notifications of new posts by email.
-                </p>
-                <p>Join 2,816 other subscribers</p>
-                <form>
-                  <div class="form-group">
-                    <label class="sr-only">Email address</label>
-                    <input
-                      id="email"
-                      class="form-control"
-                      type="email"
-                      placeholder="Email address.."
-                    />
-                  </div>
-                  <button class="btn btn-primary" type="submit">
-                    Subscribe
-                  </button>
-                </form>
-              </div>
-            </div>
-
-            <p class="text-center">&copy; OpenForge. All rights reserved.</p>
-          </div>
-        </footer>
+        <app-footer />
       </div>
     );
   }

@@ -27,29 +27,29 @@ import {
 } from '@stencil/router';
 
 import {
-  CallToAction as CallToAction
-} from './components/call-to-action/call-to-action';
+  AppCta as AppCta
+} from './components/app-cta/app-cta';
 
 declare global {
-  interface HTMLCallToActionElement extends CallToAction, HTMLStencilElement {
+  interface HTMLAppCtaElement extends AppCta, HTMLStencilElement {
   }
-  var HTMLCallToActionElement: {
-    prototype: HTMLCallToActionElement;
-    new (): HTMLCallToActionElement;
+  var HTMLAppCtaElement: {
+    prototype: HTMLAppCtaElement;
+    new (): HTMLAppCtaElement;
   };
   interface HTMLElementTagNameMap {
-    "call-to-action": HTMLCallToActionElement;
+    "app-cta": HTMLAppCtaElement;
   }
   interface ElementTagNameMap {
-    "call-to-action": HTMLCallToActionElement;
+    "app-cta": HTMLAppCtaElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "call-to-action": JSXElements.CallToActionAttributes;
+      "app-cta": JSXElements.AppCtaAttributes;
     }
   }
   namespace JSXElements {
-    export interface CallToActionAttributes extends HTMLAttributes {
+    export interface AppCtaAttributes extends HTMLAttributes {
       linkUrl?: string;
       match?: MatchResults;
       
@@ -59,29 +59,62 @@ declare global {
 
 
 import {
-  HeroSpace as HeroSpace
-} from './components/hero-space/hero-space';
+  AppFooter as AppFooter
+} from './components/app-footer/app-footer';
 
 declare global {
-  interface HTMLHeroSpaceElement extends HeroSpace, HTMLStencilElement {
+  interface HTMLAppFooterElement extends AppFooter, HTMLStencilElement {
   }
-  var HTMLHeroSpaceElement: {
-    prototype: HTMLHeroSpaceElement;
-    new (): HTMLHeroSpaceElement;
+  var HTMLAppFooterElement: {
+    prototype: HTMLAppFooterElement;
+    new (): HTMLAppFooterElement;
   };
   interface HTMLElementTagNameMap {
-    "hero-space": HTMLHeroSpaceElement;
+    "app-footer": HTMLAppFooterElement;
   }
   interface ElementTagNameMap {
-    "hero-space": HTMLHeroSpaceElement;
+    "app-footer": HTMLAppFooterElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "hero-space": JSXElements.HeroSpaceAttributes;
+      "app-footer": JSXElements.AppFooterAttributes;
     }
   }
   namespace JSXElements {
-    export interface HeroSpaceAttributes extends HTMLAttributes {
+    export interface AppFooterAttributes extends HTMLAttributes {
+      backgroundUrl?: string;
+      linkUrl?: string;
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
+  AppHero as AppHero
+} from './components/app-hero/app-hero';
+
+declare global {
+  interface HTMLAppHeroElement extends AppHero, HTMLStencilElement {
+  }
+  var HTMLAppHeroElement: {
+    prototype: HTMLAppHeroElement;
+    new (): HTMLAppHeroElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-hero": HTMLAppHeroElement;
+  }
+  interface ElementTagNameMap {
+    "app-hero": HTMLAppHeroElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-hero": JSXElements.AppHeroAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppHeroAttributes extends HTMLAttributes {
       backgroundUrl?: string;
       linkUrl?: string;
       match?: MatchResults;
@@ -123,6 +156,37 @@ declare global {
 
 
 import {
+  AppContact as AppContact
+} from './pages/app-contact/app-contact';
+
+declare global {
+  interface HTMLAppContactElement extends AppContact, HTMLStencilElement {
+  }
+  var HTMLAppContactElement: {
+    prototype: HTMLAppContactElement;
+    new (): HTMLAppContactElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-contact": HTMLAppContactElement;
+  }
+  interface ElementTagNameMap {
+    "app-contact": HTMLAppContactElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-contact": JSXElements.AppContactAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppContactAttributes extends HTMLAttributes {
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './pages/app-home/app-home';
 
@@ -146,6 +210,37 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
+  AppServices as AppServices
+} from './pages/app-services/app-services';
+
+declare global {
+  interface HTMLAppServicesElement extends AppServices, HTMLStencilElement {
+  }
+  var HTMLAppServicesElement: {
+    prototype: HTMLAppServicesElement;
+    new (): HTMLAppServicesElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-services": HTMLAppServicesElement;
+  }
+  interface ElementTagNameMap {
+    "app-services": HTMLAppServicesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-services": JSXElements.AppServicesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppServicesAttributes extends HTMLAttributes {
       match?: MatchResults;
       
     }

@@ -2,10 +2,10 @@ import { Component, Prop } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
-  tag: 'hero-space',
-  styleUrl: 'hero-space.scss',
+  tag: 'app-hero',
+  styleUrl: 'app-hero.scss',
 })
-export class HeroSpace {
+export class AppHero {
   @Prop() match: MatchResults;
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
