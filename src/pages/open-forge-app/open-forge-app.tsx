@@ -45,27 +45,17 @@ export class OpenForgeApp {
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    Our&nbsp;work
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
                     Services
                   </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    Blog
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
-                    Careers
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
                     Contact
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">
+                    Github
                   </a>
                 </li>
               </ul>

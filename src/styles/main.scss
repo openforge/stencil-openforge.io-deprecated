@@ -1,11 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:400,600,700|Roboto+Condensed:700|Roboto:700');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,600,700|Roboto+Condensed:700|Roboto:700');
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 
-button.btn-primary {
-  background: lighten($orange, 5%);
+// General
+
+h2 {
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
+  @include media-breakpoint-down(sm) {
+    font-size: 1.75rem;
+  }
+
+  span {
+    color: $orange;
+    display: block;
+    font-family: $font-roboto;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+h3 {
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 0.25rem;
+  }
+
+  span {
+    display: block;
+    font-family: $font-roboto;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    margin: 10px 0 5px;
+    text-transform: uppercase;
+  }
+}
+
+p {
+  color: $gray-600;
+  margin-bottom: 3rem;
+}
+
+hr {
+  border-color: rgba($white, 0.33);
+  margin: 3rem auto;
+  width: 50%;
+}
+
+// Buttons
+
+.btn-primary {
+  background: $orange;
   border-color: $white;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
   color: $white;
   font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
