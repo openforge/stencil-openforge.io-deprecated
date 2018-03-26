@@ -19,3 +19,10 @@ nav {
     max-width: 375px;
   }
 }
+
+.navbar-nav {
+  @include media-breakpoint-down(md) {
+    text-align: right;
+    margin-right: 5px;
+  }
+}

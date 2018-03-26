@@ -27,6 +27,37 @@ import {
 } from '@stencil/router';
 
 import {
+  heroSpace as HeroSpace
+} from './components/hero-space/hero-space';
+
+declare global {
+  interface HTMLHeroSpaceElement extends HeroSpace, HTMLStencilElement {
+  }
+  var HTMLHeroSpaceElement: {
+    prototype: HTMLHeroSpaceElement;
+    new (): HTMLHeroSpaceElement;
+  };
+  interface HTMLElementTagNameMap {
+    "hero-space": HTMLHeroSpaceElement;
+  }
+  interface ElementTagNameMap {
+    "hero-space": HTMLHeroSpaceElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "hero-space": JSXElements.HeroSpaceAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface HeroSpaceAttributes extends HTMLAttributes {
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
   AppHome as AppHome
 } from './pages/app-home/app-home';
 
