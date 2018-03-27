@@ -10,14 +10,12 @@ export class AppHeader {
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
 
-  componentDidLoad() {
-    const element = document.querySelector('header.header') as HTMLElement;
-    element.style.backgroundImage = `url('${this.backgroundUrl}')`;
-  }
-
   render() {
     return (
-      <header class="header d-flex flex-column justify-content-center">
+      <header
+        class="header d-flex flex-column justify-content-center"
+        style={{ backgroundImage: `url('${this.backgroundUrl}')` }}
+      >
         <slot name="header" />
 
         <slot name="subheader" />
