@@ -14,7 +14,7 @@ export class AppContact {
         {/* header - hero */}
         <app-hero
           link-url="mailto:hello@openforge.io"
-          background-url="../../assets/bg-hero-handshake-desk.jpg"
+          background-url="assets/bg-hero-handshake-desk.jpg"
         >
           <span slot="header">Let's Work Together</span>
           <span slot="body">Request a Discovery Session Today!</span>

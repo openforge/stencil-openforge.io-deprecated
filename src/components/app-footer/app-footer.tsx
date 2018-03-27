@@ -38,21 +38,21 @@ export class AppFooter {
               <a href="https://ionicframework.com/" target="_blank">
                 <img
                   class="img-fluid"
-                  src="../../assets/logo-ionic.png"
+                  src="assets/logo-ionic.png"
                   alt="Ionic"
                 />
               </a>
               <a href="http://www.215marketing.com/" target="_blank">
                 <img
                   class="img-fluid"
-                  src="../../assets/logo-215marketing.png"
+                  src="assets/logo-215marketing.png"
                   alt="215 Marketing"
                 />
               </a>
               <a href="https://www.goemerchant.com/" target="_blank">
                 <img
                   class="img-fluid"
-                  src="../../assets/logo-goemerchant.png"
+                  src="assets/logo-goemerchant.png"
                   alt="goEmerchant Payment Processing"
                 />
               </a>
