@@ -14,7 +14,7 @@ export class AppHome {
         {/* header - hero */}
         <app-hero
           link-url="mailto:hello@openforge.io"
-          background-url="../../assets/bg-hero-woman-writing.jpg"
+          background-url="assets/bg-hero-woman-writing.jpg"
         >
           <span slot="header">We are thinkers, makers &amp; doers</span>
           <span slot="body">
@@ -82,7 +82,7 @@ export class AppHome {
         <section id="process">
           <app-header
             link-url="#process-content"
-            background-url="../../assets/bg-header-table.jpg"
+            background-url="assets/bg-header-table.jpg"
           >
             <h2 slot="header">
               <span class="small">Our Process</span>
@@ -94,7 +94,7 @@ export class AppHome {
           </app-header>
 
           <div id="process-content" class="container">
-            <content-graphic img-url="../../assets/graphic-desktop-tablet-mobile.png">
+            <content-graphic img-url="assets/graphic-desktop-tablet-mobile.png">
               <h3 slot="header">Process Matters</h3>
               <p slot="body">
                 Our team specializes in providing enterprise quality software
@@ -107,7 +107,7 @@ export class AppHome {
             </content-graphic>
 
             <content-graphic
-              img-url="../../assets/graphic-computer-clock.png"
+              img-url="assets/graphic-computer-clock.png"
               reverse={true}
             >
               <h3 slot="header">Design is important</h3>
@@ -120,7 +120,7 @@ export class AppHome {
               </p>
             </content-graphic>
 
-            <content-graphic img-url="../../assets/graphic-computer-clock.png">
+            <content-graphic img-url="assets/graphic-computer-clock.png">
               <h3 slot="header">We don't do fixed bids</h3>
               <p slot="body">
                 Because we charge by time and materials, our clients gain the
@@ -143,7 +143,7 @@ export class AppHome {
         <section id="development">
           <app-header
             link-url="#development-content"
-            background-url="../../assets/bg-header-person-typing.jpg"
+            background-url="assets/bg-header-person-typing.jpg"
           >
             <h2 slot="header">
               <span class="small">Our Development</span>
@@ -156,7 +156,7 @@ export class AppHome {
           </app-header>
 
           <div id="development-content" class="container">
-            <content-graphic img-url="../../assets/graphic-info-tree.png">
+            <content-graphic img-url="assets/graphic-info-tree.png">
               <h3 slot="header">Best architecture in town</h3>
               <p slot="body">
                 Don't believe us? Check out some of our open source
@@ -168,7 +168,7 @@ export class AppHome {
             </content-graphic>
 
             <content-graphic
-              img-url="../../assets/graphic-technology-check.png"
+              img-url="assets/graphic-technology-check.png"
               reverse={true}
             >
               <h3 slot="header">Technology to fit your business needs</h3>
@@ -181,7 +181,7 @@ export class AppHome {
               </p>
             </content-graphic>
 
-            <content-graphic img-url="../../assets/graphic-pair-programming.png">
+            <content-graphic img-url="assets/graphic-pair-programming.png">
               <h3 slot="header">Paired programming at its finest</h3>
               <p slot="body">
                 Not only will you receive dedicated staff for the scope of your

@@ -39,7 +39,7 @@ export class OpenForgeApp {
               <h1>
                 <img
                   class="img-fluid"
-                  src="../../assets/logo-openforge.png"
+                  src="assets/logo-openforge.png"
                   alt="OpenForge"
                 />
               </h1>

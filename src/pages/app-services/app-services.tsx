@@ -14,7 +14,7 @@ export class AppServices {
         {/* header - hero */}
         <app-hero
           link-url="mailto:hello@openforge.io"
-          background-url="../../assets/bg-hero-wireframes-pencils.jpg"
+          background-url="assets/bg-hero-wireframes-pencils.jpg"
         >
           <span slot="header">
             Creative Digital Solutions for Real World Problems

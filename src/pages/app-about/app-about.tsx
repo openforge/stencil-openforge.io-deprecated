@@ -14,7 +14,7 @@ export class AppAbout {
         {/* header - hero */}
         <app-hero
           link-url="mailto:hello@openforge.io"
-          background-url="../../assets/bg-hero-woman-writing.jpg"
+          background-url="assets/bg-hero-woman-writing.jpg"
         >
           <span slot="header">Powered by engineers &amp; design thinkers</span>
           <span slot="body">
