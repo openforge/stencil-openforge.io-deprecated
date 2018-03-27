@@ -28,10 +28,10 @@ export class AppFooter {
                 Philadelphia, PA 19123
               </p>
               <a href="mailto:hello@openforge.io">hello@openforge.io</a>
-              <a href="https://www.openforge.io" target="_blank">
+              {/* <a href="https://www.openforge.io" target="_blank">
                 Work at OpenForge
               </a>
-              <a href="/career">Career Opportunities</a>
+              <a href="/career">Career Opportunities</a> */}
             </div>
             <div class="content col-sm-12 col-md-4">
               <h2>Our Partners</h2>
@@ -59,7 +59,8 @@ export class AppFooter {
             </div>
             <div class="content col-sm-12 col-md-4">
               <h2>Subscribe to Blog via Email</h2>
-              <p>
+              <p>Coming soon!</p>
+              {/* <p>
                 Enter your email address to subscribe to our blog and receive
                 notifications of new posts by email.
               </p>
@@ -77,7 +78,7 @@ export class AppFooter {
                 <button class="btn btn-primary" type="submit">
                   Subscribe
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
 

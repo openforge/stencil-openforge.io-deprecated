@@ -64,17 +64,17 @@ export class OpenForgeApp {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="#process">
                     About
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="#development">
                     Services
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="mailto:hello@openforge.io">
                     Contact
                   </a>
                 </li>

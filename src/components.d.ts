@@ -92,6 +92,39 @@ declare global {
 
 
 import {
+  AppHeader as AppHeader
+} from './components/app-header/app-header';
+
+declare global {
+  interface HTMLAppHeaderElement extends AppHeader, HTMLStencilElement {
+  }
+  var HTMLAppHeaderElement: {
+    prototype: HTMLAppHeaderElement;
+    new (): HTMLAppHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    "app-header": HTMLAppHeaderElement;
+  }
+  interface ElementTagNameMap {
+    "app-header": HTMLAppHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "app-header": JSXElements.AppHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppHeaderAttributes extends HTMLAttributes {
+      backgroundUrl?: string;
+      linkUrl?: string;
+      match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
   AppHero as AppHero
 } from './components/app-hero/app-hero';
 
@@ -118,6 +151,39 @@ declare global {
       backgroundUrl?: string;
       linkUrl?: string;
       match?: MatchResults;
+      
+    }
+  }
+}
+
+
+import {
+  ContentGraphic as ContentGraphic
+} from './components/content-graphic/content-graphic';
+
+declare global {
+  interface HTMLContentGraphicElement extends ContentGraphic, HTMLStencilElement {
+  }
+  var HTMLContentGraphicElement: {
+    prototype: HTMLContentGraphicElement;
+    new (): HTMLContentGraphicElement;
+  };
+  interface HTMLElementTagNameMap {
+    "content-graphic": HTMLContentGraphicElement;
+  }
+  interface ElementTagNameMap {
+    "content-graphic": HTMLContentGraphicElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "content-graphic": JSXElements.ContentGraphicAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ContentGraphicAttributes extends HTMLAttributes {
+      imgUrl?: string;
+      match?: MatchResults;
+      reverse?: string;
       
     }
   }
