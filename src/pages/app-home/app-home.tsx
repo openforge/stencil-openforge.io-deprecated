@@ -13,7 +13,7 @@ export class AppHome {
       <div>
         {/* header - hero */}
         <app-hero
-          link-url="/about"
+          link-url="mailto:hello@openforge.io"
           background-url="../../assets/bg-hero-woman-writing.jpg"
         >
           <span slot="header">We are thinkers, makers &amp; doers</span>

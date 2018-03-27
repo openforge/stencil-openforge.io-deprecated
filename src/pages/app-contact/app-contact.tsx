@@ -9,6 +9,21 @@ export class AppContact {
   @Prop() match: MatchResults;
 
   render() {
-    return <div>Contact us!</div>;
+    return (
+      <div>
+        {/* header - hero */}
+        <app-hero
+          link-url="mailto:hello@openforge.io"
+          background-url="../../assets/bg-hero-handshake-desk.jpg"
+        >
+          <span slot="header">Let's Work Together</span>
+          <span slot="body">Request a Discovery Session Today!</span>
+          <span slot="link">Request Now</span>
+        </app-hero>
+
+        {/* footer */}
+        <app-footer />
+      </div>
+    );
   }
 }
