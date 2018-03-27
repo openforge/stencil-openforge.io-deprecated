@@ -9,6 +9,9 @@ header.header {
   @include media-breakpoint-down(sm) {
     padding: 5rem 1rem;
   }
+  @include media-breakpoint-down(xs) {
+    height: calc(100vh - 120px);
+  }
 
   h2 {
     color: $white;

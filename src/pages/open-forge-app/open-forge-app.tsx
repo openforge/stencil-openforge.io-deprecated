@@ -58,27 +58,47 @@ export class OpenForgeApp {
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-md-auto">
-                <li class="nav-item active">
+                <li
+                  class="nav-item active"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
                   <a class="nav-link" href="/">
                     Home <span class="sr-only">(current)</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
                   <a class="nav-link" href="/#process">
                     About
                   </a>
                 </li>
-                <li class="nav-item">
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
                   <a class="nav-link" href="/#development">
                     Services
                   </a>
                 </li>
-                <li class="nav-item">
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
                   <a class="nav-link" href="mailto:hello@openforge.io">
                     Contact
                   </a>
                 </li>
-                <li class="nav-item">
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
                   <a
                     class="nav-link"
                     href="https://github.com/openforge"

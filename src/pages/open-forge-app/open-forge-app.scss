@@ -3,6 +3,11 @@
 nav {
   margin: 0 auto;
   transition: background 0.3s ease-in;
+  @include media-breakpoint-down(md) {
+    background: $black;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+  }
+
   &.background {
     background: $black;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
@@ -10,14 +15,20 @@ nav {
 }
 
 .navbar-brand {
+  padding: 0;
   @include media-breakpoint-down(xs) {
-    width: 70%;
+    width: 65%;
   }
 
   h1 {
+    // logo img
     font-size: inherit;
+    line-height: 1;
     margin: 0;
-    max-width: 375px;
+    max-width: 350px;
+    @include media-breakpoint-down(sm) {
+      max-width: 200px;
+    }
   }
 }
 
