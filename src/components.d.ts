@@ -52,7 +52,6 @@ declare global {
     export interface AppCtaAttributes extends HTMLAttributes {
       linkUrl?: string;
       match?: MatchResults;
-      
     }
   }
 }
@@ -85,7 +84,6 @@ declare global {
       backgroundUrl?: string;
       linkUrl?: string;
       match?: MatchResults;
-      
     }
   }
 }
@@ -118,7 +116,6 @@ declare global {
       backgroundUrl?: string;
       linkUrl?: string;
       match?: MatchResults;
-      
     }
   }
 }
@@ -151,7 +148,6 @@ declare global {
       backgroundUrl?: string;
       linkUrl?: string;
       match?: MatchResults;
-      
     }
   }
 }
@@ -183,8 +179,7 @@ declare global {
     export interface ContentGraphicAttributes extends HTMLAttributes {
       imgUrl?: string;
       match?: MatchResults;
-      reverse?: string;
-      
+      reverse?: boolean;
     }
   }
 }
@@ -215,7 +210,6 @@ declare global {
   namespace JSXElements {
     export interface AppAboutAttributes extends HTMLAttributes {
       match?: MatchResults;
-      
     }
   }
 }
@@ -246,7 +240,6 @@ declare global {
   namespace JSXElements {
     export interface AppContactAttributes extends HTMLAttributes {
       match?: MatchResults;
-      
     }
   }
 }
@@ -277,7 +270,6 @@ declare global {
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
       match?: MatchResults;
-      
     }
   }
 }
@@ -308,7 +300,6 @@ declare global {
   namespace JSXElements {
     export interface AppServicesAttributes extends HTMLAttributes {
       match?: MatchResults;
-      
     }
   }
 }
@@ -338,7 +329,6 @@ declare global {
   }
   namespace JSXElements {
     export interface OpenForgeAppAttributes extends HTMLAttributes {
-      
       
     }
   }

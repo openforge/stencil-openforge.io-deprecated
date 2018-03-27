@@ -108,7 +108,7 @@ export class AppHome {
 
             <content-graphic
               img-url="../../assets/graphic-computer-clock.png"
-              reverse="true"
+              reverse={true}
             >
               <h3 slot="header">Design is important</h3>
               <p slot="body">
@@ -169,7 +169,7 @@ export class AppHome {
 
             <content-graphic
               img-url="../../assets/graphic-technology-check.png"
-              reverse="true"
+              reverse={true}
             >
               <h3 slot="header">Technology to fit your business needs</h3>
               <p slot="body">

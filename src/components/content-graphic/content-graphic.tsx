@@ -8,16 +8,17 @@ import { MatchResults } from '@stencil/router';
 export class ContentGraphic {
   @Prop() match: MatchResults;
   @Prop() imgUrl: string;
-  @Prop() reverse: string;
+  @Prop() reverse: boolean;
 
   render() {
     return (
       <div
-        class={
-          this.reverse === 'true'
-            ? 'row flex-row-reverse justify-content-around align-items-center'
-            : 'row justify-content-around align-items-center'
-        }
+        class={{
+          row: true,
+          'justify-content-around': true,
+          'align-items-center': true,
+          'flex-row-reverse': this.reverse,
+        }}
       >
         <div class="col-sm-12 col-md-4">
           <img class="img-fluid" src={this.imgUrl} alt="" />
