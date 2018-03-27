@@ -14,6 +14,7 @@ export class ContentGraphic {
     return (
       <div
         class={{
+          'content-graphic': true,
           row: true,
           'justify-content-around': true,
           'align-items-center': true,
