@@ -158,6 +158,8 @@ export class OpenForgeApp {
             />
           </stencil-router>
         </main>
+
+        <app-footer />
       </div>
     );
   }

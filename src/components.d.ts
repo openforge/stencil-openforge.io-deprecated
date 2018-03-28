@@ -81,8 +81,6 @@ declare global {
   }
   namespace JSXElements {
     export interface AppFooterAttributes extends HTMLAttributes {
-      backgroundUrl?: string;
-      linkUrl?: string;
       match?: MatchResults;
     }
   }
