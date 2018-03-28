@@ -199,9 +199,6 @@ export class AppHome {
           <span slot="header">Want to learn more about us?</span>
           <span slot="link">Get to know us</span>
         </app-cta>
-
-        {/* footer */}
-        <app-footer />
       </div>
     );
   }

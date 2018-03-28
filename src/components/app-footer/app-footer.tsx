@@ -7,13 +7,6 @@ import { MatchResults } from '@stencil/router';
 })
 export class AppFooter {
   @Prop() match: MatchResults;
-  @Prop() linkUrl: string;
-  @Prop() backgroundUrl: string;
-
-  componentDidLoad() {
-    const element = document.querySelector('header.hero') as HTMLElement;
-    element.style.backgroundImage = `url('${this.backgroundUrl}')`;
-  }
 
   render() {
     return (

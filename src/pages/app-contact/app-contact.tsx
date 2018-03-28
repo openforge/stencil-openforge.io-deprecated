@@ -20,9 +20,6 @@ export class AppContact {
           <span slot="body">Request a Discovery Session Today!</span>
           <span slot="link">Request Now</span>
         </app-hero>
-
-        {/* footer */}
-        <app-footer />
       </div>
     );
   }

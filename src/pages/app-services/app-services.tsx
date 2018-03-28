@@ -33,9 +33,6 @@ export class AppServices {
           <span slot="header">Let's work together!</span>
           <span slot="link">Get in touch</span>
         </app-cta>
-
-        {/* footer */}
-        <app-footer />
       </div>
     );
   }
