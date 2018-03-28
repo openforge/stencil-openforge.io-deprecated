@@ -1,10 +1,16 @@
-import { Component, Listen } from '@stencil/core';
+import { Component, Listen, Prop, State } from '@stencil/core';
+import { ActiveRouter, RouterHistory, LocationSegments } from '@stencil/router';
 
 @Component({
   tag: 'open-forge-app',
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  @Prop({ context: 'activeRouter' })
+  activeRouter: ActiveRouter;
+  unsubscribe: () => void;
+
+  @State() currentHash = '';
   navbarEl: HTMLElement;
   mainEl: HTMLElement;
   isScrolled = false;
@@ -12,6 +18,17 @@ export class OpenForgeApp {
   componentDidLoad() {
     this.navbarEl = document.querySelector('nav.navbar');
     this.mainEl = document.querySelector('main');
+
+    const history: RouterHistory = this.activeRouter.get('history');
+    this.currentHash = history.location.hash;
+
+    this.unsubscribe = history.listen((segments: LocationSegments) => {
+      this.currentHash = segments.hash;
+    });
+  }
+
+  componentDidUnload() {
+    this.unsubscribe();
   }
 
   @Listen('window:scroll')
@@ -59,7 +76,10 @@ export class OpenForgeApp {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-md-auto">
                 <li
-                  class="nav-item active"
+                  class={{
+                    'nav-item': true,
+                    active: !this.currentHash,
+                  }}
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
@@ -68,7 +88,10 @@ export class OpenForgeApp {
                   </a>
                 </li>
                 <li
-                  class="nav-item"
+                  class={{
+                    'nav-item': true,
+                    active: this.currentHash === '#process',
+                  }}
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
@@ -77,7 +100,10 @@ export class OpenForgeApp {
                   </a>
                 </li>
                 <li
-                  class="nav-item"
+                  class={{
+                    'nav-item': true,
+                    active: this.currentHash === '#development',
+                  }}
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
@@ -90,7 +116,11 @@ export class OpenForgeApp {
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <a class="nav-link" href="mailto:hello@openforge.io">
+                  <a
+                    class="nav-link"
+                    href="mailto:hello@openforge.io"
+                    target="_blank"
+                  >
                     Contact
                   </a>
                 </li>
