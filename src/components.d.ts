@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -26,308 +29,285 @@ import {
   MatchResults,
 } from '@stencil/router';
 
-import {
-  AppCta as AppCta
-} from './components/app-cta/app-cta';
-
 declare global {
-  interface HTMLAppCtaElement extends AppCta, HTMLStencilElement {
+  interface HTMLAppCtaElement extends HTMLStencilElement {
+    'linkUrl': string;
+    'match': MatchResults;
   }
   var HTMLAppCtaElement: {
     prototype: HTMLAppCtaElement;
     new (): HTMLAppCtaElement;
   };
   interface HTMLElementTagNameMap {
-    "app-cta": HTMLAppCtaElement;
+    'app-cta': HTMLAppCtaElement;
   }
   interface ElementTagNameMap {
-    "app-cta": HTMLAppCtaElement;
+    'app-cta': HTMLAppCtaElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-cta": JSXElements.AppCtaAttributes;
+      'app-cta': JSXElements.AppCtaAttributes;
     }
   }
   namespace JSXElements {
     export interface AppCtaAttributes extends HTMLAttributes {
-      linkUrl?: string;
-      match?: MatchResults;
+      'linkUrl'?: string;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  AppFooter as AppFooter
-} from './components/app-footer/app-footer';
-
 declare global {
-  interface HTMLAppFooterElement extends AppFooter, HTMLStencilElement {
+  interface HTMLAppFooterElement extends HTMLStencilElement {
+    'match': MatchResults;
   }
   var HTMLAppFooterElement: {
     prototype: HTMLAppFooterElement;
     new (): HTMLAppFooterElement;
   };
   interface HTMLElementTagNameMap {
-    "app-footer": HTMLAppFooterElement;
+    'app-footer': HTMLAppFooterElement;
   }
   interface ElementTagNameMap {
-    "app-footer": HTMLAppFooterElement;
+    'app-footer': HTMLAppFooterElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-footer": JSXElements.AppFooterAttributes;
+      'app-footer': JSXElements.AppFooterAttributes;
     }
   }
   namespace JSXElements {
     export interface AppFooterAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  AppHeader as AppHeader
-} from './components/app-header/app-header';
-
 declare global {
-  interface HTMLAppHeaderElement extends AppHeader, HTMLStencilElement {
+  interface HTMLAppHeaderElement extends HTMLStencilElement {
+    'backgroundUrl': string;
+    'linkUrl': string;
+    'match': MatchResults;
   }
   var HTMLAppHeaderElement: {
     prototype: HTMLAppHeaderElement;
     new (): HTMLAppHeaderElement;
   };
   interface HTMLElementTagNameMap {
-    "app-header": HTMLAppHeaderElement;
+    'app-header': HTMLAppHeaderElement;
   }
   interface ElementTagNameMap {
-    "app-header": HTMLAppHeaderElement;
+    'app-header': HTMLAppHeaderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-header": JSXElements.AppHeaderAttributes;
+      'app-header': JSXElements.AppHeaderAttributes;
     }
   }
   namespace JSXElements {
     export interface AppHeaderAttributes extends HTMLAttributes {
-      backgroundUrl?: string;
-      linkUrl?: string;
-      match?: MatchResults;
+      'backgroundUrl'?: string;
+      'linkUrl'?: string;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  AppHero as AppHero
-} from './components/app-hero/app-hero';
-
 declare global {
-  interface HTMLAppHeroElement extends AppHero, HTMLStencilElement {
+  interface HTMLAppHeroElement extends HTMLStencilElement {
+    'backgroundUrl': string;
+    'linkUrl': string;
+    'match': MatchResults;
   }
   var HTMLAppHeroElement: {
     prototype: HTMLAppHeroElement;
     new (): HTMLAppHeroElement;
   };
   interface HTMLElementTagNameMap {
-    "app-hero": HTMLAppHeroElement;
+    'app-hero': HTMLAppHeroElement;
   }
   interface ElementTagNameMap {
-    "app-hero": HTMLAppHeroElement;
+    'app-hero': HTMLAppHeroElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-hero": JSXElements.AppHeroAttributes;
+      'app-hero': JSXElements.AppHeroAttributes;
     }
   }
   namespace JSXElements {
     export interface AppHeroAttributes extends HTMLAttributes {
-      backgroundUrl?: string;
-      linkUrl?: string;
-      match?: MatchResults;
+      'backgroundUrl'?: string;
+      'linkUrl'?: string;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  ContentGraphic as ContentGraphic
-} from './components/content-graphic/content-graphic';
-
 declare global {
-  interface HTMLContentGraphicElement extends ContentGraphic, HTMLStencilElement {
+  interface HTMLContentGraphicElement extends HTMLStencilElement {
+    'imgUrl': string;
+    'match': MatchResults;
+    'reverse': boolean;
   }
   var HTMLContentGraphicElement: {
     prototype: HTMLContentGraphicElement;
     new (): HTMLContentGraphicElement;
   };
   interface HTMLElementTagNameMap {
-    "content-graphic": HTMLContentGraphicElement;
+    'content-graphic': HTMLContentGraphicElement;
   }
   interface ElementTagNameMap {
-    "content-graphic": HTMLContentGraphicElement;
+    'content-graphic': HTMLContentGraphicElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "content-graphic": JSXElements.ContentGraphicAttributes;
+      'content-graphic': JSXElements.ContentGraphicAttributes;
     }
   }
   namespace JSXElements {
     export interface ContentGraphicAttributes extends HTMLAttributes {
-      imgUrl?: string;
-      match?: MatchResults;
-      reverse?: boolean;
+      'imgUrl'?: string;
+      'match'?: MatchResults;
+      'reverse'?: boolean;
     }
   }
 }
 
 
-import {
-  AppAbout as AppAbout
-} from './pages/app-about/app-about';
-
 declare global {
-  interface HTMLAppAboutElement extends AppAbout, HTMLStencilElement {
+  interface HTMLAppAboutElement extends HTMLStencilElement {
+    'match': MatchResults;
   }
   var HTMLAppAboutElement: {
     prototype: HTMLAppAboutElement;
     new (): HTMLAppAboutElement;
   };
   interface HTMLElementTagNameMap {
-    "app-about": HTMLAppAboutElement;
+    'app-about': HTMLAppAboutElement;
   }
   interface ElementTagNameMap {
-    "app-about": HTMLAppAboutElement;
+    'app-about': HTMLAppAboutElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-about": JSXElements.AppAboutAttributes;
+      'app-about': JSXElements.AppAboutAttributes;
     }
   }
   namespace JSXElements {
     export interface AppAboutAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  AppContact as AppContact
-} from './pages/app-contact/app-contact';
-
 declare global {
-  interface HTMLAppContactElement extends AppContact, HTMLStencilElement {
+  interface HTMLAppContactElement extends HTMLStencilElement {
+    'match': MatchResults;
   }
   var HTMLAppContactElement: {
     prototype: HTMLAppContactElement;
     new (): HTMLAppContactElement;
   };
   interface HTMLElementTagNameMap {
-    "app-contact": HTMLAppContactElement;
+    'app-contact': HTMLAppContactElement;
   }
   interface ElementTagNameMap {
-    "app-contact": HTMLAppContactElement;
+    'app-contact': HTMLAppContactElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-contact": JSXElements.AppContactAttributes;
+      'app-contact': JSXElements.AppContactAttributes;
     }
   }
   namespace JSXElements {
     export interface AppContactAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  AppHome as AppHome
-} from './pages/app-home/app-home';
-
 declare global {
-  interface HTMLAppHomeElement extends AppHome, HTMLStencilElement {
+  interface HTMLAppHomeElement extends HTMLStencilElement {
+    'match': MatchResults;
   }
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
   };
   interface HTMLElementTagNameMap {
-    "app-home": HTMLAppHomeElement;
+    'app-home': HTMLAppHomeElement;
   }
   interface ElementTagNameMap {
-    "app-home": HTMLAppHomeElement;
+    'app-home': HTMLAppHomeElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-home": JSXElements.AppHomeAttributes;
+      'app-home': JSXElements.AppHomeAttributes;
     }
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  AppServices as AppServices
-} from './pages/app-services/app-services';
-
 declare global {
-  interface HTMLAppServicesElement extends AppServices, HTMLStencilElement {
+  interface HTMLAppServicesElement extends HTMLStencilElement {
+    'match': MatchResults;
   }
   var HTMLAppServicesElement: {
     prototype: HTMLAppServicesElement;
     new (): HTMLAppServicesElement;
   };
   interface HTMLElementTagNameMap {
-    "app-services": HTMLAppServicesElement;
+    'app-services': HTMLAppServicesElement;
   }
   interface ElementTagNameMap {
-    "app-services": HTMLAppServicesElement;
+    'app-services': HTMLAppServicesElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "app-services": JSXElements.AppServicesAttributes;
+      'app-services': JSXElements.AppServicesAttributes;
     }
   }
   namespace JSXElements {
     export interface AppServicesAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      'match'?: MatchResults;
     }
   }
 }
 
 
-import {
-  OpenForgeApp as OpenForgeApp
-} from './pages/open-forge-app/open-forge-app';
-
 declare global {
-  interface HTMLOpenForgeAppElement extends OpenForgeApp, HTMLStencilElement {
+  interface HTMLOpenForgeAppElement extends HTMLStencilElement {
+
   }
   var HTMLOpenForgeAppElement: {
     prototype: HTMLOpenForgeAppElement;
     new (): HTMLOpenForgeAppElement;
   };
   interface HTMLElementTagNameMap {
-    "open-forge-app": HTMLOpenForgeAppElement;
+    'open-forge-app': HTMLOpenForgeAppElement;
   }
   interface ElementTagNameMap {
-    "open-forge-app": HTMLOpenForgeAppElement;
+    'open-forge-app': HTMLOpenForgeAppElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "open-forge-app": JSXElements.OpenForgeAppAttributes;
+      'open-forge-app': JSXElements.OpenForgeAppAttributes;
     }
   }
   namespace JSXElements {
     export interface OpenForgeAppAttributes extends HTMLAttributes {
-      
+
     }
   }
 }
