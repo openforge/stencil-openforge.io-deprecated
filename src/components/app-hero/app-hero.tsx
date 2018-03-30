@@ -29,11 +29,11 @@ export class AppHero {
                 <slot name="body" />
               </p>
 
-              <stencil-route-link url={this.linkUrl}>
+              <a href={this.linkUrl}>
                 <a class="btn btn-primary">
                   <slot name="link" />
                 </a>
-              </stencil-route-link>
+              </a>
             </div>
           </div>
         </div>
