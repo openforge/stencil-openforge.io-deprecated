@@ -29,10 +29,8 @@ export class AppHero {
                 <slot name="body" />
               </p>
 
-              <a href={this.linkUrl}>
-                <a class="btn btn-primary">
-                  <slot name="link" />
-                </a>
+              <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+                <slot name="link" />
               </a>
             </div>
           </div>
