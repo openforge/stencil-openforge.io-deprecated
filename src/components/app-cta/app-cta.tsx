@@ -17,11 +17,13 @@ export class AppCta {
             <slot name="header" />
           </h3>
 
-          <stencil-route-link url={this.linkUrl}>
-            <a class="btn btn-primary align-self-center">
-              <slot name="link" />
-            </a>
-          </stencil-route-link>
+          <a
+            href={this.linkUrl}
+            class="btn btn-primary align-self-center"
+            target="_blank"
+          >
+            <slot name="link" />
+          </a>
         </div>
       </aside>
     );
