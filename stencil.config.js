@@ -1,6 +1,4 @@
-// const sass = require('@stencil/sass');
-const sass = require('./temp-sass-fix');
-
+const sass = require('@stencil/sass');
 exports.config = {
   plugins: [
     sass({
