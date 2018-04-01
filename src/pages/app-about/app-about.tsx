@@ -8,6 +8,90 @@ import { MatchResults } from '@stencil/router';
 export class AppAbout {
   @Prop() match: MatchResults;
 
+  members = [
+    {
+      name: 'Jedi Weller',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/jedi.jpg',
+      color: '#fa8928',
+      title: 'Founder and Head of Technology',
+      mail: 'jedi@openforge.io',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/jedihacks',
+    },
+    {
+      name: 'Khaled Shaaban',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/khaled-1.jpg',
+      color: '#638593',
+      title: 'Software Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/kshaaban-',
+    },
+    {
+      name: 'Meredith Alcorn',
+      image: 'http://webjunto.com/wp-content/uploads/2016/09/meredith.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/',
+    },
+    {
+      name: 'Mohammad Alfatih',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/mohammad-1.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/Mohammad-alfatih',
+    },
+    {
+      name: 'Elizabeth Cottrell',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/elizabeth-3.jpg',
+      color: '#638593',
+      title: 'Front End Developer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/LizCottrell',
+    },
+    {
+      name: 'Joni Leho',
+      image: 'http://webjunto.com/wp-content/uploads/2016/09/joni.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/',
+    },
+    {
+      name: 'Fernando Del Olmo',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/fernando-1.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/Fdom92',
+    },
+    {
+      name: 'William Holloran',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/billy.jpg',
+      color: '#638593',
+      title: 'QA Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/',
+    },
+    {
+      name: 'Luis Chacon',
+      image: 'http://webjunto.com/wp-content/uploads/2018/01/luis-294.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: '',
+      twitter: 'https://twitter.com/',
+      github: 'https://github.com/luiskcs89',
+    },
+  ];
+
   render() {
     return (
       <div>
@@ -57,6 +141,40 @@ export class AppAbout {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* diversity */}
+        {/* TODO: figure out how to make this scroll to sr content - not sure */}
+        <section id="diversity">
+          <app-header
+            link-url="#diversity-content"
+            background-url="assets/bg-header-collaboration.jpg"
+          >
+            <h2 slot="header">
+              <span class="small">Diversity Matters</span>
+              We Are Powered by Multiple Perspectives
+            </h2>
+            <p slot="subheader">
+              Our individual skills, backgrounds, and life experiences have
+              shaped us into the company that we are today. Maintaining a
+              diverse team helps us to perform better, attract top talent, and
+              make smarter decisions.
+            </p>
+          </app-header>
+        </section>
+
+        {/* team */}
+        <section id="team">
+          <div class="container">
+            <h4>
+              <div class="display-4 pb-3">Meet the Team</div>
+              There’s no doubt that our team is made up of brilliant and
+              talented individuals who are passionate about technology and
+              design thinking. Together we design, code, grow, and evolve.
+            </h4>
+
+            <app-members members={this.members} />
           </div>
         </section>
 

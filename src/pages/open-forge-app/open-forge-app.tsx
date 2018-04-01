@@ -98,9 +98,9 @@ export class OpenForgeApp {
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <a class="nav-link" href="/#process">
+                  <stencil-route-link url="/about" class="nav-link">
                     About
-                  </a>
+                  </stencil-route-link>
                 </li>
                 <li
                   class={{
@@ -110,9 +110,9 @@ export class OpenForgeApp {
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <a class="nav-link" href="/#development">
+                  <stencil-route-link url="services" class="nav-link">
                     Services
-                  </a>
+                  </stencil-route-link>
                 </li>
                 <li
                   class="nav-item"
