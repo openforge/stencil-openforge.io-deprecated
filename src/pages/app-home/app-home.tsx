@@ -150,7 +150,7 @@ export class AppHome {
               Software You Can Always Trust
             </h2>
             <p slot="subheader">
-              We find the right way to build you app and treat each project
+              We find the right way to build your app and treat each project
               differently
             </p>
           </app-header>
