@@ -116,13 +116,9 @@ export class OpenForgeApp {
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <a
-                    class="nav-link"
-                    href="mailto:hello@openforge.io"
-                    target="_blank"
-                  >
+                  <stencil-route-link url="/contact" class="nav-link">
                     Contact
-                  </a>
+                  </stencil-route-link>
                 </li>
                 <li
                   class="nav-item"
