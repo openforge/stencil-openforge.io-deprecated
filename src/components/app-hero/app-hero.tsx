@@ -9,6 +9,7 @@ export class AppHero {
   @Prop() match: MatchResults;
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
+  @Prop() textNoWrap: boolean = false;
 
   componentDidLoad() {
     const element = document.querySelector('header.hero') as HTMLElement;
@@ -21,7 +22,11 @@ export class AppHero {
         <div class="container">
           <div class="row align-items-center">
             <div class="col-sm-12 col-md-8 col-lg-6">
-              <h2>
+              <h2
+                class={{
+                  'text-nowrap': this.textNoWrap,
+                }}
+              >
                 <slot name="header" />
               </h2>
 
