@@ -8,9 +8,9 @@ import { MatchResults } from '@stencil/router';
 export class AppForm {
   @Prop() match: MatchResults;
   @Prop() type: string;
-  @Prop() selection: string;
-  @Prop() value: string;
+  @Prop() label: string;
   @Prop() inputType: any;
+  @Prop() value: string;
 
   render() {
     if (this.type === 'radio') {
@@ -19,22 +19,21 @@ export class AppForm {
           <input
             class="form-check-input"
             type="radio"
-            name="gridRadios"
-            id={this.value}
             value={this.value}
+            required={true}
           />
-          <label class="form-check-label">{this.selection}</label>
+          <label class="form-check-label">{this.label}</label>
         </div>
       );
     }
     return (
       <div class="form-group">
-        <label class="text-uppercase font-weight-bold">{this.selection}</label>
+        <label class="text-uppercase font-weight-bold">{this.label}</label>
         <input
           class="form-control"
           type={this.inputType}
-          id={this.value}
-          value={this.value}
+          name={this.value}
+          required={true}
         />
       </div>
     );
