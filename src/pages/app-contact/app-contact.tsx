@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
@@ -7,6 +7,49 @@ import { MatchResults } from '@stencil/router';
 })
 export class AppContact {
   @Prop() match: MatchResults;
+  @State() value: string;
+  @State() budget: any;
+  @State() service: any;
+
+  async handleSubmit(e) {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target[0].value,
+      email: e.target[1].value,
+      phone: e.target[2].value,
+      message: e.target[3].value,
+      desireService: this.service.value,
+      budget: this.budget.value,
+    };
+
+    console.log(formData);
+
+    try {
+      const response = await fetch(
+        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
+        {
+          method: 'post',
+          mode: 'no-cors',
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      console.log('response', response);
+
+      e.target.reset();
+      return response;
+    } catch {
+      console.log('Error');
+    }
+  }
+
+  handleChange(event) {
+    this.value = event.target.value;
+  }
 
   render() {
     return (
@@ -32,88 +75,106 @@ export class AppContact {
                 goals!
               </p>
 
-              <form>
-                <app-form type="input" selection="Full Name" inputType="text" />
-                <app-form type="input" selection="E-mail" inputType="email" />
+              <form onSubmit={this.handleSubmit} id="contact-form">
+                <app-input
+                  label="Full Name"
+                  type="text"
+                  onChange={this.handleChange}
+                />
+                <app-input
+                  label="E-mail"
+                  type="email"
+                  onChange={this.handleChange}
+                />
+                <app-input
+                  label="Phone"
+                  type="number"
+                  onChange={this.handleChange}
+                />
+                <app-input
+                  type="text"
+                  label="How did you hear about OpenForge?"
+                  onChange={this.handleChange}
+                />
 
-                <app-form type="input" selection="Phone" inputType="number" />
-
-                <fieldset class="form-group mt-5">
+                <fieldset onChange={this.handleChange}>
                   <legend class="lead">How can we help you?</legend>
                   <div class="row ml-2">
                     <div class="col-sm-6">
-                      <app-form
-                        type="radio"
-                        selection="App Development"
-                        value="appDev"
+                      <app-radio
+                        name="service"
+                        value="App Development"
+                        label="App Development"
                       />
-
-                      <app-form
-                        type="radio"
-                        selection="Web Development"
-                        value="webDev"
+                      <app-radio
+                        name="service"
+                        value="Web Development"
+                        label="Web Development"
                       />
-
-                      <app-form
-                        type="radio"
-                        selection="UI/UX Design"
-                        value="uiDesign"
+                      <app-radio
+                        name="service"
+                        value="UI/UX Design"
+                        label="UI/UX Design"
                       />
-
-                      <app-form
-                        type="radio"
-                        selection="Graphic Design"
-                        value="graphicDesign"
+                      <app-radio
+                        name="service"
+                        value="Graphic Design"
+                        label="Graphic Design"
                       />
                     </div>
                     <div class="col-sm-6">
-                      <app-form
-                        type="radio"
-                        selection="Consulting"
-                        value="consult"
+                      <app-radio
+                        name="service"
+                        value="Consulting"
+                        label="Consulting"
                       />
-                      <app-form
-                        type="radio"
-                        selection="CTO as a Service"
-                        value="cto"
+                      <app-radio
+                        name="service"
+                        value="CTO as a service"
+                        label="CTO as a service"
                       />
-                      <app-form
-                        type="radio"
-                        selection="Unsure"
-                        value="unsure"
-                      />
+                      <app-radio name="service" value="Unsure" label="Unsure" />
                     </div>
                   </div>
                 </fieldset>
 
-                <fieldset class="form-group mt-5">
+                <fieldset onChange={this.handleChange}>
                   <legend class="lead">Do you have a budget?</legend>
                   <div class="row ml-2">
                     <div class="col-sm-6">
-                      <app-form type="radio" selection="$5-10k" value="5k" />
-                      <app-form type="radio" selection="$10k-25k" value="10k" />
-                      <app-form type="radio" selection="$25-50k" value="25k" />
-                      <app-form type="radio" selection="$50-75k" value="50k" />
+                      <app-radio name="budget" value="5K-10K" label="5K-10K" />
+                      <app-radio
+                        name="budget"
+                        value="10K-25K"
+                        label="10K-25K"
+                      />
+                      <app-radio
+                        name="budget"
+                        value="25K-50K"
+                        label="25K-50K"
+                      />
+                      <app-radio
+                        name="budget"
+                        value="50K-75K"
+                        label="50K-75K"
+                      />
                     </div>
                     <div class="col-sm-6">
-                      <app-form type="radio" selection="$75-100k" value="75k" />
-                      <app-form
-                        type="radio"
-                        selection="$100-200k"
-                        value="100k"
+                      <app-radio
+                        name="budget"
+                        value="75K-100K"
+                        label="75K-100K"
                       />
-                      <app-form type="radio" selection="$200k+" value="200k" />
-                      <app-form
-                        type="radio"
-                        selection="Unsure"
-                        value="unsure"
+                      <app-radio
+                        name="budget"
+                        value="100K-200K"
+                        label="100K-200K"
                       />
+                      <app-radio name="budget" value="200K" label="200K" />
+                      <app-radio name="budget" value="Unsure" label="Unsure" />
                     </div>
                   </div>
                 </fieldset>
-
-                <header class="lead">How did you hear about OpenForge?</header>
-                <app-form type="input" inputType="text" />
                 <button type="submit" class="btn btn-primary">
                   Send
                 </button>
