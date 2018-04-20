@@ -36,33 +36,42 @@ export class AppMembers {
                 class="col align-self-center text-center"
                 style={{ fontSize: '2em' }}
               >
-                <a
-                  href={`mailto:${member.mail}`}
-                  target="_blank"
-                  style={{ color: member.color }}
-                >
-                  <i class="fa fa-envelope-square pr-3" aria-hidden="true" />
-                </a>
+                {/* If we have an email account */}
+                {!member.mail ? null : (
+                  <a
+                    href={`mailto:${member.mail}`}
+                    target="_blank"
+                    style={{ color: member.color }}
+                  >
+                    <i class="fa fa-envelope-square pr-3" aria-hidden="true" />
+                  </a>
+                )}
 
-                <a
-                  href={`${member.twitter}`}
-                  target="_blank"
-                  style={{ color: member.color }}
-                >
-                  <i
-                    class="fa fa-twitter-square pr-3"
-                    aria-hidden="true"
-                    link-url={`${member.twitter}`}
-                  />
-                </a>
+                {/* If we have a twitter account */}
+                {!member.twitter ? null : (
+                  <a
+                    href={member.twitter}
+                    target="_blank"
+                    style={{ color: member.color }}
+                  >
+                    <i
+                      class="fa fa-twitter-square pr-3"
+                      aria-hidden="true"
+                      link-url={member.twitter}
+                    />
+                  </a>
+                )}
 
-                <a
-                  href={`${member.github}`}
-                  target="_blank"
-                  style={{ color: member.color }}
-                >
-                  <i class="fab fa-github-square pr-3" aria-hidden="true" />
-                </a>
+                {/* If we have a github account */}
+                {!member.github ? null : (
+                  <a
+                    href={member.github}
+                    target="_blank"
+                    style={{ color: member.color }}
+                  >
+                    <i class="fa fa-github-square pr-3" aria-hidden="true" />
+                  </a>
+                )}
               </div>
             </div>
           </div>

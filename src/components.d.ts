@@ -150,6 +150,35 @@ declare global {
 
 
 declare global {
+  interface HTMLAppMembersElement extends HTMLStencilElement {
+    'match': MatchResults;
+    'members': any[];
+  }
+  var HTMLAppMembersElement: {
+    prototype: HTMLAppMembersElement;
+    new (): HTMLAppMembersElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-members': HTMLAppMembersElement;
+  }
+  interface ElementTagNameMap {
+    'app-members': HTMLAppMembersElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-members': JSXElements.AppMembersAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppMembersAttributes extends HTMLAttributes {
+      'match'?: MatchResults;
+      'members'?: any[];
+    }
+  }
+}
+
+
+declare global {
   interface HTMLContentGraphicElement extends HTMLStencilElement {
     'imgUrl': string;
     'match': MatchResults;
