@@ -88,6 +88,7 @@ declare global {
 declare global {
   interface HTMLAppHeaderElement extends HTMLStencilElement {
     'backgroundUrl': string;
+    'hideButton': boolean;
     'linkUrl': string;
     'match': MatchResults;
   }
@@ -109,6 +110,7 @@ declare global {
   namespace JSXElements {
     export interface AppHeaderAttributes extends HTMLAttributes {
       'backgroundUrl'?: string;
+      'hideButton'?: boolean;
       'linkUrl'?: string;
       'match'?: MatchResults;
     }

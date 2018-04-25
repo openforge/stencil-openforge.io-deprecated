@@ -38,10 +38,12 @@ export class AppHeader {
 
         <slot name="subheader" />
 
-        <a class="btn btn-primary btn-arrow" onClick={this.scrollIntoView}>
-          <i class="fa fa-arrow-down" aria-hidden="true" />
-          <span class="sr-only">Scroll to content</span>
-        </a>
+        {this.hideButton ? null : (
+          <a class="btn btn-primary btn-arrow" onClick={this.scrollIntoView}>
+            <i class="fa fa-arrow-down" aria-hidden="true" />
+            <span class="sr-only">Scroll to content</span>
+          </a>
+        )}
       </header>
     );
   }
