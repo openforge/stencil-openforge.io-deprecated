@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Listen } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
@@ -7,26 +7,36 @@ import { MatchResults } from '@stencil/router';
 })
 export class AppContact {
   @Prop() match: MatchResults;
-  @State() value: string;
-  @State() budget: any;
-  @State() service: any;
+  @State() formSubmitted = false;
+
+  @State() formSubmitting = false;
+
+  formValues: {
+    name: string;
+    email: string;
+    phone: string;
+    message: string;
+    desiredService: string;
+    budget: string;
+  };
+
+  componentDidLoad() {
+    this.resetFormValues();
+  }
+
+  @Listen('check')
+  @Listen('valueChange')
+  valueChangeHandler(event) {
+    const { field, value } = event.detail;
+    this.formValues[field] = value;
+  }
 
   async handleSubmit(e) {
     e.preventDefault();
 
-    const formData = {
-      name: e.target[0].value,
-      email: e.target[1].value,
-      phone: e.target[2].value,
-      message: e.target[3].value,
-      desireService: this.service.value,
-      budget: this.budget.value,
-    };
-
-    console.log(formData);
-
     try {
-      const response = await fetch(
+      this.formSubmitting = true;
+      await fetch(
         'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
         {
           method: 'post',
@@ -34,21 +44,43 @@ export class AppContact {
           headers: {
             'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(this.formValues),
         }
       );
 
-      console.log('response', response);
-
       e.target.reset();
-      return response;
-    } catch {
-      console.log('Error');
+      this.resetFormValues();
+
+      this.formSubmitting = false;
+      this.formSubmitted = true;
+    } catch (error) {
+      console.log('Error', error);
     }
   }
 
-  handleChange(event) {
-    this.value = event.target.value;
+  renderRadioColumns(name: string, choices: string[]) {
+    const columns = [];
+    let columnItems = [];
+
+    choices.forEach(choice => {
+      const item = (
+        <app-radio name={name} value={choice} label={choice} required={true} />
+      );
+
+      columnItems.push(item);
+
+      if (columnItems.length >= 4) {
+        const column = <div class="col-sm-6">{columnItems}</div>;
+        columns.push(column);
+
+        columnItems = [];
+      }
+    });
+
+    const column = <div class="col-sm-6">{columnItems}</div>;
+    columns.push(column);
+
+    return columns;
   }
 
   render() {
@@ -75,114 +107,99 @@ export class AppContact {
                 goals!
               </p>
 
-              <form onSubmit={this.handleSubmit} id="contact-form">
+              <form onSubmit={this.handleSubmit.bind(this)}>
                 <app-input
+                  name="name"
                   label="Full Name"
                   type="text"
-                  onChange={this.handleChange}
+                  required={true}
                 />
                 <app-input
+                  name="email"
                   label="E-mail"
                   type="email"
-                  onChange={this.handleChange}
+                  required={true}
                 />
                 <app-input
+                  name="phone"
                   label="Phone"
-                  type="number"
-                  onChange={this.handleChange}
+                  type="tel"
+                  required={true}
                 />
                 <app-input
+                  name="message"
                   type="text"
                   label="How did you hear about OpenForge?"
-                  onChange={this.handleChange}
                 />
 
-                <fieldset onChange={this.handleChange}>
+                <fieldset>
                   <legend class="lead">How can we help you?</legend>
                   <div class="row ml-2">
-                    <div class="col-sm-6">
-                      <app-radio
-                        name="service"
-                        value="App Development"
-                        label="App Development"
-                      />
-                      <app-radio
-                        name="service"
-                        value="Web Development"
-                        label="Web Development"
-                      />
-                      <app-radio
-                        name="service"
-                        value="UI/UX Design"
-                        label="UI/UX Design"
-                      />
-                      <app-radio
-                        name="service"
-                        value="Graphic Design"
-                        label="Graphic Design"
-                      />
-                    </div>
-                    <div class="col-sm-6">
-                      <app-radio
-                        name="service"
-                        value="Consulting"
-                        label="Consulting"
-                      />
-                      <app-radio
-                        name="service"
-                        value="CTO as a service"
-                        label="CTO as a service"
-                      />
-                      <app-radio name="service" value="Unsure" label="Unsure" />
-                    </div>
+                    {this.renderRadioColumns(
+                      'desiredService',
+                      radioChoices.desiredService
+                    )}
                   </div>
                 </fieldset>
 
-                <fieldset onChange={this.handleChange}>
+                <fieldset>
                   <legend class="lead">Do you have a budget?</legend>
                   <div class="row ml-2">
-                    <div class="col-sm-6">
-                      <app-radio name="budget" value="5K-10K" label="5K-10K" />
-                      <app-radio
-                        name="budget"
-                        value="10K-25K"
-                        label="10K-25K"
-                      />
-                      <app-radio
-                        name="budget"
-                        value="25K-50K"
-                        label="25K-50K"
-                      />
-                      <app-radio
-                        name="budget"
-                        value="50K-75K"
-                        label="50K-75K"
-                      />
-                    </div>
-                    <div class="col-sm-6">
-                      <app-radio
-                        name="budget"
-                        value="75K-100K"
-                        label="75K-100K"
-                      />
-                      <app-radio
-                        name="budget"
-                        value="100K-200K"
-                        label="100K-200K"
-                      />
-                      <app-radio name="budget" value="200K" label="200K" />
-                      <app-radio name="budget" value="Unsure" label="Unsure" />
-                    </div>
+                    {this.renderRadioColumns('budget', radioChoices.budget)}
                   </div>
                 </fieldset>
-                <button type="submit" class="btn btn-primary">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  disabled={this.formSubmitting}
+                >
                   Send
                 </button>
               </form>
             </div>
+
+            {!this.formSubmitted ? null : (
+              <div class="alert alert-success" role="alert">
+                Thank you for reaching out! we'll get back to you within 24
+                hours!
+              </div>
+            )}
           </div>
         </section>
       </div>
     );
   }
+
+  private resetFormValues() {
+    this.formValues = {
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+      desiredService: '',
+      budget: '',
+    };
+  }
 }
+
+const radioChoices = {
+  desiredService: [
+    'App Development',
+    'Web Development',
+    'UI/UX Design',
+    'Graphic Design',
+    'Consulting',
+    'CTO as a service',
+    'Unsure',
+  ],
+  budget: [
+    '5K-10K',
+    '10K-25K',
+    '25K-50K',
+    '50K-75K',
+    '75K-100K',
+    '100K-200K',
+    '200K',
+    'Unsure',
+  ],
+};
