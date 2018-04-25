@@ -1,6 +1,9 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
 import { ActiveRouter, RouterHistory, LocationSegments } from '@stencil/router';
 
+import { polyfill } from 'smoothscroll-polyfill';
+polyfill();
+
 @Component({
   tag: 'open-forge-app',
   styleUrl: 'open-forge-app.scss',

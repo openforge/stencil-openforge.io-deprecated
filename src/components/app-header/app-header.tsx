@@ -9,6 +9,24 @@ export class AppHeader {
   @Prop() match: MatchResults;
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
+  @Prop() hideButton: boolean = false;
+
+  scrollElement;
+
+  componentDidLoad() {
+    if (this.hideButton) {
+      const button = document.getElementsByClassName(
+        'btn btn-primary btn-arrow'
+      );
+      button['0'].style.visibility = 'hidden';
+    }
+
+    this.scrollElement = document.querySelector(this.linkUrl);
+  }
+
+  scrollIntoView = () => {
+    this.scrollElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   render() {
     return (
@@ -20,10 +38,12 @@ export class AppHeader {
 
         <slot name="subheader" />
 
-        <a class="btn btn-primary btn-arrow" href={this.linkUrl}>
-          <i class="fa fa-arrow-down" aria-hidden="true" />
-          <span class="sr-only">Scroll to content</span>
-        </a>
+        {this.hideButton ? null : (
+          <a class="btn btn-primary btn-arrow" onClick={this.scrollIntoView}>
+            <i class="fa fa-arrow-down" aria-hidden="true" />
+            <span class="sr-only">Scroll to content</span>
+          </a>
+        )}
       </header>
     );
   }

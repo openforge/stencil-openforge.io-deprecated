@@ -20,10 +20,12 @@
   "dependencies": {
     "@stencil/core": "^0.7.10",
     "@stencil/router": "latest",
+    "@types/smoothscroll-polyfill": "^0.3.0",
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
     "popper": "^1.0.1",
-    "popper.js": "^1.14.1"
+    "popper.js": "^1.14.1",
+    "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
