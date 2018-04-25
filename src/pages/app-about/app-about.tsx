@@ -24,6 +24,7 @@ export class AppAbout {
       color: '#638593',
       title: 'Software Engineer',
       mail: 'khaled@openforge.io',
+      twitter: 'https://twitter.com/KhalShaa',
       github: 'https://github.com/kshaaban-',
     },
     {
@@ -140,10 +141,9 @@ export class AppAbout {
         </section>
 
         {/* diversity */}
-        {/* TODO: figure out how to make this scroll to sr content - not sure */}
         <section id="diversity">
           <app-header
-            link-url="#diversity-content"
+            link-url="#team"
             background-url="assets/bg-header-collaboration.jpg"
           >
             <h2 slot="header">
