@@ -2,6 +2,9 @@ import { Component, Listen, Prop } from '@stencil/core';
 import { ActiveRouter, RouterHistory, LocationSegments } from '@stencil/router';
 
 import { polyfill } from 'smoothscroll-polyfill';
+
+import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
+
 polyfill();
 
 @Component({
@@ -18,14 +21,17 @@ export class OpenForgeApp {
   isScrolled = false;
 
   componentDidLoad() {
+    gtag('js', new Date());
+
     this.navbarEl = document.querySelector('nav.navbar');
     this.mainEl = document.querySelector('main');
 
     const history: RouterHistory = this.activeRouter.get('history');
-    console.log(history);
+    gtag('config', GA_TRACKING_ID, { page_path: history.location.pathname });
 
     this.unsubscribe = history.listen((segments: LocationSegments) => {
       console.log(segments);
+      gtag('config', GA_TRACKING_ID, { page_path: segments.pathname });
     });
   }
 
