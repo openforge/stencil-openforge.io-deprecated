@@ -123,6 +123,7 @@ declare global {
     'backgroundUrl': string;
     'linkUrl': string;
     'match': MatchResults;
+    'textNoWrap': boolean;
   }
   var HTMLAppHeroElement: {
     prototype: HTMLAppHeroElement;
@@ -144,6 +145,41 @@ declare global {
       'backgroundUrl'?: string;
       'linkUrl'?: string;
       'match'?: MatchResults;
+      'textNoWrap'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLAppInputElement extends HTMLStencilElement {
+    'label': string;
+    'name': string;
+    'required': boolean;
+    'type': string;
+  }
+  var HTMLAppInputElement: {
+    prototype: HTMLAppInputElement;
+    new (): HTMLAppInputElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-input': HTMLAppInputElement;
+  }
+  interface ElementTagNameMap {
+    'app-input': HTMLAppInputElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-input': JSXElements.AppInputAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppInputAttributes extends HTMLAttributes {
+      'label'?: string;
+      'name'?: string;
+      'onValueChange'?: (event: CustomEvent) => void;
+      'required'?: boolean;
+      'type'?: string;
     }
   }
 }
@@ -173,6 +209,40 @@ declare global {
     export interface AppMembersAttributes extends HTMLAttributes {
       'match'?: MatchResults;
       'members'?: any[];
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLAppRadioElement extends HTMLStencilElement {
+    'label': string;
+    'name': string;
+    'required': boolean;
+    'value': string;
+  }
+  var HTMLAppRadioElement: {
+    prototype: HTMLAppRadioElement;
+    new (): HTMLAppRadioElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-radio': HTMLAppRadioElement;
+  }
+  interface ElementTagNameMap {
+    'app-radio': HTMLAppRadioElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-radio': JSXElements.AppRadioAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppRadioAttributes extends HTMLAttributes {
+      'label'?: string;
+      'name'?: string;
+      'onValueChange'?: (event: CustomEvent) => void;
+      'required'?: boolean;
+      'value'?: string;
     }
   }
 }
