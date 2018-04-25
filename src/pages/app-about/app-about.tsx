@@ -8,6 +8,86 @@ import { MatchResults } from '@stencil/router';
 export class AppAbout {
   @Prop() match: MatchResults;
 
+  members = [
+    {
+      name: 'Jedi Weller',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/jedi.jpg',
+      color: '#fa8928',
+      title: 'Founder and Head of Technology',
+      mail: 'jedi@openforge.io',
+      twitter: 'https://twitter.com/jedihacks',
+      github: 'https://github.com/jedihacks',
+    },
+    {
+      name: 'Khaled Shaaban',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/khaled-1.jpg',
+      color: '#638593',
+      title: 'Software Engineer',
+      mail: 'khaled@openforge.io',
+      twitter: 'https://twitter.com/KhalShaa',
+      github: 'https://github.com/kshaaban-',
+    },
+    {
+      name: 'Elizabeth Cottrell',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/elizabeth-3.jpg',
+      color: '#d8aa0c',
+      title: 'Front End Developer',
+      mail: 'elizabeth@openforge.io',
+      twitter: 'https://twitter.com/_elizacottrell',
+      github: 'https://github.com/LizCottrell',
+    },
+    {
+      name: 'Mohammad Alfatih',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/mohammad-1.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: 'mo@jawami.com',
+      twitter: 'https://twitter.com/webdevffw',
+      github: 'https://github.com/Mohammad-alfatih',
+    },
+    {
+      name: 'Meredith Alcorn',
+      image: 'http://webjunto.com/wp-content/uploads/2016/09/meredith.jpg',
+      color: '#638593',
+      title: 'Software Engineer',
+      mail: 'meredith@openforge.io',
+      github: 'https://github.com/mmalcorn',
+    },
+    {
+      name: 'Joni Leho',
+      image: 'http://webjunto.com/wp-content/uploads/2016/09/joni.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: 'joni@openforge.io',
+      twitter: 'https://twitter.com/lehto_joni',
+    },
+    {
+      name: 'Fernando Del Olmo',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/fernando-1.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: 'fernando@openforge.io',
+      twitter: 'https://twitter.com/fdom92',
+      github: 'https://github.com/Fdom92',
+    },
+    {
+      name: 'William Holloran',
+      image: 'http://webjunto.com/wp-content/uploads/2018/03/billy.jpg',
+      color: '#638593',
+      title: 'Project Manager / QA Engineer',
+      mail: 'william@openforge.io',
+    },
+    {
+      name: 'Luis Chacon',
+      image: 'http://webjunto.com/wp-content/uploads/2018/01/luis-294.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: 'luis@openforge.io',
+      twitter: 'https://twitter.com/luisksc89',
+      github: 'https://github.com/luiskcs89',
+    },
+  ];
+
   render() {
     return (
       <div>
@@ -57,6 +137,39 @@ export class AppAbout {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* diversity */}
+        <section id="diversity">
+          <app-header
+            link-url="#team"
+            background-url="assets/bg-header-collaboration.jpg"
+          >
+            <h2 slot="header">
+              <span class="small">Diversity Matters</span>
+              We Are Powered by Multiple Perspectives
+            </h2>
+            <p slot="subheader">
+              Our individual skills, backgrounds, and life experiences have
+              shaped us into the company that we are today. Maintaining a
+              diverse team helps us to perform better, attract top talent, and
+              make smarter decisions.
+            </p>
+          </app-header>
+        </section>
+
+        {/* team */}
+        <section id="team">
+          <div class="container">
+            <h4>
+              <div class="display-4 pb-3">Meet the Team</div>
+              There’s no doubt that our team is made up of brilliant and
+              talented individuals who are passionate about technology and
+              design thinking. Together we design, code, grow, and evolve.
+            </h4>
+
+            <app-members members={this.members} />
           </div>
         </section>
 
