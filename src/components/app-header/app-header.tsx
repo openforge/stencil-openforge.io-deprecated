@@ -1,12 +1,10 @@
 import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'app-header',
   styleUrl: 'app-header.scss',
 })
 export class AppHeader {
-  @Prop() match: MatchResults;
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
   @Prop() hideButton: boolean = false;

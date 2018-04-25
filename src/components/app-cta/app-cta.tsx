@@ -1,12 +1,10 @@
 import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'app-cta',
   styleUrl: 'app-cta.scss',
 })
 export class AppCta {
-  @Prop() match: MatchResults;
   @Prop() linkUrl: string;
 
   render() {

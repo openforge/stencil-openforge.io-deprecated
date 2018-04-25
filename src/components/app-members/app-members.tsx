@@ -1,12 +1,10 @@
 import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'app-members',
   styleUrl: 'app-members.scss',
 })
 export class AppMembers {
-  @Prop() match: MatchResults;
   @Prop() members: any[];
 
   render() {

@@ -1,12 +1,10 @@
-import { Component, Prop, State, Listen } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { Component, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-contact',
   styleUrl: 'app-contact.scss',
 })
 export class AppContact {
-  @Prop() match: MatchResults;
   @State() formSubmitted = false;
 
   @State() formSubmitting = false;

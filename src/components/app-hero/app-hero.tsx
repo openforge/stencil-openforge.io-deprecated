@@ -1,12 +1,10 @@
 import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'app-hero',
   styleUrl: 'app-hero.scss',
 })
 export class AppHero {
-  @Prop() match: MatchResults;
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
   @Prop() textNoWrap: boolean = false;

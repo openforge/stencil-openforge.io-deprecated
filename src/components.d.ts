@@ -25,15 +25,17 @@ declare global {
 
 import '@stencil/router';
 
-import {
-  MatchResults,
-} from '@stencil/router';
 
 declare global {
-  interface HTMLAppCtaElement extends HTMLStencilElement {
-    'linkUrl': string;
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppCta {
+      'linkUrl': string;
+    }
   }
+
+  interface HTMLAppCtaElement extends StencilComponents.AppCta, HTMLStencilElement {}
+
   var HTMLAppCtaElement: {
     prototype: HTMLAppCtaElement;
     new (): HTMLAppCtaElement;
@@ -52,16 +54,21 @@ declare global {
   namespace JSXElements {
     export interface AppCtaAttributes extends HTMLAttributes {
       'linkUrl'?: string;
-      'match'?: MatchResults;
     }
   }
 }
 
 
 declare global {
-  interface HTMLAppFooterElement extends HTMLStencilElement {
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppFooter {
+
+    }
   }
+
+  interface HTMLAppFooterElement extends StencilComponents.AppFooter, HTMLStencilElement {}
+
   var HTMLAppFooterElement: {
     prototype: HTMLAppFooterElement;
     new (): HTMLAppFooterElement;
@@ -79,19 +86,24 @@ declare global {
   }
   namespace JSXElements {
     export interface AppFooterAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
+
     }
   }
 }
 
 
 declare global {
-  interface HTMLAppHeaderElement extends HTMLStencilElement {
-    'backgroundUrl': string;
-    'hideButton': boolean;
-    'linkUrl': string;
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppHeader {
+      'backgroundUrl': string;
+      'hideButton': boolean;
+      'linkUrl': string;
+    }
   }
+
+  interface HTMLAppHeaderElement extends StencilComponents.AppHeader, HTMLStencilElement {}
+
   var HTMLAppHeaderElement: {
     prototype: HTMLAppHeaderElement;
     new (): HTMLAppHeaderElement;
@@ -112,19 +124,23 @@ declare global {
       'backgroundUrl'?: string;
       'hideButton'?: boolean;
       'linkUrl'?: string;
-      'match'?: MatchResults;
     }
   }
 }
 
 
 declare global {
-  interface HTMLAppHeroElement extends HTMLStencilElement {
-    'backgroundUrl': string;
-    'linkUrl': string;
-    'match': MatchResults;
-    'textNoWrap': boolean;
+
+  namespace StencilComponents {
+    interface AppHero {
+      'backgroundUrl': string;
+      'linkUrl': string;
+      'textNoWrap': boolean;
+    }
   }
+
+  interface HTMLAppHeroElement extends StencilComponents.AppHero, HTMLStencilElement {}
+
   var HTMLAppHeroElement: {
     prototype: HTMLAppHeroElement;
     new (): HTMLAppHeroElement;
@@ -144,7 +160,6 @@ declare global {
     export interface AppHeroAttributes extends HTMLAttributes {
       'backgroundUrl'?: string;
       'linkUrl'?: string;
-      'match'?: MatchResults;
       'textNoWrap'?: boolean;
     }
   }
@@ -152,12 +167,18 @@ declare global {
 
 
 declare global {
-  interface HTMLAppInputElement extends HTMLStencilElement {
-    'label': string;
-    'name': string;
-    'required': boolean;
-    'type': string;
+
+  namespace StencilComponents {
+    interface AppInput {
+      'label': string;
+      'name': string;
+      'required': boolean;
+      'type': string;
+    }
   }
+
+  interface HTMLAppInputElement extends StencilComponents.AppInput, HTMLStencilElement {}
+
   var HTMLAppInputElement: {
     prototype: HTMLAppInputElement;
     new (): HTMLAppInputElement;
@@ -186,10 +207,15 @@ declare global {
 
 
 declare global {
-  interface HTMLAppMembersElement extends HTMLStencilElement {
-    'match': MatchResults;
-    'members': any[];
+
+  namespace StencilComponents {
+    interface AppMembers {
+      'members': any[];
+    }
   }
+
+  interface HTMLAppMembersElement extends StencilComponents.AppMembers, HTMLStencilElement {}
+
   var HTMLAppMembersElement: {
     prototype: HTMLAppMembersElement;
     new (): HTMLAppMembersElement;
@@ -207,7 +233,6 @@ declare global {
   }
   namespace JSXElements {
     export interface AppMembersAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
       'members'?: any[];
     }
   }
@@ -215,12 +240,18 @@ declare global {
 
 
 declare global {
-  interface HTMLAppRadioElement extends HTMLStencilElement {
-    'label': string;
-    'name': string;
-    'required': boolean;
-    'value': string;
+
+  namespace StencilComponents {
+    interface AppRadio {
+      'label': string;
+      'name': string;
+      'required': boolean;
+      'value': string;
+    }
   }
+
+  interface HTMLAppRadioElement extends StencilComponents.AppRadio, HTMLStencilElement {}
+
   var HTMLAppRadioElement: {
     prototype: HTMLAppRadioElement;
     new (): HTMLAppRadioElement;
@@ -249,11 +280,16 @@ declare global {
 
 
 declare global {
-  interface HTMLContentGraphicElement extends HTMLStencilElement {
-    'imgUrl': string;
-    'match': MatchResults;
-    'reverse': boolean;
+
+  namespace StencilComponents {
+    interface ContentGraphic {
+      'imgUrl': string;
+      'reverse': boolean;
+    }
   }
+
+  interface HTMLContentGraphicElement extends StencilComponents.ContentGraphic, HTMLStencilElement {}
+
   var HTMLContentGraphicElement: {
     prototype: HTMLContentGraphicElement;
     new (): HTMLContentGraphicElement;
@@ -272,7 +308,6 @@ declare global {
   namespace JSXElements {
     export interface ContentGraphicAttributes extends HTMLAttributes {
       'imgUrl'?: string;
-      'match'?: MatchResults;
       'reverse'?: boolean;
     }
   }
@@ -280,9 +315,15 @@ declare global {
 
 
 declare global {
-  interface HTMLAppAboutElement extends HTMLStencilElement {
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppAbout {
+
+    }
   }
+
+  interface HTMLAppAboutElement extends StencilComponents.AppAbout, HTMLStencilElement {}
+
   var HTMLAppAboutElement: {
     prototype: HTMLAppAboutElement;
     new (): HTMLAppAboutElement;
@@ -300,16 +341,22 @@ declare global {
   }
   namespace JSXElements {
     export interface AppAboutAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
+
     }
   }
 }
 
 
 declare global {
-  interface HTMLAppContactElement extends HTMLStencilElement {
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppContact {
+
+    }
   }
+
+  interface HTMLAppContactElement extends StencilComponents.AppContact, HTMLStencilElement {}
+
   var HTMLAppContactElement: {
     prototype: HTMLAppContactElement;
     new (): HTMLAppContactElement;
@@ -327,16 +374,22 @@ declare global {
   }
   namespace JSXElements {
     export interface AppContactAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
+
     }
   }
 }
 
 
 declare global {
-  interface HTMLAppHomeElement extends HTMLStencilElement {
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppHome {
+
+    }
   }
+
+  interface HTMLAppHomeElement extends StencilComponents.AppHome, HTMLStencilElement {}
+
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
@@ -354,16 +407,22 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
+
     }
   }
 }
 
 
 declare global {
-  interface HTMLAppServicesElement extends HTMLStencilElement {
-    'match': MatchResults;
+
+  namespace StencilComponents {
+    interface AppServices {
+
+    }
   }
+
+  interface HTMLAppServicesElement extends StencilComponents.AppServices, HTMLStencilElement {}
+
   var HTMLAppServicesElement: {
     prototype: HTMLAppServicesElement;
     new (): HTMLAppServicesElement;
@@ -381,16 +440,22 @@ declare global {
   }
   namespace JSXElements {
     export interface AppServicesAttributes extends HTMLAttributes {
-      'match'?: MatchResults;
+
     }
   }
 }
 
 
 declare global {
-  interface HTMLOpenForgeAppElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface OpenForgeApp {
+
+    }
   }
+
+  interface HTMLOpenForgeAppElement extends StencilComponents.OpenForgeApp, HTMLStencilElement {}
+
   var HTMLOpenForgeAppElement: {
     prototype: HTMLOpenForgeAppElement;
     new (): HTMLOpenForgeAppElement;

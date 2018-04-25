@@ -1,13 +1,10 @@
-import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-footer',
   styleUrl: 'app-footer.scss',
 })
 export class AppFooter {
-  @Prop() match: MatchResults;
-
   render() {
     return (
       <footer>

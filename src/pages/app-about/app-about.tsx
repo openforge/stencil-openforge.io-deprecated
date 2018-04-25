@@ -1,13 +1,10 @@
-import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-  @Prop() match: MatchResults;
-
   members = [
     {
       name: 'Jedi Weller',

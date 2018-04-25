@@ -1,13 +1,10 @@
-import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop() match: MatchResults;
-
   render() {
     return (
       <div>
