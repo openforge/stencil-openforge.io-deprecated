@@ -82,7 +82,7 @@
       "npm run lint",
       "git add"
     ],
-    "src/**/*.{js,jsx,ts,tsx,css,scss,md}": [
+    "src/**/*.{js,jsx,ts,tsx,css,scss}": [
       "prettier --write",
       "git add"
     ]

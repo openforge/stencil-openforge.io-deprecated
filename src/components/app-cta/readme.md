@@ -2,13 +2,18 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 #### linkUrl
 
 string
 
+
 #### match
+
+
+
 
 ## Attributes
 
@@ -16,8 +21,13 @@ string
 
 string
 
+
 #### match
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*
