@@ -146,8 +146,21 @@ export class OpenForgeApp {
                     href="https://github.com/openforge"
                     target="_blank"
                   >
-                    Github
+                    GitHub
                   </a>
+                </li>
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
+                  <stencil-route-link
+                    url="/opportunities"
+                    anchorClass="nav-link"
+                    activeClass="active"
+                  >
+                    Opportunities
+                  </stencil-route-link>
                 </li>
               </ul>
             </div>
@@ -166,6 +179,11 @@ export class OpenForgeApp {
             <stencil-route
               url="/contact"
               component="app-contact"
+              exact={true}
+            />
+            <stencil-route
+              url="/opportunities"
+              component="app-opportunities"
               exact={true}
             />
           </stencil-router>
