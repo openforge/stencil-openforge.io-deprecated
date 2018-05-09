@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-opportunities',
@@ -14,10 +14,13 @@ export class AppOpportunities {
   };
 
   @State() isDisabled: boolean = true;
-  @State() requestingInterview: boolean;
+  @State() canRequestInterview: boolean;
+  @Event() valueChange: EventEmitter;
 
-  handleChange(e) {
-    this.skills[e.target.name] = parseFloat(e.target.value);
+  @Listen('valueChange')
+  valueChangeHandler(event) {
+    const { field, value } = event.detail;
+    this.skills[field] = value;
 
     if (
       this.skills.angular > 85 &&
@@ -34,7 +37,7 @@ export class AppOpportunities {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.requestingInterview = true;
+    this.canRequestInterview = true;
   }
 
   render() {
@@ -112,103 +115,38 @@ export class AppOpportunities {
               </div>
             </div>
 
-            <form
-              class="jumbotron mt-5"
-              onSubmit={this.handleSubmit.bind(this)}
-            >
-              <div class="row">
-                <div class="col-sm-6">
-                  <h2>Are you prepared?</h2>
-                  <p>
-                    We’re looking for someone who’s ready to hit the ground
-                    running - someone who wants to turn big ideas into
-                    realities. But first, we need to make sure you’ve got the
-                    skills to make it happen.
-                  </p>
-                </div>
-                <div class="col-sm-6 md-auto">
-                  <img
-                    src="assets/bg-header-person-typing.jpg"
-                    class="img-fluid"
-                    alt="Responsive image"
-                  />
-                </div>
-              </div>
+            {!this.canRequestInterview ? (
+              <form
+                class="jumbotron mt-5"
+                onSubmit={this.handleSubmit.bind(this)}
+              >
+                <app-slider name="angular" label="Angular" />
+                <app-slider name="node" label="Node" />
+                <app-slider name="ionic" label="Ionic" />
+                <app-slider name="html" label="HTML" />
+                <app-slider name="css" label="CSS" />
 
-              <h3 class="font-weight-bold pt-5">
-                {' '}
-                Move the sliders to the position that aligns with your
-                capabilities to continue.
-              </h3>
-              <div class="form-group text-center">
-                <label>Angular</label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                  name="angular"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
-              <div class="form-group text-center">
-                <label>Node</label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                  name="node"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
-              <div class="form-group text-center">
-                <label>Ionic</label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                  name="ionic"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
-              <div class="form-group text-center">
-                <label>HTML</label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                  name="html"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
-              <div class="form-group text-center">
-                <label>CSS</label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                  name="css"
-                  onChange={this.handleChange.bind(this)}
-                />
-              </div>
-              <div class="form-group text-center mt-5">
-                <h4>
+                <h4 class="form-group text-center">
                   {!this.isDisabled ? (
                     <p>You're all set! Let's get started.</p>
                   ) : (
                     <p>Not quite...keep sliding!</p>
                   )}
                 </h4>
-              </div>
-              <div class="form-group text-center">
-                <button
-                  type="submit"
-                  disabled={this.isDisabled}
-                  id="requestInterview"
-                >
-                  Request an interview
-                </button>
-              </div>
-            </form>
+
+                <div class="form-group text-center">
+                  <button
+                    type="submit"
+                    disabled={this.isDisabled}
+                    id="requestInterview"
+                  >
+                    Request an interview
+                  </button>
+                </div>
+              </form>
+            ) : (
+              <div>Upload resume component will go here</div>
+            )}
           </div>
         </section>
       </div>
