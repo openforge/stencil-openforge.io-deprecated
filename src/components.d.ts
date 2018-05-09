@@ -282,6 +282,42 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppSlider {
+      'label': string;
+      'name': string;
+    }
+  }
+
+  interface HTMLAppSliderElement extends StencilComponents.AppSlider, HTMLStencilElement {}
+
+  var HTMLAppSliderElement: {
+    prototype: HTMLAppSliderElement;
+    new (): HTMLAppSliderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-slider': HTMLAppSliderElement;
+  }
+  interface ElementTagNameMap {
+    'app-slider': HTMLAppSliderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-slider': JSXElements.AppSliderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppSliderAttributes extends HTMLAttributes {
+      'label'?: string;
+      'name'?: string;
+      'onValueChange'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ContentGraphicLg {
       'imgUrl': string;
       'reverse': boolean;
@@ -475,7 +511,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
-
+      'onValueChange'?: (event: CustomEvent) => void;
     }
   }
 }
