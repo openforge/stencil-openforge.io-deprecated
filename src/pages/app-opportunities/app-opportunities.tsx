@@ -40,7 +40,8 @@ export class AppOpportunities {
   render() {
     return (
       <div>
-        <app-hero background-url="assets/bg-hero-wireframes-pencils.jpg">
+        {/* header - hero */}
+        <app-hero background-url="assets/bg-hero-mountain.jpg">
           <span slot="header">Look for a new adventure?</span>
           <span slot="body">
             OpenForge is hiring two mid-level developers. Want to know if you're
@@ -48,70 +49,40 @@ export class AppOpportunities {
           </span>
         </app-hero>
 
-        <section id="opportunities">
+        {/* section - intro */}
+        <section id="intro">
           <div class="container">
-            <div class="row">
-              <div class="col-sm-6">
-                <h2>
-                  From our work to our interview process, we break the norm.
-                </h2>
-              </div>
-              <div class="col-sm-6 md-auto">
-                <img
-                  src="assets/bg-header-person-typing.jpg"
-                  class="img-fluid"
-                  alt="Responsive image"
-                />
-              </div>
-            </div>
+            <content-graphic-lg
+              img-url="assets/graphic-opportunities-suck.jpg"
+              reverse={true}
+            >
+              <h3 slot="header">
+                From our work to our interview process, we break the norm.
+              </h3>
+            </content-graphic-lg>
 
-            <div class="row">
-              <div class="col-sm-6 md-auto">
-                <img
-                  src="assets/bg-header-person-typing.jpg"
-                  class="img-fluid"
-                  alt="Responsive image"
-                />
-              </div>
+            <content-graphic-lg img-url="assets/graphic-opportunities-codemaster.jpg">
+              <h3 slot="header">
+                <span>Instead of asking you a million questions,</span> we'd
+                rather get to know you another way: by putting you to the test.
+              </h3>
+            </content-graphic-lg>
 
-              <div class="col-sm-6">
-                <h2>Instead of asking you a million questions,</h2>
-                <p>
-                  we'd rather get to know you another way: by putting you to the
-                  test.
-                </p>
-              </div>
-            </div>
+            <h2>The Challenge</h2>
+            <p>
+              should you choose to accept, will be to develop a 3-page app in
+              ionic framework
+            </p>
 
-            <div class="row">
-              <div class="col-sm-12">
-                <h2>The Challenge</h2>
-                <p>
-                  should you choose to accept, will be to develop a 3-page app
-                  in ionic framework
-                </p>
-                <img
-                  src="assets/bg-header-person-typing.jpg"
-                  class="img-fluid"
-                  alt="Responsive image"
-                />
-              </div>
-            </div>
+            <content-graphic-lg img-url="assets/graphic-opportunities-ionic.jpg">
+              <h3 slot="header">Why? Because we value our partnerships</h3>
+            </content-graphic-lg>
+          </div>
+        </section>
 
-            <div class="row mt-5">
-              <div class="col-sm-6 md-auto">
-                <img
-                  src="assets/bg-header-person-typing.jpg"
-                  class="img-fluid"
-                  alt="Responsive image"
-                />
-              </div>
-
-              <div class="col-sm-6">
-                <h2>Why? Because we value our partnerships</h2>
-              </div>
-            </div>
-
+        {/* section - form */}
+        <section id="intro">
+          <div class="container">
             <form
               class="jumbotron mt-5"
               onSubmit={this.handleSubmit.bind(this)}
@@ -120,7 +91,7 @@ export class AppOpportunities {
                 <div class="col-sm-6">
                   <h2>Are you prepared?</h2>
                   <p>
-                    We’re looking for someone who’s ready to hit the ground
+                    We're looking for someone who’s ready to hit the ground
                     running - someone who wants to turn big ideas into
                     realities. But first, we need to make sure you’ve got the
                     skills to make it happen.
@@ -128,7 +99,7 @@ export class AppOpportunities {
                 </div>
                 <div class="col-sm-6 md-auto">
                   <img
-                    src="assets/bg-header-person-typing.jpg"
+                    src="assets/graphic-opportunities-sword.png"
                     class="img-fluid"
                     alt="Responsive image"
                   />
@@ -141,14 +112,16 @@ export class AppOpportunities {
                 capabilities to continue.
               </h3>
               <div class="form-group text-center">
-                <label>Angular</label>
-                <input
-                  type="range"
-                  class="form-control-range"
-                  id="formControlRange"
-                  name="angular"
-                  onChange={this.handleChange.bind(this)}
-                />
+                <label>
+                  Angular
+                  <input
+                    type="range"
+                    class="form-control-range"
+                    id="formControlRange"
+                    name="angular"
+                    onChange={this.handleChange.bind(this)}
+                  />
+                </label>
               </div>
               <div class="form-group text-center">
                 <label>Node</label>

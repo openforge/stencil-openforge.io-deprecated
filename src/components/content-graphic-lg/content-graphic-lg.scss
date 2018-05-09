@@ -1,0 +1,19 @@
+.content-graphic-lg {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+  }
+
+  img {
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 30px;
+      max-width: 250px;
+      width: 50vw;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
