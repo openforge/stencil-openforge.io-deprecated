@@ -416,6 +416,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppOpportunities {
+
+    }
+  }
+
+  interface HTMLAppOpportunitiesElement extends StencilComponents.AppOpportunities, HTMLStencilElement {}
+
+  var HTMLAppOpportunitiesElement: {
+    prototype: HTMLAppOpportunitiesElement;
+    new (): HTMLAppOpportunitiesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-opportunities': HTMLAppOpportunitiesElement;
+  }
+  interface ElementTagNameMap {
+    'app-opportunities': HTMLAppOpportunitiesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-opportunities': JSXElements.AppOpportunitiesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOpportunitiesAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppServices {
 
     }
