@@ -1,14 +1,66 @@
-// approach
-#opportunities {
+#intro {
   padding: 7rem 0;
   @include media-breakpoint-down(sm) {
     padding: 3rem 0;
   }
 
-  h2 {
-    margin: 0 auto 2rem;
-    @include media-breakpoint-down(sm) {
-      margin: 0 auto 3rem;
+  .challenge {
+    background: linear-gradient(to bottom, $orange 0%, $orange-dark 100%);
+    margin: 5rem 0;
+
+    h2 {
+      color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
     }
+
+    p {
+      color: white;
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      -webkit-padding-start: 20px;
+      li {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .intro {
+      padding: 6rem 0 4rem;
+    }
+
+    .images {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+#apply {
+  background: $gray-100;
+  padding: 7rem 0;
+
+  h2 {
+    color: $orange-dark;
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  form {
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
   }
 }
