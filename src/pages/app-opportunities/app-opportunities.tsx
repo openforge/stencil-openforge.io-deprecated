@@ -6,7 +6,7 @@ import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
 })
 export class AppOpportunities {
   @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean;
+  @State() canRequestInterview: boolean = true;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
 
@@ -16,6 +16,8 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
+    resume: any;
+    cv: string;
     name: string;
     email: string;
     phone: string;
@@ -35,11 +37,11 @@ export class AppOpportunities {
     this.formValues[field] = value;
 
     if (
-      this.formValues.angular > 85 &&
-      this.formValues.node > 85 &&
-      this.formValues.ionic > 85 &&
-      this.formValues.html > 85 &&
-      this.formValues.css > 85
+      this.formValues.angular > 60 &&
+      this.formValues.node > 60 &&
+      this.formValues.ionic > 60 &&
+      this.formValues.html > 60 &&
+      this.formValues.css > 60
     ) {
       this.isDisabled = false;
     } else {
@@ -53,28 +55,29 @@ export class AppOpportunities {
   }
 
   handleFile(e) {
-    const file = e.target.files;
-    this.formData.append('file', file[0]);
+    this.formValues[e.target.name] = e.target.value;
   }
 
   async handleSubmit(e) {
     e.preventDefault();
 
     for (const value in this.formValues) {
-      this.formData.append('formValues', this.formValues[value]);
+      this.formData.append(value, this.formValues[value]);
     }
 
     try {
       this.formSubmitting = true;
-      await fetch('', {
-        method: 'POST',
-        headers: {
-          Accept:
-            'application/json, application/xml, text/play, text/html, *.*',
-          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-        },
-        body: this.formData,
-      });
+      await fetch(
+        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeOpportunities',
+        {
+          method: 'post',
+          mode: 'no-cors',
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          },
+          body: this.formData,
+        }
+      );
 
       e.target.reset();
       this.resetFormValues();
@@ -201,7 +204,7 @@ export class AppOpportunities {
         <section id="apply">
           <div class="container">
             {!this.canRequestInterview ? (
-              <form onSubmit={this.handleSubmit.bind(this)}>
+              <form onSubmit={this.handleSliders.bind(this)}>
                 <h2>Show us your skills</h2>
                 <p>
                   Move the sliders to the position that aligns with your
@@ -237,9 +240,19 @@ export class AppOpportunities {
             ) : (
               <form onSubmit={this.handleSubmit.bind(this)}>
                 <div class="form-group">
-                  <textarea placeholder="Hello, I would like" />
+                  <textarea
+                    placeholder="Hello, I would like"
+                    name="cv"
+                    onBlur={this.handleFile.bind(this)}
+                    required={true}
+                  />
                   <div class="form-group text-left">
-                    <input type="file" onInput={this.handleFile.bind(this)} />
+                    <input
+                      type="file"
+                      name="resume"
+                      onInput={this.handleFile.bind(this)}
+                      required={true}
+                    />
                   </div>
                   <app-input
                     name="name"
@@ -266,6 +279,7 @@ export class AppOpportunities {
                     required={true}
                   />
                 </div>
+
                 <div class="form-group text-left">
                   <button type="submit">Submit</button>
                 </div>
@@ -284,10 +298,14 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
+      resume: '',
+      cv: '',
       name: '',
       email: '',
       phone: '',
       github: '',
     };
+
+    this.formData = new FormData();
   }
 }
