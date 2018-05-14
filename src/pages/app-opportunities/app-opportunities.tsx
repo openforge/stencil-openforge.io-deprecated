@@ -91,10 +91,12 @@ export class AppOpportunities {
       <div>
         {/* header - hero */}
         <app-hero background-url="assets/bg-hero-mountain.jpg">
-          <span slot="header">Looking for a new adventure?</span>
+          <span slot="header">
+            OpenForge is hiring two mid-level developers.
+          </span>
           <span slot="body">
-            OpenForge is hiring two mid-level developers. Want to know if you're
-            the right fit for the team? Keep reading!
+            Looking for a new adventure? Want to know if you're the right fit
+            for the team? Keep reading!
           </span>
         </app-hero>
 
@@ -206,6 +208,11 @@ export class AppOpportunities {
                   capabilities to continue.
                 </p>
 
+                <div class="labels">
+                  <p>N00b</p>
+                  <p>Expert</p>
+                </div>
+
                 <app-slider name="angular" label="Angular" />
                 <app-slider name="node" label="Node" />
                 <app-slider name="ionic" label="Ionic" />
@@ -219,6 +226,7 @@ export class AppOpportunities {
                 )}
 
                 <button
+                  class="btn btn-primary"
                   type="submit"
                   disabled={this.isDisabled}
                   id="requestInterview"

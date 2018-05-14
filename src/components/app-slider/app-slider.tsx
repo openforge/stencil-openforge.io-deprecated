@@ -18,7 +18,7 @@ export class AppSlider {
 
   render() {
     return (
-      <div class="form-group text-center">
+      <div class="slider form-group text-center">
         <label>{this.label}</label>
         <input
           type="range"
