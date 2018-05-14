@@ -50,7 +50,7 @@
   padding: 7rem 0;
 
   h2 {
-    color: $orange-dark;
+    color: $gray-800;
     font-size: 3rem;
     font-weight: bold;
     letter-spacing: 0.2rem;
@@ -62,5 +62,21 @@
     margin: 0 auto;
     max-width: 1000px;
     text-align: center;
+
+    .labels {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 800px;
+      p {
+        display: inline-block;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  button {
+    color: white;
   }
 }

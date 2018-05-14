@@ -55,4 +55,8 @@ $navbar-nav-link-padding-x: 1.5rem !default;
 $navbar-dark-hover-color: rgba($yellow, 0.75) !default;
 $navbar-dark-active-color: $yellow !default;
 
+// Box-shadow
+$of-boxshadow: 4px 4px 4px rgba(0, 0, 0, 0.2),
+  0 0 4px lighten(rgba(0, 0, 0, 0.2), 5%);
+
 @import 'node_modules/bootstrap/scss/variables';
