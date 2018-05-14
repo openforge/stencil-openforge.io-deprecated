@@ -172,6 +172,7 @@ declare global {
     interface AppInput {
       'label': string;
       'name': string;
+      'placeholder': string;
       'required': boolean;
       'type': string;
     }
@@ -199,6 +200,7 @@ declare global {
       'label'?: string;
       'name'?: string;
       'onValueChange'?: (event: CustomEvent) => void;
+      'placeholder'?: string;
       'required'?: boolean;
       'type'?: string;
     }

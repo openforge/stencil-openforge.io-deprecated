@@ -6,11 +6,18 @@
   }
 
   img {
+    max-height: 400px;
     @include media-breakpoint-down(sm) {
       margin-bottom: 30px;
       max-width: 250px;
       width: 50vw;
     }
+  }
+
+  h3 {
+    color: darken($orange-dark, 10%);
+    font-size: 2.25rem;
+    font-weight: bold;
   }
 
   p {

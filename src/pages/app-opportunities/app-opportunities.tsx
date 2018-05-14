@@ -91,7 +91,7 @@ export class AppOpportunities {
       <div>
         {/* header - hero */}
         <app-hero background-url="assets/bg-hero-mountain.jpg">
-          <span slot="header">Look for a new adventure?</span>
+          <span slot="header">Looking for a new adventure?</span>
           <span slot="body">
             OpenForge is hiring two mid-level developers. Want to know if you're
             the right fit for the team? Keep reading!
@@ -99,79 +99,132 @@ export class AppOpportunities {
         </app-hero>
 
         {/* section - intro */}
-        <section>
+        <section id="intro">
           <div class="container">
             <content-graphic-lg
               img-url="assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
-              <h3 slot="header">
-                From our work to our interview process, we break the norm.
+              <h3 class="text-right" slot="header">
+                Forget normal interviews!
               </h3>
+              <p class="text-right" slot="body">
+                From our work to our interview process, we break the norm. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-opportunities-codemaster.jpg">
-              <h3 slot="header">
-                <span>Instead of asking you a million questions,</span> we'd
-                rather get to know you another way: by putting you to the test.
+              <h3 slot="header">We want to put you to the test!</h3>
+              <p slot="body">
+                Instead of asking you a million questions, we'd rather get to
+                know you another way - lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod.
+              </p>
+            </content-graphic-lg>
+          </div>
+
+          <div class="challenge">
+            <div class="container">
+              <div class="intro text-center">
+                <h2>The Challenge</h2>
+                <p>
+                  Should you choose to accept, you will develop a 3-page app in
+                  the ionic framework.
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 col-md-3">
+                  <p>Show us your skills in:</p>
+                  <ul>
+                    <li>Angular</li>
+                    <li>Redux</li>
+                    <li>API Integration</li>
+                  </ul>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-opportunities-phone.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-sm-12 col-md-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-opportunities-phone.png"
+                    alt=""
+                  />
+                </div>
+                <div class="col-sm-12 col-md-3">
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-opportunities-phone.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <content-graphic-lg
+              img-url="assets/graphic-opportunities-ionic.jpg"
+              reverse={true}
+            >
+              <h3 class="text-right" slot="header">
+                Why?
               </h3>
+              <p class="text-right" slot="body">
+                Because we value our partnerships. And because we are a trusted
+                Ionic partner, we want lorem ipsum dolor sit amet, consectetur
+                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+              </p>
             </content-graphic-lg>
 
-            <h2>The Challenge</h2>
-            <p>
-              should you choose to accept, will be to develop a 3-page app in
-              ionic framework
-            </p>
-
-            <content-graphic-lg img-url="assets/graphic-opportunities-ionic.jpg">
-              <h3 slot="header">Why? Because we value our partnerships</h3>
+            <content-graphic-lg img-url="assets/graphic-opportunities-sword.png">
+              <h3 slot="header">Are you prepared?</h3>
+              <p slot="body">
+                We're looking for someone who’s ready to hit the ground running
+                - someone who wants to turn big ideas into realities. But first,
+                we need to make sure you’ve got the skills to make it happen.
+              </p>
             </content-graphic-lg>
           </div>
         </section>
 
-        {/* section - form */}
-        <section>
+        {/* section - apply */}
+        <section id="apply">
           <div class="container">
-            <content-graphic-lg
-              img-url="assets/graphic-opportunities-sword.png"
-              reverse={true}
-            >
-              <h3 slot="header">
-                We're looking for someone who’s ready to hit the ground running
-                - someone who wants to turn big ideas into realities. But first,
-                we need to make sure you’ve got the skills to make it happen.
-              </h3>
-            </content-graphic-lg>
-
             {!this.canRequestInterview ? (
-              <form onSubmit={this.handleSliders.bind(this)}>
-                <h3 class="font-weight-bold pt-5">
+              <form onSubmit={this.handleSubmit.bind(this)}>
+                <h2>Show us your skills</h2>
+                <p>
                   Move the sliders to the position that aligns with your
                   capabilities to continue.
-                </h3>
+                </p>
+
                 <app-slider name="angular" label="Angular" />
                 <app-slider name="node" label="Node" />
                 <app-slider name="ionic" label="Ionic" />
                 <app-slider name="html" label="HTML" />
                 <app-slider name="css" label="CSS" />
 
-                <h4 class="form-group text-center">
-                  {!this.isDisabled ? (
-                    <p>You're all set! Let's get started.</p>
-                  ) : (
-                    <p>Not quite...keep sliding!</p>
-                  )}
-                </h4>
+                {!this.isDisabled ? (
+                  <p>You're all set! Let's get started.</p>
+                ) : (
+                  <p>Not quite...keep sliding!</p>
+                )}
 
-                <div class="form-group text-center">
-                  <button
-                    type="submit"
-                    disabled={this.isDisabled}
-                    id="requestInterview"
-                  >
-                    Request an interview
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  disabled={this.isDisabled}
+                  id="requestInterview"
+                >
+                  Request an interview
+                </button>
               </form>
             ) : (
               <form onSubmit={this.handleSubmit.bind(this)}>
