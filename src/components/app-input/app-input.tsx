@@ -8,6 +8,7 @@ export class AppInput {
   @Prop() name: string;
   @Prop() type: string;
   @Prop() label: string;
+  @Prop() placeholder: string;
   @Prop() required = false;
 
   @Event() valueChange: EventEmitter;
@@ -29,6 +30,7 @@ export class AppInput {
           class="form-control"
           type={this.type}
           name={this.name}
+          placeholder={this.placeholder}
           required={this.required}
           onInput={this.inputHandler.bind(this)}
         />
