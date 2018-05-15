@@ -64,6 +64,9 @@
     outline: 1px solid white;
     outline-offset: -1px;
   }
+  input[type='range']::-moz-range-progress {
+    background-color: $orange;
+  }
   // IE
   input[type='range']::-ms-track {
     background: transparent;
