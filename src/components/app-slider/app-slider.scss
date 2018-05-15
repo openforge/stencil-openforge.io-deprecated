@@ -60,9 +60,12 @@
     height: 16px;
     width: 16px;
   }
-  input[type='range']:-moz-focusring {
-    outline: 1px solid white;
-    outline-offset: -1px;
+  // input[type='range']:-moz-focusring {
+  //   outline: 1px solid white;
+  //   outline-offset: -1px;
+  // }
+  input[type='range']::-moz-focus-outer {
+    border: 0;
   }
   input[type='range']::-moz-range-progress {
     background-color: $orange;
