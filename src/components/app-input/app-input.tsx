@@ -23,14 +23,11 @@ export class AppInput {
   render() {
     return (
       <div class="form-group">
-        <label class="text-uppercase font-weight-bold" htmlFor={this.name}>
-          {this.label}
-        </label>
+        <label htmlFor={this.name}>{this.label}</label>
         <input
           class="form-control"
           type={this.type}
           name={this.name}
-          placeholder={this.placeholder}
           required={this.required}
           onInput={this.inputHandler.bind(this)}
         />

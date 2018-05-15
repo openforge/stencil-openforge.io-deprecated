@@ -92,7 +92,7 @@ export class AppOpportunities {
 
   render() {
     return (
-      <div>
+      <div class="opportunities">
         {/* header - hero */}
         <app-hero background-url="assets/bg-hero-mountain.jpg">
           <span slot="header">
@@ -197,14 +197,14 @@ export class AppOpportunities {
         <section id="apply">
           <div class="container">
             {!this.canRequestInterview ? (
-              <form onSubmit={this.handleSliders.bind(this)}>
+              <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
                 <h2>Show us your skills</h2>
                 <p>
                   Move the sliders to the position that aligns with your
                   capabilities to continue.
                 </p>
 
-                <div class="labels">
+                <div class="slider-labels">
                   <p>N00b</p>
                   <p>Expert</p>
                 </div>
@@ -231,57 +231,81 @@ export class AppOpportunities {
                 </button>
               </form>
             ) : (
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <h2>Submit your info</h2>
-                <p>
-                  Fill out the form below to submit your resume to the hiring
-                  team!
-                </p>
+              <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                <h2>Mid-Level Developer</h2>
+                <ul>
+                  <li>Philadelphia</li>
+                  <li>Technology</li>
+                  <li>Full-Time</li>
+                </ul>
+
+                <h3>Submit your application</h3>
 
                 <div class="form-group">
+                  <label>Resume/CV</label>
+                  <input
+                    class="input-file"
+                    type="file"
+                    name="resume"
+                    onInput={this.handleFile.bind(this)}
+                    required={true}
+                  />
+                </div>
+
+                <app-input
+                  label="Full Name"
+                  name="name"
+                  type="text"
+                  // placeholder="Full Name"
+                  required={true}
+                />
+                <app-input
+                  label="Email"
+                  name="email"
+                  type="email"
+                  // placeholder="Email Address"
+                  required={true}
+                />
+                <app-input
+                  label="Phone"
+                  name="phone"
+                  type="tel"
+                  // placeholder="Phone Number"
+                  required={true}
+                />
+
+                <h3>Links</h3>
+                <app-input
+                  label="GitHub URL"
+                  name="github"
+                  type="text"
+                  // placeholder="GitHub Link"
+                  required={true}
+                />
+                <p>
+                  LinkedIn URL?<br />Twitter URL?
+                </p>
+
+                <h3>What makes you unique?</h3>
+
+                <div class="form-group input-textarea">
+                  <label>
+                    In 150 characters or fewer, tell us what makes you unique.
+                    Try to be creative and say something that will catch our
+                    eye!
+                  </label>
                   <textarea
-                    placeholder="Hello, I would like"
+                    class="form-control"
+                    // placeholder="Hello, I would like..."
                     name="cv"
                     onBlur={this.handleFile.bind(this)}
                     required={true}
                   />
-                  <div class="form-group text-left">
-                    <input
-                      type="file"
-                      name="resume"
-                      onInput={this.handleFile.bind(this)}
-                      required={true}
-                    />
-                  </div>
-                  <app-input
-                    name="name"
-                    type="text"
-                    placeholder="Full Name"
-                    required={true}
-                  />
-                  <app-input
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    required={true}
-                  />
-                  <app-input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone Number"
-                    required={true}
-                  />
-                  <app-input
-                    name="github"
-                    type="text"
-                    placeholder="GitHub Link"
-                    required={true}
-                  />
                 </div>
 
-                <div class="form-group text-left">
-                  <button type="submit">Submit</button>
-                </div>
+                <button class="btn btn-primary" type="submit">
+                  Submit Application
+                </button>
               </form>
             )}
           </div>
