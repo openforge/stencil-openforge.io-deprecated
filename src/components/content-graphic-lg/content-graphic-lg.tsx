@@ -22,25 +22,25 @@ export class ContentGraphicLg {
         <div
           class={{
             'col-sm-12': true,
-            'col-md-6': true,
+            'col-md-5': true,
             'px-lg-5': true,
             'p-4': true,
             'text-md-right': !this.reverse,
           }}
         >
-          <img class="img-fluid d-none d-md-block" src={this.imgUrl} alt="" />
+          <img class="img-fluid d-none d-md-inline" src={this.imgUrl} alt="" />
         </div>
         <div
           class={{
             'col-sm-12': true,
-            'col-md-6': true,
+            'col-md-5': true,
             'px-lg-5': true,
             'text-md-right': this.reverse,
           }}
         >
           <slot name="header" />
           <img
-            class="img-fluid d-xs-block d-md-none"
+            class="img-fluid d-xs-inline d-md-none"
             src={this.imgUrl}
             alt=""
           />

@@ -134,34 +134,30 @@ export class AppOpportunities {
               <div class="intro text-center">
                 <h2>The Challenge</h2>
                 <p>
-                  Should you choose to accept, you will develop a 3-page app in
-                  the ionic framework.
+                  <em>Should you choose to accept,</em> you will develop a
+                  3-page app in the ionic framework.
                 </p>
+                <p>Show us your skills in:</p>
               </div>
               <div class="row">
-                <div class="col-sm-12 col-md-3">
-                  <p>Show us your skills in:</p>
-                  <ul>
-                    <li>Angular</li>
-                    <li>Redux</li>
-                    <li>API Integration</li>
-                  </ul>
-                </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>Angular</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
                     alt=""
                   />
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>Redux</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
                     alt=""
                   />
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>API Integration</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
