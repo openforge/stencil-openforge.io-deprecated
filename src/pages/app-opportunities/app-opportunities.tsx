@@ -6,7 +6,7 @@ import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
 })
 export class AppOpportunities {
   @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean = true;
+  @State() canRequestInterview: boolean;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
 
@@ -16,7 +16,6 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
-    resume: any;
     cv: string;
     name: string;
     email: string;
@@ -28,6 +27,13 @@ export class AppOpportunities {
 
   componentDidLoad() {
     this.resetFormValues();
+  }
+
+  componentDidUpdate() {
+    const applicationForm = document.getElementById('application-form');
+    if (applicationForm) {
+      applicationForm.scrollIntoView();
+    }
   }
 
   @Event() valueChange: EventEmitter;
@@ -55,11 +61,14 @@ export class AppOpportunities {
   }
 
   handleFile(e) {
-    this.formValues[e.target.name] = e.target.value;
+    const files = e.target.files;
+    this.formData.append('files', files[0]);
   }
 
   async handleSubmit(e) {
     e.preventDefault();
+
+    this.formValues['cv'] = e.target.cv.value;
 
     for (const value in this.formValues) {
       this.formData.append(value, this.formValues[value]);
@@ -70,11 +79,8 @@ export class AppOpportunities {
       await fetch(
         'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeOpportunities',
         {
-          method: 'post',
+          method: 'POST',
           mode: 'no-cors',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          },
           body: this.formData,
         }
       );
@@ -238,12 +244,14 @@ export class AppOpportunities {
                 </button>
               </form>
             ) : (
-              <form onSubmit={this.handleSubmit.bind(this)}>
+              <form
+                id="application-form"
+                onSubmit={this.handleSubmit.bind(this)}
+              >
                 <div class="form-group">
                   <textarea
                     placeholder="Hello, I would like"
                     name="cv"
-                    onBlur={this.handleFile.bind(this)}
                     required={true}
                   />
                   <div class="form-group text-left">
@@ -285,6 +293,12 @@ export class AppOpportunities {
                 </div>
               </form>
             )}
+
+            {!this.formSubmitted ? null : (
+              <div class="alert alert-success" role="alert">
+                Thank you! We have received your application.
+              </div>
+            )}
           </div>
         </section>
       </div>
@@ -298,7 +312,6 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
-      resume: '',
       cv: '',
       name: '',
       email: '',

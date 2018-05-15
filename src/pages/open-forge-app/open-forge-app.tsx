@@ -110,6 +110,8 @@ export class OpenForgeApp {
                     About
                   </stencil-route-link>
                 </li>
+                {/*
+                 * hiding services tab for first version *
                 <li
                   class="nav-item"
                   data-toggle="collapse"
@@ -122,7 +124,7 @@ export class OpenForgeApp {
                   >
                     Services
                   </stencil-route-link>
-                </li>
+                </li> */}
                 <li
                   class="nav-item"
                   data-toggle="collapse"
