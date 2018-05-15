@@ -16,7 +16,7 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
-    cv: string;
+    message: string;
     name: string;
     email: string;
     phone: string;
@@ -30,9 +30,9 @@ export class AppOpportunities {
   }
 
   componentDidUpdate() {
-    const applicationForm = document.getElementById('application-form');
-    if (applicationForm) {
-      applicationForm.scrollIntoView();
+    const application = document.getElementsByClassName('apply-2')[0];
+    if (application) {
+      application.scrollIntoView();
     }
   }
 
@@ -68,7 +68,7 @@ export class AppOpportunities {
   async handleSubmit(e) {
     e.preventDefault();
 
-    this.formValues['cv'] = e.target.cv.value;
+    this.formValues['message'] = e.target.message.value;
 
     for (const value in this.formValues) {
       this.formData.append(value, this.formValues[value]);
@@ -97,7 +97,7 @@ export class AppOpportunities {
 
   render() {
     return (
-      <div>
+      <div class="opportunities">
         {/* header - hero */}
         <app-hero background-url="assets/bg-hero-mountain.jpg">
           <span slot="header">
@@ -116,10 +116,8 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
-              <h3 class="text-right" slot="header">
-                Forget normal interviews!
-              </h3>
-              <p class="text-right" slot="body">
+              <h3 slot="header">Forget normal interviews!</h3>
+              <p slot="body">
                 From our work to our interview process, we break the norm. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -141,34 +139,30 @@ export class AppOpportunities {
               <div class="intro text-center">
                 <h2>The Challenge</h2>
                 <p>
-                  Should you choose to accept, you will develop a 3-page app in
-                  the ionic framework.
+                  <em>Should you choose to accept,</em> you will develop a
+                  3-page app in the ionic framework.
                 </p>
+                <p>Show us your skills in:</p>
               </div>
               <div class="row">
-                <div class="col-sm-12 col-md-3">
-                  <p>Show us your skills in:</p>
-                  <ul>
-                    <li>Angular</li>
-                    <li>Redux</li>
-                    <li>API Integration</li>
-                  </ul>
-                </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>Angular</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
                     alt=""
                   />
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>Redux</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
                     alt=""
                   />
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>API Integration</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
@@ -184,10 +178,8 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
-              <h3 class="text-right" slot="header">
-                Why?
-              </h3>
-              <p class="text-right" slot="body">
+              <h3 slot="header">Why?</h3>
+              <p slot="body">
                 Because we value our partnerships. And because we are a trusted
                 Ionic partner, we want lorem ipsum dolor sit amet, consectetur
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -210,14 +202,14 @@ export class AppOpportunities {
         <section id="apply">
           <div class="container">
             {!this.canRequestInterview ? (
-              <form onSubmit={this.handleSliders.bind(this)}>
+              <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
                 <h2>Show us your skills</h2>
                 <p>
                   Move the sliders to the position that aligns with your
                   capabilities to continue.
                 </p>
 
-                <div class="labels">
+                <div class="slider-labels">
                   <p>N00b</p>
                   <p>Expert</p>
                 </div>
@@ -244,53 +236,80 @@ export class AppOpportunities {
                 </button>
               </form>
             ) : (
-              <form
-                id="application-form"
-                onSubmit={this.handleSubmit.bind(this)}
-              >
+              <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                <h2>Mid-Level Developer</h2>
+                <ul>
+                  <li>Philadelphia</li>
+                  <li>Technology</li>
+                  <li>Full-Time</li>
+                </ul>
+
+                <h3>Submit your application</h3>
+
                 <div class="form-group">
-                  <textarea
-                    placeholder="Hello, I would like"
-                    name="cv"
-                    required={true}
-                  />
-                  <div class="form-group text-left">
-                    <input
-                      type="file"
-                      name="resume"
-                      onInput={this.handleFile.bind(this)}
-                      required={true}
-                    />
-                  </div>
-                  <app-input
-                    name="name"
-                    type="text"
-                    placeholder="Full Name"
-                    required={true}
-                  />
-                  <app-input
-                    name="email"
-                    type="email"
-                    placeholder="Email Address"
-                    required={true}
-                  />
-                  <app-input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone Number"
-                    required={true}
-                  />
-                  <app-input
-                    name="github"
-                    type="text"
-                    placeholder="GitHub Link"
+                  <label>Resume/CV</label>
+                  <input
+                    class="input-file"
+                    type="file"
+                    name="resume"
+                    onInput={this.handleFile.bind(this)}
                     required={true}
                   />
                 </div>
 
-                <div class="form-group text-left">
-                  <button type="submit">Submit</button>
+                <app-input
+                  label="Full Name"
+                  name="name"
+                  type="text"
+                  // placeholder="Full Name"
+                  required={true}
+                />
+                <app-input
+                  label="Email"
+                  name="email"
+                  type="email"
+                  // placeholder="Email Address"
+                  required={true}
+                />
+                <app-input
+                  label="Phone"
+                  name="phone"
+                  type="tel"
+                  // placeholder="Phone Number"
+                  required={true}
+                />
+
+                <h3>Links</h3>
+                <app-input
+                  label="GitHub URL"
+                  name="github"
+                  type="text"
+                  // placeholder="GitHub Link"
+                  required={true}
+                />
+                <p>
+                  LinkedIn URL?<br />Twitter URL?
+                </p>
+
+                <h3>What makes you unique?</h3>
+
+                <div class="form-group input-textarea">
+                  <label>
+                    In 150 characters or fewer, tell us what makes you unique.
+                    Try to be creative and say something that will catch our
+                    eye!
+                  </label>
+                  <textarea
+                    class="form-control"
+                    // placeholder="Hello, I would like..."
+                    name="message"
+                    required={true}
+                  />
                 </div>
+
+                <button class="btn btn-primary" type="submit">
+                  Submit Application
+                </button>
               </form>
             )}
 
@@ -312,7 +331,7 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
-      cv: '',
+      message: '',
       name: '',
       email: '',
       phone: '',
