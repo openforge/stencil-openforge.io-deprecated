@@ -6,6 +6,7 @@ import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
 })
 export class AppOpportunities {
   @State() isDisabled: boolean = true;
+  // @State() canRequestInterview: boolean;
   @State() canRequestInterview: boolean = true;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
@@ -110,10 +111,8 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
-              <h3 class="text-right" slot="header">
-                Forget normal interviews!
-              </h3>
-              <p class="text-right" slot="body">
+              <h3 slot="header">Forget normal interviews!</h3>
+              <p slot="body">
                 From our work to our interview process, we break the norm. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -178,10 +177,8 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
-              <h3 class="text-right" slot="header">
-                Why?
-              </h3>
-              <p class="text-right" slot="body">
+              <h3 slot="header">Why?</h3>
+              <p slot="body">
                 Because we value our partnerships. And because we are a trusted
                 Ionic partner, we want lorem ipsum dolor sit amet, consectetur
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -239,6 +236,12 @@ export class AppOpportunities {
               </form>
             ) : (
               <form onSubmit={this.handleSubmit.bind(this)}>
+                <h2>Submit your info</h2>
+                <p>
+                  Fill out the form below to submit your resume to the hiring
+                  team!
+                </p>
+
                 <div class="form-group">
                   <textarea
                     placeholder="Hello, I would like"

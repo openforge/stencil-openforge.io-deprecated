@@ -23,14 +23,27 @@ export class ContentGraphicLg {
           class={{
             'col-sm-12': true,
             'col-md-6': true,
-            'px-5': true,
-            'text-right': !this.reverse,
+            'px-lg-5': true,
+            'p-4': true,
+            'text-md-right': !this.reverse,
           }}
         >
-          <img class="img-fluid" src={this.imgUrl} alt="" />
+          <img class="img-fluid d-none d-md-block" src={this.imgUrl} alt="" />
         </div>
-        <div class="content col-sm-12 col-md-6 px-5">
+        <div
+          class={{
+            'col-sm-12': true,
+            'col-md-6': true,
+            'px-lg-5': true,
+            'text-md-right': this.reverse,
+          }}
+        >
           <slot name="header" />
+          <img
+            class="img-fluid d-xs-block d-md-none"
+            src={this.imgUrl}
+            alt=""
+          />
           <slot name="body" />
         </div>
       </div>
