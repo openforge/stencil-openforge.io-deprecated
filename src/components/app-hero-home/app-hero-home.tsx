@@ -16,30 +16,31 @@ export class AppHeroHome {
   }
 
   render() {
-    // return (
-    //   <header class="hero">
-    //     <div class="container">
-    //       <div class="row align-items-center">
-    //         <div class="col-sm-12 col-md-8 col-lg-6">
-    //           <h2
-    //             class={{
-    //               'text-nowrap': this.textNoWrap,
-    //             }}
-    //           >
-    //             <slot name="header" />
-    //           </h2>
-    //           <p>
-    //             <slot name="body" />
-    //           </p>
-    //           {!this.hideLink ? (
-    //             <a href={this.linkUrl} class="btn btn-primary" target="_blank">
-    //               <slot name="link" />
-    //             </a>
-    //           ) : null}
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </header>
-    // );
+    return (
+      <header class="hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-sm-12 col-md-8 col-lg-6">
+              <h2
+                class={{
+                  'text-nowrap': this.textNoWrap,
+                }}
+              >
+                <slot name="header" />
+              </h2>
+
+              <p>
+                <slot name="body" />
+              </p>
+              {!this.hideLink ? (
+                <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+                  <slot name="link" />
+                </a>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      </header>
+    );
   }
 }

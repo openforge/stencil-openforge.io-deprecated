@@ -9,7 +9,7 @@ export class AppHome {
     return (
       <div>
         {/* header - hero */}
-        <app-hero
+        <app-hero-home
           link-url="mailto:hello@openforge.io"
           background-url="assets/opportunities-header-background-02.png"
         >
@@ -20,7 +20,7 @@ export class AppHome {
             requirements.
           </span>
           <span slot="link">Learn More</span>
-        </app-hero>
+        </app-hero-home>
 
         {/* section - approach */}
         <section id="approach">

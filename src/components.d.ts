@@ -132,8 +132,48 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppHeroHome {
+      'backgroundUrl': string;
+      'hideLink': boolean;
+      'linkUrl': string;
+      'textNoWrap': boolean;
+    }
+  }
+
+  interface HTMLAppHeroHomeElement extends StencilComponents.AppHeroHome, HTMLStencilElement {}
+
+  var HTMLAppHeroHomeElement: {
+    prototype: HTMLAppHeroHomeElement;
+    new (): HTMLAppHeroHomeElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-hero-home': HTMLAppHeroHomeElement;
+  }
+  interface ElementTagNameMap {
+    'app-hero-home': HTMLAppHeroHomeElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-hero-home': JSXElements.AppHeroHomeAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppHeroHomeAttributes extends HTMLAttributes {
+      'backgroundUrl'?: string;
+      'hideLink'?: boolean;
+      'linkUrl'?: string;
+      'textNoWrap'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppHero {
       'backgroundUrl': string;
+      'hideLink': boolean;
       'linkUrl': string;
       'textNoWrap': boolean;
     }
@@ -159,6 +199,7 @@ declare global {
   namespace JSXElements {
     export interface AppHeroAttributes extends HTMLAttributes {
       'backgroundUrl'?: string;
+      'hideLink'?: boolean;
       'linkUrl'?: string;
       'textNoWrap'?: boolean;
     }
