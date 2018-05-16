@@ -12,6 +12,7 @@ export class AppContact {
   formValues: {
     name: string;
     email: string;
+    company?: string;
     phone: string;
     message: string;
     desiredService: string;
@@ -112,6 +113,7 @@ export class AppContact {
                   type="text"
                   required={true}
                 />
+                <app-input name="company" label="Company" type="text" />
                 <app-input
                   name="email"
                   label="E-mail"
@@ -171,6 +173,7 @@ export class AppContact {
   private resetFormValues() {
     this.formValues = {
       name: '',
+      company: '',
       email: '',
       phone: '',
       message: '',

@@ -99,7 +99,7 @@ export class AppOpportunities {
     return (
       <div class="opportunities">
         {/* header - hero */}
-        <app-hero background-url="assets/bg-hero-mountain.jpg">
+        <app-hero background-url="assets/bg-hero-mountain.jpg" hideLink={true}>
           <span slot="header">
             OpenForge is hiring two mid-level developers.
           </span>
