@@ -30,7 +30,7 @@ export class AppOpportunities {
   }
 
   componentDidUpdate() {
-    const application = document.getElementsByClassName('apply-2')[0];
+    const application = document.getElementById('apply');
     if (application) {
       application.scrollIntoView();
     }
@@ -200,125 +200,119 @@ export class AppOpportunities {
 
         {/* section - apply */}
         <section id="apply">
-          <div class="container">
-            {!this.canRequestInterview ? (
-              <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
-                <h2>Show us your skills</h2>
-                <p>
-                  Move the sliders to the position that aligns with your
-                  capabilities to continue.
-                </p>
+          {!this.formSubmitted ? (
+            <div class="container">
+              {!this.canRequestInterview ? (
+                <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
+                  <h2>Show us your skills</h2>
+                  <p>
+                    Move the sliders to the position that aligns with your
+                    capabilities to continue.
+                  </p>
 
-                <div class="slider-labels">
-                  <p>N00b</p>
-                  <p>Expert</p>
-                </div>
+                  <div class="slider-labels">
+                    <p>N00b</p>
+                    <p>Expert</p>
+                  </div>
 
-                <app-slider name="angular" label="Angular" />
-                <app-slider name="node" label="Node" />
-                <app-slider name="ionic" label="Ionic" />
-                <app-slider name="html" label="HTML" />
-                <app-slider name="css" label="CSS" />
+                  <app-slider name="angular" label="Angular" />
+                  <app-slider name="node" label="Node" />
+                  <app-slider name="ionic" label="Ionic" />
+                  <app-slider name="html" label="HTML" />
+                  <app-slider name="css" label="CSS" />
 
-                {!this.isDisabled ? (
-                  <p>You're all set! Let's get started.</p>
-                ) : (
-                  <p>Not quite...keep sliding!</p>
-                )}
+                  {!this.isDisabled ? (
+                    <p>You're all set! Let's get started.</p>
+                  ) : (
+                    <p>Not quite...keep sliding!</p>
+                  )}
 
-                <button
-                  class="btn btn-primary"
-                  type="submit"
-                  disabled={this.isDisabled}
-                  id="requestInterview"
-                >
-                  Request an interview
-                </button>
-              </form>
-            ) : (
-              <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
-                <h2>Mid-Level Developer</h2>
-                <ul>
-                  <li>Philadelphia</li>
-                  <li>Technology</li>
-                  <li>Full-Time</li>
-                </ul>
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    disabled={this.isDisabled}
+                    id="requestInterview"
+                  >
+                    Request an interview
+                  </button>
+                </form>
+              ) : (
+                <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                  <h2>Mid-Level Developer</h2>
+                  <ul>
+                    <li>Philadelphia</li>
+                    <li>Technology</li>
+                    <li>Full-Time</li>
+                  </ul>
 
-                <h3>Submit your application</h3>
+                  <h3>Submit your application</h3>
 
-                <div class="form-group">
-                  <label>Resume/CV</label>
-                  <input
-                    class="input-file"
-                    type="file"
-                    name="resume"
-                    onInput={this.handleFile.bind(this)}
+                  <div class="form-group">
+                    <label>Resume/CV</label>
+                    <input
+                      class="input-file"
+                      type="file"
+                      name="resume"
+                      onInput={this.handleFile.bind(this)}
+                      required={true}
+                    />
+                  </div>
+
+                  <app-input
+                    label="Full Name"
+                    name="name"
+                    type="text"
                     required={true}
                   />
-                </div>
-
-                <app-input
-                  label="Full Name"
-                  name="name"
-                  type="text"
-                  // placeholder="Full Name"
-                  required={true}
-                />
-                <app-input
-                  label="Email"
-                  name="email"
-                  type="email"
-                  // placeholder="Email Address"
-                  required={true}
-                />
-                <app-input
-                  label="Phone"
-                  name="phone"
-                  type="tel"
-                  // placeholder="Phone Number"
-                  required={true}
-                />
-
-                <h3>Links</h3>
-                <app-input
-                  label="GitHub URL"
-                  name="github"
-                  type="text"
-                  // placeholder="GitHub Link"
-                  required={true}
-                />
-                <p>
-                  LinkedIn URL?<br />Twitter URL?
-                </p>
-
-                <h3>What makes you unique?</h3>
-
-                <div class="form-group input-textarea">
-                  <label>
-                    In 150 characters or fewer, tell us what makes you unique.
-                    Try to be creative and say something that will catch our
-                    eye!
-                  </label>
-                  <textarea
-                    class="form-control"
-                    // placeholder="Hello, I would like..."
-                    name="message"
+                  <app-input
+                    label="Email"
+                    name="email"
+                    type="email"
                     required={true}
                   />
-                </div>
+                  <app-input
+                    label="Phone"
+                    name="phone"
+                    type="tel"
+                    required={true}
+                  />
 
-                <button class="btn btn-primary" type="submit">
-                  Submit Application
-                </button>
-              </form>
-            )}
+                  <h3>Links</h3>
+                  <app-input
+                    label="GitHub URL"
+                    name="github"
+                    type="text"
+                    required={true}
+                  />
+                  <p>
+                    LinkedIn URL?<br />Twitter URL?
+                  </p>
 
-            {!this.formSubmitted ? null : (
-              <div class="alert alert-success" role="alert">
-                Thank you! We have received your application.
-              </div>
-            )}
-          </div>
+                  <h3>What makes you unique?</h3>
+
+                  <div class="form-group input-textarea">
+                    <label>
+                      In 150 characters or fewer, tell us what makes you unique.
+                      Try to be creative and say something that will catch our
+                      eye!
+                    </label>
+                    <textarea
+                      class="form-control"
+                      // placeholder="Hello, I would like..."
+                      name="message"
+                      required={true}
+                    />
+                  </div>
+
+                  <button class="btn btn-primary" type="submit">
+                    Submit Application
+                  </button>
+                </form>
+              )}
+            </div>
+          ) : (
+            <div class="container">A big thank you.</div>
+          )}
         </section>
       </div>
     );
