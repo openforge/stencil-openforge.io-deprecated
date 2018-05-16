@@ -7,7 +7,7 @@ import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
 export class AppOpportunities {
   @State() isDisabled: boolean = true;
   // @State() canRequestInterview: boolean;
-  @State() canRequestInterview: boolean = true;
+  @State() canRequestInterview: boolean;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
 
@@ -273,8 +273,6 @@ export class AppOpportunities {
                   // placeholder="Phone Number"
                   required={true}
                 />
-
-                <h3>Links</h3>
                 <app-input
                   label="GitHub URL"
                   name="github"
@@ -282,9 +280,6 @@ export class AppOpportunities {
                   // placeholder="GitHub Link"
                   required={true}
                 />
-                <p>
-                  LinkedIn URL?<br />Twitter URL?
-                </p>
 
                 <h3>What makes you unique?</h3>
 
