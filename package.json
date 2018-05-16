@@ -24,6 +24,7 @@
     "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
+    "@angular/cli": "^6.0.0",
     "@commitlint/cli": "^6.1.3",
     "@commitlint/config-conventional": "^6.1.3",
     "@stencil/dev-server": "latest",
