@@ -20,6 +20,7 @@ export class AppHeroHome {
       <header class="hero">
         <div class="container">
           <div class="row align-items-center">
+            <img src="assets/home-header-monitor.png" />
             <div class="col-sm-12 col-md-8 col-lg-6">
               <h2
                 class={{
