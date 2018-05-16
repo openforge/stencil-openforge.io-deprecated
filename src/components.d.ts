@@ -172,6 +172,7 @@ declare global {
     interface AppInput {
       'label': string;
       'name': string;
+      'placeholder': string;
       'required': boolean;
       'type': string;
     }
@@ -199,6 +200,7 @@ declare global {
       'label'?: string;
       'name'?: string;
       'onValueChange'?: (event: CustomEvent) => void;
+      'placeholder'?: string;
       'required'?: boolean;
       'type'?: string;
     }
@@ -274,6 +276,77 @@ declare global {
       'onValueChange'?: (event: CustomEvent) => void;
       'required'?: boolean;
       'value'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppSlider {
+      'label': string;
+      'name': string;
+    }
+  }
+
+  interface HTMLAppSliderElement extends StencilComponents.AppSlider, HTMLStencilElement {}
+
+  var HTMLAppSliderElement: {
+    prototype: HTMLAppSliderElement;
+    new (): HTMLAppSliderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-slider': HTMLAppSliderElement;
+  }
+  interface ElementTagNameMap {
+    'app-slider': HTMLAppSliderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-slider': JSXElements.AppSliderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppSliderAttributes extends HTMLAttributes {
+      'label'?: string;
+      'name'?: string;
+      'onValueChange'?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface ContentGraphicLg {
+      'imgUrl': string;
+      'reverse': boolean;
+    }
+  }
+
+  interface HTMLContentGraphicLgElement extends StencilComponents.ContentGraphicLg, HTMLStencilElement {}
+
+  var HTMLContentGraphicLgElement: {
+    prototype: HTMLContentGraphicLgElement;
+    new (): HTMLContentGraphicLgElement;
+  };
+  interface HTMLElementTagNameMap {
+    'content-graphic-lg': HTMLContentGraphicLgElement;
+  }
+  interface ElementTagNameMap {
+    'content-graphic-lg': HTMLContentGraphicLgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'content-graphic-lg': JSXElements.ContentGraphicLgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ContentGraphicLgAttributes extends HTMLAttributes {
+      'imgUrl'?: string;
+      'reverse'?: boolean;
     }
   }
 }
@@ -408,6 +481,39 @@ declare global {
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
 
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppOpportunities {
+
+    }
+  }
+
+  interface HTMLAppOpportunitiesElement extends StencilComponents.AppOpportunities, HTMLStencilElement {}
+
+  var HTMLAppOpportunitiesElement: {
+    prototype: HTMLAppOpportunitiesElement;
+    new (): HTMLAppOpportunitiesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-opportunities': HTMLAppOpportunitiesElement;
+  }
+  interface ElementTagNameMap {
+    'app-opportunities': HTMLAppOpportunitiesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-opportunities': JSXElements.AppOpportunitiesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppOpportunitiesAttributes extends HTMLAttributes {
+      'onValueChange'?: (event: CustomEvent) => void;
     }
   }
 }

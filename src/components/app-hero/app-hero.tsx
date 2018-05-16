@@ -7,7 +7,8 @@ import { Component, Prop } from '@stencil/core';
 export class AppHero {
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
-  @Prop() textNoWrap: boolean = false;
+  @Prop() textNoWrap: boolean;
+  @Prop() hideLink: boolean;
 
   componentDidLoad() {
     const element = document.querySelector('header.hero') as HTMLElement;
@@ -31,10 +32,11 @@ export class AppHero {
               <p>
                 <slot name="body" />
               </p>
-
-              <a href={this.linkUrl} class="btn btn-primary" target="_blank">
-                <slot name="link" />
-              </a>
+              {!this.hideLink ? (
+                <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+                  <slot name="link" />
+                </a>
+              ) : null}
             </div>
           </div>
         </div>
