@@ -262,31 +262,30 @@ export class AppOpportunities {
                     label="Full Name"
                     name="name"
                     type="text"
+                    // placeholder="Full Name"
                     required={true}
                   />
                   <app-input
                     label="Email"
                     name="email"
                     type="email"
+                    // placeholder="Email Address"
                     required={true}
                   />
                   <app-input
                     label="Phone"
                     name="phone"
                     type="tel"
+                    // placeholder="Phone Number"
                     required={true}
                   />
-
-                  <h3>Links</h3>
                   <app-input
                     label="GitHub URL"
                     name="github"
                     type="text"
+                    // placeholder="GitHub Link"
                     required={true}
                   />
-                  <p>
-                    LinkedIn URL?<br />Twitter URL?
-                  </p>
 
                   <h3>What makes you unique?</h3>
 
