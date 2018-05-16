@@ -16,6 +16,7 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
+    message: string;
     name: string;
     email: string;
     phone: string;
@@ -28,6 +29,13 @@ export class AppOpportunities {
     this.resetFormValues();
   }
 
+  componentDidUpdate() {
+    const application = document.getElementById('apply');
+    if (application) {
+      application.scrollIntoView();
+    }
+  }
+
   @Event() valueChange: EventEmitter;
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -35,11 +43,11 @@ export class AppOpportunities {
     this.formValues[field] = value;
 
     if (
-      this.formValues.angular > 85 &&
-      this.formValues.node > 85 &&
-      this.formValues.ionic > 85 &&
-      this.formValues.html > 85 &&
-      this.formValues.css > 85
+      this.formValues.angular > 60 &&
+      this.formValues.node > 60 &&
+      this.formValues.ionic > 60 &&
+      this.formValues.html > 60 &&
+      this.formValues.css > 60
     ) {
       this.isDisabled = false;
     } else {
@@ -53,28 +61,29 @@ export class AppOpportunities {
   }
 
   handleFile(e) {
-    const file = e.target.files;
-    this.formData.append('file', file[0]);
+    const files = e.target.files;
+    this.formData.append('files', files[0]);
   }
 
   async handleSubmit(e) {
     e.preventDefault();
 
+    this.formValues['message'] = e.target.message.value;
+
     for (const value in this.formValues) {
-      this.formData.append('formValues', this.formValues[value]);
+      this.formData.append(value, this.formValues[value]);
     }
 
     try {
       this.formSubmitting = true;
-      await fetch('', {
-        method: 'POST',
-        headers: {
-          Accept:
-            'application/json, application/xml, text/play, text/html, *.*',
-          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-        },
-        body: this.formData,
-      });
+      await fetch(
+        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeOpportunities',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          body: this.formData,
+        }
+      );
 
       e.target.reset();
       this.resetFormValues();
@@ -88,9 +97,9 @@ export class AppOpportunities {
 
   render() {
     return (
-      <div>
+      <div class="opportunities">
         {/* header - hero */}
-        <app-hero background-url="assets/bg-hero-mountain.jpg">
+        <app-hero background-url="assets/bg-hero-mountain.jpg" hideLink={true}>
           <span slot="header">
             OpenForge is hiring two mid-level developers.
           </span>
@@ -107,10 +116,8 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
-              <h3 class="text-right" slot="header">
-                Forget normal interviews!
-              </h3>
-              <p class="text-right" slot="body">
+              <h3 slot="header">Forget normal interviews!</h3>
+              <p slot="body">
                 From our work to our interview process, we break the norm. Lorem
                 ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -132,34 +139,30 @@ export class AppOpportunities {
               <div class="intro text-center">
                 <h2>The Challenge</h2>
                 <p>
-                  Should you choose to accept, you will develop a 3-page app in
-                  the ionic framework.
+                  <em>Should you choose to accept,</em> you will develop a
+                  3-page app in the ionic framework.
                 </p>
+                <p>Show us your skills in:</p>
               </div>
               <div class="row">
-                <div class="col-sm-12 col-md-3">
-                  <p>Show us your skills in:</p>
-                  <ul>
-                    <li>Angular</li>
-                    <li>Redux</li>
-                    <li>API Integration</li>
-                  </ul>
-                </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>Angular</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
                     alt=""
                   />
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>Redux</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
                     alt=""
                   />
                 </div>
-                <div class="col-sm-12 col-md-3">
+                <div class="image-column col-sm-12 col-md-4">
+                  <h3>API Integration</h3>
                   <img
                     class="img-fluid"
                     src="assets/graphic-opportunities-phone.png"
@@ -175,10 +178,8 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
-              <h3 class="text-right" slot="header">
-                Why?
-              </h3>
-              <p class="text-right" slot="body">
+              <h3 slot="header">Why?</h3>
+              <p slot="body">
                 Because we value our partnerships. And because we are a trusted
                 Ionic partner, we want lorem ipsum dolor sit amet, consectetur
                 adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -199,79 +200,118 @@ export class AppOpportunities {
 
         {/* section - apply */}
         <section id="apply">
-          <div class="container">
-            {!this.canRequestInterview ? (
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <h2>Show us your skills</h2>
-                <p>
-                  Move the sliders to the position that aligns with your
-                  capabilities to continue.
-                </p>
+          {!this.formSubmitted ? (
+            <div class="container">
+              {!this.canRequestInterview ? (
+                <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
+                  <h2>Show us your skills</h2>
+                  <p>
+                    Move the sliders to the position that aligns with your
+                    capabilities to continue.
+                  </p>
 
-                <div class="labels">
-                  <p>N00b</p>
-                  <p>Expert</p>
-                </div>
-
-                <app-slider name="angular" label="Angular" />
-                <app-slider name="node" label="Node" />
-                <app-slider name="ionic" label="Ionic" />
-                <app-slider name="html" label="HTML" />
-                <app-slider name="css" label="CSS" />
-
-                {!this.isDisabled ? (
-                  <p>You're all set! Let's get started.</p>
-                ) : (
-                  <p>Not quite...keep sliding!</p>
-                )}
-
-                <button
-                  class="btn btn-primary"
-                  type="submit"
-                  disabled={this.isDisabled}
-                  id="requestInterview"
-                >
-                  Request an interview
-                </button>
-              </form>
-            ) : (
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <div class="form-group">
-                  <textarea placeholder="Hello, I would like" />
-                  <div class="form-group text-left">
-                    <input type="file" onInput={this.handleFile.bind(this)} />
+                  <div class="slider-labels">
+                    <p>N00b</p>
+                    <p>Expert</p>
                   </div>
+
+                  <app-slider name="angular" label="Angular" />
+                  <app-slider name="node" label="Node" />
+                  <app-slider name="ionic" label="Ionic" />
+                  <app-slider name="html" label="HTML" />
+                  <app-slider name="css" label="CSS" />
+
+                  {!this.isDisabled ? (
+                    <p>You're all set! Let's get started.</p>
+                  ) : (
+                    <p>Not quite...keep sliding!</p>
+                  )}
+
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    disabled={this.isDisabled}
+                    id="requestInterview"
+                  >
+                    Request an interview
+                  </button>
+                </form>
+              ) : (
+                <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                  <h2>Mid-Level Developer</h2>
+                  <ul>
+                    <li>Philadelphia</li>
+                    <li>Technology</li>
+                    <li>Full-Time</li>
+                  </ul>
+
+                  <h3>Submit your application</h3>
+
+                  <div class="form-group">
+                    <label>Resume/CV</label>
+                    <input
+                      class="input-file"
+                      type="file"
+                      name="resume"
+                      onInput={this.handleFile.bind(this)}
+                      required={true}
+                    />
+                  </div>
+
                   <app-input
+                    label="Full Name"
                     name="name"
                     type="text"
-                    placeholder="Full Name"
+                    // placeholder="Full Name"
                     required={true}
                   />
                   <app-input
+                    label="Email"
                     name="email"
                     type="email"
-                    placeholder="Email Address"
+                    // placeholder="Email Address"
                     required={true}
                   />
                   <app-input
+                    label="Phone"
                     name="phone"
                     type="tel"
-                    placeholder="Phone Number"
+                    // placeholder="Phone Number"
                     required={true}
                   />
                   <app-input
+                    label="GitHub URL"
                     name="github"
                     type="text"
-                    placeholder="GitHub Link"
+                    // placeholder="GitHub Link"
                     required={true}
                   />
-                </div>
-                <div class="form-group text-left">
-                  <button type="submit">Submit</button>
-                </div>
-              </form>
-            )}
-          </div>
+
+                  <h3>What makes you unique?</h3>
+
+                  <div class="form-group input-textarea">
+                    <label>
+                      In 150 characters or fewer, tell us what makes you unique.
+                      Try to be creative and say something that will catch our
+                      eye!
+                    </label>
+                    <textarea
+                      class="form-control"
+                      // placeholder="Hello, I would like..."
+                      name="message"
+                      required={true}
+                    />
+                  </div>
+
+                  <button class="btn btn-primary" type="submit">
+                    Submit Application
+                  </button>
+                </form>
+              )}
+            </div>
+          ) : (
+            <div class="container">A big thank you.</div>
+          )}
         </section>
       </div>
     );
@@ -284,10 +324,13 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
+      message: '',
       name: '',
       email: '',
       phone: '',
       github: '',
     };
+
+    this.formData = new FormData();
   }
 }
