@@ -2,17 +2,23 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 #### imgUrl
 
 string
 
+
 #### match
+
+
+
 
 #### reverse
 
 boolean
+
 
 ## Attributes
 
@@ -20,12 +26,18 @@ boolean
 
 string
 
+
 #### match
+
+
+
 
 #### reverse
 
 boolean
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

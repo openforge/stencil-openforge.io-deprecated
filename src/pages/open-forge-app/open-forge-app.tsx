@@ -1,5 +1,11 @@
-import { Component, Listen, Prop, State } from '@stencil/core';
+import { Component, Listen, Prop } from '@stencil/core';
 import { ActiveRouter, RouterHistory, LocationSegments } from '@stencil/router';
+
+import { polyfill } from 'smoothscroll-polyfill';
+
+import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
+
+polyfill();
 
 @Component({
   tag: 'open-forge-app',
@@ -10,20 +16,22 @@ export class OpenForgeApp {
   activeRouter: ActiveRouter;
   unsubscribe: () => void;
 
-  @State() currentHash = '';
   navbarEl: HTMLElement;
   mainEl: HTMLElement;
   isScrolled = false;
 
   componentDidLoad() {
+    gtag('js', new Date());
+
     this.navbarEl = document.querySelector('nav.navbar');
     this.mainEl = document.querySelector('main');
 
     const history: RouterHistory = this.activeRouter.get('history');
-    this.currentHash = history.location.hash;
+    gtag('config', GA_TRACKING_ID, { page_path: history.location.pathname });
 
     this.unsubscribe = history.listen((segments: LocationSegments) => {
-      this.currentHash = segments.hash;
+      console.log(segments);
+      gtag('config', GA_TRACKING_ID, { page_path: segments.pathname });
     });
   }
 
@@ -76,47 +84,55 @@ export class OpenForgeApp {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ml-md-auto">
                 <li
-                  class={{
-                    'nav-item': true,
-                    active: !this.currentHash,
-                  }}
+                  class="nav-item"
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <a class="nav-link" href="/">
-                    Home <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li
-                  class={{
-                    'nav-item': true,
-                    active: this.currentHash === '#process',
-                  }}
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                >
-                  <a class="nav-link" href="/#process">
-                    About
-                  </a>
-                </li>
-                <li
-                  class={{
-                    'nav-item': true,
-                    active: this.currentHash === '#development',
-                  }}
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                >
-                  <a class="nav-link" href="/#development">
-                    Services
-                  </a>
+                  <stencil-route-link
+                    url="/"
+                    exact={true}
+                    anchorClass="nav-link"
+                    activeClass="active"
+                  >
+                    Home
+                  </stencil-route-link>
                 </li>
                 <li
                   class="nav-item"
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <stencil-route-link url="/contact" class="nav-link">
+                  <stencil-route-link
+                    url="/about"
+                    anchorClass="nav-link"
+                    activeClass="active"
+                  >
+                    About
+                  </stencil-route-link>
+                </li>
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
+                  <stencil-route-link
+                    url="/services"
+                    anchorClass="nav-link"
+                    activeClass="active"
+                  >
+                    Services
+                  </stencil-route-link>
+                </li>
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
+                  <stencil-route-link
+                    url="/contact"
+                    anchorClass="nav-link"
+                    activeClass="active"
+                  >
                     Contact
                   </stencil-route-link>
                 </li>

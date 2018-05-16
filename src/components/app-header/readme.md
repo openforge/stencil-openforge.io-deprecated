@@ -2,17 +2,28 @@
 
 <!-- Auto Generated Below -->
 
+
 ## Properties
 
 #### backgroundUrl
 
 string
 
+
+#### hideButton
+
+boolean
+
+
 #### linkUrl
 
 string
 
+
 #### match
+
+
+
 
 ## Attributes
 
@@ -20,12 +31,23 @@ string
 
 string
 
+
+#### hide-button
+
+boolean
+
+
 #### link-url
 
 string
 
+
 #### match
 
----
 
-_Built with [StencilJS](https://stenciljs.com/)_
+
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

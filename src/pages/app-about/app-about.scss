@@ -1,12 +1,14 @@
 // values
-#values {
+#values,
+#team {
   padding: 7rem 0;
   @include media-breakpoint-down(sm) {
     padding: 3rem 0;
     text-align: center;
   }
 
-  h2 {
+  h2,
+  h4 {
     margin: 0 auto 5rem;
     max-width: 800px;
     text-align: center;

@@ -1,12 +1,10 @@
 import { Component, Prop } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'content-graphic',
   styleUrl: 'content-graphic.scss',
 })
 export class ContentGraphic {
-  @Prop() match: MatchResults;
   @Prop() imgUrl: string;
   @Prop() reverse: boolean;
 
