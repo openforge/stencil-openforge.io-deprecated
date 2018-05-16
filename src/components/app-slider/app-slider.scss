@@ -1,3 +1,13 @@
+@function longshadow($color, $size) {
+  $val: 5px 0 0 $size $color;
+
+  @for $i from 0 through 800 {
+    $val: #{$val}, #{$i}px 0 0 $size #{$color};
+  }
+
+  @return $val;
+}
+
 .form-group.slider {
   margin: 0 auto 3rem;
   max-width: 800px;
@@ -13,9 +23,7 @@
     -webkit-appearance: none;
     border: 1px solid white;
     width: 100%;
-  }
-  input[type='range']:focus {
-    outline: none;
+    display: flex;
   }
   // Chrome
   input[type='range']::-webkit-slider-runnable-track {
@@ -25,23 +33,24 @@
     border: none;
     border-radius: 3px;
     box-shadow: $of-boxshadow;
+    overflow: hidden;
   }
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: white;
-    border: 5px solid $orange;
+    background: black;
     border-radius: 50%;
-    box-shadow: $of-boxshadow;
+    box-shadow: longshadow($gray-500, -10px);
     height: 30px;
     margin-top: -10px;
     width: 30px;
   }
   input[type='range']:focus {
+    outline: none;
     &::-webkit-slider-runnable-track {
       background: darken($orange, 10%);
     }
     &::-webkit-slider-thumb {
-      border: 5px solid darken($orange, 10%);
+      // border: 5px solid darken($orange, 10%);
     }
   }
   // Firefox
@@ -60,10 +69,6 @@
     height: 16px;
     width: 16px;
   }
-  // input[type='range']:-moz-focusring {
-  //   outline: 1px solid white;
-  //   outline-offset: -1px;
-  // }
   input[type='range']::-moz-focus-outer {
     border: 0;
   }
