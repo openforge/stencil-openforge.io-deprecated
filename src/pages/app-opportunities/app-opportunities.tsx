@@ -148,24 +148,29 @@ export class AppOpportunities {
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Angular</h3>
                   <img
-                    class="img-fluid"
-                    src="assets/graphic-opportunities-phone.png"
+                    class="img-fluid d-none d-md-inline"
+                    src="assets/graphic-opportunities-phone1.png"
                     alt=""
                   />
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Redux</h3>
                   <img
-                    class="img-fluid"
-                    src="assets/graphic-opportunities-phone.png"
+                    class="img-fluid d-none d-md-inline"
+                    src="assets/graphic-opportunities-phone2.png"
                     alt=""
                   />
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>API Integration</h3>
                   <img
-                    class="img-fluid"
-                    src="assets/graphic-opportunities-phone.png"
+                    class="img-fluid d-none d-md-inline"
+                    src="assets/graphic-opportunities-phone3.png"
+                    alt=""
+                  />
+                  <img
+                    class="img-fluid d-xs-inline d-md-none"
+                    src="assets/graphic-opportunities-phone4.png"
                     alt=""
                   />
                 </div>
@@ -310,7 +315,17 @@ export class AppOpportunities {
               )}
             </div>
           ) : (
-            <div class="container">A big thank you.</div>
+            <div class="container apply-3">
+              <h2>Application Submitted</h2>
+
+              <content-graphic-lg img-url="assets/graphic-opportunities-robot.png">
+                <h3 slot="header">Thank you!</h3>
+                <p slot="body">
+                  If your resume is a match, someone will be in touch to deliver
+                  the necessary materials to complete the challenge.
+                </p>
+              </content-graphic-lg>
+            </div>
           )}
         </section>
       </div>

@@ -2,7 +2,6 @@
 
 nav {
   background: rgba($black, 0.75);
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
   margin: 0 auto;
   transition: background 0.3s ease-in;
   @include media-breakpoint-down(md) {
@@ -12,6 +11,7 @@ nav {
 
   &.background {
     background: $black;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
   }
 }
 
