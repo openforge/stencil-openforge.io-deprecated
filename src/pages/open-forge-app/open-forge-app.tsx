@@ -60,7 +60,7 @@ export class OpenForgeApp {
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <div class="navbar-brand">
               <h1>
                 <img
                   class="img-fluid"
@@ -68,7 +68,7 @@ export class OpenForgeApp {
                   alt="OpenForge"
                 />
               </h1>
-            </a>
+            </div>
             <button
               class="navbar-toggler"
               type="button"
