@@ -34,7 +34,6 @@ export class AppMembers {
                 class="col align-self-center text-center"
                 style={{ fontSize: '2em' }}
               >
-                {/* If we have an email account */}
                 {!member.mail ? null : (
                   <a
                     href={`mailto:${member.mail}`}
@@ -45,7 +44,6 @@ export class AppMembers {
                   </a>
                 )}
 
-                {/* If we have a twitter account */}
                 {!member.twitter ? null : (
                   <a
                     href={member.twitter}
@@ -59,8 +57,6 @@ export class AppMembers {
                     />
                   </a>
                 )}
-
-                {/* If we have a github account */}
                 {!member.github ? null : (
                   <a
                     href={member.github}
