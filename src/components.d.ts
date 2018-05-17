@@ -136,7 +136,6 @@ declare global {
   namespace StencilComponents {
     interface AppHeroHome {
       'hideLink': boolean;
-      'linkUrl': string;
       'textNoWrap': boolean;
     }
   }
@@ -161,7 +160,6 @@ declare global {
   namespace JSXElements {
     export interface AppHeroHomeAttributes extends HTMLAttributes {
       'hideLink'?: boolean;
-      'linkUrl'?: string;
       'textNoWrap'?: boolean;
     }
   }

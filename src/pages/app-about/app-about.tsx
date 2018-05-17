@@ -128,6 +128,18 @@ export class AppAbout {
     },
   ];
 
+  componentDidLoad() {
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+  }
+
   render() {
     return (
       <div>
@@ -146,7 +158,7 @@ export class AppAbout {
         </app-hero>
 
         {/* section - values */}
-        <section id="values">
+        <section id="second-content" class="values">
           <div class="container">
             <h2>
               <span class="small">Our Key Values</span>
@@ -214,7 +226,7 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
+        <app-cta link-url="/contact">
           <span slot="header">Ready to work with us?</span>
           <span slot="link">Get in touch</span>
         </app-cta>

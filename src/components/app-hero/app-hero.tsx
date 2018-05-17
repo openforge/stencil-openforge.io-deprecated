@@ -33,7 +33,7 @@ export class AppHero {
                 <slot name="body" />
               </p>
               {!this.hideLink ? (
-                <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+                <a href="#second-content" class="btn btn-primary">
                   <slot name="link" />
                 </a>
               ) : null}
