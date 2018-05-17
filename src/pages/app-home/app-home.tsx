@@ -131,7 +131,8 @@ export class AppHome {
           </div>
         </section>
 
-        <app-cta>
+        {/* section - divider */}
+        <app-cta hideButton={true}>
           <span slot="header">See what makes us different</span>
         </app-cta>
 
