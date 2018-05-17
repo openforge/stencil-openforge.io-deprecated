@@ -9,10 +9,7 @@ export class AppHome {
     return (
       <div>
         {/* header - hero */}
-        <app-hero-home
-          link-url="mailto:hello@openforge.io"
-          background-url="assets/bg-hero-town.jpg"
-        >
+        <app-hero-home link-url="mailto:hello@openforge.io">
           <span slot="header">We Lead by Example.</span>
           <span slot="body">
             Work with our team of highly skilled consultants, developers, and

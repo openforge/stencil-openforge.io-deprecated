@@ -1,10 +1,10 @@
 // hero
 .hero {
+  align-items: flex-end;
   background-color: $black;
   background-position: top center;
   background-size: cover;
   display: flex;
-  align-items: flex-end;
   height: 100vh;
 
   h2 {
@@ -32,5 +32,8 @@
     padding: 125px;
     position: relative;
     width: 800px;
+    @include media-breakpoint-down(md) {
+      background: none;
+    }
   }
 }

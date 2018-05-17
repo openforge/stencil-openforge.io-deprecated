@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'app-hero-home',
@@ -6,13 +6,27 @@ import { Component, Prop } from '@stencil/core';
 })
 export class AppHeroHome {
   @Prop() linkUrl: string;
-  @Prop() backgroundUrl: string;
   @Prop() textNoWrap: boolean;
   @Prop() hideLink: boolean;
 
   componentDidLoad() {
+    this.handleImage();
+  }
+
+  // will refactor in the future
+  @Listen('window:resize')
+  handleImage() {
     const element = document.querySelector('header.hero') as HTMLElement;
-    element.style.backgroundImage = `url('${this.backgroundUrl}')`;
+    if (window.innerWidth < 768) {
+      // small
+      element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
+    } else if (window.innerWidth < 992) {
+      // medium
+      element.style.backgroundImage = `url('assets/bg-hero-town-md.jpg')`;
+    } else {
+      // large
+      element.style.backgroundImage = `url('assets/bg-hero-town.jpg')`;
+    }
   }
 
   render() {
