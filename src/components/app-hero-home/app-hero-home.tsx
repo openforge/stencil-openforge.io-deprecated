@@ -5,7 +5,6 @@ import { Component, Listen, Prop } from '@stencil/core';
   styleUrl: 'app-hero-home.scss',
 })
 export class AppHeroHome {
-  @Prop() linkUrl: string;
   @Prop() textNoWrap: boolean;
   @Prop() hideLink: boolean;
 
@@ -46,7 +45,7 @@ export class AppHeroHome {
               <slot name="body" />
             </p>
             {!this.hideLink ? (
-              <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+              <a href="#second-content" class="btn btn-primary">
                 <slot name="link" />
               </a>
             ) : null}

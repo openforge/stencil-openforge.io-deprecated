@@ -21,7 +21,7 @@ export class AppHome {
     return (
       <div>
         {/* header - hero */}
-        <app-hero-home link-url="mailto:hello@openforge.io">
+        <app-hero-home>
           <span slot="header">We Lead by Example.</span>
           <span slot="body">
             Work with our team of highly skilled consultants, developers, and
