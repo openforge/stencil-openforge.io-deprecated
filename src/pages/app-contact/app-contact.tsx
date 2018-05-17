@@ -12,6 +12,7 @@ export class AppContact {
   formValues: {
     name: string;
     email: string;
+    company?: string;
     phone: string;
     message: string;
     desiredService: string;
@@ -20,6 +21,15 @@ export class AppContact {
 
   componentDidLoad() {
     this.resetFormValues();
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
   }
 
   @Listen('check')
@@ -86,7 +96,6 @@ export class AppContact {
       <div>
         {/* header - hero */}
         <app-hero
-          link-url="mailto:hello@openforge.io"
           background-url="assets/bg-hero-handshake-desk.jpg"
           text-no-wrap={true}
         >
@@ -95,7 +104,7 @@ export class AppContact {
           <span slot="link">Request Now</span>
         </app-hero>
 
-        <section id="contact-form">
+        <section id="second-content" class="contact-form">
           <div class="container">
             <div class="jumbotron">
               <h2 class="display-5 font-weight-bold">Get in Touch</h2>
@@ -112,6 +121,7 @@ export class AppContact {
                   type="text"
                   required={true}
                 />
+                <app-input name="company" label="Company" type="text" />
                 <app-input
                   name="email"
                   label="E-mail"
@@ -171,6 +181,7 @@ export class AppContact {
   private resetFormValues() {
     this.formValues = {
       name: '',
+      company: '',
       email: '',
       phone: '',
       message: '',

@@ -1,6 +1,7 @@
 @import '../../styles/main';
 
 nav {
+  background: rgba($black, 0.75);
   margin: 0 auto;
   transition: background 0.3s ease-in;
   @include media-breakpoint-down(md) {
@@ -25,10 +26,7 @@ nav {
     font-size: inherit;
     line-height: 1;
     margin: 0;
-    max-width: 350px;
-    @include media-breakpoint-down(sm) {
-      max-width: 200px;
-    }
+    max-width: 200px;
   }
 }
 

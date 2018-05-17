@@ -8,6 +8,7 @@ export class AppInput {
   @Prop() name: string;
   @Prop() type: string;
   @Prop() label: string;
+  @Prop() placeholder: string;
   @Prop() required = false;
 
   @Event() valueChange: EventEmitter;
@@ -22,9 +23,7 @@ export class AppInput {
   render() {
     return (
       <div class="form-group">
-        <label class="text-uppercase font-weight-bold" htmlFor={this.name}>
-          {this.label}
-        </label>
+        <label htmlFor={this.name}>{this.label}</label>
         <input
           class="form-control"
           type={this.type}

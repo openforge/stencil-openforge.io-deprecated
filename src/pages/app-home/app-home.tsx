@@ -5,93 +5,165 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  componentDidLoad() {
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+  }
+
   render() {
     return (
       <div>
         {/* header - hero */}
-        <app-hero
-          link-url="mailto:hello@openforge.io"
-          background-url="assets/bg-hero-woman-writing.jpg"
-        >
-          <span slot="header">We are thinkers, makers &amp; doers</span>
+        <app-hero-home>
+          <span slot="header">We are Thinkings. Makers. Doers.</span>
           <span slot="body">
-            Work with our team of highly skilled consultants, developers, and
-            designers to develop solutions and processes to fit your
-            requirements.
+            Work with our team of highly skilled designers, developers, and
+            consultants to develop solutions and processes that fit your
+            business requirements.
           </span>
-          <span slot="link">Learn More</span>
-        </app-hero>
+          <span slot="link">Let's Get Started</span>
+        </app-hero-home>
 
-        {/* section - approach */}
-        <section id="approach">
-          <div class="container">
-            <h2>
-              <span class="small">Our Approach</span>
-              We use the latest technology to build your business. Let's show
-              you how!
-            </h2>
+        {/* section - services */}
+        <section id="second-content">
+          <div class="container services">
+            <h2 class="header-text">LET'S GET STARTED</h2>
 
-            <div class="row">
-              <div class="content col-sm-12 col-md-4">
-                <i class="fa fa-comment-o" aria-hidden="true" />
-                <h3>
-                  <span class="small">First </span>Consulting
-                </h3>
-                <p>
-                  Are you ready to challenge your assumptions? We'll help you
-                  identify your goals and guide you along the way in 1:1 and
-                  group sessions.
-                </p>
-              </div>
-              <div class="content col-sm-12 col-md-4">
-                <i class="fa fa-smile-o" aria-hidden="true" />
-                <h3>
-                  <span class="small">Second </span>User experience Design
-                </h3>
-                <p>
-                  Whether you're looking to design an interactive user interface
-                  or make improvements to your current app's user experience,
-                  we're here to help.
-                </p>
-              </div>
-              <div class="content col-sm-12 col-md-4">
-                <i class="fa fa-code" aria-hidden="true" />
-                <h3>
-                  <span class="small">Third </span>Development
-                </h3>
-                <p>
-                  We're experts in mobile and web app development. We specialize
-                  in web technologies including Ionic, React, Stencil, Angular,
-                  Node, MongoDB, and MySQL.
-                </p>
-              </div>
+            <div class="services-selections">
+              <a href="#startup">
+                <figure>
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-home-startup.png"
+                    alt=""
+                  />
+                  <figcaption>I'M A STARTUP COMPANY</figcaption>
+                </figure>
+              </a>
+
+              <a href="#enterprise">
+                <figure>
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-home-enterprise.png"
+                    alt=""
+                  />
+                  <figcaption>I'M AN ENTERPRISE COMPANY</figcaption>
+                </figure>
+              </a>
             </div>
+
+            <br class="d-md-block d-sm-block" />
+            <br class="d-md-block d-sm-block" />
+
+            <p>
+              It's our job to make your dreams a reality. Utilize our knowledge
+              in UI/UX to increase your customer engagement, our experience in
+              technology to decrease your costs, and our expertise in Web and
+              Mobile Application Development to provide reliable technology to
+              grow your business.
+              {/* Technology is constantly changing; Let us help you change with it. */}
+            </p>
           </div>
         </section>
 
-        {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
-          <span slot="header">Need a team for your project?</span>
-          <span slot="link">Get in touch</span>
+        {/* section - startup */}
+        <section id="startup" class="bg-gray">
+          <div class="container services">
+            <h2>
+              <span class="small">Common startup services</span>
+              Let us help you get started
+            </h2>
+
+            <div class="services-content">
+              <img
+                class="img-fluid"
+                src="assets/graphic-home-startup.png"
+                alt=""
+              />
+              <ul>
+                <li>Startup Consulting</li>
+                <li>Enhanced Mobile & Web Designs</li>
+                <li>UI/UX Audits & Recommendations </li>
+                <li>Mobile Application Development</li>
+                <li>Web Application Development</li>
+                <li>Customer Engagement Strategy</li>
+                <li>Guerilla Marketing Strategy</li>
+              </ul>
+            </div>
+
+            {/* <div class="text-center">
+              <button class="btn btn-primary">
+                Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
+                our process
+              </button>
+            </div> */}
+          </div>
+        </section>
+
+        {/* section - enterprise */}
+        <section id="enterprise">
+          <div class="container services">
+            <h2>
+              <span class="small">Enterprise Services and Offerings</span>
+              Any Size. Any Problem.
+              <br />
+              Our Team is Your Team
+            </h2>
+
+            <div class="services-content flex-row-reverse">
+              <img
+                class="img-fluid"
+                src="assets/graphic-home-enterprise.png"
+                alt=""
+              />
+              <ul>
+                <li>Branding & UI Design Revitalizations</li>
+                <li>User Experience (UI/UX) Audits</li>
+                <li>Accessability Audits & Training</li>
+                <li>Design & Development Integration Workshops</li>
+                <li>Business Process Improvement (BPI) Consulting</li>
+                <li>Mobile & Web Application Development Services</li>
+              </ul>
+            </div>
+
+            {/* <div class="text-center">
+              <button class="btn btn-primary">
+                Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
+                our process
+              </button>
+            </div> */}
+          </div>
+        </section>
+
+        {/* section - divider */}
+        <app-cta hideButton={true}>
+          <span slot="header">See what makes us different</span>
         </app-cta>
 
-        {/* section - process */}
-        <section id="process">
-          <app-header
-            link-url="#process-content"
-            background-url="assets/bg-header-table.jpg"
-          >
-            <h2 slot="header">
-              <span class="small">Our Process</span>
-              Creative Solutions to Real World Problems
-            </h2>
-            <p slot="subheader">
-              Our process is important to us and our clients
-            </p>
-          </app-header>
+        {/* section - approach */}
+        <section class="bg-gray">
+          <div class="container approach">
+            <content-graphic
+              img-url="assets/graphic-home-code.png"
+              reverse={true}
+            >
+              <h3 slot="header">Get Technical</h3>
+              <p slot="body">
+                We're experts in mobile and web app development. We specialize
+                in web technologies including Ionic, React, Stencil, Angular,
+                Node, MongoDB, and MySQL.
+              </p>
+            </content-graphic>
 
-          <div id="process-content" class="container">
-            <content-graphic img-url="assets/graphic-desktop-tablet-mobile.png">
+            <content-graphic img-url="assets/graphic-home-devices.png">
               <h3 slot="header">Process Matters</h3>
               <p slot="body">
                 Our team specializes in providing enterprise quality software
@@ -104,7 +176,7 @@ export class AppHome {
             </content-graphic>
 
             <content-graphic
-              img-url="assets/graphic-computer-clock.png"
+              img-url="assets/graphic-home-design.png"
               reverse={true}
             >
               <h3 slot="header">Design is important</h3>
@@ -117,7 +189,7 @@ export class AppHome {
               </p>
             </content-graphic>
 
-            <content-graphic img-url="assets/graphic-computer-clock.png">
+            <content-graphic img-url="assets/graphic-home-computer.png">
               <h3 slot="header">We don't do fixed bids</h3>
               <p slot="body">
                 Because we charge by time and materials, our clients gain the
@@ -131,68 +203,7 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
-          <span slot="header">Want more details on our process?</span>
-          <span slot="link">Learn more</span>
-        </app-cta>
-
-        {/* section - development */}
-        <section id="development">
-          <app-header
-            link-url="#development-content"
-            background-url="assets/bg-header-person-typing.jpg"
-          >
-            <h2 slot="header">
-              <span class="small">Our Development</span>
-              Software You Can Always Trust
-            </h2>
-            <p slot="subheader">
-              We find the right way to build your app and treat each project
-              differently
-            </p>
-          </app-header>
-
-          <div id="development-content" class="container">
-            <content-graphic img-url="assets/graphic-info-tree.png">
-              <h3 slot="header">Best architecture in town</h3>
-              <p slot="body">
-                Don't believe us? Check out some of our open source
-                repositories. We require all of our team members to do constant
-                exercises in continuing their education as developers, including
-                practice in the latest architecture and design paradigns
-                released by the top minds world-wide.
-              </p>
-            </content-graphic>
-
-            <content-graphic
-              img-url="assets/graphic-technology-check.png"
-              reverse={true}
-            >
-              <h3 slot="header">Technology to fit your business needs</h3>
-              <p slot="body">
-                One size shoe does not fit all, and the same applies to
-                technology. We pick the tech stack who's advantages best fit
-                your application. This allows us to utilize the best of each
-                different technology in order to aximize the results and
-                minimize the cost.
-              </p>
-            </content-graphic>
-
-            <content-graphic img-url="assets/graphic-pair-programming.png">
-              <h3 slot="header">Paired programming at its finest</h3>
-              <p slot="body">
-                Not only will you receive dedicated staff for the scope of your
-                project, but each team member at OpenForge is also required to
-                do code reviews and pair programming with our lead Architects
-                &amp; CTO. This assures that the work our team delivers is
-                always thought out and top-notch.
-              </p>
-            </content-graphic>
-          </div>
-        </section>
-
-        {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
+        <app-cta link-url="/about">
           <span slot="header">Want to learn more about us?</span>
           <span slot="link">Get to know us</span>
         </app-cta>

@@ -60,7 +60,7 @@ export class OpenForgeApp {
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
           <div class="container">
-            <a class="navbar-brand" href="#">
+            <div class="navbar-brand">
               <h1>
                 <img
                   class="img-fluid"
@@ -68,7 +68,7 @@ export class OpenForgeApp {
                   alt="OpenForge"
                 />
               </h1>
-            </a>
+            </div>
             <button
               class="navbar-toggler"
               type="button"
@@ -110,6 +110,8 @@ export class OpenForgeApp {
                     About
                   </stencil-route-link>
                 </li>
+                {/*
+                 * hiding services tab for first version *
                 <li
                   class="nav-item"
                   data-toggle="collapse"
@@ -122,7 +124,7 @@ export class OpenForgeApp {
                   >
                     Services
                   </stencil-route-link>
-                </li>
+                </li> */}
                 <li
                   class="nav-item"
                   data-toggle="collapse"
@@ -141,12 +143,25 @@ export class OpenForgeApp {
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
+                  <stencil-route-link
+                    url="/opportunities"
+                    anchorClass="nav-link"
+                    activeClass="active"
+                  >
+                    Opportunities
+                  </stencil-route-link>
+                </li>
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
                   <a
                     class="nav-link"
                     href="https://github.com/openforge"
                     target="_blank"
                   >
-                    Github
+                    <div class="fab fa-github" />
                   </a>
                 </li>
               </ul>
@@ -166,6 +181,11 @@ export class OpenForgeApp {
             <stencil-route
               url="/contact"
               component="app-contact"
+              exact={true}
+            />
+            <stencil-route
+              url="/opportunities"
+              component="app-opportunities"
               exact={true}
             />
           </stencil-router>
