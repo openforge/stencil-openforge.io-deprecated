@@ -17,7 +17,7 @@ export class AppHeroHome {
   @Listen('window:resize')
   handleImage() {
     const element = document.querySelector('header.hero') as HTMLElement;
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
     } else if (window.innerWidth < 992) {
