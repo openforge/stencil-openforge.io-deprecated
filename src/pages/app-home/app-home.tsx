@@ -5,11 +5,23 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  componentDidLoad() {
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+  }
+
   render() {
     return (
       <div>
         {/* header - hero */}
-        <app-hero-home link-url="mailto:hello@openforge.io">
+        <app-hero-home>
           <span slot="header">We Lead by Example.</span>
           <span slot="body">
             Work with our team of highly skilled consultants, developers, and
@@ -20,7 +32,7 @@ export class AppHome {
         </app-hero-home>
 
         {/* section - services */}
-        <section>
+        <section id="second-content">
           <div class="container services">
             <h2>
               <span class="small">Our Services</span>
@@ -81,12 +93,12 @@ export class AppHome {
               </ul>
             </div>
 
-            <div class="text-center">
+            {/* <div class="text-center">
               <button class="btn btn-primary">
                 Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
                 our process
               </button>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -113,12 +125,12 @@ export class AppHome {
               </ul>
             </div>
 
-            <div class="text-center">
+            {/* <div class="text-center">
               <button class="btn btn-primary">
                 Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
                 our process
               </button>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -177,7 +189,7 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
+        <app-cta link-url="/about">
           <span slot="header">Want to learn more about us?</span>
           <span slot="link">Get to know us</span>
         </app-cta>

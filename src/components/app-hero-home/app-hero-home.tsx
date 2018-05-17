@@ -5,7 +5,6 @@ import { Component, Listen, Prop } from '@stencil/core';
   styleUrl: 'app-hero-home.scss',
 })
 export class AppHeroHome {
-  @Prop() linkUrl: string;
   @Prop() textNoWrap: boolean;
   @Prop() hideLink: boolean;
 
@@ -16,7 +15,7 @@ export class AppHeroHome {
   // will refactor in the future
   @Listen('window:resize')
   handleImage() {
-    const element = document.querySelector('header.hero') as HTMLElement;
+    const element = document.querySelector('header.hero-home') as HTMLElement;
     if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
@@ -31,7 +30,7 @@ export class AppHeroHome {
 
   render() {
     return (
-      <header class="hero">
+      <header class="hero-home">
         <div class="container">
           <div class="content">
             <h2
@@ -46,7 +45,7 @@ export class AppHeroHome {
               <slot name="body" />
             </p>
             {!this.hideLink ? (
-              <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+              <a href="#second-content" class="btn btn-primary">
                 <slot name="link" />
               </a>
             ) : null}
