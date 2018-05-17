@@ -11,9 +11,9 @@ export class AppHome {
         {/* header - hero */}
         <app-hero-home
           link-url="mailto:hello@openforge.io"
-          background-url="assets/opportunities-header-background-02.png"
+          background-url="assets/bg-hero-town.jpg"
         >
-          <span slot="header">We are thinkers, makers &amp; doers</span>
+          <span slot="header">We Lead by Example.</span>
           <span slot="body">
             Work with our team of highly skilled consultants, developers, and
             designers to develop solutions and processes to fit your

@@ -3,20 +3,14 @@
   background-color: $black;
   background-position: top center;
   background-size: cover;
+  display: flex;
+  align-items: flex-end;
   height: 100vh;
-
-  .container,
-  .row {
-    height: 100%;
-  }
 
   h2 {
     color: $white;
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
-    @include media-breakpoint-down(lg) {
-      font-size: 3rem;
-    }
     @include media-breakpoint-down(sm) {
       font-size: 2.2rem;
     }
@@ -24,12 +18,19 @@
 
   p {
     color: $white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     margin-bottom: 3rem;
     max-width: 500px;
-    @include media-breakpoint-down(lg) {
-      font-size: 1rem;
-    }
+  }
+
+  .content {
+    background: url('assets/graphic-home-monitor.png') top center no-repeat;
+    background-size: contain;
+    height: 674px;
+    margin-left: -125px;
+    padding: 125px;
+    position: relative;
+    width: 800px;
   }
 }

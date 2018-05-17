@@ -19,26 +19,23 @@ export class AppHeroHome {
     return (
       <header class="hero">
         <div class="container">
-          <div class="row align-items-center">
-            <img src="assets/home-header-monitor.png" />
-            <div class="col-sm-12 col-md-8 col-lg-6">
-              <h2
-                class={{
-                  'text-nowrap': this.textNoWrap,
-                }}
-              >
-                <slot name="header" />
-              </h2>
+          <div class="content">
+            <h2
+              class={{
+                'text-nowrap': this.textNoWrap,
+              }}
+            >
+              <slot name="header" />
+            </h2>
 
-              <p>
-                <slot name="body" />
-              </p>
-              {!this.hideLink ? (
-                <a href={this.linkUrl} class="btn btn-primary" target="_blank">
-                  <slot name="link" />
-                </a>
-              ) : null}
-            </div>
+            <p>
+              <slot name="body" />
+            </p>
+            {!this.hideLink ? (
+              <a href={this.linkUrl} class="btn btn-primary" target="_blank">
+                <slot name="link" />
+              </a>
+            ) : null}
           </div>
         </div>
       </header>
