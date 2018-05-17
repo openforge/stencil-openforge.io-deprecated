@@ -128,6 +128,18 @@ export class AppAbout {
     },
   ];
 
+  componentDidLoad() {
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+  }
+
   render() {
     return (
       <div>
@@ -146,7 +158,7 @@ export class AppAbout {
         </app-hero>
 
         {/* section - values */}
-        <section id="values">
+        <section id="second-content" class="values">
           <div class="container">
             <h2>
               <span class="small">Our Key Values</span>

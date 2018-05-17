@@ -21,6 +21,15 @@ export class AppContact {
 
   componentDidLoad() {
     this.resetFormValues();
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
   }
 
   @Listen('check')
@@ -96,7 +105,7 @@ export class AppContact {
           <span slot="link">Request Now</span>
         </app-hero>
 
-        <section id="contact-form">
+        <section id="second-content" class="contact-form">
           <div class="container">
             <div class="jumbotron">
               <h2 class="display-5 font-weight-bold">Get in Touch</h2>

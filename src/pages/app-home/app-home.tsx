@@ -35,7 +35,7 @@ export class AppHome {
         </app-hero>
 
         {/* section - services */}
-        <section>
+        <section id="second-content">
           <div class="container services">
             <h2>
               <span class="small">Our Services</span>
@@ -96,12 +96,12 @@ export class AppHome {
               </ul>
             </div>
 
-            <div class="text-center">
+            {/* <div class="text-center">
               <button class="btn btn-primary">
                 Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
                 our process
               </button>
-            </div>
+            </div> */}
           </div>
         </section>
 
@@ -128,12 +128,12 @@ export class AppHome {
               </ul>
             </div>
 
-            <div class="text-center">
+            {/* <div class="text-center">
               <button class="btn btn-primary">
                 Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
                 our process
               </button>
-            </div>
+            </div> */}
           </div>
         </section>
 
