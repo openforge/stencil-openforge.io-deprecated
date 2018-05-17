@@ -6,9 +6,11 @@ The home of OpenForge.io, built using Stencil.js!
 
 ### Running The Application
 
-npm install
-npm run dev --es5 (firefox)
-npm start or npm run dev
+```npm install```
+
+```npm run dev --es5``` (firefox)
+
+```npm start``` or ```npm run dev```
 
 ### File Structure
 **UI** components should reside in the `src/components` folder.
