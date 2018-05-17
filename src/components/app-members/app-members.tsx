@@ -30,10 +30,7 @@ export class AppMembers {
                 <h4 class="card-text mb-auto">{member.name}</h4>
               </div>
 
-              <div
-                class="col align-self-center text-center"
-                style={{ fontSize: '2em' }}
-              >
+              <div class="col text-center" style={{ fontSize: '2em' }}>
                 {!member.mail ? null : (
                   <a
                     href={`mailto:${member.mail}`}

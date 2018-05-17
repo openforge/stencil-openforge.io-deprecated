@@ -10,9 +10,7 @@ export class AppCta {
 
   componentDidLoad() {
     if (this.hideButton) {
-      const button = document.getElementsByClassName(
-        'btn btn-primary align-self-center'
-      );
+      const button = document.getElementsByClassName('btn btn-primary ');
       button['0'].style.visibility = 'hidden';
     }
   }
@@ -26,11 +24,7 @@ export class AppCta {
           </h3>
 
           {this.hideButton ? null : (
-            <a
-              href={this.linkUrl}
-              class="btn btn-primary align-self-center"
-              target="_blank"
-            >
+            <a href={this.linkUrl} class="btn btn-primary" target="_blank">
               <slot name="link" />
             </a>
           )}
