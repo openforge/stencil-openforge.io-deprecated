@@ -189,7 +189,7 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
+        <app-cta link-url="/about">
           <span slot="header">Want to learn more about us?</span>
           <span slot="link">Get to know us</span>
         </app-cta>

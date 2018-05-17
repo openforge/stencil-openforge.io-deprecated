@@ -15,7 +15,7 @@ export class AppHeroHome {
   // will refactor in the future
   @Listen('window:resize')
   handleImage() {
-    const element = document.querySelector('header.hero') as HTMLElement;
+    const element = document.querySelector('header.hero-home') as HTMLElement;
     if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
@@ -30,7 +30,7 @@ export class AppHeroHome {
 
   render() {
     return (
-      <header class="hero">
+      <header class="hero-home">
         <div class="container">
           <div class="content">
             <h2

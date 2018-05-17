@@ -96,7 +96,6 @@ export class AppContact {
       <div>
         {/* header - hero */}
         <app-hero
-          link-url="mailto:hello@openforge.io"
           background-url="assets/bg-hero-handshake-desk.jpg"
           text-no-wrap={true}
         >
