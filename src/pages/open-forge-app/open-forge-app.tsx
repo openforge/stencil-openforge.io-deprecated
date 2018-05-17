@@ -143,19 +143,6 @@ export class OpenForgeApp {
                   data-toggle="collapse"
                   data-target="#navbarSupportedContent"
                 >
-                  <a
-                    class="nav-link"
-                    href="https://github.com/openforge"
-                    target="_blank"
-                  >
-                    GitHub
-                  </a>
-                </li>
-                <li
-                  class="nav-item"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                >
                   <stencil-route-link
                     url="/opportunities"
                     anchorClass="nav-link"
@@ -163,6 +150,19 @@ export class OpenForgeApp {
                   >
                     Opportunities
                   </stencil-route-link>
+                </li>
+                <li
+                  class="nav-item"
+                  data-toggle="collapse"
+                  data-target="#navbarSupportedContent"
+                >
+                  <a
+                    class="nav-link"
+                    href="https://github.com/openforge"
+                    target="_blank"
+                  >
+                    <div class="fab fa-github" />
+                  </a>
                 </li>
               </ul>
             </div>

@@ -30,6 +30,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppCta {
+      'hideButton': boolean;
       'linkUrl': string;
     }
   }
@@ -53,6 +54,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppCtaAttributes extends HTMLAttributes {
+      'hideButton'?: boolean;
       'linkUrl'?: string;
     }
   }

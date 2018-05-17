@@ -100,12 +100,13 @@ export class AppOpportunities {
       <div class="opportunities">
         {/* header - hero */}
         <app-hero background-url="assets/bg-hero-mountain.jpg" hideLink={true}>
-          <span slot="header">
-            OpenForge is hiring two mid-level developers.
-          </span>
+          <span slot="header">OpenForge is hiring two amazing developers!</span>
           <span slot="body">
             Looking for a new adventure? Want to know if you're the right fit
-            for the team? Keep reading!
+            for the team?
+            <br />
+            <br />
+            Scroll down to find out!
           </span>
         </app-hero>
 
@@ -118,9 +119,11 @@ export class AppOpportunities {
             >
               <h3 slot="header">Forget normal interviews!</h3>
               <p slot="body">
-                From our work to our interview process, we break the norm. Lorem
-                ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                From our work to our interview process, we break the norm. We
+                believe in Open Source contributions; so part of your interview
+                assignment will be exactly that - build out a simple (open
+                source) <a href="https://ionicframework.com/">Ionic</a> or{' '}
+                <a href="https://reactjs.org/"> React App!</a>
               </p>
             </content-graphic-lg>
 
@@ -128,8 +131,9 @@ export class AppOpportunities {
               <h3 slot="header">We want to put you to the test!</h3>
               <p slot="body">
                 Instead of asking you a million questions, we'd rather get to
-                know you another way - lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod.
+                know you another way - seeing how you follow direction, develop,
+                and learn a new technoloy or pattern that you have not used
+                before.
               </p>
             </content-graphic-lg>
           </div>
@@ -138,10 +142,6 @@ export class AppOpportunities {
             <div class="container">
               <div class="intro text-center">
                 <h2>The Challenge</h2>
-                <p>
-                  <em>Should you choose to accept,</em> you will develop a
-                  3-page app in the ionic framework.
-                </p>
                 <p>Show us your skills in:</p>
               </div>
               <div class="row">
@@ -183,12 +183,13 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
-              <h3 slot="header">Why?</h3>
+              <h3 slot="header">Reputation is Everything.</h3>
               <p slot="body">
-                Because we value our partnerships. And because we are a trusted
-                Ionic partner, we want lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
+                Because we value our partnerships. As a trusted partner of the{' '}
+                <a href="https://ionicframework.com/"> Ionic Team </a> our
+                clients rely on us to provide enterprise quality applications
+                for companies of all sizes; we need to make sure you're up to
+                the task!
               </p>
             </content-graphic-lg>
 
@@ -196,8 +197,9 @@ export class AppOpportunities {
               <h3 slot="header">Are you prepared?</h3>
               <p slot="body">
                 We're looking for someone who’s ready to hit the ground running
-                - someone who wants to turn big ideas into realities. But first,
-                we need to make sure you’ve got the skills to make it happen.
+                - someone who wants to turn big ideas into realities. A person
+                who can work on a team, show humility, and is not afraid to
+                learn and teach simultaneously.
               </p>
             </content-graphic-lg>
           </div>
@@ -211,8 +213,9 @@ export class AppOpportunities {
                 <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
                   <h2>Show us your skills</h2>
                   <p>
-                    Move the sliders to the position that aligns with your
-                    capabilities to continue.
+                    So if you're really awesome - prove it and position the
+                    sliders to reflect your skills! Hint; only the best shall
+                    pass the first test!
                   </p>
 
                   <div class="slider-labels">
@@ -229,7 +232,9 @@ export class AppOpportunities {
                   {!this.isDisabled ? (
                     <p>You're all set! Let's get started.</p>
                   ) : (
-                    <p>Not quite...keep sliding!</p>
+                    <p>
+                      Not quite...keep sliding or keep learning; you can do it!
+                    </p>
                   )}
 
                   <button
