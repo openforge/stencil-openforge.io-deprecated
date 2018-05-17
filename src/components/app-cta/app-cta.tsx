@@ -6,6 +6,16 @@ import { Component, Prop } from '@stencil/core';
 })
 export class AppCta {
   @Prop() linkUrl: string;
+  @Prop() hideButton: boolean = false;
+
+  componentDidLoad() {
+    if (this.hideButton) {
+      const button = document.getElementsByClassName(
+        'btn btn-primary align-self-center'
+      );
+      button['0'].style.visibility = 'hidden';
+    }
+  }
 
   render() {
     return (
@@ -15,13 +25,15 @@ export class AppCta {
             <slot name="header" />
           </h3>
 
-          <a
-            href={this.linkUrl}
-            class="btn btn-primary align-self-center"
-            target="_blank"
-          >
-            <slot name="link" />
-          </a>
+          {this.hideButton ? null : (
+            <a
+              href={this.linkUrl}
+              class="btn btn-primary align-self-center"
+              target="_blank"
+            >
+              <slot name="link" />
+            </a>
+          )}
         </div>
       </aside>
     );
