@@ -5,6 +5,18 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  componentDidLoad() {
+    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+    hrefArray.forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+        });
+      });
+    });
+  }
+
   render() {
     return (
       <div>
