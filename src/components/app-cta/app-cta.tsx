@@ -15,11 +15,7 @@ export class AppCta {
             <slot name="header" />
           </h3>
 
-          <a
-            href={this.linkUrl}
-            class="btn btn-primary align-self-center"
-            target="_blank"
-          >
+          <a href={this.linkUrl} class="btn btn-primary align-self-center">
             <slot name="link" />
           </a>
         </div>
