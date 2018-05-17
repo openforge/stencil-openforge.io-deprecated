@@ -22,20 +22,7 @@ export class AppHome {
         {/* section - services */}
         <section>
           <div class="container services">
-            <h2>
-              <span class="small">Our Motto</span>
-              Lead By Example
-            </h2>
-            <p>
-              It's our job to make your dreams a reality. Utilize our knowledge
-              in UI/UX to increase your customer engagement, our experience in
-              technology to decrease your costs, and our expertise in Web and
-              Mobile Application Development to provide reliable technology to
-              grow your business.
-              <br class="d-none d-md-block" />
-              <br class="d-none d-md-block" />
-              Technology is constantly changing; Let us help you change with it.
-            </p>
+            <h2 class="header-text">LET'S GET STARTED</h2>
 
             <div class="services-selections">
               <a href="#startup">
@@ -60,6 +47,18 @@ export class AppHome {
                 </figure>
               </a>
             </div>
+
+            <br class="d-md-block d-sm-block" />
+            <br class="d-md-block d-sm-block" />
+
+            <p>
+              It's our job to make your dreams a reality. Utilize our knowledge
+              in UI/UX to increase your customer engagement, our experience in
+              technology to decrease your costs, and our expertise in Web and
+              Mobile Application Development to provide reliable technology to
+              grow your business.
+              {/* Technology is constantly changing; Let us help you change with it. */}
+            </p>
           </div>
         </section>
 
@@ -131,6 +130,10 @@ export class AppHome {
             </div>
           </div>
         </section>
+
+        <app-cta>
+          <span slot="header">See what makes us different</span>
+        </app-cta>
 
         {/* section - approach */}
         <section class="bg-gray">

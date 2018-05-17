@@ -1,5 +1,5 @@
 section {
-  padding: 7rem 0;
+  padding: 6rem 0;
   @include media-breakpoint-down(sm) {
     padding: 5rem 0;
     text-align: center;
@@ -11,6 +11,14 @@ section {
 
   h2 {
     margin-bottom: 3rem;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .header-text {
+    font-size: 4rem;
     text-align: center;
     @include media-breakpoint-down(sm) {
       margin-bottom: 1rem;
@@ -32,6 +40,10 @@ section {
   }
 
   figure {
+    border: 3px solid $orange;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 10px;
     &:hover,
     &:focus,
     &:active {
