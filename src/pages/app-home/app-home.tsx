@@ -10,26 +10,31 @@ export class AppHome {
       <div>
         {/* header - hero */}
         <app-hero-home link-url="mailto:hello@openforge.io">
-          <span slot="header">We Lead by Example.</span>
+          <span slot="header">We are Thinkings. Makers. Doers.</span>
           <span slot="body">
-            Work with our team of highly skilled consultants, developers, and
-            designers to develop solutions and processes to fit your
-            requirements.
+            Work with our team of highly skilled designers, developers, and
+            consultants to develop solutions and processes that fit your
+            business requirements.
           </span>
-          <span slot="link">Learn More</span>
+          <span slot="link">Let's Get Started</span>
         </app-hero-home>
 
         {/* section - services */}
         <section>
           <div class="container services">
             <h2>
-              <span class="small">Our Services</span>
-              What do we provide?
+              <span class="small">Our Motto</span>
+              Lead By Example
             </h2>
             <p>
-              Whether you are a start up or an enterprise, we will work with you
-              every step of the way. <br class="d-none d-md-block" />
-              Choose your path below to learn more about our custom services:
+              It's our job to make your dreams a reality. Utilize our knowledge
+              in UI/UX to increase your customer engagement, our experience in
+              technology to decrease your costs, and our expertise in Web and
+              Mobile Application Development to provide reliable technology to
+              grow your business.
+              <br class="d-none d-md-block" />
+              <br class="d-none d-md-block" />
+              Technology is constantly changing; Let us help you change with it.
             </p>
 
             <div class="services-selections">
@@ -40,7 +45,7 @@ export class AppHome {
                     src="assets/graphic-home-startup.png"
                     alt=""
                   />
-                  <figcaption>Start Up</figcaption>
+                  <figcaption>I'M A STARTUP COMPANY</figcaption>
                 </figure>
               </a>
 
@@ -51,7 +56,7 @@ export class AppHome {
                     src="assets/graphic-home-enterprise.png"
                     alt=""
                   />
-                  <figcaption>Enterprise</figcaption>
+                  <figcaption>I'M AN ENTERPRISE COMPANY</figcaption>
                 </figure>
               </a>
             </div>
@@ -62,8 +67,8 @@ export class AppHome {
         <section id="startup" class="bg-gray">
           <div class="container services">
             <h2>
-              <span class="small">Our Services</span>
-              Start Up Services
+              <span class="small">Common startup services</span>
+              Let us help you get started
             </h2>
 
             <div class="services-content">
@@ -73,11 +78,13 @@ export class AppHome {
                 alt=""
               />
               <ul>
-                <li>Business Consulting</li>
-                <li>Pitch Decks</li>
-                <li>Clickable Prototypes</li>
-                <li>Mobile &amp; Web App Development</li>
-                <li>UI/UX Design</li>
+                <li>Startup Consulting</li>
+                <li>Enhanced Mobile & Web Designs</li>
+                <li>UI/UX Audits & Recommendations </li>
+                <li>Mobile Application Development</li>
+                <li>Web Application Development</li>
+                <li>Customer Engagement Strategy</li>
+                <li>Guerilla Marketing Strategy</li>
               </ul>
             </div>
 
@@ -94,8 +101,10 @@ export class AppHome {
         <section id="enterprise">
           <div class="container services">
             <h2>
-              <span class="small">Our Services</span>
-              Enterprise Services
+              <span class="small">Enterprise Services and Offerings</span>
+              Any Size. Any Problem.
+              <br />
+              Our Team is Your Team
             </h2>
 
             <div class="services-content flex-row-reverse">
@@ -105,11 +114,12 @@ export class AppHome {
                 alt=""
               />
               <ul>
-                <li>UI Design &amp; UX Audit</li>
-                <li>Enterprise Training</li>
-                <li>Workshops</li>
-                <li>Process Improvement</li>
-                <li>Software Development Services</li>
+                <li>Branding & UI Design Revitalizations</li>
+                <li>User Experience (UI/UX) Audits</li>
+                <li>Accessability Audits & Training</li>
+                <li>Design & Development Integration Workshops</li>
+                <li>Business Process Improvement (BPI) Consulting</li>
+                <li>Mobile & Web Application Development Services</li>
               </ul>
             </div>
 
