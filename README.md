@@ -12,6 +12,7 @@ The home of OpenForge.io, built using Stencil.js!
 
 ```npm start``` or ```npm run dev```
 
+
 ### File Structure
 **UI** components should reside in the `src/components` folder.
 
@@ -23,6 +24,7 @@ While **Page** components should reside in the `src/pages` folder. A page compon
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This project uses:
+- [sass-lint](https://github.com/sasstools/sass-lint) for sass linting (sass-lint.yml contains configuration)
 - [prettier](http://prettier.io/) for code formatting.
 - [tslint](https://palantir.github.io/tslint/) for linting with rules from:
   - [tslint-react](https://github.com/palantir/tslint-react)
@@ -32,6 +34,11 @@ This project uses:
 `package.json` defines an npm script for linting. To lint the project at any time, simply run the script with
 ```
 $ npm run lint
+```
+
+CSS Linting
+```
+$ sass-lint -c sass-lint.yml '**/*.scss' -v -q
 ```
 
 #### Versioning & Changelog
