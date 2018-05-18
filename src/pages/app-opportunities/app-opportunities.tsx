@@ -6,9 +6,11 @@ import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
 })
 export class AppOpportunities {
   @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean;
+  @State() canRequestInterview: boolean = false;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
+
+  formData = new FormData();
 
   formValues: {
     angular: number;
@@ -23,17 +25,10 @@ export class AppOpportunities {
     github: string;
   };
 
-  formData = new FormData();
+  application;
 
   componentDidLoad() {
     this.resetFormValues();
-  }
-
-  componentDidUpdate() {
-    const application = document.getElementById('apply');
-    if (application) {
-      application.scrollIntoView();
-    }
   }
 
   @Event() valueChange: EventEmitter;
@@ -43,11 +38,11 @@ export class AppOpportunities {
     this.formValues[field] = value;
 
     if (
-      this.formValues.angular > 60 &&
-      this.formValues.node > 60 &&
-      this.formValues.ionic > 60 &&
-      this.formValues.html > 60 &&
-      this.formValues.css > 60
+      this.formValues.angular > 90 &&
+      this.formValues.node > 90 &&
+      this.formValues.ionic > 90 &&
+      this.formValues.html > 90 &&
+      this.formValues.css > 90
     ) {
       this.isDisabled = false;
     } else {
@@ -58,6 +53,10 @@ export class AppOpportunities {
   handleSliders(e) {
     e.preventDefault();
     this.canRequestInterview = true;
+  }
+
+  requestInterview() {
+    this.application = document.getElementById('apply').scrollIntoView();
   }
 
   handleFile(e) {
@@ -245,6 +244,7 @@ export class AppOpportunities {
                     class="btn btn-primary"
                     type="submit"
                     disabled={this.isDisabled}
+                    onClick={this.requestInterview}
                     id="requestInterview"
                   >
                     Request an interview
@@ -311,8 +311,8 @@ export class AppOpportunities {
                     </label>
                     <textarea
                       class="form-control"
-                      // placeholder="Hello, I would like..."
                       name="message"
+                      maxLength={150}
                       required={true}
                     />
                   </div>
