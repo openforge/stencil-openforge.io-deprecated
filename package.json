@@ -18,8 +18,8 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
-    "@stencil/core": "^0.7.26",
-    "@stencil/router": "^0.1.0",
+    "@stencil/core": "^0.8.1",
+    "@stencil/router": "^0.1.6",
     "bootstrap": "^4.1.0",
     "smoothscroll-polyfill": "^0.4.3"
   },
