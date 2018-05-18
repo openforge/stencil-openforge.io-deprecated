@@ -12,15 +12,21 @@
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "serve": "stencil-dev-server",
-    "start": "npm run dev",
+    "start": "npm run build && node index.js",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+  },
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
   },
   "dependencies": {
     "@stencil/core": "^0.8.1",
     "@stencil/router": "^0.1.6",
     "bootstrap": "^4.1.0",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
     "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
