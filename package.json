@@ -26,6 +26,7 @@
     "@stencil/router": "^0.1.0",
     "bootstrap": "^4.1.0",
     "express": "^4.16.3",
+    "helmet": "^3.12.1",
     "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
