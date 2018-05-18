@@ -22,8 +22,8 @@
     "npm": "5.6.0"
   },
   "dependencies": {
-    "@stencil/core": "^0.8.1",
-    "@stencil/router": "^0.1.6",
+    "@stencil/core": "^0.9.1",
+    "@stencil/router": "^0.1.7",
     "bootstrap": "^4.1.0",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
