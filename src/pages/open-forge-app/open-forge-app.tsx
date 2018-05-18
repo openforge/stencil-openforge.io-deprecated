@@ -1,9 +1,9 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Listen, Prop } from '@stencil/core';
 import {
   ActiveRouter,
   RouterHistory,
-  LocationSegments,
   RouterSwitch,
+  LocationSegments,
 } from '@stencil/router';
 
 import { polyfill } from 'smoothscroll-polyfill';
@@ -49,14 +49,23 @@ export class OpenForgeApp {
         <app-nav-header />
         <main>
           <stencil-router>
-            <RouterSwitch scrollTopOffset={0}>
+            <RouterSwitch>
               <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/about" component="app-about" />
-              <stencil-route url="/services" component="app-services" />
-              <stencil-route url="/contact" component="app-contact" />
+              <stencil-route url="/about" component="app-about" exact={true} />
+              <stencil-route
+                url="/services"
+                component="app-services"
+                exact={true}
+              />
+              <stencil-route
+                url="/contact"
+                component="app-contact"
+                exact={true}
+              />
               <stencil-route
                 url="/opportunities"
                 component="app-opportunities"
+                exact={true}
               />
             </RouterSwitch>
           </stencil-router>
