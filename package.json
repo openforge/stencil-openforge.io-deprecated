@@ -12,7 +12,7 @@
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "serve": "stencil-dev-server",
-    "start": "npm run dev",
+    "start": "npm run build && node index.js",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
