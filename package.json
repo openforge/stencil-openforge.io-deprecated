@@ -17,10 +17,15 @@
     "test.watch": "jest --watch --no-cache",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
+  "engines": {
+    "node": "8.9.4",
+    "npm": "5.6.0"
+  },
   "dependencies": {
     "@stencil/core": "^0.7.26",
     "@stencil/router": "^0.1.0",
     "bootstrap": "^4.1.0",
+    "express": "^4.16.3",
     "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
