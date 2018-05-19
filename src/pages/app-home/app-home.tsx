@@ -22,7 +22,7 @@ export class AppHome {
       <div>
         {/* header - hero */}
         <app-hero-home>
-          <span slot="header">We are Thinkings. Makers. Doers.</span>
+          <span slot="header">We are Thinkers. Makers. Doers.</span>
           <span slot="body">
             Work with our team of highly skilled designers, developers, and
             consultants to develop solutions and processes that fit your
