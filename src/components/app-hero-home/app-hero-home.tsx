@@ -1,4 +1,4 @@
-import { Component, Listen, Prop } from '@stencil/core';
+import { Component, Listen, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'app-hero-home',
@@ -7,6 +7,7 @@ import { Component, Listen, Prop } from '@stencil/core';
 export class AppHeroHome {
   @Prop() textNoWrap: boolean;
   @Prop() hideLink: boolean;
+  @Element() host: HTMLElement;
 
   componentDidLoad() {
     this.handleImage();
@@ -15,7 +16,15 @@ export class AppHeroHome {
   // will refactor in the future
   @Listen('window:resize')
   handleImage() {
-    const element = document.querySelector('header.hero-home') as HTMLElement;
+    let element;
+    try {
+      console.log('started app-hero-home didLoad');
+      element = document.querySelector('header.hero-home') as HTMLElement;
+      console.log('completed app-hero-home didLoad');
+    } catch (e) {
+      console.log('app-hero-home undefined', e);
+    }
+
     if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;

@@ -22,9 +22,14 @@ export class OpenForgeApp {
 
   componentDidLoad() {
     gtag('js', new Date());
-
-    this.navbarEl = document.querySelector('nav.navbar');
-    this.mainEl = document.querySelector('main');
+    console.log('started open-forge-app didLoad');
+    try {
+      this.navbarEl = document.querySelector('nav.navbar');
+      this.mainEl = document.querySelector('main');
+      console.log('completed open-forge-app didLoad');
+    } catch (e) {
+      console.error('caught error componentDidLoad open-forge-app', e);
+    }
 
     const history: RouterHistory = this.activeRouter.get('history');
     gtag('config', GA_TRACKING_ID, { page_path: history.location.pathname });

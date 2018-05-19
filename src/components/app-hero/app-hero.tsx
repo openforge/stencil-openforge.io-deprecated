@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'app-hero',
@@ -9,9 +9,17 @@ export class AppHero {
   @Prop() backgroundUrl: string;
   @Prop() textNoWrap: boolean;
   @Prop() hideLink: boolean;
+  @Element() host: Element;
 
   componentDidLoad() {
-    const element = document.querySelector('header.hero') as HTMLElement;
+    let element;
+    try {
+      console.log('started app-hero didLoad');
+      element = document.querySelector('header.hero') as HTMLElement;
+      console.log('completed app-hero didLoad');
+    } catch (e) {
+      console.log('completed app-hero undefined', e);
+    }
     element.style.backgroundImage = `url('${this.backgroundUrl}')`;
   }
 

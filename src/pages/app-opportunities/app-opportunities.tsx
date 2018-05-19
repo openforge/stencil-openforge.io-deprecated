@@ -31,6 +31,7 @@ export class AppOpportunities {
 
   componentDidUpdate() {
     const application = document.getElementById('apply');
+    console.log('app-opportunities got elementbyID');
     if (application) {
       application.scrollIntoView();
     }
@@ -111,7 +112,7 @@ export class AppOpportunities {
         </app-hero>
 
         {/* section - intro */}
-        <section id="intro">
+        <section id="intro" class="intro">
           <div class="container">
             <content-graphic-lg
               img-url="assets/graphic-opportunities-suck.jpg"
@@ -206,7 +207,7 @@ export class AppOpportunities {
         </section>
 
         {/* section - apply */}
-        <section id="apply">
+        <section id="apply" class="apply">
           {!this.formSubmitted ? (
             <div class="container">
               {!this.canRequestInterview ? (

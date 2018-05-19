@@ -129,15 +129,22 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
+    let hrefArray;
+    try {
+      console.log('started app-about didLoad');
+      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+      hrefArray.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
         });
       });
-    });
+      console.log('completed app-about didLoad');
+    } catch (e) {
+      console.log('app-about componentdidload undefined query selector', e);
+    }
   }
 
   render() {
@@ -212,7 +219,7 @@ export class AppAbout {
         </section>
 
         {/* team */}
-        <section id="team">
+        <section id="team" class="team">
           <div class="container">
             <h4>
               <div class="display-4 pb-3">Meet the Team</div>

@@ -20,16 +20,22 @@ export class AppContact {
   };
 
   componentDidLoad() {
+    let hrefArray;
     this.resetFormValues();
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
+    try {
+      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+      hrefArray.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
         });
       });
-    });
+      console.log('completed app-contact didLoad');
+    } catch (e) {
+      console.error('caught error componentDidLoad app-contact', e);
+    }
   }
 
   @Listen('check')
