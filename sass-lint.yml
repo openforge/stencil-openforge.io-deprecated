@@ -18,10 +18,6 @@ files:
     - 'sass/vendor/**/*.*'
 # Rule Configuration
 rules:
-  border-zero:
-    - 2
-    -
-      convention: none
   brace-style:
     - 2
     -
@@ -30,8 +26,6 @@ rules:
     - 2
     - convention: hyphenatedlowercase
   empty-args: 2
-  empty-line-between-blocks:
-    - 2
   # Extends cause trouble
   no-extends: 2
   mixin-name-format:
@@ -47,7 +41,6 @@ rules:
   no-debug: 1
   no-ids: 1
   no-misspelled-properties: 2
-  no-vendor-prefixes: 1
   one-declaration-per-line: 2
   hex-notation:
     - 2

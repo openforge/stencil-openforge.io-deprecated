@@ -30,6 +30,7 @@ footer {
       text-align: center;
     }
   }
+
   .content:nth-child(1) {
     border-right: 1px solid rgba($white, 0.33);
     padding-right: 3rem;
@@ -38,6 +39,7 @@ footer {
       padding: 0 15px;
     }
   }
+
   .content:nth-child(2) {
     border-right: 1px solid rgba($white, 0.33);
     text-align: center;
@@ -63,6 +65,7 @@ footer {
       }
     }
   }
+
   .content:nth-child(3) {
     padding-left: 3rem;
     @include media-breakpoint-down(sm) {

@@ -62,7 +62,7 @@ $ npm run lint
 
 CSS Linting
 ```
-$ sass-lint -c sass-lint.yml '**/*.scss' -v -q
+$ node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q
 ```
 
 #### Versioning & Changelog
