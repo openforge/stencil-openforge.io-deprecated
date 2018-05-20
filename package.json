@@ -15,7 +15,8 @@
     "start": "npm run build && node index.js",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "st:generate": "node scripts/st-generate.js"
   },
   "engines": {
     "node": "8.9.4",

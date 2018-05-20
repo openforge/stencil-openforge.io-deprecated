@@ -283,6 +283,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppNavHeader {
+
+    }
+  }
+
+  interface HTMLAppNavHeaderElement extends StencilComponents.AppNavHeader, HTMLStencilElement {}
+
+  var HTMLAppNavHeaderElement: {
+    prototype: HTMLAppNavHeaderElement;
+    new (): HTMLAppNavHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-nav-header': HTMLAppNavHeaderElement;
+  }
+  interface ElementTagNameMap {
+    'app-nav-header': HTMLAppNavHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-nav-header': JSXElements.AppNavHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppNavHeaderAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppRadio {
       'label': string;
       'name': string;
