@@ -131,7 +131,6 @@ export class AppAbout {
   componentDidLoad() {
     let hrefArray;
     try {
-      console.log('started app-about didLoad');
       hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
       hrefArray.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
@@ -141,7 +140,6 @@ export class AppAbout {
           });
         });
       });
-      console.log('completed app-about didLoad');
     } catch (e) {
       console.log('app-about componentdidload undefined query selector', e);
     }

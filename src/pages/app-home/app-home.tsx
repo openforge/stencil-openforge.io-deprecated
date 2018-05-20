@@ -7,7 +7,6 @@ import { Component } from '@stencil/core';
 export class AppHome {
   componentDidLoad() {
     let hrefArray;
-    console.log('started app-home didLoad');
     try {
       hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
       hrefArray.forEach(anchor => {
@@ -18,7 +17,6 @@ export class AppHome {
           });
         });
       });
-      console.log('completed app-home didLoad');
     } catch (e) {
       console.error('caught error componentDidLoad app-home', e);
     }

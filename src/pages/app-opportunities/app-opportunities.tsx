@@ -31,7 +31,6 @@ export class AppOpportunities {
 
   componentDidUpdate() {
     const application = document.getElementById('apply');
-    console.log('app-opportunities got elementbyID');
     if (application) {
       application.scrollIntoView();
     }

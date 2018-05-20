@@ -32,7 +32,6 @@ export class AppContact {
           });
         });
       });
-      console.log('completed app-contact didLoad');
     } catch (e) {
       console.error('caught error componentDidLoad app-contact', e);
     }

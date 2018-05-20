@@ -13,7 +13,6 @@ export class AppHeader {
   scrollElement;
 
   componentDidLoad() {
-    console.log('started app-header didLoad');
     if (this.hideButton) {
       const button = document.getElementsByClassName(
         'btn btn-primary btn-arrow'
@@ -22,9 +21,8 @@ export class AppHeader {
     }
     try {
       this.scrollElement = document.querySelector(this.linkUrl) as HTMLElement;
-      console.log('completed app-header didLoad');
     } catch (e) {
-      console.log('app-header undefined');
+      console.log('app-header error ', e);
     }
   }
 
