@@ -1,4 +1,4 @@
-import { Component, Listen, Prop } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import {
   ActiveRouter,
   RouterHistory,
@@ -20,15 +20,15 @@ export class OpenForgeApp {
   @Prop({ context: 'activeRouter' })
   activeRouter: ActiveRouter;
   unsubscribe: () => void;
-
-  navbarEl: HTMLElement;
   mainEl: HTMLElement;
-  isScrolled = false;
+
+  componentDidUnload() {
+    this.unsubscribe();
+  }
 
   componentDidLoad() {
     gtag('js', new Date());
     try {
-      this.navbarEl = document.querySelector('nav.navbar');
       this.mainEl = document.querySelector('main');
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
@@ -41,26 +41,6 @@ export class OpenForgeApp {
       console.log(segments);
       gtag('config', GA_TRACKING_ID, { page_path: segments.pathname });
     });
-  }
-
-  componentDidUnload() {
-    this.unsubscribe();
-  }
-
-  @Listen('window:scroll')
-  handleScroll() {
-    this.setIsScrolled();
-
-    if (this.isScrolled && !this.navbarEl.classList.contains('background')) {
-      this.navbarEl.classList.add('background');
-    } else if (!this.isScrolled) {
-      this.navbarEl.classList.remove('background');
-    }
-  }
-
-  setIsScrolled() {
-    const dimensions = this.mainEl.getBoundingClientRect();
-    this.isScrolled = dimensions.top < 0;
   }
 
   render() {
