@@ -1,5 +1,10 @@
 import { Component, Listen, Prop } from '@stencil/core';
-import { ActiveRouter, RouterHistory, LocationSegments } from '@stencil/router';
+import {
+  ActiveRouter,
+  RouterHistory,
+  LocationSegments,
+  RouterSwitch,
+} from '@stencil/router';
 
 import { polyfill } from 'smoothscroll-polyfill';
 
@@ -22,11 +27,9 @@ export class OpenForgeApp {
 
   componentDidLoad() {
     gtag('js', new Date());
-    console.log('started open-forge-app didLoad');
     try {
       this.navbarEl = document.querySelector('nav.navbar');
       this.mainEl = document.querySelector('main');
-      console.log('completed open-forge-app didLoad');
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
     }
@@ -115,21 +118,6 @@ export class OpenForgeApp {
                     About
                   </stencil-route-link>
                 </li>
-                {/*
-                 * hiding services tab for first version *
-                <li
-                  class="nav-item"
-                  data-toggle="collapse"
-                  data-target="#navbarSupportedContent"
-                >
-                  <stencil-route-link
-                    url="/services"
-                    anchorClass="nav-link"
-                    activeClass="active"
-                  >
-                    Services
-                  </stencil-route-link>
-                </li> */}
                 <li
                   class="nav-item"
                   data-toggle="collapse"
@@ -176,23 +164,25 @@ export class OpenForgeApp {
 
         <main>
           <stencil-router>
-            <stencil-route url="/" component="app-home" exact={true} />
-            <stencil-route url="/about" component="app-about" exact={true} />
-            <stencil-route
-              url="/services"
-              component="app-services"
-              exact={true}
-            />
-            <stencil-route
-              url="/contact"
-              component="app-contact"
-              exact={true}
-            />
-            <stencil-route
-              url="/opportunities"
-              component="app-opportunities"
-              exact={true}
-            />
+            <RouterSwitch scrollTopOffset={0}>
+              <stencil-route url="/" component="app-home" exact={true} />
+              <stencil-route url="/about" component="app-about" exact={true} />
+              <stencil-route
+                url="/services"
+                component="app-services"
+                exact={true}
+              />
+              <stencil-route
+                url="/contact"
+                component="app-contact"
+                exact={true}
+              />
+              <stencil-route
+                url="/opportunities"
+                component="app-opportunities"
+                exact={true}
+              />
+            </RouterSwitch>
           </stencil-router>
         </main>
 
