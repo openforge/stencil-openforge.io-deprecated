@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, Element } from '@stencil/core';
+import { Component, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'app-hero-home',
@@ -6,7 +6,6 @@ import { Component, Listen, Prop, Element } from '@stencil/core';
 })
 export class AppHeroHome {
   @Prop() textNoWrap: boolean;
-  @Element() host: HTMLElement;
 
   componentDidLoad() {
     this.handleImage();
@@ -17,9 +16,7 @@ export class AppHeroHome {
   handleImage() {
     let element;
     try {
-      console.log('started app-hero-home didLoad');
-      element = document.querySelector('header.hero-home') as HTMLElement;
-      console.log('completed app-hero-home didLoad');
+      element = document.querySelector('header.hero-home');
     } catch (e) {
       console.log('app-hero-home undefined', e);
     }
