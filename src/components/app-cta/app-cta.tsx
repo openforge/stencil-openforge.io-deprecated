@@ -8,13 +8,6 @@ export class AppCta {
   @Prop() linkUrl: string;
   @Prop() hideButton: boolean = false;
 
-  componentDidLoad() {
-    if (this.hideButton) {
-      const button = document.getElementsByClassName('cta-link');
-      button['0'].style.visibility = 'hidden';
-    }
-  }
-
   render() {
     return (
       <aside class="cta px-2 text-center text-white">
