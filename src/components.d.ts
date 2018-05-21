@@ -135,7 +135,6 @@ declare global {
 
   namespace StencilComponents {
     interface AppHeroHome {
-      'hideLink': boolean;
       'textNoWrap': boolean;
     }
   }
@@ -159,46 +158,6 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHeroHomeAttributes extends HTMLAttributes {
-      'hideLink'?: boolean;
-      'textNoWrap'?: boolean;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface AppHero {
-      'backgroundUrl': string;
-      'hideLink': boolean;
-      'linkUrl': string;
-      'textNoWrap': boolean;
-    }
-  }
-
-  interface HTMLAppHeroElement extends StencilComponents.AppHero, HTMLStencilElement {}
-
-  var HTMLAppHeroElement: {
-    prototype: HTMLAppHeroElement;
-    new (): HTMLAppHeroElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-hero': HTMLAppHeroElement;
-  }
-  interface ElementTagNameMap {
-    'app-hero': HTMLAppHeroElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-hero': JSXElements.AppHeroAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppHeroAttributes extends HTMLAttributes {
-      'backgroundUrl'?: string;
-      'hideLink'?: boolean;
-      'linkUrl'?: string;
       'textNoWrap'?: boolean;
     }
   }

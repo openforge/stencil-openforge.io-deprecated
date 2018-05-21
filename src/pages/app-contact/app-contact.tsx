@@ -98,16 +98,21 @@ export class AppContact {
 
   render() {
     return (
-      <div>
+      <div class="contact">
         {/* header - hero */}
-        <app-hero
-          background-url="assets/bg-hero-handshake-desk.jpg"
-          text-no-wrap={true}
-        >
-          <span slot="header">Let's Work Together</span>
-          <span slot="body">Request a Discovery Session Today!</span>
-          <span slot="link">Request Now</span>
-        </app-hero>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2 class="text-nowrap">Let's Work Together</h2>
+                <p>Request a Discovery Session Today!</p>
+                <a href="#second-content" class="btn btn-primary">
+                  Request Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
 
         <section id="second-content" class="contact-form">
           <div class="container">

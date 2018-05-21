@@ -147,20 +147,25 @@ export class AppAbout {
 
   render() {
     return (
-      <div>
+      <div class="about">
         {/* header - hero */}
-        <app-hero
-          link-url="mailto:hello@openforge.io"
-          background-url="assets/bg-hero-woman-writing.jpg"
-        >
-          <span slot="header">Powered by engineers &amp; design thinkers</span>
-          <span slot="body">
-            We believe that your success is our success. We're here to challenge
-            your assumptions and help you discover your web or mobile
-            applications full potential.
-          </span>
-          <span slot="link">Learn More</span>
-        </app-hero>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>Powered by engineers &amp; design thinkers</h2>
+                <p>
+                  We believe that your success is our success. We're here to
+                  challenge your assumptions and help you discover your web or
+                  mobile applications full potential.
+                </p>
+                <a href="#second-content" class="btn btn-primary">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - values */}
         <section id="second-content" class="values">

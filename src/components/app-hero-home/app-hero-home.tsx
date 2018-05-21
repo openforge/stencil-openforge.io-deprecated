@@ -6,7 +6,6 @@ import { Component, Listen, Prop, Element } from '@stencil/core';
 })
 export class AppHeroHome {
   @Prop() textNoWrap: boolean;
-  @Prop() hideLink: boolean;
   @Element() host: HTMLElement;
 
   componentDidLoad() {
@@ -53,11 +52,9 @@ export class AppHeroHome {
             <p>
               <slot name="body" />
             </p>
-            {!this.hideLink ? (
-              <a href="#second-content" class="btn btn-primary">
-                <slot name="link" />
-              </a>
-            ) : null}
+            <a href="#second-content" class="btn btn-primary">
+              <slot name="link" />
+            </a>
           </div>
         </div>
       </header>

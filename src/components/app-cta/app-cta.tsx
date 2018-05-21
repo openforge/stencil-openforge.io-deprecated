@@ -24,11 +24,7 @@ export class AppCta {
           </h3>
 
           {this.hideButton ? null : (
-            <a
-              href={this.linkUrl}
-              class="cta-link btn btn-primary"
-              target="_blank"
-            >
+            <a href={this.linkUrl} class="cta-link btn btn-primary">
               <slot name="link" />
             </a>
           )}

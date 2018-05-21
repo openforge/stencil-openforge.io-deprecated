@@ -1,19 +1,57 @@
-// values
-.values,
-.team {
-  padding: 7rem 0;
-  @include media-breakpoint-down(sm) {
-    padding: 3rem 0;
-    text-align: center;
+.about {
+  // hero
+  .hero {
+    background-image: url('assets/bg-hero-woman-writing.jpg');
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(lg) {
+        font-size: 1rem;
+      }
+    }
   }
 
-  h2,
-  h4 {
-    margin: 0 auto 5rem;
-    max-width: 800px;
-    text-align: center;
+  // values
+  .values,
+  .team {
+    padding: 7rem 0;
     @include media-breakpoint-down(sm) {
-      margin: 0 auto 3rem;
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    h2,
+    h4 {
+      margin: 0 auto 5rem;
+      max-width: 800px;
+      text-align: center;
+      @include media-breakpoint-down(sm) {
+        margin: 0 auto 3rem;
+      }
     }
   }
 }
