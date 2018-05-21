@@ -6,8 +6,11 @@ import { Component, State, Listen } from '@stencil/core';
 })
 export class AppContact {
   @State() formSubmitted = false;
-
   @State() formSubmitting = false;
+
+  @State() errors;
+
+  contactForm;
 
   formValues: {
     name: string;
@@ -37,10 +40,30 @@ export class AppContact {
   valueChangeHandler(event) {
     const { field, value } = event.detail;
     this.formValues[field] = value;
+
+    this.contactForm = document.getElementById('contact-form');
+
+    for (let i = 0; i < this.contactForm.length; i += 1) {
+      if (event.detail.field === this.contactForm[i].name) {
+        this.getErrors(this.contactForm[i].name);
+      }
+    }
   }
 
-  async handleSubmit(e) {
-    e.preventDefault();
+  getErrors(field: string) {
+    this.errors = [];
+
+    if (!this.contactForm[field].checkValidity()) {
+      const defaultErrorMessage = this.contactForm[field].validationMessage;
+      this.errors.push(defaultErrorMessage);
+    } else {
+      this.errors.pop();
+    }
+    console.log(this.errors);
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
 
     try {
       this.formSubmitting = true;
@@ -56,7 +79,7 @@ export class AppContact {
         }
       );
 
-      e.target.reset();
+      event.target.reset();
       this.resetFormValues();
 
       this.formSubmitting = false;
@@ -114,29 +137,43 @@ export class AppContact {
                 goals!
               </p>
 
-              <form onSubmit={this.handleSubmit.bind(this)}>
+              <form
+                id="contact-form"
+                onSubmit={this.handleSubmit.bind(this)}
+                novalidate={true}
+              >
                 <app-input
                   name="name"
                   label="Full Name"
                   type="text"
+                  id="name"
+                  maxlength="75"
                   required={true}
                 />
+
                 <app-input name="company" label="Company" type="text" />
                 <app-input
                   name="email"
                   label="E-mail"
                   type="email"
+                  id="email"
                   required={true}
                 />
+
+                <div id="validation-test" />
                 <app-input
                   name="phone"
                   label="Phone"
+                  id="phone"
                   type="tel"
                   required={true}
                 />
+
+                <div id="validation-test" />
                 <app-input
                   name="message"
                   type="text"
+                  id="message"
                   label="How did you hear about OpenForge?"
                 />
 
@@ -156,11 +193,7 @@ export class AppContact {
                     {this.renderRadioColumns('budget', radioChoices.budget)}
                   </div>
                 </fieldset>
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  disabled={this.formSubmitting}
-                >
+                <button type="submit" class="btn btn-primary">
                   Send
                 </button>
               </form>
