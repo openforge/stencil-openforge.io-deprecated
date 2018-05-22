@@ -7,7 +7,18 @@ exports.config = {
         'src/styles/_mixins.scss',
       ]
     })
-  ]
+  ],
+  outputTargets: [
+    {
+      type: 'www',
+      serviceWorker: {
+        swSrc: 'sw.js',
+        globPatterns: [
+          '**/*.{html,js,css,json,ico,png}'
+        ]
+      }
+    }
+  ],
 };
 
 exports.devServer = {
