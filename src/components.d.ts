@@ -209,7 +209,9 @@ declare global {
 
   namespace StencilComponents {
     interface AppInput {
+      'id': string;
       'label': string;
+      'maxlength': string;
       'name': string;
       'placeholder': string;
       'required': boolean;
@@ -236,7 +238,9 @@ declare global {
   }
   namespace JSXElements {
     export interface AppInputAttributes extends HTMLAttributes {
+      'id'?: string;
       'label'?: string;
+      'maxlength'?: string;
       'name'?: string;
       'onValueChange'?: (event: CustomEvent) => void;
       'placeholder'?: string;
@@ -275,6 +279,39 @@ declare global {
   namespace JSXElements {
     export interface AppMembersAttributes extends HTMLAttributes {
       'members'?: any[];
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppNavHeader {
+
+    }
+  }
+
+  interface HTMLAppNavHeaderElement extends StencilComponents.AppNavHeader, HTMLStencilElement {}
+
+  var HTMLAppNavHeaderElement: {
+    prototype: HTMLAppNavHeaderElement;
+    new (): HTMLAppNavHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-nav-header': HTMLAppNavHeaderElement;
+  }
+  interface ElementTagNameMap {
+    'app-nav-header': HTMLAppNavHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-nav-header': JSXElements.AppNavHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppNavHeaderAttributes extends HTMLAttributes {
+
     }
   }
 }

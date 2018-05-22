@@ -11,7 +11,18 @@ export class AppHero {
   @Prop() hideLink: boolean;
 
   componentDidLoad() {
-    const element = document.querySelector('header.hero') as HTMLElement;
+    let element;
+    try {
+      element = document.querySelector('header.hero');
+    } catch (e) {
+      console.log('completed app-hero undefined', e);
+    }
+    console.log(
+      'Element = ',
+      element,
+      ' with background ',
+      `url('${this.backgroundUrl}')`
+    );
     element.style.backgroundImage = `url('${this.backgroundUrl}')`;
   }
 

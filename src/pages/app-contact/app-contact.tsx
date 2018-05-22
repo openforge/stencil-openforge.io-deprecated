@@ -8,58 +8,107 @@ export class AppContact {
   @State() formSubmitted = false;
   @State() formSubmitting = false;
 
-  @State() errors;
-
   contactForm;
 
+  // private interface FormErrors {
+  //   name: string;
+  //   company: string;
+  //   email: string;
+  //   phone: number;
+  //   message: string;
+  //   desiredService: string;
+  //   budget: string;
+  // }
+
+  @State()
   formValues: {
-    name: string;
-    email: string;
-    company?: string;
-    phone: string;
-    message: string;
-    desiredService: string;
-    budget: string;
+    name: '';
+    email: '';
+    company: '';
+    phone: '';
+    message: '';
+    desiredService: '';
+    budget: '';
+    formErrors: {
+      name: '';
+      company: '';
+      email: '';
+      phone: '';
+      message: '';
+      desiredService: '';
+      budget: '';
+    };
+    formValid: false;
   };
 
   componentDidLoad() {
+    let hrefArray;
     this.resetFormValues();
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
+    try {
+      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+      hrefArray.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
         });
       });
-    });
+    } catch (e) {
+      console.error('caught error componentDidLoad app-contact', e);
+    }
   }
 
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
+    console.log('valueChangeHandler');
+
     const { field, value } = event.detail;
     this.formValues[field] = value;
 
     this.contactForm = document.getElementById('contact-form');
 
-    for (let i = 0; i < this.contactForm.length; i += 1) {
-      if (event.detail.field === this.contactForm[i].name) {
-        this.getErrors(this.contactForm[i].name);
-      }
-    }
-  }
-
-  getErrors(field: string) {
-    this.errors = [];
-
-    if (!this.contactForm[field].checkValidity()) {
-      const defaultErrorMessage = this.contactForm[field].validationMessage;
-      this.errors.push(defaultErrorMessage);
+    if (field === 'name' && !this.contactForm[field].checkValidity()) {
+      this.formValues.formErrors.name = this.contactForm[
+        field
+      ].validationMessage;
     } else {
-      this.errors.pop();
+      this.formValues.formErrors.name = '';
     }
-    console.log(this.errors);
+    if (field === 'company' && !this.contactForm[field].checkValidity()) {
+      this.formValues.formErrors.company = this.contactForm[
+        field
+      ].validationMessage;
+    } else {
+      this.formValues.formErrors.company = '';
+    }
+
+    if (field === 'email' && !this.contactForm[field].checkValidity()) {
+      this.formValues.formErrors.email = this.contactForm[
+        field
+      ].validationMessage;
+    } else {
+      this.formValues.formErrors.email = '';
+    }
+
+    if (field === 'phone' && !this.contactForm[field].checkValidity()) {
+      this.formValues.formErrors.phone = this.contactForm[
+        field
+      ].validationMessage;
+    } else {
+      this.formValues.formErrors.phone = '';
+    }
+
+    if (field === 'message' && !this.contactForm[field].checkValidity()) {
+      this.formValues.formErrors.message = this.contactForm[
+        field
+      ].validationMessage;
+    } else {
+      this.formValues.formErrors.message = '';
+    }
+
+    console.log(this.formValues.formErrors);
   }
 
   async handleSubmit(event) {
@@ -115,6 +164,17 @@ export class AppContact {
   }
 
   render() {
+    console.log('render function triggered');
+    let nameError;
+    if (this.formValues) {
+      console.log(this.formValues);
+      nameError = this.formValues.formErrors.name ? (
+        <div>{this.formValues.formErrors.name}</div>
+      ) : null;
+
+      console.log(nameError);
+    }
+
     return (
       <div>
         {/* header - hero */}
@@ -150,8 +210,13 @@ export class AppContact {
                   maxlength="75"
                   required={true}
                 />
-
-                <app-input name="company" label="Company" type="text" />
+                {nameError ? nameError : null}
+                <app-input
+                  name="company"
+                  label="Company"
+                  type="text"
+                  required={true}
+                />
                 <app-input
                   name="email"
                   label="E-mail"
@@ -159,8 +224,6 @@ export class AppContact {
                   id="email"
                   required={true}
                 />
-
-                <div id="validation-test" />
                 <app-input
                   name="phone"
                   label="Phone"
@@ -168,13 +231,12 @@ export class AppContact {
                   type="tel"
                   required={true}
                 />
-
-                <div id="validation-test" />
                 <app-input
                   name="message"
                   type="text"
                   id="message"
                   label="How did you hear about OpenForge?"
+                  required={true}
                 />
 
                 <fieldset>
@@ -220,6 +282,16 @@ export class AppContact {
       message: '',
       desiredService: '',
       budget: '',
+      formErrors: {
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+        desiredService: '',
+        budget: '',
+      },
+      formValid: false,
     };
   }
 }

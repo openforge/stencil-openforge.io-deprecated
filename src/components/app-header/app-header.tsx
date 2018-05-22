@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'app-header',
@@ -8,6 +8,7 @@ export class AppHeader {
   @Prop() linkUrl: string;
   @Prop() backgroundUrl: string;
   @Prop() hideButton: boolean = false;
+  @Element() host: HTMLElement;
 
   scrollElement;
 
@@ -18,8 +19,11 @@ export class AppHeader {
       );
       button['0'].style.visibility = 'hidden';
     }
-
-    this.scrollElement = document.querySelector(this.linkUrl);
+    try {
+      this.scrollElement = document.querySelector(this.linkUrl) as HTMLElement;
+    } catch (e) {
+      console.log('app-header error ', e);
+    }
   }
 
   scrollIntoView = () => {
