@@ -131,7 +131,12 @@ export class AppContact {
                   type="text"
                   required={true}
                 />
-                <app-input name="company" label="Company" type="text" />
+                <app-input
+                  name="company"
+                  label="Company"
+                  type="text"
+                  required={true}
+                />
                 <app-input
                   name="email"
                   label="E-mail"
@@ -146,8 +151,9 @@ export class AppContact {
                 />
                 <app-input
                   name="message"
-                  type="text"
                   label="How did you hear about OpenForge?"
+                  type="text"
+                  required={true}
                 />
 
                 <fieldset>
@@ -167,6 +173,7 @@ export class AppContact {
                   </div>
                 </fieldset>
                 <button
+                  name="submit"
                   type="submit"
                   class="btn btn-primary"
                   disabled={this.formSubmitting}
