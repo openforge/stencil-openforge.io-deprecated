@@ -6,15 +6,20 @@ import { Component } from '@stencil/core';
 })
 export class AppHome {
   componentDidLoad() {
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
+    let hrefArray;
+    try {
+      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+      hrefArray.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
         });
       });
-    });
+    } catch (e) {
+      console.error('caught error componentDidLoad app-home', e);
+    }
   }
 
   render() {

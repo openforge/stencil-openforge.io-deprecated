@@ -1,7 +1,45 @@
-.contact-form {
-  padding: 7rem 0;
+.contact {
+  // hero
+  .hero {
+    background-image: url('assets/bg-hero-handshake-desk.jpg');
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
 
-  @include media-breakpoint-down(sm) {
-    padding: 3rem 0;
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(lg) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .contact-form {
+    padding: 7rem 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 3rem 0;
+    }
   }
 }

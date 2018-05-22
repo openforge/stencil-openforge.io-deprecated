@@ -99,19 +99,23 @@ export class AppOpportunities {
     return (
       <div class="opportunities">
         {/* header - hero */}
-        <app-hero background-url="assets/bg-hero-mountain.jpg" hideLink={true}>
-          <span slot="header">OpenForge is hiring two amazing developers!</span>
-          <span slot="body">
-            Looking for a new adventure? Want to know if you're the right fit
-            for the team?
-            <br />
-            <br />
-            Scroll down to find out!
-          </span>
-        </app-hero>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>OpenForge is hiring two amazing developers!</h2>
+                <p>
+                  Looking for a new adventure? Want to know if you're the right
+                  fit for the team?
+                </p>
+                <p>Scroll down to find out!</p>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - intro */}
-        <section id="intro">
+        <section id="intro" class="intro">
           <div class="container">
             <content-graphic-lg
               img-url="assets/graphic-opportunities-suck.jpg"
@@ -206,7 +210,7 @@ export class AppOpportunities {
         </section>
 
         {/* section - apply */}
-        <section id="apply">
+        <section id="apply" class="apply">
           {!this.formSubmitted ? (
             <div class="container">
               {!this.canRequestInterview ? (

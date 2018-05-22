@@ -18,8 +18,11 @@ export class AppHeader {
       );
       button['0'].style.visibility = 'hidden';
     }
-
-    this.scrollElement = document.querySelector(this.linkUrl);
+    try {
+      this.scrollElement = document.querySelector(this.linkUrl);
+    } catch (e) {
+      console.log('app-header error ', e);
+    }
   }
 
   scrollIntoView = () => {
