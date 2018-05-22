@@ -8,18 +8,44 @@ export class AppContact {
   @State() formSubmitted = false;
   @State() formSubmitting = false;
 
-  @State() errors;
-
   contactForm;
 
+  // private interface FormErrors {
+  //   name: string;
+  //   company: string;
+  //   email: string;
+  //   phone: number;
+  //   message: string;
+  //   desiredService: string;
+  //   budget: string;
+  // }
+
+  @State()
   formValues: {
-    name: string;
-    email: string;
-    company?: string;
-    phone: string;
-    message: string;
-    desiredService: string;
-    budget: string;
+    name: '';
+    email: '';
+    company: '';
+    phone: '';
+    message: '';
+    desiredService: '';
+    budget: '';
+    formErrors: {
+      name: '';
+      company: '';
+      email: '';
+      phone: '';
+      message: '';
+      desiredService: '';
+      budget: '';
+    };
+    formValid: false;
+    nameValid: false;
+    companyValid: false;
+    emailValid: false;
+    phoneValid: false;
+    messageValid: false;
+    desiredServiceValid: false;
+    budgetValid: false;
   };
 
   componentDidLoad() {
@@ -48,23 +74,54 @@ export class AppContact {
 
     this.contactForm = document.getElementById('contact-form');
 
-    for (let i = 0; i < this.contactForm.length; i += 1) {
-      if (event.detail.field === this.contactForm[i].name) {
-        this.getErrors(this.contactForm[i].name);
-      }
-    }
-  }
+    console.log('field and value', field, value);
 
-  getErrors(field: string) {
-    this.errors = [];
+    switch (field) {
+      case 'name':
+        this.formValues.nameValid = this.contactForm[field].checkValidity();
+        this.formValues.formErrors.name = this.formValues.nameValid
+          ? ''
+          : this.contactForm[field].validationMessage;
+        break;
 
-    if (!this.contactForm[field].checkValidity()) {
-      const defaultErrorMessage = this.contactForm[field].validationMessage;
-      this.errors.push(defaultErrorMessage);
-    } else {
-      this.errors.pop();
+      case 'company':
+        this.formValues.companyValid = this.contactForm[field].checkValidity();
+        this.formValues.formErrors.company = this.formValues.companyValid
+          ? ''
+          : this.contactForm[field].validationMessage;
+        break;
+
+      case 'email':
+        this.formValues.emailValid = this.contactForm[field].checkValidity();
+        this.formValues.formErrors.email = this.formValues.emailValid
+          ? ''
+          : this.contactForm[field].validationMessage;
+        break;
+
+      case 'phone':
+        this.formValues.phoneValid = this.contactForm[field].checkValidity();
+        this.formValues.formErrors.phone = this.formValues.phoneValid
+          ? ''
+          : this.contactForm[field].validationMessage;
+        break;
+
+      case 'message':
+        this.formValues.messageValid = this.contactForm[field].checkValidity();
+        this.formValues.formErrors.message = this.formValues.messageValid
+          ? ''
+          : this.contactForm[field].validationMessage;
+        break;
+
+      // case 'desiredService':
+      // this.formValues.desiredServiceValid = this.contactForm[field].checkValidity();
+      // this.formValues.formErrors.desiredService = this.formValues.desiredService ? '' : this.contactForm[field].validationMessage;
+      // break;
+
+      // case 'budget':
+      // this.formValues.budgetValid = this.contactForm[field].checkValidity();
+      // this.formValues.formErrors.budget = this.formValues.budget ? '' : this.contactForm[field].validationMessage;
+      // break;
     }
-    console.log(this.errors);
   }
 
   async handleSubmit(event) {
@@ -120,6 +177,17 @@ export class AppContact {
   }
 
   render() {
+    console.log('render function triggered');
+    let nameError;
+    if (this.formValues) {
+      console.log(this.formValues);
+      nameError = this.formValues.formErrors.name ? (
+        <div>{this.formValues.formErrors.name}</div>
+      ) : null;
+
+      console.log(nameError);
+    }
+
     return (
       <div class="contact">
         {/* header - hero */}
@@ -160,8 +228,13 @@ export class AppContact {
                   maxlength="75"
                   required={true}
                 />
-
-                <app-input name="company" label="Company" type="text" />
+                {nameError ? nameError : null}
+                <app-input
+                  name="company"
+                  label="Company"
+                  type="text"
+                  required={true}
+                />
                 <app-input
                   name="email"
                   label="E-mail"
@@ -185,6 +258,7 @@ export class AppContact {
                   type="text"
                   id="message"
                   label="How did you hear about OpenForge?"
+                  required={true}
                 />
 
                 <fieldset>
@@ -230,6 +304,23 @@ export class AppContact {
       message: '',
       desiredService: '',
       budget: '',
+      formErrors: {
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+        desiredService: '',
+        budget: '',
+      },
+      formValid: false,
+      nameValid: false,
+      companyValid: false,
+      emailValid: false,
+      phoneValid: false,
+      messageValid: false,
+      desiredServiceValid: false,
+      budgetValid: false,
     };
   }
 }
