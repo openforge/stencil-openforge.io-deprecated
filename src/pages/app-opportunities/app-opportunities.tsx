@@ -1,4 +1,4 @@
-import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-opportunities',
@@ -31,12 +31,13 @@ export class AppOpportunities {
 
   componentDidUpdate() {
     const application = document.getElementById('apply');
-    if (application) {
+    if (!this.isDisabled) {
+      document.getElementById('requestInterview').focus();
+    } else if (application) {
       application.scrollIntoView();
     }
   }
 
-  @Event() valueChange: EventEmitter;
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value } = event.detail;
