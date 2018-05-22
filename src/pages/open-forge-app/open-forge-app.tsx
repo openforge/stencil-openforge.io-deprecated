@@ -1,4 +1,4 @@
-import { Component, Listen, Prop } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import {
   ActiveRouter,
   RouterHistory,
