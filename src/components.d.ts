@@ -168,7 +168,9 @@ declare global {
 
   namespace StencilComponents {
     interface AppInput {
+      'id': string;
       'label': string;
+      'maxlength': string;
       'name': string;
       'placeholder': string;
       'required': boolean;
@@ -195,7 +197,9 @@ declare global {
   }
   namespace JSXElements {
     export interface AppInputAttributes extends HTMLAttributes {
+      'id'?: string;
       'label'?: string;
+      'maxlength'?: string;
       'name'?: string;
       'onValueChange'?: (event: CustomEvent) => void;
       'placeholder'?: string;
