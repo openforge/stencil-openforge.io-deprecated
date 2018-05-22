@@ -51,7 +51,7 @@ export class AppMembers {
                     style={{ color: member.color }}
                   >
                     <i
-                      class="fa fa-twitter-square pr-3"
+                      class="fab fa-twitter-square pr-3"
                       aria-hidden="true"
                       link-url={member.twitter}
                     />
@@ -63,7 +63,7 @@ export class AppMembers {
                     target="_blank"
                     style={{ color: member.color }}
                   >
-                    <i class="fa fa-github-square pr-3" aria-hidden="true" />
+                    <i class="fab fa-github-square pr-3" aria-hidden="true" />
                   </a>
                 )}
               </div>
