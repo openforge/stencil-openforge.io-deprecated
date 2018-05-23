@@ -20,21 +20,7 @@ export class AppContact {
   };
 
   componentDidLoad() {
-    let hrefArray;
     this.resetFormValues();
-    try {
-      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-      hrefArray.forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-          });
-        });
-      });
-    } catch (e) {
-      console.error('caught error componentDidLoad app-contact', e);
-    }
   }
 
   @Listen('check')
@@ -96,6 +82,12 @@ export class AppContact {
     return columns;
   }
 
+  scrollToForm() {
+    const form = document.getElementById('second-content');
+
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <div class="contact">
@@ -106,7 +98,10 @@ export class AppContact {
               <div class="col-sm-12 col-md-8 col-lg-6">
                 <h2 class="text-nowrap">Let's Work Together</h2>
                 <p>Request a Discovery Session Today!</p>
-                <a href="#second-content" class="btn btn-primary">
+                <a
+                  onClick={this.scrollToForm.bind(this)}
+                  class="btn btn-primary"
+                >
                   Request Now
                 </a>
               </div>
