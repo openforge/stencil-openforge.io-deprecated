@@ -32,7 +32,7 @@ export class AppInput {
           id={this.id}
           maxlength={this.maxlength}
           required={this.required}
-          onChange={this.inputHandler.bind(this)}
+          onInput={this.inputHandler.bind(this)}
         />
       </div>
     );

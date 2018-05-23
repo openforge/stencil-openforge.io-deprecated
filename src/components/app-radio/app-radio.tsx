@@ -17,12 +17,11 @@ export class AppRadio {
   private inputId = '';
 
   changeHandler(event) {
-    if (event.target.checked) {
-      this.valueChange.emit({
-        field: this.name,
-        value: event.target.value,
-      });
-    }
+    this.valueChange.emit({
+      field: this.name,
+      value: event.target.value,
+      checked: event.target.checked,
+    });
   }
 
   render() {
@@ -40,7 +39,7 @@ export class AppRadio {
           name={this.name}
           value={this.value}
           required={this.required}
-          onChange={this.changeHandler.bind(this)}
+          onInput={this.changeHandler.bind(this)}
         />
         <label class="form-check-label" htmlFor={this.inputId}>
           {this.label}
