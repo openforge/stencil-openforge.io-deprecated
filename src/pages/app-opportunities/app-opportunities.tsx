@@ -137,7 +137,7 @@ export class AppOpportunities {
               <p slot="body">
                 Instead of asking you a million questions, we'd rather get to
                 know you another way - seeing how you follow direction, develop,
-                and learn a new technoloy or pattern that you have not used
+                and learn a new technology or pattern that you have not used
                 before.
               </p>
             </content-graphic-lg>
