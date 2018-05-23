@@ -544,7 +544,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
-      'onValueChange'?: (event: CustomEvent) => void;
+
     }
   }
 }

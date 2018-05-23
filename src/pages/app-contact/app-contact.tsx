@@ -20,21 +20,7 @@ export class AppContact {
   };
 
   componentDidLoad() {
-    let hrefArray;
     this.resetFormValues();
-    try {
-      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-      hrefArray.forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-          });
-        });
-      });
-    } catch (e) {
-      console.error('caught error componentDidLoad app-contact', e);
-    }
   }
 
   @Listen('check')
