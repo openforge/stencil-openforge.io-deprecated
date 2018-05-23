@@ -13,6 +13,7 @@ export class AppHome {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
           document.querySelector(this.getAttribute('href')).scrollIntoView({
+            block: 'start',
             behavior: 'smooth',
           });
         });
