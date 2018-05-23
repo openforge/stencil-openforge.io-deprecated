@@ -118,7 +118,7 @@ export class AppAbout {
       github: 'https://github.com/daftclaud',
     },
     {
-      name: 'Yangying Zhu',
+      name: 'Yanying Zhu',
       image: './../../assets/headshot-yanying.jpg',
       color: '#638593',
       title: 'Designer',
