@@ -44,11 +44,11 @@ export class AppOpportunities {
     this.formValues[field] = value;
 
     if (
-      this.formValues.angular > 60 &&
-      this.formValues.node > 60 &&
-      this.formValues.ionic > 60 &&
-      this.formValues.html > 60 &&
-      this.formValues.css > 60
+      this.formValues.angular > 90 &&
+      this.formValues.node > 90 &&
+      this.formValues.ionic > 90 &&
+      this.formValues.html > 90 &&
+      this.formValues.css > 90
     ) {
       this.isDisabled = false;
     } else {
