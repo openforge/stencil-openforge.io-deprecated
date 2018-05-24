@@ -17,6 +17,7 @@ export class AppContact {
     message: '';
     desiredService: '';
     budget: '';
+
     nameValid: false;
     companyValid: false;
     emailValid: false;
@@ -26,7 +27,6 @@ export class AppContact {
     budgetValid: false;
   };
 
-  // Will refactor, hoping and almost 100 sure there's a better way
   @State() nameError: string;
   @State() companyError: string;
   @State() emailError: string;
@@ -34,8 +34,6 @@ export class AppContact {
   @State() messageError: string;
   @State() serviceError: string;
   @State() budgetError: string;
-
-  form;
 
   isDisabled: boolean = true;
 
@@ -60,78 +58,70 @@ export class AppContact {
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value } = event.detail;
+    const { field, value, isValid, validationMessage, checked } = event.detail;
 
     this.formValues[field] = value;
 
-    this.form = document.getElementById('contact-form');
-
     switch (field) {
       case 'name':
-        this.formValues.nameValid = this.form[field].checkValidity();
+        this.formValues.nameValid = isValid;
         this.nameError = this.formValues.nameValid
           ? ''
-          : (this.nameError = this.form[field].validationMessage);
+          : (this.nameError = validationMessage);
         break;
 
       case 'company':
-        this.formValues.companyValid = this.form[field].checkValidity();
+        this.formValues.companyValid = isValid;
         this.companyError = this.formValues.companyValid
           ? ''
-          : (this.companyError = this.form[field].validationMessage);
+          : (this.companyError = validationMessage);
         break;
 
       case 'email':
-        this.formValues.emailValid = this.form[field].checkValidity();
+        this.formValues.emailValid = isValid;
         this.emailError = this.formValues.emailValid
           ? ''
-          : (this.emailError = this.form[field].validationMessage);
+          : (this.emailError = validationMessage);
         break;
 
       case 'phone':
-        this.formValues.phoneValid = this.form[field].checkValidity();
+        this.formValues.phoneValid = isValid;
         this.phoneError = this.formValues.phoneValid
           ? ''
-          : (this.phoneError = this.form[field].validationMessage);
+          : (this.phoneError = validationMessage);
         break;
 
       case 'message':
-        this.formValues.messageValid = this.form[field].checkValidity();
+        this.formValues.messageValid = isValid;
         this.messageError = this.formValues.messageValid
           ? ''
-          : (this.messageError = this.form[field].validationMessage);
+          : (this.messageError = validationMessage);
         break;
 
       case 'desiredService':
-        this.formValues.serviceValid = this.form[field][0].checkValidity();
+        this.formValues.serviceValid = checked;
         this.serviceError = this.formValues.serviceValid
           ? ''
-          : this.form[field][0].validationMessage;
+          : validationMessage;
         break;
 
       case 'budget':
-        this.formValues.budgetValid = this.form[field][1].checkValidity();
+        this.formValues.budgetValid = checked;
         this.budgetError = this.formValues.budgetValid
           ? ''
-          : (this.budgetError = this.form[field][1].validationMessage);
+          : (this.budgetError = validationMessage);
         break;
     }
 
-    // this.formValues.nameValid && this.formValues.companyValid && this.formValues.emailValid &&  this.formValues.phoneValid && this.formValues.messageValid && this.formValues.desiredServiceValid && this.formValues.budgetValid ? this.isDisabled = false : this.isDisabled = true;
-
-    if (
-      this.formValues.nameValid &&
-      this.formValues.companyValid &&
-      this.formValues.emailValid &&
-      this.formValues.phoneValid &&
-      this.formValues.messageValid &&
-      this.formValues.serviceValid &&
-      this.formValues.budgetValid
-    ) {
-      this.isDisabled = false;
-    } else {
-      this.isDisabled = true;
-    }
+    this.formValues.nameValid &&
+    this.formValues.companyValid &&
+    this.formValues.emailValid &&
+    this.formValues.phoneValid &&
+    this.formValues.messageValid &&
+    this.formValues.serviceValid &&
+    this.formValues.budgetValid
+      ? (this.isDisabled = false)
+      : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
