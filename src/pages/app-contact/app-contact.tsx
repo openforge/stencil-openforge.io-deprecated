@@ -35,7 +35,7 @@ export class AppContact {
   @State() serviceError: string;
   @State() budgetError: string;
 
-  isDisabled: boolean = true;
+  @State() isDisabled: boolean = true;
 
   componentDidLoad() {
     let hrefArray;
@@ -263,6 +263,7 @@ export class AppContact {
                     )}
                   </div>
                 </fieldset>
+                <div class="text-center">{this.serviceError}</div>
 
                 <fieldset>
                   <legend class="lead">Do you have a budget?</legend>

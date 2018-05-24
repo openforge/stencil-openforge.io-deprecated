@@ -1,15 +1,10 @@
-import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-opportunities',
   styleUrl: 'app-opportunities.scss',
 })
 export class AppOpportunities {
-  @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean = false;
-  @State() formSubmitting: boolean = false;
-  @State() formSubmitted: boolean = false;
-
   formData = new FormData();
 
   formValues: {
@@ -18,12 +13,34 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
-    message: string;
+
+    file: string;
     name: string;
-    email: string;
     phone: string;
+    message: string;
+    email: string;
     github: string;
+
+    fileValid: false;
+    nameValid: false;
+    emailValid: false;
+    phoneValid: false;
+    githubValid: false;
+    messageValid: false;
+    formValid: false;
   };
+
+  @State() fileError: any;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() phoneError: string;
+  @State() githubError: string;
+  @State() messageError: string;
+
+  @State() isDisabled: boolean = true;
+  @State() canRequestInterview: boolean = false;
+  @State() formSubmitting: boolean = false;
+  @State() formSubmitted: boolean = false;
 
   application;
 
@@ -31,10 +48,10 @@ export class AppOpportunities {
     this.resetFormValues();
   }
 
-  @Event() valueChange: EventEmitter;
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value } = event.detail;
+    const { field, value, isValid, validationMessage } = event.detail;
+
     this.formValues[field] = value;
 
     if (
@@ -48,6 +65,48 @@ export class AppOpportunities {
     } else {
       this.isDisabled = true;
     }
+
+    switch (field) {
+      case 'file':
+        this.formValues.fileValid = isValid;
+        this.fileError = this.formValues.fileValid
+          ? ''
+          : (this.fileError = this.formValues.fileValid);
+        break;
+      case 'name':
+        this.formValues.nameValid = isValid;
+        this.nameError = this.formValues.nameValid
+          ? ''
+          : (this.nameError = validationMessage);
+        break;
+      case 'email':
+        this.formValues.emailValid = isValid;
+        this.emailError = this.formValues.emailValid
+          ? ''
+          : (this.emailError = validationMessage);
+        break;
+
+      case 'phone':
+        this.formValues.phoneValid = isValid;
+        this.phoneError = this.formValues.phoneValid
+          ? ''
+          : (this.phoneError = validationMessage);
+        break;
+
+      case 'github':
+        this.formValues.githubValid = isValid;
+        this.githubError = this.formValues.githubValid
+          ? ''
+          : (this.githubError = validationMessage);
+        break;
+
+      case 'message':
+        this.formValues.messageValid = isValid;
+        this.messageError = this.formValues.messageValid
+          ? ''
+          : (this.messageError = validationMessage);
+        break;
+    }
   }
 
   handleSliders(e) {
@@ -56,7 +115,9 @@ export class AppOpportunities {
   }
 
   requestInterview() {
-    this.application = document.getElementById('apply').scrollIntoView();
+    this.application = document
+      .getElementById('apply')
+      .scrollIntoView({ block: 'start' });
   }
 
   handleFile(e) {
@@ -213,7 +274,11 @@ export class AppOpportunities {
           {!this.formSubmitted ? (
             <div class="container">
               {!this.canRequestInterview ? (
-                <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
+                <form
+                  class="apply-1"
+                  onSubmit={this.handleSliders.bind(this)}
+                  no-validate={true}
+                >
                   <h2>Show us your skills</h2>
                   <p>
                     So if you're really awesome - prove it and position the
@@ -245,7 +310,6 @@ export class AppOpportunities {
                     type="submit"
                     disabled={this.isDisabled}
                     onClick={this.requestInterview}
-                    id="requestInterview"
                   >
                     Request an interview
                   </button>
@@ -271,6 +335,7 @@ export class AppOpportunities {
                       required={true}
                     />
                   </div>
+                  <div class="text-center">{this.fileError}</div>
 
                   <app-input
                     label="Full Name"
@@ -279,6 +344,7 @@ export class AppOpportunities {
                     // placeholder="Full Name"
                     required={true}
                   />
+                  <div class="text-center">{this.nameError}</div>
                   <app-input
                     label="Email"
                     name="email"
@@ -286,6 +352,7 @@ export class AppOpportunities {
                     // placeholder="Email Address"
                     required={true}
                   />
+                  <div class="text-center">{this.emailError}</div>
                   <app-input
                     label="Phone"
                     name="phone"
@@ -293,6 +360,7 @@ export class AppOpportunities {
                     // placeholder="Phone Number"
                     required={true}
                   />
+                  <div class="text-center">{this.phoneError}</div>
                   <app-input
                     label="GitHub URL"
                     name="github"
@@ -300,6 +368,7 @@ export class AppOpportunities {
                     // placeholder="GitHub Link"
                     required={true}
                   />
+                  <div class="text-center">{this.githubError}</div>
 
                   <h3>What makes you unique?</h3>
 
@@ -316,6 +385,7 @@ export class AppOpportunities {
                       required={true}
                     />
                   </div>
+                  <div class="text-center">{this.messageError}</div>
 
                   <button class="btn btn-primary" type="submit">
                     Submit Application
@@ -348,11 +418,21 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
-      message: '',
+
+      file: '',
       name: '',
+      message: '',
       email: '',
       phone: '',
       github: '',
+
+      fileValid: false,
+      nameValid: false,
+      emailValid: false,
+      phoneValid: false,
+      githubValid: false,
+      messageValid: false,
+      formValid: false,
     };
 
     this.formData = new FormData();
