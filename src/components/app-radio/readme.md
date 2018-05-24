@@ -1,30 +1,57 @@
-# content-graphic-lg
+# app-radio
+
+
 
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-#### imgUrl
+#### label
 
 string
 
 
-#### reverse
+#### name
+
+string
+
+
+#### required
 
 boolean
+
+
+#### value
+
+string
 
 
 ## Attributes
 
-#### img-url
+#### label
 
 string
 
 
-#### reverse
+#### name
+
+string
+
+
+#### required
 
 boolean
+
+
+#### value
+
+string
+
+
+## Events
+
+#### valueChange
 
 
 
