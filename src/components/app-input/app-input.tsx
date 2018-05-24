@@ -18,6 +18,8 @@ export class AppInput {
     this.valueChange.emit({
       field: this.name,
       value: event.target.value,
+      isValid: event.target.checkValidity(),
+      validationMessage: event.target.validationMessage,
     });
   }
 
