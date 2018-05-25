@@ -17,9 +17,11 @@ export class AppCta {
           </h3>
 
           {this.hideButton ? null : (
-            <a href={this.linkUrl} class="cta-link btn btn-primary">
-              <slot name="link" />
-            </a>
+            <stencil-route-link url={this.linkUrl}>
+              <button class="cta-link btn btn-primary">
+                <slot name="link" />
+              </button>
+            </stencil-route-link>
           )}
         </div>
       </aside>
