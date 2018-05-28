@@ -1,16 +1,41 @@
+<p align="center">
+  <img src="https://github.com/openforge/main-website/blob/master/src/assets/logo-openforge.png?raw=true"/>
+</p>
+<p align="center">
+  <a href="http://www.openforge.io/">Official Website</a> |
+  <a href="http://www.openforge.io/opportunities">Opportunities</a> |
+  <a href="https://www.facebook.com/OpenForgeUS/">Facebook</a>
+</p>
 
-# main-website
-The home of OpenForge.io, built using Stencil.js!
+<h3 align="center">
+  Leading By Example.
+</h3>
 
-## Development
+<p align="center">
+  Working with the latest technologies, designing the best products, and sharing our knowledge with the world wide community.
+</p>
 
-### Running The Application
+# OpenForge
+
+The OpenForge Community is composed of team members and public contributors banded together for a common goal of leading by example.  We are experts in applying UI/UX and Software Architecture principles towards enhancing businesses nation (and world!) wide.
+
+In addition to providing services for our clients; it is our belief that we should also focus on benefiting the community that surrounds us. For this reason; all OpenForge initiatives (that are not client related) are Open Sourced; including our design and business consulting resources which can be found on our Website at [www.openforge.io](http://openforge.io). 
+
+If you are a community member who would like to take part of our paid (yes, we said PAID!) Open Source contributions please reach out to us via our [opportunities page](http://www.openforge.io/opportunities).   We also always encourage anyone to contribute to anything we are doing, and we hope to contribute to your projects as well!
+
+
+# Website Development 
+
+The OpenForge.io website is built using a combination of [Stencil.js](https://stenciljs.com/) by our friends at [Ionic Framework](https://ionicframework.com/), Bootstrap, Node.js, and Express.
+
+### Running This Application
 
 ```npm install```
 
 ```npm run dev --es5``` (firefox)
 
 ```npm start``` or ```npm run dev```
+
 
 ### File Structure
 **UI** components should reside in the `src/components` folder.
@@ -23,6 +48,7 @@ While **Page** components should reside in the `src/pages` folder. A page compon
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 This project uses:
+- [sass-lint](https://github.com/sasstools/sass-lint) for sass linting (sass-lint.yml contains configuration)
 - [prettier](http://prettier.io/) for code formatting.
 - [tslint](https://palantir.github.io/tslint/) for linting with rules from:
   - [tslint-react](https://github.com/palantir/tslint-react)
@@ -32,6 +58,11 @@ This project uses:
 `package.json` defines an npm script for linting. To lint the project at any time, simply run the script with
 ```
 $ npm run lint
+```
+
+CSS Linting
+```
+$ node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q
 ```
 
 #### Versioning & Changelog

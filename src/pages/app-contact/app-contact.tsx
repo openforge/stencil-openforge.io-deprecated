@@ -21,15 +21,6 @@ export class AppContact {
 
   componentDidLoad() {
     this.resetFormValues();
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
-        });
-      });
-    });
   }
 
   @Listen('check')
@@ -91,18 +82,32 @@ export class AppContact {
     return columns;
   }
 
+  scrollToForm() {
+    const form = document.getElementById('second-content');
+
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
-      <div>
+      <div class="contact">
         {/* header - hero */}
-        <app-hero
-          background-url="assets/bg-hero-handshake-desk.jpg"
-          text-no-wrap={true}
-        >
-          <span slot="header">Let's Work Together</span>
-          <span slot="body">Request a Discovery Session Today!</span>
-          <span slot="link">Request Now</span>
-        </app-hero>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2 class="text-nowrap">Let's Work Together</h2>
+                <p>Request a Discovery Session Today!</p>
+                <a
+                  onClick={this.scrollToForm.bind(this)}
+                  class="btn btn-primary"
+                >
+                  Request Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
 
         <section id="second-content" class="contact-form">
           <div class="container">

@@ -118,7 +118,7 @@ export class AppAbout {
       github: 'https://github.com/daftclaud',
     },
     {
-      name: 'Yangying Zhu',
+      name: 'Yanying Zhu',
       image: './../../assets/headshot-yanying.jpg',
       color: '#638593',
       title: 'Designer',
@@ -129,33 +129,43 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
+    let hrefArray;
+    try {
+      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+      hrefArray.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+          });
         });
       });
-    });
+    } catch (e) {
+      console.log('app-about componentdidload undefined query selector', e);
+    }
   }
 
   render() {
     return (
-      <div>
+      <div class="about">
         {/* header - hero */}
-        <app-hero
-          link-url="mailto:hello@openforge.io"
-          background-url="assets/bg-hero-woman-writing.jpg"
-        >
-          <span slot="header">Powered by engineers &amp; design thinkers</span>
-          <span slot="body">
-            We believe that your success is our success. We're here to challenge
-            your assumptions and help you discover your web or mobile
-            applications full potential.
-          </span>
-          <span slot="link">Learn More</span>
-        </app-hero>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>Powered by engineers &amp; design thinkers</h2>
+                <p>
+                  We believe that your success is our success. We're here to
+                  challenge your assumptions and help you discover your web or
+                  mobile applications full potential.
+                </p>
+                <a href="#second-content" class="btn btn-primary">
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - values */}
         <section id="second-content" class="values">
@@ -212,7 +222,7 @@ export class AppAbout {
         </section>
 
         {/* team */}
-        <section id="team">
+        <section id="team" class="team">
           <div class="container">
             <h4>
               <div class="display-4 pb-3">Meet the Team</div>

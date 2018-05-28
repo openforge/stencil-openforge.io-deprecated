@@ -6,15 +6,21 @@ import { Component } from '@stencil/core';
 })
 export class AppHome {
   componentDidLoad() {
-    const hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-    hrefArray.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth',
+    let hrefArray;
+    try {
+      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
+      hrefArray.forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+          });
         });
       });
-    });
+    } catch (e) {
+      console.error('caught error componentDidLoad app-home', e);
+    }
   }
 
   render() {
@@ -22,7 +28,7 @@ export class AppHome {
       <div>
         {/* header - hero */}
         <app-hero-home>
-          <span slot="header">We are Thinkings. Makers. Doers.</span>
+          <span slot="header">We are Thinkers. Makers. Doers.</span>
           <span slot="body">
             Work with our team of highly skilled designers, developers, and
             consultants to develop solutions and processes that fit your
@@ -90,8 +96,8 @@ export class AppHome {
               />
               <ul>
                 <li>Startup Consulting</li>
-                <li>Enhanced Mobile & Web Designs</li>
-                <li>UI/UX Audits & Recommendations </li>
+                <li>Enhanced Mobile &amp; Web Designs</li>
+                <li>UI/UX Audits &amp; Recommendations </li>
                 <li>Mobile Application Development</li>
                 <li>Web Application Development</li>
                 <li>Customer Engagement Strategy</li>
@@ -99,12 +105,12 @@ export class AppHome {
               </ul>
             </div>
 
-            {/* <div class="text-center">
-              <button class="btn btn-primary">
+            <div class="text-center">
+              <a href="#process" class="btn btn-primary">
                 Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
                 our process
-              </button>
-            </div> */}
+              </a>
+            </div>
           </div>
         </section>
 
@@ -125,21 +131,34 @@ export class AppHome {
                 alt=""
               />
               <ul>
-                <li>Branding & UI Design Revitalizations</li>
+                <li>Branding &amp; UI Design Revitalizations</li>
                 <li>User Experience (UI/UX) Audits</li>
-                <li>Accessability Audits & Training</li>
-                <li>Design & Development Integration Workshops</li>
+                <li>Accessability Audits &amp; Training</li>
+                <li>Design &amp; Development Integration Workshops</li>
                 <li>Business Process Improvement (BPI) Consulting</li>
-                <li>Mobile & Web Application Development Services</li>
+                <li>Mobile &amp; Web Application Development Services</li>
               </ul>
             </div>
 
-            {/* <div class="text-center">
-              <button class="btn btn-primary">
+            <div class="text-center">
+              <a href="#process" class="btn btn-primary">
                 Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
                 our process
-              </button>
-            </div> */}
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* section - process */}
+        <section id="process" class="bg-gray">
+          <div class="container process">
+            <h2>Our Process</h2>
+
+            <img
+              class="img-fluid"
+              src="assets/graphic-home-process.png"
+              alt="We start with Discovery, then onto Design and Development Consulting, Development, Launch and User Feedback"
+            />
           </div>
         </section>
 

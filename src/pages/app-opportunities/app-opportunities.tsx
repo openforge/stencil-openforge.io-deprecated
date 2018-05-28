@@ -1,4 +1,4 @@
-import { Component, State, Event, EventEmitter, Listen } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-opportunities',
@@ -31,23 +31,24 @@ export class AppOpportunities {
 
   componentDidUpdate() {
     const application = document.getElementById('apply');
-    if (application) {
+    if (!this.isDisabled) {
+      document.getElementById('requestInterview').focus();
+    } else if (application) {
       application.scrollIntoView();
     }
   }
 
-  @Event() valueChange: EventEmitter;
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value } = event.detail;
     this.formValues[field] = value;
 
     if (
-      this.formValues.angular > 60 &&
-      this.formValues.node > 60 &&
-      this.formValues.ionic > 60 &&
-      this.formValues.html > 60 &&
-      this.formValues.css > 60
+      this.formValues.angular > 90 &&
+      this.formValues.node > 90 &&
+      this.formValues.ionic > 90 &&
+      this.formValues.html > 90 &&
+      this.formValues.css > 90
     ) {
       this.isDisabled = false;
     } else {
@@ -99,19 +100,23 @@ export class AppOpportunities {
     return (
       <div class="opportunities">
         {/* header - hero */}
-        <app-hero background-url="assets/bg-hero-mountain.jpg" hideLink={true}>
-          <span slot="header">OpenForge is hiring two amazing developers!</span>
-          <span slot="body">
-            Looking for a new adventure? Want to know if you're the right fit
-            for the team?
-            <br />
-            <br />
-            Scroll down to find out!
-          </span>
-        </app-hero>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>OpenForge is hiring two amazing developers!</h2>
+                <p>
+                  Looking for a new adventure? Want to know if you're the right
+                  fit for the team?
+                </p>
+                <p>Scroll down to find out!</p>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - intro */}
-        <section id="intro">
+        <section id="intro" class="intro">
           <div class="container">
             <content-graphic-lg
               img-url="assets/graphic-opportunities-suck.jpg"
@@ -132,7 +137,7 @@ export class AppOpportunities {
               <p slot="body">
                 Instead of asking you a million questions, we'd rather get to
                 know you another way - seeing how you follow direction, develop,
-                and learn a new technoloy or pattern that you have not used
+                and learn a new technology or pattern that you have not used
                 before.
               </p>
             </content-graphic-lg>
@@ -206,7 +211,7 @@ export class AppOpportunities {
         </section>
 
         {/* section - apply */}
-        <section id="apply">
+        <section id="apply" class="apply">
           {!this.formSubmitted ? (
             <div class="container">
               {!this.canRequestInterview ? (

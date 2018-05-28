@@ -1,7 +1,6 @@
 // hero
 .hero-home {
   align-items: flex-end;
-  background-color: $black;
   background-position: top center;
   background-size: cover;
   display: flex;
@@ -23,7 +22,7 @@
     color: $white;
     font-size: 1rem;
     font-weight: 300;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     max-width: 500px;
   }
 
@@ -40,7 +39,7 @@
     background-size: contain;
     height: 630px;
     margin-left: -125px;
-    padding: 115px 130px;
+    padding: 100px 130px;
     position: relative;
     width: 780px;
     @include media-breakpoint-down(md) {

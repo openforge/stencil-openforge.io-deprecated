@@ -6,7 +6,6 @@ import { Component, Listen, Prop } from '@stencil/core';
 })
 export class AppHeroHome {
   @Prop() textNoWrap: boolean;
-  @Prop() hideLink: boolean;
 
   componentDidLoad() {
     this.handleImage();
@@ -15,7 +14,13 @@ export class AppHeroHome {
   // will refactor in the future
   @Listen('window:resize')
   handleImage() {
-    const element = document.querySelector('header.hero-home') as HTMLElement;
+    let element;
+    try {
+      element = document.querySelector('header.hero-home');
+    } catch (e) {
+      console.log('app-hero-home undefined', e);
+    }
+
     if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
@@ -44,11 +49,9 @@ export class AppHeroHome {
             <p>
               <slot name="body" />
             </p>
-            {!this.hideLink ? (
-              <a href="#second-content" class="btn btn-primary">
-                <slot name="link" />
-              </a>
-            ) : null}
+            <a href="#second-content" class="btn btn-primary">
+              <slot name="link" />
+            </a>
           </div>
         </div>
       </header>
