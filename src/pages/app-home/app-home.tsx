@@ -45,7 +45,7 @@ export class AppHome {
             <div class="services-selections">
               <a href="#startup">
                 <figure>
-                  <img
+                  <app-img
                     class="img-fluid"
                     src="assets/graphic-home-startup.png"
                     alt=""
@@ -56,7 +56,7 @@ export class AppHome {
 
               <a href="#enterprise">
                 <figure>
-                  <img
+                  <app-img
                     class="img-fluid"
                     src="assets/graphic-home-enterprise.png"
                     alt=""
@@ -89,7 +89,7 @@ export class AppHome {
             </h2>
 
             <div class="services-content">
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/graphic-home-startup.png"
                 alt=""
@@ -125,7 +125,7 @@ export class AppHome {
             </h2>
 
             <div class="services-content flex-row-reverse">
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/graphic-home-enterprise.png"
                 alt=""
@@ -154,7 +154,7 @@ export class AppHome {
           <div class="container process">
             <h2>Our Process</h2>
 
-            <img
+            <app-img
               class="img-fluid"
               src="assets/graphic-home-process.png"
               alt="We start with Discovery, then onto Design and Development Consulting, Development, Launch and User Feedback"

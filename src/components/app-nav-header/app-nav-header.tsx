@@ -38,7 +38,7 @@ export class AppNavHeader {
         <div class="container">
           <div class="navbar-brand">
             <h1>
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-openforge.png"
                 alt="OpenForge"

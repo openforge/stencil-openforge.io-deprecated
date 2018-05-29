@@ -13,7 +13,7 @@ export class AppMembers {
         {this.members.map(member => (
           <div class="col-sm-12 col-md-4 mb-4">
             <div class="pt-4" style={{ border: `${member.color} 2px solid` }}>
-              <img
+              <app-img
                 class="card-img-top mt-2 px-4"
                 src={member.image}
                 alt={member.name}
