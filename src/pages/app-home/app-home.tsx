@@ -170,8 +170,8 @@ export class AppHome {
               path below to learm more about our custom services.
               {/* Technology is constantly changing; Let us help you change with it. */}
             </p>
-            <nav class="nav">
-              <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <nav class="nav" role="navigation">
+              <div class="nav nav-tabs nav-fill" id="nav-tab">
                 <a
                   class="nav-item nav-link active"
                   id="nav-startup-tab"
@@ -396,10 +396,12 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="#about">
-          <span slot="header">Want to learn more about us?</span>
-          <span slot="link">Get to know us</span>
-        </app-cta>
+        <section id="learn-about">
+          <app-cta link-url="#about">
+            <span slot="header">Want to learn more about us?</span>
+            <span slot="link">Get to know us</span>
+          </app-cta>
+        </section>
 
         {/* section - process */}
         <section id="process" class="bg-gray">
