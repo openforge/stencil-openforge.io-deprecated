@@ -167,6 +167,43 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppImg {
+      'alt': string;
+      'fit': boolean;
+      'src': string;
+    }
+  }
+
+  interface HTMLAppImgElement extends StencilComponents.AppImg, HTMLStencilElement {}
+
+  var HTMLAppImgElement: {
+    prototype: HTMLAppImgElement;
+    new (): HTMLAppImgElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-img': HTMLAppImgElement;
+  }
+  interface ElementTagNameMap {
+    'app-img': HTMLAppImgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-img': JSXElements.AppImgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppImgAttributes extends HTMLAttributes {
+      'alt'?: string;
+      'fit'?: boolean;
+      'src'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppInput {
       'label': string;
       'name': string;
