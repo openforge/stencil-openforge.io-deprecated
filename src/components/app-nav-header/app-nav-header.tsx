@@ -79,7 +79,7 @@ export class AppNavHeader {
                 data-target="#navbarSupportedContent"
               >
                 <stencil-route-link
-                  url="/about"
+                  url="#about"
                   anchorClass="nav-link"
                   activeClass="active"
                 >
