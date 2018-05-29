@@ -107,6 +107,7 @@ export class AppAbout {
       color: '#d8aa0c',
       title: 'Software Engineer',
       mail: 'luis@openforge.io',
+      twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
     },
     {
