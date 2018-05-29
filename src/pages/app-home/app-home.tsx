@@ -58,7 +58,14 @@ export class AppHome {
                   aria-controls="nav-startup"
                   aria-selected="true"
                 >
-                  Start Up
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-services-startup.png"
+                    alt=""
+                  />
+                  <div>
+                    Start Up <i class="fa fa-plus" aria-hidden="true" />
+                  </div>
                 </a>
                 <a
                   class="nav-item nav-link"
@@ -69,7 +76,14 @@ export class AppHome {
                   aria-controls="nav-smallteam"
                   aria-selected="false"
                 >
-                  Small Team
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-services-small.png"
+                    alt=""
+                  />
+                  <div>
+                    Small Team <i class="fa fa-plus" aria-hidden="true" />
+                  </div>
                 </a>
                 <a
                   class="nav-item nav-link"
@@ -80,7 +94,14 @@ export class AppHome {
                   aria-controls="nav-midteam"
                   aria-selected="false"
                 >
-                  Mid-Size Team
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-services-midsize.png"
+                    alt=""
+                  />
+                  <div>
+                    Mid-Size Team <i class="fa fa-plus" aria-hidden="true" />
+                  </div>
                 </a>
                 <a
                   class="nav-item nav-link"
@@ -91,7 +112,14 @@ export class AppHome {
                   aria-controls="nav-enterprise"
                   aria-selected="false"
                 >
-                  Enterprise
+                  <img
+                    class="img-fluid"
+                    src="assets/graphic-services-enterprise.png"
+                    alt=""
+                  />
+                  <div>
+                    Enterprise <i class="fa fa-plus" aria-hidden="true" />
+                  </div>
                 </a>
               </div>
             </nav>
