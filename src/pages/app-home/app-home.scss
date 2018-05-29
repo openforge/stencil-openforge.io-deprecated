@@ -9,6 +9,10 @@ section {
     background: $gray-100;
   }
 
+  &.bg-black {
+    background: $black;
+  }
+
   h2 {
     margin-bottom: 3rem;
     text-align: center;
@@ -107,14 +111,80 @@ section {
 
 // section - process
 .process {
-  text-align: center;
-
   h2 {
     margin-bottom: 50px;
   }
 
+  .content-graphic-lg {
+    padding: 0;
+    img {
+      max-width: 300px;
+    }
+  }
+}
+
+// section - perspectives
+.perspectives {
+  text-align: center;
+
   img {
-    max-width: 700px;
+    margin-bottom: 3rem;
+    max-width: 900px;
     width: 100%;
+  }
+
+  h2 {
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    color: white;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+}
+
+// section - about
+.about {
+  p {
+    margin: 0 auto 3rem;
+    max-width: 1000px;
+    text-align: center;
+  }
+}
+
+// section - partners
+.partners {
+  text-align: center;
+
+  p {
+    margin: 0 auto 3rem;
+    max-width: 800px;
+  }
+
+  &--logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    max-width: 1000px;
+
+    img {
+      flex-shrink: 4;
+      height: 100%;
+      max-width: 25%;
+      min-height: 0;
+      padding: 5px;
+      width: 100%;
+      @include media-breakpoint-down(sm) {
+        max-width: 50%;
+        padding: 20px 5px;
+      }
+      @include media-breakpoint-down(xs) {
+        max-width: 100%;
+        padding: 20px;
+      }
+    }
   }
 }

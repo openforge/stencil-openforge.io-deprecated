@@ -5,6 +5,129 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  members = [
+    {
+      name: 'Jedi Weller',
+      image: './../../assets/headshot-jedi.jpg',
+      color: '#fa8928',
+      title: 'Founder and Head of Technology',
+      mail: 'jedi@openforge.io',
+      twitter: 'https://twitter.com/jedihacks',
+      github: 'https://github.com/jedihacks',
+    },
+    {
+      name: 'Rachel Bennett',
+      image: './../../assets/headshot-rachel.jpg',
+      color: '#638593',
+      title: 'Designer',
+      mail: 'rachel@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
+      name: 'Geoffery Melle',
+      image: './../../assets/headshot-geoff.jpg',
+      color: '#d8aa0c',
+      title: 'Account Manager',
+      mail: 'geoff@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
+      name: 'Joni Leho',
+      image: './../../assets/headshot-joni.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: 'joni@openforge.io',
+      twitter: 'https://twitter.com/lehto_joni',
+    },
+    {
+      name: 'Auvo Severinkangas',
+      image: './../../assets/headshot-auvo.jpg',
+      color: '#638593',
+      title: 'Software Engineer',
+      mail: 'auvo@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
+      name: 'Elizabeth Cottrell',
+      image: './../../assets/headshot-eliza.jpg',
+      color: '#d8aa0c',
+      title: 'Front End Developer',
+      mail: 'elizabeth@openforge.io',
+      twitter: 'https://twitter.com/_elizacottrell',
+      github: 'https://github.com/LizCottrell',
+    },
+    {
+      name: 'Paulina Gallo',
+      image: './../../assets/headshot-paulina.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: 'paulina@openforge.io',
+      twitter: 'https://twitter.com/paulpaultweets',
+      github: 'https://github.com/paulpauldevelops',
+    },
+    {
+      name: 'Mohammad Alfatih',
+      image: './../../assets/headshot-mohammad.jpg',
+      color: '#638593',
+      title: 'Software Engineer',
+      mail: 'mo@jawami.com',
+      twitter: 'https://twitter.com/webdevffw',
+      github: 'https://github.com/Mohammad-alfatih',
+    },
+    {
+      name: 'Meredith Alcorn',
+      image: './../../assets/headshot-meredith.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: 'meredith@openforge.io',
+      github: 'https://github.com/mmalcorn',
+    },
+    {
+      name: 'Fernando Del Olmo',
+      image: './../../assets/headshot-fernando.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: 'fernando@openforge.io',
+      twitter: 'https://twitter.com/fdom92',
+      github: 'https://github.com/Fdom92',
+    },
+    {
+      name: 'William Holloran',
+      image: './../../assets/headshot-billy.jpg',
+      color: '#638593',
+      title: 'Project Manager / QA Engineer',
+      mail: 'william@openforge.io',
+    },
+    {
+      name: 'Luis Chacon',
+      image: './../../assets/headshot-luis.jpg',
+      color: '#d8aa0c',
+      title: 'Software Engineer',
+      mail: 'luis@openforge.io',
+      github: 'https://github.com/luiskcs89',
+    },
+    {
+      name: 'Claudio Del Valle',
+      image: './../../assets/headshot-claudio.jpg',
+      color: '#fa8928',
+      title: 'Software Engineer',
+      mail: 'claudio@openforge.io',
+      github: 'https://github.com/daftclaud',
+    },
+    {
+      name: 'Yanying Zhu',
+      image: './../../assets/headshot-yanying.jpg',
+      color: '#638593',
+      title: 'Designer',
+      mail: 'yanying@openforge.io',
+      twitter: '',
+      github: '',
+    },
+  ];
+
   componentDidLoad() {
     let hrefArray;
     try {
@@ -149,82 +272,151 @@ export class AppHome {
           </div>
         </section>
 
+        {/* aside - cta */}
+        <app-cta link-url="#about">
+          <span slot="header">Want to learn more about us?</span>
+          <span slot="link">Get to know us</span>
+        </app-cta>
+
         {/* section - process */}
         <section id="process" class="bg-gray">
           <div class="container process">
             <h2>Our Process</h2>
 
-            <img
-              class="img-fluid"
-              src="assets/graphic-home-process.png"
-              alt="We start with Discovery, then onto Design and Development Consulting, Development, Launch and User Feedback"
-            />
+            <content-graphic-lg img-url="assets/graphic-home-discovery.png">
+              <h3 slot="header">Discovery</h3>
+              <p slot="body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </p>
+            </content-graphic-lg>
+
+            <content-graphic-lg img-url="assets/graphic-home-consulting.png">
+              <h3 slot="header">Development Consulting</h3>
+              <p slot="body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </p>
+            </content-graphic-lg>
+
+            <content-graphic-lg img-url="assets/graphic-home-development.png">
+              <h3 slot="header">Development</h3>
+              <p slot="body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </p>
+            </content-graphic-lg>
+
+            <content-graphic-lg img-url="assets/graphic-home-deployment.png">
+              <h3 slot="header">Deployment</h3>
+              <p slot="body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </p>
+            </content-graphic-lg>
+
+            <content-graphic-lg img-url="assets/graphic-home-feedback.png">
+              <h3 slot="header">User Feedback</h3>
+              <p slot="body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              </p>
+            </content-graphic-lg>
           </div>
         </section>
 
-        {/* section - divider */}
-        <app-cta hideButton={true}>
-          <span slot="header">See what makes us different</span>
-        </app-cta>
+        {/* section - persepectives */}
+        <section class="bg-black">
+          <div class="container perspectives">
+            <img class="img-fluid" src="assets/graphic-home-icons.png" alt="" />
+            <h2>We Are Powered by Multiple Perspectives</h2>
+            <p>
+              Our individual skills, backgrounds, and life experiences have
+              shaped us into the company that we are today. Maintaining a
+              diverse team helps us to perform better, attract top talent, and
+              make smarter decisions.
+            </p>
+          </div>
+        </section>
 
-        {/* section - approach */}
-        <section class="bg-gray">
-          <div class="container approach">
-            <content-graphic
-              img-url="assets/graphic-home-code.png"
-              reverse={true}
-            >
-              <h3 slot="header">Get Technical</h3>
-              <p slot="body">
-                We're experts in mobile and web app development. We specialize
-                in web technologies including Ionic, React, Stencil, Angular,
-                Node, MongoDB, and MySQL.
-              </p>
-            </content-graphic>
+        {/* section - about */}
+        <section id="about" class="bg-gray">
+          <div class="container about">
+            <h2>Meet the Team</h2>
+            <p>
+              There's no doubt that our team is made up of brilliant and
+              talented individuals who are passionate about technology and
+              design thinking. Together we design, code, grow, and evolve.
+            </p>
 
-            <content-graphic img-url="assets/graphic-home-devices.png">
-              <h3 slot="header">Process Matters</h3>
-              <p slot="body">
-                Our team specializes in providing enterprise quality software
-                for applications of all sizes. We believe that an inclusive and
-                collaborative approach to design and development is essential
-                for success. We'll guide you through brainstorming sessions,
-                sketch ideas, challenge assumptions, and find creative
-                solutions.
-              </p>
-            </content-graphic>
+            <app-members members={this.members} />
+          </div>
+        </section>
 
-            <content-graphic
-              img-url="assets/graphic-home-design.png"
-              reverse={true}
-            >
-              <h3 slot="header">Design is important</h3>
-              <p slot="body">
-                Great user experiences are a result of strategic planning and
-                collaborative design. We'll take your overall vision and goals
-                into account, along with our research findings. You'll also work
-                with our team of designers and developers to co-create journey
-                maps, sketches, and user flows.
-              </p>
-            </content-graphic>
+        {/* section - partners */}
+        <section>
+          <div class="container partners">
+            <h2>Our Industry Partners</h2>
+            <p>
+              Here are some of our trusted partners. We frequently work with
+              these companies to ensure the highest quality to our products and
+              to use the program that best fits your app's needs.
+            </p>
 
-            <content-graphic img-url="assets/graphic-home-computer.png">
-              <h3 slot="header">We don't do fixed bids</h3>
-              <p slot="body">
-                Because we charge by time and materials, our clients gain the
-                full flexibility of being able to change their requirements on
-                the fly to meet their business needs. Need to change scope?
-                Pause a project and resume later? We promise no fees or contract
-                changes; it's all built into the OpenForge way of doing things.
-              </p>
-            </content-graphic>
+            <div class="partners--logos">
+              <img
+                class="img-fluid"
+                src="assets/logo-ionic-black.png"
+                alt="Ionic"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-angular-black.png"
+                alt="Angular"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-capacitor-black.png"
+                alt="Capacitor"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-stencil-black.png"
+                alt="Stencil"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-mysql-black.png"
+                alt="Mysql"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-mongodb-black.png"
+                alt="MongoDB"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-nodejs-black.png"
+                alt="Node JS"
+              />
+              <img
+                class="img-fluid"
+                src="assets/logo-aws-black.png"
+                alt="AWS"
+              />
+            </div>
           </div>
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="/about">
-          <span slot="header">Want to learn more about us?</span>
-          <span slot="link">Get to know us</span>
+        <app-cta link-url="/contact">
+          <span slot="header">Ready to work with us?</span>
+          <span slot="link">Get in touch</span>
         </app-cta>
       </div>
     );
