@@ -49,7 +49,7 @@ export class AppHeroHome {
             <p>
               <slot name="body" />
             </p>
-            <a href="#second-content" class="btn btn-primary">
+            <a href="#services" class="btn btn-primary">
               <slot name="link" />
             </a>
           </div>

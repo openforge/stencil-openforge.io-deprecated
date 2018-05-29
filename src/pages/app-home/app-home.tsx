@@ -38,113 +38,208 @@ export class AppHome {
         </app-hero-home>
 
         {/* section - services */}
-        <section id="second-content">
+        <section id="services">
           <div class="container services">
-            <h2 class="header-text">LET'S GET STARTED</h2>
-
-            <div class="services-selections">
-              <a href="#startup">
-                <figure>
-                  <img
-                    class="img-fluid"
-                    src="assets/graphic-home-startup.png"
-                    alt=""
-                  />
-                  <figcaption>I'M A STARTUP COMPANY</figcaption>
-                </figure>
-              </a>
-
-              <a href="#enterprise">
-                <figure>
-                  <img
-                    class="img-fluid"
-                    src="assets/graphic-home-enterprise.png"
-                    alt=""
-                  />
-                  <figcaption>I'M AN ENTERPRISE COMPANY</figcaption>
-                </figure>
-              </a>
-            </div>
-
-            <br class="d-md-block d-sm-block" />
-            <br class="d-md-block d-sm-block" />
-
+            <h2>What do we provide?</h2>
             <p>
-              It's our job to make your dreams a reality. Utilize our knowledge
-              in UI/UX to increase your customer engagement, our experience in
-              technology to decrease your costs, and our expertise in Web and
-              Mobile Application Development to provide reliable technology to
-              grow your business.
+              Whether you are a start up, an enterprise, or somewhere in
+              between, we will work with you every step of the way. Choose your
+              path below to learm more about our custom services.
               {/* Technology is constantly changing; Let us help you change with it. */}
             </p>
-          </div>
-        </section>
+            <nav class="nav">
+              <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a
+                  class="nav-item nav-link active"
+                  id="nav-startup-tab"
+                  data-toggle="tab"
+                  href="#nav-startup"
+                  role="tab"
+                  aria-controls="nav-startup"
+                  aria-selected="true"
+                >
+                  Start Up
+                </a>
+                <a
+                  class="nav-item nav-link"
+                  id="nav-smallteam-tab"
+                  data-toggle="tab"
+                  href="#nav-smallteam"
+                  role="tab"
+                  aria-controls="nav-smallteam"
+                  aria-selected="false"
+                >
+                  Small Team
+                </a>
+                <a
+                  class="nav-item nav-link"
+                  id="nav-midteam-tab"
+                  data-toggle="tab"
+                  href="#nav-midteam"
+                  role="tab"
+                  aria-controls="nav-midteam"
+                  aria-selected="false"
+                >
+                  Mid-Size Team
+                </a>
+                <a
+                  class="nav-item nav-link"
+                  id="nav-enterprise-tab"
+                  data-toggle="tab"
+                  href="#nav-enterprise"
+                  role="tab"
+                  aria-controls="nav-enterprise"
+                  aria-selected="false"
+                >
+                  Enterprise
+                </a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div
+                class="tab-pane fade show active"
+                id="nav-startup"
+                role="tabpanel"
+                aria-labelledby="nav-startup-tab"
+              >
+                <div class="services-content">
+                  <div class="row justify-content-center">
+                    <div class="col-md-6">
+                      <h3> What you need: </h3>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
+                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
+                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
+                      ornare turpis. Phasellus sed convallis dolor. Fusce in
+                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
+                      varius in felis ut pulvinar. Donec aliquet, nisi eget
+                      tempor accumsan, risus felis viverra tortor, eget euismod
+                      metus risus ac velit.
+                    </div>
 
-        {/* section - startup */}
-        <section id="startup" class="bg-gray">
-          <div class="container services">
-            <h2>
-              <span class="small">Common startup services</span>
-              Let us help you get started
-            </h2>
+                    <div class="col-md-4">
+                      <h3>What we provide:</h3>
+                      <ul>
+                        <li>Startup Consulting</li>
+                        <li>Enhanced Mobile &amp; Web Designs</li>
+                        <li>UI/UX Audits &amp; Recommendations </li>
+                        <li>Mobile Application Development</li>
+                        <li>Web Application Development</li>
+                        <li>Customer Engagement Strategy</li>
+                        <li>Guerilla Marketing Strategy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="nav-smallteam"
+                role="tabpanel"
+                aria-labelledby="nav-smallteam-tab"
+              >
+                <div class="services-content">
+                  <div class="row justify-content-center">
+                    <div class="col-md-6">
+                      <h3> What you need: </h3>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
+                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
+                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
+                      ornare turpis. Phasellus sed convallis dolor. Fusce in
+                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
+                      varius in felis ut pulvinar. Donec aliquet, nisi eget
+                      tempor accumsan, risus felis viverra tortor, eget euismod
+                      metus risus ac velit.
+                    </div>
 
-            <div class="services-content">
-              <img
-                class="img-fluid"
-                src="assets/graphic-home-startup.png"
-                alt=""
-              />
-              <ul>
-                <li>Startup Consulting</li>
-                <li>Enhanced Mobile &amp; Web Designs</li>
-                <li>UI/UX Audits &amp; Recommendations </li>
-                <li>Mobile Application Development</li>
-                <li>Web Application Development</li>
-                <li>Customer Engagement Strategy</li>
-                <li>Guerilla Marketing Strategy</li>
-              </ul>
-            </div>
+                    <div class="col-md-4">
+                      <h3>What we provide:</h3>
+                      <ul>
+                        <li>Startup Consulting</li>
+                        <li>Enhanced Mobile &amp; Web Designs</li>
+                        <li>UI/UX Audits &amp; Recommendations </li>
+                        <li>Mobile Application Development</li>
+                        <li>Web Application Development</li>
+                        <li>Customer Engagement Strategy</li>
+                        <li>Guerilla Marketing Strategy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="nav-midteam"
+                role="tabpanel"
+                aria-labelledby="nav-midteam-tab"
+              >
+                <div class="services-content">
+                  <div class="row justify-content-center">
+                    <div class="col-md-6">
+                      <h3> What you need: </h3>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
+                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
+                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
+                      ornare turpis. Phasellus sed convallis dolor. Fusce in
+                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
+                      varius in felis ut pulvinar. Donec aliquet, nisi eget
+                      tempor accumsan, risus felis viverra tortor, eget euismod
+                      metus risus ac velit.
+                    </div>
 
-            <div class="text-center">
-              <a href="#process" class="btn btn-primary">
-                Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
-                our process
-              </a>
-            </div>
-          </div>
-        </section>
+                    <div class="col-md-4">
+                      <h3>What we provide:</h3>
+                      <ul>
+                        <li>Startup Consulting</li>
+                        <li>Enhanced Mobile &amp; Web Designs</li>
+                        <li>UI/UX Audits &amp; Recommendations </li>
+                        <li>Mobile Application Development</li>
+                        <li>Web Application Development</li>
+                        <li>Customer Engagement Strategy</li>
+                        <li>Guerilla Marketing Strategy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="nav-enterprise"
+                role="tabpanel"
+                aria-labelledby="nav-enterprise-tab"
+              >
+                <div class="services-content">
+                  <div class="row justify-content-center">
+                    <div class="col-md-6">
+                      <h3> What you need: </h3>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
+                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
+                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
+                      ornare turpis. Phasellus sed convallis dolor. Fusce in
+                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
+                      varius in felis ut pulvinar. Donec aliquet, nisi eget
+                      tempor accumsan, risus felis viverra tortor, eget euismod
+                      metus risus ac velit.
+                    </div>
 
-        {/* section - enterprise */}
-        <section id="enterprise">
-          <div class="container services">
-            <h2>
-              <span class="small">Enterprise Services and Offerings</span>
-              Any Size. Any Problem.
-              <br />
-              Our Team is Your Team
-            </h2>
-
-            <div class="services-content flex-row-reverse">
-              <img
-                class="img-fluid"
-                src="assets/graphic-home-enterprise.png"
-                alt=""
-              />
-              <ul>
-                <li>Branding &amp; UI Design Revitalizations</li>
-                <li>User Experience (UI/UX) Audits</li>
-                <li>Accessability Audits &amp; Training</li>
-                <li>Design &amp; Development Integration Workshops</li>
-                <li>Business Process Improvement (BPI) Consulting</li>
-                <li>Mobile &amp; Web Application Development Services</li>
-              </ul>
-            </div>
-
-            <div class="text-center">
-              <a href="#process" class="btn btn-primary">
-                Learn more<br class="d-xs-block d-sm-block d-md-none" /> about
-                our process
-              </a>
+                    <div class="col-md-4">
+                      <h3>What we provide:</h3>
+                      <ul>
+                        <li>Startup Consulting</li>
+                        <li>Enhanced Mobile &amp; Web Designs</li>
+                        <li>UI/UX Audits &amp; Recommendations </li>
+                        <li>Mobile Application Development</li>
+                        <li>Web Application Development</li>
+                        <li>Customer Engagement Strategy</li>
+                        <li>Guerilla Marketing Strategy</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
