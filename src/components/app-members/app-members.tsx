@@ -13,7 +13,7 @@ export class AppMembers {
         {this.members.map(member => (
           <div class="col-sm-12 col-md-4 mb-4">
             <div class="pt-4" style={{ border: `${member.color} 2px solid` }}>
-              <img
+              <app-img
                 class="card-img-top mt-2 px-4"
                 src={member.image}
                 alt={member.name}
@@ -48,7 +48,7 @@ export class AppMembers {
                     style={{ color: member.color }}
                   >
                     <i
-                      class="fa fa-twitter-square pr-3"
+                      class="fab fa-twitter-square pr-3"
                       aria-hidden="true"
                       link-url={member.twitter}
                     />
@@ -60,7 +60,7 @@ export class AppMembers {
                     target="_blank"
                     style={{ color: member.color }}
                   >
-                    <i class="fa fa-github-square pr-3" aria-hidden="true" />
+                    <i class="fab fa-github-square pr-3" aria-hidden="true" />
                   </a>
                 )}
               </div>

@@ -38,7 +38,7 @@ export class AppNavHeader {
         <div class="container">
           <div class="navbar-brand">
             <h1>
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-openforge.png"
                 alt="OpenForge"
@@ -48,7 +48,6 @@ export class AppNavHeader {
           <button
             class="navbar-toggler"
             type="button"
-            data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -59,11 +58,7 @@ export class AppNavHeader {
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-md-auto">
-              <li
-                class="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-              >
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/"
                   exact={true}
@@ -73,11 +68,7 @@ export class AppNavHeader {
                   Home
                 </stencil-route-link>
               </li>
-              <li
-                class="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-              >
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="#about"
                   anchorClass="nav-link"
@@ -86,11 +77,7 @@ export class AppNavHeader {
                   About
                 </stencil-route-link>
               </li>
-              <li
-                class="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-              >
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/contact"
                   anchorClass="nav-link"
@@ -99,11 +86,7 @@ export class AppNavHeader {
                   Contact
                 </stencil-route-link>
               </li>
-              <li
-                class="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-              >
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/opportunities"
                   anchorClass="nav-link"
@@ -112,11 +95,7 @@ export class AppNavHeader {
                   Opportunities
                 </stencil-route-link>
               </li>
-              <li
-                class="nav-item"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-              >
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
                   class="nav-link"
                   href="https://github.com/openforge"
