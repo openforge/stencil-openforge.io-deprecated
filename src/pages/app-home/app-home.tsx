@@ -416,45 +416,56 @@ export class AppHome {
             <content-graphic-lg img-url="assets/graphic-home-discovery.png">
               <h3 slot="header">Discovery</h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                We'll help you evaluate your business needs and challenge your
+                assumptions before entering into the Design and Development
+                processs. Make sure that the technology you're building makes
+                sense for your business.
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-consulting.png">
-              <h3 slot="header">Development Consulting</h3>
+              <h3 slot="header">Design &amp; User Experience</h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                There is psychology and through behind every effective design.
+                Our team of experts sits with you and matches our knowledge of
+                Design &amp; User Experience principles with your subject-matter
+                knowledge to jointly create the most effective representation of
+                your business.
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-development.png">
               <h3 slot="header">Development</h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                Throw away the development practices of the 1990's and 2000's.
+                In order to utilize modern technologies we must use modern
+                approaches to software development, including Design &amp; Dev
+                integration, Continuous Integration strategies, and
+                sophisticated Automated Testing strategies to assure your
+                business is always operational.
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-deployment.png">
               <h3 slot="header">Deployment</h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                Do you have a dashboard to monitor the state of your
+                application? Do you have Continuous Integration and Automated
+                Testing strategies to decrease your development and QA testing
+                costs? Does releasing an update take more than 1 (one) day? If
+                so, let us help you improve your deployment strategy so you can
+                get to market quicker, on time, and on budget.
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-feedback.png">
               <h3 slot="header">User Feedback</h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                The biggest mistake businesses make is to launch a product and
+                then stop there. That initial data from the first 3 months is
+                crucial for engaging your consumer and enhancing your
+                experience. Expand your business by capturing this crucial
+                moment; we will help you monitor and improve the entire way.
               </p>
             </content-graphic-lg>
           </div>
