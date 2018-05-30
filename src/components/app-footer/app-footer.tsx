@@ -27,6 +27,7 @@ export class AppFooter {
               <h2>Our Partners</h2>
               <a
                 href="https://ionicframework.com/"
+                title="Ionic framework website"
                 target="_blank"
                 rel="noopener"
               >
@@ -38,6 +39,7 @@ export class AppFooter {
               </a>
               <a
                 href="http://www.215marketing.com/"
+                title="215 marketing website"
                 target="_blank"
                 rel="noopener"
               >
@@ -49,6 +51,7 @@ export class AppFooter {
               </a>
               <a
                 href="https://www.goemerchant.com/"
+                title="go emerchant website"
                 target="_blank"
                 rel="noopener"
               >
