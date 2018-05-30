@@ -1,4 +1,5 @@
 {
   "baseUrl": "http://localhost:3333",
-  "blacklistHosts": []
+  "blacklistHosts": [],
+  "chromeWebSecurity": false
 }

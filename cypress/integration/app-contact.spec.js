@@ -68,11 +68,15 @@ describe('Contact Page', function () {
       })
     })
 
-    describe.only('Footer', function() {
+    describe('Footer', function() {
       it('Footer component should exist', function() {
         cy.get('app-footer')
         .should('exist')
-        .should('be.visible')
+        .contains('Our Partners')
+        cy.get('app-footer')
+        .contains('Our Headquarters')
+        cy.get('app-footer')
+        .contains('Subscribe')
       })
     })
   })
