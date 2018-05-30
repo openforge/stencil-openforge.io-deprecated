@@ -401,12 +401,12 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <section id="learn-about">
-          <app-cta link-url="#about">
-            <span slot="header">Want to learn more about us?</span>
-            <span slot="link">Get to know us</span>
-          </app-cta>
-        </section>
+        {/* <section id="learn-about"> */}
+        <app-cta link-url="#learn-about">
+          <span slot="header">Want to learn more about us?</span>
+          <span slot="link">Get to know us</span>
+        </app-cta>
+        {/* </section> */}
 
         {/* section - process */}
         <section id="process" class="bg-gray">
