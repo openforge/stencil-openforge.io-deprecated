@@ -257,15 +257,13 @@ export class AppHome {
                   <div class="row justify-content-center">
                     <div class="col-md-6">
                       <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      Bring your idea to life with our team of experts in
+                      Design, UI/UX, Web, and Mobile Application Development. We
+                      don't just 'build it', we sit with you to answer the
+                      question of how the technology and psychology behind the
+                      design will match your business model. Our experience with
+                      100+ Startups becomes your experience as we take you
+                      through the next level of Startup Consulting.
                     </div>
 
                     <div class="col-md-4">
@@ -276,7 +274,7 @@ export class AppHome {
                         <li>UI/UX Audits &amp; Recommendations </li>
                         <li>Mobile Application Development</li>
                         <li>Web Application Development</li>
-                        <li>Customer Engagement Strategy</li>
+                        <li>Customer Engagement Consulting</li>
                         <li>Guerilla Marketing Strategy</li>
                       </ul>
                     </div>
@@ -293,27 +291,28 @@ export class AppHome {
                   <div class="row justify-content-center">
                     <div class="col-md-6">
                       <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      You have a small team and successful company, you've
+                      proven your business model and have enough revenue to
+                      sustain; however, you are struggling with accelerating
+                      growth and would like to utilize technology to skyrocket
+                      your business. You're nervous (and rightly so!), because
+                      you've never built a technology product before. Fear not!
+                      We are here to help. Let us guide you on ins-and-outs of
+                      Product Development and help you determine{' '}
+                      <b>HOW and IF</b> you should be building an app.
+                      Sometimes, it's much better to use an existing service!
                     </div>
 
                     <div class="col-md-4">
                       <h3>What we provide:</h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
+                        <li>Business Consulting</li>
+                        <li>Technical Consulting</li>
+                        <li>Business Elligibility Audit</li>
+                        <li>Mobile &amp; Web Designs</li>
+                        <li>UI/UX Audits </li>
+                        <li>Mobile & Web Application Development</li>
                         <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
                       </ul>
                     </div>
                   </div>
@@ -329,27 +328,29 @@ export class AppHome {
                   <div class="row justify-content-center">
                     <div class="col-md-6">
                       <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      You have an established business and risks cost money.
+                      You're looking for a team you can trust to get the job
+                      done right the first time. That's us. We work with your
+                      team to evaluate your business goals, develop a plan of
+                      attack, and execute in order to deliver your results on
+                      budget, but mostly importantly, on time. We can provide
+                      support to your existing infrastructure, provide CTO
+                      services to guide your existing teams, or build your
+                      product start-finish without unneccessary supervision.
+                      Whatever you need, we're here.
                     </div>
 
                     <div class="col-md-4">
                       <h3>What we provide:</h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
+                        <li>Business Strategy &amp; Consulting</li>
+                        <li>Professional Mobile &amp; Web Designs</li>
                         <li>UI/UX Audits &amp; Recommendations </li>
                         <li>Mobile Application Development</li>
                         <li>Web Application Development</li>
-                        <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
+                        <li>Strategic Customer Engagement Consulting</li>
+                        <li>Team Trainings &amp; Workshops</li>
+                        <li>Process Improvement Training</li>
                       </ul>
                     </div>
                   </div>
@@ -365,27 +366,31 @@ export class AppHome {
                   <div class="row justify-content-center">
                     <div class="col-md-6">
                       <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      Our Enterprise clients have world-wide goals; but often
+                      need the agility and flexibility of a small team in order
+                      to accomplish those goals and bypass the corporate
+                      red-tape. For these clients, we offer tailored solutions
+                      to fit your needs. If you have an existing team of
+                      Designers and Developers, but they have difficulty
+                      communicating and often miss deadlines and go over budget;
+                      we provide training and workshops to increase
+                      cross-disciplinary communication. For products that have
+                      spiraled out of control; we come in and fix the physical
+                      (design &amp; dev), but also the systematic problems such
+                      as team communication and design to development process
+                      improvement.
                     </div>
 
                     <div class="col-md-4">
                       <h3>What we provide:</h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
+                        <li>Enterprise Design Workshops</li>
+                        <li>Cross-Disciplinary Team Training</li>
+                        <li>External Consulting &amp; Process Improvement</li>
+                        <li>User Experience (UI/UX) Audits</li>
+                        <li>Web Accessability Audits</li>
+                        <li>Mobile &amp; Web Application Services</li>
                         <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
                       </ul>
                     </div>
                   </div>
