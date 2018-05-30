@@ -135,10 +135,12 @@ export class AppHome {
       hrefArray.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-          });
+          const element = document.querySelector(this.getAttribute('href'));
+          element &&
+            element.scrollIntoView({
+              block: 'start',
+              behavior: 'smooth',
+            });
         });
       });
     } catch (e) {
