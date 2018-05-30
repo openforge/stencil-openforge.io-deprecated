@@ -30,7 +30,6 @@ export class AppFooter {
                 title="Ionic framework website"
                 target="_blank"
                 rel="noopener"
-
               >
                 <app-img
                   class="img-fluid"
