@@ -40,6 +40,16 @@ export class OpenForgeApp {
     this.unsubscribe = history.listen((segments: LocationSegments) => {
       console.log(segments);
       gtag('config', GA_TRACKING_ID, { page_path: segments.pathname });
+
+      if (segments.hash !== '') {
+        const sectionId = segments.hash.replace('#', '');
+        setTimeout(() => {
+          document.getElementById(sectionId).scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+          });
+        }, 250);
+      }
     });
   }
 
@@ -51,7 +61,6 @@ export class OpenForgeApp {
           <stencil-router>
             <RouterSwitch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/about" component="app-about" />
               <stencil-route url="/services" component="app-services" />
               <stencil-route url="/contact" component="app-contact" />
               <stencil-route

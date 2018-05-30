@@ -18,7 +18,7 @@ export class AppFooter {
                 Philadelphia, PA 19123
               </p>
               <a href="mailto:hello@openforge.io">hello@openforge.io</a>
-              {/* <a href="https://www.openforge.io" target="_blank">
+              {/* <a href="https://www.openforge.io" target="_blank" rel="noopener">
                 Work at OpenForge
               </a>
               <a href="/career">Career Opportunities</a> */}
@@ -29,6 +29,8 @@ export class AppFooter {
                 href="https://ionicframework.com/"
                 title="Ionic framework website"
                 target="_blank"
+                rel="noopener"
+
               >
                 <app-img
                   class="img-fluid"
@@ -40,6 +42,7 @@ export class AppFooter {
                 href="http://www.215marketing.com/"
                 title="215 marketing website"
                 target="_blank"
+                rel="noopener"
               >
                 <app-img
                   class="img-fluid"
@@ -51,6 +54,7 @@ export class AppFooter {
                 href="https://www.goemerchant.com/"
                 title="go emerchant website"
                 target="_blank"
+                rel="noopener"
               >
                 <app-img
                   class="img-fluid"
