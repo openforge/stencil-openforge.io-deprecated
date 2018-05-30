@@ -26,9 +26,11 @@
     "@stencil/core": "^0.9.1",
     "@stencil/router": "^0.1.7",
     "@stencil/sass": "0.0.3",
+    "@types/i18next": "^8.4.3",
     "bootstrap": "^4.1.0",
     "express": "^4.16.3",
     "helmet": "^3.12.1",
+    "i18next": "^11.3.2",
     "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {

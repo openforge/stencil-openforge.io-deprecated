@@ -5,10 +5,10 @@ import {
   LocationSegments,
   RouterSwitch,
 } from '@stencil/router';
-
 import { polyfill } from 'smoothscroll-polyfill';
-
 import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
+import i18next from 'i18next';
+import { translations } from '../../assets/i18n/en';
 
 polyfill();
 
@@ -21,6 +21,25 @@ export class OpenForgeApp {
   activeRouter: ActiveRouter;
   unsubscribe: () => void;
   mainEl: HTMLElement;
+
+  constructor() {
+    i18next.init(
+      {
+        lng: 'en',
+        debug: true,
+        resources: {
+          en: {
+            translation: translations.translation,
+          },
+        },
+      },
+      err => {
+        if (err) {
+          console.error(err);
+        }
+      }
+    );
+  }
 
   componentDidUnload() {
     this.unsubscribe();

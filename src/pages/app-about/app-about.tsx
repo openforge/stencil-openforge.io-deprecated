@@ -10,7 +10,7 @@ export class AppAbout {
       name: 'Jedi Weller',
       image: './../../assets/headshot-jedi.jpg',
       color: '#fa8928',
-      title: 'Founder and Head of Technology',
+      title: 'founder',
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
@@ -19,7 +19,7 @@ export class AppAbout {
       name: 'Rachel Bennett',
       image: './../../assets/headshot-rachel.jpg',
       color: '#638593',
-      title: 'Designer',
+      title: 'designer',
       mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
@@ -28,7 +28,7 @@ export class AppAbout {
       name: 'Geoffery Melle',
       image: './../../assets/headshot-geoff.jpg',
       color: '#d8aa0c',
-      title: 'Account Manager',
+      title: 'accountManager',
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
@@ -37,7 +37,7 @@ export class AppAbout {
       name: 'Joni Leho',
       image: './../../assets/headshot-joni.jpg',
       color: '#fa8928',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
     },
@@ -45,7 +45,7 @@ export class AppAbout {
       name: 'Auvo Severinkangas',
       image: './../../assets/headshot-auvo.jpg',
       color: '#638593',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
@@ -54,7 +54,7 @@ export class AppAbout {
       name: 'Elizabeth Cottrell',
       image: './../../assets/headshot-eliza.jpg',
       color: '#d8aa0c',
-      title: 'Front End Developer',
+      title: 'frontEndDeveloper',
       mail: 'elizabeth@openforge.io',
       twitter: 'https://twitter.com/_elizacottrell',
       github: 'https://github.com/LizCottrell',
@@ -63,7 +63,7 @@ export class AppAbout {
       name: 'Paulina Gallo',
       image: './../../assets/headshot-paulina.jpg',
       color: '#fa8928',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
@@ -72,7 +72,7 @@ export class AppAbout {
       name: 'Mohammad Alfatih',
       image: './../../assets/headshot-mohammad.jpg',
       color: '#638593',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'mo@jawami.com',
       twitter: 'https://twitter.com/webdevffw',
       github: 'https://github.com/Mohammad-alfatih',
@@ -81,7 +81,7 @@ export class AppAbout {
       name: 'Meredith Alcorn',
       image: './../../assets/headshot-meredith.jpg',
       color: '#d8aa0c',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'meredith@openforge.io',
       github: 'https://github.com/mmalcorn',
     },
@@ -89,7 +89,7 @@ export class AppAbout {
       name: 'Fernando Del Olmo',
       image: './../../assets/headshot-fernando.jpg',
       color: '#fa8928',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
@@ -98,14 +98,14 @@ export class AppAbout {
       name: 'William Holloran',
       image: './../../assets/headshot-billy.jpg',
       color: '#638593',
-      title: 'Project Manager / QA Engineer',
+      title: 'projectManager',
       mail: 'william@openforge.io',
     },
     {
       name: 'Luis Chacon',
       image: './../../assets/headshot-luis.jpg',
       color: '#d8aa0c',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
@@ -114,7 +114,7 @@ export class AppAbout {
       name: 'Claudio Del Valle',
       image: './../../assets/headshot-claudio.jpg',
       color: '#fa8928',
-      title: 'Software Engineer',
+      title: 'developer',
       mail: 'claudio@openforge.io',
       github: 'https://github.com/daftclaud',
     },
@@ -122,7 +122,7 @@ export class AppAbout {
       name: 'Yanying Zhu',
       image: './../../assets/headshot-yanying.jpg',
       color: '#638593',
-      title: 'Designer',
+      title: 'designer',
       mail: 'yanying@openforge.io',
       twitter: '',
       github: '',
@@ -154,14 +154,14 @@ export class AppAbout {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>Powered by engineers &amp; design thinkers</h2>
+                <h2>
+                  <app-translate key="about.hero.header" />
+                </h2>
                 <p>
-                  We believe that your success is our success. We're here to
-                  challenge your assumptions and help you discover your web or
-                  mobile applications full potential.
+                  <app-translate key="about.hero.body" />
                 </p>
                 <a href="#second-content" class="btn btn-primary">
-                  Learn More
+                  <app-translate key="about.hero.learnMore" />
                 </a>
               </div>
             </div>
@@ -172,31 +172,35 @@ export class AppAbout {
         <section id="second-content" class="values">
           <div class="container">
             <h2>
-              <span class="small">Our Key Values</span>
-              From discovery to deployment, you can consider Team OpenForge as
-              an extention of your team.
+              <span class="small">
+                <app-translate key="about.values.title" />
+              </span>
+              <app-translate key="about.values.text" />
             </h2>
 
             <div class="row">
               <div class="content col-sm-12 col-md-4">
-                <h3>Transparency</h3>
+                <h3>
+                  <app-translate key="about.values.transparency" />
+                </h3>
                 <p>
-                  No surprises here. We aim to be fully transparent both
-                  internally and externally.
+                  <app-translate key="about.values.transparencyText" />
                 </p>
               </div>
               <div class="content col-sm-12 col-md-4">
-                <h3>Integrity</h3>
+                <h3>
+                  <app-translate key="about.values.integrity" />
+                </h3>
                 <p>
-                  We'll always do our best to provide honest feedback and
-                  insights along the way.
+                  <app-translate key="about.values.integrityText" />
                 </p>
               </div>
               <div class="content col-sm-12 col-md-4">
-                <h3>Trust</h3>
+                <h3>
+                  <app-translate key="about.values.trust" />
+                </h3>
                 <p>
-                  We stand by our values every step of the way. Plain and
-                  simple: we're here to help you.
+                  <app-translate key="about.values.trustText" />
                 </p>
               </div>
             </div>
@@ -210,14 +214,13 @@ export class AppAbout {
             background-url="assets/bg-header-collaboration.jpg"
           >
             <h2 slot="header">
-              <span class="small">Diversity Matters</span>
-              We Are Powered by Multiple Perspectives
+              <span class="small">
+                <app-translate key="about.diversity.title" />
+              </span>
+              <app-translate key="about.diversity.titleBig" />
             </h2>
             <p slot="subheader">
-              Our individual skills, backgrounds, and life experiences have
-              shaped us into the company that we are today. Maintaining a
-              diverse team helps us to perform better, attract top talent, and
-              make smarter decisions.
+              <app-translate key="about.diversity.subheader" />
             </p>
           </app-header>
         </section>
@@ -226,10 +229,10 @@ export class AppAbout {
         <section id="team" class="team">
           <div class="container">
             <h4>
-              <div class="display-4 pb-3">Meet the Team</div>
-              There’s no doubt that our team is made up of brilliant and
-              talented individuals who are passionate about technology and
-              design thinking. Together we design, code, grow, and evolve.
+              <div class="display-4 pb-3">
+                <app-translate key="about.team.title" />
+              </div>
+              <app-translate key="about.team.text" />
             </h4>
 
             <app-members members={this.members} />
@@ -238,8 +241,12 @@ export class AppAbout {
 
         {/* aside - cta */}
         <app-cta link-url="/contact">
-          <span slot="header">Ready to work with us?</span>
-          <span slot="link">Get in touch</span>
+          <span slot="header">
+            <app-translate key="home.contact.title" />
+          </span>
+          <span slot="link">
+            <app-translate key="home.contact.link" />
+          </span>
         </app-cta>
       </div>
     );

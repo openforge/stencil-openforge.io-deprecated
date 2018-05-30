@@ -151,23 +151,25 @@ export class AppHome {
       <div>
         {/* header - hero */}
         <app-hero-home>
-          <span slot="header">We are Thinkers. Makers. Doers.</span>
-          <span slot="body">
-            Work with our team of highly skilled designers, developers, and
-            consultants to develop solutions and processes that fit your
-            business requirements.
+          <span slot="header">
+            <app-translate key="home.hero.header" />
           </span>
-          <span slot="link">Let's Get Started</span>
+          <span slot="body">
+            <app-translate key="home.hero.body" />
+          </span>
+          <span slot="link">
+            <app-translate key="home.hero.link" />
+          </span>
         </app-hero-home>
 
         {/* section - services */}
         <section id="services">
           <div class="container services">
-            <h2>What do we provide?</h2>
+            <h2>
+              <app-translate key="home.services.what.title" />
+            </h2>
             <p>
-              Whether you are a start up, an enterprise, or somewhere in
-              between, we will work with you every step of the way. Choose your
-              path below to learm more about our custom services.
+              <app-translate key="home.services.what.text" />
               {/* Technology is constantly changing; Let us help you change with it. */}
             </p>
             <nav class="nav" role="navigation">
@@ -187,7 +189,8 @@ export class AppHome {
                     alt=""
                   />
                   <div>
-                    Start Up <i class="fa fa-plus" aria-hidden="true" />
+                    <app-translate key="home.services.what.startup" />{' '}
+                    <i class="fa fa-plus" aria-hidden="true" />
                   </div>
                 </a>
                 <a
@@ -205,7 +208,8 @@ export class AppHome {
                     alt=""
                   />
                   <div>
-                    Small Team <i class="fa fa-plus" aria-hidden="true" />
+                    <app-translate key="home.services.what.smallTeam" />{' '}
+                    <i class="fa fa-plus" aria-hidden="true" />
                   </div>
                 </a>
                 <a
@@ -223,7 +227,8 @@ export class AppHome {
                     alt=""
                   />
                   <div>
-                    Mid-Size Team <i class="fa fa-plus" aria-hidden="true" />
+                    <app-translate key="home.services.what.midSizeTeam" />{' '}
+                    <i class="fa fa-plus" aria-hidden="true" />
                   </div>
                 </a>
                 <a
@@ -241,7 +246,8 @@ export class AppHome {
                     alt=""
                   />
                   <div>
-                    Enterprise <i class="fa fa-plus" aria-hidden="true" />
+                    <app-translate key="home.services.what.enterprise" />{' '}
+                    <i class="fa fa-plus" aria-hidden="true" />
                   </div>
                 </a>
               </div>
@@ -256,28 +262,38 @@ export class AppHome {
                 <div class="services-content">
                   <div class="row justify-content-center">
                     <div class="col-md-6">
-                      <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      <h3>
+                        <app-translate key="home.services.what.whatYouNeed" />
+                      </h3>
+                      <app-translate key="home.services.what.whatYouNeedText" />
                     </div>
 
                     <div class="col-md-4">
-                      <h3>What we provide:</h3>
+                      <h3>
+                        <app-translate key="home.services.what.whatWeProvide.title" />
+                      </h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
-                        <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -292,28 +308,38 @@ export class AppHome {
                 <div class="services-content">
                   <div class="row justify-content-center">
                     <div class="col-md-6">
-                      <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      <h3>
+                        <app-translate key="home.services.what.whatYouNeed" />
+                      </h3>
+                      <app-translate key="home.services.what.whatYouNeedText" />
                     </div>
 
                     <div class="col-md-4">
-                      <h3>What we provide:</h3>
+                      <h3>
+                        <app-translate key="home.services.what.whatWeProvide.title" />
+                      </h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
-                        <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -328,28 +354,38 @@ export class AppHome {
                 <div class="services-content">
                   <div class="row justify-content-center">
                     <div class="col-md-6">
-                      <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      <h3>
+                        <app-translate key="home.services.what.whatYouNeed" />
+                      </h3>
+                      <app-translate key="home.services.what.whatYouNeedText" />
                     </div>
 
                     <div class="col-md-4">
-                      <h3>What we provide:</h3>
+                      <h3>
+                        <app-translate key="home.services.what.whatWeProvide.title" />
+                      </h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
-                        <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -364,28 +400,38 @@ export class AppHome {
                 <div class="services-content">
                   <div class="row justify-content-center">
                     <div class="col-md-6">
-                      <h3> What you need: </h3>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Morbi sed odio non turpis volutpat suscipit. Duis rutrum
-                      fringilla scelerisque. Duis eget ex faucibus, egestas eros
-                      non, fermentum ex. Quisque lobortis venenatis metus, vitae
-                      ornare turpis. Phasellus sed convallis dolor. Fusce in
-                      ante vitae nisl porta vestibulum vel eget tellus. Quisque
-                      varius in felis ut pulvinar. Donec aliquet, nisi eget
-                      tempor accumsan, risus felis viverra tortor, eget euismod
-                      metus risus ac velit.
+                      <h3>
+                        <app-translate key="home.services.what.whatYouNeed" />
+                      </h3>
+                      <app-translate key="home.services.what.whatYouNeedText" />
                     </div>
 
                     <div class="col-md-4">
-                      <h3>What we provide:</h3>
+                      <h3>
+                        <app-translate key="home.services.what.whatWeProvide.title" />
+                      </h3>
                       <ul>
-                        <li>Startup Consulting</li>
-                        <li>Enhanced Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
-                        <li>Customer Engagement Strategy</li>
-                        <li>Guerilla Marketing Strategy</li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -398,18 +444,26 @@ export class AppHome {
         {/* aside - cta */}
         <section id="learn-about">
           <app-cta link-url="#about">
-            <span slot="header">Want to learn more about us?</span>
-            <span slot="link">Get to know us</span>
+            <span slot="header">
+              <app-translate key="home.learnAbout.header" />
+            </span>
+            <span slot="link">
+              <app-translate key="home.learnAbout.link" />
+            </span>
           </app-cta>
         </section>
 
         {/* section - process */}
         <section id="process" class="bg-gray">
           <div class="container process">
-            <h2>Our Process</h2>
+            <h2>
+              <app-translate key="home.process.title" />
+            </h2>
 
             <content-graphic-lg img-url="assets/graphic-home-discovery.png">
-              <h3 slot="header">Discovery</h3>
+              <h3 slot="header">
+                <app-translate key="home.process.discovery" />
+              </h3>
               <p slot="body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -418,7 +472,9 @@ export class AppHome {
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-consulting.png">
-              <h3 slot="header">Development Consulting</h3>
+              <h3 slot="header">
+                <app-translate key="home.process.devConsulting" />
+              </h3>
               <p slot="body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -427,7 +483,9 @@ export class AppHome {
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-development.png">
-              <h3 slot="header">Development</h3>
+              <h3 slot="header">
+                <app-translate key="home.process.development" />
+              </h3>
               <p slot="body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -436,7 +494,9 @@ export class AppHome {
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-deployment.png">
-              <h3 slot="header">Deployment</h3>
+              <h3 slot="header">
+                <app-translate key="home.process.deployment" />
+              </h3>
               <p slot="body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -445,7 +505,9 @@ export class AppHome {
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-feedback.png">
-              <h3 slot="header">User Feedback</h3>
+              <h3 slot="header">
+                <app-translate key="home.process.userFeedback" />
+              </h3>
               <p slot="body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -459,12 +521,11 @@ export class AppHome {
         <section class="bg-black">
           <div class="container perspectives">
             <img class="img-fluid" src="assets/graphic-home-icons.png" alt="" />
-            <h2>We Are Powered by Multiple Perspectives</h2>
+            <h2>
+              <app-translate key="home.perspectives.title" />
+            </h2>
             <p>
-              Our individual skills, backgrounds, and life experiences have
-              shaped us into the company that we are today. Maintaining a
-              diverse team helps us to perform better, attract top talent, and
-              make smarter decisions.
+              <app-translate key="home.perspectives.text" />
             </p>
           </div>
         </section>
@@ -472,11 +533,11 @@ export class AppHome {
         {/* section - about */}
         <section id="about" class="bg-gray">
           <div class="container about">
-            <h2>Meet the Team</h2>
+            <h2>
+              <app-translate key="home.about.title" />
+            </h2>
             <p>
-              There's no doubt that our team is made up of brilliant and
-              talented individuals who are passionate about technology and
-              design thinking. Together we design, code, grow, and evolve.
+              <app-translate key="home.about.text" />
             </p>
 
             <app-members members={this.members} />
@@ -486,11 +547,11 @@ export class AppHome {
         {/* section - partners */}
         <section>
           <div class="container partners">
-            <h2>Our Industry Partners</h2>
+            <h2>
+              <app-translate key="home.partners.title" />
+            </h2>
             <p>
-              Here are some of our trusted partners. We frequently work with
-              these companies to ensure the highest quality to our products and
-              to use the program that best fits your app's needs.
+              <app-translate key="home.partners.text" />
             </p>
 
             <div class="partners--logos">
@@ -540,8 +601,12 @@ export class AppHome {
 
         {/* aside - cta */}
         <app-cta link-url="/contact">
-          <span slot="header">Ready to work with us?</span>
-          <span slot="link">Get in touch</span>
+          <span slot="header">
+            <app-translate key="home.contact.title" />
+          </span>
+          <span slot="link">
+            <app-translate key="home.contact.link" />
+          </span>
         </app-cta>
       </div>
     );
