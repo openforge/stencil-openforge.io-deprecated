@@ -135,10 +135,12 @@ export class AppHome {
       hrefArray.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-          });
+          const element = document.querySelector(this.getAttribute('href'));
+          element &&
+            element.scrollIntoView({
+              block: 'start',
+              behavior: 'smooth',
+            });
         });
       });
     } catch (e) {
@@ -401,12 +403,12 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <section id="learn-about">
-          <app-cta link-url="#about">
-            <span slot="header">Want to learn more about us?</span>
-            <span slot="link">Get to know us</span>
-          </app-cta>
-        </section>
+        {/* <section id="learn-about"> */}
+        <app-cta link-url="#learn-about">
+          <span slot="header">Want to learn more about us?</span>
+          <span slot="link">Get to know us</span>
+        </app-cta>
+        {/* </section> */}
 
         {/* section - process */}
         <section id="process" class="bg-gray">
