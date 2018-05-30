@@ -557,39 +557,6 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppServices {
-
-    }
-  }
-
-  interface HTMLAppServicesElement extends StencilComponents.AppServices, HTMLStencilElement {}
-
-  var HTMLAppServicesElement: {
-    prototype: HTMLAppServicesElement;
-    new (): HTMLAppServicesElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  interface ElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-services': JSXElements.AppServicesAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppServicesAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface OpenForgeApp {
 
     }
