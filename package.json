@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender && cpx \"src/robots.txt\" www ",
+    "build": "stencil build --prerender ",
     "cz": "git-cz",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
@@ -41,7 +41,6 @@
     "@types/smoothscroll-polyfill": "^0.3.0",
     "commitizen": "^2.9.6",
     "conventional-changelog-cli": "^1.3.22",
-    "cpx": "^1.5.0",
     "cz-conventional-changelog": "^2.1.0",
     "husky": "^0.15.0-rc.13",
     "jest": "^21.2.1",
