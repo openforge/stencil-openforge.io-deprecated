@@ -9,16 +9,6 @@ export class AppContact {
 
   @State() formSubmitting = false;
 
-  // private interface FormErrors {
-  //   name: string;
-  //   company: string;
-  //   email: string;
-  //   phone: number;
-  //   message: string;
-  //   desiredService: string;
-  //   budget: string;
-  // }
-
   @State()
   formValues: {
     name: '';
@@ -28,20 +18,13 @@ export class AppContact {
     message: '';
     desiredService: '';
     budget: '';
-    formErrors: {
-      name: '';
-      company: '';
-      email: '';
-      phone: '';
-      message: '';
-      desiredService: '';
-      budget: '';
-    };
-    formValid: false;
   };
 
   componentDidLoad() {
     this.resetFormValues();
+    let element;
+    element = document.querySelector('.contact .hero');
+    element.style.backgroundImage = `url('assets/bg-hero-handshake-desk.jpg')`;
   }
 
   @Listen('check')
@@ -112,17 +95,6 @@ export class AppContact {
   }
 
   render() {
-    console.log('render function triggered');
-    let nameError;
-    if (this.formValues) {
-      console.log(this.formValues);
-      nameError = this.formValues.formErrors.name ? (
-        <div>{this.formValues.formErrors.name}</div>
-      ) : null;
-
-      console.log(nameError);
-    }
-
     return (
       <div class="contact">
         {/* header - hero */}
@@ -160,7 +132,12 @@ export class AppContact {
                   type="text"
                   required={true}
                 />
-                <app-input name="company" label="Company" type="text" />
+                <app-input
+                  name="company"
+                  label="Company"
+                  type="text"
+                  required={true}
+                />
                 <app-input
                   name="email"
                   label="E-mail"
@@ -175,8 +152,8 @@ export class AppContact {
                 />
                 <app-input
                   name="message"
-                  type="text"
                   label="How did you hear about OpenForge?"
+                  type="text"
                   required={true}
                 />
 
@@ -197,6 +174,7 @@ export class AppContact {
                   </div>
                 </fieldset>
                 <button
+                  name="submit"
                   type="submit"
                   class="btn btn-primary"
                   disabled={this.formSubmitting}
@@ -227,16 +205,6 @@ export class AppContact {
       message: '',
       desiredService: '',
       budget: '',
-      formErrors: {
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        message: '',
-        desiredService: '',
-        budget: '',
-      },
-      formValid: false,
     };
   }
 }

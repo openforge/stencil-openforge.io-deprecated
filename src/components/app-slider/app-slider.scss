@@ -49,9 +49,6 @@
     &::-webkit-slider-runnable-track {
       background: $orange;
     }
-    &::-webkit-slider-thumb {
-      border: 5px solid darken($orange, 10%);
-    }
   }
   // Firefox
   input[type='range']::-moz-range-track {

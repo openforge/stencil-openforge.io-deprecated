@@ -26,21 +26,21 @@ export class AppFooter {
             <div class="content col-sm-12 col-md-4">
               <h2>Our Partners</h2>
               <a href="https://ionicframework.com/" target="_blank">
-                <img
+                <app-img
                   class="img-fluid"
                   src="assets/logo-ionic.png"
                   alt="Ionic"
                 />
               </a>
               <a href="http://www.215marketing.com/" target="_blank">
-                <img
+                <app-img
                   class="img-fluid"
                   src="assets/logo-215marketing.png"
                   alt="215 Marketing"
                 />
               </a>
               <a href="https://www.goemerchant.com/" target="_blank">
-                <img
+                <app-img
                   class="img-fluid"
                   src="assets/logo-goemerchant.png"
                   alt="goEmerchant Payment Processing"
