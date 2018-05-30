@@ -15,8 +15,10 @@ export class AppHeroHome {
   @Listen('window:resize')
   handleImage() {
     let element;
+    let element2;
     try {
       element = document.querySelector('header.hero-home');
+      element2 = document.querySelector('header.hero-home .content');
     } catch (e) {
       console.log('app-hero-home undefined', e);
     }
@@ -30,6 +32,7 @@ export class AppHeroHome {
     } else {
       // large
       element.style.backgroundImage = `url('assets/bg-hero-town.jpg')`;
+      element2.style.background = `url('assets/graphic-home-monitor.png') top center no-repeat`;
     }
   }
 
