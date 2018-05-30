@@ -35,6 +35,7 @@ export class AppMembers {
                   <a
                     href={`mailto:${member.mail}`}
                     target="_blank"
+                    rel="noopener"
                     style={{ color: member.color }}
                   >
                     <i class="fa fa-envelope-square pr-3" aria-hidden="true" />
@@ -45,6 +46,7 @@ export class AppMembers {
                   <a
                     href={member.twitter}
                     target="_blank"
+                    rel="noopener"
                     style={{ color: member.color }}
                   >
                     <i
@@ -58,6 +60,7 @@ export class AppMembers {
                   <a
                     href={member.github}
                     target="_blank"
+                    rel="noopener"
                     style={{ color: member.color }}
                   >
                     <i class="fab fa-github-square pr-3" aria-hidden="true" />

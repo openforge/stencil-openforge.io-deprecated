@@ -100,6 +100,7 @@ export class AppNavHeader {
                   class="nav-link"
                   href="https://github.com/openforge"
                   target="_blank"
+                  rel="noopener"
                 >
                   <div class="fab fa-github" />
                 </a>
