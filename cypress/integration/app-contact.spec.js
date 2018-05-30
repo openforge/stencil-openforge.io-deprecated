@@ -4,7 +4,7 @@ describe('Contact Page', function () {
     cy.get('button[type=submit]').as('submitBtn')
   })
 
-  describe('HTML content within the Contact Page', function () {
+  describe('HTML Elements', function () {
     describe('Navigation bar', function() {
 
       it('Nav bar should show the OpenForge logo', function() {
@@ -68,51 +68,70 @@ describe('Contact Page', function () {
       })
     })
 
-    describe('Footer', function() {
+    describe.only('Footer', function() {
       it('Footer component should exist', function() {
         cy.get('app-footer')
         .should('exist')
+        .should('be.visible')
       })
     })
   })
 
-  describe('Successful form submission', function () {
-    it('Should show a success message on submit when all form values have been filled out', function() {
-      cy.get('input[name=name]')
-        .type('Test Name')
-      cy.get('input[name=email]')
-        .type('testEmail@gmail.com')
-      cy.get('input[name=company]')
-        .type('Test Company Name')
-      cy.get('input[name=phone]')
-        .type('1459341234')
-      cy.get('input[name=message]')
-        .type('This is a test message')
+  describe('Contact Form', function() {
+    let nameField;
+    let emailField;
+    let companyField;
+    let phoneField;
+    let messageField;
+    let radioField1;
+    let radioField2;
 
-      cy.get('[type="radio"]')
+    describe('Successful form submission', function () {
+      beforeEach(() => {
+        nameField = cy.get('input[name=name]')
+        .type('Test Name')
+        emailField = cy.get('input[name=email]')
+        .type('testEmail@gmail.com')
+        companyField = cy.get('input[name=company]')
+        .type('Test Company Name')
+        phoneField = cy.get('input[name=phone]')
+        .type('1459341234')
+        messageField = cy.get('input[name=message]')
+        .type('This is a test message')
+        radioField1 = cy.get('[type="radio"]')
         .check('Web Development')
-      cy.get('[type="radio"]')
+        radioField2 = cy.get('[type="radio"]')
         .check('200K')
 
-      cy.get('@submitBtn').click()
+        cy.get('@submitBtn').click()
+      })
 
-      cy.get('div.alert')
-      .contains('Thank you')
-      .should('be.visible')
+      it('Should show a success message on submit when all form values have been filled out', function() {
+        cy.get('div.alert')
+        .should('exist')
+        .contains('Thank you')
+      })
+
+      it('All fields should be clear after successful form submission', function() {
+
+        nameField.should('have.value', '')
+        emailField.should('have.value', '')
+        companyField.should('have.value', '')
+        phoneField.should('have.value', '')
+        messageField.should('have.value', '')
+      })
     })
-  })
 
-  describe('Unsucessful form submission', function() {
-    it('DOM should not show success message when all fields of the form are not filled out', function () {
+    describe('Unsucessful form submission', function() {
+      it('DOM should not show success message when all fields of the form are not filled out', function () {
 
-      cy.get('input[name=name]')
-       .type('Test Name')
+        nameField = cy.get('input[name=name]')
+        .type('Test Name')
 
-      cy.get('@submitBtn')
-        .click()
+        cy.get('@submitBtn').click()
 
-      cy.get('div.alert')
-        .should('not.exist')
+        cy.get('div.alert').should('not.exist')
+      })
     })
   })
 })

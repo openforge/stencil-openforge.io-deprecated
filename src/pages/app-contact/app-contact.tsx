@@ -9,14 +9,35 @@ export class AppContact {
 
   @State() formSubmitting = false;
 
+  // private interface FormErrors {
+  //   name: string;
+  //   company: string;
+  //   email: string;
+  //   phone: number;
+  //   message: string;
+  //   desiredService: string;
+  //   budget: string;
+  // }
+
+  @State()
   formValues: {
-    name: string;
-    email: string;
-    company?: string;
-    phone: string;
-    message: string;
-    desiredService: string;
-    budget: string;
+    name: '';
+    email: '';
+    company: '';
+    phone: '';
+    message: '';
+    desiredService: '';
+    budget: '';
+    formErrors: {
+      name: '';
+      company: '';
+      email: '';
+      phone: '';
+      message: '';
+      desiredService: '';
+      budget: '';
+    };
+    formValid: false;
   };
 
   componentDidLoad() {
@@ -26,6 +47,8 @@ export class AppContact {
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
+    console.log('valueChangeHandler');
+
     const { field, value } = event.detail;
     this.formValues[field] = value;
   }
@@ -89,6 +112,17 @@ export class AppContact {
   }
 
   render() {
+    console.log('render function triggered');
+    let nameError;
+    if (this.formValues) {
+      console.log(this.formValues);
+      nameError = this.formValues.formErrors.name ? (
+        <div>{this.formValues.formErrors.name}</div>
+      ) : null;
+
+      console.log(nameError);
+    }
+
     return (
       <div class="contact">
         {/* header - hero */}
@@ -143,6 +177,7 @@ export class AppContact {
                   name="message"
                   type="text"
                   label="How did you hear about OpenForge?"
+                  required={true}
                 />
 
                 <fieldset>
@@ -192,6 +227,16 @@ export class AppContact {
       message: '',
       desiredService: '',
       budget: '',
+      formErrors: {
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        message: '',
+        desiredService: '',
+        budget: '',
+      },
+      formValid: false,
     };
   }
 }
