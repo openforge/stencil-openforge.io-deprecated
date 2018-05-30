@@ -34,6 +34,7 @@ export class AppMembers {
                 {!member.mail ? null : (
                   <a
                     href={`mailto:${member.mail}`}
+                    title={`${member.name} mail account`}
                     target="_blank"
                     style={{ color: member.color }}
                   >
@@ -44,6 +45,7 @@ export class AppMembers {
                 {!member.twitter ? null : (
                   <a
                     href={member.twitter}
+                    title={`${member.name} twitter account`}
                     target="_blank"
                     style={{ color: member.color }}
                   >
@@ -57,6 +59,7 @@ export class AppMembers {
                 {!member.github ? null : (
                   <a
                     href={member.github}
+                    title={`${member.name} github account`}
                     target="_blank"
                     style={{ color: member.color }}
                   >
