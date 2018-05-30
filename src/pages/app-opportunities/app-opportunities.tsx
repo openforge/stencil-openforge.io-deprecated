@@ -33,11 +33,15 @@ export class AppOpportunities {
   }
 
   componentDidUpdate() {
-    const application = document.getElementById('apply');
     if (!this.isDisabled) {
-      document.getElementById('requestInterview').focus();
-    } else if (application) {
-      application.scrollIntoView();
+      if (document.getElementById('requestInterview')) {
+        document.getElementById('requestInterview').focus();
+      } else {
+        document.getElementById('apply').scrollIntoView({
+          block: 'start',
+          behavior: 'smooth',
+        });
+      }
     }
   }
 
@@ -255,7 +259,11 @@ export class AppOpportunities {
                   </button>
                 </form>
               ) : (
-                <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                <form
+                  class="apply-2"
+                  id="myLittleAnchor"
+                  onSubmit={this.handleSubmit.bind(this)}
+                >
                   <h2>Mid-Level Developer</h2>
                   <ul>
                     <li>Philadelphia</li>
