@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Listen } from '@stencil/core';
 import {
   ActiveRouter,
   RouterHistory,
@@ -16,6 +16,29 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  /**
+   * Handle service worker updates correctly.
+   * This code will show a toast letting the
+   * user of the PWA know that there is a
+   * new version available. When they click the
+   * reload button it then reloads the page
+   * so that the new service worker can take over
+   * and serve the fresh content
+   */
+
+  // TODO: Figure out toast message alternative
+  @Listen('window:swUpdate')
+  async onSWUpdate() {
+    // const toast = await this.toastCtrl.create({
+    //   message: 'New version available',
+    //   showCloseButton: true,
+    //   closeButtonText: 'Reload'
+    // });
+    // await toast.present();
+    // await toast.onWillDismiss()
+    window.location.reload();
+  }
+
   @Prop({ context: 'activeRouter' })
   activeRouter: ActiveRouter;
 
@@ -45,6 +68,16 @@ export class OpenForgeApp {
     this.unsubscribe = history.listen((segments: LocationSegments) => {
       console.log(segments);
       gtag('config', GA_TRACKING_ID, { page_path: segments.pathname });
+
+      if (segments.hash !== '') {
+        const sectionId = segments.hash.replace('#', '');
+        setTimeout(() => {
+          document.getElementById(sectionId).scrollIntoView({
+            block: 'start',
+            behavior: 'smooth',
+          });
+        }, 250);
+      }
     });
   }
 
@@ -56,7 +89,6 @@ export class OpenForgeApp {
           <stencil-router>
             <RouterSwitch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/about" component="app-about" />
               <stencil-route url="/services" component="app-services" />
               <stencil-route url="/contact" component="app-contact" />
               <stencil-route

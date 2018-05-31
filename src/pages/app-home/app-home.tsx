@@ -17,7 +17,7 @@ export class AppHome {
         name: 'Jedi Weller',
         image: './../../assets/headshot-jedi.jpg',
         color: '#fa8928',
-        title: this.ts.translate('about.member.title.founder'),
+        title: this.ts.translate('home.member.title.founder'),
         mail: 'jedi@openforge.io',
         twitter: 'https://twitter.com/jedihacks',
         github: 'https://github.com/jedihacks',
@@ -26,7 +26,7 @@ export class AppHome {
         name: 'Rachel Bennett',
         image: './../../assets/headshot-rachel.jpg',
         color: '#638593',
-        title: this.ts.translate('about.member.title.designer'),
+        title: this.ts.translate('home.member.title.designer'),
         mail: 'rachel@openforge.io',
         twitter: '',
         github: '',
@@ -35,7 +35,7 @@ export class AppHome {
         name: 'Geoffery Melle',
         image: './../../assets/headshot-geoff.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('about.member.title.accountManager'),
+        title: this.ts.translate('home.member.title.accountManager'),
         mail: 'geoff@openforge.io',
         twitter: '',
         github: '',
@@ -44,7 +44,7 @@ export class AppHome {
         name: 'Joni Leho',
         image: './../../assets/headshot-joni.jpg',
         color: '#fa8928',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'joni@openforge.io',
         twitter: 'https://twitter.com/lehto_joni',
       },
@@ -52,7 +52,7 @@ export class AppHome {
         name: 'Auvo Severinkangas',
         image: './../../assets/headshot-auvo.jpg',
         color: '#638593',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'auvo@openforge.io',
         twitter: '',
         github: '',
@@ -61,7 +61,7 @@ export class AppHome {
         name: 'Elizabeth Cottrell',
         image: './../../assets/headshot-eliza.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('about.member.title.frontEndDeveloper'),
+        title: this.ts.translate('home.member.title.frontEndDeveloper'),
         mail: 'elizabeth@openforge.io',
         twitter: 'https://twitter.com/_elizacottrell',
         github: 'https://github.com/LizCottrell',
@@ -70,7 +70,7 @@ export class AppHome {
         name: 'Paulina Gallo',
         image: './../../assets/headshot-paulina.jpg',
         color: '#fa8928',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'paulina@openforge.io',
         twitter: 'https://twitter.com/paulpaultweets',
         github: 'https://github.com/paulpauldevelops',
@@ -79,7 +79,7 @@ export class AppHome {
         name: 'Mohammad Alfatih',
         image: './../../assets/headshot-mohammad.jpg',
         color: '#638593',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'mo@jawami.com',
         twitter: 'https://twitter.com/webdevffw',
         github: 'https://github.com/Mohammad-alfatih',
@@ -88,7 +88,7 @@ export class AppHome {
         name: 'Meredith Alcorn',
         image: './../../assets/headshot-meredith.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'meredith@openforge.io',
         github: 'https://github.com/mmalcorn',
       },
@@ -96,7 +96,7 @@ export class AppHome {
         name: 'Fernando Del Olmo',
         image: './../../assets/headshot-fernando.jpg',
         color: '#fa8928',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'fernando@openforge.io',
         twitter: 'https://twitter.com/fdom92',
         github: 'https://github.com/Fdom92',
@@ -105,14 +105,14 @@ export class AppHome {
         name: 'William Holloran',
         image: './../../assets/headshot-billy.jpg',
         color: '#638593',
-        title: this.ts.translate('about.member.title.projectManager'),
+        title: this.ts.translate('home.member.title.projectManager'),
         mail: 'william@openforge.io',
       },
       {
         name: 'Luis Chacon',
         image: './../../assets/headshot-luis.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'luis@openforge.io',
         twitter: 'https://twitter.com/luiskcs89',
         github: 'https://github.com/luiskcs89',
@@ -121,7 +121,7 @@ export class AppHome {
         name: 'Claudio Del Valle',
         image: './../../assets/headshot-claudio.jpg',
         color: '#fa8928',
-        title: this.ts.translate('about.member.title.developer'),
+        title: this.ts.translate('home.member.title.developer'),
         mail: 'claudio@openforge.io',
         github: 'https://github.com/daftclaud',
       },
@@ -129,7 +129,7 @@ export class AppHome {
         name: 'Yanying Zhu',
         image: './../../assets/headshot-yanying.jpg',
         color: '#638593',
-        title: this.ts.translate('about.member.title.designer'),
+        title: this.ts.translate('home.member.title.designer'),
         mail: 'yanying@openforge.io',
         twitter: '',
         github: '',
@@ -144,10 +144,12 @@ export class AppHome {
       hrefArray.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-          });
+          const element = document.querySelector(this.getAttribute('href'));
+          element &&
+            element.scrollIntoView({
+              block: 'start',
+              behavior: 'smooth',
+            });
         });
       });
     } catch (e) {
@@ -320,7 +322,7 @@ export class AppHome {
                       <h3>
                         <app-translate key="home.services.what.whatYouNeed" />
                       </h3>
-                      <app-translate key="home.services.what.whatYouNeedText" />
+                      <app-translate key="home.services.what.whatYouNeedTextSmallTeam" />
                     </div>
 
                     <div class="col-md-4">
@@ -329,25 +331,25 @@ export class AppHome {
                       </h3>
                       <ul>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                          <app-translate key="home.services.what.whatWeProvide.businessConsulting" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                          <app-translate key="home.services.what.whatWeProvide.technicalConsulting" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                          <app-translate key="home.services.what.whatWeProvide.businessElligibilityAudit" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
+                          <app-translate key="home.services.what.whatWeProvide.mobileWebDesigns" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
+                          <app-translate key="home.services.what.whatWeProvide.uIUXAudits" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                          <app-translate key="home.services.what.whatWeProvide.mobileWebApplicationDevelopment" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                          <app-translate key="home.services.what.whatWeProvide.customerEngagementStrategy" />
                         </li>
                       </ul>
                     </div>
@@ -366,7 +368,7 @@ export class AppHome {
                       <h3>
                         <app-translate key="home.services.what.whatYouNeed" />
                       </h3>
-                      <app-translate key="home.services.what.whatYouNeedText" />
+                      <app-translate key="home.services.what.whatYouNeedTextMidTeam" />
                     </div>
 
                     <div class="col-md-4">
@@ -375,13 +377,13 @@ export class AppHome {
                       </h3>
                       <ul>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                          <app-translate key="home.services.what.whatWeProvide.businessStrategyConsulting" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                          <app-translate key="home.services.what.whatWeProvide.professionalMobileWebDesigns" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                          <app-translate key="home.services.what.whatWeProvide.uIUXAuditsRecommendations" />
                         </li>
                         <li>
                           <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
@@ -390,10 +392,13 @@ export class AppHome {
                           <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                          <app-translate key="home.services.what.whatWeProvide.strategicCustomerEngagementConsulting" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                          <app-translate key="home.services.what.whatWeProvide.teamTrainingsWorkshops" />
+                        </li>
+                        <li>
+                          <app-translate key="home.services.what.whatWeProvide.processImprovementTraining" />
                         </li>
                       </ul>
                     </div>
@@ -412,7 +417,7 @@ export class AppHome {
                       <h3>
                         <app-translate key="home.services.what.whatYouNeed" />
                       </h3>
-                      <app-translate key="home.services.what.whatYouNeedText" />
+                      <app-translate key="home.services.what.whatYouNeedTextEnterpriseTeam" />
                     </div>
 
                     <div class="col-md-4">
@@ -421,25 +426,25 @@ export class AppHome {
                       </h3>
                       <ul>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.startUpConsulting" />
+                          <app-translate key="home.services.what.whatWeProvide.enterpriseDesignWorkshops" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.enhancedDesigns" />
+                          <app-translate key="home.services.what.whatWeProvide.crossDisciplinaryTeamTraining" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.uiRecommendations" />
+                          <app-translate key="home.services.what.whatWeProvide.externalConsultingProcessImprovement" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.mobileDevelopment" />
+                          <app-translate key="home.services.what.whatWeProvide.userExperienceUIUXAudits" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.webDevelopment" />
+                          <app-translate key="home.services.what.whatWeProvide.webAccessabilityAudits" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.engagementStrategy" />
+                          <app-translate key="home.services.what.whatWeProvide.mobileWebApplicationServices" />
                         </li>
                         <li>
-                          <app-translate key="home.services.what.whatWeProvide.guearillaMarketingStrategy" />
+                          <app-translate key="home.services.what.whatWeProvide.customerEngagementStrategy" />
                         </li>
                       </ul>
                     </div>
@@ -474,20 +479,19 @@ export class AppHome {
                 <app-translate key="home.process.discovery" />
               </h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                We'll help you evaluate your business needs and challenge your
+                assumptions before entering into the Design and Development
+                processs. Make sure that the technology you're building makes
+                sense for your business.
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-home-consulting.png">
               <h3 slot="header">
-                <app-translate key="home.process.devConsulting" />
+                <app-translate key="home.process.designUserExperience" />
               </h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                <app-translate key="home.process.designUserExperienceBody" />
               </p>
             </content-graphic-lg>
 
@@ -496,9 +500,7 @@ export class AppHome {
                 <app-translate key="home.process.development" />
               </h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                <app-translate key="home.process.developmentBody" />
               </p>
             </content-graphic-lg>
 
@@ -507,9 +509,7 @@ export class AppHome {
                 <app-translate key="home.process.deployment" />
               </h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                <app-translate key="home.process.deploymentBody" />
               </p>
             </content-graphic-lg>
 
@@ -518,16 +518,14 @@ export class AppHome {
                 <app-translate key="home.process.userFeedback" />
               </h3>
               <p slot="body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                <app-translate key="home.process.userFeedbackBody" />
               </p>
             </content-graphic-lg>
           </div>
         </section>
 
         {/* section - persepectives */}
-        <section class="bg-black">
+        <section class="bg-black" id="perspectives">
           <div class="container perspectives">
             <img class="img-fluid" src="assets/graphic-home-icons.png" alt="" />
             <h2>

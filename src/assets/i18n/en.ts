@@ -18,7 +18,13 @@ export const translations = {
           enterprise: 'Enterprise',
           whatYouNeed: 'What you need:',
           whatYouNeedText:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed odio non turpis volutpat suscipit. Duis rutrum fringilla scelerisque. Duis eget ex faucibus, egestas eros non, fermentum ex. Quisque lobortis venenatis metus, vitae ornare turpis. Phasellus sed convallis dolor. Fusce in ante vitae nisl porta vestibulum vel eget tellus. Quisque varius in felis ut pulvinar. Donec aliquet, nisi eget tempor accumsan, risus felis viverra tortor, eget euismod metus risus ac velit.',
+            "Bring your idea to life with our team of experts in Design, UI/UX, Web, and Mobile Application Development. We don't just 'build it', we sit with you to answer the question of how the technology and psychology behind the design will match your business model. Our experience with 100+ Startups becomes your experience as we take you through the next level of Startup Consulting.",
+          whatYouNeedTextSmallTeam:
+            "You have a small team and successful company, you've proven your business model and have enough revenue to sustain; however, you are struggling with accelerating growth and would like to utilize technology to skyrocket your business. You're nervous (and rightly so!), because you've never built a technology product before. Fear not! We are here to help. Let us guide you on ins-and-outs of Product Development and help you determine <b>HOW and IF</b> you should be building an app. Sometimes, it's much better to use an existing service!",
+          whatYouNeedTextMidTeam:
+            "You have an established business and risks cost money. You're looking for a team you can trust to get the job done right the first time. That's us. We work with your team to evaluate your business goals, develop a plan of attack, and execute in order to deliver your results on budget, but mostly importantly, on time. We can provide support to your existing infrastructure, provide CTO services to guide your existing teams, or build your product start-finish without unneccessary supervision. Whatever you need, we're here.",
+          whatYouNeedTextEnterpriseTeam:
+            'Our Enterprise clients have world-wide goals; but often need the agility and flexibility of a small team in order to accomplish those goals and bypass the corporate red-tape. For these clients, we offer tailored solutions to fit your needs. If you have an existing team of Designers and Developers, but they have difficulty communicating and often miss deadlines and go over budget; we provide training and workshops to increase cross-disciplinary communication. For products that have spiraled out of control; we come in and fix the physical (design & dev), but also the systematic problems such as team communication and design to development process improvement.',
           whatWeProvide: {
             title: 'What we provide:',
             startUpConsulting: 'Startup Consulting',
@@ -28,6 +34,28 @@ export const translations = {
             webDevelopment: 'Web Application Development',
             engagementStrategy: 'Customer Engagement Strategy',
             guearillaMarketingStrategy: 'Guerilla Marketing Strategy',
+            businessConsulting: 'Business Consulting',
+            technicalConsulting: 'Technical Consulting',
+            businessElligibilityAudit: 'Business Elligibility Audit',
+            mobileWebDesigns: 'Mobile & Web Designs',
+            uIUXAudits: 'UI/UX Audits',
+            mobileWebApplicationDevelopment:
+              'Mobile & Web Application Development',
+            customerEngagementStrategy: 'Customer Engagement Strategy',
+            businessStrategyConsulting: 'Business Strategy & Consulting',
+            professionalMobileWebDesigns: 'Professional Mobile & Web Designs',
+            uIUXAuditsRecommendations: 'UI/UX Audits & Recommendations',
+            strategicCustomerEngagementConsulting:
+              'Strategic Customer Engagement Consulting',
+            teamTrainingsWorkshops: 'Team Trainings & Workshops',
+            processImprovementTraining: 'Process Improvement Training',
+            enterpriseDesignWorkshops: 'Enterprise Design Workshops',
+            crossDisciplinaryTeamTraining: 'Cross-Disciplinary Team Training',
+            externalConsultingProcessImprovement:
+              'External Consulting & Process Improvement',
+            userExperienceUIUXAudits: 'User Experience (UI/UX) Audits',
+            webAccessabilityAudits: 'Web Accessability Audits',
+            mobileWebApplicationServices: 'Mobile & Web Application Services',
           },
         },
       },
@@ -40,8 +68,17 @@ export const translations = {
         discovery: 'Discovery',
         devConsulting: 'Development Consulting',
         development: 'Development',
+        developmentBody:
+          "Throw away the development practices of the 1990's and 2000's. In order to utilize modern technologies we must use modern approaches to software development, including Design & Dev integration, Continuous Integration strategies, and sophisticated Automated Testing strategies to assure your business is always operational.",
         deployment: 'Deployment',
+        deploymentBody:
+          'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
         userFeedback: 'User Feedback',
+        userFeedbackBody:
+          'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
+        designUserExperience: 'Design & User Experience',
+        designUserExperienceBody:
+          'There is psychology and through behind every effective design. Our team of experts sits with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
       },
       perspectives: {
         title: 'We Are Powered by Multiple Perspectives',
@@ -61,39 +98,6 @@ export const translations = {
       contact: {
         title: 'Ready to work with us?',
         link: 'Get in touch',
-      },
-    },
-    about: {
-      hero: {
-        header: 'Powered by engineers & design thinkers',
-        body:
-          "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-        learnMore: 'Learn More',
-      },
-      values: {
-        title: 'Our Key Values',
-        text:
-          'From discovery to deployment, you can consider Team OpenForge as an extention of your team.',
-        transparency: 'Transparency',
-        transparencyText:
-          'No surprises here. We aim to be fully transparent both internally and externally.',
-        integrity: 'Integrity',
-        integrityText:
-          "We'll always do our best to provide honest feedback and insights along the way.",
-        trust: 'Trust',
-        trustText:
-          "We stand by our values every step of the way. Plain and simple: we're here to help you.",
-      },
-      diversity: {
-        title: 'Diversity Matters',
-        titleBig: 'We Are Powered by Multiple Perspectives',
-        subheader:
-          'Our individual skills, backgrounds, and life experiences have shaped us into the company that we are today. Maintaining a diverse team helps us to perform better, attract top talent, and make smarter decisions.',
-      },
-      team: {
-        title: 'Meet the Team',
-        text:
-          'There’s no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.',
       },
       member: {
         title: {

@@ -493,39 +493,6 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppAbout {
-
-    }
-  }
-
-  interface HTMLAppAboutElement extends StencilComponents.AppAbout, HTMLStencilElement {}
-
-  var HTMLAppAboutElement: {
-    prototype: HTMLAppAboutElement;
-    new (): HTMLAppAboutElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-about': HTMLAppAboutElement;
-  }
-  interface ElementTagNameMap {
-    'app-about': HTMLAppAboutElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-about': JSXElements.AppAboutAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppAboutAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface AppContact {
 
     }
