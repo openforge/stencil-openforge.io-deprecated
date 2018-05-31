@@ -135,6 +135,7 @@ export const translations = {
         company: 'Company',
         email: 'E-mail',
         phone: 'Phone',
+        github: 'GitHub URL',
         whereDidYouHear: 'How did you hear about OpenForge?',
         appDevelopment: 'App Development',
         webDevelopment: 'Web Development',
@@ -171,6 +172,45 @@ export const translations = {
       challenge: {
         title: 'The Challenge',
         showUs: 'Show us your skills in:',
+      },
+      reputation: {
+        title: 'Reputation is Everything.',
+        text:
+          "Because we value our partnerships. As a trusted partner of the <a href='https://ionicframework.com/'> Ionic Team </a> our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!",
+      },
+      prepared: {
+        title: 'Are you prepared?',
+        body:
+          "We're looking for someone who’s ready to hit the ground running - someone who wants to turn big ideas into realities. A person who can work on a team, show humility, and is not afraid to learn and teach simultaneously.",
+      },
+      skills: {
+        title: 'Show us your skills',
+        text:
+          "So if you're really awesome - prove it and position the sliders to reflect your skills! Hint; only the best shall pass the first test!",
+        noob: 'N00b',
+        expert: 'Expert',
+      },
+      form: {
+        allset: "You're all set! Let's get started.",
+        almost: 'Not quite...keep sliding or keep learning; you can do it!',
+        request: 'Request an interview',
+        midLevelTitle: 'Mid-Level Developer',
+        technology: 'Technology',
+        fullTime: 'Full-Time',
+        submitTitle: 'Submit your application',
+        resume: 'Resume/CV',
+        unique: {
+          title: 'What makes you unique?',
+          text:
+            'In 150 characters or fewer, tell us what makes you unique. Try to be creative and say something that will catch our eye!',
+        },
+        submit: 'Submit Application',
+        submitted: 'Application Submitted',
+        thanks: {
+          title: 'Thank you!',
+          text:
+            'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
+        },
       },
     },
   },

@@ -1,4 +1,5 @@
 import { Component, State, Listen } from '@stencil/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   tag: 'app-opportunities',
@@ -24,6 +25,12 @@ export class AppOpportunities {
   };
 
   formData = new FormData();
+  ts: TranslationService;
+  radioChoices: any;
+
+  constructor() {
+    this.ts = new TranslationService();
+  }
 
   componentDidLoad() {
     this.resetFormValues();
@@ -199,23 +206,20 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
-              <h3 slot="header">Reputation is Everything.</h3>
+              <h3 slot="header">
+                <app-translate key="opportunities.reputation.title" />
+              </h3>
               <p slot="body">
-                Because we value our partnerships. As a trusted partner of the{' '}
-                <a href="https://ionicframework.com/"> Ionic Team </a> our
-                clients rely on us to provide enterprise quality applications
-                for companies of all sizes; we need to make sure you're up to
-                the task!
+                <app-translate key="opportunities.reputation.text" />
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-opportunities-sword.png">
-              <h3 slot="header">Are you prepared?</h3>
+              <h3 slot="header">
+                <app-translate key="opportunities.prepared.title" />
+              </h3>
               <p slot="body">
-                We're looking for someone who’s ready to hit the ground running
-                - someone who wants to turn big ideas into realities. A person
-                who can work on a team, show humility, and is not afraid to
-                learn and teach simultaneously.
+                <app-translate key="opportunities.prepared.body" />
               </p>
             </content-graphic-lg>
           </div>
@@ -227,16 +231,20 @@ export class AppOpportunities {
             <div class="container">
               {!this.canRequestInterview ? (
                 <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
-                  <h2>Show us your skills</h2>
+                  <h2>
+                    <app-translate key="opportunities.skills.title" />
+                  </h2>
                   <p>
-                    So if you're really awesome - prove it and position the
-                    sliders to reflect your skills! Hint; only the best shall
-                    pass the first test!
+                    <app-translate key="opportunities.skills.text" />
                   </p>
 
                   <div class="slider-labels">
-                    <p>N00b</p>
-                    <p>Expert</p>
+                    <p>
+                      <app-translate key="opportunities.skills.noob" />
+                    </p>
+                    <p>
+                      <app-translate key="opportunities.skills.expert" />
+                    </p>
                   </div>
 
                   <app-slider name="angular" label="Angular" />
@@ -246,10 +254,12 @@ export class AppOpportunities {
                   <app-slider name="css" label="CSS" />
 
                   {!this.isDisabled ? (
-                    <p>You're all set! Let's get started.</p>
+                    <p>
+                      <app-translate key="opportunities.form.allset" />
+                    </p>
                   ) : (
                     <p>
-                      Not quite...keep sliding or keep learning; you can do it!
+                      <app-translate key="opportunities.form.almost" />
                     </p>
                   )}
 
@@ -259,7 +269,7 @@ export class AppOpportunities {
                     disabled={this.isDisabled}
                     id="requestInterview"
                   >
-                    Request an interview
+                    <app-translate key="opportunities.form.request" />
                   </button>
                 </form>
               ) : (
@@ -268,17 +278,27 @@ export class AppOpportunities {
                   id="myLittleAnchor"
                   onSubmit={this.handleSubmit.bind(this)}
                 >
-                  <h2>Mid-Level Developer</h2>
+                  <h2>
+                    <app-translate key="opportunities.form.midLevelTitle" />
+                  </h2>
                   <ul>
                     <li>Philadelphia</li>
-                    <li>Technology</li>
-                    <li>Full-Time</li>
+                    <li>
+                      <app-translate key="opportunities.form.technology" />
+                    </li>
+                    <li>
+                      <app-translate key="opportunities.form.fullTime" />
+                    </li>
                   </ul>
 
-                  <h3>Submit your application</h3>
+                  <h3>
+                    <app-translate key="opportunities.form.submitTitle" />
+                  </h3>
 
                   <div class="form-group">
-                    <label>Resume/CV</label>
+                    <label>
+                      <app-translate key="opportunities.form.resume" />
+                    </label>
                     <input
                       class="input-file"
                       type="file"
@@ -289,41 +309,41 @@ export class AppOpportunities {
                   </div>
 
                   <app-input
-                    label="Full Name"
+                    label={this.ts.translate('contact.form.fullName')}
                     name="name"
                     type="text"
                     // placeholder="Full Name"
                     required={true}
                   />
                   <app-input
-                    label="Email"
+                    label={this.ts.translate('contact.form.email')}
                     name="email"
                     type="email"
                     // placeholder="Email Address"
                     required={true}
                   />
                   <app-input
-                    label="Phone"
+                    label={this.ts.translate('contact.form.phone')}
                     name="phone"
                     type="tel"
                     // placeholder="Phone Number"
                     required={true}
                   />
                   <app-input
-                    label="GitHub URL"
+                    label={this.ts.translate('contact.form.github')}
                     name="github"
                     type="text"
                     // placeholder="GitHub Link"
                     required={true}
                   />
 
-                  <h3>What makes you unique?</h3>
+                  <h3>
+                    <app-translate key="opportunities.form.unique.title" />
+                  </h3>
 
                   <div class="form-group input-textarea">
                     <label>
-                      In 150 characters or fewer, tell us what makes you unique.
-                      Try to be creative and say something that will catch our
-                      eye!
+                      <app-translate key="opportunities.form.unique.text" />
                     </label>
                     <textarea
                       class="form-control"
@@ -334,20 +354,23 @@ export class AppOpportunities {
                   </div>
 
                   <button class="btn btn-primary" type="submit">
-                    Submit Application
+                    <app-translate key="opportunities.form.submit" />
                   </button>
                 </form>
               )}
             </div>
           ) : (
             <div class="container apply-3">
-              <h2>Application Submitted</h2>
+              <h2>
+                <app-translate key="opportunities.form.submitted" />
+              </h2>
 
               <content-graphic-lg img-url="assets/graphic-opportunities-robot.png">
-                <h3 slot="header">Thank you!</h3>
+                <h3 slot="header">
+                  <app-translate key="opportunities.form.thanks.title" />
+                </h3>
                 <p slot="body">
-                  If your resume is a match, someone will be in touch to deliver
-                  the necessary materials to complete the challenge.
+                  <app-translate key="opportunities.form.thanks.text" />
                 </p>
               </content-graphic-lg>
             </div>
