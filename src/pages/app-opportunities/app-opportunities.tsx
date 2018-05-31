@@ -104,12 +104,15 @@ export class AppOpportunities {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>OpenForge is hiring two amazing developers!</h2>
+                <h2>
+                  <app-translate key="opportunities.hero.title" />
+                </h2>
                 <p>
-                  Looking for a new adventure? Want to know if you're the right
-                  fit for the team?
+                  <app-translate key="opportunities.hero.text" />
                 </p>
-                <p>Scroll down to find out!</p>
+                <p>
+                  <app-translate key="opportunities.hero.text2" />
+                </p>
               </div>
             </div>
           </div>
@@ -122,23 +125,20 @@ export class AppOpportunities {
               img-url="assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
-              <h3 slot="header">Forget normal interviews!</h3>
+              <h3 slot="header">
+                <app-translate key="opportunities.intro.title" />
+              </h3>
               <p slot="body">
-                From our work to our interview process, we break the norm. We
-                believe in Open Source contributions; so part of your interview
-                assignment will be exactly that - build out a simple (open
-                source) <a href="https://ionicframework.com/">Ionic</a> or{' '}
-                <a href="https://reactjs.org/"> React App!</a>
+                <app-translate key="opportunities.intro.text" />
               </p>
             </content-graphic-lg>
 
             <content-graphic-lg img-url="assets/graphic-opportunities-codemaster.jpg">
-              <h3 slot="header">We want to put you to the test!</h3>
+              <h3 slot="header">
+                <app-translate key="opportunities.intro.codeMaster.title" />
+              </h3>
               <p slot="body">
-                Instead of asking you a million questions, we'd rather get to
-                know you another way - seeing how you follow direction, develop,
-                and learn a new technology or pattern that you have not used
-                before.
+                <app-translate key="opportunities.intro.codeMaster.body" />
               </p>
             </content-graphic-lg>
           </div>
@@ -146,8 +146,12 @@ export class AppOpportunities {
           <div class="challenge">
             <div class="container">
               <div class="intro text-center">
-                <h2>The Challenge</h2>
-                <p>Show us your skills in:</p>
+                <h2>
+                  <app-translate key="opportunities.challenge.title" />
+                </h2>
+                <p>
+                  <app-translate key="opportunities.challenge.showUs" />
+                </p>
               </div>
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">

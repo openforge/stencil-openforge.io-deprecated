@@ -7,8 +7,7 @@ import {
 } from '@stencil/router';
 import { polyfill } from 'smoothscroll-polyfill';
 import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
-import i18next from 'i18next';
-import { translations } from '../../assets/i18n/en';
+import { TranslationService } from '../../services/translation.service';
 
 polyfill();
 
@@ -19,26 +18,13 @@ polyfill();
 export class OpenForgeApp {
   @Prop({ context: 'activeRouter' })
   activeRouter: ActiveRouter;
+
   unsubscribe: () => void;
   mainEl: HTMLElement;
 
   constructor() {
-    i18next.init(
-      {
-        lng: 'en',
-        debug: true,
-        resources: {
-          en: {
-            translation: translations.translation,
-          },
-        },
-      },
-      err => {
-        if (err) {
-          console.error(err);
-        }
-      }
-    );
+    const ts = new TranslationService();
+    ts.init('en');
   }
 
   componentDidUnload() {

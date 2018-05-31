@@ -106,5 +106,68 @@ export const translations = {
         },
       },
     },
+    contact: {
+      hero: {
+        title: "Let's Work Together",
+        request: 'Request a Discovery Session Today!',
+        requestNow: 'Request Now',
+      },
+      form: {
+        title: 'Get in Touch',
+        text:
+          "Tell us a little bit about what you're working on. We'll be in touch to tell you about the next steps toward accomplishing your goals!",
+        legend: {
+          help: 'How can we help you?',
+          budget: 'Do you have a budget?',
+        },
+        button: {
+          send: 'Send',
+        },
+        alert: {
+          text:
+            "Thank you for reaching out! we'll get back to you within 24 hours!",
+        },
+        fullName: 'Full Name',
+        company: 'Company',
+        email: 'E-mail',
+        phone: 'Phone',
+        whereDidYouHear: 'How did you hear about OpenForge?',
+        appDevelopment: 'App Development',
+        webDevelopment: 'Web Development',
+        uiDesign: 'UI Design',
+        graphicDesign: 'Graphic Design',
+        consulting: 'Consulting',
+        ctoAsService: 'CTO as a Service',
+        unsure: 'Unsure',
+      },
+    },
+    services: {
+      header: 'Creative Digital Solutions for Real World Problems',
+      body:
+        'We use Google standards, Test Driven Development, and Code Cleanliness (linting) a in all our development contributions. We believe in using only the best practices for your unique application.',
+      learnMore: 'Learn More',
+    },
+    opportunities: {
+      hero: {
+        title: 'OpenForge is hiring two amazing developers!',
+        text:
+          "Looking for a new adventure? Want to know if you're the right fit for the team?",
+        text2: 'Scroll down to find out!',
+      },
+      intro: {
+        title: 'Forget normal interviews!',
+        text:
+          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/'>Ionic</a> or <a href='https://reactjs.org/'> React App!</a>",
+        codeMaster: {
+          title: 'We want to put you to the test!',
+          body:
+            "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you follow direction, develop, and learn a new technology or pattern that you have not used before.",
+        },
+      },
+      challenge: {
+        title: 'The Challenge',
+        showUs: 'Show us your skills in:',
+      },
+    },
   },
 };

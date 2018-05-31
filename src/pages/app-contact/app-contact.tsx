@@ -1,4 +1,5 @@
 import { Component, State, Listen } from '@stencil/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   tag: 'app-contact',
@@ -18,6 +19,34 @@ export class AppContact {
     desiredService: string;
     budget: string;
   };
+
+  ts: TranslationService;
+  radioChoices: any;
+
+  constructor() {
+    this.ts = new TranslationService();
+    this.radioChoices = {
+      desiredService: [
+        this.ts.translate('contact.form.appDevelopment'),
+        this.ts.translate('contact.form.webDevelopment'),
+        this.ts.translate('contact.form.uiDesign'),
+        this.ts.translate('contact.form.graphicDesign'),
+        this.ts.translate('contact.form.consulting'),
+        this.ts.translate('contact.form.ctoAsService'),
+        this.ts.translate('contact.form.unsure'),
+      ],
+      budget: [
+        '5K-10K',
+        '10K-25K',
+        '25K-50K',
+        '50K-75K',
+        '75K-100K',
+        '100K-200K',
+        '200K',
+        this.ts.translate('contact.form.unsure'),
+      ],
+    };
+  }
 
   componentDidLoad() {
     this.resetFormValues();
@@ -96,13 +125,17 @@ export class AppContact {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2 class="text-nowrap">Let's Work Together</h2>
-                <p>Request a Discovery Session Today!</p>
+                <h2 class="text-nowrap">
+                  <app-translate key="contact.hero.title" />
+                </h2>
+                <p>
+                  <app-translate key="contact.hero.request" />
+                </p>
                 <a
                   onClick={this.scrollToForm.bind(this)}
                   class="btn btn-primary"
                 >
-                  Request Now
+                  <app-translate key="contact.hero.requestNow" />
                 </a>
               </div>
             </div>
@@ -112,59 +145,66 @@ export class AppContact {
         <section id="second-content" class="contact-form">
           <div class="container">
             <div class="jumbotron">
-              <h2 class="display-5 font-weight-bold">Get in Touch</h2>
+              <h2 class="display-5 font-weight-bold">
+                <app-translate key="contact.form.title" />
+              </h2>
               <p class="lead">
-                Tell us a little bit about what you're working on. We'll be in
-                touch to tell you about the next steps toward accomplishing your
-                goals!
+                <app-translate key="contact.form.text" />
               </p>
 
               <form onSubmit={this.handleSubmit.bind(this)}>
                 <app-input
                   name="name"
-                  label="Full Name"
+                  label={this.ts.translate('contact.form.fullName')}
                   type="text"
                   required={true}
                 />
                 <app-input
                   name="company"
-                  label="Company"
+                  label={this.ts.translate('contact.form.company')}
                   type="text"
                   required={true}
                 />
                 <app-input
                   name="email"
-                  label="E-mail"
+                  label={this.ts.translate('contact.form.email')}
                   type="email"
                   required={true}
                 />
                 <app-input
                   name="phone"
-                  label="Phone"
+                  label={this.ts.translate('contact.form.phone')}
                   type="tel"
                   required={true}
                 />
                 <app-input
                   name="message"
-                  label="How did you hear about OpenForge?"
+                  label={this.ts.translate('contact.form.whereDidYouHear')}
                   type="text"
                   required={true}
                 />
 
                 <fieldset>
-                  <legend class="lead">How can we help you?</legend>
+                  <legend class="lead">
+                    <app-translate key="contact.form.legend.help" />
+                  </legend>
                   <div class="row ml-2">
                     {this.renderRadioColumns(
                       'desiredService',
-                      radioChoices.desiredService
+                      this.radioChoices.desiredService
                     )}
                   </div>
                 </fieldset>
 
                 <fieldset>
-                  <legend class="lead">Do you have a budget?</legend>
+                  <legend class="lead">
+                    <app-translate key="contact.form.legend.budget" />
+                  </legend>
                   <div class="row ml-2">
-                    {this.renderRadioColumns('budget', radioChoices.budget)}
+                    {this.renderRadioColumns(
+                      'budget',
+                      this.radioChoices.budget
+                    )}
                   </div>
                 </fieldset>
                 <button
@@ -173,15 +213,14 @@ export class AppContact {
                   class="btn btn-primary"
                   disabled={this.formSubmitting}
                 >
-                  Send
+                  <app-translate key="contact.form.button.send" />
                 </button>
               </form>
             </div>
 
             {!this.formSubmitted ? null : (
               <div class="alert alert-success" role="alert">
-                Thank you for reaching out! we'll get back to you within 24
-                hours!
+                <app-translate key="contact.form.alert.text" />
               </div>
             )}
           </div>
@@ -202,25 +241,3 @@ export class AppContact {
     };
   }
 }
-
-const radioChoices = {
-  desiredService: [
-    'App Development',
-    'Web Development',
-    'UI/UX Design',
-    'Graphic Design',
-    'Consulting',
-    'CTO as a service',
-    'Unsure',
-  ],
-  budget: [
-    '5K-10K',
-    '10K-25K',
-    '25K-50K',
-    '50K-75K',
-    '75K-100K',
-    '100K-200K',
-    '200K',
-    'Unsure',
-  ],
-};

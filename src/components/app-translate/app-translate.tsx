@@ -1,5 +1,5 @@
-import { Component, Prop } from '@stencil/core';
-import i18next from 'i18next';
+import { Component, Prop, Element } from '@stencil/core';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   tag: 'app-translate',
@@ -10,7 +10,21 @@ export class AppTranslate {
 
   @Prop() params: {} = {};
 
+  @Element() translatedTextElement: HTMLElement;
+
+  ts: TranslationService;
+
+  constructor() {
+    this.ts = new TranslationService();
+  }
+
   public render() {
-    return i18next.t(this.key, this.params);
+    // This is only for HTML tags in localized strings to work
+    this.translatedTextElement.innerHTML = this.ts.translate(
+      this.key,
+      this.params
+    );
+    return;
+    // return this.ts.translate(this.key, this.params);
   }
 }

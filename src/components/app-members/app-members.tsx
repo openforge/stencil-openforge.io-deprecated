@@ -25,7 +25,7 @@ export class AppMembers {
                   class="card-title mb-auto font-weight-bold"
                   style={{ color: member.color }}
                 >
-                  <app-translate key={`about.member.title.${member.title}`} />
+                  {member.title}
                 </small>
                 <h4 class="card-text mb-auto">{member.name}</h4>
               </div>

@@ -18,7 +18,7 @@ exports.config = {
         ]
       }
     }
-  ],
+  ]
 };
 
 exports.devServer = {
