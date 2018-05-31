@@ -35,24 +35,13 @@ export class AppContact {
   @State() serviceError: string;
   @State() budgetError: string;
 
-  @State() isDisabled: boolean = true;
+  @State() isDisabled = true;
 
   componentDidLoad() {
-    let hrefArray;
     this.resetFormValues();
-    try {
-      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-      hrefArray.forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth',
-          });
-        });
-      });
-    } catch (e) {
-      console.error('caught error componentDidLoad app-contact', e);
-    }
+    let element;
+    element = document.querySelector('.contact .hero');
+    element.style.backgroundImage = `url('assets/bg-hero-handshake-desk.jpg')`;
   }
 
   @Listen('check')
@@ -176,6 +165,12 @@ export class AppContact {
     return columns;
   }
 
+  scrollToForm() {
+    const form = document.getElementById('second-content');
+
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <div class="contact">
@@ -186,7 +181,10 @@ export class AppContact {
               <div class="col-sm-12 col-md-8 col-lg-6">
                 <h2 class="text-nowrap">Let's Work Together</h2>
                 <p>Request a Discovery Session Today!</p>
-                <a href="#second-content" class="btn btn-primary">
+                <a
+                  onClick={this.scrollToForm.bind(this)}
+                  class="btn btn-primary"
+                >
                   Request Now
                 </a>
               </div>
@@ -196,97 +194,102 @@ export class AppContact {
 
         <section id="second-content" class="contact-form">
           <div class="container">
-            <div class="jumbotron">
-              <h2 class="display-5 font-weight-bold">Get in Touch</h2>
-              <p class="lead">
-                Tell us a little bit about what you're working on. We'll be in
-                touch to tell you about the next steps toward accomplishing your
-                goals!
-              </p>
-
-              <form
-                id="contact-form"
-                onSubmit={this.handleSubmit.bind(this)}
-                novalidate={true}
-              >
-                <app-input
-                  name="name"
-                  label="Full Name"
-                  type="text"
-                  id="name"
-                  maxlength="75"
-                  required={true}
-                />
-                <div class="text-center">{this.nameError}</div>
-
-                <app-input
-                  name="company"
-                  label="Company"
-                  type="text"
-                  required={true}
-                />
-                <div class="text-center">{this.companyError}</div>
-
-                <app-input
-                  name="email"
-                  label="E-mail"
-                  type="email"
-                  id="email"
-                  required={true}
-                />
-                <div class="text-center">{this.emailError}</div>
-
-                <app-input
-                  name="phone"
-                  label="Phone"
-                  id="phone"
-                  type="tel"
-                  required={true}
-                />
-                <div class="text-center">{this.phoneError}</div>
-
-                <app-input
-                  name="message"
-                  type="text"
-                  id="message"
-                  label="How did you hear about OpenForge?"
-                  required={true}
-                />
-                <div class="text-center">{this.messageError}</div>
-
-                <fieldset>
-                  <legend class="lead">How can we help you?</legend>
-                  <div class="row ml-2">
-                    {this.renderRadioColumns(
-                      'desiredService',
-                      radioChoices.desiredService
-                    )}
-                  </div>
-                </fieldset>
-                <div class="text-center">{this.serviceError}</div>
-
-                <fieldset>
-                  <legend class="lead">Do you have a budget?</legend>
-                  <div class="row ml-2">
-                    {this.renderRadioColumns('budget', radioChoices.budget)}
-                  </div>
-                </fieldset>
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  disabled={this.isDisabled}
+            {!this.formSubmitted ? (
+              <div class="jumbotron">
+                <h2 class="display-5 font-weight-bold">Get in Touch</h2>
+                <p class="lead">
+                  Tell us a little bit about what you're working on. We'll be in
+                  touch to tell you about the next steps toward accomplishing
+                  your goals!
+                </p>
+                <form
+                  id="contact-form"
+                  onSubmit={this.handleSubmit.bind(this)}
+                  novalidate={true}
                 >
-                  Send
-                </button>
-              </form>
-            </div>
+                  <app-input
+                    name="name"
+                    label="Full Name"
+                    type="text"
+                    id="name"
+                    required={true}
+                  />
+                  <p class="error">{this.nameError}</p>
 
-            {!this.formSubmitted ? null : (
-              <div class="alert alert-success" role="alert">
-                Thank you for reaching out! we'll get back to you within 24
-                hours!
+                  <app-input
+                    name="company"
+                    label="Company"
+                    type="text"
+                    required={true}
+                  />
+                  <p class="error">{this.companyError}</p>
+
+                  <app-input
+                    name="email"
+                    label="E-mail"
+                    type="email"
+                    id="email"
+                    required={true}
+                  />
+                  <p class="error">{this.emailError}</p>
+
+                  <app-input
+                    name="phone"
+                    label="Phone"
+                    id="phone"
+                    type="tel"
+                    required={true}
+                  />
+                  <p class="error">{this.phoneError}</p>
+
+                  <app-input
+                    name="message"
+                    label="How did you hear about OpenForge?"
+                    type="text"
+                    required={true}
+                  />
+                  <p class="error">{this.messageError}</p>
+
+                  <fieldset>
+                    <legend class="lead">How can we help you?</legend>
+                    <div class="row ml-2">
+                      {this.renderRadioColumns(
+                        'desiredService',
+                        radioChoices.desiredService
+                      )}
+                    </div>
+                  </fieldset>
+                  <p class="font-weight-bold">{this.serviceError}</p>
+
+                  <fieldset>
+                    <legend class="lead">Do you have a budget?</legend>
+                    <div class="row ml-2">
+                      {this.renderRadioColumns('budget', radioChoices.budget)}
+                    </div>
+                  </fieldset>
+                  <button
+                    name="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                    disabled={this.isDisabled}
+                  >
+                    Send
+                  </button>
+                </form>
               </div>
-            )}
+            ) : null}
+
+            {this.formSubmitted ? (
+              <div class="container">
+                <content-graphic-lg img-url="assets/rocket.png">
+                  <h3 slot="header">Thank you!</h3>
+                  <p slot="body">
+                    Your message has been delivered. Someone will be in touch
+                    with you soon!
+                  </p>
+                </content-graphic-lg>
+              </div>
+            ) : null}
           </div>
         </section>
       </div>

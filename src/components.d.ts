@@ -167,6 +167,43 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppImg {
+      'alt': string;
+      'fit': boolean;
+      'src': string;
+    }
+  }
+
+  interface HTMLAppImgElement extends StencilComponents.AppImg, HTMLStencilElement {}
+
+  var HTMLAppImgElement: {
+    prototype: HTMLAppImgElement;
+    new (): HTMLAppImgElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-img': HTMLAppImgElement;
+  }
+  interface ElementTagNameMap {
+    'app-img': HTMLAppImgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-img': JSXElements.AppImgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppImgAttributes extends HTMLAttributes {
+      'alt'?: string;
+      'fit'?: boolean;
+      'src'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppInput {
       'id': string;
       'label': string;
@@ -425,39 +462,6 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppAbout {
-
-    }
-  }
-
-  interface HTMLAppAboutElement extends StencilComponents.AppAbout, HTMLStencilElement {}
-
-  var HTMLAppAboutElement: {
-    prototype: HTMLAppAboutElement;
-    new (): HTMLAppAboutElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-about': HTMLAppAboutElement;
-  }
-  interface ElementTagNameMap {
-    'app-about': HTMLAppAboutElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-about': JSXElements.AppAboutAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppAboutAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface AppContact {
 
     }
@@ -548,7 +552,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
-      'onValueChange'?: (event: CustomEvent) => void;
+
     }
   }
 }

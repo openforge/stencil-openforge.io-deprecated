@@ -21,13 +21,15 @@ export class AppOpportunities {
     email: string;
     github: string;
 
-    fileValid: false;
-    nameValid: false;
-    emailValid: false;
-    phoneValid: false;
-    githubValid: false;
-    messageValid: false;
-    formValid: false;
+    formErrors: {
+      fileValid: false;
+      nameValid: false;
+      emailValid: false;
+      phoneValid: false;
+      githubValid: false;
+      messageValid: false;
+      formValid: false;
+    };
   };
 
   @State() fileError: any;
@@ -38,7 +40,7 @@ export class AppOpportunities {
   @State() messageError: string;
 
   @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean = false;
+  @State() canRequestInterview: boolean = true;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
 
@@ -46,14 +48,26 @@ export class AppOpportunities {
 
   componentDidLoad() {
     this.resetFormValues();
+    let element;
+    element = document.querySelector('.opportunities .hero');
+    element.style.backgroundImage = `url('assets/bg-hero-mountain.jpg')`;
+  }
+
+  componentDidUpdate() {
+    if (!this.isDisabled) {
+      if (document.getElementById('requestInterview')) {
+        document.getElementById('requestInterview').focus();
+      } else {
+        document.getElementById('apply').scrollIntoView({
+          block: 'start',
+          behavior: 'smooth',
+        });
+      }
+    }
   }
 
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value, isValid, validationMessage } = event.detail;
-
-    this.formValues[field] = value;
-
     if (
       this.formValues.angular > 90 &&
       this.formValues.node > 90 &&
@@ -66,52 +80,75 @@ export class AppOpportunities {
       this.isDisabled = true;
     }
 
-    switch (field) {
-      case 'file':
-        this.formValues.fileValid = isValid;
-        this.fileError = this.formValues.fileValid
-          ? ''
-          : (this.fileError = this.formValues.fileValid);
-        break;
-      case 'name':
-        this.formValues.nameValid = isValid;
-        this.nameError = this.formValues.nameValid
-          ? ''
-          : (this.nameError = validationMessage);
-        break;
-      case 'email':
-        this.formValues.emailValid = isValid;
-        this.emailError = this.formValues.emailValid
-          ? ''
-          : (this.emailError = validationMessage);
-        break;
+    if (!event.detail) {
+      const field = event.target.name;
+      this.formValues[event.target.name] = event.target.value;
 
-      case 'phone':
-        this.formValues.phoneValid = isValid;
-        this.phoneError = this.formValues.phoneValid
-          ? ''
-          : (this.phoneError = validationMessage);
-        break;
+      switch (field) {
+        case 'resume':
+          this.formValues.formErrors.fileValid = event.target.checkValidity();
+          this.fileError = this.formValues.formErrors.fileValid
+            ? ''
+            : (this.fileError = event.target.validationMessage);
+          break;
 
-      case 'github':
-        this.formValues.githubValid = isValid;
-        this.githubError = this.formValues.githubValid
-          ? ''
-          : (this.githubError = validationMessage);
-        break;
-
-      case 'message':
-        this.formValues.messageValid = isValid;
-        this.messageError = this.formValues.messageValid
-          ? ''
-          : (this.messageError = validationMessage);
-        break;
+        case 'message':
+          this.formValues.formErrors.messageValid = event.target.checkValidity();
+          this.messageError = this.formValues.formErrors.messageValid
+            ? ''
+            : (this.messageError = event.target.validationMessage);
+          break;
+      }
     }
+
+    if (event.detail) {
+      const { field, value, isValid, validationMessage } = event.detail;
+      this.formValues[field] = value;
+
+      switch (field) {
+        case 'name':
+          this.formValues.formErrors.nameValid = isValid;
+          this.nameError = this.formValues.formErrors.nameValid
+            ? ''
+            : (this.nameError = validationMessage);
+          break;
+        case 'email':
+          this.formValues.formErrors.emailValid = isValid;
+          this.emailError = this.formValues.formErrors.emailValid
+            ? ''
+            : (this.emailError = validationMessage);
+          break;
+
+        case 'phone':
+          this.formValues.formErrors.phoneValid = isValid;
+          this.phoneError = this.formValues.formErrors.phoneValid
+            ? ''
+            : (this.phoneError = validationMessage);
+          break;
+
+        case 'github':
+          this.formValues.formErrors.githubValid = isValid;
+          this.githubError = this.formValues.formErrors.githubValid
+            ? ''
+            : (this.githubError = validationMessage);
+          break;
+      }
+    }
+
+    // this.formValues.formErrors.fileValid &&
+    this.formValues.formErrors.nameValid &&
+    this.formValues.formErrors.emailValid &&
+    this.formValues.formErrors.phoneValid &&
+    this.formValues.formErrors.githubValid &&
+    this.formValues.formErrors.messageValid
+      ? (this.isDisabled = false)
+      : (this.isDisabled = true);
   }
 
   handleSliders(e) {
     e.preventDefault();
     this.canRequestInterview = true;
+    document.getElementById('apply').scrollIntoView({ block: 'start' });
   }
 
   requestInterview() {
@@ -196,7 +233,7 @@ export class AppOpportunities {
               <p slot="body">
                 Instead of asking you a million questions, we'd rather get to
                 know you another way - seeing how you follow direction, develop,
-                and learn a new technoloy or pattern that you have not used
+                and learn a new technology or pattern that you have not used
                 before.
               </p>
             </content-graphic-lg>
@@ -211,7 +248,7 @@ export class AppOpportunities {
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Angular</h3>
-                  <img
+                  <app-img
                     class="img-fluid d-none d-md-inline"
                     src="assets/graphic-opportunities-phone1.png"
                     alt=""
@@ -219,7 +256,7 @@ export class AppOpportunities {
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Redux</h3>
-                  <img
+                  <app-img
                     class="img-fluid d-none d-md-inline"
                     src="assets/graphic-opportunities-phone2.png"
                     alt=""
@@ -227,12 +264,12 @@ export class AppOpportunities {
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>API Integration</h3>
-                  <img
+                  <app-img
                     class="img-fluid d-none d-md-inline"
                     src="assets/graphic-opportunities-phone3.png"
                     alt=""
                   />
-                  <img
+                  <app-img
                     class="img-fluid d-xs-inline d-md-none"
                     src="assets/graphic-opportunities-phone4.png"
                     alt=""
@@ -315,7 +352,11 @@ export class AppOpportunities {
                   </button>
                 </form>
               ) : (
-                <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                <form
+                  class="apply-2"
+                  id="myLittleAnchor"
+                  onSubmit={this.handleSubmit.bind(this)}
+                >
                   <h2>Mid-Level Developer</h2>
                   <ul>
                     <li>Philadelphia</li>
@@ -332,10 +373,11 @@ export class AppOpportunities {
                       type="file"
                       name="resume"
                       onInput={this.handleFile.bind(this)}
+                      onBlur={this.valueChangeHandler.bind(this)}
                       required={true}
                     />
                   </div>
-                  <div class="text-center">{this.fileError}</div>
+                  <p class="error">{this.fileError}</p>
 
                   <app-input
                     label="Full Name"
@@ -344,7 +386,7 @@ export class AppOpportunities {
                     // placeholder="Full Name"
                     required={true}
                   />
-                  <div class="text-center">{this.nameError}</div>
+                  <p class="error">{this.nameError}</p>
                   <app-input
                     label="Email"
                     name="email"
@@ -352,7 +394,7 @@ export class AppOpportunities {
                     // placeholder="Email Address"
                     required={true}
                   />
-                  <div class="text-center">{this.emailError}</div>
+                  <p class="error">{this.emailError}</p>
                   <app-input
                     label="Phone"
                     name="phone"
@@ -360,7 +402,7 @@ export class AppOpportunities {
                     // placeholder="Phone Number"
                     required={true}
                   />
-                  <div class="text-center">{this.phoneError}</div>
+                  <p class="error">{this.phoneError}</p>
                   <app-input
                     label="GitHub URL"
                     name="github"
@@ -368,7 +410,7 @@ export class AppOpportunities {
                     // placeholder="GitHub Link"
                     required={true}
                   />
-                  <div class="text-center">{this.githubError}</div>
+                  <p class="error">{this.githubError}</p>
 
                   <h3>What makes you unique?</h3>
 
@@ -383,11 +425,16 @@ export class AppOpportunities {
                       name="message"
                       maxLength={150}
                       required={true}
+                      onInput={this.valueChangeHandler.bind(this)}
                     />
                   </div>
-                  <div class="text-center">{this.messageError}</div>
+                  <p class="error">{this.messageError}</p>
 
-                  <button class="btn btn-primary" type="submit">
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    disabled={this.isDisabled}
+                  >
                     Submit Application
                   </button>
                 </form>
@@ -426,13 +473,15 @@ export class AppOpportunities {
       phone: '',
       github: '',
 
-      fileValid: false,
-      nameValid: false,
-      emailValid: false,
-      phoneValid: false,
-      githubValid: false,
-      messageValid: false,
-      formValid: false,
+      formErrors: {
+        fileValid: false,
+        nameValid: false,
+        emailValid: false,
+        phoneValid: false,
+        githubValid: false,
+        messageValid: false,
+        formValid: false,
+      },
     };
 
     this.formData = new FormData();

@@ -28,7 +28,11 @@ export class ContentGraphicLg {
             'text-md-right': !this.reverse,
           }}
         >
-          <img class="img-fluid d-none d-md-inline" src={this.imgUrl} alt="" />
+          <app-img
+            class="img-fluid d-none d-md-inline"
+            src={this.imgUrl}
+            alt=""
+          />
         </div>
         <div
           class={{
@@ -39,7 +43,7 @@ export class ContentGraphicLg {
           }}
         >
           <slot name="header" />
-          <img
+          <app-img
             class="img-fluid d-xs-inline d-md-none"
             src={this.imgUrl}
             alt=""
