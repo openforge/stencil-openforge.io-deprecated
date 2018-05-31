@@ -19,7 +19,7 @@
     "st:generate": "node scripts/st-generate.js",
     "heroku-postbuild": "npm run build",
     "serve:heroku": "http-server www",
-    "prepublish": "stencil build --prod --es5"
+    "prepublish": "stencil build --prod"
   },
   "engines": {
     "node": "8.9.4",
