@@ -135,10 +135,12 @@ export class AppHome {
       hrefArray.forEach(anchor => {
         anchor.addEventListener('click', function(e) {
           e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-          });
+          const element = document.querySelector(this.getAttribute('href'));
+          element &&
+            element.scrollIntoView({
+              block: 'start',
+              behavior: 'smooth',
+            });
         });
       });
     } catch (e) {
@@ -401,12 +403,10 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <section id="learn-about">
-          <app-cta link-url="#about">
-            <span slot="header">Want to learn more about us?</span>
-            <span slot="link">Get to know us</span>
-          </app-cta>
-        </section>
+        <app-cta link-url="#about" id="cta-about">
+          <span slot="header">Want to learn more about us?</span>
+          <span slot="link">Get to know us</span>
+        </app-cta>
 
         {/* section - process */}
         <section id="process" class="bg-gray">
@@ -472,7 +472,7 @@ export class AppHome {
         </section>
 
         {/* section - persepectives */}
-        <section class="bg-black">
+        <section class="bg-black" id="perspectives">
           <div class="container perspectives">
             <img class="img-fluid" src="assets/graphic-home-icons.png" alt="" />
             <h2>We Are Powered by Multiple Perspectives</h2>

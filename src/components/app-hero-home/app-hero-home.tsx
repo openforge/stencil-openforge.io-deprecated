@@ -26,9 +26,11 @@ export class AppHeroHome {
     if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
+      element2.style.background = 'none';
     } else if (window.innerWidth < 992) {
       // medium
       element.style.backgroundImage = `url('assets/bg-hero-town-md.jpg')`;
+      element2.style.background = 'none';
     } else {
       // large
       element.style.backgroundImage = `url('assets/bg-hero-town.jpg')`;
