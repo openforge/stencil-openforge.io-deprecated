@@ -10,6 +10,9 @@ import { polyfill } from 'smoothscroll-polyfill';
 
 import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
 
+const jsdom = require('jsdom');
+const virtualConsole = new jsdom.VirtualConsole();
+
 polyfill();
 
 @Component({
@@ -50,6 +53,8 @@ export class OpenForgeApp {
   }
 
   componentDidLoad() {
+    virtualConsole.on('error', () => {});
+
     gtag('js', new Date());
     try {
       this.mainEl = document.querySelector('main');
