@@ -14,6 +14,7 @@ export class Img {
 
   @Prop() fit = false;
   @Prop() alt: string;
+  @Prop() preLoad: boolean = false;
   @Prop() src: string;
   @Watch('src')
   srcChanged() {
@@ -28,7 +29,8 @@ export class Img {
     if (!this.src) {
       return;
     }
-    if ('IntersectionObserver' in window) {
+
+    if (!this.preLoad && 'IntersectionObserver' in window) {
       this.removeIntersectionObserver();
       this.io = new IntersectionObserver(data => {
         // because there will only ever be one instance

@@ -170,6 +170,7 @@ declare global {
     interface AppImg {
       'alt': string;
       'fit': boolean;
+      'preLoad': boolean;
       'src': string;
     }
   }
@@ -195,6 +196,7 @@ declare global {
     export interface AppImgAttributes extends HTMLAttributes {
       'alt'?: string;
       'fit'?: boolean;
+      'preLoad'?: boolean;
       'src'?: string;
     }
   }
