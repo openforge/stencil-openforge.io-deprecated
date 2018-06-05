@@ -47,6 +47,7 @@ export class ContentGraphicLg {
             class="img-fluid d-xs-inline d-md-none"
             src={this.imgUrl}
             alt=""
+            preLoad={true}
           />
           <slot name="body" />
         </div>
