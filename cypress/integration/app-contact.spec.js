@@ -4,80 +4,30 @@ describe('Contact Page', function () {
     cy.get('button[type=submit]').as('submitBtn')
   })
 
-  describe('HTML Elements', function () {
-    describe('Navigation bar', function() {
+  describe('Header', function() {
+    it('Header should display with appropriate text content within it', function() {
+      const h2Content =  'Let\'s Work Together'
+      const pContent = 'Request'
 
-      it('Nav bar should show the OpenForge logo', function() {
-        cy.get('.navbar-brand')
-          .should('exist')
-          .and('be.visible')
-      })
-
-      it('Nav bar should exist on the page with the correct navigation options', function() {
-
-        cy.get('nav')
-          .should('exist')
-
-          .and('contain', 'Home')
-          .and('be.visible')
-
-          .and('contain', 'About')
-          .and('be.visible')
-
-          .and('contain', 'Contact')
-          .and('be.visible')
-
-          .and('contain', 'Opportunities')
-          .and('be.visible')
-      })
-
-      it('Should be able to click on all of the navigation options', function() {
-        cy.get('a.nav-link').should('have.length', 5)
-      })
-    })
-
-    describe('Header', function() {
-      it('Header should display with appropriate text content within it', function() {
-        const h2Content =  'Let\'s Work Together'
-        const pContent = 'Request a Discovery Session Today!'
-
-        cy.get('header')
-          .should('exist')
-          .and('be.visible')
-
-        cy.get('.hero')
-          .contains(h2Content)
-          .and('be.visible')
-
-        cy.get('.hero')
-          .contains(pContent)
-          .and('be.visible')
-      })
-
-      it('Should contain a Request Now button that scrolls to the form on click of the button', function() {
-        cy.get('header')
-          .find('.btn')
-
-          .should('exist')
-          .and('be.visible')
-          .and('contain', 'Request Now')
-
-          .click()
-
-        cy.get('#second-content').scrollIntoView()
-      })
-    })
-
-    describe('Footer', function() {
-      it('Footer component should exist', function() {
-        cy.get('app-footer')
+      cy.get('header')
         .should('exist')
-        .contains('Our Partners')
-        cy.get('app-footer')
-        .contains('Our Headquarters')
-        cy.get('app-footer')
-        .contains('Subscribe')
-      })
+        .and('be.visible')
+      cy.get('.hero')
+        .contains(h2Content)
+        .and('be.visible')
+      cy.get('.hero')
+        .contains(pContent)
+        .and('be.visible')
+    })
+
+    it('Should contain a Request Now button that scrolls to the form on click', function() {
+      cy.get('header')
+        .find('.btn')
+        .should('exist')
+        .and('be.visible')
+        .and('contain', 'Request Now')
+        .click()
+      cy.get('#second-content').click()
     })
   })
 
@@ -106,7 +56,6 @@ describe('Contact Page', function () {
         .check('Web Development')
         radioField2 = cy.get('[type="radio"]')
         .check('200K')
-
         cy.get('@submitBtn').click()
       })
 
@@ -117,7 +66,6 @@ describe('Contact Page', function () {
       })
 
       it('All fields should be clear after successful form submission', function() {
-
         nameField.should('have.value', '')
         emailField.should('have.value', '')
         companyField.should('have.value', '')
@@ -125,15 +73,11 @@ describe('Contact Page', function () {
         messageField.should('have.value', '')
       })
     })
-
     describe('Unsucessful form submission', function() {
       it('DOM should not show success message when all fields of the form are not filled out', function () {
-
         nameField = cy.get('input[name=name]')
         .type('Test Name')
-
         cy.get('@submitBtn').click()
-
         cy.get('div.alert').should('not.exist')
       })
     })

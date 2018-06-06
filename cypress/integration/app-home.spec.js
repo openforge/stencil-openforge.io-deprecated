@@ -1,11 +1,123 @@
 describe('Home Page', function () {
   beforeEach(() => {
     cy.visit('localhost:3333/')
+    cy.get('nav > div > button').as('burgerMenu')
   })
+  describe('Navigation', function () {
+    beforeEach(() => {
+      cy.visit('localhost:3333')
+      cy.get('nav').as('navBar')
+    })
+    describe('Logo', function() {
+      it('Nav bar should show the OpenForge logo', function() {
+        cy.get('.navbar-brand')
+          .should('exist')
+          .and('be.visible')
+      })
+    })
+    describe('Nav bar options', function() {
+      it('Should have 5 navigation options', function() {
+        cy.get('a.nav-link').should('have.length', 5)
+      })
+      it('About should exist and be visible in the nav bar', function() {
+        cy.get('@navBar')
+          .contains('About')
+          .should('exist')
+          .and('be.visible')
+      })
+      it('Contact should exist and be visible in the nav bar', function() {
+        cy.get('@navBar')
+          .contains('Contact')
+          .should('exist')
+          .and('be.visible')
+      })
+      it('Opportunities should exist and be visible in the nav bar', function() {
+        cy.get('@navBar')
+          .contains('Opportunities')
+          .should('exist')
+          .and('be.visible')
+      })
+    })
+   describe('Should have the correct href attributes for the navigation options', function() {
+    beforeEach(() => {
+      cy.get('stencil-route-link').as('route')
+    })
+      it('About link', function() {
+        cy.get('@route').contains('About')
+        .and('have.attr', 'href')
+        .and('match', /about/)
+      })
+      it('Contact link', function() {
+        cy.get('@route').contains('Contact')
+        .and('have.attr', 'href')
+        .and('match', /contact/)
+      })
+      it('Opportunities link', function() {
+        cy.get('@route').contains('Opportunities')
+        .and('have.attr', 'href')
+        .and('match', /opportunities/)
+      })
+      it('GitHub link', function() {
+        cy.get('@navBar').within(() => {
+          cy.get('a').should('have.attr', 'href', 'https://github.com/openforge')
+        })
+      })
+    })
+    describe('Stencil route links should navigate to the correct pages on click', function() {
+      beforeEach(() => {
+        cy.get('stencil-route-link').as('route')
+      })
+      it('About page link', function () {
+        cy.get('@route').within(() => {
+          cy.get('a').contains('About').click()
+        })
+      })
+      it('Contact page link', function () {
+        cy.get('@route').within(() => {
+          cy.get('a').contains('Contact').click()
+        })
+      })
+      it('Opportunities page link', function () {
+        cy.get('@route').within(() => {
+          cy.get('a').contains('Opportunities').click()
+        })
+      })
+      it('Home page link', function () {
+        cy.get('@route').within(() => {
+          cy.get('a').contains('Home').click()
+        })
+      })
+      it('GitHub link', function() {
+        cy.get('@navBar').within(() => {
+          cy.get('a').click()
+        })
+      })
+    })
+    describe('Navigation from urls', function() {
+      it('Should navigate to openforge.io/contact', function() {
+        cy.visit('localhost:3333/contact')
+      })
+      it('Should navigate to openforge.io/oppportunities', function() {
+        cy.visit('localhost:3333/opportunities')
+      })
+      it('Should navigate to openforge.io/oppportunities', function() {
+        cy.visit('localhost:3333/about')
+      })
+      it('Should navigate to openforge.io/', function() {
+        cy.visit('localhost:3333/')
+      })
+    })
+  })
+
   describe('Extra large viewports', function() {
     beforeEach(() => {
       // Viewport = 1440, 900
       cy.viewport('macbook-15')
+    })
+    describe('Burger menu', function() {
+      it('Should not be visible', function() {
+        cy.get('@burgerMenu').should('not.be.visible')
+      })
     })
     describe('App-Hero-Home', function() {
       it('Should render app-hero-home component', function() {
@@ -41,9 +153,9 @@ describe('Home Page', function () {
     describe('First App-Cta', function() {
       it('Should exist and be visible', function() {
         cy.get('app-cta').first().should('exist')
+        // cy.get('app-cta').first()
+        //   .should('be.visible')
         // Cypress Error: the element <app-cta> is not visible because it has an effective width and height of '0x0' pixels.
-          // cy.get('app-cta').first()
-         //   .should('be.visible')
       })
       it('Should be able to click the link', function() {
         cy.get('app-cta').first().within(() => {
@@ -89,27 +201,44 @@ describe('Home Page', function () {
         cy.get('.partners').scrollIntoView()
       })
     })
-    describe('Footer', function() {
-      it('Should be able to click the links in the app-footer', function() {
-        cy.get('app-footer').scrollIntoView()
-        cy.get('app-footer').should('exist').as('footer')
-        // Opens mail:to, but freezes tests waiting for a page load
-        // cy.get('@footer').contains('hello@').click()
-      })
-    })
     describe('Final App-Cta component', function() {
       it('Second app-cta component should be visible and link out', function() {
         cy.get('app-cta').last().scrollIntoView()
         cy.get('app-cta').last().should('have.attr', 'link-url', '/contact')
       })
     })
-  });
+    describe('Footer', function() {
+      beforeEach(() => {
+        cy.get('app-footer').as('footer')
+      })
+      it('Should exist and be visible', function() {
+        cy.get('@footer').scrollIntoView()
+        cy.get('@footer').should('exist')
+        // cy.get('@footer').should('be.visible')
+        // Cypress Error: the element <app-footer> is not visible because it has an effective width and height of '0x0' pixels.
+      })
+      it('Should link to company e-mail', function() {
+        cy.get('@footer').contains('hello')
+        .should('have.attr', 'href', 'mailto:hello@openforge.io')
+      })
+      it('Should have partner links as app-img components within the app-footer', function(){
+        cy.get('app-footer').within(() => {
+          cy.get('app-img').should('have.length.gte', 3)
+        })
+      })
+    })
+  })
 
   describe('Medium Viewports', function() {
     beforeEach(() => {
-      // Bootstrap break point for large viewports
-      cy.viewport(768, 991.98)
+      // Bootstrap break point for medium viewports
+      cy.viewport(767, 991.98)
       cy.get('.services-content').as('services')
+    })
+    describe('Burger menu', function() {
+      it('Should not be visible', function() {
+        cy.get('@burgerMenu').should('not.be.visible')
+      })
     })
     describe('App-Hero-Home component', function() {
       it('Should show specific banner background image on extra large viewports', function() {
@@ -137,6 +266,17 @@ describe('Home Page', function () {
   describe('Small viewports', function() {
     beforeEach(() => {
       cy.viewport(575, 767.98)
+    })
+    describe('Burger menu', function() {
+      it('Should be visible', function() {
+        cy.get('@burgerMenu')
+          .should('exist')
+          .should('be.visible')
+      })
+      it('Should be clickable', function() {
+        cy.get('@burgerMenu').click()
+        // BUG -- nothing is happening on click of the burger menu
+      })
     })
     describe('App-Hero-Home component', function() {
       it('Should show specific banner background image on extra large viewports', function() {
