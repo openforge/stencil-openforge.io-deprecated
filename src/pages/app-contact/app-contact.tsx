@@ -1,4 +1,4 @@
-import { Component, State, Listen } from '@stencil/core';
+import { Component, State, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'app-contact',
@@ -37,6 +37,13 @@ export class AppContact {
 
   @State() isDisabled = true;
 
+  @Prop()
+  errorIconStyles = {
+    display: 'unset',
+    marginBottom: '.2rem',
+    paddingRight: '5px',
+  };
+
   componentDidLoad() {
     this.resetFormValues();
     let element;
@@ -48,7 +55,6 @@ export class AppContact {
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value, isValid, validationMessage, checked } = event.detail;
-
     this.formValues[field] = value;
 
     switch (field) {
@@ -214,7 +220,18 @@ export class AppContact {
                     id="name"
                     required={true}
                   />
-                  <p class="error">{this.nameError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.nameError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.nameError}
+                  </p>
 
                   <app-input
                     name="company"
@@ -222,7 +239,18 @@ export class AppContact {
                     type="text"
                     required={true}
                   />
-                  <p class="error">{this.companyError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.companyError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.companyError}
+                  </p>
 
                   <app-input
                     name="email"
@@ -231,7 +259,18 @@ export class AppContact {
                     id="email"
                     required={true}
                   />
-                  <p class="error">{this.emailError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.emailError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.emailError}
+                  </p>
 
                   <app-input
                     name="phone"
@@ -240,7 +279,18 @@ export class AppContact {
                     type="tel"
                     required={true}
                   />
-                  <p class="error">{this.phoneError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.phoneError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.phoneError}
+                  </p>
 
                   <app-input
                     name="message"
@@ -248,7 +298,18 @@ export class AppContact {
                     type="text"
                     required={true}
                   />
-                  <p class="error">{this.messageError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.messageError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.messageError}
+                  </p>
 
                   <fieldset>
                     <legend class="lead">How can we help you?</legend>

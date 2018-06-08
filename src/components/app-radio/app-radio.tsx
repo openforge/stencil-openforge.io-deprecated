@@ -39,7 +39,7 @@ export class AppRadio {
           name={this.name}
           value={this.value}
           required={this.required}
-          onInput={this.changeHandler.bind(this)}
+          onChange={this.changeHandler.bind(this)}
         />
         <label class="form-check-label" htmlFor={this.inputId}>
           {this.label}
