@@ -15,8 +15,10 @@ export class AppHeroHome {
   @Listen('window:resize')
   handleImage() {
     let element;
+    let element2;
     try {
       element = document.querySelector('header.hero-home');
+      element2 = document.querySelector('header.hero-home .content');
     } catch (e) {
       console.log('app-hero-home undefined', e);
     }
@@ -24,12 +26,15 @@ export class AppHeroHome {
     if (window.innerWidth < 576) {
       // small
       element.style.backgroundImage = `url('assets/bg-hero-town-sm.jpg')`;
+      element2.style.background = 'none';
     } else if (window.innerWidth < 992) {
       // medium
       element.style.backgroundImage = `url('assets/bg-hero-town-md.jpg')`;
+      element2.style.background = 'none';
     } else {
       // large
       element.style.backgroundImage = `url('assets/bg-hero-town.jpg')`;
+      element2.style.background = `url('assets/graphic-home-monitor.png') top center no-repeat`;
     }
   }
 
@@ -49,7 +54,7 @@ export class AppHeroHome {
             <p>
               <slot name="body" />
             </p>
-            <a href="#second-content" class="btn btn-primary">
+            <a href="#services" class="btn btn-primary">
               <slot name="link" />
             </a>
           </div>

@@ -27,14 +27,21 @@ export class AppOpportunities {
 
   componentDidLoad() {
     this.resetFormValues();
+    let element;
+    element = document.querySelector('.opportunities .hero');
+    element.style.backgroundImage = `url('assets/bg-hero-mountain.jpg')`;
   }
 
   componentDidUpdate() {
-    const application = document.getElementById('apply');
     if (!this.isDisabled) {
-      document.getElementById('requestInterview').focus();
-    } else if (application) {
-      application.scrollIntoView();
+      if (document.getElementById('requestInterview')) {
+        document.getElementById('requestInterview').focus();
+      } else {
+        document.getElementById('apply').scrollIntoView({
+          block: 'start',
+          behavior: 'smooth',
+        });
+      }
     }
   }
 
@@ -152,7 +159,7 @@ export class AppOpportunities {
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Angular</h3>
-                  <img
+                  <app-img
                     class="img-fluid d-none d-md-inline"
                     src="assets/graphic-opportunities-phone1.png"
                     alt=""
@@ -160,7 +167,7 @@ export class AppOpportunities {
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Redux</h3>
-                  <img
+                  <app-img
                     class="img-fluid d-none d-md-inline"
                     src="assets/graphic-opportunities-phone2.png"
                     alt=""
@@ -168,12 +175,12 @@ export class AppOpportunities {
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>API Integration</h3>
-                  <img
+                  <app-img
                     class="img-fluid d-none d-md-inline"
                     src="assets/graphic-opportunities-phone3.png"
                     alt=""
                   />
-                  <img
+                  <app-img
                     class="img-fluid d-xs-inline d-md-none"
                     src="assets/graphic-opportunities-phone4.png"
                     alt=""
@@ -252,7 +259,11 @@ export class AppOpportunities {
                   </button>
                 </form>
               ) : (
-                <form class="apply-2" onSubmit={this.handleSubmit.bind(this)}>
+                <form
+                  class="apply-2"
+                  id="myLittleAnchor"
+                  onSubmit={this.handleSubmit.bind(this)}
+                >
                   <h2>Mid-Level Developer</h2>
                   <ul>
                     <li>Philadelphia</li>
