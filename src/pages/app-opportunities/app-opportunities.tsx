@@ -1,4 +1,4 @@
-import { Component, State, Listen } from '@stencil/core';
+import { Component, State, Listen, Prop } from '@stencil/core';
 
 @Component({
   tag: 'app-opportunities',
@@ -39,10 +39,18 @@ export class AppOpportunities {
   @State() githubError: string;
   @State() messageError: string;
 
-  @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean = true;
+  @State() interviewButtonDisabled: boolean = true;
+  @State() submitButtonDisabled: boolean = true;
+  @State() canRequestInterview: boolean = false;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
+
+  @Prop()
+  errorIconStyles = {
+    display: 'unset',
+    marginBottom: '.2rem',
+    paddingRight: '5px',
+  };
 
   application;
 
@@ -54,7 +62,7 @@ export class AppOpportunities {
   }
 
   componentDidUpdate() {
-    if (!this.isDisabled) {
+    if (!this.interviewButtonDisabled) {
       if (document.getElementById('requestInterview')) {
         document.getElementById('requestInterview').focus();
       } else {
@@ -68,6 +76,9 @@ export class AppOpportunities {
 
   @Listen('valueChange')
   valueChangeHandler(event) {
+    const { field, value, isValid, validationMessage } = event.detail;
+    this.formValues[field] = value;
+
     if (
       this.formValues.angular > 90 &&
       this.formValues.node > 90 &&
@@ -75,9 +86,9 @@ export class AppOpportunities {
       this.formValues.html > 90 &&
       this.formValues.css > 90
     ) {
-      this.isDisabled = false;
+      this.interviewButtonDisabled = false;
     } else {
-      this.isDisabled = true;
+      this.interviewButtonDisabled = true;
     }
 
     if (!event.detail) {
@@ -85,7 +96,7 @@ export class AppOpportunities {
       this.formValues[event.target.name] = event.target.value;
 
       switch (field) {
-        case 'resume':
+        case 'file':
           this.formValues.formErrors.fileValid = event.target.checkValidity();
           this.fileError = this.formValues.formErrors.fileValid
             ? ''
@@ -101,38 +112,33 @@ export class AppOpportunities {
       }
     }
 
-    if (event.detail) {
-      const { field, value, isValid, validationMessage } = event.detail;
-      this.formValues[field] = value;
+    switch (field) {
+      case 'name':
+        this.formValues.formErrors.nameValid = isValid;
+        this.nameError = this.formValues.formErrors.nameValid
+          ? ''
+          : (this.nameError = validationMessage);
+        break;
+      case 'email':
+        this.formValues.formErrors.emailValid = isValid;
+        this.emailError = this.formValues.formErrors.emailValid
+          ? ''
+          : (this.emailError = validationMessage);
+        break;
 
-      switch (field) {
-        case 'name':
-          this.formValues.formErrors.nameValid = isValid;
-          this.nameError = this.formValues.formErrors.nameValid
-            ? ''
-            : (this.nameError = validationMessage);
-          break;
-        case 'email':
-          this.formValues.formErrors.emailValid = isValid;
-          this.emailError = this.formValues.formErrors.emailValid
-            ? ''
-            : (this.emailError = validationMessage);
-          break;
+      case 'phone':
+        this.formValues.formErrors.phoneValid = isValid;
+        this.phoneError = this.formValues.formErrors.phoneValid
+          ? ''
+          : (this.phoneError = validationMessage);
+        break;
 
-        case 'phone':
-          this.formValues.formErrors.phoneValid = isValid;
-          this.phoneError = this.formValues.formErrors.phoneValid
-            ? ''
-            : (this.phoneError = validationMessage);
-          break;
-
-        case 'github':
-          this.formValues.formErrors.githubValid = isValid;
-          this.githubError = this.formValues.formErrors.githubValid
-            ? ''
-            : (this.githubError = validationMessage);
-          break;
-      }
+      case 'github':
+        this.formValues.formErrors.githubValid = isValid;
+        this.githubError = this.formValues.formErrors.githubValid
+          ? ''
+          : (this.githubError = validationMessage);
+        break;
     }
 
     // this.formValues.formErrors.fileValid &&
@@ -141,20 +147,14 @@ export class AppOpportunities {
     this.formValues.formErrors.phoneValid &&
     this.formValues.formErrors.githubValid &&
     this.formValues.formErrors.messageValid
-      ? (this.isDisabled = false)
-      : (this.isDisabled = true);
+      ? (this.submitButtonDisabled = false)
+      : (this.submitButtonDisabled = true);
   }
 
   handleSliders(e) {
     e.preventDefault();
     this.canRequestInterview = true;
     document.getElementById('apply').scrollIntoView({ block: 'start' });
-  }
-
-  requestInterview() {
-    this.application = document
-      .getElementById('apply')
-      .scrollIntoView({ block: 'start' });
   }
 
   handleFile(e) {
@@ -334,7 +334,7 @@ export class AppOpportunities {
                   <app-slider name="html" label="HTML" />
                   <app-slider name="css" label="CSS" />
 
-                  {!this.isDisabled ? (
+                  {!this.interviewButtonDisabled ? (
                     <p>You're all set! Let's get started.</p>
                   ) : (
                     <p>
@@ -345,8 +345,7 @@ export class AppOpportunities {
                   <button
                     class="btn btn-primary"
                     type="submit"
-                    disabled={this.isDisabled}
-                    onClick={this.requestInterview}
+                    disabled={this.interviewButtonDisabled}
                   >
                     Request an interview
                   </button>
@@ -371,46 +370,98 @@ export class AppOpportunities {
                     <input
                       class="input-file"
                       type="file"
-                      name="resume"
+                      name="file"
                       onInput={this.handleFile.bind(this)}
-                      onBlur={this.valueChangeHandler.bind(this)}
+                      // Only working on Chrome - commenting out for now
+                      // onBlur={this.valueChangeHandler.bind(this)}
                       required={true}
                     />
                   </div>
-                  <p class="error">{this.fileError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.fileError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.fileError}
+                  </p>
 
                   <app-input
                     label="Full Name"
                     name="name"
                     type="text"
-                    // placeholder="Full Name"
                     required={true}
                   />
-                  <p class="error">{this.nameError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.nameError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.nameError}
+                  </p>
                   <app-input
                     label="Email"
                     name="email"
                     type="email"
-                    // placeholder="Email Address"
                     required={true}
                   />
-                  <p class="error">{this.emailError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.emailError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.emailError}
+                  </p>
                   <app-input
                     label="Phone"
                     name="phone"
                     type="tel"
-                    // placeholder="Phone Number"
                     required={true}
                   />
-                  <p class="error">{this.phoneError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.phoneError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.phoneError}
+                  </p>
                   <app-input
                     label="GitHub URL"
                     name="github"
                     type="text"
-                    // placeholder="GitHub Link"
                     required={true}
                   />
-                  <p class="error">{this.githubError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.githubError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.githubError}
+                  </p>
 
                   <h3>What makes you unique?</h3>
 
@@ -428,12 +479,23 @@ export class AppOpportunities {
                       onInput={this.valueChangeHandler.bind(this)}
                     />
                   </div>
-                  <p class="error">{this.messageError}</p>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.messageError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.messageError}
+                  </p>
 
                   <button
                     class="btn btn-primary"
                     type="submit"
-                    disabled={this.isDisabled}
+                    disabled={this.submitButtonDisabled}
                   >
                     Submit Application
                   </button>
