@@ -82,7 +82,7 @@ export class OpenForgeApp {
         <app-nav-header />
         <main>
           <stencil-router>
-            <RouterSwitch>
+            <RouterSwitch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
               <stencil-route url="/services" component="app-services" />
               <stencil-route url="/contact" component="app-contact" />

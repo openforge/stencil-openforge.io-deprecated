@@ -52,8 +52,6 @@ export class AppOpportunities {
     paddingRight: '5px',
   };
 
-  application;
-
   componentDidLoad() {
     this.resetFormValues();
     let element;
@@ -65,11 +63,6 @@ export class AppOpportunities {
     if (!this.interviewButtonDisabled) {
       if (document.getElementById('requestInterview')) {
         document.getElementById('requestInterview').focus();
-      } else {
-        document.getElementById('apply').scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        });
       }
     }
   }
@@ -187,6 +180,8 @@ export class AppOpportunities {
 
       this.formSubmitting = false;
       this.formSubmitted = true;
+
+      document.getElementById('apply').scrollIntoView({ block: 'start' });
     } catch (error) {
       console.log('Error', error);
     }
@@ -372,8 +367,6 @@ export class AppOpportunities {
                       type="file"
                       name="file"
                       onInput={this.handleFile.bind(this)}
-                      // Only working on Chrome - commenting out for now
-                      // onBlur={this.valueChangeHandler.bind(this)}
                       required={true}
                     />
                   </div>
@@ -429,7 +422,7 @@ export class AppOpportunities {
                   <app-input
                     label="Phone"
                     name="phone"
-                    type="tel"
+                    type="number"
                     required={true}
                   />
                   <p class="error">
@@ -505,7 +498,6 @@ export class AppOpportunities {
           ) : (
             <div class="container apply-3">
               <h2>Application Submitted</h2>
-
               <content-graphic-lg img-url="assets/graphic-opportunities-robot.png">
                 <h3 slot="header">Thank you!</h3>
                 <p slot="body">

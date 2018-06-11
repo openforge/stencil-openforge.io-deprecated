@@ -141,6 +141,10 @@ export class AppContact {
 
       this.formSubmitting = false;
       this.formSubmitted = true;
+
+      document
+        .getElementById('second-content')
+        .scrollIntoView({ block: 'start' });
     } catch (error) {
       console.log('Error', error);
     }
@@ -276,7 +280,7 @@ export class AppContact {
                     name="phone"
                     label="Phone"
                     id="phone"
-                    type="tel"
+                    type="number"
                     required={true}
                   />
                   <p class="error">
