@@ -39,7 +39,7 @@ export class AppContact {
 
   @Prop()
   errorIconStyles = {
-    display: 'unset',
+    display: 'inline',
     marginBottom: '.2rem',
     paddingRight: '5px',
   };
@@ -54,57 +54,61 @@ export class AppContact {
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value, isValid, validationMessage, checked } = event.detail;
+    const { field, value, target } = event.detail;
     this.formValues[field] = value;
 
-    switch (field) {
+    this.validateField(target);
+  }
+
+  validateField(e) {
+    switch (e.name) {
       case 'name':
-        this.formValues.nameValid = isValid;
+        this.formValues.nameValid = e.checkValidity();
         this.nameError = this.formValues.nameValid
           ? ''
-          : (this.nameError = validationMessage);
+          : (this.nameError = e.validationMessage);
         break;
 
       case 'company':
-        this.formValues.companyValid = isValid;
+        this.formValues.companyValid = e.checkValidity();
         this.companyError = this.formValues.companyValid
           ? ''
-          : (this.companyError = validationMessage);
+          : (this.companyError = e.validationMessage);
         break;
 
       case 'email':
-        this.formValues.emailValid = isValid;
+        this.formValues.emailValid = e.checkValidity();
         this.emailError = this.formValues.emailValid
           ? ''
-          : (this.emailError = validationMessage);
+          : (this.emailError = e.validationMessage);
         break;
 
       case 'phone':
-        this.formValues.phoneValid = isValid;
+        this.formValues.phoneValid = e.checkValidity();
         this.phoneError = this.formValues.phoneValid
           ? ''
-          : (this.phoneError = validationMessage);
+          : (this.phoneError = e.validationMessage);
         break;
 
       case 'message':
-        this.formValues.messageValid = isValid;
+        this.formValues.messageValid = e.checkValidity();
         this.messageError = this.formValues.messageValid
           ? ''
-          : (this.messageError = validationMessage);
+          : (this.messageError = e.validationMessage);
         break;
 
       case 'desiredService':
-        this.formValues.serviceValid = checked;
+        this.formValues.serviceValid = e.checked;
         this.serviceError = this.formValues.serviceValid
           ? ''
-          : validationMessage;
+          : e.validationMessage;
         break;
 
       case 'budget':
-        this.formValues.budgetValid = checked;
+        this.formValues.budgetValid = e.checked;
         this.budgetError = this.formValues.budgetValid
           ? ''
-          : (this.budgetError = validationMessage);
+          : (this.budgetError = e.validationMessage);
         break;
     }
 
@@ -142,9 +146,8 @@ export class AppContact {
       this.formSubmitting = false;
       this.formSubmitted = true;
 
-      document
-        .getElementById('second-content')
-        .scrollIntoView({ block: 'start' });
+      const form = document.getElementById('second-content');
+      form.scrollIntoView({ block: 'start', behavior: 'smooth' });
     } catch (error) {
       console.log('Error', error);
     }

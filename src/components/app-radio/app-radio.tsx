@@ -20,7 +20,7 @@ export class AppRadio {
     this.valueChange.emit({
       field: this.name,
       value: event.target.value,
-      checked: event.target.checked,
+      target: event.target,
     });
   }
 

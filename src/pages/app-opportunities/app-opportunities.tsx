@@ -47,7 +47,7 @@ export class AppOpportunities {
 
   @Prop()
   errorIconStyles = {
-    display: 'unset',
+    display: 'inline',
     marginBottom: '.2rem',
     paddingRight: '5px',
   };
@@ -69,7 +69,7 @@ export class AppOpportunities {
 
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value, isValid, validationMessage } = event.detail;
+    const { field, value, target } = event.detail;
     this.formValues[field] = value;
 
     if (
@@ -84,53 +84,54 @@ export class AppOpportunities {
       this.interviewButtonDisabled = true;
     }
 
-    if (!event.detail) {
-      const field = event.target.name;
-      this.formValues[event.target.name] = event.target.value;
+    this.validateField(target);
+  }
 
-      switch (field) {
-        case 'file':
-          this.formValues.formErrors.fileValid = event.target.checkValidity();
-          this.fileError = this.formValues.formErrors.fileValid
-            ? ''
-            : (this.fileError = event.target.validationMessage);
-          break;
-
+  validateField(e) {
+    if (!e.name) {
+      switch (e.target.name) {
         case 'message':
-          this.formValues.formErrors.messageValid = event.target.checkValidity();
+          this.formValues.formErrors.messageValid = e.target.checkValidity();
           this.messageError = this.formValues.formErrors.messageValid
             ? ''
-            : (this.messageError = event.target.validationMessage);
+            : (this.messageError = e.target.validationMessage);
+          break;
+
+        case 'file':
+          this.formValues.formErrors.fileValid = e.target.checkValidity();
+          this.fileError = this.formValues.formErrors.fileValid
+            ? ''
+            : (this.fileError = e.target.validationMessage);
           break;
       }
     }
 
-    switch (field) {
+    switch (e.name) {
       case 'name':
-        this.formValues.formErrors.nameValid = isValid;
+        this.formValues.formErrors.nameValid = e.checkValidity();
         this.nameError = this.formValues.formErrors.nameValid
           ? ''
-          : (this.nameError = validationMessage);
+          : (this.nameError = e.validationMessage);
         break;
       case 'email':
-        this.formValues.formErrors.emailValid = isValid;
+        this.formValues.formErrors.emailValid = e.checkValidity();
         this.emailError = this.formValues.formErrors.emailValid
           ? ''
-          : (this.emailError = validationMessage);
+          : (this.emailError = e.validationMessage);
         break;
 
       case 'phone':
-        this.formValues.formErrors.phoneValid = isValid;
+        this.formValues.formErrors.phoneValid = e.checkValidity();
         this.phoneError = this.formValues.formErrors.phoneValid
           ? ''
-          : (this.phoneError = validationMessage);
+          : (this.phoneError = e.validationMessage);
         break;
 
       case 'github':
-        this.formValues.formErrors.githubValid = isValid;
+        this.formValues.formErrors.githubValid = e.checkValidity();
         this.githubError = this.formValues.formErrors.githubValid
           ? ''
-          : (this.githubError = validationMessage);
+          : (this.githubError = e.validationMessage);
         break;
     }
 
@@ -366,7 +367,8 @@ export class AppOpportunities {
                       class="input-file"
                       type="file"
                       name="file"
-                      onInput={this.handleFile.bind(this)}
+                      onChange={this.handleFile.bind(this)}
+                      // onBlur={this.validateField.bind(this)}
                       required={true}
                     />
                   </div>
@@ -469,7 +471,7 @@ export class AppOpportunities {
                       name="message"
                       maxLength={150}
                       required={true}
-                      onInput={this.valueChangeHandler.bind(this)}
+                      onInput={this.validateField.bind(this)}
                     />
                   </div>
                   <p class="error">
