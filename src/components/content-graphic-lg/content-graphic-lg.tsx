@@ -7,6 +7,7 @@ import { Component, Prop } from '@stencil/core';
 export class ContentGraphicLg {
   @Prop() imgUrl: string;
   @Prop() reverse: boolean = false;
+  @Prop() preLoadImg: boolean = false;
 
   render() {
     return (
@@ -31,6 +32,7 @@ export class ContentGraphicLg {
           <app-img
             class="img-fluid d-none d-md-inline"
             src={this.imgUrl}
+            preLoad={this.preLoadImg}
             alt=""
           />
         </div>
@@ -47,7 +49,7 @@ export class ContentGraphicLg {
             class="img-fluid d-xs-inline d-md-none"
             src={this.imgUrl}
             alt=""
-            preLoad={true}
+            preLoad={this.preLoadImg}
           />
           <slot name="body" />
         </div>
