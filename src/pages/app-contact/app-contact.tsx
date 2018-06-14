@@ -36,14 +36,14 @@ export class AppContact {
         this.ts.translate('contact.form.unsure'),
       ],
       budget: [
-        '5K-10K',
-        '10K-25K',
-        '25K-50K',
-        '50K-75K',
-        '75K-100K',
-        '100K-200K',
-        '200K',
-        this.ts.translate('contact.form.unsure'),
+        this.ts.translate('contact.form.budgetThreshold.one'),
+        this.ts.translate('contact.form.budgetThreshold.two'),
+        this.ts.translate('contact.form.budgetThreshold.three'),
+        this.ts.translate('contact.form.budgetThreshold.four'),
+        this.ts.translate('contact.form.budgetThreshold.five'),
+        this.ts.translate('contact.form.budgetThreshold.six'),
+        this.ts.translate('contact.form.budgetThreshold.seven'),
+        this.ts.translate('contact.form.budgetThreshold.unsure'),
       ],
     };
   }

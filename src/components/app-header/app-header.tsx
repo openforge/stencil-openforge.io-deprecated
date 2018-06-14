@@ -42,7 +42,9 @@ export class AppHeader {
         {this.hideButton ? null : (
           <a class="btn btn-primary btn-arrow" onClick={this.scrollIntoView}>
             <i class="fa fa-arrow-down" aria-hidden="true" />
-            <span class="sr-only">Scroll to content</span>
+            <span class="sr-only">
+              <app-translation key="header.scrollText" />
+            </span>
           </a>
         )}
       </header>

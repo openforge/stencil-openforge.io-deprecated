@@ -479,10 +479,7 @@ export class AppHome {
                 <app-translate key="home.process.discovery" />
               </h3>
               <p slot="body">
-                We'll help you evaluate your business needs and challenge your
-                assumptions before entering into the Design and Development
-                processs. Make sure that the technology you're building makes
-                sense for your business.
+                <app-translate key="home.process.discoveryBody" />
               </p>
             </content-graphic-lg>
 
