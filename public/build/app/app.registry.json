@@ -1,0 +1,70 @@
+{
+  "namespace": "App",
+  "fsNamespace": "app",
+  "loader": "../app.js",
+  "global": "app.global.js",
+  "core": "app.mjs71ypv.js",
+  "corePolyfilled": "app.g281kf6y.js",
+  "components": {
+    "app-contact": {
+      "$": "kehxa912"
+    },
+    "app-cta": {
+      "$": "uqm08pto"
+    },
+    "app-footer": {
+      "$": "e3d5akmu"
+    },
+    "app-header": {
+      "$": "dvinjver"
+    },
+    "app-hero-home": {
+      "$": "csndfjsr"
+    },
+    "app-home": {
+      "$": "csndfjsr"
+    },
+    "app-img": {
+      "$": "zfwj7rd9"
+    },
+    "app-input": {
+      "$": "5jffiobg"
+    },
+    "app-members": {
+      "$": "csndfjsr"
+    },
+    "app-nav-header": {
+      "$": "e3d5akmu"
+    },
+    "app-opportunities": {
+      "$": "n1sjoee1"
+    },
+    "app-radio": {
+      "$": "kehxa912"
+    },
+    "app-services": {
+      "$": "eza2dcb3"
+    },
+    "app-slider": {
+      "$": "n1sjoee1"
+    },
+    "content-graphic": {
+      "$": "hkdx4yt1"
+    },
+    "content-graphic-lg": {
+      "$": "veh3qlrq"
+    },
+    "open-forge-app": {
+      "$": "e3d5akmu"
+    },
+    "stencil-route": {
+      "$": "e3d5akmu"
+    },
+    "stencil-route-link": {
+      "$": "o9hbiai1"
+    },
+    "stencil-router": {
+      "$": "e3d5akmu"
+    }
+  }
+}
