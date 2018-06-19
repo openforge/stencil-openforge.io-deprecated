@@ -19,7 +19,11 @@
     "st:generate": "node scripts/st-generate.js",
     "heroku-postbuild": "npm run build",
     "serve:heroku": "http-server www",
-    "prepublish": "stencil build --prod"
+    "prepublish": "stencil build --prod",
+    "firebase:serve": "npm --prefix functions run build && firebase serve --only functions",
+    "firebase:shell": "npm --prefix functions run build && firebase functions:shell",
+    "firebase:deploy": "firebase use default --token $FIREBASE_TOKEN && firebase deploy --only firestore:rules,functions,hosting --token $FIREBASE_TOKEN",
+    "firebase:logs": "firebase functions:log"
   },
   "engines": {
     "node": "8.9.4",
