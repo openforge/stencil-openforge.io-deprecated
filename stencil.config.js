@@ -16,8 +16,7 @@ exports.config = {
         globPatterns: [
           '**/*.{html,js,css,json,ico,png,es5}'
         ]
-      },
-      dir: 'public'
+      }
     }
   ],
 };
