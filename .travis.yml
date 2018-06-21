@@ -5,6 +5,7 @@ branches:
   only:
   - develop
   - master
+  - firebase-dev
 
 before_script:
   - npm install -g firebase-tools
