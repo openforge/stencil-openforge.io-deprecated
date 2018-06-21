@@ -5,7 +5,6 @@ branches:
   only:
   - develop
   - master
-  - firebase-dev
 
 before_script:
   - npm install -g firebase-tools
@@ -14,6 +13,5 @@ script:
   - npm run build
 
 after_success:
- - "[[ $TRAVIS_BRANCH == 'master' ]] && firebase use production"
+  if [ "$TRAVIS_BRANCH" == master]; then firebase use production; fi
   - npm run firebase:deploy
-
