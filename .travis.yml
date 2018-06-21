@@ -13,5 +13,5 @@ script:
   - npm run build
 
 after_success:
-  if [ "$TRAVIS_BRANCH" == master]; then firebase use production; fi
+  - if [ "$TRAVIS_BRANCH" == master]; then firebase use production; fi
   - npm run firebase:deploy
