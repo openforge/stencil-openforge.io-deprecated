@@ -13,4 +13,4 @@ script:
   - npm run build
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" && ! "$TRAVIS_PULL_REQUEST" ]; then npm run firebase:deploy:prod; elif [ $TRAVIS_BRANCH == "develop" ]; then npm run firebase:deploy:dev; fi
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ ! "$TRAVIS_PULL_REQUEST" ]; then npm run firebase:deploy:prod; elif [ $TRAVIS_BRANCH == "develop" ]; then npm run firebase:deploy:dev; fi
