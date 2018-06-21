@@ -20,6 +20,9 @@ exports.config = {
       dir: 'public'
     }
   ],
+  copy: [
+    { src: 'robots.txt' }
+  ]
 };
 
 exports.devServer = {
