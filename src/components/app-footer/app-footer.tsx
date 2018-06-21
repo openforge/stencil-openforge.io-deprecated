@@ -15,7 +15,7 @@ export class AppFooter {
               <p>
                 OpenForge<br />
                 1040 N 2nd St.<br />
-                Philadelphia, Pennsylvania 19123
+                Philadelphia, PA 19123
               </p>
               <a href="mailto:hello@openforge.io">hello@openforge.io</a>
               {/* <a href="https://www.openforge.io" target="_blank" rel="noopener">
