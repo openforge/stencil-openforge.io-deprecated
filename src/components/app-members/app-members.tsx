@@ -34,7 +34,9 @@ export class AppMembers {
                 {!member.mail ? null : (
                   <a
                     href={`mailto:${member.mail}`}
+                    title={`${member.name} mail account`}
                     target="_blank"
+                    rel="noopener"
                     style={{ color: member.color }}
                   >
                     <i class="fa fa-envelope-square pr-3" aria-hidden="true" />
@@ -44,7 +46,9 @@ export class AppMembers {
                 {!member.twitter ? null : (
                   <a
                     href={member.twitter}
+                    title={`${member.name} twitter account`}
                     target="_blank"
+                    rel="noopener"
                     style={{ color: member.color }}
                   >
                     <i
@@ -57,7 +61,9 @@ export class AppMembers {
                 {!member.github ? null : (
                   <a
                     href={member.github}
+                    title={`${member.name} github account`}
                     target="_blank"
+                    rel="noopener"
                     style={{ color: member.color }}
                   >
                     <i class="fab fa-github-square pr-3" aria-hidden="true" />

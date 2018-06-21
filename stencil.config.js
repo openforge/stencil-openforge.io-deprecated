@@ -14,9 +14,10 @@ exports.config = {
       serviceWorker: {
         swSrc: 'sw.js',
         globPatterns: [
-          '**/*.{html,js,css,json,ico,png}'
+          '**/*.{html,js,css,json,ico,png,es5}'
         ]
-      }
+      },
+      dir: 'public'
     }
   ],
   copy: [

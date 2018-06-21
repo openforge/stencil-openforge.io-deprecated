@@ -48,6 +48,7 @@ export class AppNavHeader {
           <button
             class="navbar-toggler"
             type="button"
+            data-toggle="collapse"
             data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -99,7 +100,9 @@ export class AppNavHeader {
                 <a
                   class="nav-link"
                   href="https://github.com/openforge"
+                  title="Openforge Github account"
                   target="_blank"
+                  rel="noopener"
                 >
                   <div class="fab fa-github" />
                 </a>
