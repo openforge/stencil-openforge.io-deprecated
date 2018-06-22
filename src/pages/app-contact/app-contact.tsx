@@ -194,12 +194,12 @@ export class AppContact {
               <div class="col-sm-12 col-md-8 col-lg-6">
                 <h2 class="text-nowrap">Let's Work Together</h2>
                 <p>Request a Discovery Session Today!</p>
-                <a
+                <button
                   onClick={this.scrollToForm.bind(this)}
                   class="btn btn-primary"
                 >
                   Request Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
