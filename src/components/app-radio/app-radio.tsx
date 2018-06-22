@@ -17,12 +17,11 @@ export class AppRadio {
   private inputId = '';
 
   changeHandler(event) {
-    if (event.target.checked) {
-      this.valueChange.emit({
-        field: this.name,
-        value: event.target.value,
-      });
-    }
+    this.valueChange.emit({
+      field: this.name,
+      value: event.target.value,
+      target: event.target,
+    });
   }
 
   render() {

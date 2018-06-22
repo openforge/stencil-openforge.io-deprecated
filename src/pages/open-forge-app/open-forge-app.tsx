@@ -2,8 +2,8 @@ import { Component, Prop, Listen } from '@stencil/core';
 import {
   ActiveRouter,
   RouterHistory,
-  LocationSegments,
   RouterSwitch,
+  LocationSegments,
 } from '@stencil/router';
 
 import { polyfill } from 'smoothscroll-polyfill';
@@ -89,6 +89,7 @@ export class OpenForgeApp {
               <stencil-route
                 url="/opportunities"
                 component="app-opportunities"
+                exact={true}
               />
             </RouterSwitch>
           </stencil-router>
