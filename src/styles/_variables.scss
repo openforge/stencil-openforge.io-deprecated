@@ -56,6 +56,7 @@ $navbar-dark-active-color: $orange !default;
 $navbar-dark-color: rgba($gray-100, 0.75) !default;
 
 // Box-shadow
+// sass-lint:disable indentation
 $of-boxshadow: 4px 4px 4px rgba(0, 0, 0, 0.2),
   0 0 4px lighten(rgba(0, 0, 0, 0.2), 5%);
 
