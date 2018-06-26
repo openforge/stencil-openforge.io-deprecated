@@ -9,34 +9,30 @@ export class AppAbout {
     {
       name: 'Jedi Weller',
       image: './../../assets/headshot-jedi.jpg',
-      color: '#fa8928',
       title: 'Founder and Head of Technology',
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
     },
     {
-      name: 'Rachel Bennett',
-      image: './../../assets/headshot-rachel.jpg',
-      color: '#638593',
-      title: 'Designer',
-      mail: 'rachel@openforge.io',
-      twitter: '',
-      github: '',
-    },
-    {
       name: 'Geoffery Melle',
       image: './../../assets/headshot-geoff.jpg',
-      color: '#d8aa0c',
       title: 'Account Manager',
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
     },
     {
+      name: 'Rachel Bennett',
+      image: './../../assets/headshot-rachel.jpg',
+      title: 'Designer',
+      mail: 'rachel@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
       name: 'Joni Leho',
       image: './../../assets/headshot-joni.jpg',
-      color: '#fa8928',
       title: 'Software Engineer',
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
@@ -44,7 +40,6 @@ export class AppAbout {
     {
       name: 'Auvo Severinkangas',
       image: './../../assets/headshot-auvo.jpg',
-      color: '#638593',
       title: 'Software Engineer',
       mail: 'auvo@openforge.io',
       twitter: '',
@@ -53,7 +48,6 @@ export class AppAbout {
     {
       name: 'Paulina Gallo',
       image: './../../assets/headshot-paulina.jpg',
-      color: '#fa8928',
       title: 'Software Engineer',
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
@@ -62,7 +56,6 @@ export class AppAbout {
     {
       name: 'Mohammad Alfatih',
       image: './../../assets/headshot-mohammad.jpg',
-      color: '#638593',
       title: 'Software Engineer',
       mail: 'mo@jawami.com',
       twitter: 'https://twitter.com/webdevffw',
@@ -71,7 +64,6 @@ export class AppAbout {
     {
       name: 'Meredith Alcorn',
       image: './../../assets/headshot-meredith.jpg',
-      color: '#d8aa0c',
       title: 'Software Engineer',
       mail: 'meredith@openforge.io',
       github: 'https://github.com/mmalcorn',
@@ -79,7 +71,6 @@ export class AppAbout {
     {
       name: 'Fernando Del Olmo',
       image: './../../assets/headshot-fernando.jpg',
-      color: '#fa8928',
       title: 'Software Engineer',
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
@@ -88,14 +79,12 @@ export class AppAbout {
     {
       name: 'William Holloran',
       image: './../../assets/headshot-billy.jpg',
-      color: '#638593',
       title: 'Project Manager / QA Engineer',
       mail: 'william@openforge.io',
     },
     {
       name: 'Luis Chacon',
       image: './../../assets/headshot-luis.jpg',
-      color: '#d8aa0c',
       title: 'Software Engineer',
       mail: 'luis@openforge.io',
       github: 'https://github.com/luiskcs89',
@@ -103,10 +92,33 @@ export class AppAbout {
     {
       name: 'Claudio Del Valle',
       image: './../../assets/headshot-claudio.jpg',
-      color: '#fa8928',
       title: 'Software Engineer',
       mail: 'claudio@openforge.io',
       github: 'https://github.com/daftclaud',
+    },
+    {
+      name: 'Elizabeth Cottrell',
+      image: './../../assets/headshot-eliza.jpg',
+      title: 'Front End Developer',
+      mail: 'elizabeth@openforge.io',
+      twitter: 'https://twitter.com/_elizacottrell',
+      github: 'https://github.com/LizCottrell',
+    },
+    {
+      name: 'Yanying Zhu',
+      image: './../../assets/headshot-yanying.jpg',
+      title: 'Designer',
+      mail: 'yanying@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
+      name: 'YOU?',
+      image: './../../assets/headshot-placeholder.jpg',
+      title: '',
+      mail: 'geoff@openforge.io',
+      twitter: '',
+      github: '',
     },
   ];
 
