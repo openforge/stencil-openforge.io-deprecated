@@ -1,22 +1,8 @@
-# app-hero-home
+# app-nav-header
 
 
 
 <!-- Auto Generated Below -->
-
-
-## Properties
-
-#### textNoWrap
-
-boolean
-
-
-## Attributes
-
-#### text-no-wrap
-
-boolean
 
 
 
