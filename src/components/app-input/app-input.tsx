@@ -9,14 +9,16 @@ export class AppInput {
   @Prop() type: string;
   @Prop() label: string;
   @Prop() placeholder: string;
+  @Prop() id: string;
+  @Prop() maxlength: string;
   @Prop() required = false;
-
   @Event() valueChange: EventEmitter;
 
   inputHandler(event) {
     this.valueChange.emit({
       field: this.name,
       value: event.target.value,
+      target: event.target,
     });
   }
 
@@ -28,6 +30,8 @@ export class AppInput {
           class="form-control"
           type={this.type}
           name={this.name}
+          id={this.id}
+          maxlength={this.maxlength}
           required={this.required}
           onInput={this.inputHandler.bind(this)}
         />
