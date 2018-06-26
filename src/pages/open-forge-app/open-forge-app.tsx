@@ -90,6 +90,7 @@ export class OpenForgeApp {
                 component="app-opportunities"
                 exact={true}
               />
+              <stencil-route url="/about" component="app-about" />
             </RouterSwitch>
           </stencil-router>
         </main>

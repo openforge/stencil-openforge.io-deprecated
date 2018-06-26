@@ -1,0 +1,48 @@
+.about {
+  // hero
+  .hero {
+    // background-image: url('assets/bg-hero-icons.jpg');
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(lg) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  // section - about
+  .about {
+    padding: 5rem 0;
+
+    &--header {
+      margin: 0 auto 3rem;
+      max-width: 1000px;
+      text-align: center;
+    }
+  }
+}

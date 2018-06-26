@@ -71,7 +71,7 @@ export class AppNavHeader {
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
-                  url="#about"
+                  url="/about"
                   anchorClass="nav-link"
                   activeClass="active"
                 >
