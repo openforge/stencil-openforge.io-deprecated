@@ -1,20 +1,37 @@
-# app-services
+# app-slider
+
+
 
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-#### match
+#### label
+
+string
 
 
+#### name
+
+string
 
 
 ## Attributes
 
-#### match
+#### label
+
+string
 
 
+#### name
+
+string
+
+
+## Events
+
+#### valueChange
 
 
 
