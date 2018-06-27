@@ -122,12 +122,6 @@ export class AppAbout {
     },
   ];
 
-  componentDidLoad() {
-    let element;
-    element = document.querySelector('.about .hero');
-    element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-  }
-
   scrollToForm() {
     const form = document.getElementById('about');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -140,7 +134,7 @@ export class AppAbout {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-lg-9">
+              <div class="col-9 col-md-8 col-lg-9">
                 <h2>We Are Passionate About Technology and Design</h2>
                 <p>
                   We believe that your success is our success. We're here to
@@ -175,7 +169,7 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="/contact">
+        <app-cta link-url="mailto:hello@openforge.io">
           <span slot="header">Want to work with us?</span>
           <span slot="link">Get in touch</span>
         </app-cta>

@@ -1,14 +1,24 @@
 .about {
   // hero
   .hero {
-    // background-image: url('assets/bg-hero-icons.jpg');
+    background-image: url('assets/bg-hero-icons.jpg');
     background-position: top center;
     background-size: cover;
     height: 100vh;
+    @include media-breakpoint-down(md) {
+      background-image: url('assets/bg-hero-icons-md.jpg');
+    }
+    @include media-breakpoint-down(sm) {
+      background-image: url('assets/bg-hero-icons-sm.jpg');
+    }
 
     .container,
     .row {
       height: 100%;
+    }
+
+    .row {
+      padding-top: 56px;
     }
 
     h2 {
@@ -16,10 +26,10 @@
       font-size: 4rem;
       margin-bottom: 1rem;
       @include media-breakpoint-down(lg) {
-        font-size: 3rem;
+        font-size: 2.5rem;
       }
       @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
     }
 
@@ -29,8 +39,9 @@
       font-weight: 300;
       margin-bottom: 3rem;
       max-width: 500px;
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-down(sm) {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
       }
     }
   }
@@ -43,6 +54,9 @@
       margin: 0 auto 3rem;
       max-width: 768px;
       text-align: center;
+      @include media-breakpoint-down(sm) {
+        text-align: left;
+      }
     }
   }
 }
