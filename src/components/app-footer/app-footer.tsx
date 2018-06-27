@@ -7,10 +7,10 @@ import { Component } from '@stencil/core';
 export class AppFooter {
   render() {
     return (
-      <footer>
+      <footer class="footer">
         <div class="container">
           <div class="row">
-            <div class="content col-12 col-sm-4">
+            <div class="footer--column col-12 col-sm-4">
               <h2>Our Headquarters</h2>
               <p>
                 OpenForge<br />
@@ -23,9 +23,9 @@ export class AppFooter {
                 Work at OpenForge
               </a> */}
             </div>
-            <div class="content col-12 col-sm-4">
+            <div class="footer--column col-12 col-sm-4">
               <h2>Follow Us</h2>
-              <ul>
+              <ul class="footer--social-links">
                 <li>
                   <a href="https://twitter.com/OpenForge_US" target="_blank">
                     <i class="fab fa-twitter-square" aria-hidden="true" />{' '}
@@ -52,13 +52,17 @@ export class AppFooter {
                 </li>
               </ul>
             </div>
-            <div class="content col-12 col-sm-4">
+            <div class="footer--column col-12 col-sm-4">
               <h2>Sign Up for Our Webinar Series</h2>
               <p>
                 Our FREE webinar series will cover topics including UI/UX
                 design, app development, and SEO strategy.
               </p>
-              <a href="http://learn.openforge.io/" class="btn btn-primary">
+              <a
+                href="http://learn.openforge.io/"
+                target="_blank"
+                class="footer--btn btn btn-primary"
+              >
                 Register Today
               </a>
             </div>
