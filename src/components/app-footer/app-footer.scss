@@ -3,73 +3,101 @@ footer {
   background: $gray-800;
   color: $white;
   padding: 5rem 0 2rem;
+  @include media-breakpoint-down(sm) {
+    padding: 2rem 0;
+  }
 
   h2 {
-    color: $orange;
+    color: $orange-light;
     font-size: 1.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
   }
 
   p,
   a {
     color: $white;
-    display: block;
-    font-size: 0.8em;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    max-width: 300px;
+
+    &.copyright {
+      font-size: 0.65rem;
+      margin-top: 5rem;
+      @include media-breakpoint-down(md) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  // Follow Us
+  ul {
+    padding: 0;
+    list-style-type: none;
+
+    a {
+      align-items: center;
+      color: $white;
+      cursor: pointer;
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      transition: color 0.2s ease-in;
+      .svg-inline--fa {
+        color: $orange;
+        font-size: 1.5rem;
+        margin-right: 10px;
+        transition: color 0.2s ease-in;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: darken($orange, 5%) !important;
+        .svg-inline--fa {
+          color: darken($orange, 10%) !important;
+        }
+      }
+    }
   }
 
   .btn {
+    margin-top: 2rem;
+
     @include media-breakpoint-down(md) {
-      padding: 0.375rem 2rem;
+      font-size: 0.7rem;
+      padding: 0.375rem 1.5rem;
     }
   }
 
   .content {
-    margin-bottom: 5rem;
-    @include media-breakpoint-down(sm) {
-      text-align: center;
-    }
-  }
+    margin-bottom: 1.5rem;
 
-  .content:nth-child(1) {
-    border-right: 1px solid rgba($white, 0.33);
-    padding-right: 3rem;
-    @include media-breakpoint-down(sm) {
-      border-right: none;
-      padding: 0 15px;
-    }
-  }
-
-  .content:nth-child(2) {
-    border-right: 1px solid rgba($white, 0.33);
-    text-align: center;
-    padding: 0 3rem;
-    @include media-breakpoint-down(sm) {
-      border-right: none;
-      padding: 0 15px;
-    }
-
-    a {
-      border-bottom: 3px solid rgba($orange, 0);
-      margin: 0 auto 2rem;
-      max-width: 180px;
-      padding-bottom: 1rem;
-      &:hover,
-      &:focus,
-      &:active {
-        border-bottom: 3px solid $orange;
-      }
-      &:last-child {
-        margin-bottom: 0;
-        max-width: 250px;
+    &:nth-child(1) {
+      border-right: 1px solid rgba($white, 0.33);
+      padding-right: 5vw;
+      @include media-breakpoint-down(sm) {
+        padding-right: 15px;
       }
     }
-  }
 
-  .content:nth-child(3) {
-    padding-left: 3rem;
-    @include media-breakpoint-down(sm) {
-      padding: 0 15px;
+    &:nth-child(2) {
+      border-right: 1px solid rgba($white, 0.33);
+      padding: 0 5vw;
+      @include media-breakpoint-down(sm) {
+        padding: 0 15px;
+      }
+    }
+
+    &:nth-child(3) {
+      padding-left: 5vw;
+      @include media-breakpoint-down(sm) {
+        padding-left: 15px;
+      }
     }
   }
 }

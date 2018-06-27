@@ -10,84 +10,61 @@ export class AppFooter {
       <footer>
         <div class="container">
           <div class="row">
-            <div class="content col-sm-12 col-md-4">
+            <div class="content col-12 col-sm-4">
               <h2>Our Headquarters</h2>
               <p>
                 OpenForge<br />
                 1040 N 2nd St.<br />
-                Philadelphia, PA 19123
+                Philadelphia, PA 19123<br />
+                <a href="mailto:hello@openforge.io">Hello@openforge.io</a>
               </p>
-              <a href="mailto:hello@openforge.io">hello@openforge.io</a>
-              {/* <a href="https://www.openforge.io" target="_blank" rel="noopener">
+
+              {/* <a href="https://www.openforge.io" target="_blank">
                 Work at OpenForge
-              </a>
-              <a href="/career">Career Opportunities</a> */}
+              </a> */}
             </div>
-            <div class="content col-sm-12 col-md-4">
-              <h2>Our Partners</h2>
-              <a
-                href="https://ionicframework.com/"
-                title="Ionic framework website"
-                target="_blank"
-                rel="noopener"
-              >
-                <app-img
-                  class="img-fluid"
-                  src="assets/logo-ionic.png"
-                  alt="Ionic"
-                />
-              </a>
-              <a
-                href="http://www.215marketing.com/"
-                title="215 marketing website"
-                target="_blank"
-                rel="noopener"
-              >
-                <app-img
-                  class="img-fluid"
-                  src="assets/logo-215marketing.png"
-                  alt="215 Marketing"
-                />
-              </a>
-              <a
-                href="https://www.goemerchant.com/"
-                title="go emerchant website"
-                target="_blank"
-                rel="noopener"
-              >
-                <app-img
-                  class="img-fluid"
-                  src="assets/logo-goemerchant.png"
-                  alt="goEmerchant Payment Processing"
-                />
-              </a>
+            <div class="content col-12 col-sm-4">
+              <h2>Follow Us</h2>
+              <ul>
+                <li>
+                  <a href="https://twitter.com/OpenForge_US" target="_blank">
+                    <i class="fab fa-twitter-square" aria-hidden="true" />{' '}
+                    @OpenForge_US
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/OpenForgeUS/"
+                    target="_blank"
+                  >
+                    <i class="fab fa-facebook-square" aria-hidden="true" />{' '}
+                    OpenForge_US
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/openforge/"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin" aria-hidden="true" />{' '}
+                    OpenForge_US
+                  </a>
+                </li>
+              </ul>
             </div>
-            <div class="content col-sm-12 col-md-4">
-              <h2>Subscribe to Blog via Email</h2>
-              <p>Coming soon!</p>
-              {/* <p>
-                Enter your email address to subscribe to our blog and receive
-                notifications of new posts by email.
+            <div class="content col-12 col-sm-4">
+              <h2>Sign Up for Our Webinar Series</h2>
+              <p>
+                Our FREE webinar series will cover topics including UI/UX
+                design, app development, and SEO strategy.
               </p>
-              <p>Join 2,816 other subscribers</p>
-              <form>
-                <div class="form-group">
-                  <label class="sr-only">Email address</label>
-                  <input
-                    id="email"
-                    class="form-control"
-                    type="email"
-                    placeholder="Email address.."
-                  />
-                </div>
-                <button class="btn btn-primary" type="submit">
-                  Subscribe
-                </button>
-              </form> */}
+              <a href="http://learn.openforge.io/" class="btn btn-primary">
+                Register Today
+              </a>
             </div>
           </div>
 
-          <p class="text-center">&copy; OpenForge. All rights reserved.</p>
+          <p class="copyright">&copy; OpenForge 2018</p>
         </div>
       </footer>
     );
