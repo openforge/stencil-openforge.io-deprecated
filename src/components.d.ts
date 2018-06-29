@@ -13,12 +13,9 @@ declare global {
   }
   namespace JSXElements {}
 
-  interface HTMLElement {
-    componentOnReady?: () => Promise<this | null>;
-  }
-
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
 
     forceUpdate(): void;
   }
@@ -466,7 +463,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppContact {
-
+      'errorIconStyles': any;
     }
   }
 
@@ -489,7 +486,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppContactAttributes extends HTMLAttributes {
-
+      'errorIconStyles'?: any;
     }
   }
 }
@@ -532,7 +529,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppOpportunities {
-
+      'errorIconStyles': any;
     }
   }
 
@@ -555,40 +552,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface AppServices {
-
-    }
-  }
-
-  interface HTMLAppServicesElement extends StencilComponents.AppServices, HTMLStencilElement {}
-
-  var HTMLAppServicesElement: {
-    prototype: HTMLAppServicesElement;
-    new (): HTMLAppServicesElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  interface ElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-services': JSXElements.AppServicesAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppServicesAttributes extends HTMLAttributes {
-
+      'errorIconStyles'?: any;
     }
   }
 }

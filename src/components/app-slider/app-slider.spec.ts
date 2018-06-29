@@ -1,17 +1,17 @@
 import { render } from '@stencil/core/testing';
 
-import { AppServices } from './app-services';
+import { AppSlider } from './app-slider';
 
 describe('app', () => {
   it('should build', () => {
-    expect(new AppServices()).toBeTruthy();
+    expect(new AppSlider()).toBeTruthy();
   });
 
   describe('rendering', () => {
     beforeEach(async () => {
       await render({
-        components: [AppServices],
-        html: '<app-services></app-services>',
+        components: [AppSlider],
+        html: '<app-slider></app-slider>',
       });
     });
   });
