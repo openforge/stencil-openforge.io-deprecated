@@ -486,7 +486,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppAboutAttributes extends HTMLAttributes {
-      'errorIconStyles'?: any;
+
     }
   }
 }
