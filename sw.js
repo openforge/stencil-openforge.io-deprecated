@@ -1,4 +1,4 @@
-importScripts('workbox-v3.2.0/workbox-sw.js');
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.3.1/workbox-sw.js');
 
 self.workbox.skipWaiting();
 self.workbox.clientsClaim();
