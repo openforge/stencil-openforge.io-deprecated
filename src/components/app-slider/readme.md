@@ -1,4 +1,4 @@
-# app-hero-home
+# app-slider
 
 
 
@@ -7,16 +7,31 @@
 
 ## Properties
 
-#### textNoWrap
+#### label
 
-boolean
+string
+
+
+#### name
+
+string
 
 
 ## Attributes
 
-#### text-no-wrap
+#### label
 
-boolean
+string
+
+
+#### name
+
+string
+
+
+## Events
+
+#### valueChange
 
 
 

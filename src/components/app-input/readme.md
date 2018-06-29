@@ -1,40 +1,67 @@
-# app-header
+# app-input
+
+
 
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-#### backgroundUrl
+#### label
 
 string
 
 
-#### hideButton
+#### name
+
+string
+
+
+#### placeholder
+
+string
+
+
+#### required
 
 boolean
 
 
-#### linkUrl
+#### type
 
 string
 
 
 ## Attributes
 
-#### background-url
+#### label
 
 string
 
 
-#### hide-button
+#### name
+
+string
+
+
+#### placeholder
+
+string
+
+
+#### required
 
 boolean
 
 
-#### link-url
+#### type
 
 string
+
+
+## Events
+
+#### valueChange
 
 
 
