@@ -170,6 +170,7 @@ declare global {
     interface AppImg {
       'alt': string;
       'fit': boolean;
+      'preLoad': boolean;
       'src': string;
     }
   }
@@ -195,6 +196,7 @@ declare global {
     export interface AppImgAttributes extends HTMLAttributes {
       'alt'?: string;
       'fit'?: boolean;
+      'preLoad'?: boolean;
       'src'?: string;
     }
   }
@@ -394,6 +396,7 @@ declare global {
   namespace StencilComponents {
     interface ContentGraphicLg {
       'imgUrl': string;
+      'preLoadImg': boolean;
       'reverse': boolean;
     }
   }
@@ -418,6 +421,7 @@ declare global {
   namespace JSXElements {
     export interface ContentGraphicLgAttributes extends HTMLAttributes {
       'imgUrl'?: string;
+      'preLoadImg'?: boolean;
       'reverse'?: boolean;
     }
   }
