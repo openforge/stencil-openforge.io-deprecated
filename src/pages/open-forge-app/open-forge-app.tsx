@@ -71,7 +71,7 @@ export class OpenForgeApp {
             block: 'start',
             behavior: 'smooth',
           });
-        }, 250);
+        }, 500);
       }
     });
   }

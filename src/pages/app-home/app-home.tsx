@@ -289,7 +289,10 @@ export class AppHome {
           <div class="container process">
             <h2>Our Process</h2>
 
-            <content-graphic-lg img-url="assets/graphic-home-discovery.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-discovery.png"
+              preLoadImg={true}
+            >
               <h3 slot="header">Discovery</h3>
               <p slot="body">
                 We'll help you evaluate your business needs and challenge your
@@ -299,7 +302,10 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-home-consulting.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-consulting.png"
+              preLoadImg={true}
+            >
               <h3 slot="header">Design &amp; User Experience</h3>
               <p slot="body">
                 There is psychology and through behind every effective design.
@@ -310,7 +316,10 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-home-development.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-development.png"
+              preLoadImg={true}
+            >
               <h3 slot="header">Development</h3>
               <p slot="body">
                 Throw away the development practices of the 1990's and 2000's.
@@ -322,7 +331,10 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-home-deployment.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-deployment.png"
+              preLoadImg={true}
+            >
               <h3 slot="header">Deployment</h3>
               <p slot="body">
                 Do you have a dashboard to monitor the state of your
@@ -334,7 +346,10 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-home-feedback.png">
+            <content-graphic-lg
+              img-url="assets/graphic-home-feedback.png"
+              preLoadImg={true}
+            >
               <h3 slot="header">User Feedback</h3>
               <p slot="body">
                 The biggest mistake businesses make is to launch a product and
