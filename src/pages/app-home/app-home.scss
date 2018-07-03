@@ -31,13 +31,6 @@ section {
 }
 
 // section - services
-#services {
-  padding-bottom: 0;
-  // @include media-breakpoint-down(md) {
-  //   display: none;
-  // }
-}
-
 .services {
   margin: 0 auto;
   max-width: 992px;
@@ -45,103 +38,66 @@ section {
   &--header {
     padding: 15px;
     p {
-      margin-bottom: 0;
+      margin-bottom: none;
       text-align: center;
     }
   }
 
-  &--tab-panel {
-    text-align: left;
+  .card-container {
+    display: flex;
+    padding: 15px 0px 100px;
 
-    // tab nav
-    nav {
-      background: white;
-      box-shadow: none;
-    }
-    .nav {
-      width: 100%;
-      @include media-breakpoint-down(xs) {
-        // horizontal scroll
-        border-bottom: none;
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-      }
-    }
-    .nav-fill .nav-item {
-      width: 25%;
-      @include media-breakpoint-down(xs) {
-        // horizontal scroll
-        width: initial;
-      }
+    @include media-breakpoint-down(xs) {
+      padding-left: none;
+      flex-wrap: wrap;
     }
 
-    // individual tab
-    .nav-tabs .nav-link {
-      border: none;
-      padding: 0;
+    .card {
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      display: inline-block;
+      padding: 10px;
+      position: relative;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+      -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      &::after {
+        position: absolute;
+        opacity: 0;
+      }
+
       &:hover {
-        background: rgba($orange, 0.1);
+        -webkit-transform: scale(1.1, 1.1);
+        transform: scale(1.1, 1.1);
       }
 
-      // tab content
-      figure {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 100%;
-        margin: 0;
-        @include media-breakpoint-down(xs) {
-          // horizontal scroll
-          width: 150px;
-        }
-        img {
-          max-width: 200px;
-          padding: 15px;
-          width: 100%;
-        }
-        figcaption {
-          border-bottom: 5px solid $gray-500;
-          font-size: 1.2rem;
-          font-weight: bold;
-          line-height: 1.2rem;
-          padding: 15px 10px;
-          width: 100%;
-          @include media-breakpoint-down(xs) {
-            font-size: 1rem;
-          }
+      &:hover::after {
+        opacity: 1;
+      }
+
+      &--image {
+        margin: 2px;
+      }
+
+      &--text {
+        text-align: center;
+        max-width: 400px;
+        h3 {
+          text-decoration: underline;
         }
       }
 
-      // active tab
-      &.active figcaption {
-        background-color: $gray-100;
-        border: 5px solid $gray-500;
-        border-bottom: transparent;
-        color: $orange;
-      }
-      @include media-breakpoint-down(md) {
-        &:first-child.active figcaption {
-          border-left: transparent;
-        }
-        &:last-child.active figcaption {
-          border-right: transparent;
-        }
+      @include media-breakpoint-down(xs) {
+        margin: 10px;
       }
     }
 
-    // tab-panel content
-    .tab-content {
-      background: $gray-100;
-      border-left: 5px solid $gray-500;
-      border-right: 5px solid $gray-500;
-      padding: 5rem;
-      @include media-breakpoint-down(md) {
-        border: none;
-        padding: 3rem 2rem;
-        font-size: 0.85rem;
+    .card + .card {
+      margin-left: 5%;
+
+      @include media-breakpoint-down(xs) {
+        margin: 10px;
       }
     }
   }
