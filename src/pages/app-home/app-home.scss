@@ -12,7 +12,7 @@
 
     h2 {
       color: $white;
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-top: 30rem;
       font-weight: bolder;
       @include media-breakpoint-down(sm) {
@@ -142,10 +142,20 @@
         margin-bottom: 20px;
       }
 
+      @include media-breakpoint-down(sm) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
       .work {
         text-align: center;
         flex-direction: column;
         margin: 50px;
+
+        .icons app-img {
+          display: inline-block;
+          width: 50%;
+        }
       }
     }
   }
@@ -158,14 +168,7 @@
   // section - process
   .process {
     h2 {
-      margin-bottom: 50px;
-    }
-
-    .content-graphic-lg {
-      padding: 0;
-      img {
-        max-width: 300px;
-      }
+      margin-bottom: 0px;
     }
   }
 

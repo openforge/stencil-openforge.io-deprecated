@@ -144,16 +144,18 @@ export class AppHome {
                   src="assets/graphic-home-loudcloud.png"
                   alt="loudcloud-app-image"
                 />
-                <app-img
-                  class=""
-                  src="assets/graphic-apple-appstore.png"
-                  alt="apple-app-store-icon"
-                />
-                <app-img
-                  class=""
-                  src="assets/graphic-google-googleplaystore.png"
-                  alt="google-play-store-icon"
-                />
+                <div class="icons">
+                  <app-img
+                    class=""
+                    src="assets/graphic-apple-appstore.png"
+                    alt="apple-app-store-icon"
+                  />
+                  <app-img
+                    class=""
+                    src="assets/graphic-google-googleplaystore.png"
+                    alt="google-play-store-icon"
+                  />
+                </div>
               </div>
 
               <div class="work">
@@ -163,16 +165,18 @@ export class AppHome {
                   src="assets/graphic-home-voyage.png"
                   alt="voyage-app-image"
                 />
-                <app-img
-                  class=""
-                  src="assets/graphic-apple-appstore.png"
-                  alt="apple-app-store-icon"
-                />
-                <app-img
-                  class=""
-                  src="assets/graphic-google-googleplaystore.png"
-                  alt="google-play-store-icon"
-                />
+                <div class="icons">
+                  <app-img
+                    class=""
+                    src="assets/graphic-apple-appstore.png"
+                    alt="apple-app-store-icon"
+                  />
+                  <app-img
+                    class=""
+                    src="assets/graphic-google-googleplaystore.png"
+                    alt="google-play-store-icon"
+                  />
+                </div>
               </div>
 
               <div class="work">
@@ -182,16 +186,18 @@ export class AppHome {
                   src="assets/graphic-home-digithermo.png"
                   alt="digithermo-app-image"
                 />
-                <app-img
-                  class=""
-                  src="assets/graphic-apple-appstore.png"
-                  alt="apple-app-store-icon"
-                />
-                <app-img
-                  class=""
-                  src="assets/graphic-google-googleplaystore.png"
-                  alt="google-play-store-icon"
-                />
+                <div class="icons">
+                  <app-img
+                    class=""
+                    src="assets/graphic-apple-appstore.png"
+                    alt="apple-app-store-icon"
+                  />
+                  <app-img
+                    class=""
+                    src="assets/graphic-google-googleplaystore.png"
+                    alt="google-play-store-icon"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -208,10 +214,7 @@ export class AppHome {
           <div class="container process">
             <h2>Our Process</h2>
 
-            <content-graphic-lg
-              img-url="assets/graphic-home-discovery.png"
-              preLoadImg={true}
-            >
+            <content-graphic-lg img-url="assets/graphic-home-discovery.png">
               <h3 slot="header">Discovery</h3>
               <p slot="body">
                 We'll help you evaluate your business needs and challenge your
@@ -223,7 +226,7 @@ export class AppHome {
 
             <content-graphic-lg
               img-url="assets/graphic-home-consulting.png"
-              preLoadImg={true}
+              reverse={true}
             >
               <h3 slot="header">Design &amp; User Experience</h3>
               <p slot="body">
@@ -235,10 +238,7 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg
-              img-url="assets/graphic-home-development.png"
-              preLoadImg={true}
-            >
+            <content-graphic-lg img-url="assets/graphic-home-development.png">
               <h3 slot="header">Development</h3>
               <p slot="body">
                 Throw away the development practices of the 1990's and 2000's.
@@ -252,7 +252,7 @@ export class AppHome {
 
             <content-graphic-lg
               img-url="assets/graphic-home-deployment.png"
-              preLoadImg={true}
+              reverse={true}
             >
               <h3 slot="header">Deployment</h3>
               <p slot="body">
@@ -265,10 +265,7 @@ export class AppHome {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg
-              img-url="assets/graphic-home-feedback.png"
-              preLoadImg={true}
-            >
+            <content-graphic-lg img-url="assets/graphic-home-feedback.png">
               <h3 slot="header">User Feedback</h3>
               <p slot="body">
                 The biggest mistake businesses make is to launch a product and
