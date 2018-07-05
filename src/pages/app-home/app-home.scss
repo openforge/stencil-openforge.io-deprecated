@@ -33,104 +33,123 @@ section {
 // section - services
 #services {
   padding-bottom: 0;
-  // temporary hiding content until design is finished for mobile optimizations
-  @include media-breakpoint-down(lg) {
-    display: none;
-  }
+  // @include media-breakpoint-down(md) {
+  //   display: none;
+  // }
 }
 
 .services {
-  p {
-    text-align: center;
-  }
+  margin: 0 auto;
+  max-width: 992px;
 
-  figure {
-    border: 3px solid $orange;
-    border-radius: 3px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    padding: 10px;
-    &:hover,
-    &:focus,
-    &:active {
-      figcaption {
-        color: darken($orange, 10%);
-      }
-    }
-
-    img {
-      max-width: 300px;
-      padding: 0 15px;
-      width: 100%;
-      margin-bottom: 1rem;
-    }
-
-    figcaption {
-      font-family: $font-roboto;
-      font-weight: 700;
-      letter-spacing: 0.1rem;
-      text-transform: uppercase;
+  &--header {
+    padding: 15px;
+    p {
+      margin-bottom: 0;
       text-align: center;
     }
   }
 
-  nav {
-    background: white;
-  }
+  &--tab-panel {
+    text-align: left;
 
-  .nav-tabs {
-    font-weight: bold;
-    width: 100%;
-
-    .nav-link {
-      border-bottom: 5px solid $gray-500;
+    // tab nav
+    nav {
+      background: white;
+      box-shadow: none;
+    }
+    .nav {
+      width: 100%;
+      @include media-breakpoint-down(xs) {
+        // horizontal scroll
+        border-bottom: none;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+    .nav-fill .nav-item {
+      width: 25%;
+      @include media-breakpoint-down(xs) {
+        // horizontal scroll
+        width: initial;
+      }
     }
 
-    .nav-link.active {
-      background-color: $gray-100;
-      border: 5px solid $gray-500;
-      border-bottom: transparent;
-      color: $orange;
-      .fa-plus {
-        display: none;
+    // individual tab
+    .nav-tabs .nav-link {
+      border: none;
+      padding: 0;
+      &:hover {
+        background: rgba($orange, 0.1);
+      }
+
+      // tab content
+      figure {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        margin: 0;
+        @include media-breakpoint-down(xs) {
+          // horizontal scroll
+          width: 150px;
+        }
+        img {
+          max-width: 200px;
+          padding: 15px;
+          width: 100%;
+        }
+        figcaption {
+          border-bottom: 5px solid $gray-500;
+          font-size: 1.2rem;
+          font-weight: bold;
+          line-height: 1.2rem;
+          padding: 15px 10px;
+          width: 100%;
+          @include media-breakpoint-down(xs) {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      // active tab
+      &.active figcaption {
+        background-color: $gray-100;
+        border: 5px solid $gray-500;
+        border-bottom: transparent;
+        color: $orange;
+      }
+      @include media-breakpoint-down(md) {
+        &:first-child.active figcaption {
+          border-left: transparent;
+        }
+        &:last-child.active figcaption {
+          border-right: transparent;
+        }
+      }
+    }
+
+    // tab-panel content
+    .tab-content {
+      background: $gray-100;
+      border-left: 5px solid $gray-500;
+      border-right: 5px solid $gray-500;
+      padding: 5rem;
+      @include media-breakpoint-down(md) {
+        border: none;
+        padding: 3rem 2rem;
+        font-size: 0.85rem;
       }
     }
   }
-
-  .nav-item {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    img {
-      max-width: 200px;
-      width: 100%;
-    }
-  }
-
-  .services-content {
-    background: $gray-100;
-    border-bottom: 5px solid $gray-500;
-    border-left: 5px solid $gray-500;
-    border-right: 5px solid $gray-500;
-    padding: 5rem;
-    overflow: hidden;
-    @include media-breakpoint-down(sm) {
-      display: block;
-    }
-  }
-
-  // temporary hiding content until design is finished for mobile optimizations
-  @include media-breakpoint-down(lg) {
-    display: none;
-  }
 }
 
-// temporary hiding content until design is finished for mobile optimizations
 #cta-about {
   padding-top: 0;
   padding-bottom: 0;
-  @include media-breakpoint-down(lg) {
-    display: none;
-  }
 }
 
 // section - process

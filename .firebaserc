@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "openforge-dev",
+    "production": "openforge-prod"
+  }
+}

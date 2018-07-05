@@ -19,6 +19,9 @@ exports.config = {
       }
     }
   ],
+  copy: [
+    { src: 'robots.txt' }
+  ]
 };
 
 exports.devServer = {

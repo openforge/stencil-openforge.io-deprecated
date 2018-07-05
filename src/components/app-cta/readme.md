@@ -5,26 +5,26 @@
 
 ## Properties
 
+#### hideButton
+
+boolean
+
+
 #### linkUrl
 
 string
 
 
-#### match
-
-
-
-
 ## Attributes
+
+#### hide-button
+
+boolean
+
 
 #### link-url
 
 string
-
-
-#### match
-
-
 
 
 
