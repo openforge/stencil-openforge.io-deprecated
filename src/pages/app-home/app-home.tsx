@@ -6,7 +6,12 @@ import { Component } from '@stencil/core';
 })
 export class AppHome {
   componentDidLoad() {
+    let element;
     let hrefArray;
+
+    element = document.querySelector('.home .hero');
+    element.style.backgroundImage = `url('assets/bg-hero-team.png')`;
+
     try {
       hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
       hrefArray.forEach(anchor => {
@@ -25,19 +30,32 @@ export class AppHome {
     }
   }
 
+  scrollToForm() {
+    const form = document.getElementById('services');
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
-      <div>
+      <div class="home">
         {/* header - hero */}
-        <app-hero-home>
-          <span slot="header">We are Thinkers. Makers. Doers.</span>
-          <span slot="body">
-            Work with our team of highly skilled designers, developers, and
-            consultants to develop solutions and processes that fit your
-            business requirements.
-          </span>
-          <span slot="link">Let's Get Started</span>
-        </app-hero-home>
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-12 col-lg-6">
+                <h2>
+                  WE BUILD APPS.
+                  <button
+                    onClick={this.scrollToForm.bind(this)}
+                    class="btn btn-primary"
+                  >
+                    LEARN MORE
+                  </button>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - services */}
         <section id="services" class="bg-gray">
@@ -113,7 +131,71 @@ export class AppHome {
         </section>
 
         {/* section - our work */}
-        <section id="our-work" class="our-work" />
+        <section id="our-work" class="bg-white">
+          <div class="container our-work">
+            <div class="our-work--header">
+              <h2>Check Out Our Work</h2>
+            </div>
+            <div class="content">
+              <div class="work">
+                <h3>LoudCloud</h3>
+                <app-img
+                  class=""
+                  src="assets/graphic-home-loudcloud.png"
+                  alt="loudcloud-app-image"
+                />
+                <app-img
+                  class=""
+                  src="assets/graphic-apple-appstore.png"
+                  alt="apple-app-store-icon"
+                />
+                <app-img
+                  class=""
+                  src="assets/graphic-google-googleplaystore.png"
+                  alt="google-play-store-icon"
+                />
+              </div>
+
+              <div class="work">
+                <h3>The Voyage</h3>
+                <app-img
+                  class=""
+                  src="assets/graphic-home-voyage.png"
+                  alt="voyage-app-image"
+                />
+                <app-img
+                  class=""
+                  src="assets/graphic-apple-appstore.png"
+                  alt="apple-app-store-icon"
+                />
+                <app-img
+                  class=""
+                  src="assets/graphic-google-googleplaystore.png"
+                  alt="google-play-store-icon"
+                />
+              </div>
+
+              <div class="work">
+                <h3>DigiThermo</h3>
+                <app-img
+                  class=""
+                  src="assets/graphic-home-digithermo.png"
+                  alt="digithermo-app-image"
+                />
+                <app-img
+                  class=""
+                  src="assets/graphic-apple-appstore.png"
+                  alt="apple-app-store-icon"
+                />
+                <app-img
+                  class=""
+                  src="assets/graphic-google-googleplaystore.png"
+                  alt="google-play-store-icon"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* aside - cta */}
         <app-cta link-url="/about" id="cta-about">
