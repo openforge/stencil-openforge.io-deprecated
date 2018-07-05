@@ -302,43 +302,51 @@ export class AppHome {
               to use the program that best fits your app's needs.
             </p>
 
-            <div class="partners--logos">
-              <img
+            <div class="partners--trusted">
+              <app-img
                 class="img-fluid"
-                src="assets/logo-ionic-black.png"
-                alt="Ionic"
+                src="assets/logo-ionic-trusted-black.png"
+                alt="Ionic Trusted Partner"
               />
-              <img
+            </div>
+
+            <div class="partners--logos">
+              <app-img
                 class="img-fluid"
                 src="assets/logo-angular-black.png"
                 alt="Angular"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-capacitor-black.png"
                 alt="Capacitor"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-stencil-black.png"
                 alt="Stencil"
               />
-              <img
+              <app-img
+                class="img-fluid"
+                src="assets/logo-eli-lu-entertainment-black.png"
+                alt="Eli and Lu"
+              />
+              <app-img
                 class="img-fluid"
                 src="assets/logo-mysql-black.png"
                 alt="Mysql"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-mongodb-black.png"
                 alt="MongoDB"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-nodejs-black.png"
                 alt="Node JS"
               />
-              <img
+              <app-img
                 class="img-fluid"
                 src="assets/logo-aws-black.png"
                 alt="AWS"
