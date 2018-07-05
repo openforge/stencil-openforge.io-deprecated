@@ -44,7 +44,7 @@ export class AppHome {
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-12 col-lg-6">
                 <h2>
-                  WE BUILD APPS.
+                  WE ARE THINKERS, MAKERS, &amp; DOERS.
                   <button
                     onClick={this.scrollToForm.bind(this)}
                     class="btn btn-primary"
