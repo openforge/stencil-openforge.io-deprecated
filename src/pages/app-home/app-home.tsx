@@ -84,21 +84,16 @@ export class AppHome {
                     OpenForge is a world-wide brand in Mobile and Web
                     Application software development. Our team of experienced
                     software engineers specialize in a variety of frameworks and
-                    technologies such as{' '}
+                    technologies such as
                     <a href="https://ionicframework.com/">
                       {' '}
-                      The Ionic Framekwork
+                      The Ionic Framekwork{' '}
                     </a>,
                     <a href="https://angular.io/"> Angular (Google)</a>,
                     <a href="https://reactjs.org/"> React.js (Facebook)</a>,
                     <a href="https://nodejs.org/en/"> Node.js</a>,
                     <a href="https://www.mongodb.com/"> MongoDB</a>, and many
                     more!
-                    <br />
-                    <br />
-                    If your company needs trusted Software Developers
-                    experienced in Mobile and Web Technologies, look no further
-                    than our team here at OpenForge.
                   </p>
                 </div>
               </div>
@@ -113,9 +108,10 @@ export class AppHome {
                 <div class="card--text">
                   <h3>UI/UX Design</h3>
                   <p>
-                    The OpenForge UI/UX Discovery Process is specifically
-                    designed to increase ROI, user engagement, and operational
-                    efficiency. We enhance our Design process by using industry
+                    The OpenForge Discovery &amp; Design Process is specifically
+                    engineered to increase ROI, user engagement, and get you
+                    results. Our unique process has been proven to keep projects
+                    on-time and on-budget every step of the way by utilizing
                     leading technologies such as
                     <a href="https://www.adobe.com/products/photoshop.html">
                       {' '}
@@ -123,12 +119,6 @@ export class AppHome {
                     </a>,
                     <a href="https://www.sketchapp.com/"> Sketch App</a>, and
                     <a href="https://www.goabstract.com/"> Abstract</a>.
-                    <br />
-                    <br />
-                    Our unique process guarantees that requirements are
-                    understood by all parties involved, and has been proven to
-                    keep the development lifecycle on-time and on-budget every
-                    step of the way.
                   </p>
                 </div>
               </div>
@@ -143,19 +133,12 @@ export class AppHome {
                 <div class="card--text">
                   <h3>Consulting</h3>
                   <p>
-                    We offer a wide variety of services including Team Training,
-                    CTO Representation, UI/UX Design Audits, and Software
-                    Process Improvement (SPI) Consulting.
-                    <br />
-                    <br />
-                    If you are looking to increase the effectiveness of your
-                    User Experience, increase your team's efficiency, or bring
-                    your product to market on-time and on-schedule, we are here
-                    to help.
-                    <br />
-                    <br />
-                    Contact our sales team now to learn how to enhance your
-                    productivity while decreasing operational costs.
+                    We offer a wide variety of services including Training, CTO
+                    Representation, Design Audits, and Software Process
+                    Improvement (SPI) Consulting. If you are looking to increase
+                    your team's efficiency or bring your product to market
+                    on-time and on-schedule, our team is here to help you
+                    succeed.
                   </p>
                 </div>
               </div>
