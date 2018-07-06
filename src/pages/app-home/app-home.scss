@@ -215,6 +215,11 @@
       max-width: 800px;
     }
 
+    &--trusted {
+      margin: 0 auto;
+      max-width: 45%;
+    }
+
     &--logos {
       display: flex;
       flex-wrap: wrap;
@@ -222,7 +227,7 @@
       margin: 0 auto 2rem;
       max-width: 1000px;
 
-      img {
+      app-img {
         flex-shrink: 4;
         height: 100%;
         max-width: 25%;
