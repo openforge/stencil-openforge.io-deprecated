@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
@@ -6,27 +6,19 @@ import { Component } from '@stencil/core';
 })
 export class AppHome {
   componentDidLoad() {
+    this.handleImage();
+  }
+
+  @Listen('window:resize')
+  handleImage() {
     let element;
-    let hrefArray;
-
     element = document.querySelector('.home .hero');
-    element.style.backgroundImage = `url('assets/bg-hero-team.png')`;
-
-    try {
-      hrefArray = Array.from(document.querySelectorAll('a[href^="#"]'));
-      hrefArray.forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const element = document.querySelector(this.getAttribute('href'));
-          element &&
-            element.scrollIntoView({
-              block: 'start',
-              behavior: 'smooth',
-            });
-        });
-      });
-    } catch (e) {
-      console.error('caught error componentDidLoad app-home', e);
+    if (window.innerWidth < 576) {
+      element.style.backgroundImage = `url('assets/bg-hero-team-sm.png')`;
+    } else if (window.innerWidth < 992) {
+      element.style.backgroundImage = `url('assets/bg-hero-team-md.png')`;
+    } else {
+      element.style.backgroundImage = `url('assets/bg-hero-team-lg.png')`;
     }
   }
 
@@ -42,16 +34,19 @@ export class AppHome {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-12 col-lg-6">
-                <h2>
-                  WE ARE THINKERS, MAKERS, &amp; DOERS.
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    LEARN MORE
-                  </button>
-                </h2>
+              <div class="col-sm-12 col-md-12 col-lg-4">
+                <h2>WE BUILD APPS.</h2>
+                <p>
+                  Work with our team of highly skilled designers, developers,
+                  and consultants to develop solutions and process that fit your
+                  business requirements.
+                </p>
+                <button
+                  onClick={this.scrollToForm.bind(this)}
+                  class="btn btn-primary"
+                >
+                  LEARN MORE
+                </button>
               </div>
             </div>
           </div>

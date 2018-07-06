@@ -1,5 +1,5 @@
 .home {
-  // hero
+  // header
   .hero {
     background-position: top center;
     background-size: cover;
@@ -8,15 +8,32 @@
     .container,
     .row {
       height: 100%;
+      @include media-breakpoint-down(md) {
+        text-align: center;
+      }
     }
 
     h2 {
       color: $white;
-      font-size: 3rem;
-      margin-top: 30rem;
-      font-weight: bolder;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(md) {
+        margin-top: 25rem;
+      }
       @include media-breakpoint-down(sm) {
-        font-size: 2rem;
+        margin-top: 20rem;
+        font-size: 3rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(md) {
+        display: none;
       }
     }
   }
