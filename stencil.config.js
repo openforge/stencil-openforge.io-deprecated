@@ -1,5 +1,6 @@
 const sass = require('@stencil/sass');
 exports.config = {
+  enableCache: false,
   plugins: [
     sass({
       injectGlobalPaths: [
