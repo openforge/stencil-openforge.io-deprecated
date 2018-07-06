@@ -289,20 +289,6 @@ export class AppHome {
           </div>
         </section>
 
-        {/* section - persepectives */}
-        <section class="bg-black" id="perspectives">
-          <div class="container perspectives">
-            <img class="img-fluid" src="assets/graphic-home-icons.png" alt="" />
-            <h2>We Are Powered by Multiple Perspectives</h2>
-            <p>
-              Our individual skills, backgrounds, and life experiences have
-              shaped us into the company that we are today. Maintaining a
-              diverse team helps us to perform better, attract top talent, and
-              make smarter decisions.
-            </p>
-          </div>
-        </section>
-
         {/* section - partners */}
         <section>
           <div class="container partners">
