@@ -119,6 +119,7 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
+      href: '/opportunities',
     },
   ];
 
@@ -131,6 +132,7 @@ export class AppAbout {
     let element;
     try {
       element = document.querySelector('header.hero');
+      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
     } catch (e) {
       console.log('app-about-header undefined', e);
     }
