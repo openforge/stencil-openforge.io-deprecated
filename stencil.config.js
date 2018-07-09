@@ -13,6 +13,7 @@ exports.config = {
     {
       type: 'www',
       serviceWorker: {
+        swSrc: 'sw.js',
         globPatterns: [
           '**/*.{html,js,css,json,ico,png,es5}'
         ]
