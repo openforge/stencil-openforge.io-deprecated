@@ -82,7 +82,7 @@ export class AppHome {
                     technologies such as
                     <a href="https://ionicframework.com/">
                       {' '}
-                      The Ionic Framekwork{' '}
+                      The Ionic Framework{' '}
                     </a>,
                     <a href="https://angular.io/"> Angular (Google)</a>,
                     <a href="https://reactjs.org/"> React.js (Facebook)</a>,
