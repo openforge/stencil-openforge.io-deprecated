@@ -196,7 +196,7 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
+        <app-cta link-url="/contact">
           <span slot="header">Want to work with us?</span>
           <span slot="link">Get in touch</span>
         </app-cta>
