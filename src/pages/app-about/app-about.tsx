@@ -131,7 +131,7 @@ export class AppAbout {
   handleImage() {
     let element;
     try {
-      element = document.querySelector('header.hero');
+      element = document.querySelector('.about .hero');
       element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
     } catch (e) {
       console.log('app-about-header undefined', e);
