@@ -1,26 +1,11 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  componentDidLoad() {
-    this.handleImage();
-  }
-
-  @Listen('window:resize')
-  handleImage() {
-    let element;
-    element = document.querySelector('.home .hero');
-    if (window.innerWidth < 576) {
-      element.style.backgroundImage = `url('assets/bg-hero-team-sm.png')`;
-    } else if (window.innerWidth < 992) {
-      element.style.backgroundImage = `url('assets/bg-hero-team-md.png')`;
-    } else {
-      element.style.backgroundImage = `url('assets/bg-hero-team-lg.png')`;
-    }
-  }
+  componentDidLoad() {}
 
   scrollToForm() {
     const form = document.getElementById('services');
