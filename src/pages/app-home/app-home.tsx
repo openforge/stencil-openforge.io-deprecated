@@ -1,26 +1,11 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  componentDidLoad() {
-    this.handleImage();
-  }
-
-  @Listen('window:resize')
-  handleImage() {
-    let element;
-    element = document.querySelector('.home .hero');
-    if (window.innerWidth < 576) {
-      element.style.backgroundImage = `url('assets/bg-hero-team-sm.png')`;
-    } else if (window.innerWidth < 992) {
-      element.style.backgroundImage = `url('assets/bg-hero-team-md.png')`;
-    } else {
-      element.style.backgroundImage = `url('assets/bg-hero-team-lg.png')`;
-    }
-  }
+  componentDidLoad() {}
 
   scrollToForm() {
     const form = document.getElementById('services');
@@ -31,26 +16,15 @@ export class AppHome {
     return (
       <div class="home">
         {/* header - hero */}
-        <header class="hero">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-sm-12 col-md-12 col-lg-4">
-                <h2>WE BUILD APPS.</h2>
-                <p>
-                  Work with our team of highly skilled designers, developers,
-                  and consultants to develop solutions and process that fit your
-                  business requirements.
-                </p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
-                  LEARN MORE
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <app-hero-home>
+          <span slot="header">We are Thinkers. Makers. Doers.</span>
+          <span slot="body">
+            Work with our team of highly skilled designers, developers, and
+            consultants to develop solutions and process that fit your
+            business requirements.
+          </span>
+          <span slot="link">Let's Get Started</span>
+        </app-hero-home>
 
         {/* section - services */}
         <section id="services" class="bg-gray">
