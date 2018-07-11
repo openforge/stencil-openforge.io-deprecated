@@ -31,26 +31,15 @@ export class AppHome {
     return (
       <div class="home">
         {/* header - hero */}
-        <header class="hero">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-sm-12 col-md-12 col-lg-4">
-                <h2>WE BUILD APPS.</h2>
-                <p>
-                  Work with our team of highly skilled designers, developers,
-                  and consultants to develop solutions and process that fit your
-                  business requirements.
-                </p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
-                  LEARN MORE
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <app-hero-home>
+          <span slot="header">We are Thinkers. Makers. Doers.</span>
+          <span slot="body">
+            Work with our team of highly skilled designers, developers, and
+            consultants to develop solutions and process that fit your
+            business requirements.
+          </span>
+          <span slot="link">Let's Get Started</span>
+        </app-hero-home>
 
         {/* section - services */}
         <section id="services" class="bg-gray">
