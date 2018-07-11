@@ -80,15 +80,26 @@ export class AppHome {
                     Application software development. Our team of experienced
                     software engineers specialize in a variety of frameworks and
                     technologies such as
-                    <a href="https://ionicframework.com/">
+                    <a href="https://ionicframework.com/" target="_blank">
                       {' '}
                       The Ionic Framework{' '}
                     </a>,
-                    <a href="https://angular.io/"> Angular (Google)</a>,
-                    <a href="https://reactjs.org/"> React.js (Facebook)</a>,
-                    <a href="https://nodejs.org/en/"> Node.js</a>,
-                    <a href="https://www.mongodb.com/"> MongoDB</a>, and many
-                    more!
+                    <a href="https://angular.io/" target="_blank">
+                      {' '}
+                      Angular (Google)
+                    </a>,
+                    <a href="https://reactjs.org/" target="_blank">
+                      {' '}
+                      React.js (Facebook)
+                    </a>,
+                    <a href="https://nodejs.org/en/" target="_blank">
+                      {' '}
+                      Node.js
+                    </a>,
+                    <a href="https://www.mongodb.com/" target="_blank">
+                      {' '}
+                      MongoDB
+                    </a>, and many more!
                   </p>
                 </div>
               </div>
@@ -108,12 +119,21 @@ export class AppHome {
                     results. Our unique process has been proven to keep projects
                     on-time and on-budget every step of the way by utilizing
                     leading technologies such as
-                    <a href="https://www.adobe.com/products/photoshop.html">
+                    <a
+                      href="https://www.adobe.com/products/photoshop.html"
+                      target="_blank"
+                    >
                       {' '}
                       Adobe Photoshop
                     </a>,
-                    <a href="https://www.sketchapp.com/"> Sketch App</a>, and
-                    <a href="https://www.goabstract.com/"> Abstract</a>.
+                    <a href="https://www.sketchapp.com/" target="_blank">
+                      {' '}
+                      Sketch App
+                    </a>, and
+                    <a href="https://www.goabstract.com/" target="_blank">
+                      {' '}
+                      Abstract
+                    </a>.
                   </p>
                 </div>
               </div>
