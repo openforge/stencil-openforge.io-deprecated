@@ -131,7 +131,7 @@ export class AppAbout {
   handleImage() {
     let element;
     try {
-      element = document.querySelector('header.hero');
+      element = document.querySelector('.about .hero');
       element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
     } catch (e) {
       console.log('app-about-header undefined', e);
@@ -196,7 +196,7 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="mailto:hello@openforge.io">
+        <app-cta link-url="/contact">
           <span slot="header">Want to work with us?</span>
           <span slot="link">Get in touch</span>
         </app-cta>

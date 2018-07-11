@@ -219,8 +219,15 @@ export class AppOpportunities {
                 From our work to our interview process, we break the norm. We
                 believe in Open Source contributions; so part of your interview
                 assignment will be exactly that - build out a simple (open
-                source) <a href="https://ionicframework.com/">Ionic</a> or{' '}
-                <a href="https://reactjs.org/"> React App!</a>
+                source){' '}
+                <a href="https://ionicframework.com/" target="_blank">
+                  Ionic
+                </a>{' '}
+                or{' '}
+                <a href="https://reactjs.org/" target="_blank">
+                  {' '}
+                  React App!
+                </a>
               </p>
             </content-graphic-lg>
 
@@ -283,10 +290,13 @@ export class AppOpportunities {
               <h3 slot="header">Reputation is Everything.</h3>
               <p slot="body">
                 Because we value our partnerships. As a trusted partner of the{' '}
-                <a href="https://ionicframework.com/"> Ionic Team </a> our
-                clients rely on us to provide enterprise quality applications
-                for companies of all sizes; we need to make sure you're up to
-                the task!
+                <a href="https://ionicframework.com/" target="_blank">
+                  {' '}
+                  Ionic Team{' '}
+                </a>{' '}
+                our clients rely on us to provide enterprise quality
+                applications for companies of all sizes; we need to make sure
+                you're up to the task!
               </p>
             </content-graphic-lg>
 
