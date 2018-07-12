@@ -141,7 +141,10 @@ export class AppOpportunities {
       }
     }
 
-    // this.formValues.formErrors.fileValid &&
+    const isFileValid =
+      this.formValues.formErrors.fileValid || this.fileSizeErrorShown;
+
+    isFileValid &&
     this.formValues.formErrors.nameValid &&
     this.formValues.formErrors.emailValid &&
     this.formValues.formErrors.phoneValid &&
@@ -163,16 +166,19 @@ export class AppOpportunities {
 
     this.formData.delete('files'); // Just in case user changed the file
 
+    this.formValues.formErrors.fileValid = e.target.checkValidity();
     if (file && file.size > this.maxFileSize) {
-      console.log('File.size too large', file.size);
       this.fileSizeErrorShown = true;
       this.fileError =
         'Your Resume/CV file is too large. Your application will be submitted without it.';
-
+      this.validateField(null);
       return;
     }
+
+    this.fileSizeErrorShown = false;
     this.fileError = '';
     this.formData.append('files', files[0]);
+    this.validateField(null);
   }
 
   async handleSubmit(e) {
