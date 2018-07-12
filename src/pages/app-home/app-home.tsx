@@ -7,10 +7,6 @@ import { Component } from '@stencil/core';
 export class AppHome {
   componentDidLoad() {}
 
-  scrollToForm() {
-    const form = document.getElementById('services');
-    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  }
 
   render() {
     return (
