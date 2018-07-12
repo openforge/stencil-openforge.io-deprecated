@@ -54,7 +54,7 @@ export class AppContact {
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value } = event.detail;
+    const { field, value, target } = event.detail;
     
     this.formValues[field] = value;
 
@@ -62,6 +62,7 @@ export class AppContact {
   }
 
   validateField(e) {
+    console.log('validating e? ', e);
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
