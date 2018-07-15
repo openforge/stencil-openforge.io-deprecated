@@ -7,7 +7,6 @@ import { Component } from '@stencil/core';
 export class AppHome {
   componentDidLoad() {}
 
-
   render() {
     return (
       <div class="home">
@@ -16,8 +15,8 @@ export class AppHome {
           <span slot="header">We are Thinkers. Makers. Doers.</span>
           <span slot="body">
             Work with our team of highly skilled designers, developers, and
-            consultants to develop solutions and process that fit your
-            business requirements.
+            consultants to develop solutions and process that fit your business
+            requirements.
           </span>
           <span slot="link">Let's Get Started</span>
         </app-hero-home>

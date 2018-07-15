@@ -19,39 +19,26 @@ export class OpenForgeApp {
    * and serve the fresh content
    */
 
-  mainEl: HTMLElement;
-
-  componentDidLoad() {
-    console.log('OpenForge Loaded Successfully!');
-    try {
-      this.mainEl = document.querySelector('main');
-    } catch (e) {
-      console.error('caught error componentDidLoad open-forge-app', e);
-    }
-  }
-
   render() {
     return (
       <div>
         <app-nav-header />
-        <main>
-          <stencil-router>
-            <stencil-route-switch scrollTopOffset={0}>
-              <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route
-                url="/contact"
-                component="app-contact"
-                exact={true}
-              />
-              <stencil-route
-                url="/opportunities"
-                component="app-opportunities"
-                exact={true}
-              />
-              <stencil-route url="/about" component="app-about" exact={true} />
-            </stencil-route-switch>
-          </stencil-router>
-        </main>
+        <stencil-router scrollTopOffset={0}>
+          <stencil-route-switch>
+            <stencil-route url="/" component="app-home" exact={true} />
+            <stencil-route
+              url="/contact"
+              component="app-contact"
+              exact={true}
+            />
+            <stencil-route
+              url="/opportunities"
+              component="app-opportunities"
+              exact={true}
+            />
+            <stencil-route url="/about" component="app-about" exact={true} />
+          </stencil-route-switch>
+        </stencil-router>
         <app-footer />
       </div>
     );

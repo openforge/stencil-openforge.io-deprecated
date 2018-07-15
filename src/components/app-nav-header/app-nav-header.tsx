@@ -1,37 +1,9 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 @Component({
   tag: 'app-nav-header',
   styleUrl: 'app-nav-header.scss',
 })
 export class AppNavHeader {
-  mainEl: HTMLElement;
-  navbarEl: HTMLElement;
-  isScrolled = false;
-
-  componentDidLoad() {
-    try {
-      this.mainEl = document.querySelector('main');
-      this.navbarEl = document.querySelector('nav.navbar');
-    } catch (e) {
-      console.error('caught error ', e);
-    }
-  }
-
-  @Listen('window:scroll')
-  handleScroll() {
-    this.setIsScrolled();
-    if (this.isScrolled && !this.navbarEl.classList.contains('background')) {
-      // this.navbarEl.classList.add('background');
-    } else if (!this.isScrolled) {
-      // this.navbarEl.classList.remove('background');
-    }
-  }
-
-  setIsScrolled() {
-    const dimensions = this.mainEl.getBoundingClientRect();
-    this.isScrolled = dimensions.top < 0;
-  }
-
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
