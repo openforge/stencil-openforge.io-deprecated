@@ -91,3 +91,12 @@ The project uses [husky](https://github.com/typicode/husky) for git hook integat
 For every commit, it will ensure files are linted and that the code is formatted to `prettier`'s configuration. It will also confirm that the proposed commit message matches the defined guidelines. If any error occurs in the process, it will **stop and prevent** the commit until the issues are fixed.
 
 If a developer went through providing all the information during a `npm run cz` only to find that there were issues with their commit. They may fix them and instruct commitizen to try the commit again with `npm run cz -- --retry`
+
+
+## Deployment
+
+```npm run build```
+Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase
+
+```npm run firebase:deploy:dev``` 
+
