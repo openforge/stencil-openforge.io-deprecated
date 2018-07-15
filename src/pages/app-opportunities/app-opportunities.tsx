@@ -520,6 +520,7 @@ export class AppOpportunities {
             </div>
           )}
         </section>
+        <app-footer />
       </div>
     );
   }

@@ -346,6 +346,7 @@ export class AppHome {
           <span slot="header">Ready to work with us?</span>
           <span slot="link">Get in touch</span>
         </app-cta>
+        <app-footer />
       </div>
     );
   }

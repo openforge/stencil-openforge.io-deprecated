@@ -55,7 +55,7 @@ export class AppContact {
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value, target } = event.detail;
-    
+
     this.formValues[field] = value;
 
     this.validateField(target);
@@ -362,6 +362,7 @@ export class AppContact {
             ) : null}
           </div>
         </section>
+        <app-footer />
       </div>
     );
   }

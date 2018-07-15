@@ -20,6 +20,7 @@ exports.config = {
       }
     }
   ],
+  globalStyle: 'src/styles/main.scss',
   copy: [
     { src: 'robots.txt' }
   ]
