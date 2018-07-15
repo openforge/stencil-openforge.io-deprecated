@@ -32,9 +32,11 @@ The OpenForge.io website is built using a combination of [Stencil.js](https://st
 
 ```npm install```
 
+```npm run build```
+
 ```npm run dev --es5``` (firefox)
 
-```npm start``` or ```npm run dev```
+```npm run dev```
 
 
 ### File Structure

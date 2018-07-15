@@ -13,14 +13,11 @@
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "sass-lint": "node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q",
     "serve": "stencil-dev-server",
-    "start": "sd concurrent \"stencil build --dev --watch\" & node index.js",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "cypress": "cypress open",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "st:generate": "node scripts/st-generate.js",
-    "heroku-postbuild": "npm run build",
-    "serve:heroku": "http-server www",
     "prepublish": "stencil build --prod",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
@@ -71,7 +68,7 @@
   "author": "OpenForge Team",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/openforge/main-website"
+    "url": "https://github.com/openforge/OPENFORGE.IO/issues"
   },
   "homepage": "https://www.openforge.io",
   "jest": {
