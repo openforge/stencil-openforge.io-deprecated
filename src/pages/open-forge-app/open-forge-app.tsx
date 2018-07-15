@@ -1,9 +1,6 @@
-import { Component, Prop } from '@stencil/core';
-import { ActiveRouter } from '@stencil/router';
-
+import '@stencil/router';
+import { Component } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
-
-import { gtag } from '../../shared/gtag';
 
 polyfill();
 
@@ -22,18 +19,10 @@ export class OpenForgeApp {
    * and serve the fresh content
    */
 
-  @Prop({ context: 'activeRouter' })
-  activeRouter: ActiveRouter;
-  unsubscribe: () => void;
   mainEl: HTMLElement;
-
-  componentDidUnload() {
-    this.unsubscribe();
-  }
 
   componentDidLoad() {
     console.log('OpenForge Loaded Successfully!');
-    gtag('js', new Date());
     try {
       this.mainEl = document.querySelector('main');
     } catch (e) {
@@ -46,16 +35,21 @@ export class OpenForgeApp {
       <div>
         <app-nav-header />
         <main>
-          <stencil-router scrollTopOffset={0}>
-            <stencil-route url="/" component="app-home" exact={true} />
-            <stencil-route url="/contact" component="app-contact" />
-            {/* <stencil-route url="/services" component="app-services" /> */}
-            <stencil-route
-              url="/opportunities"
-              component="app-opportunities"
-              exact={true}
-            />
-            <stencil-route url="/about" component="app-about" />
+          <stencil-router>
+            <stencil-route-switch scrollTopOffset={0}>
+              <stencil-route url="/" component="app-home" exact={true} />
+              <stencil-route
+                url="/contact"
+                component="app-contact"
+                exact={true}
+              />
+              <stencil-route
+                url="/opportunities"
+                component="app-opportunities"
+                exact={true}
+              />
+              <stencil-route url="/about" component="app-about" exact={true} />
+            </stencil-route-switch>
           </stencil-router>
         </main>
         <app-footer />
