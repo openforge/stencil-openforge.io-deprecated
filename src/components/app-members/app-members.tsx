@@ -13,11 +13,7 @@ export class AppMembers {
         {this.members.map(member => (
           <figure class="member">
             <stencil-route-link url="/opportunities" exact={true}>
-              <app-img
-                class="member--image"
-                src={member.image}
-                alt={member.name}
-              />
+              <img class="member--image" src={member.image} alt={member.name} />
               <div class="member--overlay">
                 <figcaption class="member--text">
                   <span class="">{member.name}</span>

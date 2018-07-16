@@ -20,7 +20,7 @@ export class ContentGraphic {
         }}
       >
         <div class="col-sm-12 col-md-4">
-          <app-img class="img-fluid" src={this.imgUrl} alt="" />
+          <img class="img-fluid" src={this.imgUrl} alt="" />
         </div>
         <div class="content col-sm-12 col-md-7">
           <slot name="header" />
