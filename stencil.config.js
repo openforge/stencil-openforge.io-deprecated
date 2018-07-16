@@ -6,6 +6,7 @@ exports.config = {
       injectGlobalPaths: [
         'src/styles/_variables.scss',
         'src/styles/_mixins.scss',
+        'src/styles/main.scss',
       ]
     })
   ],
@@ -20,7 +21,6 @@ exports.config = {
       }
     }
   ],
-  globalStyle: 'src/styles/main.scss',
   copy: [
     { src: 'robots.txt' }
   ]

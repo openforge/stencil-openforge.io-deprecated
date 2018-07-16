@@ -1,4 +1,3 @@
-import '@stencil/router';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -46,7 +45,6 @@ export class AppNavHeader {
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/about"
-                  exact={true}
                   anchorClass="nav-link"
                   activeClass="active"
                 >
@@ -56,7 +54,6 @@ export class AppNavHeader {
               {/* <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/services"
-                  exact={true}
                   anchorClass="nav-link"
                   activeClass="active"
                 >
@@ -66,7 +63,6 @@ export class AppNavHeader {
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/contact"
-                  exact={true}
                   anchorClass="nav-link"
                   activeClass="active"
                 >
@@ -76,7 +72,6 @@ export class AppNavHeader {
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/opportunities"
-                  exact={true}
                   anchorClass="nav-link"
                   activeClass="active"
                 >
