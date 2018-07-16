@@ -100,43 +100,6 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppHeader {
-      'backgroundUrl': string;
-      'hideButton': boolean;
-      'linkUrl': string;
-    }
-  }
-
-  interface HTMLAppHeaderElement extends StencilComponents.AppHeader, HTMLStencilElement {}
-
-  var HTMLAppHeaderElement: {
-    prototype: HTMLAppHeaderElement;
-    new (): HTMLAppHeaderElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-header': HTMLAppHeaderElement;
-  }
-  interface ElementTagNameMap {
-    'app-header': HTMLAppHeaderElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-header': JSXElements.AppHeaderAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppHeaderAttributes extends HTMLAttributes {
-      'backgroundUrl'?: string;
-      'hideButton'?: boolean;
-      'linkUrl'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface AppHeroHome {
       'textNoWrap': boolean;
     }

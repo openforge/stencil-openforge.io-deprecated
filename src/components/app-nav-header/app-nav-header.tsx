@@ -1,4 +1,6 @@
+import '@stencil/router';
 import { Component } from '@stencil/core';
+
 @Component({
   tag: 'app-nav-header',
   styleUrl: 'app-nav-header.scss',
