@@ -1,4 +1,4 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-about',
@@ -122,32 +122,6 @@ export class AppAbout {
       href: '/opportunities',
     },
   ];
-
-  componentDidLoad() {
-    this.handleImage();
-  }
-
-  @Listen('window:resize')
-  handleImage() {
-    let element;
-    try {
-      element = document.querySelector('.about .hero');
-      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-    } catch (e) {
-      console.log('app-about-header undefined', e);
-    }
-
-    if (window.innerWidth < 576) {
-      // small
-      element.style.backgroundImage = `url('assets/bg-hero-icons-sm.jpg')`;
-    } else if (window.innerWidth < 992) {
-      // medium
-      element.style.backgroundImage = `url('assets/bg-hero-icons-md.jpg')`;
-    } else {
-      // large
-      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-    }
-  }
 
   scrollToForm() {
     const form = document.getElementById('about');
