@@ -6,6 +6,7 @@ exports.config = {
       injectGlobalPaths: [
         'src/styles/_variables.scss',
         'src/styles/_mixins.scss',
+        'src/styles/main.scss',
       ]
     })
   ],
