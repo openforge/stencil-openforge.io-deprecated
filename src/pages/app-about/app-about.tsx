@@ -1,4 +1,5 @@
 import { Component, Listen } from '@stencil/core';
+import { gaPage, gaEvent } from '../../shared/google-analytics';
 
 @Component({
   tag: 'app-about',
@@ -124,6 +125,7 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
+    gaPage('About');
     this.handleImage();
   }
 
@@ -150,6 +152,7 @@ export class AppAbout {
   }
 
   scrollToForm() {
+    gaEvent('About', 'Scroll to form', 'Scroll to form');
     const form = document.getElementById('about');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }

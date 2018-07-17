@@ -1,4 +1,5 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
+import { gaPage, gaEvent } from '../../shared/google-analytics';
 
 @Component({
   tag: 'app-opportunities',
@@ -53,6 +54,7 @@ export class AppOpportunities {
   };
 
   componentDidLoad() {
+    gaPage('Opportunities');
     this.resetFormValues();
     let element;
     element = document.querySelector('.opportunities .hero');
@@ -159,6 +161,7 @@ export class AppOpportunities {
   async handleSubmit(e) {
     e.preventDefault();
 
+    gaEvent('Opportunities', 'Submit form', 'Submit form');
     this.formValues['message'] = e.target.message.value;
 
     for (const value in this.formValues) {
@@ -185,6 +188,7 @@ export class AppOpportunities {
       document.getElementById('apply').scrollIntoView({ block: 'start' });
     } catch (error) {
       console.log('Error', error);
+      gaEvent('Opportunities', 'Error', 'Submit form', error);
     }
   }
 

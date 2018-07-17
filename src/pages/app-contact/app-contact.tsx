@@ -1,4 +1,5 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
+import { gaPage, gaEvent } from '../../shared/google-analytics';
 
 @Component({
   tag: 'app-contact',
@@ -45,6 +46,7 @@ export class AppContact {
   };
 
   componentDidLoad() {
+    gaPage('Contact');
     this.resetFormValues();
     let element;
     element = document.querySelector('.contact .hero');
@@ -55,7 +57,7 @@ export class AppContact {
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value, target } = event.detail;
-    
+
     this.formValues[field] = value;
 
     this.validateField(target);
@@ -128,6 +130,7 @@ export class AppContact {
   async handleSubmit(event) {
     event.preventDefault();
 
+    gaEvent('Contact', 'Submit form', 'Submit form');
     try {
       this.formSubmitting = true;
       await fetch(
@@ -152,6 +155,7 @@ export class AppContact {
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
     } catch (error) {
       console.log('Error', error);
+      gaEvent('Contact', 'Error', 'Submit form', error);
     }
   }
 
@@ -181,8 +185,8 @@ export class AppContact {
   }
 
   scrollToForm() {
+    gaEvent('Contact', 'Scroll to form', 'Scroll to form');
     const form = document.getElementById('second-content');
-
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 

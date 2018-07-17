@@ -8,7 +8,7 @@ import {
 
 import { polyfill } from 'smoothscroll-polyfill';
 
-import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
+import { initGa, gtag, GA_TRACKING_ID } from '../../shared/google-analytics';
 
 polyfill();
 
@@ -50,6 +50,8 @@ export class OpenForgeApp {
   }
 
   componentDidLoad() {
+    initGa();
+
     gtag('js', new Date());
     try {
       this.mainEl = document.querySelector('main');

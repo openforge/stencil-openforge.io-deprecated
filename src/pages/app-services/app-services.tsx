@@ -1,10 +1,15 @@
 import { Component } from '@stencil/core';
+import { gaPage } from '../../shared/google-analytics';
 
 @Component({
   tag: 'app-services',
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
+  componentDidLoad() {
+    gaPage('Services');
+  }
+
   render() {
     return (
       <section id="services" class="services">

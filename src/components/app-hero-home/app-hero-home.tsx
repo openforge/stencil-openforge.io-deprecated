@@ -1,4 +1,5 @@
 import { Component, Listen, Prop } from '@stencil/core';
+import { gaEvent } from '../../shared/google-analytics';
 
 @Component({
   tag: 'app-hero-home',
@@ -12,6 +13,7 @@ export class AppHeroHome {
   }
 
   scrollToForm() {
+    gaEvent('Home', 'Scroll to form', 'Scroll to form');
     const form = document.getElementById('services');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
