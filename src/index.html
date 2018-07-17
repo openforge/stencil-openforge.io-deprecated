@@ -17,13 +17,13 @@
   <meta property="og:site_name" content="OpenForge" />
   <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
 
-  <script src="/build/app.js"></script>
-
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
+  <script src="/build/app.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Muli:300,400,600,700' rel='stylesheet'>
   <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet'>
+  <!-- <link rel='stylesheet' href="/build/app.css"> Should have this; but it breaks smooth scroll -->
 
   <!-- In case JavaScript is not available -->
   <noscript>Your browser does not support JavaScript!</noscript>
@@ -40,7 +40,8 @@
   </script> -->
 
 </head>
-
+<body>
+  <app-nav-header />
   <open-forge-app></open-forge-app>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -50,5 +51,12 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
   <!-- Google Global Site Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118169306-1"></script>
+
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', '118169306-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script async defer src='https://www.google-analytics.com/analytics.js'></script>
 </body>
 </html>
