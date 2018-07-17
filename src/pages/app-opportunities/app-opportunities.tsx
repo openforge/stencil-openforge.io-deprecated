@@ -167,6 +167,7 @@ export class AppOpportunities {
 
     try {
       this.formSubmitting = true;
+      this.submitButtonDisabled = true;
       await fetch(
         'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeOpportunities',
         {
@@ -179,6 +180,7 @@ export class AppOpportunities {
       e.target.reset();
       this.resetFormValues();
 
+      this.submitButtonDisabled = false;
       this.formSubmitting = false;
       this.formSubmitted = true;
 
