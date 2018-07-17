@@ -12,7 +12,7 @@ var branch = process.env.TRAVIS_BRANCH,
 // } else if (branch == 'master' && (!pr || pr == 'false')) {
 //     deployToFirebase('prod');
 // }
-console.log(branch, pr, pr_branch);
+console.log(branch, pr, pr_branch, process.env);
 
 function deployToFirebase(project) {
     return new Promise(function (resolve, reject) {
