@@ -55,7 +55,7 @@ export class AppContact {
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value, target } = event.detail;
-    
+
     this.formValues[field] = value;
 
     this.validateField(target);
@@ -130,6 +130,8 @@ export class AppContact {
 
     try {
       this.formSubmitting = true;
+      this.isDisabled = true;
+
       await fetch(
         'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
         {
@@ -145,6 +147,7 @@ export class AppContact {
       event.target.reset();
       this.resetFormValues();
 
+      this.isDisabled = false;
       this.formSubmitting = false;
       this.formSubmitted = true;
 
@@ -362,6 +365,7 @@ export class AppContact {
             ) : null}
           </div>
         </section>
+        <app-footer />
       </div>
     );
   }

@@ -7,7 +7,6 @@ import { Component } from '@stencil/core';
 export class AppHome {
   componentDidLoad() {}
 
-
   render() {
     return (
       <div class="home">
@@ -16,8 +15,8 @@ export class AppHome {
           <span slot="header">We are Thinkers. Makers. Doers.</span>
           <span slot="body">
             Work with our team of highly skilled designers, developers, and
-            consultants to develop solutions and process that fit your
-            business requirements.
+            consultants to develop solutions and process that fit your business
+            requirements.
           </span>
           <span slot="link">Let's Get Started</span>
         </app-hero-home>
@@ -50,23 +49,43 @@ export class AppHome {
                     Application software development. Our team of experienced
                     software engineers specialize in a variety of frameworks and
                     technologies such as
-                    <a href="https://ionicframework.com/" target="_blank">
+                    <a
+                      href="https://ionicframework.com/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       The Ionic Framework{' '}
                     </a>,
-                    <a href="https://angular.io/" target="_blank">
+                    <a
+                      href="https://angular.io/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       Angular (Google)
                     </a>,
-                    <a href="https://reactjs.org/" target="_blank">
+                    <a
+                      href="https://reactjs.org/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       React.js (Facebook)
                     </a>,
-                    <a href="https://nodejs.org/en/" target="_blank">
+                    <a
+                      href="https://nodejs.org/en/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       Node.js
                     </a>,
-                    <a href="https://www.mongodb.com/" target="_blank">
+                    <a
+                      href="https://www.mongodb.com/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       MongoDB
                     </a>, and many more!
@@ -92,15 +111,24 @@ export class AppHome {
                     <a
                       href="https://www.adobe.com/products/photoshop.html"
                       target="_blank"
+                      rel="noopener"
                     >
                       {' '}
                       Adobe Photoshop
                     </a>,
-                    <a href="https://www.sketchapp.com/" target="_blank">
+                    <a
+                      href="https://www.sketchapp.com/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       Sketch App
                     </a>, and
-                    <a href="https://www.goabstract.com/" target="_blank">
+                    <a
+                      href="https://www.goabstract.com/"
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {' '}
                       Abstract
                     </a>.
@@ -347,6 +375,7 @@ export class AppHome {
           <span slot="header">Ready to work with us?</span>
           <span slot="link">Get in touch</span>
         </app-cta>
+        <app-footer />
       </div>
     );
   }

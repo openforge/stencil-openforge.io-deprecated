@@ -27,7 +27,11 @@ export class AppFooter {
               <h2>Follow Us</h2>
               <ul class="footer--social-links">
                 <li>
-                  <a href="https://twitter.com/OpenForge_US" target="_blank">
+                  <a
+                    href="https://twitter.com/OpenForge_US"
+                    target="_blank"
+                    rel="noopener"
+                  >
                     <i class="fab fa-twitter-square" aria-hidden="true" />{' '}
                     @OpenForge_US
                   </a>
@@ -36,6 +40,7 @@ export class AppFooter {
                   <a
                     href="https://www.facebook.com/OpenForgeUS/"
                     target="_blank"
+                    rel="noopener"
                   >
                     <i class="fab fa-facebook-square" aria-hidden="true" />{' '}
                     OpenForge_US
@@ -45,6 +50,7 @@ export class AppFooter {
                   <a
                     href="https://www.linkedin.com/company/openforge/"
                     target="_blank"
+                    rel="noopener"
                   >
                     <i class="fab fa-linkedin" aria-hidden="true" />{' '}
                     OpenForge_US
@@ -61,6 +67,7 @@ export class AppFooter {
               <a
                 href="http://learn.openforge.io/"
                 target="_blank"
+                rel="noopener"
                 class="footer--btn btn btn-primary"
               >
                 Register Today

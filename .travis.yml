@@ -1,16 +1,14 @@
 language: node_js
 node_js:
-  - '10.4.0'
+- 10.4.0
 branches:
   only:
   - develop
   - master
-
 before_script:
-  - npm install -g firebase-tools
-
+- npm install -g firebase-tools
 script:
-  - npm run build
+- npm run build
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ] && [ ! "$TRAVIS_PULL_REQUEST" ]; then npm run firebase:deploy:prod; elif [ $TRAVIS_BRANCH == "develop" ] && [ ! "$TRAVIS_PULL_REQUEST" ]; then npm run firebase:deploy:dev; fi
+- node scripts/deploy.js
