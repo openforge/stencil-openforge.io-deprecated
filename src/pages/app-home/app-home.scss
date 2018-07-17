@@ -1,5 +1,4 @@
 .home {
-
   section {
     padding: 6rem 0;
     @include media-breakpoint-down(sm) {
@@ -51,7 +50,7 @@
 
     .card-container {
       display: flex;
-      padding: 15px 0px 15px;
+      padding: 15px 0 15px;
 
       @include media-breakpoint-down(xs) {
         padding-left: none;
@@ -144,7 +143,7 @@
   // section - process
   .process {
     h2 {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
   }
 
