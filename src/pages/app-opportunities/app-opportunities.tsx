@@ -1,5 +1,5 @@
 import { Component, State, Listen } from '@stencil/core';
-import { TranslationService } from '../../services/translation.service';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-opportunities',
@@ -25,12 +25,7 @@ export class AppOpportunities {
   };
 
   formData = new FormData();
-  ts: TranslationService;
   radioChoices: any;
-
-  constructor() {
-    this.ts = new TranslationService();
-  }
 
   componentDidLoad() {
     this.resetFormValues();
@@ -309,28 +304,28 @@ export class AppOpportunities {
                   </div>
 
                   <app-input
-                    label={this.ts.translate('contact.form.fullName')}
+                    label={translate('contact.form.fullName')}
                     name="name"
                     type="text"
                     // placeholder="Full Name"
                     required={true}
                   />
                   <app-input
-                    label={this.ts.translate('contact.form.email')}
+                    label={translate('contact.form.email')}
                     name="email"
                     type="email"
                     // placeholder="Email Address"
                     required={true}
                   />
                   <app-input
-                    label={this.ts.translate('contact.form.phone')}
+                    label={translate('contact.form.phone')}
                     name="phone"
                     type="tel"
                     // placeholder="Phone Number"
                     required={true}
                   />
                   <app-input
-                    label={this.ts.translate('contact.form.github')}
+                    label={translate('contact.form.github')}
                     name="github"
                     type="text"
                     // placeholder="GitHub Link"

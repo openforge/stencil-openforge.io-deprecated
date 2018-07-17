@@ -1,5 +1,5 @@
 import { Component } from '@stencil/core';
-import { TranslationService } from '../../services/translation.service';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-home',
@@ -7,17 +7,14 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class AppHome {
   members: any[];
-  ts: TranslationService;
 
   constructor() {
-    this.ts = new TranslationService();
-    console.log(this.ts.translate('opportunities.intro.text'));
     this.members = [
       {
         name: 'Jedi Weller',
         image: './../../assets/headshot-jedi.jpg',
         color: '#fa8928',
-        title: this.ts.translate('home.member.title.founder'),
+        title: translate('home.member.title.founder'),
         mail: 'jedi@openforge.io',
         twitter: 'https://twitter.com/jedihacks',
         github: 'https://github.com/jedihacks',
@@ -26,7 +23,7 @@ export class AppHome {
         name: 'Rachel Bennett',
         image: './../../assets/headshot-rachel.jpg',
         color: '#638593',
-        title: this.ts.translate('home.member.title.designer'),
+        title: translate('home.member.title.designer'),
         mail: 'rachel@openforge.io',
         twitter: '',
         github: '',
@@ -35,7 +32,7 @@ export class AppHome {
         name: 'Geoffery Melle',
         image: './../../assets/headshot-geoff.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('home.member.title.accountManager'),
+        title: translate('home.member.title.accountManager'),
         mail: 'geoff@openforge.io',
         twitter: '',
         github: '',
@@ -44,7 +41,7 @@ export class AppHome {
         name: 'Joni Leho',
         image: './../../assets/headshot-joni.jpg',
         color: '#fa8928',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'joni@openforge.io',
         twitter: 'https://twitter.com/lehto_joni',
       },
@@ -52,7 +49,7 @@ export class AppHome {
         name: 'Auvo Severinkangas',
         image: './../../assets/headshot-auvo.jpg',
         color: '#638593',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'auvo@openforge.io',
         twitter: '',
         github: '',
@@ -61,7 +58,7 @@ export class AppHome {
         name: 'Elizabeth Cottrell',
         image: './../../assets/headshot-eliza.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('home.member.title.frontEndDeveloper'),
+        title: translate('home.member.title.frontEndDeveloper'),
         mail: 'elizabeth@openforge.io',
         twitter: 'https://twitter.com/_elizacottrell',
         github: 'https://github.com/LizCottrell',
@@ -70,7 +67,7 @@ export class AppHome {
         name: 'Paulina Gallo',
         image: './../../assets/headshot-paulina.jpg',
         color: '#fa8928',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'paulina@openforge.io',
         twitter: 'https://twitter.com/paulpaultweets',
         github: 'https://github.com/paulpauldevelops',
@@ -79,7 +76,7 @@ export class AppHome {
         name: 'Mohammad Alfatih',
         image: './../../assets/headshot-mohammad.jpg',
         color: '#638593',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'mo@jawami.com',
         twitter: 'https://twitter.com/webdevffw',
         github: 'https://github.com/Mohammad-alfatih',
@@ -88,7 +85,7 @@ export class AppHome {
         name: 'Meredith Alcorn',
         image: './../../assets/headshot-meredith.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'meredith@openforge.io',
         github: 'https://github.com/mmalcorn',
       },
@@ -96,7 +93,7 @@ export class AppHome {
         name: 'Fernando Del Olmo',
         image: './../../assets/headshot-fernando.jpg',
         color: '#fa8928',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'fernando@openforge.io',
         twitter: 'https://twitter.com/fdom92',
         github: 'https://github.com/Fdom92',
@@ -105,14 +102,14 @@ export class AppHome {
         name: 'William Holloran',
         image: './../../assets/headshot-billy.jpg',
         color: '#638593',
-        title: this.ts.translate('home.member.title.projectManager'),
+        title: translate('home.member.title.projectManager'),
         mail: 'william@openforge.io',
       },
       {
         name: 'Luis Chacon',
         image: './../../assets/headshot-luis.jpg',
         color: '#d8aa0c',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'luis@openforge.io',
         twitter: 'https://twitter.com/luiskcs89',
         github: 'https://github.com/luiskcs89',
@@ -121,7 +118,7 @@ export class AppHome {
         name: 'Claudio Del Valle',
         image: './../../assets/headshot-claudio.jpg',
         color: '#fa8928',
-        title: this.ts.translate('home.member.title.developer'),
+        title: translate('home.member.title.developer'),
         mail: 'claudio@openforge.io',
         github: 'https://github.com/daftclaud',
       },
@@ -129,7 +126,7 @@ export class AppHome {
         name: 'Yanying Zhu',
         image: './../../assets/headshot-yanying.jpg',
         color: '#638593',
-        title: this.ts.translate('home.member.title.designer'),
+        title: translate('home.member.title.designer'),
         mail: 'yanying@openforge.io',
         twitter: '',
         github: '',

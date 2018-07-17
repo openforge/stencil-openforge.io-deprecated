@@ -1,5 +1,5 @@
 import { Component, State, Listen } from '@stencil/core';
-import { TranslationService } from '../../services/translation.service';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-contact',
@@ -20,20 +20,18 @@ export class AppContact {
     budget: string;
   };
 
-  ts: TranslationService;
   radioChoices: any;
 
   constructor() {
-    this.ts = new TranslationService();
     this.radioChoices = {
       desiredService: [
-        this.ts.translate('contact.form.appDevelopment'),
-        this.ts.translate('contact.form.webDevelopment'),
-        this.ts.translate('contact.form.uiDesign'),
-        this.ts.translate('contact.form.graphicDesign'),
-        this.ts.translate('contact.form.consulting'),
-        this.ts.translate('contact.form.ctoAsService'),
-        this.ts.translate('contact.form.unsure'),
+        translate('contact.form.appDevelopment'),
+        translate('contact.form.webDevelopment'),
+        translate('contact.form.uiDesign'),
+        translate('contact.form.graphicDesign'),
+        translate('contact.form.consulting'),
+        translate('contact.form.ctoAsService'),
+        translate('contact.form.unsure'),
       ],
       budget: [
         '5K-10K',
@@ -43,7 +41,7 @@ export class AppContact {
         '75K-100K',
         '100K-200K',
         '200K',
-        this.ts.translate('contact.form.unsure'),
+        translate('contact.form.unsure'),
       ],
     };
   }
@@ -158,31 +156,31 @@ export class AppContact {
               <form onSubmit={this.handleSubmit.bind(this)}>
                 <app-input
                   name="name"
-                  label={this.ts.translate('contact.form.fullName')}
+                  label={translate('contact.form.fullName')}
                   type="text"
                   required={true}
                 />
                 <app-input
                   name="company"
-                  label={this.ts.translate('contact.form.company')}
+                  label={translate('contact.form.company')}
                   type="text"
                   required={true}
                 />
                 <app-input
                   name="email"
-                  label={this.ts.translate('contact.form.email')}
+                  label={translate('contact.form.email')}
                   type="email"
                   required={true}
                 />
                 <app-input
                   name="phone"
-                  label={this.ts.translate('contact.form.phone')}
+                  label={translate('contact.form.phone')}
                   type="tel"
                   required={true}
                 />
                 <app-input
                   name="message"
-                  label={this.ts.translate('contact.form.whereDidYouHear')}
+                  label={translate('contact.form.whereDidYouHear')}
                   type="text"
                   required={true}
                 />

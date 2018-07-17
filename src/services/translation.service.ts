@@ -21,7 +21,11 @@ export class TranslationService {
     );
   }
 
-  translate(key, params?) {
-    return i18next.t(key, params);
-  }
+  // translate(key, params?) {
+  //   return i18next.t(key, params);
+  // }
+}
+
+export function translate(key, params?) {
+  return i18next.t(key, params);
 }
