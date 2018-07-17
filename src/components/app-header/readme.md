@@ -20,11 +20,6 @@ boolean
 string
 
 
-#### match
-
-
-
-
 ## Attributes
 
 #### background-url
@@ -40,11 +35,6 @@ boolean
 #### link-url
 
 string
-
-
-#### match
-
-
 
 
 

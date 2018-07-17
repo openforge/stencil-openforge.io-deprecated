@@ -2,8 +2,8 @@ import { Component, Prop, Listen } from '@stencil/core';
 import {
   ActiveRouter,
   RouterHistory,
-  LocationSegments,
   RouterSwitch,
+  LocationSegments,
 } from '@stencil/router';
 import { polyfill } from 'smoothscroll-polyfill';
 import { gtag, GA_TRACKING_ID } from '../../shared/gtag';
@@ -76,7 +76,7 @@ export class OpenForgeApp {
             block: 'start',
             behavior: 'smooth',
           });
-        }, 250);
+        }, 500);
       }
     });
   }
@@ -89,12 +89,14 @@ export class OpenForgeApp {
           <stencil-router>
             <RouterSwitch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/services" component="app-services" />
               <stencil-route url="/contact" component="app-contact" />
+              {/* <stencil-route url="/services" component="app-services" /> */}
               <stencil-route
                 url="/opportunities"
                 component="app-opportunities"
+                exact={true}
               />
+              <stencil-route url="/about" component="app-about" />
             </RouterSwitch>
           </stencil-router>
         </main>

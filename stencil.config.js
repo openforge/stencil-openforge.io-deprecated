@@ -1,5 +1,6 @@
 const sass = require('@stencil/sass');
 exports.config = {
+  enableCache: false,
   plugins: [
     sass({
       injectGlobalPaths: [
@@ -14,10 +15,13 @@ exports.config = {
       serviceWorker: {
         swSrc: 'sw.js',
         globPatterns: [
-          '**/*.{html,js,css,json,ico,png}'
+          '**/*.{html,js,css,json,ico,png,es5}'
         ]
       }
     }
+  ],
+  copy: [
+    { src: 'robots.txt' }
   ]
 };
 

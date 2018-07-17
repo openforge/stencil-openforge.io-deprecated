@@ -1,4 +1,4 @@
-import { Component, State, Listen } from '@stencil/core';
+import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 @Component({
@@ -6,10 +6,7 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-opportunities.scss',
 })
 export class AppOpportunities {
-  @State() isDisabled: boolean = true;
-  @State() canRequestInterview: boolean;
-  @State() formSubmitting: boolean = false;
-  @State() formSubmitted: boolean = false;
+  formData = new FormData();
 
   formValues: {
     angular: number;
@@ -17,15 +14,44 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
-    message: string;
+
+    file: string;
     name: string;
-    email: string;
     phone: string;
+    message: string;
+    email: string;
     github: string;
+
+    formErrors: {
+      fileValid: false;
+      nameValid: false;
+      emailValid: false;
+      phoneValid: false;
+      githubValid: false;
+      messageValid: false;
+      formValid: false;
+    };
   };
 
-  formData = new FormData();
-  radioChoices: any;
+  @State() fileError: any;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() phoneError: string;
+  @State() githubError: string;
+  @State() messageError: string;
+
+  @State() interviewButtonDisabled: boolean = true;
+  @State() submitButtonDisabled: boolean = true;
+  @State() canRequestInterview: boolean = false;
+  @State() formSubmitting: boolean = false;
+  @State() formSubmitted: boolean = false;
+
+  @Prop()
+  errorIconStyles = {
+    display: 'inline',
+    marginBottom: '.2rem',
+    paddingRight: '5px',
+  };
 
   componentDidLoad() {
     this.resetFormValues();
@@ -35,21 +61,16 @@ export class AppOpportunities {
   }
 
   componentDidUpdate() {
-    if (!this.isDisabled) {
+    if (!this.interviewButtonDisabled) {
       if (document.getElementById('requestInterview')) {
         document.getElementById('requestInterview').focus();
-      } else {
-        document.getElementById('apply').scrollIntoView({
-          block: 'start',
-          behavior: 'smooth',
-        });
       }
     }
   }
 
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value } = event.detail;
+    const { field, value, target } = event.detail;
     this.formValues[field] = value;
 
     if (
@@ -59,15 +80,76 @@ export class AppOpportunities {
       this.formValues.html > 90 &&
       this.formValues.css > 90
     ) {
-      this.isDisabled = false;
+      this.interviewButtonDisabled = false;
     } else {
-      this.isDisabled = true;
+      this.interviewButtonDisabled = true;
     }
+
+    this.validateField(target);
+  }
+
+  validateField(e) {
+    if (!e.name) {
+      switch (e.target.name) {
+        case 'message':
+          this.formValues.formErrors.messageValid = e.target.checkValidity();
+          this.messageError = this.formValues.formErrors.messageValid
+            ? ''
+            : (this.messageError = e.target.validationMessage);
+          break;
+
+        case 'file':
+          this.formValues.formErrors.fileValid = e.target.checkValidity();
+          this.fileError = this.formValues.formErrors.fileValid
+            ? ''
+            : (this.fileError = e.target.validationMessage);
+          break;
+      }
+    }
+
+    switch (e.name) {
+      case 'name':
+        this.formValues.formErrors.nameValid = e.checkValidity();
+        this.nameError = this.formValues.formErrors.nameValid
+          ? ''
+          : (this.nameError = e.validationMessage);
+        break;
+      case 'email':
+        this.formValues.formErrors.emailValid = e.checkValidity();
+        this.emailError = this.formValues.formErrors.emailValid
+          ? ''
+          : (this.emailError = e.validationMessage);
+        break;
+
+      case 'phone':
+        this.formValues.formErrors.phoneValid = e.checkValidity();
+        this.phoneError = this.formValues.formErrors.phoneValid
+          ? ''
+          : (this.phoneError = e.validationMessage);
+        break;
+
+      case 'github':
+        this.formValues.formErrors.githubValid = e.checkValidity();
+        this.githubError = this.formValues.formErrors.githubValid
+          ? ''
+          : (this.githubError = e.validationMessage);
+        break;
+    }
+
+    // this.formValues.formErrors.fileValid &&
+    this.formValues.formErrors.nameValid &&
+    this.formValues.formErrors.emailValid &&
+    this.formValues.formErrors.phoneValid &&
+    this.formValues.formErrors.githubValid &&
+    this.formValues.formErrors.messageValid
+      ? (this.submitButtonDisabled = false)
+      : (this.submitButtonDisabled = true);
   }
 
   handleSliders(e) {
     e.preventDefault();
     this.canRequestInterview = true;
+    document.getElementById('apply').scrollIntoView({ block: 'start' });
   }
 
   handleFile(e) {
@@ -100,6 +182,8 @@ export class AppOpportunities {
 
       this.formSubmitting = false;
       this.formSubmitted = true;
+
+      document.getElementById('apply').scrollIntoView({ block: 'start' });
     } catch (error) {
       console.log('Error', error);
     }
@@ -248,7 +332,7 @@ export class AppOpportunities {
                   <app-slider name="html" label="HTML" />
                   <app-slider name="css" label="CSS" />
 
-                  {!this.isDisabled ? (
+                  {!this.interviewButtonDisabled ? (
                     <p>
                       <app-translate key="opportunities.form.allset" />
                     </p>
@@ -261,8 +345,7 @@ export class AppOpportunities {
                   <button
                     class="btn btn-primary"
                     type="submit"
-                    disabled={this.isDisabled}
-                    id="requestInterview"
+                    disabled={this.interviewButtonDisabled}
                   >
                     <app-translate key="opportunities.form.request" />
                   </button>
@@ -297,40 +380,97 @@ export class AppOpportunities {
                     <input
                       class="input-file"
                       type="file"
-                      name="resume"
-                      onInput={this.handleFile.bind(this)}
+                      name="file"
+                      onChange={this.handleFile.bind(this)}
+                      // onBlur={this.validateField.bind(this)}
                       required={true}
                     />
                   </div>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.fileError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.fileError}
+                  </p>
 
                   <app-input
                     label={translate('contact.form.fullName')}
                     name="name"
                     type="text"
-                    // placeholder="Full Name"
                     required={true}
                   />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.nameError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.nameError}
+                  </p>
                   <app-input
                     label={translate('contact.form.email')}
                     name="email"
                     type="email"
-                    // placeholder="Email Address"
                     required={true}
                   />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.emailError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.emailError}
+                  </p>
                   <app-input
                     label={translate('contact.form.phone')}
                     name="phone"
-                    type="tel"
-                    // placeholder="Phone Number"
+                    type="number"
                     required={true}
                   />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.phoneError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.phoneError}
+                  </p>
                   <app-input
                     label={translate('contact.form.github')}
                     name="github"
                     type="text"
-                    // placeholder="GitHub Link"
                     required={true}
                   />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.githubError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.githubError}
+                  </p>
 
                   <h3>
                     <app-translate key="opportunities.form.unique.title" />
@@ -342,13 +482,30 @@ export class AppOpportunities {
                     </label>
                     <textarea
                       class="form-control"
-                      // placeholder="Hello, I would like..."
                       name="message"
+                      maxLength={150}
                       required={true}
+                      onInput={this.validateField.bind(this)}
                     />
                   </div>
+                  <p class="error">
+                    <span
+                      style={
+                        !this.messageError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.messageError}
+                  </p>
 
-                  <button class="btn btn-primary" type="submit">
+                  <button
+                    class="btn btn-primary"
+                    type="submit"
+                    disabled={this.submitButtonDisabled}
+                  >
                     <app-translate key="opportunities.form.submit" />
                   </button>
                 </form>
@@ -382,11 +539,23 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
-      message: '',
+
+      file: '',
       name: '',
+      message: '',
       email: '',
       phone: '',
       github: '',
+
+      formErrors: {
+        fileValid: false,
+        nameValid: false,
+        emailValid: false,
+        phoneValid: false,
+        githubValid: false,
+        messageValid: false,
+        formValid: false,
+      },
     };
 
     this.formData = new FormData();

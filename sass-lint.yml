@@ -13,7 +13,7 @@ options:
   max-warnings: 50
 
 files:
-  ignore: 
+  ignore:
     - 'node_modules/**/*.*'
     - 'sass/vendor/**/*.*'
 # Rule Configuration
@@ -45,7 +45,7 @@ rules:
   hex-notation:
     - 2
     -
-      style: uppercase
+      style: lowercase
   indentation:
     - 2
     -

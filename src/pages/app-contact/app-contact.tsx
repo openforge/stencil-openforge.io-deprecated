@@ -1,4 +1,4 @@
-import { Component, State, Listen } from '@stencil/core';
+import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 @Component({
@@ -7,17 +7,42 @@ import { translate } from '../../services/translation.service';
 })
 export class AppContact {
   @State() formSubmitted = false;
-
   @State() formSubmitting = false;
 
+  @State()
   formValues: {
-    name: string;
-    email: string;
-    company?: string;
-    phone: string;
-    message: string;
-    desiredService: string;
-    budget: string;
+    name: '';
+    email: '';
+    company: '';
+    phone: '';
+    message: '';
+    desiredService: '';
+    budget: '';
+
+    nameValid: false;
+    companyValid: false;
+    emailValid: false;
+    phoneValid: false;
+    messageValid: false;
+    serviceValid: false;
+    budgetValid: false;
+  };
+
+  @State() nameError: string;
+  @State() companyError: string;
+  @State() emailError: string;
+  @State() phoneError: string;
+  @State() messageError: string;
+  @State() serviceError: string;
+  @State() budgetError: string;
+
+  @State() isDisabled = true;
+
+  @Prop()
+  errorIconStyles = {
+    display: 'inline',
+    marginBottom: '.2rem',
+    paddingRight: '5px',
   };
 
   radioChoices: any;
@@ -57,12 +82,79 @@ export class AppContact {
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
-    const { field, value } = event.detail;
+    const { field, value, target } = event.detail;
+
     this.formValues[field] = value;
+
+    this.validateField(target);
   }
 
-  async handleSubmit(e) {
-    e.preventDefault();
+  validateField(e) {
+    console.log('validating e? ', e);
+    switch (e.name) {
+      case 'name':
+        this.formValues.nameValid = e.checkValidity();
+        this.nameError = this.formValues.nameValid
+          ? ''
+          : (this.nameError = e.validationMessage);
+        break;
+
+      case 'company':
+        this.formValues.companyValid = e.checkValidity();
+        this.companyError = this.formValues.companyValid
+          ? ''
+          : (this.companyError = e.validationMessage);
+        break;
+
+      case 'email':
+        this.formValues.emailValid = e.checkValidity();
+        this.emailError = this.formValues.emailValid
+          ? ''
+          : (this.emailError = e.validationMessage);
+        break;
+
+      case 'phone':
+        this.formValues.phoneValid = e.checkValidity();
+        this.phoneError = this.formValues.phoneValid
+          ? ''
+          : (this.phoneError = e.validationMessage);
+        break;
+
+      case 'message':
+        this.formValues.messageValid = e.checkValidity();
+        this.messageError = this.formValues.messageValid
+          ? ''
+          : (this.messageError = e.validationMessage);
+        break;
+
+      case 'desiredService':
+        this.formValues.serviceValid = e.checked;
+        this.serviceError = this.formValues.serviceValid
+          ? ''
+          : e.validationMessage;
+        break;
+
+      case 'budget':
+        this.formValues.budgetValid = e.checked;
+        this.budgetError = this.formValues.budgetValid
+          ? ''
+          : (this.budgetError = e.validationMessage);
+        break;
+    }
+
+    this.formValues.nameValid &&
+    this.formValues.companyValid &&
+    this.formValues.emailValid &&
+    this.formValues.phoneValid &&
+    this.formValues.messageValid &&
+    this.formValues.serviceValid &&
+    this.formValues.budgetValid
+      ? (this.isDisabled = false)
+      : (this.isDisabled = true);
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
 
     try {
       this.formSubmitting = true;
@@ -78,11 +170,14 @@ export class AppContact {
         }
       );
 
-      e.target.reset();
+      event.target.reset();
       this.resetFormValues();
 
       this.formSubmitting = false;
       this.formSubmitted = true;
+
+      const form = document.getElementById('second-content');
+      form.scrollIntoView({ block: 'start', behavior: 'smooth' });
     } catch (error) {
       console.log('Error', error);
     }
@@ -127,18 +222,18 @@ export class AppContact {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2 class="text-nowrap">
+                <h2>
                   <app-translate key="contact.hero.title" />
                 </h2>
                 <p>
                   <app-translate key="contact.hero.request" />
                 </p>
-                <a
+                <button
                   onClick={this.scrollToForm.bind(this)}
                   class="btn btn-primary"
                 >
                   <app-translate key="contact.hero.requestNow" />
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -146,85 +241,167 @@ export class AppContact {
 
         <section id="second-content" class="contact-form">
           <div class="container">
-            <div class="jumbotron">
-              <h2 class="display-5 font-weight-bold">
-                <app-translate key="contact.form.title" />
-              </h2>
-              <p class="lead">
-                <app-translate key="contact.form.text" />
-              </p>
-
-              <form onSubmit={this.handleSubmit.bind(this)}>
-                <app-input
-                  name="name"
-                  label={translate('contact.form.fullName')}
-                  type="text"
-                  required={true}
-                />
-                <app-input
-                  name="company"
-                  label={translate('contact.form.company')}
-                  type="text"
-                  required={true}
-                />
-                <app-input
-                  name="email"
-                  label={translate('contact.form.email')}
-                  type="email"
-                  required={true}
-                />
-                <app-input
-                  name="phone"
-                  label={translate('contact.form.phone')}
-                  type="tel"
-                  required={true}
-                />
-                <app-input
-                  name="message"
-                  label={translate('contact.form.whereDidYouHear')}
-                  type="text"
-                  required={true}
-                />
-
-                <fieldset>
-                  <legend class="lead">
-                    <app-translate key="contact.form.legend.help" />
-                  </legend>
-                  <div class="row ml-2">
-                    {this.renderRadioColumns(
-                      'desiredService',
-                      this.radioChoices.desiredService
-                    )}
-                  </div>
-                </fieldset>
-
-                <fieldset>
-                  <legend class="lead">
-                    <app-translate key="contact.form.legend.budget" />
-                  </legend>
-                  <div class="row ml-2">
-                    {this.renderRadioColumns(
-                      'budget',
-                      this.radioChoices.budget
-                    )}
-                  </div>
-                </fieldset>
-                <button
-                  name="submit"
-                  type="submit"
-                  class="btn btn-primary"
-                  disabled={this.formSubmitting}
+            {!this.formSubmitted ? (
+              <div class="jumbotron">
+                <h2 class="display-5 font-weight-bold">
+                  <app-translate key="contact.form.title" />
+                </h2>
+                <p class="lead">
+                  <app-translate key="contact.form.text" />
+                </p>
+                <form
+                  id="contact-form"
+                  onSubmit={this.handleSubmit.bind(this)}
+                  novalidate={true}
                 >
-                  <app-translate key="contact.form.button.send" />
-                </button>
-              </form>
-            </div>
+                  <app-input
+                    name="name"
+                    label={translate('contact.form.fullName')}
+                    type="text"
+                    id="name"
+                    required={true}
+                  />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.nameError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.nameError}
+                  </p>
 
-            {!this.formSubmitted ? null : (
-              <div class="alert alert-success" role="alert">
-                <app-translate key="contact.form.alert.text" />
+                  <app-input
+                    name="company"
+                    label={translate('contact.form.company')}
+                    type="text"
+                    required={true}
+                  />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.companyError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.companyError}
+                  </p>
+
+                  <app-input
+                    name="email"
+                    label={translate('contact.form.email')}
+                    type="email"
+                    id="email"
+                    required={true}
+                  />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.emailError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.emailError}
+                  </p>
+
+                  <app-input
+                    name="phone"
+                    label={translate('contact.form.phone')}
+                    id="phone"
+                    type="number"
+                    required={true}
+                  />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.phoneError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.phoneError}
+                  </p>
+
+                  <app-input
+                    name="message"
+                    label={translate('contact.form.whereDidYouHear')}
+                    type="text"
+                    required={true}
+                  />
+                  <p class="error">
+                    <span
+                      style={
+                        !this.messageError
+                          ? { display: 'none' }
+                          : this.errorIconStyles
+                      }
+                    >
+                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                    </span>
+                    {this.messageError}
+                  </p>
+
+                  <fieldset>
+                    <legend class="lead">
+                      <app-translate key="contact.form.legend.help" />
+                    </legend>
+                    <div class="row ml-2">
+                      {this.renderRadioColumns(
+                        'desiredService',
+                        this.radioChoices.desiredService
+                      )}
+                    </div>
+                  </fieldset>
+
+                  <p class="font-weight-bold">{this.serviceError}</p>
+
+                  <fieldset>
+                    <legend class="lead">
+                      <app-translate key="contact.form.legend.budget" />
+                    </legend>
+                    <div class="row ml-2">
+                      {this.renderRadioColumns(
+                        'budget',
+                        this.radioChoices.budget
+                      )}
+                    </div>
+                  </fieldset>
+
+                  <button
+                    name="submit"
+                    type="submit"
+                    class="btn btn-primary"
+                    disabled={this.isDisabled}
+                  >
+                    <app-translate key="contact.form.button.send" />
+                  </button>
+                </form>
               </div>
-            )}
+            ) : null}
+
+            {this.formSubmitted ? (
+              <div class="container">
+                <content-graphic-lg img-url="assets/rocket.png">
+                  <h3 slot="header">
+                    <app-translate key="contact.form.thanx" />
+                  </h3>
+                  <p slot="body">
+                    <app-translate key="contact.form.thanxText" />
+                  </p>
+                </content-graphic-lg>
+              </div>
+            ) : null}
           </div>
         </section>
       </div>
@@ -240,6 +417,13 @@ export class AppContact {
       message: '',
       desiredService: '',
       budget: '',
+      nameValid: false,
+      companyValid: false,
+      emailValid: false,
+      phoneValid: false,
+      messageValid: false,
+      serviceValid: false,
+      budgetValid: false,
     };
   }
 }

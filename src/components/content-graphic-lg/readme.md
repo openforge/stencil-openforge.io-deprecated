@@ -10,11 +10,6 @@
 string
 
 
-#### match
-
-
-
-
 #### reverse
 
 boolean
@@ -25,11 +20,6 @@ boolean
 #### img-url
 
 string
-
-
-#### match
-
-
 
 
 #### reverse

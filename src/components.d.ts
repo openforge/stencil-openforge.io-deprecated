@@ -172,6 +172,7 @@ declare global {
     interface AppImg {
       'alt': string;
       'fit': boolean;
+      'preLoad': boolean;
       'src': string;
     }
   }
@@ -197,6 +198,7 @@ declare global {
     export interface AppImgAttributes extends HTMLAttributes {
       'alt'?: string;
       'fit'?: boolean;
+      'preLoad'?: boolean;
       'src'?: string;
     }
   }
@@ -207,7 +209,9 @@ declare global {
 
   namespace StencilComponents {
     interface AppInput {
+      'id': string;
       'label': string;
+      'maxlength': string;
       'name': string;
       'placeholder': string;
       'required': boolean;
@@ -234,7 +238,9 @@ declare global {
   }
   namespace JSXElements {
     export interface AppInputAttributes extends HTMLAttributes {
+      'id'?: string;
       'label'?: string;
+      'maxlength'?: string;
       'name'?: string;
       'onValueChange'?: (event: CustomEvent) => void;
       'placeholder'?: string;
@@ -427,6 +433,7 @@ declare global {
   namespace StencilComponents {
     interface ContentGraphicLg {
       'imgUrl': string;
+      'preLoadImg': boolean;
       'reverse': boolean;
     }
   }
@@ -451,6 +458,7 @@ declare global {
   namespace JSXElements {
     export interface ContentGraphicLgAttributes extends HTMLAttributes {
       'imgUrl'?: string;
+      'preLoadImg'?: boolean;
       'reverse'?: boolean;
     }
   }
@@ -495,8 +503,41 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppContact {
+    interface AppAbout {
 
+    }
+  }
+
+  interface HTMLAppAboutElement extends StencilComponents.AppAbout, HTMLStencilElement {}
+
+  var HTMLAppAboutElement: {
+    prototype: HTMLAppAboutElement;
+    new (): HTMLAppAboutElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-about': HTMLAppAboutElement;
+  }
+  interface ElementTagNameMap {
+    'app-about': HTMLAppAboutElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-about': JSXElements.AppAboutAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppAboutAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppContact {
+      'errorIconStyles': any;
     }
   }
 
@@ -519,7 +560,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppContactAttributes extends HTMLAttributes {
-
+      'errorIconStyles'?: any;
     }
   }
 }
@@ -562,7 +603,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppOpportunities {
-
+      'errorIconStyles': any;
     }
   }
 
@@ -585,7 +626,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
-
+      'errorIconStyles'?: any;
     }
   }
 }

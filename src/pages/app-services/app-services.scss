@@ -1,0 +1,132 @@
+// section - services
+section {
+  padding: 6rem 0;
+  @include media-breakpoint-down(sm) {
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+    text-align: center;
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.services {
+  padding-bottom: 0;
+  // @include media-breakpoint-down(md) {
+  //   display: none;
+  // }
+}
+
+.services {
+  margin: 0 auto;
+  max-width: 992px;
+
+  &--header {
+    padding: 15px;
+    p {
+      margin-bottom: 0;
+      text-align: center;
+    }
+  }
+
+  &--tab-panel {
+    text-align: left;
+
+    // tab nav
+    nav {
+      background: white;
+      box-shadow: none;
+    }
+    .nav {
+      width: 100%;
+      @include media-breakpoint-down(xs) {
+        // horizontal scroll
+        border-bottom: none;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+    .nav-fill .nav-item {
+      width: 25%;
+      @include media-breakpoint-down(xs) {
+        // horizontal scroll
+        width: initial;
+      }
+    }
+
+    // individual tab
+    .nav-tabs .nav-link {
+      border: none;
+      padding: 0;
+      &:hover {
+        background: rgba($orange, 0.1);
+      }
+
+      // tab content
+      figure {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        margin: 0;
+        @include media-breakpoint-down(xs) {
+          // horizontal scroll
+          width: 150px;
+        }
+        img {
+          max-width: 200px;
+          padding: 15px;
+          width: 100%;
+        }
+        figcaption {
+          border-bottom: 5px solid $gray-500;
+          font-size: 1.2rem;
+          font-weight: bold;
+          line-height: 1.2rem;
+          padding: 15px 10px;
+          width: 100%;
+          @include media-breakpoint-down(xs) {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      // active tab
+      &.active figcaption {
+        background-color: $gray-100;
+        border: 5px solid $gray-500;
+        border-bottom: transparent;
+        color: $orange;
+      }
+      @include media-breakpoint-down(md) {
+        &:first-child.active figcaption {
+          border-left: transparent;
+        }
+        &:last-child.active figcaption {
+          border-right: transparent;
+        }
+      }
+    }
+
+    // tab-panel content
+    .tab-content {
+      background: $gray-100;
+      border-left: 5px solid $gray-500;
+      border-right: 5px solid $gray-500;
+      padding: 5rem;
+      @include media-breakpoint-down(md) {
+        border: none;
+        padding: 3rem 2rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}

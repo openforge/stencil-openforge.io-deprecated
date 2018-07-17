@@ -12,6 +12,18 @@ export const translations = {
           title: 'What do we provide?',
           text:
             'Whether you are a start up, an enterprise, or somewhere in between, we will work with you every step of the way. Choose your path below to learm more about our custom services.',
+          fromStartupToEnterprise:
+            'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
+          appDevelopmentText:
+            'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as <a href="https://ionicframework.com/" target="_blank">The Ionic Framework</a>, <a href="https://angular.io/" target="_blank">Angular (Google)</a>, <a href="https://reactjs.org/" target="_blank">React.js (Facebook)</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a>, <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, and many more!',
+          appDevelopment: 'App Development',
+          uxUiDesign: 'UI/UX Design',
+          uxUiDesignText:
+            'The OpenForge Discovery &amp; Design Process is specifically engineered to increase ROI, user engagement, and get you results. Our unique process has been proven to keep projects on-time and on-budget every step of the way by utilizing leading technologies such as <a href="https://www.adobe.com/products/photoshop.html" target="_blank">Adobe Photoshop</a>, <a href="https://www.sketchapp.com/" target="_blank">Sketch App</a>, and <a href="https://www.goabstract.com/" target="_blank">Abstract</a>.',
+          consulting: 'Consulting',
+          consultingText:
+            "We offer a wide variety of services including Training, CTO Representation, Design Audits, and Software Process Improvement (SPI) Consulting. If you are looking to increase your team's efficiency or bring your product to market on-time and on-schedule, our team is here to help you succeed.",
+          ourWork: 'Check Out Our Work',
           startup: 'Start Up',
           smallTeam: 'Small Team',
           midSizeTeam: 'Mid-Size Team',
@@ -155,6 +167,9 @@ export const translations = {
           six: '100K-200K',
           seven: '200K',
         },
+        thanx: 'Thank you!',
+        thanxText:
+          'Your message has been delivered. Someone will be in touch with you soon!',
       },
     },
     services: {
@@ -173,7 +188,7 @@ export const translations = {
       intro: {
         title: 'Forget normal interviews!',
         text:
-          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/'>Ionic</a> or <a href='https://reactjs.org/'> React App!</a>",
+          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank'>Ionic</a> or <a href='https://reactjs.org/' target='_blank'> React App!</a>",
         codeMaster: {
           title: 'We want to put you to the test!',
           body:
@@ -187,7 +202,7 @@ export const translations = {
       reputation: {
         title: 'Reputation is Everything.',
         text:
-          "Because we value our partnerships. As a trusted partner of the <a href='https://ionicframework.com/'> Ionic Team </a> our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!",
+          "Because we value our partnerships. As a trusted partner of the <a href='https://ionicframework.com/' target='_blank'> Ionic Team </a> our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!",
       },
       prepared: {
         title: 'Are you prepared?',
@@ -254,6 +269,17 @@ export const translations = {
           title: 'go emerchant website',
           alt: 'goEmerchant Payment Processing',
         },
+      },
+
+      social: {
+        followUs: 'Follow Us',
+      },
+
+      webinar: {
+        signup: 'Sign Up for Our Webinar Series',
+        webinarText:
+          'Our FREE webinar series will cover topics including UI/UX design, app development, and SEO strategy.',
+        register: 'Register Today',
       },
 
       blog: {

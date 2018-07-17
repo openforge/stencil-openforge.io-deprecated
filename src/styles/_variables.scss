@@ -14,6 +14,7 @@ $blue: #638593 !default;
 $indigo: #323c47 !default;
 $red: #dc3545 !default; // TODO
 $orange: #e88212 !default;
+$orange-light: #f3b13d !default;
 $orange-dark: #ff5d00 !default;
 $yellow: #d8aa0c !default;
 $green: #28a745 !default; // TODO
@@ -30,13 +31,13 @@ $grid-breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1400px
+  xl: 1400px,
 ) !default;
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1300px
+  xl: 1300px,
 ) !default;
 
 // Type
@@ -56,6 +57,7 @@ $navbar-dark-active-color: $orange !default;
 $navbar-dark-color: rgba($gray-100, 0.75) !default;
 
 // Box-shadow
+// sass-lint:disable indentation
 $of-boxshadow: 4px 4px 4px rgba(0, 0, 0, 0.2),
   0 0 4px lighten(rgba(0, 0, 0, 0.2), 5%);
 
