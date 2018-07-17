@@ -1,10 +1,7 @@
-@import 'mixins.scss';
-@import 'variables.scss';
-@import 'node_modules/bootstrap/scss/bootstrap';
-// @import 'variables';
-// @import 'mixins';
-// Todo:  We may want to do this later.
-// General
+@import 'node_modules/bootstrap/scss/mixins';
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'src/styles/_variables.scss';
 
 h2 {
   letter-spacing: 0.1rem;

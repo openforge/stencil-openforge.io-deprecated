@@ -14,7 +14,7 @@ export class OpenForgeApp {
     return (
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
-          <stencil-route url="/" component="app-home" exact={true} />
+          <stencil-route url="/" component="app-about" exact={true} />
           <stencil-route url="/contact" component="app-contact" exact={true} />
           <stencil-route
             url="/opportunities"
@@ -22,7 +22,7 @@ export class OpenForgeApp {
             exact={true}
           />
           <stencil-route url="/about" component="app-about" exact={true} />
-          <stencil-route component="app-home" />
+          <stencil-route component="app-contact" />
         </stencil-route-switch>
       </stencil-router>
     );

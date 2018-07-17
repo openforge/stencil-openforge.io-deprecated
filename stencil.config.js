@@ -1,12 +1,11 @@
+// injectGlobalPaths takes the place of individual import statements within our files.  It injects it to every
 const sass = require('@stencil/sass');
 exports.config = {
   enableCache: false,
   plugins: [
     sass({
       injectGlobalPaths: [
-        'src/styles/_variables.scss',
-        'src/styles/_mixins.scss',
-        'src/styles/main.scss',
+        'src/styles/main.scss'
       ]
     })
   ],
@@ -21,6 +20,7 @@ exports.config = {
       }
     }
   ],
+  globalStyle: 'src/styles/main.scss',
   copy: [
     { src: 'robots.txt' }
   ]

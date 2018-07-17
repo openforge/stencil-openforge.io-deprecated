@@ -36,7 +36,7 @@ export class AppHome {
             <div class="card-container">
               <div class="card">
                 <div class="card--image">
-                  <app-img
+                  <img
                     class="card--image"
                     src="assets/graphic-home-development-card.png"
                     alt="app-development-image"
@@ -74,7 +74,7 @@ export class AppHome {
               </div>
               <div class="card">
                 <div class="card--image">
-                  <app-img
+                  <img
                     class="card--image"
                     src="assets/graphic-home-design-card.png"
                     alt="ui-ux-design-image"
@@ -108,7 +108,7 @@ export class AppHome {
               </div>
               <div class="card">
                 <div class="card--image">
-                  <app-img
+                  <img
                     class="card--image"
                     src="assets/graphic-home-consulting-card.png"
                     alt="consulting-image"
@@ -139,18 +139,18 @@ export class AppHome {
             <div class="content">
               <div class="work">
                 <h3>LoudCloud</h3>
-                <app-img
+                <img
                   class=""
                   src="assets/graphic-home-loudcloud.png"
                   alt="loudcloud-app-image"
                 />
                 <div class="icons">
-                  <app-img
+                  <img
                     class=""
                     src="assets/graphic-apple-appstore.png"
                     alt="apple-app-store-icon"
                   />
-                  <app-img
+                  <img
                     class=""
                     src="assets/graphic-google-googleplaystore.png"
                     alt="google-play-store-icon"
@@ -160,18 +160,18 @@ export class AppHome {
 
               <div class="work">
                 <h3>The Voyage</h3>
-                <app-img
+                <img
                   class=""
                   src="assets/graphic-home-voyage.png"
                   alt="voyage-app-image"
                 />
                 <div class="icons">
-                  <app-img
+                  <img
                     class=""
                     src="assets/graphic-apple-appstore.png"
                     alt="apple-app-store-icon"
                   />
-                  <app-img
+                  <img
                     class=""
                     src="assets/graphic-google-googleplaystore.png"
                     alt="google-play-store-icon"
@@ -181,18 +181,18 @@ export class AppHome {
 
               <div class="work">
                 <h3>DigiThermo</h3>
-                <app-img
+                <img
                   class=""
                   src="assets/graphic-home-digithermo.png"
                   alt="digithermo-app-image"
                 />
                 <div class="icons">
-                  <app-img
+                  <img
                     class=""
                     src="assets/graphic-apple-appstore.png"
                     alt="apple-app-store-icon"
                   />
-                  <app-img
+                  <img
                     class=""
                     src="assets/graphic-google-googleplaystore.png"
                     alt="google-play-store-icon"
@@ -289,7 +289,7 @@ export class AppHome {
             </p>
 
             <div class="partners--trusted">
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-ionic-trusted-black.png"
                 alt="Ionic Trusted Partner"
@@ -297,42 +297,42 @@ export class AppHome {
             </div>
 
             <div class="partners--logos">
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-angular-black.png"
                 alt="Angular"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-capacitor-black.png"
                 alt="Capacitor"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-stencil-black.png"
                 alt="Stencil"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-eli-lu-entertainment-black.png"
                 alt="Eli and Lu Entertainment"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-mysql-black.png"
                 alt="Mysql"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-mongodb-black.png"
                 alt="MongoDB"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-nodejs-black.png"
                 alt="Node JS"
               />
-              <app-img
+              <img
                 class="img-fluid"
                 src="assets/logo-aws-black.png"
                 alt="AWS"

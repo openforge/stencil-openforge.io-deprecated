@@ -50,7 +50,7 @@
     "tslint-react": "^3.5.1",
     "typescript": "^2.8.3",
     "@types/mocha": "^5.2.0",
-    "bootstrap": "^4.1.0",
+    "bootstrap": "^4.0.0",
     "cypress": "^2.1.0",
     "smoothscroll-polyfill": "^0.4.3",
     "xvfb": "^0.2.3"
