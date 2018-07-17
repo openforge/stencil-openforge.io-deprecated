@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-members',
@@ -34,7 +35,7 @@ export class AppMembers {
                 {!member.mail ? null : (
                   <a
                     href={`mailto:${member.mail}`}
-                    title={`${member.name} mail account`}
+                    title={`${member.name} ${translate('members.mailAccount')}`}
                     target="_blank"
                     rel="noopener"
                     style={{ color: member.color }}
@@ -46,7 +47,9 @@ export class AppMembers {
                 {!member.twitter ? null : (
                   <a
                     href={member.twitter}
-                    title={`${member.name} twitter account`}
+                    title={`${member.name} ${translate(
+                      'members.twitterAccount'
+                    )}`}
                     target="_blank"
                     rel="noopener"
                     style={{ color: member.color }}
@@ -61,7 +64,9 @@ export class AppMembers {
                 {!member.github ? null : (
                   <a
                     href={member.github}
-                    title={`${member.name} github account`}
+                    title={`${member.name} ${translate(
+                      'members.githubAccount'
+                    )}`}
                     target="_blank"
                     rel="noopener"
                     style={{ color: member.color }}

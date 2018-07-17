@@ -34,14 +34,15 @@ export class AppContact {
         translate('contact.form.unsure'),
       ],
       budget: [
-        '5K-10K',
-        '10K-25K',
-        '25K-50K',
-        '50K-75K',
-        '75K-100K',
-        '100K-200K',
-        '200K',
         translate('contact.form.unsure'),
+        translate('contact.form.budgetThreshold.one'),
+        translate('contact.form.budgetThreshold.two'),
+        translate('contact.form.budgetThreshold.three'),
+        translate('contact.form.budgetThreshold.four'),
+        translate('contact.form.budgetThreshold.five'),
+        translate('contact.form.budgetThreshold.six'),
+        translate('contact.form.budgetThreshold.seven'),
+        translate('contact.form.budgetThreshold.unsure'),
       ],
     };
   }

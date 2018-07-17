@@ -1,4 +1,5 @@
 import { Component } from '@stencil/core';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-footer',
@@ -11,23 +12,27 @@ export class AppFooter {
         <div class="container">
           <div class="row">
             <div class="content col-sm-12 col-md-4">
-              <h2>Our Headquarters</h2>
+              <h2>{translate('footer.address.header')}</h2>
               <p>
-                OpenForge<br />
-                1040 N 2nd St.<br />
-                Philadelphia, PA 19123
+                {translate('footer.address.name')}
+                <br />
+                {translate('footer.address.line1')}
+                <br />
+                {translate('footer.address.line2')}
               </p>
-              <a href="mailto:hello@openforge.io">hello@openforge.io</a>
+              <a href="mailto:hello@openforge.io">
+                {translate('footer.address.email')}
+              </a>
               {/* <a href="https://www.openforge.io" target="_blank" rel="noopener">
                 Work at OpenForge
               </a>
               <a href="/career">Career Opportunities</a> */}
             </div>
             <div class="content col-sm-12 col-md-4">
-              <h2>Our Partners</h2>
+              <h2>{translate('footer.partners.header')}</h2>
               <a
                 href="https://ionicframework.com/"
-                title="Ionic framework website"
+                title={translate('footer.partners.ionic.title')}
                 target="_blank"
                 rel="noopener"
               >
@@ -39,32 +44,32 @@ export class AppFooter {
               </a>
               <a
                 href="http://www.215marketing.com/"
-                title="215 marketing website"
+                title={translate('footer.partners.marketing215.title')}
                 target="_blank"
                 rel="noopener"
               >
                 <app-img
                   class="img-fluid"
                   src="assets/logo-215marketing.png"
-                  alt="215 Marketing"
+                  alt={translate('footer.partners.marketing215.alt')}
                 />
               </a>
               <a
                 href="https://www.goemerchant.com/"
-                title="go emerchant website"
+                title={translate('footer.partners.goEmerchant.title')}
                 target="_blank"
                 rel="noopener"
               >
                 <app-img
                   class="img-fluid"
                   src="assets/logo-goemerchant.png"
-                  alt="goEmerchant Payment Processing"
+                  alt={translate('footer.partners.goEmerchant.alt')}
                 />
               </a>
             </div>
             <div class="content col-sm-12 col-md-4">
-              <h2>Subscribe to Blog via Email</h2>
-              <p>Coming soon!</p>
+              <h2>{translate('footer.blog.header')}</h2>
+              <p>{translate('footer.blog.content')}</p>
               {/* <p>
                 Enter your email address to subscribe to our blog and receive
                 notifications of new posts by email.
@@ -87,7 +92,9 @@ export class AppFooter {
             </div>
           </div>
 
-          <p class="text-center">&copy; OpenForge. All rights reserved.</p>
+          <p class="text-center">
+            <app-translate key="footer.copyright" />
+          </p>
         </div>
       </footer>
     );

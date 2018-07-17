@@ -66,6 +66,8 @@ export const translations = {
       process: {
         title: 'Our Process',
         discovery: 'Discovery',
+        discoveryBody:
+          "We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.",
         devConsulting: 'Development Consulting',
         development: 'Development',
         developmentBody:
@@ -143,7 +145,16 @@ export const translations = {
         graphicDesign: 'Graphic Design',
         consulting: 'Consulting',
         ctoAsService: 'CTO as a Service',
-        unsure: 'Unsure',
+        budgetThreshold: {
+          unsure: 'Unsure',
+          one: '5K-10K',
+          two: '10K-25K',
+          three: '25K-50K',
+          four: '50K-75K',
+          five: '75K-100K',
+          six: '100K-200K',
+          seven: '200K',
+        },
       },
     },
     services: {
@@ -212,6 +223,66 @@ export const translations = {
             'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
         },
       },
+    },
+
+    header: {
+      scrollText: 'Scroll to content',
+    },
+
+    footer: {
+      address: {
+        header: 'Our Headquarters',
+        name: 'OpenForge',
+        line1: '1040 N 2nd St.',
+        line2: 'Philadelphia, PA 19123',
+        email: 'hello@openforge.io',
+      },
+
+      partners: {
+        header: 'Our Partners',
+
+        ionic: {
+          title: 'Ionic framework website',
+          alt: 'Ionic',
+        },
+        marketing215: {
+          title: '215 marketing website',
+          alt: '215 Marketing',
+        },
+
+        goEmerchant: {
+          title: 'go emerchant website',
+          alt: 'goEmerchant Payment Processing',
+        },
+      },
+
+      blog: {
+        header: 'Subscribe to Blog via Email',
+        content: 'Coming soon!',
+      },
+
+      copyright: '&copy; OpenForge. All rights reserved.',
+    },
+
+    nav: {
+      header: {
+        img: {
+          alt: 'OpenForge',
+        },
+      },
+      links: {
+        home: 'Home',
+        about: 'About',
+        contact: 'Contact',
+        opportunities: 'Opportunities',
+        github: 'Openforge Github account',
+      },
+    },
+
+    members: {
+      mailAccount: 'mail account',
+      twitterAccount: 'twitter account',
+      githubAccount: 'github account',
     },
   },
 };
