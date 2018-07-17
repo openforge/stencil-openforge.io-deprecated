@@ -404,6 +404,7 @@ export class AppContact {
             ) : null}
           </div>
         </section>
+        <app-footer />
       </div>
     );
   }
