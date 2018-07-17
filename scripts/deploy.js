@@ -4,18 +4,17 @@ var branch = process.env.TRAVIS_BRANCH,
     pr = process.env.TRAVIS_PULL_REQUEST,
     pr_branch = process.env.TRAVIS_PULL_REQUEST_BRANCH;
 
-// if (
-//     (branch == 'develop' && (!pr || pr == 'false') ) ||
-//     ((pr && pr != 'false') && pr_branch == 'develop')
-// ) {
-//     deployToFirebase('dev');
-// } else if (branch == 'master' && (!pr || pr == 'false')) {
-//     deployToFirebase('prod');
-// }
-console.log(branch, pr, pr_branch, process.env);
+if (
+    (branch == 'develop' && (!pr || pr == 'false') )
+) {
+    deployToFirebase('dev');
+} else if (branch == 'master' && (!pr || pr == 'false')) {
+    deployToFirebase('prod');
+}
 
 function deployToFirebase(project) {
     return new Promise(function (resolve, reject) {
+        console.log('Deploying to firebase project openforge-'+project);
         var child = exec('npm run firebase:deploy:'+project);
 
         child.stdout.on('data', function (data) {
