@@ -7,7 +7,7 @@ import { Component } from '@stencil/core';
 export class AppServices {
   render() {
     return (
-      <section id="services" class="services">
+      <section class="services">
         <div class="">
           <div class="services--header">
             <h2>What do we provide?</h2>
@@ -242,6 +242,7 @@ export class AppServices {
             </div>
           </div>
         </div>
+        <app-footer />
       </section>
     );
   }

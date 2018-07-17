@@ -55,12 +55,14 @@ export class AppContact {
   @Listen('valueChange')
   valueChangeHandler(event) {
     const { field, value, target } = event.detail;
+
     this.formValues[field] = value;
 
     this.validateField(target);
   }
 
   validateField(e) {
+    console.log('validating e? ', e);
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
@@ -363,6 +365,7 @@ export class AppContact {
             ) : null}
           </div>
         </section>
+        <app-footer />
       </div>
     );
   }

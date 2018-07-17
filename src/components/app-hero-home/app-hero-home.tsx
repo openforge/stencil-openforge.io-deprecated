@@ -11,6 +11,11 @@ export class AppHeroHome {
     this.handleImage();
   }
 
+  scrollToForm() {
+    const form = document.getElementById('services');
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   // will refactor in the future
   @Listen('window:resize')
   handleImage() {
@@ -54,7 +59,7 @@ export class AppHeroHome {
             <p>
               <slot name="body" />
             </p>
-            <a href="#services" class="btn btn-primary">
+            <a onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
               <slot name="link" />
             </a>
           </div>

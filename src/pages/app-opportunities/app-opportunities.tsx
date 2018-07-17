@@ -5,6 +5,7 @@ import { Component, State, Listen, Prop } from '@stencil/core';
   styleUrl: 'app-opportunities.scss',
 })
 export class AppOpportunities {
+  maxFileSize = 10485760; // 10MB
   formData = new FormData();
 
   formValues: {
@@ -44,6 +45,7 @@ export class AppOpportunities {
   @State() canRequestInterview: boolean = false;
   @State() formSubmitting: boolean = false;
   @State() formSubmitted: boolean = false;
+  @State() fileSizeErrorShown: boolean = false;
 
   @Prop()
   errorIconStyles = {
@@ -88,54 +90,61 @@ export class AppOpportunities {
   }
 
   validateField(e) {
-    if (!e.name) {
-      switch (e.target.name) {
-        case 'message':
-          this.formValues.formErrors.messageValid = e.target.checkValidity();
-          this.messageError = this.formValues.formErrors.messageValid
+    if (e) {
+      if (!e.name) {
+        switch (e.target.name) {
+          case 'message':
+            this.formValues.formErrors.messageValid = e.target.checkValidity();
+            this.messageError = this.formValues.formErrors.messageValid
+              ? ''
+              : (this.messageError = e.target.validationMessage);
+            break;
+
+          case 'file':
+            this.formValues.formErrors.fileValid = e.target.checkValidity();
+            if (!this.fileSizeErrorShown) {
+              this.fileError = this.formValues.formErrors.fileValid
+                ? ''
+                : (this.fileError = e.target.validationMessage);
+            }
+            break;
+        }
+      }
+
+      switch (e.name) {
+        case 'name':
+          this.formValues.formErrors.nameValid = e.checkValidity();
+          this.nameError = this.formValues.formErrors.nameValid
             ? ''
-            : (this.messageError = e.target.validationMessage);
+            : (this.nameError = e.validationMessage);
+          break;
+        case 'email':
+          this.formValues.formErrors.emailValid = e.checkValidity();
+          this.emailError = this.formValues.formErrors.emailValid
+            ? ''
+            : (this.emailError = e.validationMessage);
           break;
 
-        case 'file':
-          this.formValues.formErrors.fileValid = e.target.checkValidity();
-          this.fileError = this.formValues.formErrors.fileValid
+        case 'phone':
+          this.formValues.formErrors.phoneValid = e.checkValidity();
+          this.phoneError = this.formValues.formErrors.phoneValid
             ? ''
-            : (this.fileError = e.target.validationMessage);
+            : (this.phoneError = e.validationMessage);
+          break;
+
+        case 'github':
+          this.formValues.formErrors.githubValid = e.checkValidity();
+          this.githubError = this.formValues.formErrors.githubValid
+            ? ''
+            : (this.githubError = e.validationMessage);
           break;
       }
     }
 
-    switch (e.name) {
-      case 'name':
-        this.formValues.formErrors.nameValid = e.checkValidity();
-        this.nameError = this.formValues.formErrors.nameValid
-          ? ''
-          : (this.nameError = e.validationMessage);
-        break;
-      case 'email':
-        this.formValues.formErrors.emailValid = e.checkValidity();
-        this.emailError = this.formValues.formErrors.emailValid
-          ? ''
-          : (this.emailError = e.validationMessage);
-        break;
+    const isFileValid =
+      this.formValues.formErrors.fileValid || this.fileSizeErrorShown;
 
-      case 'phone':
-        this.formValues.formErrors.phoneValid = e.checkValidity();
-        this.phoneError = this.formValues.formErrors.phoneValid
-          ? ''
-          : (this.phoneError = e.validationMessage);
-        break;
-
-      case 'github':
-        this.formValues.formErrors.githubValid = e.checkValidity();
-        this.githubError = this.formValues.formErrors.githubValid
-          ? ''
-          : (this.githubError = e.validationMessage);
-        break;
-    }
-
-    // this.formValues.formErrors.fileValid &&
+    isFileValid &&
     this.formValues.formErrors.nameValid &&
     this.formValues.formErrors.emailValid &&
     this.formValues.formErrors.phoneValid &&
@@ -153,7 +162,23 @@ export class AppOpportunities {
 
   handleFile(e) {
     const files = e.target.files;
+    const file = files[0];
+
+    this.formData.delete('files'); // Just in case user changed the file
+
+    this.formValues.formErrors.fileValid = e.target.checkValidity();
+    if (file && file.size > this.maxFileSize) {
+      this.fileSizeErrorShown = true;
+      this.fileError =
+        'Your Resume/CV file is too large. Your application will be submitted without it.';
+      this.validateField(null);
+      return;
+    }
+
+    this.fileSizeErrorShown = false;
+    this.fileError = '';
     this.formData.append('files', files[0]);
+    this.validateField(null);
   }
 
   async handleSubmit(e) {
@@ -168,6 +193,7 @@ export class AppOpportunities {
     try {
       this.formSubmitting = true;
       this.submitButtonDisabled = true;
+
       await fetch(
         'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeOpportunities',
         {
@@ -182,7 +208,9 @@ export class AppOpportunities {
 
       this.submitButtonDisabled = false;
       this.formSubmitting = false;
+      this.submitButtonDisabled = false;
       this.formSubmitted = true;
+      this.fileSizeErrorShown = false;
 
       document.getElementById('apply').scrollIntoView({ block: 'start' });
     } catch (error) {
@@ -222,11 +250,15 @@ export class AppOpportunities {
                 believe in Open Source contributions; so part of your interview
                 assignment will be exactly that - build out a simple (open
                 source){' '}
-                <a href="https://ionicframework.com/" target="_blank">
+                <a
+                  href="https://ionicframework.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
                   Ionic
                 </a>{' '}
                 or{' '}
-                <a href="https://reactjs.org/" target="_blank">
+                <a href="https://reactjs.org/" target="_blank" rel="noopener">
                   {' '}
                   React App!
                 </a>
@@ -292,7 +324,11 @@ export class AppOpportunities {
               <h3 slot="header">Reputation is Everything.</h3>
               <p slot="body">
                 Because we value our partnerships. As a trusted partner of the{' '}
-                <a href="https://ionicframework.com/" target="_blank">
+                <a
+                  href="https://ionicframework.com/"
+                  target="_blank"
+                  rel="noopener"
+                >
                   {' '}
                   Ionic Team{' '}
                 </a>{' '}
@@ -381,7 +417,7 @@ export class AppOpportunities {
                       name="file"
                       onChange={this.handleFile.bind(this)}
                       // onBlur={this.validateField.bind(this)}
-                      required={true}
+                      required={!this.fileSizeErrorShown}
                     />
                   </div>
                   <p class="error">
@@ -522,6 +558,7 @@ export class AppOpportunities {
             </div>
           )}
         </section>
+        <app-footer />
       </div>
     );
   }

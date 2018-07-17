@@ -1,49 +1,39 @@
 {
   "name": "@openforge/main-website",
   "private": true,
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Website for OpenForge",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --no-cache",
+    "build": "stencil build --prerender",
     "cz": "git-cz",
     "dev": "sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "sass-lint": "node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q",
     "serve": "stencil-dev-server",
-    "start": "sd concurrent \"stencil build --dev --watch\" & node index.js",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
+    "cypress": "cypress open",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "st:generate": "node scripts/st-generate.js",
-    "heroku-postbuild": "npm run build",
-    "serve:heroku": "http-server www",
     "prepublish": "stencil build --prod",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
   },
-  "engines": {
-    "node": "8.9.4",
-    "npm": "5.6.0"
-  },
   "dependencies": {
-    "@stencil/core": "^0.9.1",
-    "@stencil/router": "^0.1.7",
-    "@stencil/sass": "0.0.3",
-    "bootstrap": "^4.1.0",
-    "express": "^4.16.3",
-    "helmet": "^3.12.1",
-    "smoothscroll-polyfill": "^0.4.3"
+    "@stencil/sass": "0.0.3"
   },
   "devDependencies": {
+    "@stencil/core": "^0.10.0",
+    "@stencil/dev-server": "0.0.19-0",
+    "@stencil/router": "^0.2.4",
+    "@stencil/state-tunnel": "0.0.6",
+    "@stencil/utils": "latest",
     "@angular/cli": "^6.0.0",
     "@commitlint/cli": "^6.1.3",
     "@commitlint/config-conventional": "^6.1.3",
-    "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
-    "@types/jest": "^21.1.10",
     "@types/smoothscroll-polyfill": "^0.3.0",
     "commitizen": "^2.9.6",
     "conventional-changelog-cli": "^1.3.22",
@@ -58,7 +48,12 @@
     "tslint-config-airbnb": "^5.8.0",
     "tslint-config-prettier": "^1.12.0",
     "tslint-react": "^3.5.1",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "@types/mocha": "^5.2.0",
+    "bootstrap": "^4.1.0",
+    "cypress": "^2.1.0",
+    "smoothscroll-polyfill": "^0.4.3",
+    "xvfb": "^0.2.3"
   },
   "repository": {
     "type": "git",
@@ -67,7 +62,7 @@
   "author": "OpenForge Team",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/openforge/main-website"
+    "url": "https://github.com/openforge/OPENFORGE.IO/issues"
   },
   "homepage": "https://www.openforge.io",
   "jest": {
