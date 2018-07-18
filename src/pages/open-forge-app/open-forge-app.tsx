@@ -33,19 +33,13 @@ export class OpenForgeApp {
   }
 
   render() {
-    console.log('rendering open-forge-app');
     return (
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
           <stencil-route url="/" component="app-home" exact={true} />
-          <stencil-route url="/contact" component="app-contact" exact={true} />
-          <stencil-route
-            url="/opportunities"
-            component="app-opportunities"
-            exact={true}
-          />
-          <stencil-route url="/about" component="app-about" exact={true} />
-          <stencil-route component="app-home" />
+          <stencil-route url="/contact" component="app-contact" />
+          <stencil-route url="/opportunities" component="app-opportunities" />
+          <stencil-route url="/about" component="app-about" />
         </stencil-route-switch>
       </stencil-router>
     );
