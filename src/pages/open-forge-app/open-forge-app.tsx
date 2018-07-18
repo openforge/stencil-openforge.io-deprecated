@@ -3,7 +3,7 @@ import { Component } from '@stencil/core';
 
 import { polyfill } from 'smoothscroll-polyfill';
 
-import { initGa, gtag, GA_TRACKING_ID } from '../../shared/google-analytics';
+import { initGa } from '../../shared/google-analytics';
 
 polyfill();
 
