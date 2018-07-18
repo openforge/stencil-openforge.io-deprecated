@@ -170,6 +170,7 @@ export const translations = {
         thanx: 'Thank you!',
         thanxText:
           'Your message has been delivered. Someone will be in touch with you soon!',
+        unsure: 'Unsure',
       },
     },
     services: {
