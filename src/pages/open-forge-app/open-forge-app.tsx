@@ -20,9 +20,7 @@ export class OpenForgeApp {
     }
 
     if (this.mainEl) {
-      console.log('mainEl exists', this.mainEl);
       this.mainEl.addEventListener('click', () => {
-        console.log('mainEl clicked');
         const opened = document.getElementsByClassName('navbar-collapse show');
         if (opened.length > 0) {
           const navbarButton: any = document.getElementsByClassName(
