@@ -1,11 +1,19 @@
 import { Component } from '@stencil/core';
-import { translate } from '../../services/translation.service';
+import {
+  translate,
+  TranslationService,
+} from '../../services/translation.service';
 
 @Component({
   tag: 'app-nav-header',
   styleUrl: 'app-nav-header.scss',
 })
 export class AppNavHeader {
+  constructor() {
+    const translationService = new TranslationService();
+    translationService.init('en');
+  }
+
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">

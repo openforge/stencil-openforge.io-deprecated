@@ -7,9 +7,7 @@ import { translate } from '../../services/translation.service';
 })
 export class AppTranslate {
   @Prop() private key: string = '';
-
   @Prop() params: {} = {};
-
   @Element() translatedTextElement: HTMLElement;
 
   public render() {
