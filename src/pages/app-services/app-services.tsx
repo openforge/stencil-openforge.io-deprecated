@@ -33,7 +33,7 @@ export class AppServices {
                   <figure>
                     <img
                       class="img-fluid"
-                      src="assets/graphic-services-startup.png"
+                      src="/assets/graphic-services-startup.png"
                       alt=""
                     />
                     <figcaption>
@@ -54,7 +54,7 @@ export class AppServices {
                   <figure>
                     <img
                       class="img-fluid"
-                      src="assets/graphic-services-small.png"
+                      src="/assets/graphic-services-small.png"
                       alt=""
                     />
                     <figcaption>
@@ -74,7 +74,7 @@ export class AppServices {
                   <figure>
                     <img
                       class="img-fluid"
-                      src="assets/graphic-services-midsize.png"
+                      src="/assets/graphic-services-midsize.png"
                       alt=""
                     />
                     <figcaption>
@@ -94,7 +94,7 @@ export class AppServices {
                   <figure>
                     <img
                       class="img-fluid"
-                      src="assets/graphic-services-enterprise.png"
+                      src="/assets/graphic-services-enterprise.png"
                       alt=""
                     />
                     <figcaption>

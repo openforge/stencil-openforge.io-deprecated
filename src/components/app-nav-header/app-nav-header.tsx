@@ -22,7 +22,7 @@ export class AppNavHeader {
             <h1>
               <app-img
                 class="img-fluid"
-                src="assets/logo-openforge.png"
+                src="/assets/logo-openforge.png"
                 alt={translate('nav.header.img.alt')}
               />
             </h1>

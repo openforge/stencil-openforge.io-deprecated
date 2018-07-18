@@ -76,7 +76,7 @@ export class AppContact {
     this.resetFormValues();
     let element;
     element = document.querySelector('.contact .hero');
-    element.style.backgroundImage = `url('assets/bg-hero-handshake-desk.jpg')`;
+    element.style.backgroundImage = `url('/assets/bg-hero-handshake-desk.jpg')`;
   }
 
   @Listen('check')
@@ -395,7 +395,7 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container">
-                <content-graphic-lg img-url="assets/rocket.png">
+                <content-graphic-lg img-url="/assets/rocket.png">
                   <h3 slot="header">
                     <app-translate key="contact.form.thanx" />
                   </h3>

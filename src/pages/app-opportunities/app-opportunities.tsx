@@ -59,7 +59,7 @@ export class AppOpportunities {
     this.resetFormValues();
     let element;
     element = document.querySelector('.opportunities .hero');
-    element.style.backgroundImage = `url('assets/bg-hero-mountain.jpg')`;
+    element.style.backgroundImage = `url('/assets/bg-hero-mountain.jpg')`;
   }
 
   componentDidUpdate() {
@@ -245,7 +245,7 @@ export class AppOpportunities {
         <section id="intro" class="intro">
           <div class="container">
             <content-graphic-lg
-              img-url="assets/graphic-opportunities-suck.jpg"
+              img-url="/assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
               <h3 slot="header">
@@ -256,7 +256,7 @@ export class AppOpportunities {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-opportunities-codemaster.jpg">
+            <content-graphic-lg img-url="/assets/graphic-opportunities-codemaster.jpg">
               <h3 slot="header">
                 <app-translate key="opportunities.intro.codeMaster.title" />
               </h3>
@@ -281,7 +281,7 @@ export class AppOpportunities {
                   <h3>Angular</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="assets/graphic-opportunities-phone1.png"
+                    src="/assets/graphic-opportunities-phone1.png"
                     alt=""
                   />
                 </div>
@@ -289,7 +289,7 @@ export class AppOpportunities {
                   <h3>Redux</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="assets/graphic-opportunities-phone2.png"
+                    src="/assets/graphic-opportunities-phone2.png"
                     alt=""
                   />
                 </div>
@@ -297,12 +297,12 @@ export class AppOpportunities {
                   <h3>API Integration</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="assets/graphic-opportunities-phone3.png"
+                    src="/assets/graphic-opportunities-phone3.png"
                     alt=""
                   />
                   <app-img
                     class="img-fluid d-xs-inline d-md-none"
-                    src="assets/graphic-opportunities-phone4.png"
+                    src="/assets/graphic-opportunities-phone4.png"
                     alt=""
                   />
                 </div>
@@ -312,7 +312,7 @@ export class AppOpportunities {
 
           <div class="container">
             <content-graphic-lg
-              img-url="assets/graphic-opportunities-ionic.jpg"
+              img-url="/assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
               <h3 slot="header">
@@ -323,7 +323,7 @@ export class AppOpportunities {
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-opportunities-sword.png">
+            <content-graphic-lg img-url="/assets/graphic-opportunities-sword.png">
               <h3 slot="header">
                 <app-translate key="opportunities.prepared.title" />
               </h3>
@@ -547,7 +547,7 @@ export class AppOpportunities {
                 <app-translate key="opportunities.form.submitted" />
               </h2>
 
-              <content-graphic-lg img-url="assets/graphic-opportunities-robot.png">
+              <content-graphic-lg img-url="/assets/graphic-opportunities-robot.png">
                 <h3 slot="header">
                   <app-translate key="opportunities.form.thanks.title" />
                 </h3>
