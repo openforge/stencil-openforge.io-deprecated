@@ -1,7 +1,7 @@
 import '@stencil/router';
 import { Component } from '@stencil/core';
-
 import { polyfill } from 'smoothscroll-polyfill';
+
 polyfill();
 
 @Component({
@@ -9,17 +9,20 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  // @Element() mainEl: HTMLElement;
   mainEl: HTMLElement;
 
   componentDidLoad() {
     try {
-      this.mainEl = document.querySelector('main');
+      this.mainEl = document.querySelector('app-nav-header');
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
     }
 
     if (this.mainEl) {
+      console.log('mainEl exists', this.mainEl);
       this.mainEl.addEventListener('click', () => {
+        console.log('mainEl clicked');
         const opened = document.getElementsByClassName('navbar-collapse show');
         if (opened.length > 0) {
           const navbarButton: any = document.getElementsByClassName(
