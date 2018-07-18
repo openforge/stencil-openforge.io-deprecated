@@ -1,7 +1,7 @@
 import '@stencil/router';
 import { Component } from '@stencil/core';
-
 import { polyfill } from 'smoothscroll-polyfill';
+
 polyfill();
 
 @Component({
@@ -9,11 +9,12 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  // @Element() mainEl: HTMLElement;
   mainEl: HTMLElement;
 
   componentDidLoad() {
     try {
-      this.mainEl = document.querySelector('main');
+      this.mainEl = document.querySelector('app-nav-header');
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
     }
