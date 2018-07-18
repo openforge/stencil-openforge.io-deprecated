@@ -18,15 +18,17 @@ export class OpenForgeApp {
       console.error('caught error componentDidLoad open-forge-app', e);
     }
 
-    this.mainEl.addEventListener('click', () => {
-      const opened = document.getElementsByClassName('navbar-collapse show');
-      if (opened.length > 0) {
-        const navbarButton: any = document.getElementsByClassName(
-          'navbar-toggler'
-        )[0];
-        navbarButton.click();
-      }
-    });
+    if (this.mainEl) {
+      this.mainEl.addEventListener('click', () => {
+        const opened = document.getElementsByClassName('navbar-collapse show');
+        if (opened.length > 0) {
+          const navbarButton: any = document.getElementsByClassName(
+            'navbar-toggler'
+          )[0];
+          navbarButton.click();
+        }
+      });
+    }
   }
 
   render() {

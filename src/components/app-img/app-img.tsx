@@ -3,7 +3,6 @@ import { Component, Element, Prop, State, Watch } from '@stencil/core';
 @Component({
   tag: 'app-img',
   styleUrl: 'app-img.scss',
-  shadow: true,
 })
 export class Img {
   private io: IntersectionObserver | null = null;
