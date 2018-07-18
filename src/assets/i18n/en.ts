@@ -15,11 +15,11 @@ export const translations = {
           fromStartupToEnterprise:
             'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
           appDevelopmentText:
-            'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as <a href="https://ionicframework.com/" target="_blank">The Ionic Framework</a>, <a href="https://angular.io/" target="_blank">Angular (Google)</a>, <a href="https://reactjs.org/" target="_blank">React.js (Facebook)</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a>, <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, and many more!',
+            'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as <a href="https://ionicframework.com/" target="_blank" rel="noopener">The Ionic Framework</a>, <a href="https://angular.io/" target="_blank" rel="noopener">Angular (Google)</a>, <a href="https://reactjs.org/" target="_blank" rel="noopener">React.js (Facebook)</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a>, <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, and many more!',
           appDevelopment: 'App Development',
           uxUiDesign: 'UI/UX Design',
           uxUiDesignText:
-            'The OpenForge Discovery &amp; Design Process is specifically engineered to increase ROI, user engagement, and get you results. Our unique process has been proven to keep projects on-time and on-budget every step of the way by utilizing leading technologies such as <a href="https://www.adobe.com/products/photoshop.html" target="_blank">Adobe Photoshop</a>, <a href="https://www.sketchapp.com/" target="_blank">Sketch App</a>, and <a href="https://www.goabstract.com/" target="_blank">Abstract</a>.',
+            'The OpenForge Discovery &amp; Design Process is specifically engineered to increase ROI, user engagement, and get you results. Our unique process has been proven to keep projects on-time and on-budget every step of the way by utilizing leading technologies such as <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener">Adobe Photoshop</a>, <a href="https://www.sketchapp.com/" target="_blank" rel="noopener">Sketch App</a>, and <a href="https://www.goabstract.com/" target="_blank" rel="noopener">Abstract</a>.',
           consulting: 'Consulting',
           consultingText:
             "We offer a wide variety of services including Training, CTO Representation, Design Audits, and Software Process Improvement (SPI) Consulting. If you are looking to increase your team's efficiency or bring your product to market on-time and on-schedule, our team is here to help you succeed.",
@@ -188,7 +188,7 @@ export const translations = {
       intro: {
         title: 'Forget normal interviews!',
         text:
-          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank'>Ionic</a> or <a href='https://reactjs.org/' target='_blank'> React App!</a>",
+          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank' rel='noopener'>Ionic</a> or <a href='https://reactjs.org/' target='_blank' rel='noopener'>React App!</a>",
         codeMaster: {
           title: 'We want to put you to the test!',
           body:
@@ -202,7 +202,7 @@ export const translations = {
       reputation: {
         title: 'Reputation is Everything.',
         text:
-          "Because we value our partnerships. As a trusted partner of the <a href='https://ionicframework.com/' target='_blank'> Ionic Team </a> our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!",
+          "Because we value our partnerships. As a trusted partner of the <a href='https://ionicframework.com/' target='_blank' rel='noopener'> Ionic Team </a> our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!",
       },
       prepared: {
         title: 'Are you prepared?',

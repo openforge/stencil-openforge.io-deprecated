@@ -55,6 +55,7 @@
       @include media-breakpoint-down(xs) {
         padding-left: none;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .card {

@@ -207,6 +207,7 @@ export class AppOpportunities {
       e.target.reset();
       this.resetFormValues();
 
+      this.submitButtonDisabled = false;
       this.formSubmitting = false;
       this.submitButtonDisabled = false;
       this.formSubmitted = true;
