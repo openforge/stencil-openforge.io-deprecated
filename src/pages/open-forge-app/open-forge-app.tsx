@@ -32,8 +32,30 @@ export class OpenForgeApp {
     }
   }
 
+  private msieversion() {
+    const ua = window.navigator.userAgent;
+    const msie = ua.indexOf('MSIE ');
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      // If Internet Explorer, return version number
+      return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+    }
+
+    return false;
+  }
+
+  isIE() {
+    return !!this.msieversion();
+  }
+
   render() {
-    console.log('rendering open-forge-app');
+    if (this.isIE()) {
+      return (
+        <div>
+          <span>Internet Explorer is not supported.</span>
+        </div>
+      );
+    }
     return (
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
