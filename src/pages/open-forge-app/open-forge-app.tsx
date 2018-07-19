@@ -36,7 +36,7 @@ export class OpenForgeApp {
     const ua = window.navigator.userAgent;
     const msie = ua.indexOf('MSIE ');
 
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+    if (msie > 0 || !!navigator.userAgent.match(/Trident/)) {
       console.log(msie, ua, 'msie');
       // If Internet Explorer, return version number
       return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
