@@ -37,6 +37,7 @@ export class OpenForgeApp {
     const msie = ua.indexOf('MSIE ');
 
     if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      console.log(msie, ua, 'msie');
       // If Internet Explorer, return version number
       return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
     }
@@ -49,7 +50,9 @@ export class OpenForgeApp {
   }
 
   render() {
+    console.log(this.isIE(), 'isIE');
     if (this.isIE()) {
+      console.log(this.isIE(), 'isIE --inside');
       return (
         <div>
           <span>Internet Explorer is not supported.</span>
