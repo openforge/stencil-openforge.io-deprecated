@@ -4,29 +4,24 @@ self.workbox.skipWaiting();
 self.workbox.clientsClaim();
 
 // your custom service worker code
-
 self.workbox.routing.registerRoute(
-  new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
-  workbox.strategies.cacheFirst({
-    cacheName: 'google-fonts',
-    plugins: [
-      new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200]
-      })
-    ]
-  })
+    /\.(?:png|gif|jpg|jpeg|svg)$/,
+    workbox.strategies.cacheFirst({
+      cacheName: 'images',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 60,
+          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+        }),
+      ],
+    }),
 );
 
 self.workbox.routing.registerRoute(
-  new RegExp('(http|https)://*'),
-  workbox.strategies.cacheFirst({
-    cacheName: 'file-cache',
-    plugins: [
-      new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200]
-      })
-    ]
-  })
+    /\.(?:js|css)$/,
+    workbox.strategies.staleWhileRevalidate({
+    cacheName: 'static-resources',
+    }),
 );
 
 self.workbox.precaching.precacheAndRoute([]);
