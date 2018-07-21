@@ -1,4 +1,4 @@
-const sass = require('@stencil/sass');
+var sass = require('@stencil/sass');
 exports.config = {
   enableCache: false,
   plugins: [
