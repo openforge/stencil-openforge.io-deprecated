@@ -7,8 +7,8 @@ import { Component } from '@stencil/core';
 export class App404 {
   render() {
     return (
-      <div>
-        <div class="special">
+      <div class="no-page">
+        <section class="container">
           <img src="/assets/forge.png" />
 
           <p>
@@ -23,7 +23,7 @@ export class App404 {
             Explorer. We highly recommend that you update your browser to
             Chrome, Firefox, Safari, or even Microsoft Edge.
           </p>
-        </div>
+        </section>
         <app-footer />
       </div>
     );
