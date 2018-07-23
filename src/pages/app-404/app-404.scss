@@ -1,0 +1,21 @@
+.special {
+  background-size: contain;
+  height: 630px;
+  padding: 100px 130px;
+  position: relative;
+  width: 780px;
+  @include media-breakpoint-down(md) {
+    background: none;
+    height: auto;
+    margin-left: 0;
+    padding: 125px 0 0;
+    width: 100%;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 100px 0 0;
+  }
+
+  img {
+    align-content: center;
+  }
+}

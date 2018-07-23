@@ -1,13 +1,18 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  componentDidLoad() {}
+  @Prop() history: RouterHistory;
 
   render() {
+    if (true) {
+      console.log('Is IE check = ', true);
+      this.history.push('404', {});
+    }
     return (
       <div class="home">
         {/* header - hero */}

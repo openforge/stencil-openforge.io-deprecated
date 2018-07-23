@@ -9,7 +9,6 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
-  // @Element() mainEl: HTMLElement;
   mainEl: HTMLElement;
 
   componentDidLoad() {
@@ -50,15 +49,6 @@ export class OpenForgeApp {
   }
 
   render() {
-    console.log(this.isIE(), 'isIE');
-    if (this.isIE()) {
-      console.log(this.isIE(), 'isIE --inside');
-      return (
-        <div>
-          <span>Internet Explorer is not supported.</span>
-        </div>
-      );
-    }
     return (
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
@@ -70,6 +60,7 @@ export class OpenForgeApp {
             exact={true}
           />
           <stencil-route url="/about" component="app-about" exact={true} />
+          <stencil-route url="/404" component="app-404" exact={true} />
           <stencil-route component="app-home" />
         </stencil-route-switch>
       </stencil-router>
