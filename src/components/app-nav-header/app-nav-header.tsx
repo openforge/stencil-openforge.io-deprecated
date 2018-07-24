@@ -1,10 +1,19 @@
 import { Component } from '@stencil/core';
+import {
+  translate,
+  TranslationService,
+} from '../../services/translation.service';
 
 @Component({
   tag: 'app-nav-header',
   styleUrl: 'app-nav-header.scss',
 })
 export class AppNavHeader {
+  constructor() {
+    const translationService = new TranslationService();
+    translationService.init('en');
+  }
+
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
@@ -13,8 +22,8 @@ export class AppNavHeader {
             <h1>
               <app-img
                 class="img-fluid"
-                src="assets/logo-openforge.png"
-                alt="OpenForge"
+                src="/assets/logo-openforge.png"
+                alt={translate('nav.header.img.alt')}
               />
             </h1>
           </div>
@@ -39,7 +48,7 @@ export class AppNavHeader {
                   anchorClass="nav-link"
                   activeClass="active"
                 >
-                  Home
+                  {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
@@ -48,7 +57,7 @@ export class AppNavHeader {
                   anchorClass="nav-link"
                   activeClass="active"
                 >
-                  About Us
+                  {translate('nav.links.about')}
                 </stencil-route-link>
               </li>
               {/* <li class="nav-item" data-target="#navbarSupportedContent">
@@ -66,7 +75,7 @@ export class AppNavHeader {
                   anchorClass="nav-link"
                   activeClass="active"
                 >
-                  Contact
+                  {translate('nav.links.contact')}
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
@@ -75,14 +84,14 @@ export class AppNavHeader {
                   anchorClass="nav-link"
                   activeClass="active"
                 >
-                  Opportunities
+                  {translate('nav.links.opportunities')}
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
                   class="nav-link"
                   href="https://github.com/openforge"
-                  title="Openforge Github account"
+                  title={translate('nav.links.github')}
                   target="_blank"
                   rel="noopener"
                 >

@@ -360,6 +360,41 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppTranslate {
+      'key': string;
+      'params': {};
+    }
+  }
+
+  interface HTMLAppTranslateElement extends StencilComponents.AppTranslate, HTMLStencilElement {}
+
+  var HTMLAppTranslateElement: {
+    prototype: HTMLAppTranslateElement;
+    new (): HTMLAppTranslateElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-translate': HTMLAppTranslateElement;
+  }
+  interface ElementTagNameMap {
+    'app-translate': HTMLAppTranslateElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-translate': JSXElements.AppTranslateAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTranslateAttributes extends HTMLAttributes {
+      'key'?: string;
+      'params'?: {};
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface ContentGraphicLg {
       'imgUrl': string;
       'preLoadImg': boolean;
