@@ -57,9 +57,6 @@ export class AppOpportunities {
 
   componentDidLoad() {
     this.resetFormValues();
-    let element;
-    element = document.querySelector('.opportunities .hero');
-    element.style.backgroundImage = `url('/assets/bg-hero-mountain.jpg')`;
   }
 
   componentDidUpdate() {
