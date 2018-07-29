@@ -4,7 +4,6 @@ import { translate } from '../../services/translation.service';
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
-  shadow: true,
 })
 export class AppAbout {
   members = [
