@@ -15,7 +15,7 @@ export const translations = {
           fromStartupToEnterprise:
             'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
           appDevelopmentText:
-            'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as <a href="https://ionicframework.com/" target="_blank" rel="noopener">The Ionic Framework</a>, <a href="https://angular.io/" target="_blank" rel="noopener">Angular (Google)</a>, <a href="https://reactjs.org/" target="_blank" rel="noopener">React.js (Facebook)</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a>, <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>, and many more!',
+            'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as <a href="https://ionicframework.com/" target="_blank" rel="noopener">The Ionic Framework</a>, <a href="https://angular.io/" target="_blank" rel="noopener">Angular (Google)</a>, <a href="https://reactjs.org/" target="_blank" rel="noopener">React.js (Facebook)</a>, <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>, <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a>, and many more!',
           appDevelopment: 'App Development',
           uxUiDesign: 'UI/UX Design',
           uxUiDesignText:
@@ -127,8 +127,9 @@ export const translations = {
     contact: {
       hero: {
         title: "Let's Work Together",
-        request: 'Request a Discovery Session Today!',
-        requestNow: 'Request Now',
+        request:
+          'We are Philadelphia web and mobile application experts, and we are here to help.  Contact us today to start working with our team.  Let us apply industry best practices to enhance your business!',
+        requestNow: 'Request Free Quote',
       },
       form: {
         title: 'Get in Touch',
@@ -184,7 +185,7 @@ export const translations = {
         title: 'OpenForge is hiring two amazing developers!',
         text:
           "Looking for a new adventure? Want to know if you're the right fit for the team?",
-        text2: 'Scroll down to find out!',
+        text2: 'Scroll to Learn More!',
       },
       intro: {
         title: 'Forget normal interviews!',

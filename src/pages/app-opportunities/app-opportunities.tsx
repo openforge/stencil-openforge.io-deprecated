@@ -57,9 +57,6 @@ export class AppOpportunities {
 
   componentDidLoad() {
     this.resetFormValues();
-    let element;
-    element = document.querySelector('.opportunities .hero');
-    element.style.backgroundImage = `url('/assets/bg-hero-mountain.jpg')`;
   }
 
   componentDidUpdate() {
@@ -219,6 +216,12 @@ export class AppOpportunities {
     }
   }
 
+  scrollToForm() {
+    const form = document.getElementById('intro');
+
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <div class="opportunities">
@@ -233,9 +236,12 @@ export class AppOpportunities {
                 <p>
                   <app-translate key="opportunities.hero.text" />
                 </p>
-                <p>
+                <button
+                  onClick={this.scrollToForm.bind(this)}
+                  class="btn btn-primary"
+                >
                   <app-translate key="opportunities.hero.text2" />
-                </p>
+                </button>
               </div>
             </div>
           </div>
