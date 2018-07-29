@@ -127,8 +127,9 @@ export const translations = {
     contact: {
       hero: {
         title: "Let's Work Together",
-        request: 'Request a Discovery Session Today!',
-        requestNow: 'Request Now',
+        request:
+          'We are Philadelphia web and mobile application experts, and we are here to help.  Contact us today to start working with our team.  Let us apply industry best practices to enhance your business!',
+        requestNow: 'Request Free Quote',
       },
       form: {
         title: 'Get in Touch',
@@ -184,7 +185,7 @@ export const translations = {
         title: 'OpenForge is hiring two amazing developers!',
         text:
           "Looking for a new adventure? Want to know if you're the right fit for the team?",
-        text2: 'Scroll down to find out!',
+        text2: 'Scroll to Learn More!',
       },
       intro: {
         title: 'Forget normal interviews!',
