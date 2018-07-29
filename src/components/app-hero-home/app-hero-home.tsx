@@ -3,7 +3,6 @@ import { Component, Prop } from '@stencil/core';
 @Component({
   tag: 'app-hero-home',
   styleUrl: 'app-hero-home.scss',
-  shadow: true,
 })
 export class AppHeroHome {
   @Prop() textNoWrap: boolean;
