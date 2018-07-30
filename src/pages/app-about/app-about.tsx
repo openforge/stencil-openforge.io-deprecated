@@ -1,4 +1,4 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 @Component({
@@ -130,32 +130,6 @@ export class AppAbout {
     },
   ];
 
-  componentDidLoad() {
-    this.handleImage();
-  }
-
-  @Listen('window:resize')
-  handleImage() {
-    let element;
-    try {
-      element = document.querySelector('.about .hero');
-      element.style.backgroundImage = `url('/assets/bg-hero-icons.jpg')`;
-    } catch (e) {
-      console.log('app-about-header undefined', e);
-    }
-
-    if (window.innerWidth < 576) {
-      // small
-      element.style.backgroundImage = `url('/assets/bg-hero-icons-sm.jpg')`;
-    } else if (window.innerWidth < 992) {
-      // medium
-      element.style.backgroundImage = `url('/assets/bg-hero-icons-md.jpg')`;
-    } else {
-      // large
-      element.style.backgroundImage = `url('/assets/bg-hero-icons.jpg')`;
-    }
-  }
-
   scrollToForm() {
     const form = document.getElementById('about');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -187,7 +161,7 @@ export class AppAbout {
         </header>
 
         {/* section - about */}
-        <section id="about" class="about bg-gray">
+        <section class="about bg-gray">
           <div class="container">
             <div class="about--header">
               <h2>Meet the Team</h2>

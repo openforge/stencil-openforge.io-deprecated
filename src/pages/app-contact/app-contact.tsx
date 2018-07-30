@@ -72,13 +72,6 @@ export class AppContact {
     };
   }
 
-  componentDidLoad() {
-    this.resetFormValues();
-    let element;
-    element = document.querySelector('.contact .hero');
-    element.style.backgroundImage = `url('/assets/bg-hero-handshake-desk.jpg')`;
-  }
-
   @Listen('check')
   @Listen('valueChange')
   valueChangeHandler(event) {
