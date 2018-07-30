@@ -131,7 +131,7 @@ export class AppAbout {
   ];
 
   scrollToForm() {
-    const form = document.getElementById('about');
+    const form = document.getElementById('about-section');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -161,7 +161,7 @@ export class AppAbout {
         </header>
 
         {/* section - about */}
-        <section class="about bg-gray">
+        <section id="about-section" class="about bg-gray">
           <div class="container">
             <div class="about--header">
               <h2>Meet the Team</h2>
