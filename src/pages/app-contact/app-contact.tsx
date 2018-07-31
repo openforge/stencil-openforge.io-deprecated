@@ -67,7 +67,6 @@ export class AppContact {
         translate('contact.form.budgetThreshold.five'),
         translate('contact.form.budgetThreshold.six'),
         translate('contact.form.budgetThreshold.seven'),
-        translate('contact.form.budgetThreshold.unsure'),
       ],
     };
   }
@@ -80,6 +79,10 @@ export class AppContact {
     this.formValues[field] = value;
 
     this.validateField(target);
+  }
+
+  componentDidLoad() {
+    this.resetFormValues();
   }
 
   validateField(e) {
