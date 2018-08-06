@@ -70,6 +70,8 @@ export class AppContact {
         translate('contact.form.budgetThreshold.unsure'),
       ],
     };
+
+    this.resetFormValues();
   }
 
   @Listen('check')
