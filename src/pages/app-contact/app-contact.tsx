@@ -85,7 +85,6 @@ export class AppContact {
   }
 
   validateField(e) {
-    console.log('validating e? ', e);
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
@@ -109,10 +108,14 @@ export class AppContact {
         break;
 
       case 'phone':
-        this.formValues.phoneValid = e.checkValidity();
+        this.formValues.phoneValid = e.value.match(
+          /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+        );
         this.phoneError = this.formValues.phoneValid
           ? ''
-          : (this.phoneError = e.validationMessage);
+          : (this.phoneError =
+              e.validationMessage ||
+              'Phone number invalid. Please try a format such as: "123-123-1234" or "+1-123-234-1234"');
         break;
 
       case 'message':
@@ -315,7 +318,7 @@ export class AppContact {
                     name="phone"
                     label={translate('contact.form.phone')}
                     id="phone"
-                    type="number"
+                    type="tel"
                     required={true}
                   />
                   <p class="error">
