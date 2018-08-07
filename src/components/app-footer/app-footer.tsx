@@ -63,6 +63,16 @@ export class AppFooter {
                     OpenForge_US
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/openforgeteam/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-instagram" aria-hidden="true" />{' '}
+                    @OpenForgeTeam
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="footer--column col-12 col-sm-4">
