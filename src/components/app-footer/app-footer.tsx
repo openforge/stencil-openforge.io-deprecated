@@ -19,7 +19,7 @@ export class AppFooter {
                 {translate('footer.address.line1')}
                 <br />
                 {translate('footer.address.line2')}
-
+                <br />
                 <a href="mailto:hello@openforge.io">
                   {translate('footer.address.email')}
                 </a>
@@ -61,6 +61,16 @@ export class AppFooter {
                   >
                     <i class="fab fa-linkedin" aria-hidden="true" />{' '}
                     OpenForge_US
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/openforgeteam/"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i class="fab fa-instagram" aria-hidden="true" />{' '}
+                    @OpenForgeTeam
                   </a>
                 </li>
               </ul>

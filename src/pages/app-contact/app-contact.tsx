@@ -67,16 +67,8 @@ export class AppContact {
         translate('contact.form.budgetThreshold.five'),
         translate('contact.form.budgetThreshold.six'),
         translate('contact.form.budgetThreshold.seven'),
-        translate('contact.form.budgetThreshold.unsure'),
       ],
     };
-  }
-
-  componentDidLoad() {
-    this.resetFormValues();
-    let element;
-    element = document.querySelector('.contact .hero');
-    element.style.backgroundImage = `url('/assets/bg-hero-handshake-desk.jpg')`;
   }
 
   @Listen('check')
@@ -87,6 +79,10 @@ export class AppContact {
     this.formValues[field] = value;
 
     this.validateField(target);
+  }
+
+  componentDidLoad() {
+    this.resetFormValues();
   }
 
   validateField(e) {
