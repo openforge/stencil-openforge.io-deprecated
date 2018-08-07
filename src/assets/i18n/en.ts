@@ -92,7 +92,7 @@ export const translations = {
           'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
         designUserExperience: 'Design & User Experience',
         designUserExperienceBody:
-          'There is psychology and through behind every effective design. Our team of experts sits with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
+          'There is psychology and thought behind every effective design. Our team of experts sits with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
       },
       perspectives: {
         title: 'We Are Powered by Multiple Perspectives',
