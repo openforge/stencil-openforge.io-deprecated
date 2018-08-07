@@ -19,7 +19,7 @@ export class AppFooter {
                 {translate('footer.address.line1')}
                 <br />
                 {translate('footer.address.line2')}
-
+                <br />
                 <a href="mailto:hello@openforge.io">
                   {translate('footer.address.email')}
                 </a>
