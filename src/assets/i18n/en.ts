@@ -250,7 +250,7 @@ export const translations = {
       address: {
         header: 'Our Headquarters',
         name: 'OpenForge',
-        line1: '1040 N 2nd St.',
+        line1: '1040 N 2nd St, Suite #301',
         line2: 'Philadelphia, PA 19123',
         email: 'hello@openforge.io',
       },
