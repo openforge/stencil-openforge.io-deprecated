@@ -1,4 +1,5 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-opportunities',
@@ -56,9 +57,6 @@ export class AppOpportunities {
 
   componentDidLoad() {
     this.resetFormValues();
-    let element;
-    element = document.querySelector('.opportunities .hero');
-    element.style.backgroundImage = `url('assets/bg-hero-mountain.jpg')`;
   }
 
   componentDidUpdate() {
@@ -218,6 +216,12 @@ export class AppOpportunities {
     }
   }
 
+  scrollToForm() {
+    const form = document.getElementById('intro');
+
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <div class="opportunities">
@@ -226,12 +230,18 @@ export class AppOpportunities {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>OpenForge is hiring two amazing developers!</h2>
+                <h2>
+                  <app-translate key="opportunities.hero.title" />
+                </h2>
                 <p>
-                  Looking for a new adventure? Want to know if you're the right
-                  fit for the team?
+                  <app-translate key="opportunities.hero.text" />
                 </p>
-                <p>Scroll down to find out!</p>
+                <button
+                  onClick={this.scrollToForm.bind(this)}
+                  class="btn btn-primary"
+                >
+                  <app-translate key="opportunities.hero.text2" />
+                </button>
               </div>
             </div>
           </div>
@@ -241,37 +251,23 @@ export class AppOpportunities {
         <section id="intro" class="intro">
           <div class="container">
             <content-graphic-lg
-              img-url="assets/graphic-opportunities-suck.jpg"
+              img-url="/assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
-              <h3 slot="header">Forget normal interviews!</h3>
+              <h3 slot="header">
+                <app-translate key="opportunities.intro.title" />
+              </h3>
               <p slot="body">
-                From our work to our interview process, we break the norm. We
-                believe in Open Source contributions; so part of your interview
-                assignment will be exactly that - build out a simple (open
-                source){' '}
-                <a
-                  href="https://ionicframework.com/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Ionic
-                </a>{' '}
-                or{' '}
-                <a href="https://reactjs.org/" target="_blank" rel="noopener">
-                  {' '}
-                  React App!
-                </a>
+                <app-translate key="opportunities.intro.text" />
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-opportunities-codemaster.jpg">
-              <h3 slot="header">We want to put you to the test!</h3>
+            <content-graphic-lg img-url="/assets/graphic-opportunities-codemaster.jpg">
+              <h3 slot="header">
+                <app-translate key="opportunities.intro.codeMaster.title" />
+              </h3>
               <p slot="body">
-                Instead of asking you a million questions, we'd rather get to
-                know you another way - seeing how you follow direction, develop,
-                and learn a new technology or pattern that you have not used
-                before.
+                <app-translate key="opportunities.intro.codeMaster.body" />
               </p>
             </content-graphic-lg>
           </div>
@@ -279,15 +275,19 @@ export class AppOpportunities {
           <div class="challenge">
             <div class="container">
               <div class="intro text-center">
-                <h2>The Challenge</h2>
-                <p>Show us your skills in:</p>
+                <h2>
+                  <app-translate key="opportunities.challenge.title" />
+                </h2>
+                <p>
+                  <app-translate key="opportunities.challenge.showUs" />
+                </p>
               </div>
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">
                   <h3>Angular</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="assets/graphic-opportunities-phone1.png"
+                    src="/assets/graphic-opportunities-phone1.png"
                     alt=""
                   />
                 </div>
@@ -295,7 +295,7 @@ export class AppOpportunities {
                   <h3>Redux</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="assets/graphic-opportunities-phone2.png"
+                    src="/assets/graphic-opportunities-phone2.png"
                     alt=""
                   />
                 </div>
@@ -303,12 +303,12 @@ export class AppOpportunities {
                   <h3>API Integration</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="assets/graphic-opportunities-phone3.png"
+                    src="/assets/graphic-opportunities-phone3.png"
                     alt=""
                   />
                   <app-img
                     class="img-fluid d-xs-inline d-md-none"
-                    src="assets/graphic-opportunities-phone4.png"
+                    src="/assets/graphic-opportunities-phone4.png"
                     alt=""
                   />
                 </div>
@@ -318,33 +318,23 @@ export class AppOpportunities {
 
           <div class="container">
             <content-graphic-lg
-              img-url="assets/graphic-opportunities-ionic.jpg"
+              img-url="/assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
-              <h3 slot="header">Reputation is Everything.</h3>
+              <h3 slot="header">
+                <app-translate key="opportunities.reputation.title" />
+              </h3>
               <p slot="body">
-                Because we value our partnerships. As a trusted partner of the{' '}
-                <a
-                  href="https://ionicframework.com/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  {' '}
-                  Ionic Team{' '}
-                </a>{' '}
-                our clients rely on us to provide enterprise quality
-                applications for companies of all sizes; we need to make sure
-                you're up to the task!
+                <app-translate key="opportunities.reputation.text" />
               </p>
             </content-graphic-lg>
 
-            <content-graphic-lg img-url="assets/graphic-opportunities-sword.png">
-              <h3 slot="header">Are you prepared?</h3>
+            <content-graphic-lg img-url="/assets/graphic-opportunities-sword.png">
+              <h3 slot="header">
+                <app-translate key="opportunities.prepared.title" />
+              </h3>
               <p slot="body">
-                We're looking for someone who’s ready to hit the ground running
-                - someone who wants to turn big ideas into realities. A person
-                who can work on a team, show humility, and is not afraid to
-                learn and teach simultaneously.
+                <app-translate key="opportunities.prepared.body" />
               </p>
             </content-graphic-lg>
           </div>
@@ -355,21 +345,21 @@ export class AppOpportunities {
           {!this.formSubmitted ? (
             <div class="container">
               {!this.canRequestInterview ? (
-                <form
-                  class="apply-1"
-                  onSubmit={this.handleSliders.bind(this)}
-                  no-validate={true}
-                >
-                  <h2>Show us your skills</h2>
+                <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
+                  <h2>
+                    <app-translate key="opportunities.skills.title" />
+                  </h2>
                   <p>
-                    So if you're really awesome - prove it and position the
-                    sliders to reflect your skills! Hint; only the best shall
-                    pass the first test!
+                    <app-translate key="opportunities.skills.text" />
                   </p>
 
                   <div class="slider-labels">
-                    <p>N00b</p>
-                    <p>Expert</p>
+                    <p>
+                      <app-translate key="opportunities.skills.noob" />
+                    </p>
+                    <p>
+                      <app-translate key="opportunities.skills.expert" />
+                    </p>
                   </div>
 
                   <app-slider name="angular" label="Angular" />
@@ -379,10 +369,12 @@ export class AppOpportunities {
                   <app-slider name="css" label="CSS" />
 
                   {!this.interviewButtonDisabled ? (
-                    <p>You're all set! Let's get started.</p>
+                    <p>
+                      <app-translate key="opportunities.form.allset" />
+                    </p>
                   ) : (
                     <p>
-                      Not quite...keep sliding or keep learning; you can do it!
+                      <app-translate key="opportunities.form.almost" />
                     </p>
                   )}
 
@@ -391,7 +383,7 @@ export class AppOpportunities {
                     type="submit"
                     disabled={this.interviewButtonDisabled}
                   >
-                    Request an interview
+                    <app-translate key="opportunities.form.request" />
                   </button>
                 </form>
               ) : (
@@ -400,17 +392,27 @@ export class AppOpportunities {
                   id="myLittleAnchor"
                   onSubmit={this.handleSubmit.bind(this)}
                 >
-                  <h2>Mid-Level Developer</h2>
+                  <h2>
+                    <app-translate key="opportunities.form.midLevelTitle" />
+                  </h2>
                   <ul>
                     <li>Philadelphia</li>
-                    <li>Technology</li>
-                    <li>Full-Time</li>
+                    <li>
+                      <app-translate key="opportunities.form.technology" />
+                    </li>
+                    <li>
+                      <app-translate key="opportunities.form.fullTime" />
+                    </li>
                   </ul>
 
-                  <h3>Submit your application</h3>
+                  <h3>
+                    <app-translate key="opportunities.form.submitTitle" />
+                  </h3>
 
                   <div class="form-group">
-                    <label>Resume/CV</label>
+                    <label>
+                      <app-translate key="opportunities.form.resume" />
+                    </label>
                     <input
                       class="input-file"
                       type="file"
@@ -434,7 +436,7 @@ export class AppOpportunities {
                   </p>
 
                   <app-input
-                    label="Full Name"
+                    label={translate('contact.form.fullName')}
                     name="name"
                     type="text"
                     required={true}
@@ -452,7 +454,7 @@ export class AppOpportunities {
                     {this.nameError}
                   </p>
                   <app-input
-                    label="Email"
+                    label={translate('contact.form.email')}
                     name="email"
                     type="email"
                     required={true}
@@ -470,7 +472,7 @@ export class AppOpportunities {
                     {this.emailError}
                   </p>
                   <app-input
-                    label="Phone"
+                    label={translate('contact.form.phone')}
                     name="phone"
                     type="number"
                     required={true}
@@ -488,7 +490,7 @@ export class AppOpportunities {
                     {this.phoneError}
                   </p>
                   <app-input
-                    label="GitHub URL"
+                    label={translate('contact.form.github')}
                     name="github"
                     type="text"
                     required={true}
@@ -506,13 +508,13 @@ export class AppOpportunities {
                     {this.githubError}
                   </p>
 
-                  <h3>What makes you unique?</h3>
+                  <h3>
+                    <app-translate key="opportunities.form.unique.title" />
+                  </h3>
 
                   <div class="form-group input-textarea">
                     <label>
-                      In 150 characters or fewer, tell us what makes you unique.
-                      Try to be creative and say something that will catch our
-                      eye!
+                      <app-translate key="opportunities.form.unique.text" />
                     </label>
                     <textarea
                       class="form-control"
@@ -540,19 +542,23 @@ export class AppOpportunities {
                     type="submit"
                     disabled={this.submitButtonDisabled}
                   >
-                    Submit Application
+                    <app-translate key="opportunities.form.submit" />
                   </button>
                 </form>
               )}
             </div>
           ) : (
             <div class="container apply-3">
-              <h2>Application Submitted</h2>
-              <content-graphic-lg img-url="assets/graphic-opportunities-robot.png">
-                <h3 slot="header">Thank you!</h3>
+              <h2>
+                <app-translate key="opportunities.form.submitted" />
+              </h2>
+
+              <content-graphic-lg img-url="/assets/graphic-opportunities-robot.png">
+                <h3 slot="header">
+                  <app-translate key="opportunities.form.thanks.title" />
+                </h3>
                 <p slot="body">
-                  If your resume is a match, someone will be in touch to deliver
-                  the necessary materials to complete the challenge.
+                  <app-translate key="opportunities.form.thanks.text" />
                 </p>
               </content-graphic-lg>
             </div>

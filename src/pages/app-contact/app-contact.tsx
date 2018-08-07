@@ -1,4 +1,5 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-contact',
@@ -44,11 +45,30 @@ export class AppContact {
     paddingRight: '5px',
   };
 
-  componentDidLoad() {
-    this.resetFormValues();
-    let element;
-    element = document.querySelector('.contact .hero');
-    element.style.backgroundImage = `url('assets/bg-hero-handshake-desk.jpg')`;
+  radioChoices: any;
+
+  constructor() {
+    this.radioChoices = {
+      desiredService: [
+        translate('contact.form.appDevelopment'),
+        translate('contact.form.webDevelopment'),
+        translate('contact.form.uiDesign'),
+        translate('contact.form.graphicDesign'),
+        translate('contact.form.consulting'),
+        translate('contact.form.ctoAsService'),
+        translate('contact.form.unsure'),
+      ],
+      budget: [
+        translate('contact.form.unsure'),
+        translate('contact.form.budgetThreshold.one'),
+        translate('contact.form.budgetThreshold.two'),
+        translate('contact.form.budgetThreshold.three'),
+        translate('contact.form.budgetThreshold.four'),
+        translate('contact.form.budgetThreshold.five'),
+        translate('contact.form.budgetThreshold.six'),
+        translate('contact.form.budgetThreshold.seven'),
+      ],
+    };
   }
 
   @Listen('check')
@@ -59,6 +79,10 @@ export class AppContact {
     this.formValues[field] = value;
 
     this.validateField(target);
+  }
+
+  componentDidLoad() {
+    this.resetFormValues();
   }
 
   validateField(e) {
@@ -197,13 +221,17 @@ export class AppContact {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>Let's Work Together</h2>
-                <p>Request a Discovery Session Today!</p>
+                <h2>
+                  <app-translate key="contact.hero.title" />
+                </h2>
+                <p>
+                  <app-translate key="contact.hero.request" />
+                </p>
                 <button
                   onClick={this.scrollToForm.bind(this)}
                   class="btn btn-primary"
                 >
-                  Request Now
+                  <app-translate key="contact.hero.requestNow" />
                 </button>
               </div>
             </div>
@@ -214,11 +242,11 @@ export class AppContact {
           <div class="container">
             {!this.formSubmitted ? (
               <div class="jumbotron">
-                <h2 class="display-5 font-weight-bold">Get in Touch</h2>
+                <h2 class="display-5 font-weight-bold">
+                  <app-translate key="contact.form.title" />
+                </h2>
                 <p class="lead">
-                  Tell us a little bit about what you're working on. We'll be in
-                  touch to tell you about the next steps toward accomplishing
-                  your goals!
+                  <app-translate key="contact.form.text" />
                 </p>
                 <form
                   id="contact-form"
@@ -227,7 +255,7 @@ export class AppContact {
                 >
                   <app-input
                     name="name"
-                    label="Full Name"
+                    label={translate('contact.form.fullName')}
                     type="text"
                     id="name"
                     required={true}
@@ -247,7 +275,7 @@ export class AppContact {
 
                   <app-input
                     name="company"
-                    label="Company"
+                    label={translate('contact.form.company')}
                     type="text"
                     required={true}
                   />
@@ -266,7 +294,7 @@ export class AppContact {
 
                   <app-input
                     name="email"
-                    label="E-mail"
+                    label={translate('contact.form.email')}
                     type="email"
                     id="email"
                     required={true}
@@ -286,7 +314,7 @@ export class AppContact {
 
                   <app-input
                     name="phone"
-                    label="Phone"
+                    label={translate('contact.form.phone')}
                     id="phone"
                     type="number"
                     required={true}
@@ -306,7 +334,7 @@ export class AppContact {
 
                   <app-input
                     name="message"
-                    label="How did you hear about OpenForge?"
+                    label={translate('contact.form.whereDidYouHear')}
                     type="text"
                     required={true}
                   />
@@ -324,29 +352,38 @@ export class AppContact {
                   </p>
 
                   <fieldset>
-                    <legend class="lead">How can we help you?</legend>
+                    <legend class="lead">
+                      <app-translate key="contact.form.legend.help" />
+                    </legend>
                     <div class="row ml-2">
                       {this.renderRadioColumns(
                         'desiredService',
-                        radioChoices.desiredService
+                        this.radioChoices.desiredService
                       )}
                     </div>
                   </fieldset>
+
                   <p class="font-weight-bold">{this.serviceError}</p>
 
                   <fieldset>
-                    <legend class="lead">Do you have a budget?</legend>
+                    <legend class="lead">
+                      <app-translate key="contact.form.legend.budget" />
+                    </legend>
                     <div class="row ml-2">
-                      {this.renderRadioColumns('budget', radioChoices.budget)}
+                      {this.renderRadioColumns(
+                        'budget',
+                        this.radioChoices.budget
+                      )}
                     </div>
                   </fieldset>
+
                   <button
                     name="submit"
                     type="submit"
                     class="btn btn-primary"
                     disabled={this.isDisabled}
                   >
-                    Send
+                    <app-translate key="contact.form.button.send" />
                   </button>
                 </form>
               </div>
@@ -354,11 +391,12 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container">
-                <content-graphic-lg img-url="assets/rocket.png">
-                  <h3 slot="header">Thank you!</h3>
+                <content-graphic-lg img-url="/assets/rocket.png">
+                  <h3 slot="header">
+                    <app-translate key="contact.form.thanx" />
+                  </h3>
                   <p slot="body">
-                    Your message has been delivered. Someone will be in touch
-                    with you soon!
+                    <app-translate key="contact.form.thanxText" />
                   </p>
                 </content-graphic-lg>
               </div>
@@ -389,25 +427,3 @@ export class AppContact {
     };
   }
 }
-
-const radioChoices = {
-  desiredService: [
-    'App Development',
-    'Web Development',
-    'UI/UX Design',
-    'Graphic Design',
-    'Consulting',
-    'CTO as a service',
-    'Unsure',
-  ],
-  budget: [
-    '5K-10K',
-    '10K-25K',
-    '25K-50K',
-    '50K-75K',
-    '75K-100K',
-    '100K-200K',
-    '200K',
-    'Unsure',
-  ],
-};

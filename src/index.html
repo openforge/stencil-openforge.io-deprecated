@@ -15,14 +15,18 @@
   <meta property="og:title" content="Home of OpenForge.io" />
   <meta property="og:url" content="http://openforge.io/" />
   <meta property="og:site_name" content="OpenForge" />
+  <meta property="og:image" content="https://openforge.io/assets/graphic-home-development-card.png" />
   <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+
+  <!-- Preload to increase Time to Interactive -->
+
 
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
+
   <script src="/build/app.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Muli:300,400,600,700' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:700' as='stylesheet'>
   <!-- <link rel='stylesheet' href="/build/app.css"> Should have this; but it breaks smooth scroll -->
 
   <!-- In case JavaScript is not available -->
@@ -35,9 +39,26 @@
       "@type": "Organization",
       "url": "http://www.openforge.io/",
       "name": "OpenForge",
-      "address": "1040 N 2nd St. Philadelphia, PA 19123"
+      "address": "1040 N 2nd St, Suite #301, Philadelphia, PA 19123"
     };
   </script> -->
+
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118169306-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118169306-1');
+  </script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-4667540274312808",
+      enable_page_level_ads: true
+    });
+  </script>
 
 </head>
 <body>
@@ -49,14 +70,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <!-- Fontawesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-  <!-- Google Global Site Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118169306-1"></script>
-
-  <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', '118169306-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <script async defer src='https://www.google-analytics.com/analytics.js'></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
+import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-about',
@@ -9,46 +10,61 @@ export class AppAbout {
     {
       name: 'Jedi Weller',
       image: './../../assets/headshot-jedi.jpg',
-      title: 'Founder and Head of Technology',
+      color: '#fa8928',
+      title: translate('home.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
     },
     {
-      name: 'Geoffery Melle',
-      image: './../../assets/headshot-geoff.jpg',
-      title: 'Account Manager',
-      mail: 'geoff@openforge.io',
+      name: 'Rachel Bennett',
+      image: './../../assets/headshot-rachel.jpg',
+      color: '#638593',
+      title: translate('home.member.title.designer'),
+      mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
     },
     {
-      name: 'Rachel Bennett',
-      image: './../../assets/headshot-rachel.jpg',
-      title: 'Designer',
-      mail: 'rachel@openforge.io',
+      name: 'Geoffery Melle',
+      image: './../../assets/headshot-geoff.jpg',
+      color: '#d8aa0c',
+      title: translate('home.member.title.accountManager'),
+      mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
     },
     {
       name: 'Joni Leho',
       image: './../../assets/headshot-joni.jpg',
-      title: 'Software Engineer',
+      color: '#fa8928',
+      title: translate('home.member.title.developer'),
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
     },
     {
       name: 'Auvo Severinkangas',
       image: './../../assets/headshot-auvo.jpg',
-      title: 'Software Engineer',
+      color: '#638593',
+      title: translate('home.member.title.developer'),
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
     },
     {
+      name: 'Elizabeth Cottrell',
+      image: './../../assets/headshot-eliza.jpg',
+      color: '#d8aa0c',
+      title: translate('home.member.title.frontEndDeveloper'),
+      mail: 'elizabeth@openforge.io',
+      twitter: 'https://twitter.com/_elizacottrell',
+      github: 'https://github.com/LizCottrell',
+    },
+    {
       name: 'Paulina Gallo',
       image: './../../assets/headshot-paulina.jpg',
-      title: 'Software Engineer',
+      color: '#fa8928',
+      title: translate('home.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
@@ -56,7 +72,8 @@ export class AppAbout {
     {
       name: 'Mohammad Alfatih',
       image: './../../assets/headshot-mohammad.jpg',
-      title: 'Software Engineer',
+      color: '#638593',
+      title: translate('home.member.title.developer'),
       mail: 'mo@jawami.com',
       twitter: 'https://twitter.com/webdevffw',
       github: 'https://github.com/Mohammad-alfatih',
@@ -64,14 +81,16 @@ export class AppAbout {
     {
       name: 'Meredith Alcorn',
       image: './../../assets/headshot-meredith.jpg',
-      title: 'Software Engineer',
+      color: '#d8aa0c',
+      title: translate('home.member.title.developer'),
       mail: 'meredith@openforge.io',
       github: 'https://github.com/mmalcorn',
     },
     {
       name: 'Fernando Del Olmo',
       image: './../../assets/headshot-fernando.jpg',
-      title: 'Software Engineer',
+      color: '#fa8928',
+      title: translate('home.member.title.developer'),
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
@@ -79,78 +98,40 @@ export class AppAbout {
     {
       name: 'William Holloran',
       image: './../../assets/headshot-billy.jpg',
-      title: 'Project Manager / QA Engineer',
+      color: '#638593',
+      title: translate('home.member.title.projectManager'),
       mail: 'william@openforge.io',
     },
     {
       name: 'Luis Chacon',
       image: './../../assets/headshot-luis.jpg',
-      title: 'Software Engineer',
+      color: '#d8aa0c',
+      title: translate('home.member.title.developer'),
       mail: 'luis@openforge.io',
+      twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
     },
     {
       name: 'Claudio Del Valle',
       image: './../../assets/headshot-claudio.jpg',
-      title: 'Software Engineer',
+      color: '#fa8928',
+      title: translate('home.member.title.developer'),
       mail: 'claudio@openforge.io',
       github: 'https://github.com/daftclaud',
     },
     {
-      name: 'Elizabeth Cottrell',
-      image: './../../assets/headshot-eliza.jpg',
-      title: 'Front End Developer',
-      mail: 'elizabeth@openforge.io',
-      twitter: 'https://twitter.com/_elizacottrell',
-      github: 'https://github.com/LizCottrell',
-    },
-    {
       name: 'Yanying Zhu',
       image: './../../assets/headshot-yanying.jpg',
-      title: 'Designer',
+      color: '#638593',
+      title: translate('home.member.title.designer'),
       mail: 'yanying@openforge.io',
       twitter: '',
       github: '',
     },
-    {
-      name: 'YOU?',
-      image: './../../assets/headshot-placeholder.jpg',
-      title: '',
-      mail: 'geoff@openforge.io',
-      twitter: '',
-      github: '',
-      href: '/opportunities',
-    },
   ];
 
-  componentDidLoad() {
-    this.handleImage();
-  }
-
-  @Listen('window:resize')
-  handleImage() {
-    let element;
-    try {
-      element = document.querySelector('.about .hero');
-      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-    } catch (e) {
-      console.log('app-about-header undefined', e);
-    }
-
-    if (window.innerWidth < 576) {
-      // small
-      element.style.backgroundImage = `url('assets/bg-hero-icons-sm.jpg')`;
-    } else if (window.innerWidth < 992) {
-      // medium
-      element.style.backgroundImage = `url('assets/bg-hero-icons-md.jpg')`;
-    } else {
-      // large
-      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-    }
-  }
-
   scrollToForm() {
-    const form = document.getElementById('about');
+    const form = document.getElementById('about-section');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -180,7 +161,7 @@ export class AppAbout {
         </header>
 
         {/* section - about */}
-        <section id="about" class="about bg-gray">
+        <section id="about-section" class="about bg-gray">
           <div class="container">
             <div class="about--header">
               <h2>Meet the Team</h2>
