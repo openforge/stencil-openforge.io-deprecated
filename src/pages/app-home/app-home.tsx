@@ -10,10 +10,6 @@ export class AppHome {
   members: any[];
 
   render() {
-    if (true) {
-      console.log('Is IE check = ', true);
-      this.history.push('404', {});
-    }
     return (
       <div class="home">
         {/* header - hero */}

@@ -1,5 +1,5 @@
-import '@stencil/router';
-import { Component } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
+import { Component, Prop } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -9,6 +9,7 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  @Prop() history: RouterHistory;
   mainEl: HTMLElement;
 
   componentDidLoad() {
@@ -16,6 +17,11 @@ export class OpenForgeApp {
       this.mainEl = document.querySelector('app-nav-header');
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
+    }
+
+    if (this.isIE()) {
+      console.log('Is IE check = ', true);
+      this.history.push('404', {});
     }
 
     if (this.mainEl) {

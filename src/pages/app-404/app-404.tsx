@@ -13,15 +13,18 @@ export class App404 {
 
           <p>
             {' '}
-            We've detected that you're using Internet Explorer; oh my is that an
-            old browser!
+            We've detected that you're using{' '}
+            <b>
+              <u>Internet Explorer</u>
+            </b>; oh my is that an old browser!
           </p>
 
           <p>
-            Our Website utilizes the latest PWA (Progressive Web App)
-            technologies and we knowingly (and proudly) do not support Internet
-            Explorer. We highly recommend that you update your browser to
-            Chrome, Firefox, Safari, or even Microsoft Edge.
+            We highly recommend that you update your browser to Chrome, Firefox,
+            Safari, or even{' '}
+            <b>
+              <u>Microsoft Edge.</u>
+            </b>
           </p>
         </section>
         <app-footer />
