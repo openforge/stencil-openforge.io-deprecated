@@ -669,7 +669,7 @@ declare global {
 
   namespace StencilComponents {
     interface OpenForgeApp {
-      'history': RouterHistory;
+
     }
   }
 
@@ -692,7 +692,7 @@ declare global {
   }
   namespace JSXElements {
     export interface OpenForgeAppAttributes extends HTMLAttributes {
-      'history'?: RouterHistory;
+
     }
   }
 }

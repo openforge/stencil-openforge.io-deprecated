@@ -1,5 +1,5 @@
-import { RouterHistory } from '@stencil/router';
-import { Component, Prop } from '@stencil/core';
+import '@stencil/router';
+import { Component } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -9,7 +9,6 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
-  @Prop() history: RouterHistory;
   mainEl: HTMLElement;
 
   componentDidLoad() {
@@ -17,11 +16,6 @@ export class OpenForgeApp {
       this.mainEl = document.querySelector('app-nav-header');
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
-    }
-
-    if (this.isIE()) {
-      console.log('Is IE check = ', true);
-      this.history.push('404', {});
     }
 
     if (this.mainEl) {
@@ -35,23 +29,6 @@ export class OpenForgeApp {
         }
       });
     }
-  }
-
-  private msieversion() {
-    const ua = window.navigator.userAgent;
-    const msie = ua.indexOf('MSIE ');
-
-    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
-      console.log(msie, ua, 'msie');
-      // If Internet Explorer, return version number
-      return true;
-    }
-
-    return false;
-  }
-
-  isIE() {
-    return !!this.msieversion();
   }
 
   render() {
