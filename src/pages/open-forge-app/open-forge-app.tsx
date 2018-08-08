@@ -9,7 +9,6 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
-  // @Element() mainEl: HTMLElement;
   mainEl: HTMLElement;
 
   componentDidLoad() {
@@ -40,6 +39,8 @@ export class OpenForgeApp {
           <stencil-route url="/contact" component="app-contact" />
           <stencil-route url="/opportunities" component="app-opportunities" />
           <stencil-route url="/about" component="app-about" />
+          <stencil-route url="/404" component="app-404" exact={true} />
+          <stencil-route component="app-home" />
         </stencil-route-switch>
       </stencil-router>
     );

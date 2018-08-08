@@ -1,10 +1,12 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  @Prop() history: RouterHistory;
   members: any[];
 
   render() {

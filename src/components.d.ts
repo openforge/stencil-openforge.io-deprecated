@@ -28,6 +28,9 @@ declare global {
 import '@stencil/router';
 import '@stencil/state-tunnel';
 
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 declare global {
 
@@ -467,6 +470,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface App404 {
+
+    }
+  }
+
+  interface HTMLApp404Element extends StencilComponents.App404, HTMLStencilElement {}
+
+  var HTMLApp404Element: {
+    prototype: HTMLApp404Element;
+    new (): HTMLApp404Element;
+  };
+  interface HTMLElementTagNameMap {
+    'app-404': HTMLApp404Element;
+  }
+  interface ElementTagNameMap {
+    'app-404': HTMLApp404Element;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-404': JSXElements.App404Attributes;
+    }
+  }
+  namespace JSXElements {
+    export interface App404Attributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppAbout {
 
     }
@@ -534,7 +570,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppHome {
-
+      'history': RouterHistory;
     }
   }
 
@@ -557,7 +593,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-
+      'history'?: RouterHistory;
     }
   }
 }
