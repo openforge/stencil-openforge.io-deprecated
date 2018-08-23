@@ -28,6 +28,9 @@ declare global {
 import '@stencil/router';
 import '@stencil/state-tunnel';
 
+import {
+  MatchResults,
+} from '@stencil/router';
 
 declare global {
 
@@ -571,6 +574,39 @@ declare global {
   namespace JSXElements {
     export interface AppContactAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppDetailedServices {
+      'match': MatchResults;
+    }
+  }
+
+  interface HTMLAppDetailedServicesElement extends StencilComponents.AppDetailedServices, HTMLStencilElement {}
+
+  var HTMLAppDetailedServicesElement: {
+    prototype: HTMLAppDetailedServicesElement;
+    new (): HTMLAppDetailedServicesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-detailed-services': HTMLAppDetailedServicesElement;
+  }
+  interface ElementTagNameMap {
+    'app-detailed-services': HTMLAppDetailedServicesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-detailed-services': JSXElements.AppDetailedServicesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppDetailedServicesAttributes extends HTMLAttributes {
+      'match'?: MatchResults;
     }
   }
 }

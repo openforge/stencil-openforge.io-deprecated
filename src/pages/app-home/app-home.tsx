@@ -11,17 +11,21 @@ export class AppHome {
     return (
       <div class="home">
         {/* header - hero */}
-        <app-hero-home>
-          <span slot="header">
-            <app-translate key="home.hero.header" />
-          </span>
-          <span slot="body">
-            <app-translate key="home.hero.body" />
-          </span>
-          <span slot="link">
-            <app-translate key="home.hero.link" />
-          </span>
-        </app-hero-home>
+        <header class="hero">
+          <div class="overlay" />
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>Talented Thinkers, Makers and Doers</h2>
+                <p>
+                  Work with our team of highly skilled designers, developers and
+                  consultants to develop solutions and processes that fit your
+                  business requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - services */}
         <section id="services" class="bg-gray">
@@ -36,55 +40,64 @@ export class AppHome {
             </div>
             <div class="card-container">
               <div class="card">
-                <div class="card--image">
-                  <app-img
-                    class="card--image"
-                    src="assets/graphic-home-development-card.png"
-                    alt="app-development-image"
-                  />
-                </div>
-                <div class="card--text">
-                  <h3>
-                    <app-translate key="home.services.what.appDevelopment" />
-                  </h3>
-                  <p>
-                    <app-translate key="home.services.what.appDevelopmentText" />
-                  </p>
-                </div>
+                <stencil-route-link url={'/services/appDevelopment'}>
+                  <div class="card--image">
+                    <app-img
+                      class="card--image"
+                      src="assets/graphic-home-development-card.png"
+                      alt="app-development-image"
+                    />
+                  </div>
+                  <div class="card--text">
+                    <h3>
+                      <app-translate key="home.services.what.appDevelopment" />
+                    </h3>
+                    <p>
+                      Loren Impsun text
+                      {/* <app-translate key="home.services.what.appDevelopmentText" /> */}
+                    </p>
+                  </div>
+                </stencil-route-link>
               </div>
               <div class="card">
-                <div class="card--image">
-                  <app-img
-                    class="card--image"
-                    src="assets/graphic-home-design-card.png"
-                    alt="ui-ux-design-image"
-                  />
-                </div>
-                <div class="card--text">
-                  <h3>
-                    <app-translate key="home.services.what.uxUiDesign" />
-                  </h3>
-                  <p>
-                    <app-translate key="home.services.what.uxUiDesignText" />
-                  </p>
-                </div>
+                <stencil-route-link url={'/services/uxUiDesign'}>
+                  <div class="card--image">
+                    <app-img
+                      class="card--image"
+                      src="assets/graphic-home-design-card.png"
+                      alt="ui-ux-design-image"
+                    />
+                  </div>
+                  <div class="card--text">
+                    <h3>
+                      <app-translate key="home.services.what.uxUiDesign" />
+                    </h3>
+                    <p>
+                      Loren Impsun text
+                      {/* <app-translate key="home.services.what.uxUiDesignText" /> */}
+                    </p>
+                  </div>
+                </stencil-route-link>
               </div>
               <div class="card">
-                <div class="card--image">
-                  <app-img
-                    class="card--image"
-                    src="assets/graphic-home-consulting-card.png"
-                    alt="consulting-image"
-                  />
-                </div>
-                <div class="card--text">
-                  <h3>
-                    <app-translate key="home.services.what.consulting" />
-                  </h3>
-                  <p>
-                    <app-translate key="home.services.what.consultingText" />
-                  </p>
-                </div>
+                <stencil-route-link url={'/services/consulting'}>
+                  <div class="card--image">
+                    <app-img
+                      class="card--image"
+                      src="assets/graphic-home-consulting-card.png"
+                      alt="consulting-image"
+                    />
+                  </div>
+                  <div class="card--text">
+                    <h3>
+                      <app-translate key="home.services.what.consulting" />
+                    </h3>
+                    <p>
+                      Loren Impsun text
+                      {/* <app-translate key="home.services.what.consultingText" /> */}
+                    </p>
+                  </div>
+                </stencil-route-link>
               </div>
             </div>
           </div>

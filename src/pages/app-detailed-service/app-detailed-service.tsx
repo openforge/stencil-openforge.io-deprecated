@@ -1,10 +1,13 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { MatchResults } from '@stencil/router';
 
 @Component({
-  tag: 'app-services',
-  styleUrl: 'app-services.scss',
+  tag: 'app-detailed-services',
+  styleUrl: 'app-detailed-services.scss',
 })
-export class AppServices {
+export class AppDetailedServices {
+  @Prop() match: MatchResults;
+
   render() {
     return (
       <section class="services">
@@ -24,20 +27,15 @@ export class AppServices {
           </div>
         </header>
         <section class="app-development">
-          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+          <h2>
+            <app-translate
+              key={`home.services.what.${this.match.params.service}`}
+            />
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt sapien
-            at ornare. Vivamus tristique ullamcorper tincidunt. In a mauris
-            porttitor, fermentum arcu vel, cursus sapien. Pellentesque convallis
-            risus est, et interdum tellus egestas ut. Nam ac consequat mauris.
-            Sed vulputate nisl vel leo mattis, et congue mi porttitor. In
-            condimentum augue id neque ultricies, vitae ornare elit laoreet.
-            Duis dignissim ut risus at accumsan. Integer non faucibus lorem.
-            Phasellus rutrum, orci nec efficitur scelerisque, lectus arcu
-            consequat nisl, eu sollicitudin velit tellus eu nulla. Nullam
-            maximus ipsum sit amet diam rhoncus convallis. Mauris nulla nisl,
-            accumsan at nisl id, consequat tempor augue.
+            <app-translate
+              key={`home.services.what.${this.match.params.service}Text`}
+            />
           </p>
         </section>
         <section class="our-toolbox">

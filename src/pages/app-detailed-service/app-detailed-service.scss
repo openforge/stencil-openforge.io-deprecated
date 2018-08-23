@@ -1,0 +1,107 @@
+// section - services
+section.services {
+  // hero
+  .hero {
+    background-image: url('/assets/bg-hero-wireframes-pencils.jpg');
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(lg) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .app-development,
+  .design,
+  .consulting {
+    margin-top: 4rem;
+    h2 {
+      text-align: center;
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+
+  .our-toolbox {
+    margin-top: 4rem;
+    background: linear-gradient(to bottom, $orange 0%, $orange-dark 100%);
+    h2,
+    h3,
+    p {
+      color: white;
+      padding-top: 1rem;
+      text-align: center;
+    }
+
+    h2,
+    h3 {
+      text-transform: uppercase;
+    }
+
+    .image-column {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      text-align: center;
+      img {
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+  }
+
+  .work-examples {
+    margin-top: 4rem;
+    h2 {
+      text-align: center;
+    }
+    .single-example {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .single-example-text {
+        h2 {
+          color: $orange;
+          text-align: left;
+        }
+      }
+      app-img {
+        justify-self: center;
+      }
+    }
+  }
+
+  .contact-us {
+    margin-top: 4rem;
+    h2 {
+      text-align: center;
+    }
+  }
+}
