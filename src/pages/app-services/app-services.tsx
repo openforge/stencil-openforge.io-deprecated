@@ -8,287 +8,150 @@ export class AppServices {
   render() {
     return (
       <section class="services">
-        <div class="">
-          <div class="services--header">
-            <h2>
-              <app-translate key="services.what.title" />
-            </h2>
-            <p>
-              <app-translate key="services.what.text" />
-            </p>
-          </div>
-
-          <div class="services--tab-panel">
-            <nav class="nav" role="navigation">
-              <div class="nav nav-tabs nav-fill" id="nav-tab">
-                <a
-                  class="nav-item nav-link active"
-                  id="nav-startup-tab"
-                  data-toggle="tab"
-                  href="#nav-startup"
-                  role="tab"
-                  aria-controls="nav-startup"
-                  aria-selected="true"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-startup.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.startup" />
-                    </figcaption>
-                  </figure>
-                </a>
-
-                <a
-                  class="nav-item nav-link"
-                  id="nav-smallteam-tab"
-                  data-toggle="tab"
-                  href="#nav-smallteam"
-                  role="tab"
-                  aria-controls="nav-smallteam"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-small.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.smallTeam" />
-                    </figcaption>
-                  </figure>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-midteam-tab"
-                  data-toggle="tab"
-                  href="#nav-midteam"
-                  role="tab"
-                  aria-controls="nav-midteam"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-midsize.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.midSizeTeam" />
-                    </figcaption>
-                  </figure>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-enterprise-tab"
-                  data-toggle="tab"
-                  href="#nav-enterprise"
-                  role="tab"
-                  aria-controls="nav-enterprise"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-enterprise.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.enterprise" />
-                    </figcaption>
-                  </figure>
-                </a>
-              </div>
-            </nav>
-
-            <div class="tab-content services--panel" id="nav-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="nav-startup"
-                role="tabpanel"
-                aria-labelledby="nav-startup-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5 mb-5">
-                    <h3>
-                      <app-translate key="services.what.whatYouNeed" />
-                    </h3>
-                    <app-translate key="services.what.whatYouNeedText" />
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>
-                      <app-translate key="services.what.whatWeProvide.title" />:
-                    </h3>
-                    <ul>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.startUpConsulting" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.enhancedDesigns" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.uiRecommendations" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileDevelopment" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.webDevelopment" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.engagementStrategy" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.guearillaMarketingStrategy" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-smallteam"
-                role="tabpanel"
-                aria-labelledby="nav-smallteam-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5">
-                    <h3>
-                      <app-translate key="services.what.whatYouNeed" />:
-                    </h3>
-                    <app-translate key="services.what.whatYouNeedTextSmallTeam" />
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>
-                      <app-translate key="services.what.whatWeProvide.title" />:
-                    </h3>
-                    <ul>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.businessConsulting" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.technicalConsulting" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.businessElligibilityAudit" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileWebDesigns" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.uIUXAudits" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileWebApplicationDevelopment" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.customerEngagementStrategy" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-midteam"
-                role="tabpanel"
-                aria-labelledby="nav-midteam-tab"
-              >
-                <div class="services-content">
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6 mb-5">
-                      <h3>
-                        <app-translate key="services.what.whatYouNeed" />:
-                      </h3>
-                      <app-translate key="services.what.whatYouNeedTextMidTeam" />
-                    </div>
-                    <div class="col-sm-12 offset-md-1 col-md-5">
-                      <h3>
-                        <app-translate key="services.what.whatWeProvide.title" />:
-                      </h3>
-                      <ul>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.businessStrategyConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.professionalMobileWebDesigns" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.uIUXAuditsRecommendations" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.mobileDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.webDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.strategicCustomerEngagementConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.teamTrainingsWorkshops" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.processImprovementTraining" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-enterprise"
-                role="tabpanel"
-                aria-labelledby="nav-enterprise-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5">
-                    <h3>
-                      <app-translate key="services.what.whatYouNeed" />:
-                    </h3>
-                    <app-translate key="services.what.whatYouNeedTextEnterpriseTeam" />
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>
-                      <app-translate key="services.what.whatWeProvide.title" />:
-                    </h3>
-                    <ul>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.enterpriseDesignWorkshops" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.crossDisciplinaryTeamTraining" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.externalConsultingProcessImprovement" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.webAccessabilityAudits" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.userExperienceUIUXAudits" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileWebApplicationServices" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.customerEngagementStrategy" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+        {/* header - hero */}
+        <header class="hero">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>We Are Passionate About Technology and Design</h2>
+                <p>
+                  We belive that your success is our success. We're here to
+                  challengeyour assumptions and help you discover your web or
+                  mobile applications full potential.
+                </p>
               </div>
             </div>
           </div>
-        </div>
+        </header>
+        <section class="app-development">
+          <h2>
+            <app-translate key="home.services.what.appDevelopment" />
+          </h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt sapien
+            at ornare. Vivamus tristique ullamcorper tincidunt. In a mauris
+            porttitor, fermentum arcu vel, cursus sapien. Pellentesque convallis
+            risus est, et interdum tellus egestas ut. Nam ac consequat mauris.
+            Sed vulputate nisl vel leo mattis, et congue mi porttitor. In
+            condimentum augue id neque ultricies, vitae ornare elit laoreet.
+            Duis dignissim ut risus at accumsan. Integer non faucibus lorem.
+            Phasellus rutrum, orci nec efficitur scelerisque, lectus arcu
+            consequat nisl, eu sollicitudin velit tellus eu nulla. Nullam
+            maximus ipsum sit amet diam rhoncus convallis. Mauris nulla nisl,
+            accumsan at nisl id, consequat tempor augue.
+          </p>
+        </section>
+        {/* <section class="design">
+          <h2>
+            <app-translate key="home.services.what.uxUiDesign" />
+          </h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt sapien at ornare. Vivamus tristique ullamcorper tincidunt. In a mauris porttitor, fermentum arcu vel, cursus sapien. Pellentesque convallis risus est, et interdum tellus egestas ut. Nam ac consequat mauris. Sed vulputate nisl vel leo mattis, et congue mi porttitor. In condimentum augue id neque ultricies, vitae ornare elit laoreet. Duis dignissim ut risus at accumsan. Integer non faucibus lorem. Phasellus rutrum, orci nec efficitur scelerisque, lectus arcu consequat nisl, eu sollicitudin velit tellus eu nulla. Nullam maximus ipsum sit amet diam rhoncus convallis. Mauris nulla nisl, accumsan at nisl id, consequat tempor augue.</p>
+        </section>
+        <section class="consulting">
+          <h2>
+            <app-translate key="home.services.what.consulting" />
+          </h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt sapien at ornare. Vivamus tristique ullamcorper tincidunt. In a mauris porttitor, fermentum arcu vel, cursus sapien. Pellentesque convallis risus est, et interdum tellus egestas ut. Nam ac consequat mauris. Sed vulputate nisl vel leo mattis, et congue mi porttitor. In condimentum augue id neque ultricies, vitae ornare elit laoreet. Duis dignissim ut risus at accumsan. Integer non faucibus lorem. Phasellus rutrum, orci nec efficitur scelerisque, lectus arcu consequat nisl, eu sollicitudin velit tellus eu nulla. Nullam maximus ipsum sit amet diam rhoncus convallis. Mauris nulla nisl, accumsan at nisl id, consequat tempor augue.</p>
+        </section> */}
+        <section class="our-toolbox">
+          <h2>Our Toolbox</h2>
+          <p>let us show you our skills in:</p>
+          <div class="row">
+            <div class="image-column col-sm-12 col-md-4">
+              <h3>Angular</h3>
+              <app-img
+                class="img-fluid d-none d-md-inline"
+                src="/assets/graphic-opportunities-phone1.png"
+                alt=""
+              />
+            </div>
+            <div class="image-column col-sm-12 col-md-4">
+              <h3>Redux</h3>
+              <app-img
+                class="img-fluid d-none d-md-inline"
+                src="/assets/graphic-opportunities-phone2.png"
+                alt=""
+              />
+            </div>
+            <div class="image-column col-sm-12 col-md-4">
+              <h3>API Integration</h3>
+              <app-img
+                class="img-fluid d-none d-md-inline"
+                src="/assets/graphic-opportunities-phone3.png"
+                alt=""
+              />
+              <app-img
+                class="img-fluid d-xs-inline d-md-none"
+                src="/assets/graphic-opportunities-phone4.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+        <section class="work-examples">
+          <h2>Work Examples</h2>
+          <div class="single-example">
+            <app-img
+              class=""
+              src="assets/graphic-home-voyage.png"
+              alt="voyage-app-image"
+            />
+            <div class="single-example-text">
+              <h2>Example</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt
+                sapien at ornare. Vivamus tristique ullamcorper tincidunt. In a
+                mauris porttitor, fermentum arcu vel, cursus sapien.
+                Pellentesque convallis risus est, et interdum tellus egestas ut.
+                Nam ac consequat mauris. Sed vulputate nisl vel leo mattis, et
+                congue mi porttitor. In condimentum augue id neque ultricies,
+                vitae ornare elit laoreet. Duis dignissim ut risus at accumsan.
+                Integer non faucibus lorem. Phasellus rutrum, orci nec efficitur
+                scelerisque, lectus arcu consequat nisl, eu sollicitudin velit
+                tellus eu nulla. Nullam maximus ipsum sit amet diam rhoncus
+                convallis. Mauris nulla nisl, accumsan at nisl id, consequat
+                tempor augue.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="contact-us">
+          <div class="container">
+            <div class="jumbotron">
+              <h2>Contact Us</h2>
+
+              <form id="contact-form" novalidate={true}>
+                <app-input
+                  name="name"
+                  label="Name"
+                  type="text"
+                  id="name"
+                  required={true}
+                />
+
+                <app-input
+                  name="email"
+                  label="Email"
+                  type="email"
+                  id="email"
+                  required={true}
+                />
+
+                <app-textarea
+                  name="message"
+                  label="Message"
+                  rows={5}
+                  required={true}
+                />
+                <button name="submit" type="submit" class="btn btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
         <app-footer />
       </section>
     );

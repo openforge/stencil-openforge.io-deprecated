@@ -60,7 +60,7 @@ export class AppNavHeader {
                   {translate('nav.links.about')}
                 </stencil-route-link>
               </li>
-              {/* <li class="nav-item" data-target="#navbarSupportedContent">
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/services"
                   anchorClass="nav-link"
@@ -68,7 +68,7 @@ export class AppNavHeader {
                 >
                   Services
                 </stencil-route-link>
-              </li> */}
+              </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/contact"

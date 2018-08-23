@@ -360,6 +360,52 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppTextarea {
+      'id': string;
+      'label': string;
+      'maxlength': string;
+      'name': string;
+      'placeholder': string;
+      'required': boolean;
+      'rows': number;
+    }
+  }
+
+  interface HTMLAppTextareaElement extends StencilComponents.AppTextarea, HTMLStencilElement {}
+
+  var HTMLAppTextareaElement: {
+    prototype: HTMLAppTextareaElement;
+    new (): HTMLAppTextareaElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-textarea': HTMLAppTextareaElement;
+  }
+  interface ElementTagNameMap {
+    'app-textarea': HTMLAppTextareaElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-textarea': JSXElements.AppTextareaAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTextareaAttributes extends HTMLAttributes {
+      'id'?: string;
+      'label'?: string;
+      'maxlength'?: string;
+      'name'?: string;
+      'onValueChange'?: (event: CustomEvent) => void;
+      'placeholder'?: string;
+      'required'?: boolean;
+      'rows'?: number;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppTranslate {
       'key': string;
       'params': {};
