@@ -582,30 +582,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppDetailedServices {
+    interface AppDetailedService {
       'match': MatchResults;
     }
   }
 
-  interface HTMLAppDetailedServicesElement extends StencilComponents.AppDetailedServices, HTMLStencilElement {}
+  interface HTMLAppDetailedServiceElement extends StencilComponents.AppDetailedService, HTMLStencilElement {}
 
-  var HTMLAppDetailedServicesElement: {
-    prototype: HTMLAppDetailedServicesElement;
-    new (): HTMLAppDetailedServicesElement;
+  var HTMLAppDetailedServiceElement: {
+    prototype: HTMLAppDetailedServiceElement;
+    new (): HTMLAppDetailedServiceElement;
   };
   interface HTMLElementTagNameMap {
-    'app-detailed-services': HTMLAppDetailedServicesElement;
+    'app-detailed-service': HTMLAppDetailedServiceElement;
   }
   interface ElementTagNameMap {
-    'app-detailed-services': HTMLAppDetailedServicesElement;
+    'app-detailed-service': HTMLAppDetailedServiceElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'app-detailed-services': JSXElements.AppDetailedServicesAttributes;
+      'app-detailed-service': JSXElements.AppDetailedServiceAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppDetailedServicesAttributes extends HTMLAttributes {
+    export interface AppDetailedServiceAttributes extends HTMLAttributes {
       'match'?: MatchResults;
     }
   }

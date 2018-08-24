@@ -48,9 +48,63 @@ section.services {
     }
   }
 
+  .app-development {
+    display: grid;
+    &.right-side {
+      grid-template-columns: 0.5fr 1fr;
+      .app-development-text {
+        h2 {
+          color: $orange;
+          text-align: left;
+        }
+        p {
+          text-align: left;
+          padding: 0;
+        }
+      }
+    }
+    &.left-side {
+      grid-template-columns: 1fr 0.5fr;
+      .app-development-text {
+        h2 {
+          color: $orange;
+          text-align: right;
+        }
+        p {
+          text-align: right;
+          padding: 0;
+        }
+      }
+    }
+    app-img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   .our-toolbox {
     margin-top: 4rem;
-    background: linear-gradient(to bottom, $orange 0%, $orange-dark 100%);
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
+    background: #020001; /* Old browsers */
+    background: -moz-linear-gradient(
+      left,
+      #020001 10%,
+      #666666 50%,
+      #000000 90%
+    ); /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      left,
+      #020001 10%,
+      #666666 50%,
+      #000000 90%
+    ); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(
+      to right,
+      #020001 10%,
+      #666666 50%,
+      #000000 90%
+    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020001', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
     h2,
     h3,
     p {

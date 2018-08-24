@@ -12,6 +12,13 @@
       height: 100%;
     }
 
+    .hero-content {
+      margin: auto;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
     .container,
     .row {
       height: 100%;
@@ -30,6 +37,7 @@
     }
 
     p {
+      text-align: center;
       color: $white;
       font-size: 1.2rem;
       font-weight: 300;
@@ -93,6 +101,7 @@
     .card-container {
       display: flex;
       padding: 15px 0 15px;
+      justify-content: space-between;
 
       @include media-breakpoint-down(xs) {
         padding-left: none;
@@ -100,6 +109,14 @@
         justify-content: center;
       }
 
+      .card-service {
+        h1 {
+          text-align: center;
+          font-size: 24px;
+          text-decoration: underline;
+          color: $orange;
+        }
+      }
       .card {
         text-align: center;
         background-color: #fff;
@@ -124,6 +141,8 @@
         }
 
         &--text {
+          overflow-x: overlay;
+          max-height: 100%;
           background-color: rgba(232, 130, 18, 0.7);
           position: absolute;
           top: 0;
