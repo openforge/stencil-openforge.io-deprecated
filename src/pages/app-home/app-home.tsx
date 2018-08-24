@@ -7,6 +7,11 @@ import { Component } from '@stencil/core';
 export class AppHome {
   members: any[];
 
+  scrollToForm() {
+    const form = document.getElementById('services');
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <div class="home">
@@ -22,7 +27,12 @@ export class AppHome {
                   consultants to develop solutions and processes that fit your
                   business requirements.
                 </p>
-                <button class="btn btn-primary">Learn More</button>
+                <button
+                  class="btn btn-primary"
+                  onClick={this.scrollToForm.bind(this)}
+                >
+                  Learn More
+                </button>
               </div>
             </div>
           </div>

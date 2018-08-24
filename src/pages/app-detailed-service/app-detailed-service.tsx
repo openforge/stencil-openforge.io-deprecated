@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Listen } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 @Component({
@@ -41,6 +41,100 @@ export class AppDetailedService {
       },
     },
   };
+
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
+  @State()
+  formValues: {
+    name: '';
+    email: '';
+    message: '';
+
+    nameValid: false;
+    emailValid: false;
+    messageValid: false;
+  };
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() messageError: string;
+  @State() isDisabled = true;
+
+  @Listen('valueChange')
+  valueChangeHandler(event) {
+    const { field, value, target } = event.detail;
+
+    this.formValues[field] = value;
+
+    this.validateField(target);
+  }
+
+  componentDidLoad() {
+    this.resetFormValues();
+  }
+
+  validateField(e) {
+    switch (e.name) {
+      case 'name':
+        this.formValues.nameValid = e.checkValidity();
+        this.nameError = this.formValues.nameValid
+          ? ''
+          : (this.nameError = e.validationMessage);
+        break;
+
+      case 'email':
+        this.formValues.emailValid = e.checkValidity();
+        this.emailError = this.formValues.emailValid
+          ? ''
+          : (this.emailError = e.validationMessage);
+        break;
+
+      case 'message':
+        this.formValues.messageValid = e.checkValidity();
+        this.messageError = this.formValues.messageValid
+          ? ''
+          : (this.messageError = e.validationMessage);
+        break;
+    }
+
+    this.formValues.nameValid &&
+    this.formValues.emailValid &&
+    this.formValues.messageValid
+      ? (this.isDisabled = false)
+      : (this.isDisabled = true);
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+      this.formSubmitting = true;
+      this.isDisabled = true;
+
+      await fetch(
+        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
+        {
+          method: 'post',
+          mode: 'no-cors',
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          },
+          body: JSON.stringify(this.formValues),
+        }
+      );
+
+      event.target.reset();
+      this.resetFormValues();
+
+      this.isDisabled = false;
+      this.formSubmitting = false;
+      this.formSubmitted = true;
+
+      const form = document.getElementById('second-content');
+      form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    } catch (error) {
+      console.log('Error', error);
+    }
+  }
 
   render() {
     return (
@@ -233,7 +327,11 @@ export class AppDetailedService {
             <div class="jumbotron">
               <h2>Contact Us</h2>
 
-              <form id="contact-form" novalidate={true}>
+              <form
+                id="contact-form"
+                onSubmit={this.handleSubmit.bind(this)}
+                novalidate={true}
+              >
                 <app-input
                   name="name"
                   label="Name"
@@ -256,7 +354,12 @@ export class AppDetailedService {
                   rows={5}
                   required={true}
                 />
-                <button name="submit" type="submit" class="btn btn-primary">
+                <button
+                  name="submit"
+                  type="submit"
+                  class="btn btn-primary"
+                  disabled={this.isDisabled}
+                >
                   Submit
                 </button>
               </form>
@@ -266,5 +369,16 @@ export class AppDetailedService {
         <app-footer />
       </section>
     );
+  }
+
+  private resetFormValues() {
+    this.formValues = {
+      name: '',
+      email: '',
+      message: '',
+      nameValid: false,
+      emailValid: false,
+      messageValid: false,
+    };
   }
 }
