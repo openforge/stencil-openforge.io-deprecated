@@ -118,29 +118,50 @@ export class AppServices {
           </div>
         </header>
         <div class="container">
-          <section class="app-development">
-            <h2>
-              <app-translate key={`services.general.development.title`} />
-            </h2>
-            <p>
-              <app-translate key={`services.general.development.text`} />
-            </p>
+          <section class="text-img-container right-side">
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src="/assets/services-development-header.jpg"
+              alt=""
+            />
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate key={`services.general.development.title`} />
+              </h2>
+              <p>
+                <app-translate key={`services.general.development.text`} />
+              </p>
+            </div>
           </section>
-          <section class="design">
-            <h2>
-              <app-translate key={`services.general.design.title`} />
-            </h2>
-            <p>
-              <app-translate key={`services.general.design.text`} />
-            </p>
+          <section class="text-img-container left-side">
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate key={`services.general.design.title`} />
+              </h2>
+              <p>
+                <app-translate key={`services.general.design.text`} />
+              </p>
+            </div>
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src="/assets/services-design-header.jpg"
+              alt=""
+            />
           </section>
-          <section class="consulting">
-            <h2>
-              <app-translate key={`services.general.consulting.title`} />
-            </h2>
-            <p>
-              <app-translate key={`services.general.consulting.text`} />
-            </p>
+          <section class="text-img-container right-side">
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src="/assets/services-consulting-header.jpg"
+              alt=""
+            />
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate key={`services.general.consulting.title`} />
+              </h2>
+              <p>
+                <app-translate key={`services.general.consulting.text`} />
+              </p>
+            </div>
           </section>
         </div>
         <section class="contact-us">

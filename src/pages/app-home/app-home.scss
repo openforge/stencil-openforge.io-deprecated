@@ -129,6 +129,9 @@
         border: none;
         border-radius: 0;
         &--text {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           overflow-x: overlay;
           max-height: 100%;
           background-color: rgba(232, 130, 18, 0.7);

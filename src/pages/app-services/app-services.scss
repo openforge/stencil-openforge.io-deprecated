@@ -36,15 +36,59 @@ section.services {
     }
   }
 
-  .app-development,
-  .design,
-  .consulting {
+  .text-img-container {
     margin-top: 4rem;
     h2 {
       text-align: center;
     }
     p {
       padding: 2rem;
+    }
+  }
+
+  .text-img-container {
+    display: grid;
+
+    app-img {
+      width: 250px;
+      height: 300px;
+      justify-self: center;
+      box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
+      &.no-box {
+        box-shadow: none;
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &.right-side {
+      grid-template-columns: 0.5fr 1fr;
+      .text-img-container-text {
+        h2 {
+          color: $orange;
+          text-align: left;
+        }
+        p {
+          text-align: left;
+          padding: 0;
+        }
+      }
+    }
+    &.left-side {
+      grid-template-columns: 1fr 0.5fr;
+      .text-img-container-text {
+        h2 {
+          color: $orange;
+          text-align: right;
+        }
+        p {
+          text-align: right;
+          padding: 0;
+        }
+      }
     }
   }
 
