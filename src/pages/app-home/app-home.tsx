@@ -54,16 +54,16 @@ export class AppHome {
                 <h1>
                   <app-translate key="home.services.app-developer.headline" />
                 </h1>
-                <div class="card">
+                <div class="hvrbox card">
                   {/* <stencil-route-link url={'/services/app-developer'}> */}
-                  <div class="card--image">
+                  <div class="hvrbox-layer-bottom card--image">
                     <app-img
                       class="card--image"
                       src="/assets/graphic-home-development-card.png"
                       alt="app-development-image"
                     />
                   </div>
-                  <div class="card--text">
+                  <div class="hvrbox-layer-top card--text">
                     <p>
                       <app-translate key="home.services.app-developer.meta" />
                     </p>
@@ -75,16 +75,16 @@ export class AppHome {
                 <h1>
                   <app-translate key="home.services.app-designer.headline" />
                 </h1>
-                <div class="card">
+                <div class="hvrbox card">
                   {/* <stencil-route-link url={'/services/app-designer'}> */}
-                  <div class="card--image">
+                  <div class="hvrbox-layer-bottom card--image">
                     <app-img
                       class="card--image"
                       src="/assets/graphic-home-design-card.png"
                       alt="ui-ux-design-image"
                     />
                   </div>
-                  <div class="card--text">
+                  <div class="hvrbox-layer-top card--text">
                     <p>
                       <app-translate key="home.services.app-designer.meta" />
                     </p>
@@ -96,16 +96,16 @@ export class AppHome {
                 <h1>
                   <app-translate key="home.services.tech-consulting.headline" />
                 </h1>
-                <div class="card">
+                <div class=" hvrbox card">
                   {/* <stencil-route-link url={'/services/tech-consulting'}> */}
-                  <div class="card--image">
+                  <div class="hvrbox-layer-bottom card--image">
                     <app-img
                       class="card--image"
                       src="/assets/graphic-home-consulting-card.png"
                       alt="consulting-image"
                     />
                   </div>
-                  <div class="card--text">
+                  <div class="hvrbox-layer-top card--text">
                     <p>
                       <app-translate key="home.services.tech-consulting.meta" />
                     </p>
