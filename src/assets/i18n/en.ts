@@ -14,61 +14,28 @@ export const translations = {
             'Whether you are a start up, an enterprise, or somewhere in between, we will work with you every step of the way. Choose your path below to learm more about our custom services.',
           fromStartupToEnterprise:
             'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
-          appDevelopmentText:
-            'OpenForge is a world-wide brand in Mobile and Web Application software development. Our team of experienced software engineers specialize in a variety of frameworks and technologies such as <a href="https://ionicframework.com/" target="_blank" rel="noopener">The Ionic Framework</a>, <a href="https://angular.io/" target="_blank" rel="noopener">Angular (Google)</a>, <a href="https://reactjs.org/" target="_blank" rel="noopener">React.js (Facebook)</a>, <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>, <a href="https://www.mongodb.com/" target="_blank" rel="noopener">MongoDB</a>, and many more!',
-          appDevelopment: 'App Development',
-          uxUiDesign: 'UI/UX Design',
-          uxUiDesignText:
-            'The OpenForge Discovery &amp; Design Process is specifically engineered to increase ROI, user engagement, and get you results. Our unique process has been proven to keep projects on-time and on-budget every step of the way by utilizing leading technologies such as <a href="https://www.adobe.com/products/photoshop.html" target="_blank" rel="noopener">Adobe Photoshop</a>, <a href="https://www.sketchapp.com/" target="_blank" rel="noopener">Sketch App</a>, and <a href="https://www.goabstract.com/" target="_blank" rel="noopener">Abstract</a>.',
-          consulting: 'Consulting',
-          consultingText:
-            "We offer a wide variety of services including Training, CTO Representation, Design Audits, and Software Process Improvement (SPI) Consulting. If you are looking to increase your team's efficiency or bring your product to market on-time and on-schedule, our team is here to help you succeed.",
           ourWork: 'Check Out Our Work',
-          startup: 'Start Up',
-          smallTeam: 'Small Team',
-          midSizeTeam: 'Mid-Size Team',
-          enterprise: 'Enterprise',
-          whatYouNeed: 'What you need:',
-          whatYouNeedText:
-            "Bring your idea to life with our team of experts in Design, UI/UX, Web, and Mobile Application Development. We don't just 'build it', we sit with you to answer the question of how the technology and psychology behind the design will match your business model. Our experience with 100+ Startups becomes your experience as we take you through the next level of Startup Consulting.",
-          whatYouNeedTextSmallTeam:
-            "You have a small team and successful company, you've proven your business model and have enough revenue to sustain; however, you are struggling with accelerating growth and would like to utilize technology to skyrocket your business. You're nervous (and rightly so!), because you've never built a technology product before. Fear not! We are here to help. Let us guide you on ins-and-outs of Product Development and help you determine <b>HOW and IF</b> you should be building an app. Sometimes, it's much better to use an existing service!",
-          whatYouNeedTextMidTeam:
-            "You have an established business and risks cost money. You're looking for a team you can trust to get the job done right the first time. That's us. We work with your team to evaluate your business goals, develop a plan of attack, and execute in order to deliver your results on budget, but mostly importantly, on time. We can provide support to your existing infrastructure, provide CTO services to guide your existing teams, or build your product start-finish without unneccessary supervision. Whatever you need, we're here.",
-          whatYouNeedTextEnterpriseTeam:
-            'Our Enterprise clients have world-wide goals; but often need the agility and flexibility of a small team in order to accomplish those goals and bypass the corporate red-tape. For these clients, we offer tailored solutions to fit your needs. If you have an existing team of Designers and Developers, but they have difficulty communicating and often miss deadlines and go over budget; we provide training and workshops to increase cross-disciplinary communication. For products that have spiraled out of control; we come in and fix the physical (design & dev), but also the systematic problems such as team communication and design to development process improvement.',
-          whatWeProvide: {
-            title: 'What we provide:',
-            startUpConsulting: 'Startup Consulting',
-            enhancedDesigns: 'Enhanced Mobile & Web Designs',
-            uiRecommendations: 'UI/UX Audits & Recommendations',
-            mobileDevelopment: 'Mobile Application Development',
-            webDevelopment: 'Web Application Development',
-            engagementStrategy: 'Customer Engagement Strategy',
-            guearillaMarketingStrategy: 'Guerilla Marketing Strategy',
-            businessConsulting: 'Business Consulting',
-            technicalConsulting: 'Technical Consulting',
-            businessElligibilityAudit: 'Business Elligibility Audit',
-            mobileWebDesigns: 'Mobile & Web Designs',
-            uIUXAudits: 'UI/UX Audits',
-            mobileWebApplicationDevelopment:
-              'Mobile & Web Application Development',
-            customerEngagementStrategy: 'Customer Engagement Strategy',
-            businessStrategyConsulting: 'Business Strategy & Consulting',
-            professionalMobileWebDesigns: 'Professional Mobile & Web Designs',
-            uIUXAuditsRecommendations: 'UI/UX Audits & Recommendations',
-            strategicCustomerEngagementConsulting:
-              'Strategic Customer Engagement Consulting',
-            teamTrainingsWorkshops: 'Team Trainings & Workshops',
-            processImprovementTraining: 'Process Improvement Training',
-            enterpriseDesignWorkshops: 'Enterprise Design Workshops',
-            crossDisciplinaryTeamTraining: 'Cross-Disciplinary Team Training',
-            externalConsultingProcessImprovement:
-              'External Consulting & Process Improvement',
-            userExperienceUIUXAudits: 'User Experience (UI/UX) Audits',
-            webAccessabilityAudits: 'Web Accessability Audits',
-            mobileWebApplicationServices: 'Mobile & Web Application Services',
-          },
+        },
+        'app-developer': {
+          meta:
+            'At OpenForge our app developer team will create an application that fits your needs.',
+          headline: 'App Development',
+          text:
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
+        },
+        'app-designer': {
+          meta:
+            'At OpenForge our app designers will design a beautiful and intuitive app that will engage users and produce results.',
+          headline: 'UI/UX Design',
+          text:
+            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
+        },
+        'tech-consulting': {
+          meta:
+            'With OpenForge as your tech consultant, we will determine what technologies and processes will help your business succeed in the digital world.',
+          headline: 'Consulting',
+          text:
+            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
         },
       },
       learnAbout: {
@@ -175,10 +142,113 @@ export const translations = {
       },
     },
     services: {
-      header: 'Creative Digital Solutions for Real World Problems',
-      body:
-        'We use Google standards, Test Driven Development, and Code Cleanliness (linting) a in all our development contributions. We believe in using only the best practices for your unique application.',
-      learnMore: 'Learn More',
+      general: {
+        development: {
+          title: 'App Development',
+          text:
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
+        },
+        design: {
+          title: 'UI/UX Design',
+          text:
+            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
+        },
+        consulting: {
+          title: 'Consulting',
+          text:
+            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
+        },
+      },
+      'app-developer': {
+        hero: {
+          title: 'Your Go-To App Developer',
+          text:
+            'Our app developer team has the skills you need to transform your vision into a fully functioning app that will not only work flawlessly but engage your users and customers. Whether you are looking to reach your audience through mobile or web, our app developer team will create exactly what you need.',
+        },
+        first: {
+          title: 'Progressive Web App Development',
+          text:
+            'The latest web technology that allows your app to come to market quicker and can be installed onto any device that feels and functions like a native app. Users can install PWAs without going through traditional app stores and will allow you to maximize user engagement while minimizing costs.',
+        },
+        second: {
+          title: 'Mobile App Development',
+          text:
+            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and everyone one of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
+        },
+        third: {
+          title: 'Web App Development',
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        examples: {
+          first: {
+            name: 'JuntoScope',
+            desc:
+              'JuntoScope was a project that OpenForge created in response to the need for a tool that would allow developers to scope tasks more accurately and efficiently. Our team came together and designed and developed this tool to function as an integration with Teamwork Projects that would allow users to scope tasks with their team and plug those times directly into Teamwork through the API.',
+          },
+          second: {
+            name: 'The Voyage Admin Portal',
+            desc:
+              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. New Ocean wanted a platform where users could manage their own company accounts and easily invite users and add challenges for their Voyage users. We developed the admin portal using Angular and the framework Bootstrap. We also hooked it up with their existing backend.',
+          },
+        },
+      },
+      'app-designer': {
+        hero: {
+          title: 'UI/UX App Designer',
+          text:
+            'Our app designer team has the skills and experience to bring to life your app in a way that will be both visually appealing and intuitive for your users. An effective user interface will be all the difference in making your app effective and successful. Your user experience is vital to keeping your users engaged and returning again and again. Once our design team has determined your user flow and designs, we will create a prototype that is clickable and functioning before the first line of code is even written.',
+        },
+        first: {
+          title: 'Design Consulting',
+          text:
+            'If you bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.',
+        },
+        second: {
+          title: 'UI/UX Design',
+          text:
+            'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good”. Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
+        },
+        third: {
+          title: 'Clickable Prototype',
+          text:
+            'Does your company or startup need an app prototype before moving forward with development? Our design to will use Marvel to bring your ideas to life with a clickable prototype. Interact with your prototype and provide feedback directly on specific elements to refine the feel to your liking.',
+        },
+        examples: {
+          first: {
+            name: 'The Voyage',
+            desc:
+              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. They came to us with an existing mobile application, which lacked consistency and a user experience that matched their target user base. We updated the flow of the application to be consistent across operating systems and to create a more intuitive experience.',
+          },
+          second: {
+            name: 'Loudcloud',
+            desc:
+              'Loudcloud is a mobile application that lets users call and text with temporary numbers from around the world. Loudcloud came to Webjunto with an iOS app looking for a hybrid update and redesign. In our UX audit, we found a need for flatter UX that focuses on conversions rather than numbers as well as a clean and light look and feel.',
+          },
+        },
+      },
+      'tech-consulting': {
+        hero: {
+          title: 'Tech Consulting for all Industries',
+          text:
+            'Our consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+        },
+        first: {
+          title: 'Tech Consulting',
+          text:
+            "Is an app right for your company? Do the tools you're paying for give you the results you need? Are you paying for the correct level of service through your providers?",
+        },
+        second: {
+          title: 'Process Consulting',
+          text:
+            'Our team has developed an efficient internal process that can be molded to fit your business needs and requirements. Do you know the efficiency of each of your employees? Do you know the output of each of your developers and how much they are producing towards your applications or websites?',
+        },
+        third: {
+          title: 'Marketing Consulting',
+          text:
+            'We will help you understand your current ROI on your marketing initiatives. Our marketing audit will help you see the results from your marketing campaigns, what channels are most profitable, and what you aren’t doing that you’re losing out on! We will perform an in-depth analysis of your strengths and weaknesses and provide advice on options you can do yourself or take back to your marketing agency to improve your reach and boost your ROI',
+        },
+      },
     },
     opportunities: {
       hero: {

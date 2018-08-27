@@ -1,296 +1,227 @@
-import { Component } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-services',
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
+  @State()
+  formValues: {
+    name: '';
+    email: '';
+    message: '';
+
+    nameValid: false;
+    emailValid: false;
+    messageValid: false;
+  };
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() messageError: string;
+  @State() isDisabled = true;
+
+  @Listen('valueChange')
+  valueChangeHandler(event) {
+    const { field, value, target } = event.detail;
+
+    this.formValues[field] = value;
+
+    this.validateField(target);
+  }
+
+  componentDidLoad() {
+    this.resetFormValues();
+  }
+
+  validateField(e) {
+    switch (e.name) {
+      case 'name':
+        this.formValues.nameValid = e.checkValidity();
+        this.nameError = this.formValues.nameValid
+          ? ''
+          : (this.nameError = e.validationMessage);
+        break;
+
+      case 'email':
+        this.formValues.emailValid = e.checkValidity();
+        this.emailError = this.formValues.emailValid
+          ? ''
+          : (this.emailError = e.validationMessage);
+        break;
+
+      case 'message':
+        this.formValues.messageValid = e.checkValidity();
+        this.messageError = this.formValues.messageValid
+          ? ''
+          : (this.messageError = e.validationMessage);
+        break;
+    }
+
+    this.formValues.nameValid &&
+    this.formValues.emailValid &&
+    this.formValues.messageValid
+      ? (this.isDisabled = false)
+      : (this.isDisabled = true);
+  }
+
+  async handleSubmit(event) {
+    event.preventDefault();
+
+    try {
+      this.formSubmitting = true;
+      this.isDisabled = true;
+
+      await fetch(
+        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
+        {
+          method: 'post',
+          mode: 'no-cors',
+          headers: {
+            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+          },
+          body: JSON.stringify(this.formValues),
+        }
+      );
+
+      event.target.reset();
+      this.resetFormValues();
+
+      this.isDisabled = false;
+      this.formSubmitting = false;
+      this.formSubmitted = true;
+
+      const form = document.getElementById('second-content');
+      form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    } catch (error) {
+      console.log('Error', error);
+    }
+  }
+
   render() {
     return (
       <section class="services">
-        <div class="">
-          <div class="services--header">
-            <h2>
-              <app-translate key="services.what.title" />
-            </h2>
-            <p>
-              <app-translate key="services.what.text" />
-            </p>
-          </div>
-
-          <div class="services--tab-panel">
-            <nav class="nav" role="navigation">
-              <div class="nav nav-tabs nav-fill" id="nav-tab">
-                <a
-                  class="nav-item nav-link active"
-                  id="nav-startup-tab"
-                  data-toggle="tab"
-                  href="#nav-startup"
-                  role="tab"
-                  aria-controls="nav-startup"
-                  aria-selected="true"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-startup.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.startup" />
-                    </figcaption>
-                  </figure>
-                </a>
-
-                <a
-                  class="nav-item nav-link"
-                  id="nav-smallteam-tab"
-                  data-toggle="tab"
-                  href="#nav-smallteam"
-                  role="tab"
-                  aria-controls="nav-smallteam"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-small.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.smallTeam" />
-                    </figcaption>
-                  </figure>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-midteam-tab"
-                  data-toggle="tab"
-                  href="#nav-midteam"
-                  role="tab"
-                  aria-controls="nav-midteam"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-midsize.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.midSizeTeam" />
-                    </figcaption>
-                  </figure>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-enterprise-tab"
-                  data-toggle="tab"
-                  href="#nav-enterprise"
-                  role="tab"
-                  aria-controls="nav-enterprise"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="/assets/graphic-services-enterprise.png"
-                      alt=""
-                    />
-                    <figcaption>
-                      <app-translate key="services.what.enterprise" />
-                    </figcaption>
-                  </figure>
-                </a>
-              </div>
-            </nav>
-
-            <div class="tab-content services--panel" id="nav-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="nav-startup"
-                role="tabpanel"
-                aria-labelledby="nav-startup-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5 mb-5">
-                    <h3>
-                      <app-translate key="services.what.whatYouNeed" />
-                    </h3>
-                    <app-translate key="services.what.whatYouNeedText" />
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>
-                      <app-translate key="services.what.whatWeProvide.title" />:
-                    </h3>
-                    <ul>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.startUpConsulting" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.enhancedDesigns" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.uiRecommendations" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileDevelopment" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.webDevelopment" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.engagementStrategy" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.guearillaMarketingStrategy" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-smallteam"
-                role="tabpanel"
-                aria-labelledby="nav-smallteam-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5">
-                    <h3>
-                      <app-translate key="services.what.whatYouNeed" />:
-                    </h3>
-                    <app-translate key="services.what.whatYouNeedTextSmallTeam" />
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>
-                      <app-translate key="services.what.whatWeProvide.title" />:
-                    </h3>
-                    <ul>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.businessConsulting" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.technicalConsulting" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.businessElligibilityAudit" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileWebDesigns" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.uIUXAudits" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileWebApplicationDevelopment" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.customerEngagementStrategy" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-midteam"
-                role="tabpanel"
-                aria-labelledby="nav-midteam-tab"
-              >
-                <div class="services-content">
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6 mb-5">
-                      <h3>
-                        <app-translate key="services.what.whatYouNeed" />:
-                      </h3>
-                      <app-translate key="services.what.whatYouNeedTextMidTeam" />
-                    </div>
-                    <div class="col-sm-12 offset-md-1 col-md-5">
-                      <h3>
-                        <app-translate key="services.what.whatWeProvide.title" />:
-                      </h3>
-                      <ul>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.businessStrategyConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.professionalMobileWebDesigns" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.uIUXAuditsRecommendations" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.mobileDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.webDevelopment" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.strategicCustomerEngagementConsulting" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.teamTrainingsWorkshops" />
-                        </li>
-                        <li>
-                          <app-translate key="services.what.whatWeProvide.processImprovementTraining" />
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-enterprise"
-                role="tabpanel"
-                aria-labelledby="nav-enterprise-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5">
-                    <h3>
-                      <app-translate key="services.what.whatYouNeed" />:
-                    </h3>
-                    <app-translate key="services.what.whatYouNeedTextEnterpriseTeam" />
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>
-                      <app-translate key="services.what.whatWeProvide.title" />:
-                    </h3>
-                    <ul>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.enterpriseDesignWorkshops" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.crossDisciplinaryTeamTraining" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.externalConsultingProcessImprovement" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.webAccessabilityAudits" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.userExperienceUIUXAudits" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.mobileWebApplicationServices" />
-                      </li>
-                      <li>
-                        <app-translate key="services.what.whatWeProvide.customerEngagementStrategy" />
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+        {/* header - hero */}
+        <header class="hero">
+          <div class="overlay" />
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <h2>What We Provide</h2>
+                <p>
+                  At OpenForge we provide a full range of app development
+                  services to help your business grow and improve engagement
+                  with your customers.
+                </p>
               </div>
             </div>
           </div>
+        </header>
+        <div class="container">
+          <section class="text-img-container right-side">
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src="/assets/services-development-header.jpg"
+              alt=""
+            />
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate key={`services.general.development.title`} />
+              </h2>
+              <p>
+                <app-translate key={`services.general.development.text`} />
+              </p>
+            </div>
+          </section>
+          <section class="text-img-container left-side">
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate key={`services.general.design.title`} />
+              </h2>
+              <p>
+                <app-translate key={`services.general.design.text`} />
+              </p>
+            </div>
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src="/assets/services-design-header.jpg"
+              alt=""
+            />
+          </section>
+          <section class="text-img-container right-side">
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src="/assets/services-consulting-header.jpg"
+              alt=""
+            />
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate key={`services.general.consulting.title`} />
+              </h2>
+              <p>
+                <app-translate key={`services.general.consulting.text`} />
+              </p>
+            </div>
+          </section>
         </div>
+        <section class="contact-us">
+          <div class="container">
+            <div class="jumbotron">
+              <h2>Contact Us</h2>
+
+              <form
+                id="contact-form"
+                onSubmit={this.handleSubmit.bind(this)}
+                novalidate={true}
+              >
+                <app-input
+                  name="name"
+                  label="Name"
+                  type="text"
+                  id="name"
+                  required={true}
+                />
+
+                <app-input
+                  name="email"
+                  label="Email"
+                  type="email"
+                  id="email"
+                  required={true}
+                />
+
+                <app-textarea
+                  name="message"
+                  label="Message"
+                  rows={5}
+                  required={true}
+                />
+                <button
+                  name="submit"
+                  type="submit"
+                  class="btn btn-primary"
+                  disabled={this.isDisabled}
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
         <app-footer />
       </section>
     );
+  }
+
+  private resetFormValues() {
+    this.formValues = {
+      name: '',
+      email: '',
+      message: '',
+      nameValid: false,
+      emailValid: false,
+      messageValid: false,
+    };
   }
 }

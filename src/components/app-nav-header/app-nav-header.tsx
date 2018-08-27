@@ -60,15 +60,6 @@ export class AppNavHeader {
                   {translate('nav.links.about')}
                 </stencil-route-link>
               </li>
-              {/* <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/services"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  Services
-                </stencil-route-link>
-              </li> */}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/contact"
@@ -87,6 +78,15 @@ export class AppNavHeader {
                   {translate('nav.links.opportunities')}
                 </stencil-route-link>
               </li>
+              {/* <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/services"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  Services
+                </stencil-route-link>
+              </li> */}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
                   class="nav-link"
