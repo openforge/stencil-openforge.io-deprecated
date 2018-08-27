@@ -55,20 +55,20 @@ export class AppHome {
                   <app-translate key="home.services.app-developer.headline" />
                 </h1>
                 <div class="card">
-                  <stencil-route-link url={'/services/app-developer'}>
-                    <div class="card--image">
-                      <app-img
-                        class="card--image"
-                        src="/assets/services-development-header.jpg"
-                        alt="app-development-image"
-                      />
-                    </div>
-                    <div class="card--text">
-                      <p>
-                        <app-translate key="home.services.app-developer.meta" />
-                      </p>
-                    </div>
-                  </stencil-route-link>
+                  {/* <stencil-route-link url={'/services/app-developer'}> */}
+                  <div class="card--image">
+                    <app-img
+                      class="card--image"
+                      src="/assets/graphic-home-development-card.png"
+                      alt="app-development-image"
+                    />
+                  </div>
+                  <div class="card--text">
+                    <p>
+                      <app-translate key="home.services.app-developer.meta" />
+                    </p>
+                  </div>
+                  {/* </stencil-route-link> */}
                 </div>
               </div>
               <div class="card-service">
@@ -76,20 +76,20 @@ export class AppHome {
                   <app-translate key="home.services.app-designer.headline" />
                 </h1>
                 <div class="card">
-                  <stencil-route-link url={'/services/app-designer'}>
-                    <div class="card--image">
-                      <app-img
-                        class="card--image"
-                        src="/assets/services-design-header.jpg"
-                        alt="ui-ux-design-image"
-                      />
-                    </div>
-                    <div class="card--text">
-                      <p>
-                        <app-translate key="home.services.app-designer.meta" />
-                      </p>
-                    </div>
-                  </stencil-route-link>
+                  {/* <stencil-route-link url={'/services/app-designer'}> */}
+                  <div class="card--image">
+                    <app-img
+                      class="card--image"
+                      src="/assets/graphic-home-design-card.png"
+                      alt="ui-ux-design-image"
+                    />
+                  </div>
+                  <div class="card--text">
+                    <p>
+                      <app-translate key="home.services.app-designer.meta" />
+                    </p>
+                  </div>
+                  {/* </stencil-route-link> */}
                 </div>
               </div>
               <div class="card-service">
@@ -97,20 +97,20 @@ export class AppHome {
                   <app-translate key="home.services.tech-consulting.headline" />
                 </h1>
                 <div class="card">
-                  <stencil-route-link url={'/services/tech-consulting'}>
-                    <div class="card--image">
-                      <app-img
-                        class="card--image"
-                        src="/assets/services-consulting-header.jpg"
-                        alt="consulting-image"
-                      />
-                    </div>
-                    <div class="card--text">
-                      <p>
-                        <app-translate key="home.services.tech-consulting.meta" />
-                      </p>
-                    </div>
-                  </stencil-route-link>
+                  {/* <stencil-route-link url={'/services/tech-consulting'}> */}
+                  <div class="card--image">
+                    <app-img
+                      class="card--image"
+                      src="/assets/graphic-home-consulting-card.png"
+                      alt="consulting-image"
+                    />
+                  </div>
+                  <div class="card--text">
+                    <p>
+                      <app-translate key="home.services.tech-consulting.meta" />
+                    </p>
+                  </div>
+                  {/* </stencil-route-link> */}
                 </div>
               </div>
             </div>
