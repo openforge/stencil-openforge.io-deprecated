@@ -104,6 +104,7 @@ export class AppServices {
       <section class="services">
         {/* header - hero */}
         <header class="hero">
+          <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
