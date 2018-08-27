@@ -11,33 +11,41 @@ export class AppDetailedService {
   @State()
   imgs = {
     'app-developer': {
-      first: '/assets/graphic-opportunities-phone1.png',
-      second: '/assets/graphic-opportunities-phone1.png',
-      third: '/assets/graphic-opportunities-phone1.png',
+      first: '/assets/services-development-first.jpg',
+      second: '/assets/services-development-second.jpg',
+      third: '/assets/services-development-third.jpg',
       toolbox: {
-        first: '/assets/graphic-opportunities-phone1.png',
-        second: '/assets/graphic-opportunities-phone1.png',
-        third: '/assets/graphic-opportunities-phone1.png',
+        first: '/assets/services-development-toolbox-first.png',
+        second: '/assets/services-development-toolbox-second.png',
+        third: '/assets/services-development-toolbox-third.png',
+      },
+      examples: {
+        first: '/assets/work-example-juntoscope-mobile.png',
+        second: '/assets/work-example-cap.png',
       },
     },
     'app-designer': {
-      first: '/assets/graphic-opportunities-phone2.png',
-      second: '/assets/graphic-opportunities-phone2.png',
-      third: '/assets/graphic-opportunities-phone2.png',
+      first: '/assets/services-design-first.jpg',
+      second: '/assets/services-design-second.jpg',
+      third: '/assets/services-design-third.jpg',
       toolbox: {
-        first: '/assets/graphic-opportunities-phone2.png',
-        second: '/assets/graphic-opportunities-phone2.png',
-        third: '/assets/graphic-opportunities-phone2.png',
+        first: '/assets/services-design-toolbox-first.png',
+        second: '/assets/services-design-toolbox-second.png',
+        third: '/assets/services-design-toolbox-third.png',
+      },
+      examples: {
+        first: '/assets/work-example-voyage.png',
+        second: '/assets/work-example-loudcloud-mobile.png',
       },
     },
     'tech-consulting': {
-      first: '/assets/graphic-opportunities-phone3.png',
-      second: '/assets/graphic-opportunities-phone3.png',
-      third: '/assets/graphic-opportunities-phone3.png',
+      first: '/assets/services-consulting-first.jpg',
+      second: '/assets/services-consulting-second.jpg',
+      third: '/assets/services-consulting-third.jpg',
       toolbox: {
-        first: '/assets/graphic-opportunities-phone3.png',
-        second: '/assets/graphic-opportunities-phone3.png',
-        third: '/assets/graphic-opportunities-phone3.png',
+        first: '/assets/services-consulting-toolbox-first.png',
+        second: '/assets/services-consulting-toolbox-second.png',
+        third: '/assets/services-consulting-toolbox-third.png',
       },
     },
   };
@@ -140,82 +148,127 @@ export class AppDetailedService {
     return (
       <section class="services">
         {/* header - hero */}
-        <header class="hero">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-sm-12 col-md-8 col-lg-8">
-                <h2>
-                  <app-translate
-                    key={`services.${this.match.params.service}.hero.title`}
-                  />
-                </h2>
-                <p>
-                  <app-translate
-                    key={`services.${this.match.params.service}.hero.text`}
-                  />
-                </p>
+        {this.match.params.service === 'app-developer' ? (
+          <header class="hero development">
+            <div class="overlay" />
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                  <h2>
+                    <app-translate
+                      key={`services.${this.match.params.service}.hero.title`}
+                    />
+                  </h2>
+                  <p>
+                    <app-translate
+                      key={`services.${this.match.params.service}.hero.text`}
+                    />
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-        <section class="app-development right-side">
-          <app-img
-            class="img-fluid d-none d-md-inline"
-            src={this.imgs[this.match.params.service].first}
-            alt=""
-          />
-          <div class="app-development-text">
-            <h2>
-              <app-translate
-                key={`services.${this.match.params.service}.first.title`}
-              />
-            </h2>
-            <p>
-              <app-translate
-                key={`services.${this.match.params.service}.first.text`}
-              />
-            </p>
-          </div>
-        </section>
-        <section class="app-development left-side">
-          <div class="app-development-text">
-            <h2>
-              <app-translate
-                key={`services.${this.match.params.service}.second.title`}
-              />
-            </h2>
-            <p>
-              <app-translate
-                key={`services.${this.match.params.service}.second.text`}
-              />
-            </p>
-          </div>
-          <app-img
-            class="img-fluid d-none d-md-inline"
-            src={this.imgs[this.match.params.service].second}
-            alt=""
-          />
-        </section>
-        <section class="app-development right-side">
-          <app-img
-            class="img-fluid d-none d-md-inline"
-            src={this.imgs[this.match.params.service].third}
-            alt=""
-          />
-          <div class="app-development-text">
-            <h2>
-              <app-translate
-                key={`services.${this.match.params.service}.third.title`}
-              />
-            </h2>
-            <p>
-              <app-translate
-                key={`services.${this.match.params.service}.third.text`}
-              />
-            </p>
-          </div>
-        </section>
-        <section class="container">
+          </header>
+        ) : this.match.params.service === 'app-designer' ? (
+          <header class="hero design">
+            <div class="overlay" />
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                  <h2>
+                    <app-translate
+                      key={`services.${this.match.params.service}.hero.title`}
+                    />
+                  </h2>
+                  <p>
+                    <app-translate
+                      key={`services.${this.match.params.service}.hero.text`}
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </header>
+        ) : (
+          <header class="hero consulting">
+            <div class="overlay" />
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                  <h2>
+                    <app-translate
+                      key={`services.${this.match.params.service}.hero.title`}
+                    />
+                  </h2>
+                  <p>
+                    <app-translate
+                      key={`services.${this.match.params.service}.hero.text`}
+                    />
+                  </p>
+                </div>
+              </div>
+            </div>
+          </header>
+        )}
+        <div class="container">
+          <section class="text-img-container right-side">
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src={this.imgs[this.match.params.service].first}
+              alt=""
+            />
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate
+                  key={`services.${this.match.params.service}.first.title`}
+                />
+              </h2>
+              <p>
+                <app-translate
+                  key={`services.${this.match.params.service}.first.text`}
+                />
+              </p>
+            </div>
+          </section>
+          <section class="text-img-container left-side">
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate
+                  key={`services.${this.match.params.service}.second.title`}
+                />
+              </h2>
+              <p>
+                <app-translate
+                  key={`services.${this.match.params.service}.second.text`}
+                />
+              </p>
+            </div>
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src={this.imgs[this.match.params.service].second}
+              alt=""
+            />
+          </section>
+          <section class="text-img-container right-side">
+            <app-img
+              class="img-fluid d-none d-md-inline"
+              src={this.imgs[this.match.params.service].third}
+              alt=""
+            />
+            <div class="text-img-container-text">
+              <h2>
+                <app-translate
+                  key={`services.${this.match.params.service}.third.title`}
+                />
+              </h2>
+              <p>
+                <app-translate
+                  key={`services.${this.match.params.service}.third.text`}
+                />
+              </p>
+            </div>
+          </section>
+        </div>
+        <section>
           <div class="our-toolbox">
             <h2>Our Toolbox</h2>
             <p>let us show you our skills in:</p>
@@ -244,84 +297,61 @@ export class AppDetailedService {
             </div>
           </div>
         </section>
-        <section class="work-examples">
-          <h2>Work Examples</h2>
-          <div class="single-example">
-            <app-img
-              class=""
-              src="/assets/graphic-home-voyage.png"
-              alt="voyage-app-image"
-            />
-            <div class="single-example-text">
-              <h2>Example</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt
-                sapien at ornare. Vivamus tristique ullamcorper tincidunt. In a
-                mauris porttitor, fermentum arcu vel, cursus sapien.
-                Pellentesque convallis risus est, et interdum tellus egestas ut.
-                Nam ac consequat mauris. Sed vulputate nisl vel leo mattis, et
-                congue mi porttitor. In condimentum augue id neque ultricies,
-                vitae ornare elit laoreet. Duis dignissim ut risus at accumsan.
-                Integer non faucibus lorem. Phasellus rutrum, orci nec efficitur
-                scelerisque, lectus arcu consequat nisl, eu sollicitudin velit
-                tellus eu nulla. Nullam maximus ipsum sit amet diam rhoncus
-                convallis. Mauris nulla nisl, accumsan at nisl id, consequat
-                tempor augue.
-              </p>
-            </div>
+        {this.imgs[this.match.params.service].examples ? (
+          <div class="container">
+            <section class="work-examples">
+              <h2>Work Examples</h2>
+              <div class="text-img-container right-side">
+                <app-img
+                  class="no-box"
+                  src={this.imgs[this.match.params.service].examples.first}
+                  alt="voyage-app-image"
+                />
+                <div class="text-img-container-text">
+                  <h2>
+                    <app-translate
+                      key={`services.${
+                        this.match.params.service
+                      }.examples.first.name`}
+                    />
+                  </h2>
+                  <p>
+                    <app-translate
+                      key={`services.${
+                        this.match.params.service
+                      }.examples.first.desc`}
+                    />
+                  </p>
+                </div>
+              </div>
+              <div class="text-img-container left-side">
+                <div class="text-img-container-text">
+                  <h2>
+                    <app-translate
+                      key={`services.${
+                        this.match.params.service
+                      }.examples.second.name`}
+                    />
+                  </h2>
+                  <p>
+                    <app-translate
+                      key={`services.${
+                        this.match.params.service
+                      }.examples.second.desc`}
+                    />
+                  </p>
+                </div>
+                <app-img
+                  class="no-box"
+                  src={this.imgs[this.match.params.service].examples.second}
+                  alt="voyage-app-image"
+                />
+              </div>
+            </section>
           </div>
-          <div class="single-example">
-            <div class="single-example-text">
-              <h2>Example</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt
-                sapien at ornare. Vivamus tristique ullamcorper tincidunt. In a
-                mauris porttitor, fermentum arcu vel, cursus sapien.
-                Pellentesque convallis risus est, et interdum tellus egestas ut.
-                Nam ac consequat mauris. Sed vulputate nisl vel leo mattis, et
-                congue mi porttitor. In condimentum augue id neque ultricies,
-                vitae ornare elit laoreet. Duis dignissim ut risus at accumsan.
-                Integer non faucibus lorem. Phasellus rutrum, orci nec efficitur
-                scelerisque, lectus arcu consequat nisl, eu sollicitudin velit
-                tellus eu nulla. Nullam maximus ipsum sit amet diam rhoncus
-                convallis. Mauris nulla nisl, accumsan at nisl id, consequat
-                tempor augue.
-              </p>
-            </div>
-            <app-img
-              class=""
-              src="/assets/graphic-home-voyage.png"
-              alt="voyage-app-image"
-            />
-          </div>
-          <div class="single-example">
-            <app-img
-              class=""
-              src="/assets/graphic-home-voyage.png"
-              alt="voyage-app-image"
-            />
-            <div class="single-example-text">
-              <h2>Example</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Pellentesque sed sollicitudin massa. Nunc sagittis tincidunt
-                sapien at ornare. Vivamus tristique ullamcorper tincidunt. In a
-                mauris porttitor, fermentum arcu vel, cursus sapien.
-                Pellentesque convallis risus est, et interdum tellus egestas ut.
-                Nam ac consequat mauris. Sed vulputate nisl vel leo mattis, et
-                congue mi porttitor. In condimentum augue id neque ultricies,
-                vitae ornare elit laoreet. Duis dignissim ut risus at accumsan.
-                Integer non faucibus lorem. Phasellus rutrum, orci nec efficitur
-                scelerisque, lectus arcu consequat nisl, eu sollicitudin velit
-                tellus eu nulla. Nullam maximus ipsum sit amet diam rhoncus
-                convallis. Mauris nulla nisl, accumsan at nisl id, consequat
-                tempor augue.
-              </p>
-            </div>
-          </div>
-        </section>
+        ) : (
+          ''
+        )}
         <section class="contact-us">
           <div class="container">
             <div class="jumbotron">

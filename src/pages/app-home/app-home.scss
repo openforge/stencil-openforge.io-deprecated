@@ -99,9 +99,9 @@
     }
 
     .card-container {
-      display: flex;
-      padding: 15px 0 15px;
-      justify-content: space-between;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 30px;
 
       @include media-breakpoint-down(xs) {
         padding-left: none;
@@ -118,6 +118,7 @@
         }
       }
       .card {
+        box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
         position: relative;
         display: flex;
         flex-direction: column;
@@ -136,13 +137,15 @@
           text-align: center;
           width: 100%;
           height: 100%;
-          padding: 30px;
+          padding: 10px;
           h3 {
             color: white;
             text-decoration: underline;
           }
           p {
             color: white;
+            margin-bottom: 0;
+            line-height: 1.5rem;
           }
         }
 

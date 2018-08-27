@@ -2,7 +2,23 @@
 section.services {
   // hero
   .hero {
-    background-image: url('/assets/bg-hero-wireframes-pencils.jpg');
+    &.development {
+      background-image: url('/assets/services-development-header.jpg');
+    }
+    &.design {
+      background-image: url('/assets/services-design-header.jpg');
+    }
+    &.consulting {
+      background-image: url('/assets/services-consulting-header.jpg');
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
     background-position: top center;
     background-size: cover;
     height: 100vh;
@@ -34,11 +50,21 @@ section.services {
         font-size: 1rem;
       }
     }
+
+    &.development,
+    &.design,
+    &.consulting {
+      h2 {
+        text-align: initial;
+      }
+      p {
+        max-width: initial;
+        padding: 0;
+      }
+    }
   }
 
-  .app-development,
-  .design,
-  .consulting {
+  .text-img-container {
     margin-top: 4rem;
     h2 {
       text-align: center;
@@ -48,11 +74,27 @@ section.services {
     }
   }
 
-  .app-development {
+  .text-img-container {
     display: grid;
+
+    app-img {
+      width: 250px;
+      height: 300px;
+      justify-self: center;
+      box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
+      &.no-box {
+        box-shadow: none;
+      }
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
     &.right-side {
       grid-template-columns: 0.5fr 1fr;
-      .app-development-text {
+      .text-img-container-text {
         h2 {
           color: $orange;
           text-align: left;
@@ -65,7 +107,7 @@ section.services {
     }
     &.left-side {
       grid-template-columns: 1fr 0.5fr;
-      .app-development-text {
+      .text-img-container-text {
         h2 {
           color: $orange;
           text-align: right;
@@ -76,14 +118,11 @@ section.services {
         }
       }
     }
-    app-img {
-      width: 100px;
-      height: 100px;
-    }
   }
 
   .our-toolbox {
     margin-top: 4rem;
+    padding-bottom: 4rem;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
     background: #020001; /* Old browsers */
     background: -moz-linear-gradient(
@@ -118,12 +157,14 @@ section.services {
       text-transform: uppercase;
     }
 
+    p {
+      margin-bottom: 0;
+    }
+
     .image-column {
-      align-items: center;
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      text-align: center;
+      align-items: center;
+      justify-content: center;
       img {
         max-width: 300px;
         width: 100%;

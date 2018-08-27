@@ -59,13 +59,13 @@ export class AppHome {
                     <div class="card--image">
                       <app-img
                         class="card--image"
-                        src="assets/graphic-home-development-card.png"
+                        src="/assets/services-development-header.jpg"
                         alt="app-development-image"
                       />
                     </div>
                     <div class="card--text">
                       <p>
-                        <app-translate key="home.services.app-developer.text" />
+                        <app-translate key="home.services.app-developer.meta" />
                       </p>
                     </div>
                   </stencil-route-link>
@@ -80,13 +80,13 @@ export class AppHome {
                     <div class="card--image">
                       <app-img
                         class="card--image"
-                        src="assets/graphic-home-design-card.png"
+                        src="/assets/services-design-header.jpg"
                         alt="ui-ux-design-image"
                       />
                     </div>
                     <div class="card--text">
                       <p>
-                        <app-translate key="home.services.app-designer.text" />
+                        <app-translate key="home.services.app-designer.meta" />
                       </p>
                     </div>
                   </stencil-route-link>
@@ -101,13 +101,13 @@ export class AppHome {
                     <div class="card--image">
                       <app-img
                         class="card--image"
-                        src="assets/graphic-home-consulting-card.png"
+                        src="/assets/services-consulting-header.jpg"
                         alt="consulting-image"
                       />
                     </div>
                     <div class="card--text">
                       <p>
-                        <app-translate key="home.services.tech-consulting.text" />
+                        <app-translate key="home.services.tech-consulting.meta" />
                       </p>
                     </div>
                   </stencil-route-link>
