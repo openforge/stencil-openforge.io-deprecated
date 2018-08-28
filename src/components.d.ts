@@ -30,6 +30,7 @@ import '@stencil/state-tunnel';
 
 import {
   MatchResults,
+  RouterHistory,
 } from '@stencil/router';
 
 declare global {
@@ -255,7 +256,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppNavHeader {
-
+      'history': RouterHistory;
     }
   }
 
@@ -278,7 +279,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppNavHeaderAttributes extends HTMLAttributes {
-
+      'history'?: RouterHistory;
     }
   }
 }
@@ -673,39 +674,6 @@ declare global {
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface AppServices {
-
-    }
-  }
-
-  interface HTMLAppServicesElement extends StencilComponents.AppServices, HTMLStencilElement {}
-
-  var HTMLAppServicesElement: {
-    prototype: HTMLAppServicesElement;
-    new (): HTMLAppServicesElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  interface ElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-services': JSXElements.AppServicesAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppServicesAttributes extends HTMLAttributes {
-
     }
   }
 }

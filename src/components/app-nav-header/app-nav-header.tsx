@@ -1,14 +1,21 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import {
   translate,
   TranslationService,
 } from '../../services/translation.service';
+import { RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-nav-header',
   styleUrl: 'app-nav-header.scss',
 })
 export class AppNavHeader {
+  @Prop()
+  history: RouterHistory;
+  isMobile = navigator.userAgent.match(
+    /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
+  );
+
   constructor() {
     const translationService = new TranslationService();
     translationService.init('en');
@@ -78,15 +85,46 @@ export class AppNavHeader {
                   {translate('nav.links.opportunities')}
                 </stencil-route-link>
               </li>
-              {/* <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/services"
-                  anchorClass="nav-link"
-                  activeClass="active"
+              {this.isMobile === null ? (
+                <li
+                  class="nav-item dropdown"
+                  data-target="#navbarSupportedContent"
                 >
-                  Services
-                </stencil-route-link>
-              </li> */}
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Services
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <stencil-route-link
+                      url="/services/app-developer"
+                      anchorClass="nav-link dropdown-item"
+                      activeClass="active"
+                    >
+                      Development
+                    </stencil-route-link>
+                    <stencil-route-link
+                      url="/services/app-designer"
+                      anchorClass="nav-link dropdown-item"
+                      activeClass="active"
+                    >
+                      UX/UI Design
+                    </stencil-route-link>
+                    <stencil-route-link
+                      url="/services/tech-consulting"
+                      anchorClass="nav-link dropdown-item"
+                      activeClass="active"
+                    >
+                      Consulting
+                    </stencil-route-link>
+                  </div>
+                </li>
+              ) : null}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
                   class="nav-link"
