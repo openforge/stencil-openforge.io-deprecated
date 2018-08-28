@@ -327,7 +327,7 @@ export class AppDetailedService {
               <h2>Work Examples</h2>
               <div class="text-img-container right-side">
                 <app-img
-                  class="no-box"
+                  class=""
                   src={this.imgs[this.match.params.service].examples.first}
                   alt="voyage-app-image"
                 />
@@ -346,6 +346,7 @@ export class AppDetailedService {
                       }.examples.first.desc`}
                     />
                   </p>
+                  <p class="check-link">Check it out</p>
                 </div>
               </div>
               <div class="text-img-container left-side">
@@ -364,9 +365,10 @@ export class AppDetailedService {
                       }.examples.second.desc`}
                     />
                   </p>
+                  <p class="check-link">Check it out</p>
                 </div>
                 <app-img
-                  class="no-box"
+                  class=""
                   src={this.imgs[this.match.params.service].examples.second}
                   alt="voyage-app-image"
                 />
