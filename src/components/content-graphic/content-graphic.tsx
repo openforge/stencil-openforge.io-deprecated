@@ -6,7 +6,8 @@ import { Component, Prop } from '@stencil/core';
 })
 export class ContentGraphic {
   @Prop() imgUrl: string;
-  @Prop() reverse: boolean;
+  @Prop() reverse: boolean = false;
+  @Prop() preLoadImg: boolean = false;
 
   render() {
     return (
@@ -14,17 +15,42 @@ export class ContentGraphic {
         class={{
           'content-graphic': true,
           row: true,
-          'justify-content-around': true,
+          'justify-content-center': true,
           'align-items-center': true,
           'flex-row-reverse': this.reverse,
         }}
       >
-        <div class="col-sm-12 col-md-4">
-          <app-img class="img-fluid" src={this.imgUrl} alt="" />
+        <div
+          class={{
+            'col-sm-12': true,
+            'col-md-5': true,
+            'px-lg-5': true,
+            'p-4': true,
+            'text-md-right': !this.reverse,
+          }}
+        >
+          <app-img
+            class="img-fluid d-none d-md-inline"
+            src={this.imgUrl}
+            preLoad={this.preLoadImg}
+            alt=""
+          />
         </div>
-        <div class="content col-sm-12 col-md-7">
+        <div
+          class={{
+            'col-sm-12': true,
+            'col-md-5': true,
+            'px-lg-5': true,
+            'text-md-right': this.reverse,
+          }}
+        >
           <slot name="header" />
-
+          <app-img
+            class="img-fluid d-xs-inline d-md-none"
+            src={this.imgUrl}
+            alt=""
+            preLoad={this.preLoadImg}
+          />
           <slot name="body" />
         </div>
       </div>

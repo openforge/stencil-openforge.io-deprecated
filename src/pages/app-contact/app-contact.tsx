@@ -391,14 +391,14 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container">
-                <content-graphic-lg img-url="/assets/rocket.png">
+                <content-graphic img-url="/assets/rocket.png">
                   <h3 slot="header">
                     <app-translate key="contact.form.thanx" />
                   </h3>
                   <p slot="body">
                     <app-translate key="contact.form.thanxText" />
                   </p>
-                </content-graphic-lg>
+                </content-graphic>
               </div>
             ) : null}
           </div>
