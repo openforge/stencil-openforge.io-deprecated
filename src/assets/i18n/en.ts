@@ -163,7 +163,7 @@ export const translations = {
         hero: {
           title: 'Your Go-To App Developer',
           text:
-            'Our app developer team has the skills you need to transform your vision into a fully functioning app that will not only work flawlessly but engage your users and customers. Whether you are looking to reach your audience through mobile or web, our app developer team will create exactly what you need.',
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
         },
         first: {
           title: 'Progressive Web App Development',
@@ -231,7 +231,7 @@ export const translations = {
         hero: {
           title: 'Tech Consulting for all Industries',
           text:
-            'Our consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Our business and tech consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
         first: {
           title: 'Tech Consulting',
