@@ -6,6 +6,9 @@ import { Component } from '@stencil/core';
 })
 export class AppHome {
   members: any[];
+  isMobile = navigator.userAgent.match(
+    /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
+  );
 
   scrollToForm() {
     const form = document.getElementById('services');
@@ -55,7 +58,11 @@ export class AppHome {
                   <app-translate key="home.services.app-developer.headline" />
                 </h1>
                 <div class="hvrbox card">
-                  <stencil-route-link url={'/services/app-developer'}>
+                  <stencil-route-link
+                    url={
+                      this.isMobile === null ? '/services/app-developer' : ''
+                    }
+                  >
                     <div class="hvrbox-layer-bottom card--image">
                       <app-img
                         class="card--image"
@@ -76,7 +83,9 @@ export class AppHome {
                   <app-translate key="home.services.app-designer.headline" />
                 </h1>
                 <div class="hvrbox card">
-                  <stencil-route-link url={'/services/app-designer'}>
+                  <stencil-route-link
+                    url={this.isMobile === null ? '/services/app-designer' : ''}
+                  >
                     <div class="hvrbox-layer-bottom card--image">
                       <app-img
                         class="card--image"
@@ -97,7 +106,11 @@ export class AppHome {
                   <app-translate key="home.services.tech-consulting.headline" />
                 </h1>
                 <div class=" hvrbox card">
-                  <stencil-route-link url={'/services/tech-consulting'}>
+                  <stencil-route-link
+                    url={
+                      this.isMobile === null ? '/services/tech-consulting' : ''
+                    }
+                  >
                     <div class="hvrbox-layer-bottom card--image">
                       <app-img
                         class="card--image"
