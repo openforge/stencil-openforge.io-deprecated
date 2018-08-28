@@ -110,7 +110,7 @@ export class AppContact {
 
       case 'phone':
         this.formValues.phoneValid = e.value.match(
-          /^[\+]?[(]?\d{3}[)]?[-\s\.]?\d{3}[-\s\.]?\d{4,6}$/im
+          /^[\+]?[(]?\d{1,3}[)]?([-\s\.]?\d{3}){1,2}[-\s\.]?\d{4,6}$/
         );
         this.phoneError = this.formValues.phoneValid
           ? ''
