@@ -249,6 +249,10 @@ export const translations = {
             'We will help you understand your current ROI on your marketing initiatives. Our marketing audit will help you see the results from your marketing campaigns, what channels are most profitable, and what you aren’t doing that you’re losing out on! We will perform an in-depth analysis of your strengths and weaknesses and provide advice on options you can do yourself or take back to your marketing agency to improve your reach and boost your ROI',
         },
       },
+      aside: {
+        title: 'Want to learn more?',
+        link: 'Get in touch',
+      },
     },
     opportunities: {
       hero: {

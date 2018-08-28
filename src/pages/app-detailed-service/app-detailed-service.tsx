@@ -11,9 +11,9 @@ export class AppDetailedService {
   @State()
   imgs = {
     'app-developer': {
-      first: '/assets/services-development-first.jpg',
-      second: '/assets/services-development-second.jpg',
-      third: '/assets/services-development-third.jpg',
+      first: '/assets/services-development-box.png',
+      second: '/assets/services-development-robot.png',
+      third: '/assets/services-development-phone.png',
       toolbox: {
         first: '/assets/services-development-toolbox-first.png',
         second: '/assets/services-development-toolbox-second.png',
@@ -25,9 +25,9 @@ export class AppDetailedService {
       },
     },
     'app-designer': {
-      first: '/assets/services-design-first.jpg',
-      second: '/assets/services-design-second.jpg',
-      third: '/assets/services-design-third.jpg',
+      first: '/assets/services-design-bulb.png',
+      second: '/assets/services-design-notebook.png',
+      third: '/assets/services-design-pencil.png',
       toolbox: {
         first: '/assets/services-design-toolbox-first.png',
         second: '/assets/services-design-toolbox-second.png',
@@ -39,9 +39,9 @@ export class AppDetailedService {
       },
     },
     'tech-consulting': {
-      first: '/assets/services-consulting-first.jpg',
-      second: '/assets/services-consulting-second.jpg',
-      third: '/assets/services-consulting-third.jpg',
+      first: '/assets/services-consulting-pc.png',
+      second: '/assets/services-consulting-notepad.png',
+      third: '/assets/services-consulting-arrow.png',
       toolbox: {
         first: '/assets/services-consulting-toolbox-first.png',
         second: '/assets/services-consulting-toolbox-second.png',
@@ -144,6 +144,12 @@ export class AppDetailedService {
     }
   }
 
+  scrollToForm() {
+    const form = document.getElementById('second-content');
+
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <section class="services">
@@ -164,6 +170,12 @@ export class AppDetailedService {
                       key={`services.${this.match.params.service}.hero.text`}
                     />
                   </p>
+                  <button
+                    onClick={this.scrollToForm.bind(this)}
+                    class="btn btn-primary"
+                  >
+                    <app-translate key="opportunities.hero.text2" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -184,6 +196,12 @@ export class AppDetailedService {
                       key={`services.${this.match.params.service}.hero.text`}
                     />
                   </p>
+                  <button
+                    onClick={this.scrollToForm.bind(this)}
+                    class="btn btn-primary"
+                  >
+                    <app-translate key="opportunities.hero.text2" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -204,12 +222,18 @@ export class AppDetailedService {
                       key={`services.${this.match.params.service}.hero.text`}
                     />
                   </p>
+                  <button
+                    onClick={this.scrollToForm.bind(this)}
+                    class="btn btn-primary"
+                  >
+                    <app-translate key="opportunities.hero.text2" />
+                  </button>
                 </div>
               </div>
             </div>
           </header>
         )}
-        <div class="container">
+        <div id="second-content" class="container">
           <section class="text-img-container right-side">
             <app-img
               class="img-fluid d-none d-md-inline"
@@ -350,52 +374,18 @@ export class AppDetailedService {
             </section>
           </div>
         ) : (
-          ''
+          <section class="no-examples">
+            <h2>Case Studies Coming Soon</h2>
+          </section>
         )}
-        <section class="contact-us">
-          <div class="container">
-            <div class="jumbotron">
-              <h2>Contact Us</h2>
-
-              <form
-                id="contact-form"
-                onSubmit={this.handleSubmit.bind(this)}
-                novalidate={true}
-              >
-                <app-input
-                  name="name"
-                  label="Name"
-                  type="text"
-                  id="name"
-                  required={true}
-                />
-
-                <app-input
-                  name="email"
-                  label="Email"
-                  type="email"
-                  id="email"
-                  required={true}
-                />
-
-                <app-textarea
-                  name="message"
-                  label="Message"
-                  rows={5}
-                  required={true}
-                />
-                <button
-                  name="submit"
-                  type="submit"
-                  class="btn btn-primary"
-                  disabled={this.isDisabled}
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+        <app-cta link-url="/contact">
+          <span slot="header">
+            <app-translate key="services.aside.title" />
+          </span>
+          <span slot="link">
+            <app-translate key="services.aside.link" />
+          </span>
+        </app-cta>
         <app-footer />
       </section>
     );
