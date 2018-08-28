@@ -21,21 +21,21 @@ export const translations = {
             'At OpenForge our app developer team will create an application that fits your needs.',
           headline: 'App Development',
           text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
         },
         'app-designer': {
           meta:
             'At OpenForge our app designers will design a beautiful and intuitive app that will engage users and produce results.',
           headline: 'UI/UX Design',
           text:
-            'Our app designer team has the skills and experience to bring to life your app in a way that will be both visually appealing and intuitive for your users. An effective user interface will be all the difference in making your app effective and successful. Your user experience is vital to keeping your users engaged and returning again and again. Once our design team has determined your user flow and designs, we will create a prototype that is clickable and functioning before the first line of code is even written.',
+            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
         },
         'tech-consulting': {
           meta:
             'With OpenForge as your tech consultant, we will determine what technologies and processes will help your business succeed in the digital world.',
           headline: 'Consulting',
           text:
-            'Our business and tech consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
         },
       },
       learnAbout: {
@@ -163,7 +163,7 @@ export const translations = {
         hero: {
           title: 'Your Go-To App Developer',
           text:
-            'Our app developer team has the skills you need to transform your vision into a fully functioning app that will not only work flawlessly but engage your users and customers. Whether you are looking to reach your audience through mobile or web, our app developer team will create exactly what you need.',
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
         },
         first: {
           title: 'Progressive Web App Development',
@@ -231,7 +231,7 @@ export const translations = {
         hero: {
           title: 'Tech Consulting for all Industries',
           text:
-            'Our consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Our business and tech consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
         first: {
           title: 'Tech Consulting',
