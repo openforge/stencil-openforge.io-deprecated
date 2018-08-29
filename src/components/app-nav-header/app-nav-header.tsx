@@ -1,17 +1,14 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 import {
   translate,
   TranslationService,
 } from '../../services/translation.service';
-import { RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-nav-header',
   styleUrl: 'app-nav-header.scss',
 })
 export class AppNavHeader {
-  @Prop()
-  history: RouterHistory;
   isMobile = navigator.userAgent.match(
     /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
   );
@@ -19,6 +16,18 @@ export class AppNavHeader {
   constructor() {
     const translationService = new TranslationService();
     translationService.init('en');
+  }
+
+  componentDidLoad() {
+    const links: any = document.querySelectorAll(
+      '.navbar li.dropdown a.dropdown-item'
+    );
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      });
+    });
   }
 
   render() {

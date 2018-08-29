@@ -30,7 +30,6 @@ import '@stencil/state-tunnel';
 
 import {
   MatchResults,
-  RouterHistory,
 } from '@stencil/router';
 
 declare global {
@@ -256,7 +255,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppNavHeader {
-      'history': RouterHistory;
+
     }
   }
 
@@ -279,7 +278,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppNavHeaderAttributes extends HTMLAttributes {
-      'history'?: RouterHistory;
+
     }
   }
 }
