@@ -26,7 +26,7 @@ export class AppSlider {
           class="form-control-range"
           name={this.name}
           id={this.name}
-          onChange={this.inputHandler.bind(this)}
+          onInput={this.inputHandler.bind(this)}
         />
       </div>
     );
