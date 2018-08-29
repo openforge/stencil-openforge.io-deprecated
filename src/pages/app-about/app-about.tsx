@@ -128,6 +128,14 @@ export class AppAbout {
       twitter: '',
       github: '',
     },
+    {
+      name: 'YOU?',
+      image: './../../assets/headshot-placeholder.jpg',
+      title: '',
+      mail: 'geoff@openforge.io',
+      twitter: '',
+      github: '',
+    },
   ];
 
   scrollToForm() {
