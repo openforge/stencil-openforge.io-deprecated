@@ -224,16 +224,16 @@ export class AppHome {
               <app-translate key="home.process.title" />
             </h2>
 
-            <content-graphic-lg img-url="assets/graphic-home-discovery.png">
+            <content-graphic img-url="assets/graphic-home-discovery.png">
               <h3 slot="header">
                 <app-translate key="home.process.discovery" />
               </h3>
               <p slot="body">
                 <app-translate key="home.process.discoveryBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg
+            <content-graphic
               img-url="assets/graphic-home-consulting.png"
               reverse={true}
             >
@@ -243,18 +243,18 @@ export class AppHome {
               <p slot="body">
                 <app-translate key="home.process.designUserExperienceBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg img-url="assets/graphic-home-development.png">
+            <content-graphic img-url="assets/graphic-home-development.png">
               <h3 slot="header">
                 <app-translate key="home.process.development" />
               </h3>
               <p slot="body">
                 <app-translate key="home.process.developmentBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg
+            <content-graphic
               img-url="assets/graphic-home-deployment.png"
               reverse={true}
             >
@@ -264,16 +264,16 @@ export class AppHome {
               <p slot="body">
                 <app-translate key="home.process.deploymentBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg img-url="assets/graphic-home-feedback.png">
+            <content-graphic img-url="assets/graphic-home-feedback.png">
               <h3 slot="header">
                 <app-translate key="home.process.userFeedback" />
               </h3>
               <p slot="body">
                 <app-translate key="home.process.userFeedbackBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
           </div>
         </section>
 

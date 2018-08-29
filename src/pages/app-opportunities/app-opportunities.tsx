@@ -250,7 +250,7 @@ export class AppOpportunities {
         {/* section - intro */}
         <section id="intro" class="intro">
           <div class="container">
-            <content-graphic-lg
+            <content-graphic
               img-url="/assets/graphic-opportunities-suck.jpg"
               reverse={true}
             >
@@ -260,16 +260,16 @@ export class AppOpportunities {
               <p slot="body">
                 <app-translate key="opportunities.intro.text" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg img-url="/assets/graphic-opportunities-codemaster.jpg">
+            <content-graphic img-url="/assets/graphic-opportunities-codemaster.jpg">
               <h3 slot="header">
                 <app-translate key="opportunities.intro.codeMaster.title" />
               </h3>
               <p slot="body">
                 <app-translate key="opportunities.intro.codeMaster.body" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
           </div>
 
           <div class="challenge">
@@ -317,7 +317,7 @@ export class AppOpportunities {
           </div>
 
           <div class="container">
-            <content-graphic-lg
+            <content-graphic
               img-url="/assets/graphic-opportunities-ionic.jpg"
               reverse={true}
             >
@@ -327,16 +327,16 @@ export class AppOpportunities {
               <p slot="body">
                 <app-translate key="opportunities.reputation.text" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg img-url="/assets/graphic-opportunities-sword.png">
+            <content-graphic img-url="/assets/graphic-opportunities-sword.png">
               <h3 slot="header">
                 <app-translate key="opportunities.prepared.title" />
               </h3>
               <p slot="body">
                 <app-translate key="opportunities.prepared.body" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
           </div>
         </section>
 
@@ -553,14 +553,14 @@ export class AppOpportunities {
                 <app-translate key="opportunities.form.submitted" />
               </h2>
 
-              <content-graphic-lg img-url="/assets/graphic-opportunities-robot.png">
+              <content-graphic img-url="/assets/graphic-opportunities-robot.png">
                 <h3 slot="header">
                   <app-translate key="opportunities.form.thanks.title" />
                 </h3>
                 <p slot="body">
                   <app-translate key="opportunities.form.thanks.text" />
                 </p>
-              </content-graphic-lg>
+              </content-graphic>
             </div>
           )}
         </section>

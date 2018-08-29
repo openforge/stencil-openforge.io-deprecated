@@ -444,45 +444,9 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface ContentGraphicLg {
-      'imgUrl': string;
-      'preLoadImg': boolean;
-      'reverse': boolean;
-    }
-  }
-
-  interface HTMLContentGraphicLgElement extends StencilComponents.ContentGraphicLg, HTMLStencilElement {}
-
-  var HTMLContentGraphicLgElement: {
-    prototype: HTMLContentGraphicLgElement;
-    new (): HTMLContentGraphicLgElement;
-  };
-  interface HTMLElementTagNameMap {
-    'content-graphic-lg': HTMLContentGraphicLgElement;
-  }
-  interface ElementTagNameMap {
-    'content-graphic-lg': HTMLContentGraphicLgElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'content-graphic-lg': JSXElements.ContentGraphicLgAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ContentGraphicLgAttributes extends HTMLAttributes {
-      'imgUrl'?: string;
-      'preLoadImg'?: boolean;
-      'reverse'?: boolean;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface ContentGraphic {
       'imgUrl': string;
+      'preLoadImg': boolean;
       'reverse': boolean;
     }
   }
@@ -507,6 +471,7 @@ declare global {
   namespace JSXElements {
     export interface ContentGraphicAttributes extends HTMLAttributes {
       'imgUrl'?: string;
+      'preLoadImg'?: boolean;
       'reverse'?: boolean;
     }
   }
