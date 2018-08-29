@@ -66,6 +66,10 @@ section.services {
 
   .text-img-container {
     margin-top: 4rem;
+    &:first-child {
+      margin-top: 0;
+      padding: 6rem 0;
+    }
     h2 {
       text-align: center;
     }
