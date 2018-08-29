@@ -296,27 +296,29 @@ export class AppDetailedService {
           <div class="our-toolbox">
             <h2>Our Toolbox</h2>
             <p>let us show you our skills in:</p>
-            <div class="row">
-              <div class="image-column col-sm-12 col-md-4">
-                <app-img
-                  class="img-fluid d-none d-md-inline"
-                  src={this.imgs[this.match.params.service].toolbox.first}
-                  alt=""
-                />
-              </div>
-              <div class="image-column col-sm-12 col-md-4">
-                <app-img
-                  class="img-fluid d-none d-md-inline"
-                  src={this.imgs[this.match.params.service].toolbox.second}
-                  alt=""
-                />
-              </div>
-              <div class="image-column col-sm-12 col-md-4">
-                <app-img
-                  class="img-fluid d-none d-md-inline"
-                  src={this.imgs[this.match.params.service].toolbox.third}
-                  alt=""
-                />
+            <div class="container">
+              <div class="row">
+                <div class="image-column col-sm-12 col-md-4">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].toolbox.first}
+                    alt=""
+                  />
+                </div>
+                <div class="image-column col-sm-12 col-md-4">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].toolbox.second}
+                    alt=""
+                  />
+                </div>
+                <div class="image-column col-sm-12 col-md-4">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].toolbox.third}
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
           </div>
