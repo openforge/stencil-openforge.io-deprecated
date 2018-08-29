@@ -1,9 +1,6 @@
 nav.navbar {
   .navbar-nav {
     .nav-item.dropdown {
-      .dropdown-toggle::after {
-        display: none;
-      }
       .dropdown-menu {
         border: none;
         background: rgba(23, 23, 25, 0.75);
