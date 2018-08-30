@@ -417,7 +417,7 @@ export class AppOpportunities {
                       class="input-file"
                       type="file"
                       name="file"
-                      onChange={this.handleFile.bind(this)}
+                      onInput={this.handleFile.bind(this)}
                       // onBlur={this.validateField.bind(this)}
                       required={!this.fileSizeErrorShown}
                     />
