@@ -15,6 +15,8 @@ export class AppAbout {
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
+      detail: true,
+      onlyName: 'jedi',
     },
     {
       name: 'Rachel Bennett',
@@ -24,6 +26,8 @@ export class AppAbout {
       mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
+      detail: true,
+      onlyName: 'rachel',
     },
     {
       name: 'Geoffery Melle',
@@ -33,6 +37,8 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
+      detail: true,
+      onlyName: 'geoffery',
     },
     {
       name: 'Joni Leho',
@@ -41,6 +47,8 @@ export class AppAbout {
       title: translate('home.member.title.developer'),
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
+      detail: false,
+      onlyName: 'joni',
     },
     {
       name: 'Auvo Severinkangas',
@@ -50,6 +58,8 @@ export class AppAbout {
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
+      detail: false,
+      onlyName: 'auvo',
     },
     {
       name: 'Elizabeth Cottrell',
@@ -59,6 +69,8 @@ export class AppAbout {
       mail: 'elizabeth@openforge.io',
       twitter: 'https://twitter.com/_elizacottrell',
       github: 'https://github.com/LizCottrell',
+      detail: false,
+      onlyName: 'elizabeth',
     },
     {
       name: 'Paulina Gallo',
@@ -68,6 +80,8 @@ export class AppAbout {
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
+      detail: true,
+      onlyName: 'paulina',
     },
     {
       name: 'Mohammad Alfatih',
@@ -77,6 +91,8 @@ export class AppAbout {
       mail: 'mo@jawami.com',
       twitter: 'https://twitter.com/webdevffw',
       github: 'https://github.com/Mohammad-alfatih',
+      detail: false,
+      onlyName: 'mohammad',
     },
     {
       name: 'Meredith Alcorn',
@@ -85,6 +101,8 @@ export class AppAbout {
       title: translate('home.member.title.developer'),
       mail: 'meredith@openforge.io',
       github: 'https://github.com/mmalcorn',
+      detail: false,
+      onlyName: 'meredith',
     },
     {
       name: 'Fernando Del Olmo',
@@ -94,6 +112,8 @@ export class AppAbout {
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
+      detail: true,
+      onlyName: 'fernando',
     },
     {
       name: 'William Holloran',
@@ -101,6 +121,8 @@ export class AppAbout {
       color: '#638593',
       title: translate('home.member.title.projectManager'),
       mail: 'william@openforge.io',
+      detail: true,
+      onlyName: 'william',
     },
     {
       name: 'Luis Chacon',
@@ -110,6 +132,8 @@ export class AppAbout {
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
+      detail: true,
+      onlyName: 'luis',
     },
     {
       name: 'Claudio Del Valle',
@@ -118,6 +142,8 @@ export class AppAbout {
       title: translate('home.member.title.developer'),
       mail: 'claudio@openforge.io',
       github: 'https://github.com/daftclaud',
+      detail: true,
+      onlyName: 'claudio',
     },
     {
       name: 'Yanying Zhu',
@@ -127,6 +153,8 @@ export class AppAbout {
       mail: 'yanying@openforge.io',
       twitter: '',
       github: '',
+      detail: false,
+      onlyName: 'yanying',
     },
     {
       name: 'YOU?',
@@ -135,6 +163,8 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
+      detail: false,
+      onlyName: 'you',
     },
   ];
 

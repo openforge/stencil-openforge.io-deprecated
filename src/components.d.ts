@@ -646,6 +646,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppTeamLanding {
+      'match': MatchResults;
+    }
+  }
+
+  interface HTMLAppTeamLandingElement extends StencilComponents.AppTeamLanding, HTMLStencilElement {}
+
+  var HTMLAppTeamLandingElement: {
+    prototype: HTMLAppTeamLandingElement;
+    new (): HTMLAppTeamLandingElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-team-landing': HTMLAppTeamLandingElement;
+  }
+  interface ElementTagNameMap {
+    'app-team-landing': HTMLAppTeamLandingElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-team-landing': JSXElements.AppTeamLandingAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTeamLandingAttributes extends HTMLAttributes {
+      'match'?: MatchResults;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface OpenForgeApp {
 
     }
