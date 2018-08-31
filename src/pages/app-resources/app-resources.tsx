@@ -164,7 +164,7 @@ export class AppResources {
         ) : null}
 
         {this.formSubmitted ? (
-          <header class="hero">
+          <header class="hero changed-bkg">
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">
@@ -175,12 +175,9 @@ export class AppResources {
                     <p>
                       <app-translate key="resources.hero.text1" />
                     </p>
-                    <button
-                      onClick={this.scrollToForm.bind(this)}
-                      class="btn btn-primary"
-                    >
-                      Download Now
-                    </button>
+                    <stencil-route-link url="/services/app-developer">
+                      <button class="btn btn-primary">Check it out</button>
+                    </stencil-route-link>
                   </div>
                 </div>
               </div>
@@ -189,12 +186,12 @@ export class AppResources {
         ) : null}
 
         {/* section - form */}
-        <section id="form-section" class="pwa-form">
-          <div class="row align-items-center">
-            <div class="col-sm-12 col-md-8 col-lg-6" />
-            <div class="col-sm-12 col-md-8 col-lg-6">
-              <div class="container">
-                {!this.formSubmitted ? (
+        {!this.formSubmitted ? (
+          <section id="form-section" class="pwa-form">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-8 col-lg-6" />
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <div class="container">
                   <div class="">
                     <form
                       id="pwa-form"
@@ -303,11 +300,11 @@ export class AppResources {
                       </div>
                     </form>
                   </div>
-                ) : null}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : null}
 
         {/* section - downloadinfo */}
         {!this.formSubmitted ? (

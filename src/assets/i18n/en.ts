@@ -321,6 +321,9 @@ export const translations = {
         title: 'What is a PWA and is it right for you?',
         text:
           "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
+        title1: 'Check Out the Awesome stuff we made with PWAs',
+        text1:
+          "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
       },
       form: {
         fullName: 'Full Name',

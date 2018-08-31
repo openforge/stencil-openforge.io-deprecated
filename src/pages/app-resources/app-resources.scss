@@ -55,6 +55,17 @@
     }
   }
 
+  .changed-bkg {
+    background-image: url('/assets/services-development-header.jpg');
+
+    @include media-breakpoint-down(md) {
+      background-image: url('/assets/services-development-header.jpg');
+    }
+    @include media-breakpoint-down(sm) {
+      background-image: url('/assets/services-development-header.jpg');
+    }
+  }
+
   .pwa-form {
     padding: 7rem 7rem;
 
