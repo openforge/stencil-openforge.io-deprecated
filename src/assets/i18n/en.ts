@@ -316,6 +316,38 @@ export const translations = {
       },
     },
 
+    resources: {
+      hero: {
+        title: 'What is a PWA and is it right for you?',
+        text:
+          "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
+      },
+      form: {
+        fullName: 'Full Name',
+        industry: 'Industry',
+        email: 'E-mail',
+        organization: 'Organization',
+        button: {
+          send: 'Download',
+        },
+      },
+      downloadinfo: {
+        title: 'WHY DOWNLOAD INFO',
+        subtitle:
+          'There is no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow and evolve.',
+        list: {
+          first: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          second: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          third: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          fourth: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+        },
+        footer:
+          'There is no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow and evolve.',
+      },
+      thanks:
+        "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you follow direction, develop, and learn a new technology or pattern that you have not used before",
+    },
+
     header: {
       scrollText: 'Scroll to content',
     },

@@ -1,0 +1,138 @@
+.resources {
+  // hero
+  .hero {
+    background-image: url('/assets/resources-header.jpg');
+
+    @include media-breakpoint-down(md) {
+      background-image: url('/assets/resources-header.jpg');
+    }
+    @include media-breakpoint-down(sm) {
+      background-image: url('/assets/resources-header.jpg');
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+    }
+
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    .row {
+      padding-top: 56px;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(lg) {
+        font-size: 2.5rem;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(sm) {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .pwa-form {
+    padding: 7rem 7rem;
+
+    @include media-breakpoint-down(sm) {
+      padding: 3rem 3rem;
+    }
+  }
+
+  .downloadinfo {
+    margin: 0 auto;
+    max-width: 992px;
+
+    &--header {
+      padding: 15px;
+      p {
+        margin-bottom: none;
+        text-align: center;
+      }
+    }
+  }
+  .error {
+    font-weight: bold;
+    color: #d9534f;
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .text-img-container {
+    margin-bottom: 4rem;
+    &:first-child {
+      margin-top: 0;
+      padding-top: 6rem;
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+
+  .text-img-container {
+    display: grid;
+
+    app-img {
+      justify-self: center;
+      img {
+        object-fit: cover;
+        max-height: 310px;
+      }
+    }
+
+    &.left-side {
+      grid-template-columns: 0.5fr 1fr;
+      .text-img-container-text {
+        margin-right: 10px;
+        h2 {
+          color: $orange;
+          text-align: justify;
+        }
+        h3 {
+          color: $orange-light;
+          font-size: 1.6rem;
+          text-align: justify;
+        }
+        p {
+          text-align: justify;
+          padding: 0;
+          margin-bottom: 1rem;
+          &.check-link {
+            font-size: 26px;
+            color: $orange;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
