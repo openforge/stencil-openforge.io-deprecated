@@ -162,7 +162,8 @@ export class AppOpportunities {
     const files = e.target.files;
     const file = files[0];
 
-    this.formData.delete('files'); // Just in case user changed the file
+    this.formData = new FormData();
+    this.formData.append('files', files[0]);
 
     this.formValues.formErrors.fileValid = e.target.checkValidity();
     if (file && file.size > this.maxFileSize) {
@@ -175,7 +176,6 @@ export class AppOpportunities {
 
     this.fileSizeErrorShown = false;
     this.fileError = '';
-    this.formData.append('files', files[0]);
     this.validateField(null);
   }
 
@@ -206,7 +206,6 @@ export class AppOpportunities {
 
       this.submitButtonDisabled = false;
       this.formSubmitting = false;
-      this.submitButtonDisabled = false;
       this.formSubmitted = true;
       this.fileSizeErrorShown = false;
 
@@ -417,7 +416,7 @@ export class AppOpportunities {
                       class="input-file"
                       type="file"
                       name="file"
-                      onInput={this.handleFile.bind(this)}
+                      onChange={this.handleFile.bind(this)}
                       // onBlur={this.validateField.bind(this)}
                       required={!this.fileSizeErrorShown}
                     />
@@ -521,7 +520,7 @@ export class AppOpportunities {
                       name="message"
                       maxLength={150}
                       required={true}
-                      onInput={this.validateField.bind(this)}
+                      onChange={this.validateField.bind(this)}
                     />
                   </div>
                   <p class="error">
