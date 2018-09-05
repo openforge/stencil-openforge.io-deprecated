@@ -1,5 +1,7 @@
 import { Component } from '@stencil/core';
 
+declare var fbq;
+
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
@@ -9,6 +11,10 @@ export class AppHome {
   isMobile = navigator.userAgent.match(
     /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
   );
+
+  componentDidLoad() {
+    fbq('track', 'ViewContent');
+  }
 
   scrollToForm() {
     const form = document.getElementById('services');

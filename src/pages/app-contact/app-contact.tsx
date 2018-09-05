@@ -1,6 +1,8 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
+declare var fbq;
+
 @Component({
   tag: 'app-contact',
   styleUrl: 'app-contact.scss',
@@ -82,6 +84,8 @@ export class AppContact {
   }
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
+    fbq('track', 'Lead');
     this.resetFormValues();
   }
 
@@ -170,6 +174,8 @@ export class AppContact {
           body: JSON.stringify(this.formValues),
         }
       );
+
+      fbq('track', 'CompleteRegistration');
 
       event.target.reset();
       this.resetFormValues();

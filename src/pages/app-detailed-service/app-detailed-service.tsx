@@ -1,6 +1,8 @@
 import { Component, Prop, State, Listen } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
+declare var fbq;
+
 @Component({
   tag: 'app-detailed-service',
   styleUrl: 'app-detailed-service.scss',
@@ -77,6 +79,7 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
     this.resetFormValues();
   }
 
