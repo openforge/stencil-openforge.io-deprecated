@@ -1,6 +1,8 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
+declare var fbq;
+
 @Component({
   tag: 'app-opportunities',
   styleUrl: 'app-opportunities.scss',
@@ -56,6 +58,8 @@ export class AppOpportunities {
   };
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
+    fbq('track', 'Lead');
     this.resetFormValues();
   }
 
@@ -200,6 +204,8 @@ export class AppOpportunities {
           body: this.formData,
         }
       );
+
+      fbq('track', 'CompleteRegistration');
 
       e.target.reset();
       this.resetFormValues();
