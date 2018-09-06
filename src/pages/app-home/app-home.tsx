@@ -1,6 +1,8 @@
 import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
+declare var fbq;
+
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
@@ -8,22 +10,44 @@ import { RouterHistory } from '@stencil/router';
 export class AppHome {
   @Prop() history: RouterHistory;
   members: any[];
+  isMobile = navigator.userAgent.match(
+    /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
+  );
+
+  componentDidLoad() {
+    fbq('track', 'ViewContent');
+  }
+
+  scrollToForm() {
+    const form = document.getElementById('services');
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
 
   render() {
     return (
       <div class="home">
         {/* header - hero */}
-        <app-hero-home>
-          <span slot="header">
-            <app-translate key="home.hero.header" />
-          </span>
-          <span slot="body">
-            <app-translate key="home.hero.body" />
-          </span>
-          <span slot="link">
-            <app-translate key="home.hero.link" />
-          </span>
-        </app-hero-home>
+        <header class="hero">
+          <div class="overlay" />
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="hero-content col-sm-12">
+                <h2>Talented Thinkers, Makers and Doers</h2>
+                <p>
+                  Work with our team of highly skilled designers, developers and
+                  consultants to develop solutions and processes that fit your
+                  business requirements.
+                </p>
+                <button
+                  class="btn btn-primary"
+                  onClick={this.scrollToForm.bind(this)}
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
 
         {/* section - services */}
         <section id="services" class="bg-gray">
@@ -37,55 +61,77 @@ export class AppHome {
               </p>
             </div>
             <div class="card-container">
-              <div class="card">
-                <div class="card--image">
-                  <app-img
-                    class="card--image"
-                    src="assets/graphic-home-development-card.png"
-                    alt="app-development-image"
-                  />
-                </div>
-                <div class="card--text">
-                  <h3>
-                    <app-translate key="home.services.what.appDevelopment" />
-                  </h3>
-                  <p>
-                    <app-translate key="home.services.what.appDevelopmentText" />
-                  </p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card--image">
-                  <app-img
-                    class="card--image"
-                    src="assets/graphic-home-design-card.png"
-                    alt="ui-ux-design-image"
-                  />
-                </div>
-                <div class="card--text">
-                  <h3>
-                    <app-translate key="home.services.what.uxUiDesign" />
-                  </h3>
-                  <p>
-                    <app-translate key="home.services.what.uxUiDesignText" />
-                  </p>
+              <div class="card-service">
+                <h1>
+                  <app-translate key="home.services.app-developer.headline" />
+                </h1>
+                <div class="hvrbox card">
+                  <stencil-route-link
+                    url={
+                      this.isMobile === null ? '/services/app-developer' : ''
+                    }
+                  >
+                    <div class="hvrbox-layer-bottom card--image">
+                      <app-img
+                        class="card--image"
+                        src="/assets/graphic-home-development-card.png"
+                        alt="app-development-image"
+                      />
+                    </div>
+                    <div class="hvrbox-layer-top card--text">
+                      <p>
+                        <app-translate key="home.services.app-developer.meta" />
+                      </p>
+                    </div>
+                  </stencil-route-link>
                 </div>
               </div>
-              <div class="card">
-                <div class="card--image">
-                  <app-img
-                    class="card--image"
-                    src="assets/graphic-home-consulting-card.png"
-                    alt="consulting-image"
-                  />
+              <div class="card-service">
+                <h1>
+                  <app-translate key="home.services.app-designer.headline" />
+                </h1>
+                <div class="hvrbox card">
+                  <stencil-route-link
+                    url={this.isMobile === null ? '/services/app-designer' : ''}
+                  >
+                    <div class="hvrbox-layer-bottom card--image">
+                      <app-img
+                        class="card--image"
+                        src="/assets/graphic-home-design-card.png"
+                        alt="ui-ux-design-image"
+                      />
+                    </div>
+                    <div class="hvrbox-layer-top card--text">
+                      <p>
+                        <app-translate key="home.services.app-designer.meta" />
+                      </p>
+                    </div>
+                  </stencil-route-link>
                 </div>
-                <div class="card--text">
-                  <h3>
-                    <app-translate key="home.services.what.consulting" />
-                  </h3>
-                  <p>
-                    <app-translate key="home.services.what.consultingText" />
-                  </p>
+              </div>
+              <div class="card-service">
+                <h1>
+                  <app-translate key="home.services.tech-consulting.headline" />
+                </h1>
+                <div class=" hvrbox card">
+                  <stencil-route-link
+                    url={
+                      this.isMobile === null ? '/services/tech-consulting' : ''
+                    }
+                  >
+                    <div class="hvrbox-layer-bottom card--image">
+                      <app-img
+                        class="card--image"
+                        src="/assets/graphic-home-consulting-card.png"
+                        alt="consulting-image"
+                      />
+                    </div>
+                    <div class="hvrbox-layer-top card--text">
+                      <p>
+                        <app-translate key="home.services.tech-consulting.meta" />
+                      </p>
+                    </div>
+                  </stencil-route-link>
                 </div>
               </div>
             </div>
@@ -186,16 +232,16 @@ export class AppHome {
               <app-translate key="home.process.title" />
             </h2>
 
-            <content-graphic-lg img-url="assets/graphic-home-discovery.png">
+            <content-graphic img-url="assets/graphic-home-discovery.png">
               <h3 slot="header">
                 <app-translate key="home.process.discovery" />
               </h3>
               <p slot="body">
                 <app-translate key="home.process.discoveryBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg
+            <content-graphic
               img-url="assets/graphic-home-consulting.png"
               reverse={true}
             >
@@ -205,18 +251,18 @@ export class AppHome {
               <p slot="body">
                 <app-translate key="home.process.designUserExperienceBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg img-url="assets/graphic-home-development.png">
+            <content-graphic img-url="assets/graphic-home-development.png">
               <h3 slot="header">
                 <app-translate key="home.process.development" />
               </h3>
               <p slot="body">
                 <app-translate key="home.process.developmentBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg
+            <content-graphic
               img-url="assets/graphic-home-deployment.png"
               reverse={true}
             >
@@ -226,16 +272,16 @@ export class AppHome {
               <p slot="body">
                 <app-translate key="home.process.deploymentBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
 
-            <content-graphic-lg img-url="assets/graphic-home-feedback.png">
+            <content-graphic img-url="assets/graphic-home-feedback.png">
               <h3 slot="header">
                 <app-translate key="home.process.userFeedback" />
               </h3>
               <p slot="body">
                 <app-translate key="home.process.userFeedbackBody" />
               </p>
-            </content-graphic-lg>
+            </content-graphic>
           </div>
         </section>
 

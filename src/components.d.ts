@@ -29,6 +29,7 @@ import '@stencil/router';
 import '@stencil/state-tunnel';
 
 import {
+  MatchResults,
   RouterHistory,
 } from '@stencil/router';
 
@@ -363,6 +364,52 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppTextarea {
+      'id': string;
+      'label': string;
+      'maxlength': string;
+      'name': string;
+      'placeholder': string;
+      'required': boolean;
+      'rows': number;
+    }
+  }
+
+  interface HTMLAppTextareaElement extends StencilComponents.AppTextarea, HTMLStencilElement {}
+
+  var HTMLAppTextareaElement: {
+    prototype: HTMLAppTextareaElement;
+    new (): HTMLAppTextareaElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-textarea': HTMLAppTextareaElement;
+  }
+  interface ElementTagNameMap {
+    'app-textarea': HTMLAppTextareaElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-textarea': JSXElements.AppTextareaAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTextareaAttributes extends HTMLAttributes {
+      'id'?: string;
+      'label'?: string;
+      'maxlength'?: string;
+      'name'?: string;
+      'onValueChange'?: (event: CustomEvent) => void;
+      'placeholder'?: string;
+      'required'?: boolean;
+      'rows'?: number;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppTranslate {
       'key': string;
       'params': {};
@@ -398,45 +445,9 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface ContentGraphicLg {
-      'imgUrl': string;
-      'preLoadImg': boolean;
-      'reverse': boolean;
-    }
-  }
-
-  interface HTMLContentGraphicLgElement extends StencilComponents.ContentGraphicLg, HTMLStencilElement {}
-
-  var HTMLContentGraphicLgElement: {
-    prototype: HTMLContentGraphicLgElement;
-    new (): HTMLContentGraphicLgElement;
-  };
-  interface HTMLElementTagNameMap {
-    'content-graphic-lg': HTMLContentGraphicLgElement;
-  }
-  interface ElementTagNameMap {
-    'content-graphic-lg': HTMLContentGraphicLgElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'content-graphic-lg': JSXElements.ContentGraphicLgAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ContentGraphicLgAttributes extends HTMLAttributes {
-      'imgUrl'?: string;
-      'preLoadImg'?: boolean;
-      'reverse'?: boolean;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface ContentGraphic {
       'imgUrl': string;
+      'preLoadImg': boolean;
       'reverse': boolean;
     }
   }
@@ -461,6 +472,7 @@ declare global {
   namespace JSXElements {
     export interface ContentGraphicAttributes extends HTMLAttributes {
       'imgUrl'?: string;
+      'preLoadImg'?: boolean;
       'reverse'?: boolean;
     }
   }
@@ -569,6 +581,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppDetailedService {
+      'match': MatchResults;
+    }
+  }
+
+  interface HTMLAppDetailedServiceElement extends StencilComponents.AppDetailedService, HTMLStencilElement {}
+
+  var HTMLAppDetailedServiceElement: {
+    prototype: HTMLAppDetailedServiceElement;
+    new (): HTMLAppDetailedServiceElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-detailed-service': HTMLAppDetailedServiceElement;
+  }
+  interface ElementTagNameMap {
+    'app-detailed-service': HTMLAppDetailedServiceElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-detailed-service': JSXElements.AppDetailedServiceAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppDetailedServiceAttributes extends HTMLAttributes {
+      'match'?: MatchResults;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppHome {
       'history': RouterHistory;
     }
@@ -627,39 +672,6 @@ declare global {
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface AppServices {
-
-    }
-  }
-
-  interface HTMLAppServicesElement extends StencilComponents.AppServices, HTMLStencilElement {}
-
-  var HTMLAppServicesElement: {
-    prototype: HTMLAppServicesElement;
-    new (): HTMLAppServicesElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  interface ElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-services': JSXElements.AppServicesAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppServicesAttributes extends HTMLAttributes {
-
     }
   }
 }

@@ -1,6 +1,8 @@
 import { Component } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
+declare var fbq;
+
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
@@ -128,7 +130,19 @@ export class AppAbout {
       twitter: '',
       github: '',
     },
+    {
+      name: 'YOU?',
+      image: './../../assets/headshot-placeholder.jpg',
+      title: '',
+      mail: 'geoff@openforge.io',
+      twitter: '',
+      github: '',
+    },
   ];
+
+  componentDidLoad() {
+    fbq('track', 'ViewContent');
+  }
 
   scrollToForm() {
     const form = document.getElementById('about-section');
