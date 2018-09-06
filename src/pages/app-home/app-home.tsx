@@ -1,4 +1,5 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 
 declare var fbq;
 
@@ -7,6 +8,7 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  @Prop() history: RouterHistory;
   members: any[];
   isMobile = navigator.userAgent.match(
     /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
