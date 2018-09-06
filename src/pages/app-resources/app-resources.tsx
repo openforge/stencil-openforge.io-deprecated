@@ -185,6 +185,30 @@ export class AppResources {
           </header>
         ) : null}
 
+        {this.nameError ||
+        this.emailError ||
+        this.industryError ||
+        this.organizationError ? (
+          <section id="form-section" class="error-robot">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-12 col-lg-12 center">
+                <p class="error-text">
+                  {this.nameError ? (
+                    <b>{translate('resources.form.error.fullName')} </b>
+                  ) : this.emailError ? (
+                    <b>{translate('resources.form.error.email')} </b>
+                  ) : this.industryError ? (
+                    <b>{translate('resources.form.error.industry')} </b>
+                  ) : this.organizationError ? (
+                    <b>{translate('resources.form.error.organization')} </b>
+                  ) : null}
+                  {translate('resources.form.error.endText')}
+                </p>
+              </div>
+            </div>
+          </section>
+        ) : null}
+
         {/* section - form */}
         {!this.formSubmitted ? (
           <section id="form-section" class="pwa-form">

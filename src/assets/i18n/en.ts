@@ -333,6 +333,13 @@ export const translations = {
         button: {
           send: 'Download',
         },
+        error: {
+          fullName: 'Oops! You forgot your full name.',
+          industry: 'Oops! You forgot your industry.',
+          email: 'Oops! You forgot your e-mail.',
+          organization: 'Oops! You forgot your organization.',
+          endText: 'Please input all form fields to download the white paper!',
+        },
       },
       downloadinfo: {
         title: 'WHY DOWNLOAD INFO',

@@ -74,6 +74,34 @@
     }
   }
 
+  .error-robot {
+    margin-top: 2rem;
+    margin-bottom: -136px;
+    padding: 1rem 7rem 0;
+
+    background-image: url('/assets/resources-error-robot.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 62vh;
+
+    @include media-breakpoint-down(sm) {
+      padding: 1rem 3rem 0;
+    }
+
+    .error-text {
+      padding: 1rem;
+      color: #ffffff;
+      font-size: 1rem;
+      height: 88px;
+      line-height: 28px;
+      width: 484px;
+      position: absolute;
+      left: 50%;
+      bottom: -197px;
+      transform: translate(-140px, -50%);
+    }
+  }
+
   .downloadinfo {
     margin: 0 auto;
     max-width: 992px;
