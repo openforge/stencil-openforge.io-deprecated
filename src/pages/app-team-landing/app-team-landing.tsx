@@ -20,16 +20,37 @@ export class AppTeamLanding {
       bodyText:
         "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
       skills: ['¯\\_(ツ)_/¯'],
-      image: '/assets/team-landing-management.png',
+      team: 'management',
+    },
+    rachel: {
+      firstname: 'Rachel',
+      surname: 'Bennett',
+      title: translate('home.member.title.designer'),
+      headerText:
+        "Rachel is originally from the suburbs of Washington, DC and moved to Philadelphia for school, ultimately deciding to stay in Philly after graduating. Her interest in art and language led her to pursue a degree in Graphic Design at Philadelphia University. After graduating with a Bachelor's of Science in 2012, she has been working in the field of design ever since.",
+      bodyText:
+        'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or concepting, she approaches each problem with an equal measure of discipline and curiosity.',
+      skills: [
+        'UI/UX Design',
+        'Graphic Design',
+        'Consulting',
+        'Communication',
+        'Illustration',
+        'Presentation Design',
+        'Marketing',
+        'Photo Editing',
+        'Copywriting',
+      ],
+      team: 'design',
     },
     geoffery: {
       firstname: 'Geoffery',
       surname: 'Melle',
       title: translate('home.member.title.accountManager'),
       headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
+        'Geoffrey grew up in the suburbs of Philadelphia and started out his college career pursuing engineering at Drexel University. He formed a new found love for the marketing field though graduating Summa Cum Laud with a Marketing and Business Management degree from West Chester University.',
       bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
+        'As account manager, Geoffrey tackles marketing and sales objectives for OpenForge with his experience in digital marketing. Additionally Geoffrey takes part in project management overseeing internal and client projects, ensuring smooth communication and delivery of assets.',
       skills: [
         'Email Marketing',
         'SEO',
@@ -37,7 +58,48 @@ export class AppTeamLanding {
         'Digital Markting Analysis',
         'Dog Whispering',
       ],
-      image: '/assets/team-landing-management.png',
+      team: 'management',
+    },
+    joni: {
+      firstname: 'Joni',
+      surname: 'Leho',
+      title: translate('home.member.title.developer'),
+      headerText:
+        'Joni grew up and currently lives in Rovaniemi Finland. After receiving a Bachelor’s degree he has worked as a senior software developer for several prominent companies. He joined OpenForge team to get new international experiences and become a part of a diverse and growing organization.',
+      bodyText:
+        'As a software engineer, Joni uses his wide expertise and skills to ensure the best possible result. Having worked on various development projects across  industries, he is capable of working on any task that comes his way whether front end or back end development. Joni is also always keen to learn new technologies and processes with your team and ours.',
+      skills: [
+        'Angular',
+        'Ionic',
+        'Frontend Development',
+        'Firebase',
+        'NodeJS',
+        'Android',
+        'HTML/CSS',
+        'MongoDB',
+        'React',
+      ],
+      team: 'development',
+    },
+    auvo: {
+      firstname: 'Auvo',
+      surname: 'Severinkangas',
+      title: translate('home.member.title.developer'),
+      headerText:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
+      bodyText:
+        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
+      skills: [
+        'Angular',
+        'Ionic',
+        'Firebase',
+        'iOS',
+        'Android',
+        'Frontend Development',
+        'ParseSDK',
+        'UX',
+      ],
+      team: 'development',
     },
     paulina: {
       firstname: 'Paulina',
@@ -57,40 +119,11 @@ export class AppTeamLanding {
         'ParseSDK',
         'UX',
       ],
-      image: '/assets/team-landing-development.png',
+      team: 'development',
     },
-    fernando: {
-      firstname: 'Fernando',
-      surname: 'Del Olmo',
-      title: translate('home.member.title.developer'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NodeJS'],
-      image: '/assets/team-landing-development.png',
-    },
-    william: {
-      firstname: 'William',
-      surname: 'Holloran',
-      title: translate('home.member.title.projectManager'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: [
-        'Quality Assurance',
-        'Organization',
-        'Communication',
-        'Critical Thinking',
-        'Negotiation',
-        'Sense of Humor',
-      ],
-      image: '/assets/team-landing-management.png',
-    },
-    luis: {
-      firstname: 'Luis',
-      surname: 'Chacon',
+    meredith: {
+      firstname: 'Meredith',
+      surname: 'Alcorn',
       title: translate('home.member.title.developer'),
       headerText:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
@@ -100,31 +133,59 @@ export class AppTeamLanding {
         'Angular',
         'Ionic',
         'Firebase',
+        'iOS',
+        'Android',
+        'Frontend Development',
+        'ParseSDK',
+        'UX',
+      ],
+      team: 'development',
+    },
+    fernando: {
+      firstname: 'Fernando',
+      surname: 'Del Olmo',
+      title: translate('home.member.title.developer'),
+      headerText:
+        "Fernando is originally from Madrid, Spain where he recieved his Bachelor's degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.",
+      bodyText:
+        'Fernando leverages his development skills and curiousity to troubleshoot road bumps that come up when coding. His ability to discover new technologies and introduce them to the team have kept us up to date with the latest and greatest tools and technology available to the community.',
+      skills: ['Angular', 'Ionic', 'Stencil', 'Firebase', 'NGRX', 'NodeJS'],
+      team: 'development',
+    },
+    william: {
+      firstname: 'William',
+      surname: 'Holloran',
+      title: translate('home.member.title.projectManager'),
+      headerText:
+        'Billy, our hometown guy was born and raised in Philadelphia and started his career training right out of highschool. Forgoing of the path of college, Billy attended the pre-apprenticeship program at The Urban Technology Project. His tenacity and dedication for a carrer in technology landed him with our team as Project Manager and Quality Assurance Engineer.',
+      bodyText:
+        'As Project Manager, Billy ensures that our team and your team have the resources and requirements needed in order to successfully launch your product. Heading up our quality assurance process, Billy leads the team in testing all deliverables maintaining high quality standards.',
+      skills: [
+        'Quality Assurance',
+        'Organization',
+        'Communication',
+        'Critical Thinking',
+        'Negotiation',
+        'Sense of Humor',
+      ],
+      team: 'management',
+    },
+    luis: {
+      firstname: 'Luis',
+      surname: 'Chacon',
+      title: translate('home.member.title.developer'),
+      headerText:
+        'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Mastes in Software Engineering with a full scholarship form the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
+      bodyText:
+        'Luis has mastered the agile approach to software development having the ability to pivot when necessity arises. His physical distance from other team members does not stand in the way when it comes to pulling the team together for collaboration to tackle tasks at hand and deliver a working code that ourselves and clients can rely on.',
+      skills: [
+        'Angular',
+        'Ionic',
+        'Firebase',
         'Scrum',
         'Video Game Development',
       ],
-      image: '/assets/team-landing-development.png',
-    },
-    rachel: {
-      firstname: 'Rachel',
-      surname: 'Bennett',
-      title: translate('home.member.title.designer'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: [
-        'UI/UX Design',
-        'Graphic Design',
-        'Consulting',
-        'Communication',
-        'Illustration',
-        'Presentation Design',
-        'Marketing',
-        'Photo Editing',
-        'Copywriting',
-      ],
-      image: '/assets/team-landing-design.png',
+      team: 'development',
     },
     claudio: {
       firstname: 'Claudio',
@@ -135,7 +196,7 @@ export class AppTeamLanding {
       bodyText:
         "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
       skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS'],
-      image: '/assets/team-landing-development.png',
+      team: 'development',
     },
   };
 
@@ -151,7 +212,14 @@ export class AppTeamLanding {
     return (
       <section class="team-landing">
         {/* header - hero */}
-        <header class="hero">
+        <header
+          class="hero"
+          style={{
+            'background-image': `url('/assets/team-landing-header-${
+              this.data[this.match.params.member].team
+            }-team.jpg')`,
+          }}
+        >
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">
@@ -171,7 +239,9 @@ export class AppTeamLanding {
           <section class="text-img-container right-side">
             <app-img
               class="img-fluid d-none d-md-inline"
-              src={this.data[this.match.params.member].image}
+              src={`/assets/team-landing-${
+                this.data[this.match.params.member].team
+              }.png`}
               alt=""
             />
             <div class="text-img-container-text">
