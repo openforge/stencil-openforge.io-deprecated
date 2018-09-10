@@ -14,7 +14,7 @@ export class AppAbout {
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
-      url: '/team-landing/jedi',
+      url: '',
     },
     {
       name: 'Rachel Bennett',
@@ -49,7 +49,7 @@ export class AppAbout {
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/auvo',
+      url: '',
     },
     {
       name: 'Paulina Gallo',
@@ -58,7 +58,7 @@ export class AppAbout {
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
-      url: '/team-landing/paulina',
+      url: '',
     },
     {
       name: 'Meredith Alcorn',
@@ -66,7 +66,7 @@ export class AppAbout {
       title: translate('home.member.title.developer'),
       mail: 'meredith@openforge.io',
       github: 'https://github.com/mmalcorn',
-      url: '/team-landing/meredith',
+      url: '',
     },
     {
       name: 'Fernando Del Olmo',
@@ -102,13 +102,12 @@ export class AppAbout {
       url: '/team-landing/claudio',
     },
     {
-      name: 'YOU?',
-      image: './../../assets/headshot-placeholder.jpg',
-      title: '',
-      mail: 'geoff@openforge.io',
-      twitter: '',
+      name: 'Ethan Bohan',
+      image: './../../assets/headshot-ethan.jpg',
+      title: translate('home.member.title.designer'),
+      mail: 'ethan@openforge.io',
       github: '',
-      url: '/opportunities',
+      url: '/team-landing/ethan',
     },
     {
       name: 'Eli Lu Entertainment',
@@ -127,6 +126,15 @@ export class AppAbout {
       github: '',
       url: 'http://eliluproductions.com/',
       external: true,
+    },
+    {
+      name: 'YOU?',
+      image: './../../assets/headshot-placeholder.jpg',
+      title: '',
+      mail: 'geoff@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/opportunities',
     },
   ];
 

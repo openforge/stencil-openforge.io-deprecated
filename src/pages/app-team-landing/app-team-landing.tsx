@@ -192,6 +192,24 @@ export class AppTeamLanding {
       ],
       team: 'development',
     },
+    ethan: {
+      firstname: 'Ethan',
+      surname: 'Bohan',
+      title: translate('home.member.title.designer'),
+      headerText:
+        "Ethan is originally from Long Island New York.  He recieved his Bachelor's degree in Interactive Digital Media from Drexel University. While at at Drexel University he worked with our team as an intern which lead him to his full time position with OpenForge after graduation.",
+      bodyText:
+        "As a designer, Ethan leverages his design experience and front end development skills helping your team to create an intuitive user interface that translates into a positive user experience. Through close collaboration with our design team and development team, Ethan's skills streamline the design process.",
+      skills: [
+        'UI/UX Design',
+        'Graphic Design',
+        'Frontend development',
+        'Ionic',
+        'Sketch',
+        'Adobe Creative Suite',
+      ],
+      team: 'design',
+    },
   };
 
   chips;
