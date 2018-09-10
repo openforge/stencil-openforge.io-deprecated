@@ -15,11 +15,9 @@ export class AppTeamLanding {
       firstname: 'Jedi',
       surname: 'Weller',
       title: translate('home.member.title.founder'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: ['¯\\_(ツ)_/¯'],
+      headerText: '',
+      bodyText: '',
+      skills: [],
       team: 'management',
     },
     rachel: {
@@ -85,30 +83,17 @@ export class AppTeamLanding {
       firstname: 'Auvo',
       surname: 'Severinkangas',
       title: translate('home.member.title.developer'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: [
-        'Angular',
-        'Ionic',
-        'Firebase',
-        'iOS',
-        'Android',
-        'Frontend Development',
-        'ParseSDK',
-        'UX',
-      ],
+      headerText: '',
+      bodyText: '',
+      skills: [],
       team: 'development',
     },
     paulina: {
       firstname: 'Paulina',
       surname: 'Gallo',
       title: translate('home.member.title.developer'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
+      headerText: '',
+      bodyText: '',
       skills: [
         'Angular',
         'Ionic',
@@ -118,6 +103,9 @@ export class AppTeamLanding {
         'Frontend Development',
         'ParseSDK',
         'UX',
+        'Communication',
+        'Public speaking',
+        'Organization',
       ],
       team: 'development',
     },
@@ -125,20 +113,9 @@ export class AppTeamLanding {
       firstname: 'Meredith',
       surname: 'Alcorn',
       title: translate('home.member.title.developer'),
-      headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
-      bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: [
-        'Angular',
-        'Ionic',
-        'Firebase',
-        'iOS',
-        'Android',
-        'Frontend Development',
-        'ParseSDK',
-        'UX',
-      ],
+      headerText: '',
+      bodyText: '',
+      skills: [],
       team: 'development',
     },
     fernando: {
@@ -149,7 +126,15 @@ export class AppTeamLanding {
         "Fernando is originally from Madrid, Spain where he recieved his Bachelor's degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.",
       bodyText:
         'Fernando leverages his development skills and curiousity to troubleshoot road bumps that come up when coding. His ability to discover new technologies and introduce them to the team have kept us up to date with the latest and greatest tools and technology available to the community.',
-      skills: ['Angular', 'Ionic', 'Stencil', 'Firebase', 'NGRX', 'NodeJS'],
+      skills: [
+        'Angular',
+        'Ionic',
+        'Stencil',
+        'Firebase',
+        'NGRX',
+        'NodeJS',
+        'Frontend Development',
+      ],
       team: 'development',
     },
     william: {
@@ -192,10 +177,19 @@ export class AppTeamLanding {
       surname: 'Del Valle',
       title: translate('home.member.title.developer'),
       headerText:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eleifend ultricies quam ac pulvinar. Mauris quis dignissim dui. Mauris nec lorem eget mi accumsan auctor. Integer accumsan aliquet nulla, ac condimentum mauris faucibus eu. Quisque lectus sapien, consectetur et congue nec, pretium id nisi. Integer consectetur, massa in sagittis dapibus, tellus lacus scelerisque ante, at auctor ligula ipsum sit amet purus. Sed ex nulla, vehicula nec enim eget, viverra consequat eros.',
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
       bodyText:
         "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
-      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS'],
+      skills: [
+        'Angular',
+        'Ionic',
+        'Firebase',
+        'NGRX',
+        'NGXS',
+        'Thinker',
+        'Maker',
+        'Doer',
+      ],
       team: 'development',
     },
   };

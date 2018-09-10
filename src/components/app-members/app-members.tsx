@@ -11,13 +11,10 @@ export class AppMembers {
     return (
       <div class="team">
         {this.members.map(member => {
-          if (!member.isOpportunity) {
+          if (!member.external) {
             return (
               <figure class="member">
-                <stencil-route-link
-                  url={`/team-landing/${member.onlyName}`}
-                  exact={true}
-                >
+                <stencil-route-link url={member.url} exact={true}>
                   <app-img
                     class="member--image"
                     src={member.image}
@@ -35,7 +32,7 @@ export class AppMembers {
           }
           return (
             <figure class="member">
-              <stencil-route-link url="/opportunities" exact={true}>
+              <a href={member.url} target="_blank" rel="noopener">
                 <app-img
                   class="member--image"
                   src={member.image}
@@ -47,7 +44,7 @@ export class AppMembers {
                     <span class="">{member.title}</span>
                   </figcaption>
                 </div>
-              </stencil-route-link>
+              </a>
             </figure>
           );
         })}
