@@ -92,8 +92,8 @@ export class AppTeamLanding {
       firstname: 'Paulina',
       surname: 'Gallo',
       title: translate('home.member.title.developer'),
-      headerText: '',
-      bodyText: '',
+      headerText: 'Paulina started her technical journey at a very young age through video games. This interest sparked her drive to study and receive her Bachelor’s in Computer Science and Digital Media. She has spent the past few years developing web and mobile applications for a wide range of startup and enterprise level clients, all while attending, voluntering, and speaking at various conferences within the development community.',
+      bodyText: 'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the full development process of a project, including the initial scoping, architecture planning, client communication management, and deployment involved in all projects. Paulina volunteers for various organizations and is the co-organizer for Angular Philly and Ionic Philly.',
       skills: [
         'Angular',
         'Ionic',
@@ -160,9 +160,9 @@ export class AppTeamLanding {
       surname: 'Chacon',
       title: translate('home.member.title.developer'),
       headerText:
-        'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Mastes in Software Engineering with a full scholarship form the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
+        'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Masters in Software Engineering with a full scholarship form the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
       bodyText:
-        'Luis has mastered the agile approach to software development having the ability to pivot when necessity arises. His physical distance from other team members does not stand in the way when it comes to pulling the team together for collaboration to tackle tasks at hand and deliver a working code that ourselves and clients can rely on.',
+        'Luis has mastered the agile approach to software development having the ability to pivot when necessity arises. His physical distance from other team members does not stand in the way when it comes to pulling the team together for collaboration to tackle tasks at hand and deliver working code that ourselves and clients can rely on.',
       skills: [
         'Angular',
         'Ionic',
@@ -177,9 +177,9 @@ export class AppTeamLanding {
       surname: 'Del Valle',
       title: translate('home.member.title.developer'),
       headerText:
-        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
       bodyText:
-        "There's no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow, and evolce. Lorem ipsum dolor sit amet, consectetur adispiscing elit. Aliquam ac libero.",
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
       skills: [
         'Angular',
         'Ionic',
