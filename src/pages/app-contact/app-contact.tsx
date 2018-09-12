@@ -1,6 +1,8 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
+declare var fbq;
+
 @Component({
   tag: 'app-contact',
   styleUrl: 'app-contact.scss',
@@ -82,11 +84,12 @@ export class AppContact {
   }
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
+    fbq('track', 'Lead');
     this.resetFormValues();
   }
 
   validateField(e) {
-    console.log('validating e? ', e);
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
@@ -110,10 +113,14 @@ export class AppContact {
         break;
 
       case 'phone':
-        this.formValues.phoneValid = e.checkValidity();
+        this.formValues.phoneValid = e.value.match(
+          /^[\+]?[(]?\d{1,3}[)]?([-\s\.]?\d{3}){1,2}[-\s\.]?\d{4,6}$/
+        );
         this.phoneError = this.formValues.phoneValid
           ? ''
-          : (this.phoneError = e.validationMessage);
+          : (this.phoneError =
+              e.validationMessage ||
+              'Phone number invalid. Please try a valid format.');
         break;
 
       case 'message':
@@ -167,6 +174,8 @@ export class AppContact {
           body: JSON.stringify(this.formValues),
         }
       );
+
+      fbq('track', 'CompleteRegistration');
 
       event.target.reset();
       this.resetFormValues();
@@ -316,7 +325,7 @@ export class AppContact {
                     name="phone"
                     label={translate('contact.form.phone')}
                     id="phone"
-                    type="number"
+                    type="tel"
                     required={true}
                   />
                   <p class="error">
@@ -391,14 +400,14 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container">
-                <content-graphic-lg img-url="/assets/rocket.png">
+                <content-graphic img-url="/assets/rocket.png">
                   <h3 slot="header">
                     <app-translate key="contact.form.thanx" />
                   </h3>
                   <p slot="body">
                     <app-translate key="contact.form.thanxText" />
                   </p>
-                </content-graphic-lg>
+                </content-graphic>
               </div>
             ) : null}
           </div>

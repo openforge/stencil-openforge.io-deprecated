@@ -11,7 +11,7 @@ export class AppCta {
   render() {
     return (
       <aside class="cta px-2 text-center text-white">
-        <div class="d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
+        <div class="cta-container d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
           <h3 class="mr-sm-0 mr-md-5">
             <slot name="header" />
           </h3>

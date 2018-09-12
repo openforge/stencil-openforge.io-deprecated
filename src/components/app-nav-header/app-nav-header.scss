@@ -1,0 +1,24 @@
+nav.navbar .navbar-nav .nav-item.dropdown {
+  cursor: pointer;
+
+  .dropdown-menu {
+    border: none;
+    background: rgba(23, 23, 25, 0.75);
+    top: 54px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .dropdown-item {
+    color: rgba(244, 245, 249, 0.75);
+
+    &:hover {
+      background: rgba(23, 23, 25, 0.75);
+    }
+
+    &.active {
+      background: transparent;
+      color: $orange;
+    }
+  }
+}

@@ -30,6 +30,7 @@ import '@stencil/state-tunnel';
 
 import {
   MatchResults,
+  RouterHistory,
 } from '@stencil/router';
 
 declare global {
@@ -444,45 +445,9 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface ContentGraphicLg {
-      'imgUrl': string;
-      'preLoadImg': boolean;
-      'reverse': boolean;
-    }
-  }
-
-  interface HTMLContentGraphicLgElement extends StencilComponents.ContentGraphicLg, HTMLStencilElement {}
-
-  var HTMLContentGraphicLgElement: {
-    prototype: HTMLContentGraphicLgElement;
-    new (): HTMLContentGraphicLgElement;
-  };
-  interface HTMLElementTagNameMap {
-    'content-graphic-lg': HTMLContentGraphicLgElement;
-  }
-  interface ElementTagNameMap {
-    'content-graphic-lg': HTMLContentGraphicLgElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'content-graphic-lg': JSXElements.ContentGraphicLgAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface ContentGraphicLgAttributes extends HTMLAttributes {
-      'imgUrl'?: string;
-      'preLoadImg'?: boolean;
-      'reverse'?: boolean;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface ContentGraphic {
       'imgUrl': string;
+      'preLoadImg': boolean;
       'reverse': boolean;
     }
   }
@@ -507,7 +472,41 @@ declare global {
   namespace JSXElements {
     export interface ContentGraphicAttributes extends HTMLAttributes {
       'imgUrl'?: string;
+      'preLoadImg'?: boolean;
       'reverse'?: boolean;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface App404 {
+
+    }
+  }
+
+  interface HTMLApp404Element extends StencilComponents.App404, HTMLStencilElement {}
+
+  var HTMLApp404Element: {
+    prototype: HTMLApp404Element;
+    new (): HTMLApp404Element;
+  };
+  interface HTMLElementTagNameMap {
+    'app-404': HTMLApp404Element;
+  }
+  interface ElementTagNameMap {
+    'app-404': HTMLApp404Element;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-404': JSXElements.App404Attributes;
+    }
+  }
+  namespace JSXElements {
+    export interface App404Attributes extends HTMLAttributes {
+
     }
   }
 }
@@ -616,7 +615,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppHome {
-
+      'history': RouterHistory;
     }
   }
 
@@ -639,7 +638,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppHomeAttributes extends HTMLAttributes {
-
+      'history'?: RouterHistory;
     }
   }
 }
@@ -681,31 +680,31 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppServices {
-
+    interface AppTeamLanding {
+      'match': MatchResults;
     }
   }
 
-  interface HTMLAppServicesElement extends StencilComponents.AppServices, HTMLStencilElement {}
+  interface HTMLAppTeamLandingElement extends StencilComponents.AppTeamLanding, HTMLStencilElement {}
 
-  var HTMLAppServicesElement: {
-    prototype: HTMLAppServicesElement;
-    new (): HTMLAppServicesElement;
+  var HTMLAppTeamLandingElement: {
+    prototype: HTMLAppTeamLandingElement;
+    new (): HTMLAppTeamLandingElement;
   };
   interface HTMLElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
+    'app-team-landing': HTMLAppTeamLandingElement;
   }
   interface ElementTagNameMap {
-    'app-services': HTMLAppServicesElement;
+    'app-team-landing': HTMLAppTeamLandingElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'app-services': JSXElements.AppServicesAttributes;
+      'app-team-landing': JSXElements.AppTeamLandingAttributes;
     }
   }
   namespace JSXElements {
-    export interface AppServicesAttributes extends HTMLAttributes {
-
+    export interface AppTeamLandingAttributes extends HTMLAttributes {
+      'match'?: MatchResults;
     }
   }
 }

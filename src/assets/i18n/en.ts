@@ -163,7 +163,7 @@ export const translations = {
         hero: {
           title: 'Your Go-To App Developer',
           text:
-            'Our app developer team has the skills you need to transform your vision into a fully functioning app that will not only work flawlessly but engage your users and customers. Whether you are looking to reach your audience through mobile or web, our app developer team will create exactly what you need.',
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
         },
         first: {
           title: 'Progressive Web App Development',
@@ -221,9 +221,9 @@ export const translations = {
               'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. They came to us with an existing mobile application, which lacked consistency and a user experience that matched their target user base. We updated the flow of the application to be consistent across operating systems and to create a more intuitive experience.',
           },
           second: {
-            name: 'Loudcloud',
+            name: 'LoudCloud',
             desc:
-              'Loudcloud is a mobile application that lets users call and text with temporary numbers from around the world. Loudcloud came to Webjunto with an iOS app looking for a hybrid update and redesign. In our UX audit, we found a need for flatter UX that focuses on conversions rather than numbers as well as a clean and light look and feel.',
+              'LoudCloud is a mobile application that lets users call and text with temporary numbers from around the world. Loudcloud came to Webjunto with an iOS app looking for a hybrid update and redesign. In our UX audit, we found a need for flatter UX that focuses on conversions rather than numbers as well as a clean and light look and feel.',
           },
         },
       },
@@ -231,7 +231,7 @@ export const translations = {
         hero: {
           title: 'Tech Consulting for all Industries',
           text:
-            'Our consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Our business and tech consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
         first: {
           title: 'Tech Consulting',
@@ -248,6 +248,10 @@ export const translations = {
           text:
             'We will help you understand your current ROI on your marketing initiatives. Our marketing audit will help you see the results from your marketing campaigns, what channels are most profitable, and what you aren’t doing that you’re losing out on! We will perform an in-depth analysis of your strengths and weaknesses and provide advice on options you can do yourself or take back to your marketing agency to improve your reach and boost your ROI',
         },
+      },
+      aside: {
+        title: 'Want to learn more?',
+        link: 'Get in touch',
       },
     },
     opportunities: {
@@ -320,7 +324,7 @@ export const translations = {
       address: {
         header: 'Our Headquarters',
         name: 'OpenForge',
-        line1: '1040 N 2nd St, Suite #301',
+        line1: '1010 N Hancock St',
         line2: 'Philadelphia, PA 19123',
         email: 'hello@openforge.io',
       },
