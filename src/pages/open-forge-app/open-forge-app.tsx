@@ -44,6 +44,10 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
+          <stencil-route
+            url="/team-landing/:member"
+            component="app-team-landing"
+          />
         </stencil-route-switch>
       </stencil-router>
     );
