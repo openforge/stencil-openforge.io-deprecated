@@ -58,7 +58,7 @@ export class AppAbout {
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
-      url: '',
+      url: '/team-landing/paulina',
     },
     {
       name: 'Meredith Alcorn',
@@ -98,7 +98,7 @@ export class AppAbout {
       image: './../../assets/headshot-claudio.jpg',
       title: translate('home.member.title.developer'),
       mail: 'claudio@openforge.io',
-      github: 'https://github.com/daftclaud',
+      github: 'https://github.com/daftclaud', 
       url: '/team-landing/claudio',
     },
     {
