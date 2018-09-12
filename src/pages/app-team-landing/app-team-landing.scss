@@ -6,6 +6,10 @@ section.team-landing {
     background-size: cover;
     height: 100vh;
 
+    @include media-breakpoint-down(sm) {
+      background-position: left top;
+    }
+
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
