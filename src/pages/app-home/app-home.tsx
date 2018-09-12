@@ -214,7 +214,7 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <section id="learn-about">
+        <section id="learn-about" class="learn-about">
           <app-cta link-url="/about">
             <span slot="header">
               <app-translate key="home.learnAbout.header" />
