@@ -70,6 +70,7 @@ section.team-landing {
 
     &.right-side {
       grid-template-columns: 0.5fr 1fr;
+
       .text-img-container-text {
         margin-left: 10px;
         h2,
@@ -87,10 +88,23 @@ section.team-landing {
             margin-bottom: 0;
           }
         }
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+
+          h2, h4, p {
+            text-align: center;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        grid-template-columns: none;
       }
     }
     &.left-side {
       grid-template-columns: 1fr 0.5fr;
+
       .text-img-container-text {
         margin-right: 10px;
         h2 {

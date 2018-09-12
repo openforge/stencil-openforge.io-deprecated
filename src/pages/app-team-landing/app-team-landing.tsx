@@ -227,9 +227,7 @@ export class AppTeamLanding {
         <header
           class="hero"
           style={{
-            'background-image': `url('/assets/team-landing-header-${
-              this.data[this.match.params.member].team
-            }-team.jpg')`,
+            'background-image': `url('/assets/team-landing-header.jpg')`,
           }}
         >
           <div class="overlay" />
