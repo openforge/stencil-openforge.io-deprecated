@@ -50,6 +50,8 @@ export class AppOpportunities {
   @State() formSubmitted: boolean = false;
   @State() fileSizeErrorShown: boolean = false;
 
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -58,8 +60,12 @@ export class AppOpportunities {
   };
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
-    fbq('track', 'Lead');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+      fbq('track', 'Lead');
+    }
     this.resetFormValues();
   }
 
@@ -205,7 +211,11 @@ export class AppOpportunities {
         }
       );
 
-      fbq('track', 'CompleteRegistration');
+      // isServer is false when running in the browser
+      // and true when being prerendered
+      if (!this.isServer) {
+        fbq('track', 'CompleteRegistration');
+      }
 
       e.target.reset();
       this.resetFormValues();

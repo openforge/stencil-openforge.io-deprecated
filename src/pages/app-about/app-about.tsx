@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
@@ -8,6 +8,9 @@ declare var fbq;
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   members = [
     {
       name: 'Jedi Weller',
@@ -100,7 +103,7 @@ export class AppAbout {
       image: './../../assets/headshot-claudio.jpg',
       title: translate('home.member.title.developer'),
       mail: 'claudio@openforge.io',
-      github: 'https://github.com/daftclaud', 
+      github: 'https://github.com/daftclaud',
       url: '/team-landing/claudio',
     },
     {
@@ -141,7 +144,11 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
   }
 
   scrollToForm() {
