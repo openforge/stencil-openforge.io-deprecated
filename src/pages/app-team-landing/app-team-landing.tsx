@@ -210,6 +210,25 @@ export class AppTeamLanding {
       ],
       team: 'design',
     },
+    dhairya: {
+      firstname: 'Dhairya',
+      surname: 'Pujara',
+      title: translate('home.member.title.consultant'),
+      headerText:
+      "Dhairya Pujara is the Founder, CEO at Ycenter, he is responsible for building a global ecosystem bringing in corporates, universities, NGOs for creating experiential educational programs. Dhairya's core expertise is in Design Thinking, Business Model, Market Research, Customer Journey using Empathy maps and Story-telling for Brand positioning.",
+      bodyText:
+      "Dhairya has been the curator for 'Global Shaper Hub Philadelphia' by World Economic Forum. He has been a global TEDx organizer and a sought-after public speaker on entrepreneurship and international development. He delivers keynote and guest lectures in some of the top business schools and conferences around the globe. From United Nations G77 to Wharton Business School, Dhairya is a leading speaker and educator around the world. Dhairya sits on the advisory board for European Commission program LASIN - Latin American Social Innovation network. In 2015, American Immigration granted him an approval for special category work visa reserved for 'an individual of extra-ordinary abilities. For more information please visit https://dhairyapujara.me/",
+      skills: [
+        'Design Thinking',
+        'Business Model',
+        'Market Research',
+        'Customer Journey',
+        'Empathy Maps',
+        'Story Telling',
+        'Brand Positioning'
+      ],
+      team: 'consultant'
+    }
   };
 
   chips;
