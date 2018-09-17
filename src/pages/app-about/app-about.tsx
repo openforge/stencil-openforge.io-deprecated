@@ -103,7 +103,7 @@ export class AppAbout {
       title: translate('home.member.title.developer'),
       mail: 'claudio@openforge.io',
       titter: '',
-      github: 'https://github.com/daftclaud', 
+      github: 'https://github.com/daftclaud',
       url: '/team-landing/claudio',
     },
     {
@@ -116,9 +116,9 @@ export class AppAbout {
       url: '/team-landing/ethan',
     },
     {
-      name: 'Eli Lu Entertainment',
+      name: 'Eli',
       image: './../../assets/headshot-eli.jpg',
-      title: '',
+      title: 'Entertainment',
       mail: '',
       twitter: '',
       github: '',
@@ -126,9 +126,9 @@ export class AppAbout {
       external: true,
     },
     {
-      name: 'Eli Lu Entertainment',
+      name: 'Lu',
       image: './../../assets/headshot-lu.jpg',
-      title: '',
+      title: 'Entertainment',
       mail: '',
       twitter: '',
       github: '',
@@ -142,7 +142,7 @@ export class AppAbout {
       mail: '',
       twitter: 'https://twitter.com/dhairyapujara',
       github: '',
-      url: '/team-landing/dhairya'
+      url: '/team-landing/dhairya',
     },
     {
       name: 'YOU?',
