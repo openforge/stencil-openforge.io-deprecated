@@ -30,13 +30,23 @@ The OpenForge.io website is built using a combination of [Stencil.js](https://st
 
 ### Running This Application
 
-```npm install```
+```
+npm instal // setup and ensure packages are up-to-date
+```
 
-```npm run build```
+```
+npm run dev --es5 // firefox
+```
 
-```npm run dev --es5``` (firefox)
+```
+npm run dev // serves locally in browser
+```
 
-```npm run dev```
+### Compiling This Application
+
+```
+npm run build
+```
 
 
 ### File Structure
@@ -95,8 +105,13 @@ If a developer went through providing all the information during a `npm run cz` 
 
 ## Deployment
 
-```npm run build```
-Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase
+```
+npm run build
+```
 
-```npm run firebase:deploy:dev``` 
+_Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase_
+
+```
+npm run firebase:deploy:dev // deploy to firebase dev environment
+``` 
 
