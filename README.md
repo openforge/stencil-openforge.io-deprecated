@@ -38,16 +38,6 @@ npm instal // setup and ensure packages are up-to-date
 npm run dev --es5 // firefox
 ```
 
-```
-npm run dev // serves locally in browser
-```
-
-### Compiling This Application
-
-```
-npm run build
-```
-
 
 ### File Structure
 **UI** components should reside in the `src/components` folder.
