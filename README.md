@@ -28,10 +28,14 @@ If you are a community member who would like to take part of our paid (yes, we s
 
 The OpenForge.io website is built using a combination of [Stencil.js](https://stenciljs.com/) by our friends at [Ionic Framework](https://ionicframework.com/) anbd Bootstrap for styling.
 
-### Running This Application
-
+### Setup
 ```
-npm instal // setup and ensure packages are up-to-date
+npm install
+```
+
+### Running This Application
+```
+npm run dev
 ```
 
 ```
