@@ -649,6 +649,7 @@ declare global {
   namespace StencilComponents {
     interface AppOpportunities {
       'errorIconStyles': any;
+      'match': MatchResults;
     }
   }
 
@@ -672,6 +673,7 @@ declare global {
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
+      'match'?: MatchResults;
     }
   }
 }

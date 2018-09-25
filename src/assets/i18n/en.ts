@@ -88,7 +88,7 @@ export const translations = {
           developer: 'Software Engineer',
           frontEndDeveloper: 'Front End Developer',
           projectManager: 'Project Manager / QA Engineer',
-          consultant: 'Consultant'
+          consultant: 'Consultant',
         },
       },
     },
@@ -257,10 +257,10 @@ export const translations = {
     },
     opportunities: {
       hero: {
-        title: 'OpenForge is hiring two amazing developers!',
+        title: "Great News! We're Hiring.",
         text:
-          "Looking for a new adventure? Want to know if you're the right fit for the team?",
-        text2: 'Scroll to Learn More!',
+          "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+        text2: 'Learn More',
       },
       intro: {
         title: 'Forget normal interviews!',

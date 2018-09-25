@@ -1,5 +1,6 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
+import { MatchResults } from '@stencil/router';
 
 declare var fbq;
 
@@ -17,6 +18,12 @@ export class AppOpportunities {
     ionic: number;
     html: number;
     css: number;
+
+    sketch: number;
+    adobe: number;
+    interactive: number;
+    ux: number;
+    presentation: number;
 
     file: string;
     name: string;
@@ -50,12 +57,95 @@ export class AppOpportunities {
   @State() formSubmitted: boolean = false;
   @State() fileSizeErrorShown: boolean = false;
 
+  @State()
+  texts = {
+    develop: {
+      firstSkill: {
+        name: 'Angular',
+        img: '/assets/graphic-opportunities-phone1.png',
+      },
+      secondSkill: {
+        name: 'Redux',
+        img: '/assets/graphic-opportunities-phone2.png',
+      },
+      thirdSkill: {
+        name: 'API Integration',
+        img: '/assets/graphic-opportunities-phone3.png',
+      },
+      mobile: {
+        img: '/assets/graphic-opportunities-phone4.png',
+      },
+      sliders: {
+        first: {
+          label: 'Angular',
+          name: 'angular',
+        },
+        second: {
+          label: 'Node',
+          name: 'node',
+        },
+        third: {
+          label: 'Ionic',
+          name: 'ionic',
+        },
+        fourth: {
+          label: 'Html',
+          name: 'html',
+        },
+        fifth: {
+          label: 'Css',
+          name: 'css',
+        },
+      },
+    },
+    design: {
+      firstSkill: {
+        name: 'Wireframing',
+        img: '/assets/graphic-opportunities-phone-design1.png',
+      },
+      secondSkill: {
+        name: 'Prototyping',
+        img: '/assets/graphic-opportunities-phone-design2.png',
+      },
+      thirdSkill: {
+        name: 'Responsive Design',
+        img: '/assets/graphic-opportunities-phone-design3.png',
+      },
+      mobile: {
+        img: '/assets/graphic-opportunities-phone4.png',
+      },
+      sliders: {
+        first: {
+          label: 'Sketch',
+          name: 'sketch',
+        },
+        second: {
+          label: 'Adobe CC',
+          name: 'adobe',
+        },
+        third: {
+          label: 'Interactive Prototyping',
+          name: 'interactive',
+        },
+        fourth: {
+          label: 'User Experience Design',
+          name: 'ux',
+        },
+        fifth: {
+          label: 'Presentation Design',
+          name: 'presentation',
+        },
+      },
+    },
+  };
+
   @Prop()
   errorIconStyles = {
     display: 'inline',
     marginBottom: '.2rem',
     paddingRight: '5px',
   };
+  @Prop() match: MatchResults;
 
   componentDidLoad() {
     fbq('track', 'ViewContent');
@@ -76,18 +166,33 @@ export class AppOpportunities {
     const { field, value, target } = event.detail;
     this.formValues[field] = value;
 
-    if (
-      this.formValues.angular > 90 &&
-      this.formValues.node > 90 &&
-      this.formValues.ionic > 90 &&
-      this.formValues.html > 90 &&
-      this.formValues.css > 90
-    ) {
-      this.interviewButtonDisabled = false;
-    } else {
-      this.interviewButtonDisabled = true;
+    if (this.match.params.type === 'developer') {
+      if (
+        this.formValues.angular > 90 &&
+        this.formValues.node > 90 &&
+        this.formValues.ionic > 90 &&
+        this.formValues.html > 90 &&
+        this.formValues.css > 90
+      ) {
+        this.interviewButtonDisabled = false;
+      } else {
+        this.interviewButtonDisabled = true;
+      }
     }
 
+    if (this.match.params.type === 'design') {
+      if (
+        this.formValues.sketch > 60 &&
+        this.formValues.adobe > 60 &&
+        this.formValues.interactive > 60 &&
+        this.formValues.ux > 60 &&
+        this.formValues.presentation > 60
+      ) {
+        this.interviewButtonDisabled = false;
+      } else {
+        this.interviewButtonDisabled = true;
+      }
+    }
     this.validateField(target);
   }
 
@@ -289,31 +394,31 @@ export class AppOpportunities {
               </div>
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">
-                  <h3>Angular</h3>
+                  <h3>{this.texts[this.match.params.type].firstSkill.name}</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="/assets/graphic-opportunities-phone1.png"
+                    src={this.texts[this.match.params.type].firstSkill.img}
                     alt=""
                   />
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
-                  <h3>Redux</h3>
+                  <h3>{this.texts[this.match.params.type].secondSkill.name}</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="/assets/graphic-opportunities-phone2.png"
+                    src={this.texts[this.match.params.type].secondSkill.img}
                     alt=""
                   />
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
-                  <h3>API Integration</h3>
+                  <h3>{this.texts[this.match.params.type].thirdSkill.name}</h3>
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src="/assets/graphic-opportunities-phone3.png"
+                    src={this.texts[this.match.params.type].thirdSkill.img}
                     alt=""
                   />
                   <app-img
                     class="img-fluid d-xs-inline d-md-none"
-                    src="/assets/graphic-opportunities-phone4.png"
+                    src={this.texts[this.match.params.type].mobile.img}
                     alt=""
                   />
                 </div>
@@ -367,11 +472,40 @@ export class AppOpportunities {
                     </p>
                   </div>
 
-                  <app-slider name="angular" label="Angular" />
-                  <app-slider name="node" label="Node" />
-                  <app-slider name="ionic" label="Ionic" />
-                  <app-slider name="html" label="HTML" />
-                  <app-slider name="css" label="CSS" />
+                  <app-slider
+                    name={this.texts[this.match.params.type].sliders.first.name}
+                    label={
+                      this.texts[this.match.params.type].sliders.first.label
+                    }
+                  />
+                  <app-slider
+                    name={
+                      this.texts[this.match.params.type].sliders.second.name
+                    }
+                    label={
+                      this.texts[this.match.params.type].sliders.second.label
+                    }
+                  />
+                  <app-slider
+                    name={this.texts[this.match.params.type].sliders.third.name}
+                    label={
+                      this.texts[this.match.params.type].sliders.third.label
+                    }
+                  />
+                  <app-slider
+                    name={
+                      this.texts[this.match.params.type].sliders.fourth.name
+                    }
+                    label={
+                      this.texts[this.match.params.type].sliders.fourth.label
+                    }
+                  />
+                  <app-slider
+                    name={this.texts[this.match.params.type].sliders.fifth.name}
+                    label={
+                      this.texts[this.match.params.type].sliders.fifth.label
+                    }
+                  />
 
                   {!this.interviewButtonDisabled ? (
                     <p>
@@ -581,6 +715,12 @@ export class AppOpportunities {
       ionic: parseFloat(''),
       html: parseFloat(''),
       css: parseFloat(''),
+
+      sketch: parseFloat(''),
+      adobe: parseFloat(''),
+      interactive: parseFloat(''),
+      ux: parseFloat(''),
+      presentation: parseFloat(''),
 
       file: '',
       name: '',
