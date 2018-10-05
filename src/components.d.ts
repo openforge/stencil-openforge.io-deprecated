@@ -713,6 +713,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppToolbox {
+
+    }
+  }
+
+  interface HTMLAppToolboxElement extends StencilComponents.AppToolbox, HTMLStencilElement {}
+
+  var HTMLAppToolboxElement: {
+    prototype: HTMLAppToolboxElement;
+    new (): HTMLAppToolboxElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-toolbox': HTMLAppToolboxElement;
+  }
+  interface ElementTagNameMap {
+    'app-toolbox': HTMLAppToolboxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-toolbox': JSXElements.AppToolboxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppToolboxAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface OpenForgeApp {
 
     }

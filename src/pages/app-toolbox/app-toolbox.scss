@@ -1,0 +1,112 @@
+.toolbox {
+  // hero
+  .hero {
+    background-image: url('/assets/toolbox-hero-img.png');
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    .row {
+      padding-top: 56px;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      @include media-breakpoint-down(lg) {
+        font-size: 2.5rem;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 500px;
+      @include media-breakpoint-down(sm) {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .text-img-container {
+    margin-top: 4rem;
+    &:first-child {
+      margin-top: 0;
+      padding-top: 6rem;
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      padding: 2rem;
+    }
+  }
+
+  .text-img-container {
+    display: grid;
+
+    app-img {
+      justify-self: center;
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &.right-side {
+      grid-template-columns: 0.5fr 1fr;
+      .text-img-container-text {
+        margin-left: 10px;
+        h2 {
+          color: $orange;
+          text-align: left;
+        }
+        p {
+          text-align: left;
+          padding: 0;
+          margin-bottom: 1rem;
+          &.check-link {
+            font-size: 26px;
+            color: $orange;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    &.left-side {
+      grid-template-columns: 1fr 0.5fr;
+      .text-img-container-text {
+        margin-right: 10px;
+        h2 {
+          color: $orange;
+          text-align: right;
+        }
+        p {
+          text-align: right;
+          padding: 0;
+          margin-bottom: 1rem;
+          &.check-link {
+            font-size: 26px;
+            color: $orange;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
