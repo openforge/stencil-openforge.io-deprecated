@@ -12,7 +12,7 @@ export class AppMembers {
       <div class="team">
         {this.members.map(member => {
           if (!member.external) {
-            if (member.url !== '') {
+            if (member.url === '/opportunities') {
               return (
                 <figure class="member">
                   <stencil-route-link url={member.url} exact={true}>
