@@ -302,25 +302,31 @@ export class AppDetailedService {
             <div class="container">
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].toolbox.first}
-                    alt=""
-                  />
+                  <stencil-route-link url="/toolbox" exact={true}>
+                    <app-img
+                      class="img-fluid d-none d-md-inline"
+                      src={this.imgs[this.match.params.service].toolbox.first}
+                      alt=""
+                    />
+                  </stencil-route-link>
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].toolbox.second}
-                    alt=""
-                  />
+                  <stencil-route-link url="/toolbox" exact={true}>
+                    <app-img
+                      class="img-fluid d-none d-md-inline"
+                      src={this.imgs[this.match.params.service].toolbox.second}
+                      alt=""
+                    />
+                  </stencil-route-link>
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].toolbox.third}
-                    alt=""
-                  />
+                  <stencil-route-link url="/toolbox" exact={true}>
+                    <app-img
+                      class="img-fluid d-none d-md-inline"
+                      src={this.imgs[this.match.params.service].toolbox.third}
+                      alt=""
+                    />
+                  </stencil-route-link>
                 </div>
               </div>
             </div>
