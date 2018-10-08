@@ -34,111 +34,138 @@ export class AppToolbox {
             </div>
           </div>
         </header>
-        <div id="second-content" class="container">
+        <div id="second-content" class="design container">
           <h1>UI/UX Design</h1>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src="/assets/services-design-toolbox-first.png"
               alt=""
             />
             <div class="text-img-container-text">
               <h2>Abstract</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
           </section>
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>Marvel</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src="/assets/services-design-toolbox-second.png"
               alt=""
             />
           </section>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src="/assets/services-design-toolbox-third.png"
               alt=""
             />
             <div class="text-img-container-text">
               <h2>Sketch</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
           </section>
         </div>
-        <div class="container">
+        <div class="development container">
           <h1>App Development</h1>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
-              src="/assets/services-development-toolbox-first.png"
+              class="img-fluid d-md-inline"
+              src="/assets/services-development-toolbox-second.png"
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Abstract</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <h2>Ionic Framework</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
           </section>
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
-              <h2>Marvel</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <h2>Angular</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
             <app-img
-              class="img-fluid d-none d-md-inline"
-              src="/assets/services-development-toolbox-second.png"
+              class="img-fluid d-md-inline"
+              src="/assets/services-development-toolbox-first.png"
               alt=""
             />
           </section>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src="/assets/services-development-toolbox-third.png"
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Sketch</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <h2>Github</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
           </section>
         </div>
-        <div class="container">
+        <div class="consulting container">
           <h1>Consulting</h1>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
-              src="/assets/services-consulting-toolbox-first.png"
+              class="img-fluid d-md-inline"
+              src="/assets/services-consulting-toolbox-second.png"
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Abstract</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <h2>Marvel</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
           </section>
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
-              <h2>Marvel</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <h2>Bit Bucket</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
             <app-img
-              class="img-fluid d-none d-md-inline"
-              src="/assets/services-consulting-toolbox-second.png"
+              class="img-fluid d-md-inline"
+              src="/assets/services-consulting-toolbox-third.png"
               alt=""
             />
           </section>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
-              src="/assets/services-consulting-toolbox-third.png"
+              class="img-fluid d-md-inline"
+              src="/assets/services-consulting-toolbox-first.png"
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Sketch</h2>
-              <p>Lorem ipsum dolor sit amet...</p>
+              <h2>Team Work</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
             </div>
           </section>
         </div>

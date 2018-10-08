@@ -19,9 +19,11 @@
       color: $white;
       font-size: 4rem;
       margin-bottom: 1rem;
+
       @include media-breakpoint-down(lg) {
         font-size: 2.5rem;
       }
+
       @include media-breakpoint-down(sm) {
         font-size: 2rem;
       }
@@ -33,6 +35,7 @@
       font-weight: 300;
       margin-bottom: 3rem;
       max-width: 500px;
+
       @include media-breakpoint-down(sm) {
         font-size: 1rem;
         margin-bottom: 1.5rem;
@@ -44,66 +47,132 @@
     text-align: center;
   }
 
-  .text-img-container {
-    margin-top: 4rem;
-    &:first-child {
-      margin-top: 0;
-      padding-top: 6rem;
-    }
-    h2 {
-      text-align: center;
-    }
-    p {
-      padding: 2rem;
-    }
+  .design {
+    padding-top: 56px;
   }
 
-  .text-img-container {
-    display: grid;
+  .design,
+  .development,
+  .consulting {
+    margin-bottom: 60px;
 
-    app-img {
-      justify-self: center;
-      img {
-        object-fit: cover;
-      }
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 40px;
     }
 
-    &.right-side {
-      grid-template-columns: 0.5fr 1fr;
-      .text-img-container-text {
-        margin-left: 10px;
-        h2 {
-          color: $orange;
-          text-align: left;
+    .text-img-container {
+      display: grid;
+      grid-template-columns: 0.5fr 0.5fr;
+      margin-top: 4rem;
+
+      &:first-child {
+        margin-top: 0;
+        padding-top: 6rem;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        padding: 2rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+        margin-top: 2rem;
+      }
+
+      &.right-side {
+        app-img {
+          justify-self: right;
+
+          @include media-breakpoint-down(sm) {
+            justify-self: center;
+          }
+
+          img {
+            width: 200px;
+            object-fit: cover;
+          }
         }
-        p {
-          text-align: left;
-          padding: 0;
-          margin-bottom: 1rem;
-          &.check-link {
-            font-size: 26px;
+
+        .text-img-container-text {
+          margin-left: 50px;
+
+          @include media-breakpoint-down(sm) {
+            margin-left: 0;
+          }
+
+          h2 {
             color: $orange;
-            margin-bottom: 0;
+            text-align: left;
+
+            @include media-breakpoint-down(sm) {
+              text-align: center;
+            }
+          }
+
+          p {
+            text-align: left;
+            padding: 0;
+            margin-bottom: 1rem;
+
+            @include media-breakpoint-down(sm) {
+              text-align: center;
+            }
+
+            &.check-link {
+              font-size: 26px;
+              color: $orange;
+              margin-bottom: 0;
+            }
           }
         }
       }
-    }
-    &.left-side {
-      grid-template-columns: 1fr 0.5fr;
-      .text-img-container-text {
-        margin-right: 10px;
-        h2 {
-          color: $orange;
-          text-align: right;
+
+      &.left-side {
+        app-img {
+          margin-left: 50px;
+          justify-self: left;
+
+          @include media-breakpoint-down(sm) {
+            margin-left: 0;
+            justify-self: center;
+            grid-row: 1;
+          }
+
+          img {
+            width: 200px;
+            object-fit: cover;
+          }
         }
-        p {
-          text-align: right;
-          padding: 0;
-          margin-bottom: 1rem;
-          &.check-link {
-            font-size: 26px;
+
+        .text-img-container-text {
+          h2 {
             color: $orange;
-            margin-bottom: 0;
+            text-align: right;
+
+            @include media-breakpoint-down(sm) {
+              text-align: center;
+            }
+          }
+
+          p {
+            text-align: right;
+            padding: 0;
+            margin-bottom: 1rem;
+
+            @include media-breakpoint-down(sm) {
+              text-align: center;
+            }
+
+            &.check-link {
+              font-size: 26px;
+              color: $orange;
+              margin-bottom: 0;
+            }
           }
         }
       }
