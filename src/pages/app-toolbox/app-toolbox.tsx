@@ -45,8 +45,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Abstract</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Abstract allows our team to track our projects across versions
+                and collaborate among team members. Having full transparency on
+                projects ensures that we maintain the consistency and integrity
+                of our designs.
               </p>
             </div>
           </section>
@@ -54,8 +56,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Marvel</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Marvel allows our design team to produce a working prototype of
+                a product before it reaches the marketplace. This prototype is
+                then updated in conjunction with each new version and allows for
+                our team to maintain the highest standard of quality assurance.
               </p>
             </div>
             <app-img
@@ -73,8 +77,11 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Sketch</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Sketch is a powerful tool that allows our designers to
+                seamlessly turn wireframes into beautifully designed products.
+                Specifically created for user interface and user experience
+                design, it is optimized for efficiency and consistency across
+                projects large and small.
               </p>
             </div>
           </section>
@@ -90,8 +97,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Ionic Framework</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ionic Framework gives our team of developers an array of
+                reliable tools and proven UI components. Hybrid Progressive Web
+                Apps come together with reliability and performance using Ionic
+                Framework.
               </p>
             </div>
           </section>
@@ -99,8 +108,8 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Angular</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Angular lays the foundations for our developer team to produce
+                and deploy cross platform mobile and web apps.
               </p>
             </div>
             <app-img
@@ -118,8 +127,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Github</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Github is an industry standard for hosting code, managing
+                projects, and collaboration between developers. Github gives our
+                development team a channel to effectively produce, manage and
+                refine code.
               </p>
             </div>
           </section>
@@ -135,8 +146,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Marvel</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Marvel puts our team and your team on the same page with a
+                prototype that can be easily navigated and refined.
+                Collaboration between our team and yours is seamless with direct
+                commenting and requests within prototypes.
               </p>
             </div>
           </section>
@@ -144,8 +157,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Bit Bucket</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Bitbucket shows a detailed breakdown of developer productivity
+                by visualizing commit history and the efficiency in which work
+                is performed. Bitbucket gives us the tools to analyze your Git
+                repository and improve your bottom line.
               </p>
             </div>
             <app-img
@@ -163,8 +178,10 @@ export class AppToolbox {
             <div class="text-img-container-text">
               <h2>Team Work</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Teamwork Projects is a powerful project management software that
+                incorporates communication, file storage, progress tracking and
+                time management that is proven for not only our team but yours
+                as well.
               </p>
             </div>
           </section>
