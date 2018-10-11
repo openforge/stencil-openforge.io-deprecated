@@ -1,0 +1,29 @@
+app-maintenance-mode {
+  .maintenance-mode {
+    display: flex;
+    padding: 50px;
+
+    img {
+      max-height: 500px;
+    }
+
+    .text-container {
+      margin-left: 20px;
+
+      h1 {
+        color: #e88212;
+      }
+
+      .social-links {
+        margin-bottom: 20px;
+
+        a {
+          margin: 10px;
+          svg {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+  }
+}

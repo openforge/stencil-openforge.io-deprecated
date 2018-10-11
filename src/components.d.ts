@@ -647,6 +647,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppMaintenanceMode {
+
+    }
+  }
+
+  interface HTMLAppMaintenanceModeElement extends StencilComponents.AppMaintenanceMode, HTMLStencilElement {}
+
+  var HTMLAppMaintenanceModeElement: {
+    prototype: HTMLAppMaintenanceModeElement;
+    new (): HTMLAppMaintenanceModeElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-maintenance-mode': HTMLAppMaintenanceModeElement;
+  }
+  interface ElementTagNameMap {
+    'app-maintenance-mode': HTMLAppMaintenanceModeElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-maintenance-mode': JSXElements.AppMaintenanceModeAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppMaintenanceModeAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppOpportunities {
       'errorIconStyles': any;
     }
