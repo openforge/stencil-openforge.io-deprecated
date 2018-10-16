@@ -153,6 +153,15 @@ export class AppAbout {
       github: '',
       url: '/opportunities',
     },
+    {
+      name: 'Billy Holloran',
+      image: './../../assets/headshot-william.jpg',
+      title: 'Im the boss',
+      mail: 'william@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/team-landing/william-holloran',
+    },
   ];
 
   componentDidLoad() {
