@@ -145,6 +145,15 @@ export class AppAbout {
       url: '/team-landing/dhairya-pujara',
     },
     {
+      name: 'Young Song',
+      image: './../../assets/young-avarta.jpg',
+      title: translate('home.member.title.softwareIntern'),
+      mail: '',
+      twitter: 'https://twitter.com/YoungSongJS',
+      github: 'https://github.com/Hogusong',
+      url: '/team-landing/young-song',
+    },
+    {
       name: 'YOU?',
       image: './../../assets/headshot-placeholder.jpg',
       title: '',
