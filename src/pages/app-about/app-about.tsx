@@ -151,7 +151,7 @@ export class AppAbout {
       mail: 'sam@openforge.io',
       twitter: '',
       github: 'https://github.com/samhudgens',
-      url: '',
+      url: '/team-landing/sam-hudgens',
     },
     {
       name: 'YOU?',
