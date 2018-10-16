@@ -42,7 +42,6 @@ npm run dev
 npm run dev --es5 // firefox
 ```
 
-
 ### File Structure
 **UI** components should reside in the `src/components` folder.
 

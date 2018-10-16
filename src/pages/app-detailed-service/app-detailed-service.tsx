@@ -380,11 +380,7 @@ export class AppDetailedService {
               </div>
             </section>
           </div>
-        ) : (
-          <section class="no-examples">
-            <h2>Case Studies Coming Soon</h2>
-          </section>
-        )}
+        ) : null}
         <app-cta link-url="/contact">
           <span slot="header">
             <app-translate key="services.aside.title" />
