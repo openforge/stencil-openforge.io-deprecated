@@ -151,7 +151,7 @@ export class AppAbout {
       mail: '',
       twitter: 'https://twitter.com/YoungSongJS',
       github: 'https://github.com/Hogusong',
-      url: '/opportunities',
+      url: '/team-landing/young-song',
     },
     {
       name: 'YOU?',
