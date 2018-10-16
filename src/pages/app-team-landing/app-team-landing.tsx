@@ -11,16 +11,7 @@ export class AppTeamLanding {
 
   @State()
   data = {
-    jedi: {
-      firstname: 'Jedi',
-      surname: 'Weller',
-      title: translate('home.member.title.founder'),
-      headerText: '',
-      bodyText: '',
-      skills: [],
-      team: 'management',
-    },
-    rachel: {
+    'rachel-bennett': {
       firstname: 'Rachel',
       surname: 'Bennett',
       title: translate('home.member.title.designer'),
@@ -41,7 +32,7 @@ export class AppTeamLanding {
       ],
       team: 'design',
     },
-    geoffery: {
+    'geoffery-melle': {
       firstname: 'Geoffery',
       surname: 'Melle',
       title: translate('home.member.title.accountManager'),
@@ -58,9 +49,9 @@ export class AppTeamLanding {
       ],
       team: 'management',
     },
-    joni: {
+    'joni-lehto': {
       firstname: 'Joni',
-      surname: 'Leho',
+      surname: 'Lehto',
       title: translate('home.member.title.developer'),
       headerText:
         'Joni grew up and currently lives in Rovaniemi Finland. After receiving a Bachelor’s degree he has worked as a senior software developer for several prominent companies. He joined OpenForge team to get new international experiences and become a part of a diverse and growing organization.',
@@ -79,21 +70,14 @@ export class AppTeamLanding {
       ],
       team: 'development',
     },
-    auvo: {
-      firstname: 'Auvo',
-      surname: 'Severinkangas',
-      title: translate('home.member.title.developer'),
-      headerText: '',
-      bodyText: '',
-      skills: [],
-      team: 'development',
-    },
-    paulina: {
+    'paulina-gallo': {
       firstname: 'Paulina',
       surname: 'Gallo',
       title: translate('home.member.title.developer'),
-      headerText: 'Paulina started her technical journey at a very young age through video games. This interest sparked her drive to study and receive her Bachelor’s in Computer Science and Digital Media. She has spent the past few years developing web and mobile applications for a wide range of startup and enterprise level clients, all while attending, voluntering, and speaking at various conferences within the development community.',
-      bodyText: 'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the full development process of a project, including the initial scoping, architecture planning, client communication management, and deployment involved in all projects. Paulina volunteers for various organizations and is the co-organizer for Angular Philly and Ionic Philly.',
+      headerText:
+        'Paulina started her technical journey at a very young age through video games. This interest sparked her drive to study and receive her Bachelor’s in Computer Science and Digital Media. She has spent the past few years developing web and mobile applications for a wide range of startup and enterprise level clients, all while attending, voluntering, and speaking at various conferences within the development community.',
+      bodyText:
+        'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the full development process of a project, including the initial scoping, architecture planning, client communication management, and deployment involved in all projects. Paulina volunteers for various organizations and is the co-organizer for Angular Philly and Ionic Philly.',
       skills: [
         'Angular',
         'Ionic',
@@ -109,16 +93,7 @@ export class AppTeamLanding {
       ],
       team: 'development',
     },
-    meredith: {
-      firstname: 'Meredith',
-      surname: 'Alcorn',
-      title: translate('home.member.title.developer'),
-      headerText: '',
-      bodyText: '',
-      skills: [],
-      team: 'development',
-    },
-    fernando: {
+    'fernando-del-olmo': {
       firstname: 'Fernando',
       surname: 'Del Olmo',
       title: translate('home.member.title.developer'),
@@ -137,7 +112,7 @@ export class AppTeamLanding {
       ],
       team: 'development',
     },
-    william: {
+    'william-holloran': {
       firstname: 'William',
       surname: 'Holloran',
       title: translate('home.member.title.projectManager'),
@@ -155,7 +130,7 @@ export class AppTeamLanding {
       ],
       team: 'management',
     },
-    luis: {
+    'luis-chacon': {
       firstname: 'Luis',
       surname: 'Chacon',
       title: translate('home.member.title.developer'),
@@ -172,7 +147,7 @@ export class AppTeamLanding {
       ],
       team: 'development',
     },
-    claudio: {
+    'claudio-del-valle': {
       firstname: 'Claudio',
       surname: 'Del Valle',
       title: translate('home.member.title.developer'),
@@ -192,7 +167,7 @@ export class AppTeamLanding {
       ],
       team: 'development',
     },
-    ethan: {
+    'ethan-bohan': {
       firstname: 'Ethan',
       surname: 'Bohan',
       title: translate('home.member.title.designer'),
@@ -210,14 +185,14 @@ export class AppTeamLanding {
       ],
       team: 'design',
     },
-    dhairya: {
+    'dhairya-pujara': {
       firstname: 'Dhairya',
       surname: 'Pujara',
       title: translate('home.member.title.consultant'),
       headerText:
-      "Dhairya Pujara is the Founder, CEO at Ycenter, he is responsible for building a global ecosystem bringing in corporates, universities, NGOs for creating experiential educational programs. Dhairya's core expertise is in Design Thinking, Business Model, Market Research, Customer Journey using Empathy maps and Story-telling for Brand positioning.",
+        "Dhairya Pujara is the Founder, CEO at Ycenter, he is responsible for building a global ecosystem bringing in corporates, universities, NGOs for creating experiential educational programs. Dhairya's core expertise is in Design Thinking, Business Model, Market Research, Customer Journey using Empathy maps and Story-telling for Brand positioning.",
       bodyText:
-      "Dhairya has been the curator for 'Global Shaper Hub Philadelphia' by World Economic Forum. He has been a global TEDx organizer and a sought-after public speaker on entrepreneurship and international development. He delivers keynote and guest lectures in some of the top business schools and conferences around the globe. From United Nations G77 to Wharton Business School, Dhairya is a leading speaker and educator around the world. Dhairya sits on the advisory board for European Commission program LASIN - Latin American Social Innovation network. In 2015, American Immigration granted him an approval for special category work visa reserved for 'an individual of extra-ordinary abilities. For more information please visit https://dhairyapujara.me/",
+        "Dhairya has been the curator for 'Global Shaper Hub Philadelphia' by World Economic Forum. He has been a global TEDx organizer and a sought-after public speaker on entrepreneurship and international development. He delivers keynote and guest lectures in some of the top business schools and conferences around the globe. From United Nations G77 to Wharton Business School, Dhairya is a leading speaker and educator around the world. Dhairya sits on the advisory board for European Commission program LASIN - Latin American Social Innovation network. In 2015, American Immigration granted him an approval for special category work visa reserved for 'an individual of extra-ordinary abilities. For more information please visit https://dhairyapujara.me/",
       skills: [
         'Design Thinking',
         'Business Model',
@@ -225,10 +200,21 @@ export class AppTeamLanding {
         'Customer Journey',
         'Empathy Maps',
         'Story Telling',
-        'Brand Positioning'
+        'Brand Positioning',
       ],
-      team: 'consultant'
-    }
+      team: 'consultant',
+    },
+    'young-song': {
+      firstname: 'Young',
+      surname: 'Song',
+      title: translate('home.member.title.softwareIntern'),
+      headerText:
+        'Young was born in Korea. He came to the USA in 1990 to study Physics. His first programming experience was about 25 years ago. However, he had to stop his coding job after he failed to get a working visa. In 2017, after he received a green card, He restarted coding. He learned coding using a mixture of Udemy, YouTube, and Collegiate courses.',
+      bodyText:
+        'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+      skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
+      team: 'development',
+    },
   };
 
   chips;
