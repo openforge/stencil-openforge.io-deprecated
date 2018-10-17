@@ -204,6 +204,17 @@ export class AppTeamLanding {
       ],
       team: 'consultant',
     },
+    'young-song': {
+      firstname: 'Young',
+      surname: 'Song',
+      title: translate('home.member.title.softwareIntern'),
+      headerText:
+        'Young was born in Korea. He came to the USA in 1990 to study Physics. His first programming experience was about 25 years ago. However, he had to stop his coding job after he failed to get a working visa. In 2017, after he received a green card, He restarted coding. He learned coding using a mixture of Udemy, YouTube, and Collegiate courses.',
+      bodyText:
+        'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+      skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
+      team: 'development',
+    },
   };
 
   chips;
