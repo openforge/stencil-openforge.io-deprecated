@@ -11,7 +11,7 @@ export class AppAbout {
   members = [
     {
       name: 'Jedi Weller',
-      image: './../../assets/headshot-jedi.jpg',
+      image: '/assets/headshot-jedi.jpg',
       title: translate('home.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
@@ -20,7 +20,7 @@ export class AppAbout {
     },
     {
       name: 'Rachel Bennett',
-      image: './../../assets/headshot-rachel.jpg',
+      image: '/assets/headshot-rachel.jpg',
       title: translate('home.member.title.designer'),
       mail: 'rachel@openforge.io',
       twitter: '',
@@ -29,7 +29,7 @@ export class AppAbout {
     },
     {
       name: 'Geoffrey Melle',
-      image: './../../assets/headshot-geoff.jpg',
+      image: '/assets/headshot-geoff.jpg',
       title: translate('home.member.title.accountManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
@@ -38,7 +38,7 @@ export class AppAbout {
     },
     {
       name: 'Joni Lehto',
-      image: './../../assets/headshot-joni.jpg',
+      image: '/assets/headshot-joni.jpg',
       title: translate('home.member.title.developer'),
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
@@ -47,7 +47,7 @@ export class AppAbout {
     },
     {
       name: 'Auvo Severinkangas',
-      image: './../../assets/headshot-auvo.jpg',
+      image: '/assets/headshot-auvo.jpg',
       title: translate('home.member.title.developer'),
       mail: 'auvo@openforge.io',
       twitter: '',
@@ -56,7 +56,7 @@ export class AppAbout {
     },
     {
       name: 'Paulina Gallo',
-      image: './../../assets/headshot-paulina.jpg',
+      image: '/assets/headshot-paulina.png',
       title: translate('home.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
@@ -65,7 +65,7 @@ export class AppAbout {
     },
     {
       name: 'Meredith Alcorn',
-      image: './../../assets/headshot-meredith.jpg',
+      image: '/assets/headshot-meredith.jpg',
       title: translate('home.member.title.developer'),
       mail: 'meredith@openforge.io',
       twitter: '',
@@ -74,7 +74,7 @@ export class AppAbout {
     },
     {
       name: 'Fernando Del Olmo',
-      image: './../../assets/headshot-fernando.jpg',
+      image: '/assets/headshot-fernando.jpg',
       title: translate('home.member.title.developer'),
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
@@ -83,14 +83,14 @@ export class AppAbout {
     },
     {
       name: 'William Holloran',
-      image: './../../assets/headshot-billy.jpg',
+      image: '/assets/headshot-billy.png',
       title: translate('home.member.title.projectManager'),
       mail: 'william@openforge.io',
       url: '/team-landing/william-holloran',
     },
     {
       name: 'Luis Chacon',
-      image: './../../assets/headshot-luis.jpg',
+      image: '/assets/headshot-luis.jpg',
       title: translate('home.member.title.developer'),
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
@@ -99,7 +99,7 @@ export class AppAbout {
     },
     {
       name: 'Claudio Del Valle',
-      image: './../../assets/headshot-claudio.jpg',
+      image: '/assets/headshot-claudio.jpg',
       title: translate('home.member.title.developer'),
       mail: 'claudio@openforge.io',
       titter: '',
@@ -108,7 +108,7 @@ export class AppAbout {
     },
     {
       name: 'Ethan Bohan',
-      image: './../../assets/headshot-ethan.jpg',
+      image: '/assets/headshot-ethan.jpg',
       title: translate('home.member.title.designer'),
       mail: 'ethan@openforge.io',
       twitter: '',
@@ -116,8 +116,26 @@ export class AppAbout {
       url: '/team-landing/ethan-bohan',
     },
     {
+      name: 'Ted Grant',
+      image: '/assets/headshot-ted.png',
+      title: translate('home.member.title.designer'),
+      mail: 'ted@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/team-landing/ted-grant',
+    },
+    {
+      name: 'Kevon',
+      image: '/assets/headshot-kevon.png',
+      title: translate('home.member.title.marketing'),
+      mail: 'kevon@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/team-landing/kevon',
+    },
+    {
       name: 'Eli',
-      image: './../../assets/headshot-eli.jpg',
+      image: '/assets/headshot-eli.jpg',
       title: 'Entertainment',
       mail: '',
       twitter: '',
@@ -127,7 +145,7 @@ export class AppAbout {
     },
     {
       name: 'Lu',
-      image: './../../assets/headshot-lu.jpg',
+      image: '/assets/headshot-lu.jpg',
       title: 'Entertainment',
       mail: '',
       twitter: '',
@@ -137,7 +155,7 @@ export class AppAbout {
     },
     {
       name: 'Dhairya Pujara',
-      image: './../../assets/headshot-dhairya.jpg',
+      image: '/assets/headshot-dhairya.jpg',
       title: translate('home.member.title.consultant'),
       mail: '',
       twitter: 'https://twitter.com/dhairyapujara',
@@ -146,7 +164,7 @@ export class AppAbout {
     },
     {
       name: 'YOU?',
-      image: './../../assets/headshot-placeholder.jpg',
+      image: '/assets/headshot-placeholder.jpg',
       title: '',
       mail: 'geoff@openforge.io',
       twitter: '',
