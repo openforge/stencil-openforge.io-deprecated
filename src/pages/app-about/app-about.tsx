@@ -125,13 +125,13 @@ export class AppAbout {
       url: '/team-landing/ted-grant',
     },
     {
-      name: 'Kevon',
+      name: 'Kevon Chambers',
       image: '/assets/headshot-kevon.png',
       title: translate('home.member.title.marketing'),
       mail: 'kevon@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/kevon',
+      url: '/team-landing/kevon-chambers',
     },
     {
       name: 'Eli',

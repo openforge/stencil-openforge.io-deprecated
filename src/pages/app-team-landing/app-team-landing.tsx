@@ -31,7 +31,7 @@ export class AppTeamLanding {
         'Copywriting',
       ],
       team: 'design',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-rachel.jpg',
     },
     'geoffery-melle': {
       firstname: 'Geoffery',
@@ -134,7 +134,7 @@ export class AppTeamLanding {
         'Sense of Humor',
       ],
       team: 'management',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-billy.jpg',
     },
     'luis-chacon': {
       firstname: 'Luis',
@@ -192,7 +192,7 @@ export class AppTeamLanding {
         'Adobe Creative Suite',
       ],
       team: 'design',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-ethan.jpg',
     },
     'dhairya-pujara': {
       firstname: 'Dhairya',
@@ -232,9 +232,9 @@ export class AppTeamLanding {
       team: 'design',
       backgroundPhoto: '/assets/bios-background-ted.png',
     },
-    kevon: {
+    'kevon-chambers': {
       firstname: 'Kevon',
-      surname: '',
+      surname: 'Chambers',
       title: translate('home.member.title.marketing'),
       headerText: '',
       bodyText: '',
