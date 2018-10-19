@@ -1,0 +1,457 @@
+.case-study {
+  // hero
+  .hero {
+    background-image: url('/assets/case-study-background-header.png');
+    background-position: top center;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    h2 {
+      color: $orange-light;
+      font-size: 2rem;
+      font-weight: 200;
+      margin-bottom: 1rem;
+      text-align: center;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 2rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 3rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      text-align: center;
+      line-height: 5rem;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: 1.5rem;
+        line-height: 3rem;
+      }
+    }
+  }
+
+  section {
+    padding: 50px;
+    margin-bottom: 50px;
+
+    &.text-section {
+      &.background-image {
+        background-image: url('/assets/case-study-background-section.png');
+        background-position: top center;
+        background-size: cover;
+      }
+
+      h2 {
+        font-size: 48px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        text-align: center;
+        color: $gray-dark;
+        margin-bottom: 30px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 2;
+        text-align: center;
+        color: $gray-brown;
+        max-width: 900px;
+        text-align: center;
+        margin: auto;
+      }
+    }
+
+    &.image-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 50px;
+
+      .text-container {
+        h2 {
+          margin-bottom: 30px;
+          font-size: 48px;
+          font-weight: 600;
+          letter-spacing: 1.6px;
+          color: $gray-dark;
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 2;
+          color: $gray-brown;
+        }
+
+        ul {
+          padding-left: 20px;
+        }
+      }
+
+      app-img {
+        justify-self: end;
+      }
+    }
+
+    &.conclusion-section {
+      margin-bottom: 0;
+
+      h2 {
+        margin-bottom: 50px;
+        font-size: 48px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        text-align: center;
+      }
+
+      h3 {
+        margin-bottom: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 36px;
+        font-weight: bold;
+        line-height: 1.39;
+        color: $orange-dark;
+      }
+
+      p {
+        margin-bottom: 55px;
+        font-size: 18px;
+        line-height: 2;
+        color: $gray-brown;
+
+        &.top-link {
+          margin-top: 15px;
+          font-size: 25px;
+          font-weight: bold;
+          letter-spacing: 1.6px;
+          text-align: center;
+          color: $orange;
+        }
+      }
+    }
+
+    // TIMELINE
+    &.timeline {
+      background: rgba(93, 83, 78, 0.3);
+
+      h2 {
+        font-size: 48px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        text-align: center;
+      }
+
+      .timeline-items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        // a wrapper to made the border make the middle line
+        .timeline-wrapper {
+          border-right: 2px solid $gray-brown;
+          position: relative;
+        }
+
+        // the bullets and lines for the items on left
+        .timeline-bullet-left {
+          // bullet
+          &:before {
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            background: #5d534e;
+            content: '';
+            border-radius: 10px;
+            right: -7px;
+            top: 119px;
+          }
+
+          @include media-breakpoint-down(lg) {
+            &:before {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              background: #5d534e;
+              content: '';
+              border-radius: 10px;
+              right: -7px;
+              top: 134px;
+            }
+          }
+
+          @include media-breakpoint-down(md) {
+            &:before {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              background: #5d534e;
+              content: '';
+              border-radius: 10px;
+              right: -7px;
+              top: 180px;
+            }
+          }
+
+          @include media-breakpoint-down(sm) {
+            &:before {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              background: #5d534e;
+              content: '';
+              border-radius: 10px;
+              right: -7px;
+              top: 196px;
+            }
+          }
+
+          // line
+          &:after {
+            position: absolute;
+            height: 2px;
+            display: block;
+            width: 105px;
+            background: $gray-brown;
+            content: '';
+            right: 0;
+            top: 50%;
+          }
+
+          @include media-breakpoint-down(lg) {
+            &:after {
+              position: absolute;
+              height: 2px;
+              display: block;
+              width: 70px;
+              background: $gray-brown;
+              content: '';
+              right: 0;
+              top: 50%;
+            }
+          }
+
+          @include media-breakpoint-down(md) {
+            &:after {
+              position: absolute;
+              height: 2px;
+              display: block;
+              width: 48px;
+              background: $gray-brown;
+              content: '';
+              right: 0;
+              top: 50%;
+            }
+          }
+
+          @include media-breakpoint-down(sm) {
+            &:after {
+              position: absolute;
+              height: 2px;
+              display: block;
+              width: 30px;
+              background: $gray-brown;
+              content: '';
+              right: 0;
+              top: 50%;
+            }
+          }
+        }
+
+        // the bullets and lines for the items on right
+        .timeline-bullet-right {
+          // bullet
+          &:before {
+            position: absolute;
+            height: 12px;
+            width: 12px;
+            background: #5d534e;
+            content: '';
+            border-radius: 10px;
+            left: -114px;
+            top: 99px;
+          }
+
+          @include media-breakpoint-down(lg) {
+            &:before {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              background: #5d534e;
+              content: '';
+              border-radius: 10px;
+              left: -80px;
+              top: 115px;
+            }
+          }
+
+          @include media-breakpoint-down(md) {
+            &:before {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              background: #5d534e;
+              content: '';
+              border-radius: 10px;
+              left: -56px;
+              top: 145px;
+            }
+          }
+
+          @include media-breakpoint-down(sm) {
+            &:before {
+              position: absolute;
+              height: 12px;
+              width: 12px;
+              background: #5d534e;
+              content: '';
+              border-radius: 10px;
+              left: -38px;
+              top: 177px;
+            }
+          }
+
+          // line
+          &:after {
+            position: absolute;
+            height: 2px;
+            display: block;
+            width: 105px;
+            background: $gray-brown;
+            content: '';
+            left: -105px;
+            top: 50%;
+          }
+
+          @include media-breakpoint-down(lg) {
+            &:after {
+              position: absolute;
+              height: 2px;
+              display: block;
+              width: 70px;
+              background: $gray-brown;
+              content: '';
+              left: -70px;
+              top: 50%;
+            }
+          }
+
+          @include media-breakpoint-down(md) {
+            &:after {
+              position: absolute;
+              height: 2px;
+              display: block;
+              width: 48px;
+              background: $gray-brown;
+              content: '';
+              left: -49px;
+              top: 50%;
+            }
+          }
+
+          @include media-breakpoint-down(sm) {
+            &:after {
+              position: absolute;
+              height: 2px;
+              display: block;
+              width: 35px;
+              background: $gray-brown;
+              content: '';
+              left: -35px;
+              top: 50%;
+            }
+          }
+        }
+
+        .timeline-item {
+          display: flex;
+          background: $gray-100;
+          margin: 20px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
+          width: 80%;
+          min-height: 208px;
+
+          @include media-breakpoint-down(lg) {
+            min-height: 240px;
+          }
+
+          @include media-breakpoint-down(md) {
+            min-height: 300px;
+          }
+
+          @include media-breakpoint-down(sm) {
+            min-height: 364px;
+          }
+
+          &:nth-child(even) {
+            position: relative;
+            justify-self: end;
+          }
+
+          .timeline-item-content {
+            padding: 10px;
+
+            h3 {
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 2;
+              color: $gray-dark;
+              text-transform: uppercase;
+            }
+
+            ul {
+              padding-left: 20px;
+            }
+          }
+
+          app-img {
+            padding-left: 10px;
+
+            img {
+              width: 150px;
+              margin: 10px;
+            }
+          }
+        }
+      }
+
+      .final-timeline-item {
+        display: grid;
+        grid-template-columns: 1fr 0.4fr 1fr;
+
+        .timeline-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 0 !important;
+          background: $gray-100;
+          margin: 20px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
+
+          .timeline-item-content {
+            margin-top: 10px;
+          }
+
+          app-img img {
+            width: 150px;
+          }
+        }
+      }
+    }
+  }
+}
