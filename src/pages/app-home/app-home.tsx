@@ -1,14 +1,23 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
+
+declare var fbq;
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+  @Prop()
+  history: RouterHistory;
   members: any[];
   isMobile = navigator.userAgent.match(
     /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
   );
+
+  componentDidLoad() {
+    fbq('track', 'ViewContent');
+  }
 
   scrollToForm() {
     const form = document.getElementById('services');
@@ -206,7 +215,7 @@ export class AppHome {
         </section>
 
         {/* aside - cta */}
-        <section id="learn-about">
+        <section id="learn-about" class="learn-about">
           <app-cta link-url="/about">
             <span slot="header">
               <app-translate key="home.learnAbout.header" />

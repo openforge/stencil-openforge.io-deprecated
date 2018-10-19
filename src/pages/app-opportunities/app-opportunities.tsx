@@ -1,6 +1,8 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
+declare var fbq;
+
 @Component({
   tag: 'app-opportunities',
   styleUrl: 'app-opportunities.scss',
@@ -34,19 +36,31 @@ export class AppOpportunities {
     };
   };
 
-  @State() fileError: any;
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() phoneError: string;
-  @State() githubError: string;
-  @State() messageError: string;
+  @State()
+  fileError: any;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  phoneError: string;
+  @State()
+  githubError: string;
+  @State()
+  messageError: string;
 
-  @State() interviewButtonDisabled: boolean = true;
-  @State() submitButtonDisabled: boolean = true;
-  @State() canRequestInterview: boolean = false;
-  @State() formSubmitting: boolean = false;
-  @State() formSubmitted: boolean = false;
-  @State() fileSizeErrorShown: boolean = false;
+  @State()
+  interviewButtonDisabled: boolean = true;
+  @State()
+  submitButtonDisabled: boolean = true;
+  @State()
+  canRequestInterview: boolean = false;
+  @State()
+  formSubmitting: boolean = false;
+  @State()
+  formSubmitted: boolean = false;
+  @State()
+  fileSizeErrorShown: boolean = false;
 
   @Prop()
   errorIconStyles = {
@@ -56,6 +70,8 @@ export class AppOpportunities {
   };
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
+    fbq('track', 'Lead');
     this.resetFormValues();
   }
 
@@ -162,7 +178,8 @@ export class AppOpportunities {
     const files = e.target.files;
     const file = files[0];
 
-    this.formData.delete('files'); // Just in case user changed the file
+    this.formData = new FormData();
+    this.formData.append('files', files[0]);
 
     this.formValues.formErrors.fileValid = e.target.checkValidity();
     if (file && file.size > this.maxFileSize) {
@@ -175,7 +192,6 @@ export class AppOpportunities {
 
     this.fileSizeErrorShown = false;
     this.fileError = '';
-    this.formData.append('files', files[0]);
     this.validateField(null);
   }
 
@@ -201,12 +217,13 @@ export class AppOpportunities {
         }
       );
 
+      fbq('track', 'CompleteRegistration');
+
       e.target.reset();
       this.resetFormValues();
 
       this.submitButtonDisabled = false;
       this.formSubmitting = false;
-      this.submitButtonDisabled = false;
       this.formSubmitted = true;
       this.fileSizeErrorShown = false;
 
@@ -521,7 +538,7 @@ export class AppOpportunities {
                       name="message"
                       maxLength={150}
                       required={true}
-                      onInput={this.validateField.bind(this)}
+                      onChange={this.validateField.bind(this)}
                     />
                   </div>
                   <p class="error">

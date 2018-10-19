@@ -3,13 +3,13 @@ section.services {
   // hero
   .hero {
     &.development {
-      background-image: url('/assets/services-development-header.jpg');
+      background-image: url('/assets/team-landing-header-development-team.jpg');
     }
     &.design {
-      background-image: url('/assets/services-design-header.jpg');
+      background-image: url('/assets/team-landing-header-design-team.jpg');
     }
     &.consulting {
-      background-image: url('/assets/services-consulting-header.jpg');
+      background-image: url('/assets/team-landing-header-management-team.jpg');
     }
 
     .overlay {
@@ -134,26 +134,12 @@ section.services {
     margin-top: 4rem;
     padding-bottom: 4rem;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
-    background: #020001; /* Old browsers */
-    background: -moz-linear-gradient(
-      left,
-      #020001 10%,
-      #666666 50%,
-      #000000 90%
-    ); /* FF3.6-15 */
-    background: -webkit-linear-gradient(
-      left,
-      #020001 10%,
-      #666666 50%,
-      #000000 90%
-    ); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(
       to right,
       #020001 10%,
       #666666 50%,
       #000000 90%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020001', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+    );
     h2,
     h3,
     p {

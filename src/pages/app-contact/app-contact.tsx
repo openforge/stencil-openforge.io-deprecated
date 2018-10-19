@@ -1,42 +1,42 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
+declare var fbq;
+
 @Component({
   tag: 'app-contact',
   styleUrl: 'app-contact.scss',
 })
 export class AppContact {
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
+  @State()
+  formSubmitted = false;
+  @State()
+  formSubmitting = false;
 
   @State()
   formValues: {
     name: '';
     email: '';
-    company: '';
     phone: '';
     message: '';
-    desiredService: '';
-    budget: '';
 
     nameValid: false;
-    companyValid: false;
     emailValid: false;
     phoneValid: false;
     messageValid: false;
-    serviceValid: false;
-    budgetValid: false;
   };
 
-  @State() nameError: string;
-  @State() companyError: string;
-  @State() emailError: string;
-  @State() phoneError: string;
-  @State() messageError: string;
-  @State() serviceError: string;
-  @State() budgetError: string;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  phoneError: string;
+  @State()
+  messageError: string;
 
-  @State() isDisabled = true;
+  @State()
+  isDisabled = true;
 
   @Prop()
   errorIconStyles = {
@@ -47,29 +47,7 @@ export class AppContact {
 
   radioChoices: any;
 
-  constructor() {
-    this.radioChoices = {
-      desiredService: [
-        translate('contact.form.appDevelopment'),
-        translate('contact.form.webDevelopment'),
-        translate('contact.form.uiDesign'),
-        translate('contact.form.graphicDesign'),
-        translate('contact.form.consulting'),
-        translate('contact.form.ctoAsService'),
-        translate('contact.form.unsure'),
-      ],
-      budget: [
-        translate('contact.form.unsure'),
-        translate('contact.form.budgetThreshold.one'),
-        translate('contact.form.budgetThreshold.two'),
-        translate('contact.form.budgetThreshold.three'),
-        translate('contact.form.budgetThreshold.four'),
-        translate('contact.form.budgetThreshold.five'),
-        translate('contact.form.budgetThreshold.six'),
-        translate('contact.form.budgetThreshold.seven'),
-      ],
-    };
-  }
+  constructor() {}
 
   @Listen('check')
   @Listen('valueChange')
@@ -82,6 +60,8 @@ export class AppContact {
   }
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
+    fbq('track', 'Lead');
     this.resetFormValues();
   }
 
@@ -92,13 +72,6 @@ export class AppContact {
         this.nameError = this.formValues.nameValid
           ? ''
           : (this.nameError = e.validationMessage);
-        break;
-
-      case 'company':
-        this.formValues.companyValid = e.checkValidity();
-        this.companyError = this.formValues.companyValid
-          ? ''
-          : (this.companyError = e.validationMessage);
         break;
 
       case 'email':
@@ -125,29 +98,12 @@ export class AppContact {
           ? ''
           : (this.messageError = e.validationMessage);
         break;
-
-      case 'desiredService':
-        this.formValues.serviceValid = e.checked;
-        this.serviceError = this.formValues.serviceValid
-          ? ''
-          : e.validationMessage;
-        break;
-
-      case 'budget':
-        this.formValues.budgetValid = e.checked;
-        this.budgetError = this.formValues.budgetValid
-          ? ''
-          : (this.budgetError = e.validationMessage);
-        break;
     }
 
     this.formValues.nameValid &&
-    this.formValues.companyValid &&
     this.formValues.emailValid &&
     this.formValues.phoneValid &&
-    this.formValues.messageValid &&
-    this.formValues.serviceValid &&
-    this.formValues.budgetValid
+    this.formValues.messageValid
       ? (this.isDisabled = false)
       : (this.isDisabled = true);
   }
@@ -171,6 +127,8 @@ export class AppContact {
         }
       );
 
+      fbq('track', 'CompleteRegistration');
+
       event.target.reset();
       this.resetFormValues();
 
@@ -183,31 +141,6 @@ export class AppContact {
     } catch (error) {
       console.log('Error', error);
     }
-  }
-
-  renderRadioColumns(name: string, choices: string[]) {
-    const columns = [];
-    let columnItems = [];
-
-    choices.forEach(choice => {
-      const item = (
-        <app-radio name={name} value={choice} label={choice} required={true} />
-      );
-
-      columnItems.push(item);
-
-      if (columnItems.length >= 4) {
-        const column = <div class="col-sm-6">{columnItems}</div>;
-        columns.push(column);
-
-        columnItems = [];
-      }
-    });
-
-    const column = <div class="col-sm-6">{columnItems}</div>;
-    columns.push(column);
-
-    return columns;
   }
 
   scrollToForm() {
@@ -261,6 +194,7 @@ export class AppContact {
                     label={translate('contact.form.fullName')}
                     type="text"
                     id="name"
+                    placeholder=""
                     required={true}
                   />
                   <p class="error">
@@ -277,29 +211,11 @@ export class AppContact {
                   </p>
 
                   <app-input
-                    name="company"
-                    label={translate('contact.form.company')}
-                    type="text"
-                    required={true}
-                  />
-                  <p class="error">
-                    <span
-                      style={
-                        !this.companyError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.companyError}
-                  </p>
-
-                  <app-input
                     name="email"
                     label={translate('contact.form.email')}
                     type="email"
                     id="email"
+                    placeholder=""
                     required={true}
                   />
                   <p class="error">
@@ -320,6 +236,7 @@ export class AppContact {
                     label={translate('contact.form.phone')}
                     id="phone"
                     type="tel"
+                    placeholder=""
                     required={true}
                   />
                   <p class="error">
@@ -339,6 +256,7 @@ export class AppContact {
                     name="message"
                     label={translate('contact.form.whereDidYouHear')}
                     type="text"
+                    placeholder=""
                     required={true}
                   />
                   <p class="error">
@@ -353,32 +271,6 @@ export class AppContact {
                     </span>
                     {this.messageError}
                   </p>
-
-                  <fieldset>
-                    <legend class="lead">
-                      <app-translate key="contact.form.legend.help" />
-                    </legend>
-                    <div class="row ml-2">
-                      {this.renderRadioColumns(
-                        'desiredService',
-                        this.radioChoices.desiredService
-                      )}
-                    </div>
-                  </fieldset>
-
-                  <p class="font-weight-bold">{this.serviceError}</p>
-
-                  <fieldset>
-                    <legend class="lead">
-                      <app-translate key="contact.form.legend.budget" />
-                    </legend>
-                    <div class="row ml-2">
-                      {this.renderRadioColumns(
-                        'budget',
-                        this.radioChoices.budget
-                      )}
-                    </div>
-                  </fieldset>
 
                   <button
                     name="submit"
@@ -414,19 +306,13 @@ export class AppContact {
   private resetFormValues() {
     this.formValues = {
       name: '',
-      company: '',
       email: '',
       phone: '',
       message: '',
-      desiredService: '',
-      budget: '',
       nameValid: false,
-      companyValid: false,
       emailValid: false,
       phoneValid: false,
       messageValid: false,
-      serviceValid: false,
-      budgetValid: false,
     };
   }
 }

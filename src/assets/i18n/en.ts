@@ -88,6 +88,7 @@ export const translations = {
           developer: 'Software Engineer',
           frontEndDeveloper: 'Front End Developer',
           projectManager: 'Project Manager / QA Engineer',
+          consultant: 'Consultant',
         },
       },
     },
@@ -368,7 +369,7 @@ export const translations = {
       address: {
         header: 'Our Headquarters',
         name: 'OpenForge',
-        line1: '1040 N 2nd St, Suite #301',
+        line1: '1010 N Hancock St',
         line2: 'Philadelphia, PA 19123',
         email: 'hello@openforge.io',
       },

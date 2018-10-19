@@ -1,12 +1,15 @@
 import { Component, Prop, State, Listen } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
+declare var fbq;
+
 @Component({
   tag: 'app-detailed-service',
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop() match: MatchResults;
+  @Prop()
+  match: MatchResults;
 
   @State()
   imgs = {
@@ -50,8 +53,10 @@ export class AppDetailedService {
     },
   };
 
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
+  @State()
+  formSubmitted = false;
+  @State()
+  formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -62,10 +67,14 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() messageError: string;
-  @State() isDisabled = true;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  messageError: string;
+  @State()
+  isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -77,6 +86,7 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
+    fbq('track', 'ViewContent');
     this.resetFormValues();
   }
 
@@ -377,11 +387,7 @@ export class AppDetailedService {
               </div>
             </section>
           </div>
-        ) : (
-          <section class="no-examples">
-            <h2>Case Studies Coming Soon</h2>
-          </section>
-        )}
+        ) : null}
         <app-cta link-url="/contact">
           <span slot="header">
             <app-translate key="services.aside.title" />

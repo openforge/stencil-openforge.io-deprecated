@@ -28,16 +28,19 @@ If you are a community member who would like to take part of our paid (yes, we s
 
 The OpenForge.io website is built using a combination of [Stencil.js](https://stenciljs.com/) by our friends at [Ionic Framework](https://ionicframework.com/) anbd Bootstrap for styling.
 
+### Setup
+```
+npm install
+```
+
 ### Running This Application
+```
+npm run dev
+```
 
-```npm install```
-
-```npm run build```
-
-```npm run dev --es5``` (firefox)
-
-```npm run dev```
-
+```
+npm run dev --es5 // firefox
+```
 
 ### File Structure
 **UI** components should reside in the `src/components` folder.
@@ -95,8 +98,13 @@ If a developer went through providing all the information during a `npm run cz` 
 
 ## Deployment
 
-```npm run build```
-Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase
+```
+npm run build
+```
 
-```npm run firebase:deploy:dev``` 
+_Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase_
+
+```
+npm run firebase:deploy:dev // deploy to firebase dev environment
+``` 
 

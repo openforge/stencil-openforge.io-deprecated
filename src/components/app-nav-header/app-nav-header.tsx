@@ -67,33 +67,6 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/about"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  {translate('nav.links.about')}
-                </stencil-route-link>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/contact"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  {translate('nav.links.contact')}
-                </stencil-route-link>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/opportunities"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  {translate('nav.links.opportunities')}
-                </stencil-route-link>
-              </li>
               {this.isMobile === null ? (
                 <li
                   class="nav-item dropdown"
@@ -134,6 +107,33 @@ export class AppNavHeader {
                   </div>
                 </li>
               ) : null}
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/about"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  {translate('nav.links.about')}
+                </stencil-route-link>
+              </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/contact"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  {translate('nav.links.contact')}
+                </stencil-route-link>
+              </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/opportunities"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  {translate('nav.links.opportunities')}
+                </stencil-route-link>
+              </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
                   class="nav-link"
