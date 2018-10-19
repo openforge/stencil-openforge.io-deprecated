@@ -320,7 +320,7 @@ export const translations = {
       hero: {
         title: 'What is a PWA and is it right for you?',
         text:
-          "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
+          'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.',
         title1: 'Check Out the Awesome stuff we made with PWAs',
         text1:
           "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
@@ -342,20 +342,22 @@ export const translations = {
         },
       },
       downloadinfo: {
-        title: 'WHY DOWNLOAD INFO',
+        title: "HERE'S WHAT IS INSIDE",
         subtitle:
-          'There is no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow and evolve.',
+          "A business owner's perspective on the benefits of PWAs (Progressive Web Apps)",
         list: {
-          first: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          second: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          third: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
-          fourth: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+          first: 'What a PWA is and what companies are using them',
+          second: 'Learn how a PWA can decrease several costs',
+          third: 'Discovery how a PWA increases user engagement',
+          fourth: 'Understand the features and benefits of a PWA',
         },
         footer:
-          'There is no doubt that our team is made up of brilliant and talented individuals. Together we design, code, grow and evolve.',
+          "Switching to a PWA can take your business to the next level and improve the performance of your business's digital engagement",
       },
+      enjoy: 'Enjoy!',
+      enjoysub: 'Expand Your PWA Knowledge',
       thanks:
-        "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you follow direction, develop, and learn a new technology or pattern that you have not used before",
+        'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
     header: {

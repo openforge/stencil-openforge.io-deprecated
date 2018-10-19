@@ -401,8 +401,12 @@ export class AppResources {
                 alt=""
               />
               <div class="text-img-container-text">
-                <h2>Thank You</h2>
-                <h3>Check out our Git Hub!</h3>
+                <h2>
+                  <app-translate key="resources.enjoy" />
+                </h2>
+                <h3>
+                  <app-translate key="resources.enjoysub" />
+                </h3>
                 <p>
                   <app-translate key="resources.thanks" />
                 </p>
