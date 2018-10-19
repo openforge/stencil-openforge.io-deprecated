@@ -122,8 +122,10 @@ export class AppResources {
       this.formSubmitting = false;
       this.formSubmitted = true;
 
-      const form = document.getElementById('form-content');
+      const form = document.getElementById('top');
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+
+      window.open('/assets/PWA%20White%20Paper.pdf', '_blank');
     } catch (error) {
       console.log('Error', error);
     }
@@ -136,7 +138,7 @@ export class AppResources {
 
   render() {
     return (
-      <div class="resources">
+      <div id="top" class="resources">
         {/* header - hero */}
         {!this.formSubmitted ? (
           <header class="hero">
@@ -215,7 +217,15 @@ export class AppResources {
         {!this.formSubmitted ? (
           <section id="form-section" class="pwa-form">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-8 col-lg-6" />
+              <div class="col-sm-12 col-md-8 col-lg-6">
+                <div class="colunm">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src="/assets/pwa-white-paper-front-page.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
               <div class="col-sm-12 col-md-8 col-lg-6">
                 <div class="container">
                   <div class="">
@@ -384,7 +394,7 @@ export class AppResources {
 
         {this.formSubmitted ? (
           <div class="container">
-            <section class="text-img-container left-side">
+            <section id="thankyou" class="text-img-container left-side">
               <app-img
                 class="img-fluid d-none d-md-inline"
                 src="/assets/resources-robot.gif"
