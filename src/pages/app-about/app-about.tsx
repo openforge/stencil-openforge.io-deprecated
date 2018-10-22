@@ -114,7 +114,7 @@ export class AppAbout {
     {
       name: 'Ted Grant',
       image: '/assets/headshot-ted.png',
-      title: translate('home.member.title.designer'),
+      title: translate('about.meet.member.title.designer'),
       mail: 'ted@openforge.io',
       twitter: '',
       github: '',
@@ -123,7 +123,7 @@ export class AppAbout {
     {
       name: 'Kevon Chambers',
       image: '/assets/headshot-kevon.png',
-      title: translate('home.member.title.marketing'),
+      title: translate('about.meet.member.title.marketing'),
       mail: 'kevon@openforge.io',
       twitter: '',
       github: '',
