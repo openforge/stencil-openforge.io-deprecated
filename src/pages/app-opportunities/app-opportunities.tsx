@@ -379,16 +379,16 @@ export class AppOpportunities {
                 <app-translate key="opportunities.intro.title" />
               </h3>
               <p slot="body">
-                <app-translate key="opportunities.intro.text" />
+                <app-translate key={`opportunities.intro.${this.match.params.type}.text`}/>
               </p>
             </content-graphic>
 
             <content-graphic img-url="/assets/graphic-opportunities-codemaster.jpg">
               <h3 slot="header">
-                <app-translate key="opportunities.intro.codeMaster.title" />
+                <app-translate key="opportunities.intro.title" />
               </h3>
               <p slot="body">
-                <app-translate key="opportunities.intro.codeMaster.body" />
+                <app-translate key={`opportunities.test.${this.match.params.type}.text`} />
               </p>
             </content-graphic>
           </div>

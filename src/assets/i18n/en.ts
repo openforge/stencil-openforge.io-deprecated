@@ -265,13 +265,21 @@ export const translations = {
       },
       intro: {
         title: 'Forget normal interviews!',
-        text:
-          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank' rel='noopener'>Ionic</a> or <a href='https://reactjs.org/' target='_blank' rel='noopener'>React App!</a>",
-        codeMaster: {
-          title: 'We want to put you to the test!',
-          body:
-            "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you follow direction, develop, and learn a new technology or pattern that you have not used before.",
+        develop: {
+          text: "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank' rel='noopener'>Ionic</a> or <a href='https://reactjs.org/' target='_blank' rel='noopener'>React App!</a>"
         },
+        design: {
+          text: "At OpenForge, we believe that sometimes actions speak louder than words, so as part of your interview assignment, we’d like to challenge you to design 3 pages of an app of your choosing."
+        },
+      },
+      test: {
+        title: 'We want to put you to the test!',
+        design: {
+          text: "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you identify problems and solve them using design principles, hierarchy, and UX best practices.",
+        },
+        develop: {
+          text: "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you follow direction, develop, and learn a new technology or pattern that you have not used before."
+        }
       },
       challenge: {
         title: 'The Challenge',
