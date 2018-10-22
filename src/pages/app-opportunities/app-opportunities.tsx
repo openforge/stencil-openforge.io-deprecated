@@ -383,7 +383,7 @@ export class AppOpportunities {
               </p>
             </content-graphic>
 
-            <content-graphic img-url="/assets/graphic-opportunities-codemaster.jpg">
+            <content-graphic img-url={`/assets/graphic-opportunities-master-${this.match.params.type}.jpg`}>
               <h3 slot="header">
                 <app-translate key="opportunities.intro.title" />
               </h3>
