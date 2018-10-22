@@ -82,15 +82,14 @@ export class AppTeamLanding {
       skills: [
         'Angular',
         'Ionic',
-        'Firebase',
         'iOS',
         'Android',
         'Frontend Development',
-        'ParseSDK',
         'UX',
-        'Communication',
+        'Firebase',
+        'ParseSDK',
         'Public speaking',
-        'Organization',
+        'Project Management',
       ],
       team: 'development',
     },
@@ -204,17 +203,37 @@ export class AppTeamLanding {
         'Brand Positioning',
       ],
       team: 'consultant',
-    }, 
+    },
+    'young-song': {
+      firstname: 'Young',
+      surname: 'Song',
+      title: translate('about.meet.member.title.softwareIntern'),
+      headerText:
+        'Young was born in Korea. He came to the USA in 1990 to study Physics. His first programming experience was about 25 years ago. However, he had to stop his coding job after he failed to get a working visa. In 2017, after he received a green card, He restarted coding. He learned coding using a mixture of Udemy, YouTube, and Collegiate courses.',
+      bodyText:
+        'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+      skills: [
+        'UI/UX Design', 
+        'Frontend development', 
+        'Backend development'
+      ],
+      team: 'development',
+    },
     'sam-hudgens': {
       firstname: 'Sam',
       surname: 'Hudgens',
-      title: translate('about.meet.member.title.intern'),
+      title: translate('about.meet.member.title.softwareIntern'),
       headerText:
         'Sam is originally from Montgomery, Alabama. He studied Chinese and Business Administration at the University of Southern California in Los Angeles with plans of going into finance, but decided on a career change into tech at the last minute. He attended a programming bootcamp after graduating college and ended up in Philadelphia. Sam likes learning both computer languages and human languages.',
       bodyText:
         'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-      skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
-      team: 'intern',
+      skills: [
+        'HTML', 
+        'CSS', 
+        'JavaScript', 
+        'Java'
+      ],
+      team: 'development',
     },
     'casey': {
       firstname: 'Casey',
@@ -232,7 +251,8 @@ export class AppTeamLanding {
         'Napping',
         'Barking',
         'Whinning'
-      ]
+      ],
+      team: 'management'
     }
   };
 

@@ -92,7 +92,7 @@ export const translations = {
             projectManager: 'Project Manager / QA Engineer',
             consultant: 'Consultant',
             officer: 'Chief Happiness Officer',
-            intern: "Software Intern"
+            softwareIntern: "Software Intern"
           },
         },
       }

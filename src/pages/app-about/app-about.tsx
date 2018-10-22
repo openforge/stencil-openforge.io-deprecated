@@ -148,6 +148,24 @@ export class AppAbout {
       url: '/team-landing/dhairya-pujara'
     },
     {
+      name: 'Young Song',
+      image: './../../assets/young-avarta.jpg',
+      title: translate('about.meet.member.title.softwareIntern'),
+      mail: '',
+      twitter: 'https://twitter.com/YoungSongJS',
+      github: 'https://github.com/Hogusong',
+      url: '/team-landing/young-song',
+    },
+    {
+      name: 'Sam Hudgens',
+      image: './../../assets/headshot-sam.png',
+      title: translate('about.meet.member.title.softwareIntern'),
+      mail: 'sam@openforge.io',
+      twitter: '',
+      github: 'https://github.com/samhudgens',
+      url: '/team-landing/sam-hudgens',
+    },
+    {
       name: 'Casey',
       image: './../../assets/headshot-casey.jpg',
       title: translate('about.meet.member.title.officer'),
@@ -155,15 +173,6 @@ export class AppAbout {
       twitter: '',
       github: '',
       url: '/team-landing/casey'
-    },
-    {
-      name: 'Sam Hudgens',
-      image: './../../assets/headshot-sam.png',
-      title: translate('home.member.title.intern'),
-      mail: 'sam@openforge.io',
-      twitter: '',
-      github: 'https://github.com/samhudgens',
-      url: '/team-landing/sam-hudgens',
     },
     {
       name: 'YOU?',

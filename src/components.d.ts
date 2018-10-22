@@ -548,6 +548,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppCaseStudy {
+
+    }
+  }
+
+  interface HTMLAppCaseStudyElement extends StencilComponents.AppCaseStudy, HTMLStencilElement {}
+
+  var HTMLAppCaseStudyElement: {
+    prototype: HTMLAppCaseStudyElement;
+    new (): HTMLAppCaseStudyElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-case-study': HTMLAppCaseStudyElement;
+  }
+  interface ElementTagNameMap {
+    'app-case-study': HTMLAppCaseStudyElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-case-study': JSXElements.AppCaseStudyAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppCaseStudyAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppContact {
       'errorIconStyles': any;
     }
@@ -705,6 +738,39 @@ declare global {
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppServiceLevelAgreement {
+
+    }
+  }
+
+  interface HTMLAppServiceLevelAgreementElement extends StencilComponents.AppServiceLevelAgreement, HTMLStencilElement {}
+
+  var HTMLAppServiceLevelAgreementElement: {
+    prototype: HTMLAppServiceLevelAgreementElement;
+    new (): HTMLAppServiceLevelAgreementElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  interface ElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-service-level-agreement': JSXElements.AppServiceLevelAgreementAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppServiceLevelAgreementAttributes extends HTMLAttributes {
+
     }
   }
 }
