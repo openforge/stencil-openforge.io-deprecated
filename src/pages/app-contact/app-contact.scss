@@ -41,6 +41,12 @@
     @include media-breakpoint-down(sm) {
       padding: 3rem 0;
     }
+
+    @include media-breakpoint-down(xs) {
+      button {
+        width: 100%;
+      }
+    }
   }
   .error {
     font-weight: bold;
