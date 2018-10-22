@@ -154,6 +154,15 @@ export class AppAbout {
       url: '/team-landing/young-song',
     },
     {
+      name: 'Sam Hudgens',
+      image: './../../assets/headshot-sam.png',
+      title: translate('home.member.title.softwareIntern'),
+      mail: 'sam@openforge.io',
+      twitter: '',
+      github: 'https://github.com/samhudgens',
+      url: '/team-landing/sam-hudgens',
+    },
+    {
       name: 'YOU?',
       image: './../../assets/headshot-placeholder.jpg',
       title: '',
