@@ -217,7 +217,7 @@ export class AppResources {
         {!this.formSubmitted ? (
           <section id="form-section" class="pwa-form">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-8 col-lg-6">
+              <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="colunm">
                   <app-img
                     class="img-fluid d-none d-md-inline"
@@ -226,7 +226,7 @@ export class AppResources {
                   />
                 </div>
               </div>
-              <div class="col-sm-12 col-md-8 col-lg-6">
+              <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="container">
                   <div class="">
                     <form

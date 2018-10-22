@@ -76,6 +76,12 @@
 
   .container-error {
     height: 120px;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
   }
 
   .error-robot {
@@ -159,6 +165,10 @@
 
     &.left-side {
       grid-template-columns: 0.5fr 1fr;
+      @include media-breakpoint-down(sm) {
+        grid-template-columns: none;
+      }
+
       .text-img-container-text {
         margin-right: 10px;
         h2 {
