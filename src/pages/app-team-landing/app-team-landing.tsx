@@ -33,6 +33,7 @@ export class AppTeamLanding {
         'Copywriting',
       ],
       team: 'design',
+      backgroundPhoto: '/assets/bios-background-rachel.jpg',
     },
     'geoffery-melle': {
       firstname: 'Geoffery',
@@ -50,6 +51,7 @@ export class AppTeamLanding {
         'Dog Whispering',
       ],
       team: 'management',
+      backgroundPhoto: '/assets/team-landing-header.jpg',
     },
     'joni-lehto': {
       firstname: 'Joni',
@@ -71,6 +73,7 @@ export class AppTeamLanding {
         'React',
       ],
       team: 'development',
+      backgroundPhoto: '/assets/team-landing-header.jpg',
     },
     'paulina-gallo': {
       firstname: 'Paulina',
@@ -93,6 +96,7 @@ export class AppTeamLanding {
         'Project Management',
       ],
       team: 'development',
+      backgroundPhoto: '/assets/bios-background-paulina.png',
     },
     'fernando-del-olmo': {
       firstname: 'Fernando',
@@ -112,6 +116,7 @@ export class AppTeamLanding {
         'Frontend Development',
       ],
       team: 'development',
+      backgroundPhoto: '/assets/team-landing-header.jpg',
     },
     'william-holloran': {
       firstname: 'William',
@@ -130,6 +135,7 @@ export class AppTeamLanding {
         'Sense of Humor',
       ],
       team: 'management',
+      backgroundPhoto: '/assets/bios-background-billy.jpg',
     },
     'luis-chacon': {
       firstname: 'Luis',
@@ -147,6 +153,7 @@ export class AppTeamLanding {
         'Video Game Development',
       ],
       team: 'development',
+      backgroundPhoto: '/assets/team-landing-header.jpg',
     },
     'claudio-del-valle': {
       firstname: 'Claudio',
@@ -167,6 +174,7 @@ export class AppTeamLanding {
         'Doer',
       ],
       team: 'development',
+      backgroundPhoto: '/assets/team-landing-header.jpg',
     },
     'ethan-bohan': {
       firstname: 'Ethan',
@@ -185,6 +193,7 @@ export class AppTeamLanding {
         'Adobe Creative Suite',
       ],
       team: 'design',
+      backgroundPhoto: '/assets/bios-background-ethan.jpg',
     },
     'dhairya-pujara': {
       firstname: 'Dhairya',
@@ -204,6 +213,35 @@ export class AppTeamLanding {
         'Brand Positioning',
       ],
       team: 'consultant',
+      backgroundPhoto: '/assets/team-landing-header.jpg',
+    },
+    'ted-grant': {
+      firstname: 'Ted',
+      surname: 'Grant',
+      title: translate('home.member.title.designer'),
+      headerText:
+        'Ted grew up in Westchester, New York and Atlanta, Georgia. He is a Junior attending Drexel University in Philadelphia, pursuing a degree in Game Design and Production, and is on a co-op with OpenForge. He enjoys working with 3D modeling, 2D art, and pen-and-paper games.',
+      bodyText:
+        "As a designer, Ted uses his experience in visual design and eye for user-flow to help make a product that is visually pleasing and tactually smooth. Thanks to Drexel's rapid-fire scheduling, he is adaptable and quick to learn new skills, healping to ease collaborators' work and get projects done faster.",
+      skills: [
+        'UI/UX Design',
+        'Adobe Creative Suite',
+        'Sketch',
+        'Autodesk applications',
+        'Unity',
+      ],
+      team: 'design',
+      backgroundPhoto: '/assets/bios-background-ted.png',
+    },
+    'kevon-chambers': {
+      firstname: 'Kevon',
+      surname: 'Chambers',
+      title: translate('home.member.title.marketing'),
+      headerText: '',
+      bodyText: '',
+      skills: [],
+      team: 'design',
+      backgroundPhoto: '/assets/bios-background-kevon.png',
     },
     'young-song': {
       firstname: 'Young',
@@ -261,7 +299,9 @@ export class AppTeamLanding {
         <header
           class="hero"
           style={{
-            'background-image': `url('/assets/team-landing-header.jpg')`,
+            'background-image': `url(${
+              this.data[this.match.params.member].backgroundPhoto
+            })`,
           }}
         >
           <div class="overlay" />
