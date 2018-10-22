@@ -204,6 +204,17 @@ export class AppTeamLanding {
       ],
       team: 'consultant',
     },
+    'sam-hudgens': {
+      firstname: 'Sam',
+      surname: 'Hudgens',
+      title: translate('home.member.title.intern'),
+      headerText:
+        'Sam is originally from Montgomery, Alabama. He studied Chinese and Business Administration at the University of Southern California in Los Angeles with plans of going into finance, but decided on a career change into tech at the last minute. He attended a programming bootcamp after graduating college and ended up in Philadelphia. Sam likes learning both computer languages and human languages.',
+      bodyText:
+        'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
+      team: 'intern',
+    },
   };
 
   chips;
