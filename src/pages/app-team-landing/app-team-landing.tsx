@@ -218,7 +218,7 @@ export class AppTeamLanding {
     'ted-grant': {
       firstname: 'Ted',
       surname: 'Grant',
-      title: translate('home.member.title.designer'),
+      title: translate('about.meet.member.title.designer'),
       headerText:
         'Ted grew up in Westchester, New York and Atlanta, Georgia. He is a Junior attending Drexel University in Philadelphia, pursuing a degree in Game Design and Production, and is on a co-op with OpenForge. He enjoys working with 3D modeling, 2D art, and pen-and-paper games.',
       bodyText:
@@ -236,7 +236,7 @@ export class AppTeamLanding {
     'kevon-chambers': {
       firstname: 'Kevon',
       surname: 'Chambers',
-      title: translate('home.member.title.marketing'),
+      title: translate('about.meet.member.title.marketing'),
       headerText: '',
       bodyText: '',
       skills: [],
