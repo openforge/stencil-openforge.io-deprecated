@@ -713,6 +713,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppServiceLevelAgreement {
+
+    }
+  }
+
+  interface HTMLAppServiceLevelAgreementElement extends StencilComponents.AppServiceLevelAgreement, HTMLStencilElement {}
+
+  var HTMLAppServiceLevelAgreementElement: {
+    prototype: HTMLAppServiceLevelAgreementElement;
+    new (): HTMLAppServiceLevelAgreementElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  interface ElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-service-level-agreement': JSXElements.AppServiceLevelAgreementAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppServiceLevelAgreementAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppTeamLanding {
       'match': MatchResults;
     }
