@@ -95,6 +95,7 @@ export const translations = {
             consultant: 'Consultant',
             officer: 'Chief Happiness Officer',
             softwareIntern: 'Software Intern',
+            marketing: 'Marketing',
           },
         },
       },

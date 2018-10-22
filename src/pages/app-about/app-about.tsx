@@ -19,7 +19,6 @@ export class AppAbout {
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
-      url: '',
     },
     {
       name: 'Rachel Bennett',
@@ -46,7 +45,6 @@ export class AppAbout {
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
       github: '',
-      url: '/team-landing/joni-lehto',
     },
     {
       name: 'Auvo Severinkangas',
@@ -55,11 +53,10 @@ export class AppAbout {
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
-      url: '',
     },
     {
       name: 'Paulina Gallo',
-      image: './../../assets/headshot-paulina.jpg',
+      image: './../../assets/headshot-paulina.png',
       title: translate('about.meet.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
@@ -73,7 +70,6 @@ export class AppAbout {
       mail: 'meredith@openforge.io',
       twitter: '',
       github: 'https://github.com/mmalcorn',
-      url: '',
     },
     {
       name: 'Fernando Del Olmo',
@@ -82,11 +78,10 @@ export class AppAbout {
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
-      url: '/team-landing/fernando-del-olmo',
     },
     {
       name: 'William Holloran',
-      image: './../../assets/headshot-billy.jpg',
+      image: './../../assets/headshot-billy.png',
       title: translate('about.meet.member.title.projectManager'),
       mail: 'william@openforge.io',
       url: '/team-landing/william-holloran',
@@ -98,7 +93,6 @@ export class AppAbout {
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
-      url: '/team-landing/luis-chacon',
     },
     {
       name: 'Claudio Del Valle',
@@ -107,7 +101,6 @@ export class AppAbout {
       mail: 'claudio@openforge.io',
       titter: '',
       github: 'https://github.com/daftclaud',
-      url: '/team-landing/claudio-del-valle',
     },
     {
       name: 'Ethan Bohan',
@@ -121,7 +114,7 @@ export class AppAbout {
     {
       name: 'Ted Grant',
       image: '/assets/headshot-ted.png',
-      title: translate('home.member.title.designer'),
+      title: translate('about.meet.member.title.designer'),
       mail: 'ted@openforge.io',
       twitter: '',
       github: '',
@@ -130,11 +123,10 @@ export class AppAbout {
     {
       name: 'Kevon Chambers',
       image: '/assets/headshot-kevon.png',
-      title: translate('home.member.title.marketing'),
+      title: translate('about.meet.member.title.marketing'),
       mail: 'kevon@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/kevon-chambers',
     },
     {
       name: 'Eli',
@@ -163,11 +155,10 @@ export class AppAbout {
       mail: '',
       twitter: 'https://twitter.com/dhairyapujara',
       github: '',
-      url: '/team-landing/dhairya-pujara',
     },
     {
       name: 'Young Song',
-      image: './../../assets/young-avarta.jpg',
+      image: './../../assets/headshot-young.jpg',
       title: translate('about.meet.member.title.softwareIntern'),
       mail: '',
       twitter: 'https://twitter.com/YoungSongJS',
@@ -176,7 +167,7 @@ export class AppAbout {
     },
     {
       name: 'Sam Hudgens',
-      image: './../../assets/headshot-sam.png',
+      image: './../../assets/headshot-sam.jpg',
       title: translate('about.meet.member.title.softwareIntern'),
       mail: 'sam@openforge.io',
       twitter: '',

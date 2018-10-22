@@ -51,7 +51,7 @@ export class AppTeamLanding {
         'Dog Whispering',
       ],
       team: 'management',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-geoff.jpg',
     },
     'joni-lehto': {
       firstname: 'Joni',
@@ -218,7 +218,7 @@ export class AppTeamLanding {
     'ted-grant': {
       firstname: 'Ted',
       surname: 'Grant',
-      title: translate('home.member.title.designer'),
+      title: translate('about.meet.member.title.designer'),
       headerText:
         'Ted grew up in Westchester, New York and Atlanta, Georgia. He is a Junior attending Drexel University in Philadelphia, pursuing a degree in Game Design and Production, and is on a co-op with OpenForge. He enjoys working with 3D modeling, 2D art, and pen-and-paper games.',
       bodyText:
@@ -236,7 +236,7 @@ export class AppTeamLanding {
     'kevon-chambers': {
       firstname: 'Kevon',
       surname: 'Chambers',
-      title: translate('home.member.title.marketing'),
+      title: translate('about.meet.member.title.marketing'),
       headerText: '',
       bodyText: '',
       skills: [],
@@ -253,6 +253,7 @@ export class AppTeamLanding {
         'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
       skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
       team: 'development',
+      backgroundPhoto: '/assets/bios-background-young.jpg',
     },
     'sam-hudgens': {
       firstname: 'Sam',
@@ -264,6 +265,7 @@ export class AppTeamLanding {
         'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
       skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
       team: 'development',
+      backgroundPhoto: '/assets/bios-background-sam.jpg',
     },
     casey: {
       firstname: 'Casey',
@@ -282,7 +284,8 @@ export class AppTeamLanding {
         'Barking',
         'Whinning',
       ],
-      team: 'management',
+      team: 'pet',
+      backgroundPhoto: '/assets/bios-background-casey.jpg',
     },
   };
 
