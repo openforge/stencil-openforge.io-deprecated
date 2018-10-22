@@ -647,6 +647,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppJuntoscope {
+
+    }
+  }
+
+  interface HTMLAppJuntoscopeElement extends StencilComponents.AppJuntoscope, HTMLStencilElement {}
+
+  var HTMLAppJuntoscopeElement: {
+    prototype: HTMLAppJuntoscopeElement;
+    new (): HTMLAppJuntoscopeElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-juntoscope': HTMLAppJuntoscopeElement;
+  }
+  interface ElementTagNameMap {
+    'app-juntoscope': HTMLAppJuntoscopeElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-juntoscope': JSXElements.AppJuntoscopeAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppJuntoscopeAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppOpportunities {
       'errorIconStyles': any;
       'match': MatchResults;
@@ -674,6 +707,39 @@ declare global {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
       'match'?: MatchResults;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppServiceLevelAgreement {
+
+    }
+  }
+
+  interface HTMLAppServiceLevelAgreementElement extends StencilComponents.AppServiceLevelAgreement, HTMLStencilElement {}
+
+  var HTMLAppServiceLevelAgreementElement: {
+    prototype: HTMLAppServiceLevelAgreementElement;
+    new (): HTMLAppServiceLevelAgreementElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  interface ElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-service-level-agreement': JSXElements.AppServiceLevelAgreementAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppServiceLevelAgreementAttributes extends HTMLAttributes {
+
     }
   }
 }

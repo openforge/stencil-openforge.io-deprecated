@@ -1,0 +1,86 @@
+.service-level-agreement {
+  // hero
+  .hero {
+    background-image: url('/assets/sla-background-header.png');
+    background-position: top center;
+    background-size: cover;
+    height: 100vh;
+
+    .container,
+    .row {
+      height: 100%;
+    }
+
+    h2 {
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 3rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        font-size: 2.2rem;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+
+      @include media-breakpoint-down(lg) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .sla-content {
+    padding-top: 6rem;
+    .sla-headers {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    hr {
+      width: 100%;
+      margin: 0;
+      border-color: $gray-500;
+    }
+
+    .sla-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 20px;
+
+      h3 {
+        text-transform: uppercase;
+        color: $orange;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .sla-detail ul {
+        padding-left: 10px;
+
+        p {
+          margin-bottom: 0;
+          font-size: 14px;
+        }
+      }
+    }
+
+    p.top-link {
+      margin-top: 15px;
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1.6px;
+      text-align: center;
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+}
