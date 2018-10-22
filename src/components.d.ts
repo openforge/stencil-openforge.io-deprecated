@@ -746,6 +746,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppResources {
+      'errorIconStyles': any;
+    }
+  }
+
+  interface HTMLAppResourcesElement extends StencilComponents.AppResources, HTMLStencilElement {}
+
+  var HTMLAppResourcesElement: {
+    prototype: HTMLAppResourcesElement;
+    new (): HTMLAppResourcesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-resources': HTMLAppResourcesElement;
+  }
+  interface ElementTagNameMap {
+    'app-resources': HTMLAppResourcesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-resources': JSXElements.AppResourcesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppResourcesAttributes extends HTMLAttributes {
+      'errorIconStyles'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppServiceLevelAgreement {
 
     }
@@ -836,6 +869,39 @@ declare global {
   }
   namespace JSXElements {
     export interface AppToolboxAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppTos {
+
+    }
+  }
+
+  interface HTMLAppTosElement extends StencilComponents.AppTos, HTMLStencilElement {}
+
+  var HTMLAppTosElement: {
+    prototype: HTMLAppTosElement;
+    new (): HTMLAppTosElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-tos': HTMLAppTosElement;
+  }
+  interface ElementTagNameMap {
+    'app-tos': HTMLAppTosElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-tos': JSXElements.AppTosAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTosAttributes extends HTMLAttributes {
 
     }
   }

@@ -96,7 +96,9 @@ section.team-landing {
         @include media-breakpoint-down(sm) {
           text-align: center;
 
-          h2, h4, p {
+          h2,
+          h4,
+          p {
             text-align: center;
           }
         }

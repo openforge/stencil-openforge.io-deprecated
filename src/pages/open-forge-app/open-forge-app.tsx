@@ -46,11 +46,13 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
+          <stencil-route url="/resources" component="app-resources" />
           <stencil-route
             url="/team-landing/:member"
             component="app-team-landing"
           />
           <stencil-route url="/juntoscope" component="app-juntoscope" />
+          <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route
             url="/service-level-agreement"
             component="app-service-level-agreement"
