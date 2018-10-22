@@ -59,7 +59,7 @@ export class AppAbout {
     },
     {
       name: 'Paulina Gallo',
-      image: './../../assets/headshot-paulina.jpg',
+      image: './../../assets/headshot-paulina.png',
       title: translate('about.meet.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
@@ -86,7 +86,7 @@ export class AppAbout {
     },
     {
       name: 'William Holloran',
-      image: './../../assets/headshot-billy.jpg',
+      image: './../../assets/headshot-billy.png',
       title: translate('about.meet.member.title.projectManager'),
       mail: 'william@openforge.io',
       url: '/team-landing/william-holloran',
