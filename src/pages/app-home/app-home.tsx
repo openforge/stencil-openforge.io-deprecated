@@ -8,14 +8,22 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop() history: RouterHistory;
+  @Prop()
+  history: RouterHistory;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   members: any[];
   isMobile = navigator.userAgent.match(
     /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
   );
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
   }
 
   scrollToForm() {

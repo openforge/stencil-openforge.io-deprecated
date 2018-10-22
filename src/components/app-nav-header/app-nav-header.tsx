@@ -135,6 +135,15 @@ export class AppNavHeader {
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/toolbox"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  Toolbox
+                </stencil-route-link>
+              </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
                   class="nav-link"
                   href="https://github.com/openforge"

@@ -8,7 +8,10 @@ declare var fbq;
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop() match: MatchResults;
+  @Prop()
+  match: MatchResults;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
 
   @State()
   imgs = {
@@ -52,8 +55,10 @@ export class AppDetailedService {
     },
   };
 
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
+  @State()
+  formSubmitted = false;
+  @State()
+  formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -64,10 +69,14 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() messageError: string;
-  @State() isDisabled = true;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  messageError: string;
+  @State()
+  isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -79,7 +88,11 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
     this.resetFormValues();
   }
 
@@ -302,25 +315,31 @@ export class AppDetailedService {
             <div class="container">
               <div class="row">
                 <div class="image-column col-sm-12 col-md-4">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].toolbox.first}
-                    alt=""
-                  />
+                  <stencil-route-link url="/toolbox" exact={true}>
+                    <app-img
+                      class="img-fluid d-none d-md-inline"
+                      src={this.imgs[this.match.params.service].toolbox.first}
+                      alt=""
+                    />
+                  </stencil-route-link>
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].toolbox.second}
-                    alt=""
-                  />
+                  <stencil-route-link url="/toolbox" exact={true}>
+                    <app-img
+                      class="img-fluid d-none d-md-inline"
+                      src={this.imgs[this.match.params.service].toolbox.second}
+                      alt=""
+                    />
+                  </stencil-route-link>
                 </div>
                 <div class="image-column col-sm-12 col-md-4">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].toolbox.third}
-                    alt=""
-                  />
+                  <stencil-route-link url="/toolbox" exact={true}>
+                    <app-img
+                      class="img-fluid d-none d-md-inline"
+                      src={this.imgs[this.match.params.service].toolbox.third}
+                      alt=""
+                    />
+                  </stencil-route-link>
                 </div>
               </div>
             </div>

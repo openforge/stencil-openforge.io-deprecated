@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
@@ -8,11 +8,14 @@ declare var fbq;
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   members = [
     {
       name: 'Jedi Weller',
-      image: '/assets/headshot-jedi.jpg',
-      title: translate('home.member.title.founder'),
+      image: './../../assets/headshot-jedi.jpg',
+      title: translate('about.meet.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
@@ -20,8 +23,8 @@ export class AppAbout {
     },
     {
       name: 'Rachel Bennett',
-      image: '/assets/headshot-rachel.jpg',
-      title: translate('home.member.title.designer'),
+      image: './../../assets/headshot-rachel.jpg',
+      title: translate('about.meet.member.title.designer'),
       mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
@@ -29,8 +32,8 @@ export class AppAbout {
     },
     {
       name: 'Geoffrey Melle',
-      image: '/assets/headshot-geoff.jpg',
-      title: translate('home.member.title.accountManager'),
+      image: './../../assets/headshot-geoff.jpg',
+      title: translate('about.meet.member.title.accountManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
@@ -38,8 +41,8 @@ export class AppAbout {
     },
     {
       name: 'Joni Lehto',
-      image: '/assets/headshot-joni.jpg',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-joni.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
       github: '',
@@ -47,8 +50,8 @@ export class AppAbout {
     },
     {
       name: 'Auvo Severinkangas',
-      image: '/assets/headshot-auvo.jpg',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-auvo.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
@@ -56,8 +59,8 @@ export class AppAbout {
     },
     {
       name: 'Paulina Gallo',
-      image: '/assets/headshot-paulina.png',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-paulina.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
@@ -65,8 +68,8 @@ export class AppAbout {
     },
     {
       name: 'Meredith Alcorn',
-      image: '/assets/headshot-meredith.jpg',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-meredith.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'meredith@openforge.io',
       twitter: '',
       github: 'https://github.com/mmalcorn',
@@ -74,8 +77,8 @@ export class AppAbout {
     },
     {
       name: 'Fernando Del Olmo',
-      image: '/assets/headshot-fernando.jpg',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-fernando.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
@@ -83,15 +86,15 @@ export class AppAbout {
     },
     {
       name: 'William Holloran',
-      image: '/assets/headshot-billy.png',
-      title: translate('home.member.title.projectManager'),
+      image: './../../assets/headshot-billy.jpg',
+      title: translate('about.meet.member.title.projectManager'),
       mail: 'william@openforge.io',
       url: '/team-landing/william-holloran',
     },
     {
       name: 'Luis Chacon',
-      image: '/assets/headshot-luis.jpg',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-luis.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
@@ -99,8 +102,8 @@ export class AppAbout {
     },
     {
       name: 'Claudio Del Valle',
-      image: '/assets/headshot-claudio.jpg',
-      title: translate('home.member.title.developer'),
+      image: './../../assets/headshot-claudio.jpg',
+      title: translate('about.meet.member.title.developer'),
       mail: 'claudio@openforge.io',
       titter: '',
       github: 'https://github.com/daftclaud',
@@ -108,8 +111,8 @@ export class AppAbout {
     },
     {
       name: 'Ethan Bohan',
-      image: '/assets/headshot-ethan.jpg',
-      title: translate('home.member.title.designer'),
+      image: './../../assets/headshot-ethan.jpg',
+      title: translate('about.meet.member.title.designer'),
       mail: 'ethan@openforge.io',
       twitter: '',
       github: '',
@@ -155,12 +158,39 @@ export class AppAbout {
     },
     {
       name: 'Dhairya Pujara',
-      image: '/assets/headshot-dhairya.jpg',
-      title: translate('home.member.title.consultant'),
+      image: './../../assets/headshot-dhairya.jpg',
+      title: translate('about.meet.member.title.consultant'),
       mail: '',
       twitter: 'https://twitter.com/dhairyapujara',
       github: '',
       url: '/team-landing/dhairya-pujara',
+    },
+    {
+      name: 'Young Song',
+      image: './../../assets/young-avarta.jpg',
+      title: translate('about.meet.member.title.softwareIntern'),
+      mail: '',
+      twitter: 'https://twitter.com/YoungSongJS',
+      github: 'https://github.com/Hogusong',
+      url: '/team-landing/young-song',
+    },
+    {
+      name: 'Sam Hudgens',
+      image: './../../assets/headshot-sam.png',
+      title: translate('about.meet.member.title.softwareIntern'),
+      mail: 'sam@openforge.io',
+      twitter: '',
+      github: 'https://github.com/samhudgens',
+      url: '/team-landing/sam-hudgens',
+    },
+    {
+      name: 'Casey',
+      image: './../../assets/headshot-casey.jpg',
+      title: translate('about.meet.member.title.officer'),
+      mail: '',
+      twitter: '',
+      github: '',
+      url: '/team-landing/casey',
     },
     {
       name: 'YOU?',
@@ -174,7 +204,11 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
   }
 
   scrollToForm() {
@@ -190,11 +224,11 @@ export class AppAbout {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-9 col-md-8 col-lg-9">
-                <h2>We Are Passionate About Technology and Design</h2>
+                <h2>
+                  <app-translate key="about.title" />
+                </h2>
                 <p>
-                  We believe that your success is our success. We're here to
-                  challenge your assumptions and help you discover your web or
-                  mobile applications full potential.
+                  <app-translate key="about.text" />
                 </p>
                 <button
                   onClick={this.scrollToForm.bind(this)}
@@ -211,11 +245,11 @@ export class AppAbout {
         <section id="about-section" class="about bg-gray">
           <div class="container">
             <div class="about--header">
-              <h2>Meet the Team</h2>
+              <h2>
+                <app-translate key="about.meet.header" />
+              </h2>
               <p>
-                There's no doubt that our team is made up of brilliant and
-                talented individuals who are passionate about technology and
-                design thinking. Together we design, code, grow, and evolve.
+                <app-translate key="about.meet.text" />
               </p>
             </div>
 
