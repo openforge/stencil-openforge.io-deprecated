@@ -134,14 +134,36 @@ export class AppNavHeader {
                   {translate('nav.links.contact')}
                 </stencil-route-link>
               </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/opportunities"
-                  anchorClass="nav-link"
-                  activeClass="active"
+              <li
+                class="nav-item dropdown"
+                data-target="#navbarSupportedContent"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
                 >
                   {translate('nav.links.opportunities')}
-                </stencil-route-link>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link
+                    url="/opportunities/develop"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Develop
+                  </stencil-route-link>
+                  <stencil-route-link
+                    url="/opportunities/design"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Design
+                  </stencil-route-link>
+                </div>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
