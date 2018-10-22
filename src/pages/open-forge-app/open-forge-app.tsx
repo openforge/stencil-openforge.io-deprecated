@@ -50,6 +50,7 @@ export class OpenForgeApp {
             component="app-team-landing"
           />
           <stencil-route url="/juntoscope" component="app-juntoscope" />
+          <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route
             url="/service-level-agreement"
             component="app-service-level-agreement"
