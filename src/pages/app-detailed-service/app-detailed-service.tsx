@@ -10,6 +10,8 @@ declare var fbq;
 export class AppDetailedService {
   @Prop()
   match: MatchResults;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
 
   @State()
   imgs = {
@@ -86,7 +88,11 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
     this.resetFormValues();
   }
 

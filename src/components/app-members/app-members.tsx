@@ -34,17 +34,19 @@ export class AppMembers {
             }
             return (
               <figure class="member">
-                <app-img
-                  class="member--image"
-                  src={member.image}
-                  alt={member.name}
-                />
-                <div class="member--overlay">
-                  <figcaption class="member--text">
-                    <span class="">{member.name}</span>
-                    <span class="">{member.title}</span>
-                  </figcaption>
-                </div>
+                <stencil-route-link url={member.url} exact={true}>
+                  <app-img
+                    class="member--image"
+                    src={member.image}
+                    alt={member.name}
+                  />
+                  <div class="member--overlay">
+                    <figcaption class="member--text">
+                      <span class="">{member.name}</span>
+                      <span class="">{member.title}</span>
+                    </figcaption>
+                  </div>
+                </stencil-route-link>
               </figure>
             );
           }

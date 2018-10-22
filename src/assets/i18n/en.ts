@@ -89,6 +89,7 @@ export const translations = {
           frontEndDeveloper: 'Front End Developer',
           projectManager: 'Project Manager / QA Engineer',
           consultant: 'Consultant',
+          softwareIntern: 'Software Intern',
         },
       },
     },

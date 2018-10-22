@@ -38,6 +38,8 @@ export class AppContact {
   @State()
   isDisabled = true;
 
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -60,8 +62,12 @@ export class AppContact {
   }
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
-    fbq('track', 'Lead');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+      fbq('track', 'Lead');
+    }
     this.resetFormValues();
   }
 
@@ -127,7 +133,11 @@ export class AppContact {
         }
       );
 
-      fbq('track', 'CompleteRegistration');
+      // isServer is false when running in the browser
+      // and true when being prerendered
+      if (!this.isServer) {
+        fbq('track', 'CompleteRegistration');
+      }
 
       event.target.reset();
       this.resetFormValues();
