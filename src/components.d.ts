@@ -746,6 +746,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppResources {
+      'errorIconStyles': any;
+    }
+  }
+
+  interface HTMLAppResourcesElement extends StencilComponents.AppResources, HTMLStencilElement {}
+
+  var HTMLAppResourcesElement: {
+    prototype: HTMLAppResourcesElement;
+    new (): HTMLAppResourcesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-resources': HTMLAppResourcesElement;
+  }
+  interface ElementTagNameMap {
+    'app-resources': HTMLAppResourcesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-resources': JSXElements.AppResourcesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppResourcesAttributes extends HTMLAttributes {
+      'errorIconStyles'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppServiceLevelAgreement {
 
     }

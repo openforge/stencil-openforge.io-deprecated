@@ -5,7 +5,8 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'app-members.scss',
 })
 export class AppMembers {
-  @Prop() members: any[];
+  @Prop()
+  members: any[];
 
   render() {
     return (

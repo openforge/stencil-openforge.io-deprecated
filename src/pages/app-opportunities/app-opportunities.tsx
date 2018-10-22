@@ -36,19 +36,31 @@ export class AppOpportunities {
     };
   };
 
-  @State() fileError: any;
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() phoneError: string;
-  @State() githubError: string;
-  @State() messageError: string;
+  @State()
+  fileError: any;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  phoneError: string;
+  @State()
+  githubError: string;
+  @State()
+  messageError: string;
 
-  @State() interviewButtonDisabled: boolean = true;
-  @State() submitButtonDisabled: boolean = true;
-  @State() canRequestInterview: boolean = false;
-  @State() formSubmitting: boolean = false;
-  @State() formSubmitted: boolean = false;
-  @State() fileSizeErrorShown: boolean = false;
+  @State()
+  interviewButtonDisabled: boolean = true;
+  @State()
+  submitButtonDisabled: boolean = true;
+  @State()
+  canRequestInterview: boolean = false;
+  @State()
+  formSubmitting: boolean = false;
+  @State()
+  formSubmitted: boolean = false;
+  @State()
+  fileSizeErrorShown: boolean = false;
 
   @Prop({ context: 'isServer' })
   private isServer: boolean;

@@ -322,6 +322,50 @@ export const translations = {
       },
     },
 
+    resources: {
+      hero: {
+        title: 'What is a PWA and is it right for you?',
+        text:
+          'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.',
+        title1: 'Check Out the Awesome stuff we made with PWAs',
+        text1:
+          "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
+      },
+      form: {
+        fullName: 'Full Name',
+        industry: 'Industry',
+        email: 'E-mail',
+        organization: 'Organization',
+        button: {
+          send: 'Download',
+        },
+        error: {
+          fullName: 'Oops! You forgot your full name.',
+          industry: 'Oops! You forgot your industry.',
+          email: 'Oops! You forgot your e-mail.',
+          organization: 'Oops! You forgot your organization.',
+          endText: 'Please input all form fields to download the white paper!',
+        },
+      },
+      downloadinfo: {
+        title: "HERE'S WHAT IS INSIDE",
+        subtitle:
+          "A business owner's perspective on the benefits of PWAs (Progressive Web Apps)",
+        list: {
+          first: 'What a PWA is and what companies are using them',
+          second: 'Learn how a PWA can decrease several costs',
+          third: 'Discovery how a PWA increases user engagement',
+          fourth: 'Understand the features and benefits of a PWA',
+        },
+        footer:
+          "Switching to a PWA can take your business to the next level and improve the performance of your business's digital engagement",
+      },
+      enjoy: 'Enjoy!',
+      enjoysub: 'Expand Your PWA Knowledge',
+      thanks:
+        'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
+    },
+
     header: {
       scrollText: 'Scroll to content',
     },

@@ -8,7 +8,8 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop() history: RouterHistory;
+  @Prop()
+  history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 

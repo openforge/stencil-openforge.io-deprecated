@@ -7,7 +7,8 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  @Prop() match: MatchResults;
+  @Prop()
+  match: MatchResults;
 
   @State()
   chips;

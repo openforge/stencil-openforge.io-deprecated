@@ -8,8 +8,10 @@ declare var fbq;
   styleUrl: 'app-contact.scss',
 })
 export class AppContact {
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
+  @State()
+  formSubmitted = false;
+  @State()
+  formSubmitting = false;
 
   @State()
   formValues: {
@@ -24,12 +26,17 @@ export class AppContact {
     messageValid: false;
   };
 
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() phoneError: string;
-  @State() messageError: string;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  phoneError: string;
+  @State()
+  messageError: string;
 
-  @State() isDisabled = true;
+  @State()
+  isDisabled = true;
 
   @Prop({ context: 'isServer' })
   private isServer: boolean;
