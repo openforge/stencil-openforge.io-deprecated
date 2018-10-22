@@ -5,6 +5,11 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
+  scrollToTop() {
+    const form = document.getElementsByTagName('header')[0];
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
   render() {
     return (
       <div class="case-study">
@@ -98,8 +103,8 @@ export class AppCaseStudy {
                   </div>
                 </div>
               </div>
-              <div>&nbsp;</div>
-              <div class="timeline-wrapper">&nbsp;</div>
+              <div class="blank-cell">&nbsp;</div>
+              <div class="timeline-wrapper blank-cell">&nbsp;</div>
               <div class="timeline-item right timeline-bullet-right">
                 <app-img
                   class=""
@@ -132,8 +137,8 @@ export class AppCaseStudy {
                   </div>
                 </div>
               </div>
-              <div>&nbsp;</div>
-              <div class="timeline-wrapper">&nbsp;</div>
+              <div class="blank-cell">&nbsp;</div>
+              <div class="timeline-wrapper blank-cell">&nbsp;</div>
               <div class="timeline-item right timeline-bullet-right">
                 <app-img
                   class=""
@@ -151,7 +156,7 @@ export class AppCaseStudy {
               </div>
             </div>
             <div class="final-timeline-item">
-              <div>&nbsp;</div>
+              <div class="blank-cell">&nbsp;</div>
               <div class="timeline-item">
                 <app-img
                   class=""
@@ -160,7 +165,7 @@ export class AppCaseStudy {
                 />
                 <div class="timeline-item-content">Launch!</div>
               </div>
-              <div>&nbsp;</div>
+              <div class="blank-cell">&nbsp;</div>
             </div>
           </div>
         </section>
@@ -234,7 +239,9 @@ export class AppCaseStudy {
             seamless. This has had a lasting impact on the quality of apps that
             we produce for our clients and ultimately has made us a better team.
           </p>
-          <p class="top-link">Back to top</p>
+          <p class="top-link" onClick={this.scrollToTop.bind(this)}>
+            Back to top
+          </p>
         </section>
         <app-footer />
       </div>
