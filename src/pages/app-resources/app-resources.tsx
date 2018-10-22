@@ -191,7 +191,7 @@ export class AppResources {
         this.emailError ||
         this.industryError ||
         this.organizationError ? (
-          <div class="container">
+          <div class="container-error">
             <section id="error-section" class="error-robot">
               <div class="row align-items-center">
                 <div class="col-sm-12 col-md-12 col-lg-12 center">

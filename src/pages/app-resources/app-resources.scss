@@ -56,13 +56,13 @@
   }
 
   .changed-bkg {
-    background-image: url('/assets/services-development-header.jpg');
+    background-image: url('/assets/resources-thank-you-header.jpg');
 
     @include media-breakpoint-down(md) {
-      background-image: url('/assets/services-development-header.jpg');
+      background-image: url('/assets/resources-thank-you-header.jpg');
     }
     @include media-breakpoint-down(sm) {
-      background-image: url('/assets/services-development-header.jpg');
+      background-image: url('/assets/resources-thank-you-header.jpg');
     }
   }
 
@@ -74,15 +74,24 @@
     }
   }
 
+  .container-error {
+    height: 120px;
+  }
+
   .error-robot {
     margin-top: 2rem;
-    margin-bottom: -114px;
+    margin-bottom: -136px;
     padding: 1rem 7rem 0;
 
     background-image: url('/assets/resources-error-robot.png');
     background-position: top center;
     background-repeat: no-repeat;
-    height: 62vh;
+    height: 290px;
+
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 100;
 
     @include media-breakpoint-down(sm) {
       padding: 1rem 3rem 0;
