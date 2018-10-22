@@ -66,11 +66,6 @@ export const translations = {
         text:
           'Our individual skills, backgrounds, and life experiences have shaped us into the company that we are today. Maintaining a diverse team helps us to perform better, attract top talent, and make smarter decisions.',
       },
-      about: {
-        title: 'Meet the Team',
-        text:
-          "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
-      },
       partners: {
         title: 'Our Industry Partners',
         text:
@@ -88,9 +83,30 @@ export const translations = {
           developer: 'Software Engineer',
           frontEndDeveloper: 'Front End Developer',
           projectManager: 'Project Manager / QA Engineer',
-          consultant: 'Consultant'
+          consultant: 'Consultant',
+          officer: 'Chief Happiness Officer'
         },
       },
+    },
+    about: {
+      title: 'We Are Passionate About Technology and Design',
+      text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
+      meet: {
+        header: 'Meet the Team',
+        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        member: {
+          title: {
+            founder: 'Founder and Head of Technology',
+            accountManager: 'Account Manager',
+            designer: 'Designer',
+            developer: 'Software Engineer',
+            frontEndDeveloper: 'Front End Developer',
+            projectManager: 'Project Manager / QA Engineer',
+            consultant: 'Consultant',
+            officer: 'Chief Happiness Officer'
+          },
+        },
+      }
     },
     contact: {
       hero: {
