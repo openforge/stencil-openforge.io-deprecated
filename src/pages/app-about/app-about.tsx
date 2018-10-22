@@ -158,7 +158,7 @@ export class AppAbout {
     },
     {
       name: 'Young Song',
-      image: './../../assets/young-avarta.jpg',
+      image: './../../assets/headshot-young.jpg',
       title: translate('about.meet.member.title.softwareIntern'),
       mail: '',
       twitter: 'https://twitter.com/YoungSongJS',
@@ -167,7 +167,7 @@ export class AppAbout {
     },
     {
       name: 'Sam Hudgens',
-      image: './../../assets/headshot-sam.png',
+      image: './../../assets/headshot-sam.jpg',
       title: translate('about.meet.member.title.softwareIntern'),
       mail: 'sam@openforge.io',
       twitter: '',

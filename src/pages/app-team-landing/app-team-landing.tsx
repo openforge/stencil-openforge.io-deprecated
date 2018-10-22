@@ -51,7 +51,7 @@ export class AppTeamLanding {
         'Dog Whispering',
       ],
       team: 'management',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-geoff.jpg',
     },
     'joni-lehto': {
       firstname: 'Joni',
@@ -253,6 +253,7 @@ export class AppTeamLanding {
         'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
       skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
       team: 'development',
+      backgroundPhoto: '/assets/bios-background-young.jpg',
     },
     'sam-hudgens': {
       firstname: 'Sam',
@@ -264,6 +265,7 @@ export class AppTeamLanding {
         'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
       skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
       team: 'development',
+      backgroundPhoto: '/assets/bios-background-sam.jpg',
     },
     casey: {
       firstname: 'Casey',
@@ -282,7 +284,8 @@ export class AppTeamLanding {
         'Barking',
         'Whinning',
       ],
-      team: 'management',
+      team: 'pet',
+      backgroundPhoto: '/assets/bios-background-casey.jpg',
     },
   };
 
