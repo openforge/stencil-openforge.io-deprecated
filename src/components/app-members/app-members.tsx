@@ -5,14 +5,15 @@ import { Component, Prop } from '@stencil/core';
   styleUrl: 'app-members.scss',
 })
 export class AppMembers {
-  @Prop() members: any[];
+  @Prop()
+  members: any[];
 
   render() {
     return (
       <div class="team">
         {this.members.map(member => {
           if (!member.external) {
-            if (member.url !== '') {
+            if (member.url === '/opportunities') {
               return (
                 <figure class="member">
                   <stencil-route-link url={member.url} exact={true}>
@@ -33,17 +34,19 @@ export class AppMembers {
             }
             return (
               <figure class="member">
-                <app-img
-                  class="member--image"
-                  src={member.image}
-                  alt={member.name}
-                />
-                <div class="member--overlay">
-                  <figcaption class="member--text">
-                    <span class="">{member.name}</span>
-                    <span class="">{member.title}</span>
-                  </figcaption>
-                </div>
+                <stencil-route-link url={member.url} exact={true}>
+                  <app-img
+                    class="member--image"
+                    src={member.image}
+                    alt={member.name}
+                  />
+                  <div class="member--overlay">
+                    <figcaption class="member--text">
+                      <span class="">{member.name}</span>
+                      <span class="">{member.title}</span>
+                    </figcaption>
+                  </div>
+                </stencil-route-link>
               </figure>
             );
           }

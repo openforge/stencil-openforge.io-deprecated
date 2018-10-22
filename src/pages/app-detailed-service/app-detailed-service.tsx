@@ -8,7 +8,10 @@ declare var fbq;
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop() match: MatchResults;
+  @Prop()
+  match: MatchResults;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
 
   @State()
   imgs = {
@@ -52,8 +55,10 @@ export class AppDetailedService {
     },
   };
 
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
+  @State()
+  formSubmitted = false;
+  @State()
+  formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -64,10 +69,14 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() messageError: string;
-  @State() isDisabled = true;
+  @State()
+  nameError: string;
+  @State()
+  emailError: string;
+  @State()
+  messageError: string;
+  @State()
+  isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -79,7 +88,11 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
-    fbq('track', 'ViewContent');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
     this.resetFormValues();
   }
 
