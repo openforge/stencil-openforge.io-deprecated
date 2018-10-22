@@ -33,6 +33,7 @@ export class AppInput {
           id={this.id}
           maxlength={this.maxlength}
           required={this.required}
+          placeholder={this.placeholder}
           onInput={this.inputHandler.bind(this)}
         />
       </div>

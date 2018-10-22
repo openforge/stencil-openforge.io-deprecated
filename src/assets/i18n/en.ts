@@ -74,19 +74,7 @@ export const translations = {
       contact: {
         title: 'Ready to work with us?',
         link: 'Get in touch',
-      },
-      member: {
-        title: {
-          founder: 'Founder and Head of Technology',
-          accountManager: 'Account Manager',
-          designer: 'Designer',
-          developer: 'Software Engineer',
-          frontEndDeveloper: 'Front End Developer',
-          projectManager: 'Project Manager / QA Engineer',
-          consultant: 'Consultant',
-          officer: 'Chief Happiness Officer'
-        },
-      },
+      }
     },
     about: {
       title: 'We Are Passionate About Technology and Design',
@@ -103,7 +91,8 @@ export const translations = {
             frontEndDeveloper: 'Front End Developer',
             projectManager: 'Project Manager / QA Engineer',
             consultant: 'Consultant',
-            officer: 'Chief Happiness Officer'
+            officer: 'Chief Happiness Officer',
+            intern: "Software Intern"
           },
         },
       }

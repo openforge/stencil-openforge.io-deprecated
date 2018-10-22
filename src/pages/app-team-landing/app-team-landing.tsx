@@ -10,6 +10,7 @@ export class AppTeamLanding {
   @Prop() match: MatchResults;
 
   @State()
+  chips;
   data = {
     'rachel-bennett': {
       firstname: 'Rachel',
@@ -204,28 +205,36 @@ export class AppTeamLanding {
       ],
       team: 'consultant',
     }, 
-      'casey': {
-        firstname: 'Casey',
-        surname: '',
-        title: translate('about.meet.member.title.officer'),
-        headerText:
-          "Casey started her life out on the streets in the Kensignton section of Philadelphia where a good samaritan found her at just few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present. ",
-        bodyText:
-          "As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.",
-        skills: [
-          'Running',
-          'Jumping',
-          'Bone Chewing',
-          'Licking',
-          'Napping',
-          'Barking',
-          'Whinning'
-        ]
+    'sam-hudgens': {
+      firstname: 'Sam',
+      surname: 'Hudgens',
+      title: translate('about.meet.member.title.intern'),
+      headerText:
+        'Sam is originally from Montgomery, Alabama. He studied Chinese and Business Administration at the University of Southern California in Los Angeles with plans of going into finance, but decided on a career change into tech at the last minute. He attended a programming bootcamp after graduating college and ended up in Philadelphia. Sam likes learning both computer languages and human languages.',
+      bodyText:
+        'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+      skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
+      team: 'intern',
+    },
+    'casey': {
+      firstname: 'Casey',
+      surname: '',
+      title: translate('about.meet.member.title.officer'),
+      headerText:
+        "Casey started her life out on the streets in the Kensignton section of Philadelphia where a good samaritan found her at just few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present. ",
+      bodyText:
+        "As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.",
+      skills: [
+        'Running',
+        'Jumping',
+        'Bone Chewing',
+        'Licking',
+        'Napping',
+        'Barking',
+        'Whinning'
+      ]
     }
-    
   };
-
-  chips;
 
   componentWillLoad() {
     this.chips = this.data[this.match.params.member].skills.map(skill => {
