@@ -62,18 +62,18 @@ export class AppOpportunities {
     develop: {
       firstSkill: {
         name: 'Angular',
-        img: '/assets/graphic-opportunities-phone1.png',
+        img: '/assets/graphic-opportunities-dev-phone1.png',
       },
       secondSkill: {
         name: 'Redux',
-        img: '/assets/graphic-opportunities-phone2.png',
+        img: '/assets/graphic-opportunities-dev-phone2.png',
       },
       thirdSkill: {
         name: 'API Integration',
-        img: '/assets/graphic-opportunities-phone3.png',
+        img: '/assets/graphic-opportunities-dev-phone3.png',
       },
       mobile: {
-        img: '/assets/graphic-opportunities-phone4.png',
+        img: '/assets/graphic-opportunities-dev-phone4.png',
       },
       sliders: {
         first: {
@@ -101,18 +101,18 @@ export class AppOpportunities {
     design: {
       firstSkill: {
         name: 'Wireframing',
-        img: '/assets/graphic-opportunities-phone-design1.png',
+        img: '/assets/graphic-opportunities-design-phone1.png',
       },
       secondSkill: {
         name: 'Prototyping',
-        img: '/assets/graphic-opportunities-phone-design2.png',
+        img: '/assets/graphic-opportunities-design-phone2.png',
       },
       thirdSkill: {
         name: 'Responsive Design',
-        img: '/assets/graphic-opportunities-phone-design3.png',
+        img: '/assets/graphic-opportunities-design-phone3.png',
       },
       mobile: {
-        img: '/assets/graphic-opportunities-phone4.png',
+        img: '/assets/graphic-opportunities-design-phone1.png',
       },
       sliders: {
         first: {
