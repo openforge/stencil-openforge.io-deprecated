@@ -213,11 +213,7 @@ export class AppTeamLanding {
         'Young was born in Korea. He came to the USA in 1990 to study Physics. His first programming experience was about 25 years ago. However, he had to stop his coding job after he failed to get a working visa. In 2017, after he received a green card, He restarted coding. He learned coding using a mixture of Udemy, YouTube, and Collegiate courses.',
       bodyText:
         'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-      skills: [
-        'UI/UX Design', 
-        'Frontend development', 
-        'Backend development'
-      ],
+      skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
       team: 'development',
     },
     'sam-hudgens': {
@@ -228,22 +224,17 @@ export class AppTeamLanding {
         'Sam is originally from Montgomery, Alabama. He studied Chinese and Business Administration at the University of Southern California in Los Angeles with plans of going into finance, but decided on a career change into tech at the last minute. He attended a programming bootcamp after graduating college and ended up in Philadelphia. Sam likes learning both computer languages and human languages.',
       bodyText:
         'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-      skills: [
-        'HTML', 
-        'CSS', 
-        'JavaScript', 
-        'Java'
-      ],
+      skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
       team: 'development',
     },
-    'casey': {
+    casey: {
       firstname: 'Casey',
       surname: '',
       title: translate('about.meet.member.title.officer'),
       headerText:
-        "Casey started her life out on the streets in the Kensignton section of Philadelphia where a good samaritan found her at just few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present. ",
+        'Casey started her life out on the streets in the Kensignton section of Philadelphia where a good samaritan found her at just few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present. ',
       bodyText:
-        "As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.",
+        'As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.',
       skills: [
         'Running',
         'Jumping',
@@ -251,10 +242,10 @@ export class AppTeamLanding {
         'Licking',
         'Napping',
         'Barking',
-        'Whinning'
+        'Whinning',
       ],
-      team: 'management'
-    }
+      team: 'management',
+    },
   };
 
   componentWillLoad() {

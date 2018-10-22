@@ -19,7 +19,7 @@ export class AppAbout {
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
-      url: ''
+      url: '',
     },
     {
       name: 'Rachel Bennett',
@@ -28,7 +28,7 @@ export class AppAbout {
       mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/rachel-bennett'
+      url: '/team-landing/rachel-bennett',
     },
     {
       name: 'Geoffrey Melle',
@@ -37,7 +37,7 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/geoffery-melle'
+      url: '/team-landing/geoffery-melle',
     },
     {
       name: 'Joni Lehto',
@@ -46,7 +46,7 @@ export class AppAbout {
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
       github: '',
-      url: '/team-landing/joni-lehto'
+      url: '/team-landing/joni-lehto',
     },
     {
       name: 'Auvo Severinkangas',
@@ -55,7 +55,7 @@ export class AppAbout {
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
-      url: ''
+      url: '',
     },
     {
       name: 'Paulina Gallo',
@@ -64,7 +64,7 @@ export class AppAbout {
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
-      url: '/team-landing/paulina-gallo'
+      url: '/team-landing/paulina-gallo',
     },
     {
       name: 'Meredith Alcorn',
@@ -73,7 +73,7 @@ export class AppAbout {
       mail: 'meredith@openforge.io',
       twitter: '',
       github: 'https://github.com/mmalcorn',
-      url: ''
+      url: '',
     },
     {
       name: 'Fernando Del Olmo',
@@ -82,14 +82,14 @@ export class AppAbout {
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
-      url: '/team-landing/fernando-del-olmo'
+      url: '/team-landing/fernando-del-olmo',
     },
     {
       name: 'William Holloran',
       image: './../../assets/headshot-billy.jpg',
       title: translate('about.meet.member.title.projectManager'),
       mail: 'william@openforge.io',
-      url: '/team-landing/william-holloran'
+      url: '/team-landing/william-holloran',
     },
     {
       name: 'Luis Chacon',
@@ -98,7 +98,7 @@ export class AppAbout {
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
-      url: '/team-landing/luis-chacon'
+      url: '/team-landing/luis-chacon',
     },
     {
       name: 'Claudio Del Valle',
@@ -107,7 +107,7 @@ export class AppAbout {
       mail: 'claudio@openforge.io',
       titter: '',
       github: 'https://github.com/daftclaud',
-      url: '/team-landing/claudio-del-valle'
+      url: '/team-landing/claudio-del-valle',
     },
     {
       name: 'Ethan Bohan',
@@ -116,7 +116,7 @@ export class AppAbout {
       mail: 'ethan@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/ethan-bohan'
+      url: '/team-landing/ethan-bohan',
     },
     {
       name: 'Eli',
@@ -126,7 +126,7 @@ export class AppAbout {
       twitter: '',
       github: '',
       url: 'http://eliluproductions.com/',
-      external: true
+      external: true,
     },
     {
       name: 'Lu',
@@ -136,7 +136,7 @@ export class AppAbout {
       twitter: '',
       github: '',
       url: 'http://eliluproductions.com/',
-      external: true
+      external: true,
     },
     {
       name: 'Dhairya Pujara',
@@ -145,7 +145,7 @@ export class AppAbout {
       mail: '',
       twitter: 'https://twitter.com/dhairyapujara',
       github: '',
-      url: '/team-landing/dhairya-pujara'
+      url: '/team-landing/dhairya-pujara',
     },
     {
       name: 'Young Song',
@@ -172,7 +172,7 @@ export class AppAbout {
       mail: '',
       twitter: '',
       github: '',
-      url: '/team-landing/casey'
+      url: '/team-landing/casey',
     },
     {
       name: 'YOU?',
