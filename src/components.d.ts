@@ -548,6 +548,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppCaseStudy {
+
+    }
+  }
+
+  interface HTMLAppCaseStudyElement extends StencilComponents.AppCaseStudy, HTMLStencilElement {}
+
+  var HTMLAppCaseStudyElement: {
+    prototype: HTMLAppCaseStudyElement;
+    new (): HTMLAppCaseStudyElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-case-study': HTMLAppCaseStudyElement;
+  }
+  interface ElementTagNameMap {
+    'app-case-study': HTMLAppCaseStudyElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-case-study': JSXElements.AppCaseStudyAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppCaseStudyAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppContact {
       'errorIconStyles': any;
     }
