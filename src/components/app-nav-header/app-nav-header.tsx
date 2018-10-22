@@ -109,6 +109,15 @@ export class AppNavHeader {
               ) : null}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
+                  url="/resources"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  Resources
+                </stencil-route-link>
+              </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
                   url="/about"
                   anchorClass="nav-link"
                   activeClass="active"
