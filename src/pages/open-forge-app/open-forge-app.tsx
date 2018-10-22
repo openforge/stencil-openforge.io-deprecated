@@ -48,10 +48,8 @@ export class OpenForgeApp {
             url="/team-landing/:member"
             component="app-team-landing"
           />
-          <stencil-route
-            url="/juntoscope"
-            component="app-juntoscope"
-          />
+          <stencil-route url="/juntoscope" component="app-juntoscope" />
+          <stencil-route url="/terms-of-service" component="app-tos" />
         </stencil-route-switch>
       </stencil-router>
     );
