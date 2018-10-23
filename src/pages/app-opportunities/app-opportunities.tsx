@@ -43,31 +43,19 @@ export class AppOpportunities {
     };
   };
 
-  @State()
-  fileError: any;
-  @State()
-  nameError: string;
-  @State()
-  emailError: string;
-  @State()
-  phoneError: string;
-  @State()
-  githubError: string;
-  @State()
-  messageError: string;
+  @State() fileError: any;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() phoneError: string;
+  @State() githubError: string;
+  @State() messageError: string;
 
-  @State()
-  interviewButtonDisabled: boolean = true;
-  @State()
-  submitButtonDisabled: boolean = true;
-  @State()
-  canRequestInterview: boolean = false;
-  @State()
-  formSubmitting: boolean = false;
-  @State()
-  formSubmitted: boolean = false;
-  @State()
-  fileSizeErrorShown: boolean = false;
+  @State() interviewButtonDisabled: boolean = true;
+  @State() submitButtonDisabled: boolean = true;
+  @State() canRequestInterview: boolean = false;
+  @State() formSubmitting: boolean = false;
+  @State() formSubmitted: boolean = false;
+  @State() fileSizeErrorShown: boolean = false;
 
   @State()
   texts = {
@@ -153,7 +141,7 @@ export class AppOpportunities {
 
   @Prop({ context: 'isServer' })
   private isServer: boolean;
-  
+
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -391,16 +379,24 @@ export class AppOpportunities {
                 <app-translate key="opportunities.intro.title" />
               </h3>
               <p slot="body">
-                <app-translate key={`opportunities.intro.${this.match.params.type}.text`}/>
+                <app-translate
+                  key={`opportunities.intro.${this.match.params.type}.text`}
+                />
               </p>
             </content-graphic>
 
-            <content-graphic img-url={`/assets/graphic-opportunities-master-${this.match.params.type}.jpg`}>
+            <content-graphic
+              img-url={`/assets/graphic-opportunities-master-${
+                this.match.params.type
+              }.jpg`}
+            >
               <h3 slot="header">
                 <app-translate key="opportunities.intro.title" />
               </h3>
               <p slot="body">
-                <app-translate key={`opportunities.test.${this.match.params.type}.text`} />
+                <app-translate
+                  key={`opportunities.test.${this.match.params.type}.text`}
+                />
               </p>
             </content-graphic>
           </div>
@@ -554,19 +550,6 @@ export class AppOpportunities {
                   id="myLittleAnchor"
                   onSubmit={this.handleSubmit.bind(this)}
                 >
-                  <h2>
-                    <app-translate key="opportunities.form.midLevelTitle" />
-                  </h2>
-                  <ul>
-                    <li>Philadelphia</li>
-                    <li>
-                      <app-translate key="opportunities.form.technology" />
-                    </li>
-                    <li>
-                      <app-translate key="opportunities.form.fullTime" />
-                    </li>
-                  </ul>
-
                   <h3>
                     <app-translate key="opportunities.form.submitTitle" />
                   </h3>

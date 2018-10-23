@@ -680,39 +680,6 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface AppJuntoscope {
-
-    }
-  }
-
-  interface HTMLAppJuntoscopeElement extends StencilComponents.AppJuntoscope, HTMLStencilElement {}
-
-  var HTMLAppJuntoscopeElement: {
-    prototype: HTMLAppJuntoscopeElement;
-    new (): HTMLAppJuntoscopeElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-juntoscope': HTMLAppJuntoscopeElement;
-  }
-  interface ElementTagNameMap {
-    'app-juntoscope': HTMLAppJuntoscopeElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'app-juntoscope': JSXElements.AppJuntoscopeAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface AppJuntoscopeAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
     interface AppOpportunities {
       'errorIconStyles': any;
       'match': MatchResults;
