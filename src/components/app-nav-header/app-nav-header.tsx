@@ -55,7 +55,10 @@ export class AppNavHeader {
             <span class="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav ml-md-auto">
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
@@ -116,14 +119,43 @@ export class AppNavHeader {
                   {translate('nav.links.about')}
                 </stencil-route-link>
               </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/resources"
-                  anchorClass="nav-link"
-                  activeClass="active"
+              <li
+                class="nav-item dropdown"
+                data-target="#navbarSupportedContent"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
                 >
-                  Resources
-                </stencil-route-link>
+                  Our Work
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link
+                    url="/case-study"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    JuntoScope
+                  </stencil-route-link>
+                  <stencil-route-link
+                    url="/toolbox"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Our Toolbox
+                  </stencil-route-link>
+                  <stencil-route-link
+                    url="/resources"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Resources
+                  </stencil-route-link>
+                </div>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
@@ -164,15 +196,6 @@ export class AppNavHeader {
                     Design
                   </stencil-route-link>
                 </div>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/toolbox"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  Toolbox
-                </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
