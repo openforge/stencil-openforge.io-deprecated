@@ -32,7 +32,7 @@ export class AppNavHeader {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
+      <nav class="navbar navbar-expand-xl navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
             <h1>
@@ -55,7 +55,7 @@ export class AppNavHeader {
             <span class="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
             <ul class="navbar-nav ml-md-auto">
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
@@ -109,20 +109,20 @@ export class AppNavHeader {
               ) : null}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
-                  url="/resources"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  Resources
-                </stencil-route-link>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
                   url="/about"
                   anchorClass="nav-link"
                   activeClass="active"
                 >
                   {translate('nav.links.about')}
+                </stencil-route-link>
+              </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link
+                  url="/resources"
+                  anchorClass="nav-link"
+                  activeClass="active"
+                >
+                  Resources
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
