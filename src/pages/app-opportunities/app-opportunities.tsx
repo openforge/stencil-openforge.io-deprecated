@@ -185,7 +185,7 @@ export class AppOpportunities {
     const { field, value, target } = event.detail;
     this.formValues[field] = value;
 
-    if (this.match.params.type === 'developer') {
+    if (this.match.params.type === 'develop') {
       if (
         this.formValues.angular > 90 &&
         this.formValues.node > 90 &&
