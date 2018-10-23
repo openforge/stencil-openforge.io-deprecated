@@ -190,7 +190,7 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
-      url: '/opportunities',
+      url: '/opportunities/develop',
     },
   ];
 
