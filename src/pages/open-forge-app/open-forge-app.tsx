@@ -44,7 +44,6 @@ export class OpenForgeApp {
           />
           <stencil-route url="/about" component="app-about" />
           <stencil-route url="/toolbox" component="app-toolbox" />
-          <stencil-route url="/case-study" component="app-case-study" />
           <stencil-route
             url="/services/:service"
             component="app-detailed-service"
@@ -54,7 +53,7 @@ export class OpenForgeApp {
             url="/team-landing/:member"
             component="app-team-landing"
           />
-          <stencil-route url="/juntoscope" component="app-juntoscope" />
+          <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route
             url="/service-level-agreement"

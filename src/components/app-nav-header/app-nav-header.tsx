@@ -135,7 +135,7 @@ export class AppNavHeader {
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <stencil-route-link
-                    url="/case-study"
+                    url="/juntoscope"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >

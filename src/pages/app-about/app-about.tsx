@@ -30,7 +30,7 @@ export class AppAbout {
       url: '/team-landing/rachel-bennett',
     },
     {
-      name: 'Geoffrey Melle',
+      name: 'Geoffery Melle',
       image: './../../assets/headshot-geoff.jpg',
       title: translate('about.meet.member.title.accountManager'),
       mail: 'geoff@openforge.io',
@@ -183,15 +183,15 @@ export class AppAbout {
       github: '',
       url: '/team-landing/casey',
     },
-    {
-      name: 'YOU?',
-      image: '/assets/headshot-placeholder.jpg',
-      title: '',
-      mail: 'geoff@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/opportunities/develop',
-    },
+    // {
+    //   name: 'YOU?',
+    //   image: '/assets/headshot-placeholder.jpg',
+    //   title: '',
+    //   mail: 'geoff@openforge.io',
+    //   twitter: '',
+    //   github: '',
+    //   url: '/opportunities/develop',
+    // },
   ];
 
   componentDidLoad() {

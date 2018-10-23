@@ -239,6 +239,13 @@ export class AppCaseStudy {
             seamless. This has had a lasting impact on the quality of apps that
             we produce for our clients and ultimately has made us a better team.
           </p>
+
+          <div class="download-link">
+            <a href="assets/pdf/juntoscope.sketch">
+              <button class="btn btn-primary">Download our Sketch file</button>
+            </a>
+          </div>
+
           <p class="top-link" onClick={this.scrollToTop.bind(this)}>
             Back to top
           </p>
