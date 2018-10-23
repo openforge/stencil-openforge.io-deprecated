@@ -59,7 +59,7 @@ export class OpenForgeApp {
             url="/service-level-agreement"
             component="app-service-level-agreement"
           />
-          <stencil-route component="app-404" />
+          <stencil-route component="app-home" />
         </stencil-route-switch>
       </stencil-router>
     );
