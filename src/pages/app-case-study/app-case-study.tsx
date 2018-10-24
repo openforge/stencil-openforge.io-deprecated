@@ -49,10 +49,20 @@ export class AppCaseStudy {
           <div class="text-container">
             <h2>The Product</h2>
             <p>
-              The goal of JuntoScope is to help teams determine scopes for tasks
-              in Teamwork.com© Projects more accurately, quickly, and
-              efficiently to keep projects within budget and on time.
-              Integrating with Teamwork Projects API, teams will be able to:
+              The goal of{' '}
+              <a href="http://try.juntoscope.com/" target="_blank">
+                JuntoScope
+              </a>{' '}
+              is to help teams determine scopes for tasks in{' '}
+              <a
+                href="https://www.teamwork.com/partner/gqfq4mb55o"
+                target="_blank"
+              >
+                Teamwork.com
+              </a>
+              © Projects more accurately, quickly, and efficiently to keep
+              projects within budget and on time. Integrating with Teamwork
+              Projects API, teams will be able to:
             </p>
             <ul>
               <li>
@@ -173,47 +183,66 @@ export class AppCaseStudy {
           <h2>A Deeper Dive</h2>
           <h3>Design</h3>
           <p>
-            We began the design process by researching similar apps on the
-            marketplace and identifying features we liked and did not like about
-            them. We then set up user flows and wireframing each identified
-            screen. This process, along with the design and styling phase,
-            occurs in Sketch. After completing the full skeleton, we reviewed
-            each user flow and tried to identify any gaps or weaknesses in the
-            user flow. From there, we made modifications and began identifying
-            styles and colors for the app. We created a logo and a splash screen
-            and applied the styles to the rest of the screens. We then created a
-            working prototype in Marvel to aid our development team in the next
-            phase and prepared for handoff.{' '}
+            We began the{' '}
+            <a
+              href="https://openforge.io/services/app-designer"
+              target="_blank"
+            >
+              design process
+            </a>{' '}
+            by researching similar apps on the marketplace and identifying
+            features we liked and did not like about them. We then set up user
+            flows and wireframing each identified screen. This process, along
+            with the design and styling phase, occurs in{' '}
+            <a href="https://openforge.io/toolbox" target="_blank">
+              Sketch
+            </a>
+            . After completing the full skeleton, we reviewed each user flow and
+            tried to identify any gaps or weaknesses in the user flow. From
+            there, we made modifications and began identifying styles and colors
+            for the app. We created a logo and a splash screen and applied the
+            styles to the rest of the screens. We then created a working
+            prototype in Marvel to aid our development team in the next phase
+            and prepared for handoff.{' '}
           </p>
           <h3>Development</h3>
           <p>
-            We began the development process with a full design review. Our team
-            worked closely with the designers to document a list of feature
-            requirements that would later translate into development
-            requirements. From there, we architected and established a base
-            draft for client and server side implementation. We iterated through
-            a review process as we gradually expanded and started to develop
-            features.From our draft a skeleton client-side application is
-            started in-tangent with developing server-side implementation to
-            test and ensure all the data and state was expected and is
-            functioning where it needs to be. Additional developers then
-            followed in client-side to finalize pieces of the skeleton to
-            reflect the designs. As each portion finished, it is formally
-            reviewed, tested, and merged into a `master` branch for that app
-            version. We reviewed these branches at critical milestones and had
-            our quality assurance team review in order to ensure we stayed on
-            top of bugs, in which we tracked in Github.
+            We began the{' '}
+            <a
+              href="https://openforge.io/services/app-developer"
+              target="_blank"
+            >
+              development process
+            </a>{' '}
+            with a full design review. Our team worked closely with the
+            designers to document a list of feature requirements that would
+            later translate into development requirements. From there, we
+            architected and established a base draft for client and server side
+            implementation. We iterated through a review process as we gradually
+            expanded and started to develop features.From our draft a skeleton
+            client-side application is started in-tangent with developing
+            server-side implementation to test and ensure all the data and state
+            was expected and is functioning where it needs to be. Additional
+            developers then followed in client-side to finalize pieces of the
+            skeleton to reflect the designs. As each portion finished, it is
+            formally reviewed, tested, and merged into a `master` branch for
+            that app version. We reviewed these branches at critical milestones
+            and had our quality assurance team review in order to ensure we
+            stayed on top of bugs, in which we tracked in Github.
           </p>
           <h3>What we learned</h3>
           <p>
-            Throughout the process of developing JuntoScope, our team learned
-            the importance of establishing a process that is fully understood by
-            each and every member. Our company was going through a transitional
-            phase early on in the development of JuntoScope bringing on new team
-            members and creating efficient processes. Towards the end of the
-            session phase we discovered that the processes we established for
-            work with our clients wasn't being diligently followed for
-            JuntoScope.
+            Throughout the process of developing JuntoScope,{' '}
+            <a href="https://openforge.io/about" target="_blank">
+              our team
+            </a>{' '}
+            learned the importance of establishing a process that is fully
+            understood by each and every member. Our company was going through a
+            transitional phase early on in the development of JuntoScope
+            bringing on new team members and creating efficient processes.
+            Towards the end of the session phase we discovered that the
+            processes we established for work with our clients wasn't being
+            diligently followed for JuntoScope.
             <br />
             <br />
             This included designs that were not fully reviewed and understood by
@@ -224,13 +253,17 @@ export class AppCaseStudy {
             saying, if your user interface needs to be explained, it's no good.
             <br />
             <br />
-            As our team came close to launching JuntoScope, we learned from
-            Teamwork.com that they were changing the way their API worked and
-            this forced us to go back to our design and development teams to
-            work in the new authentication flows. This set our team back a few
-            weeks from our initial planned launch. We learned the importance of
-            staying up to date with technical updates to software that we
-            integrate with so we immediately subscribed to their announcements.
+            As our team came close to launching{' '}
+            <a href="http://try.juntoscope.com" target="_blank">
+              JuntoScope
+            </a>
+            , we learned from Teamwork.com that they were changing the way their
+            API worked and this forced us to go back to our design and
+            development teams to work in the new authentication flows. This set
+            our team back a few weeks from our initial planned launch. We
+            learned the importance of staying up to date with technical updates
+            to software that we integrate with so we immediately subscribed to
+            their announcements.
             <br />
             <br />
             Designing and developing JuntoScope was a great learning experience
