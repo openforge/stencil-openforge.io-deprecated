@@ -35,8 +35,8 @@ export class AppTeamLanding {
       team: 'design',
       backgroundPhoto: '/assets/bios-background-rachel.jpg',
     },
-    'geoffery-melle': {
-      firstname: 'Geoffery',
+    'geoffrey-melle': {
+      firstname: 'Geoffrey',
       surname: 'Melle',
       title: translate('about.meet.member.title.accountManager'),
       headerText:

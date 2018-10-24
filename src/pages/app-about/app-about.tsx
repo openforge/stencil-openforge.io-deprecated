@@ -30,13 +30,13 @@ export class AppAbout {
       url: '/team-landing/rachel-bennett',
     },
     {
-      name: 'Geoffery Melle',
+      name: 'Geoffrey Melle',
       image: './../../assets/headshot-geoff.jpg',
       title: translate('about.meet.member.title.accountManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/geoffery-melle',
+      url: '/team-landing/geoffrey-melle',
     },
     {
       name: 'Joni Lehto',
