@@ -32,7 +32,7 @@ export class AppNavHeader {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
+      <nav class="navbar navbar-expand-xl navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
             <h1>
@@ -55,7 +55,10 @@ export class AppNavHeader {
             <span class="navbar-toggler-icon" />
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            class="collapse navbar-collapse justify-content-between"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav ml-md-auto">
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
@@ -116,6 +119,44 @@ export class AppNavHeader {
                   {translate('nav.links.about')}
                 </stencil-route-link>
               </li>
+              <li
+                class="nav-item dropdown"
+                data-target="#navbarSupportedContent"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Our Work
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link
+                    url="/juntoscope"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    JuntoScope
+                  </stencil-route-link>
+                  <stencil-route-link
+                    url="/toolbox"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Our Toolbox
+                  </stencil-route-link>
+                  <stencil-route-link
+                    url="/resources"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Resources
+                  </stencil-route-link>
+                </div>
+              </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/contact"
@@ -125,14 +166,36 @@ export class AppNavHeader {
                   {translate('nav.links.contact')}
                 </stencil-route-link>
               </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/opportunities"
-                  anchorClass="nav-link"
-                  activeClass="active"
+              <li
+                class="nav-item dropdown"
+                data-target="#navbarSupportedContent"
+              >
+                <a
+                  class="nav-link dropdown-toggle"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
                 >
                   {translate('nav.links.opportunities')}
-                </stencil-route-link>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link
+                    url="/opportunities/develop"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Develop
+                  </stencil-route-link>
+                  <stencil-route-link
+                    url="/opportunities/design"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Design
+                  </stencil-route-link>
+                </div>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a

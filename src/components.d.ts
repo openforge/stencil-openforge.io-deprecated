@@ -548,6 +548,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface AppCaseStudy {
+
+    }
+  }
+
+  interface HTMLAppCaseStudyElement extends StencilComponents.AppCaseStudy, HTMLStencilElement {}
+
+  var HTMLAppCaseStudyElement: {
+    prototype: HTMLAppCaseStudyElement;
+    new (): HTMLAppCaseStudyElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-case-study': HTMLAppCaseStudyElement;
+  }
+  interface ElementTagNameMap {
+    'app-case-study': HTMLAppCaseStudyElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-case-study': JSXElements.AppCaseStudyAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppCaseStudyAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppContact {
       'errorIconStyles': any;
     }
@@ -649,6 +682,7 @@ declare global {
   namespace StencilComponents {
     interface AppOpportunities {
       'errorIconStyles': any;
+      'match': MatchResults;
     }
   }
 
@@ -672,6 +706,73 @@ declare global {
   namespace JSXElements {
     export interface AppOpportunitiesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
+      'match'?: MatchResults;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppResources {
+      'errorIconStyles': any;
+    }
+  }
+
+  interface HTMLAppResourcesElement extends StencilComponents.AppResources, HTMLStencilElement {}
+
+  var HTMLAppResourcesElement: {
+    prototype: HTMLAppResourcesElement;
+    new (): HTMLAppResourcesElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-resources': HTMLAppResourcesElement;
+  }
+  interface ElementTagNameMap {
+    'app-resources': HTMLAppResourcesElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-resources': JSXElements.AppResourcesAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppResourcesAttributes extends HTMLAttributes {
+      'errorIconStyles'?: any;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppServiceLevelAgreement {
+
+    }
+  }
+
+  interface HTMLAppServiceLevelAgreementElement extends StencilComponents.AppServiceLevelAgreement, HTMLStencilElement {}
+
+  var HTMLAppServiceLevelAgreementElement: {
+    prototype: HTMLAppServiceLevelAgreementElement;
+    new (): HTMLAppServiceLevelAgreementElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  interface ElementTagNameMap {
+    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-service-level-agreement': JSXElements.AppServiceLevelAgreementAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppServiceLevelAgreementAttributes extends HTMLAttributes {
+
     }
   }
 }
@@ -705,6 +806,72 @@ declare global {
   namespace JSXElements {
     export interface AppTeamLandingAttributes extends HTMLAttributes {
       'match'?: MatchResults;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppToolbox {
+
+    }
+  }
+
+  interface HTMLAppToolboxElement extends StencilComponents.AppToolbox, HTMLStencilElement {}
+
+  var HTMLAppToolboxElement: {
+    prototype: HTMLAppToolboxElement;
+    new (): HTMLAppToolboxElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-toolbox': HTMLAppToolboxElement;
+  }
+  interface ElementTagNameMap {
+    'app-toolbox': HTMLAppToolboxElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-toolbox': JSXElements.AppToolboxAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppToolboxAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface AppTos {
+
+    }
+  }
+
+  interface HTMLAppTosElement extends StencilComponents.AppTos, HTMLStencilElement {}
+
+  var HTMLAppTosElement: {
+    prototype: HTMLAppTosElement;
+    new (): HTMLAppTosElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-tos': HTMLAppTosElement;
+  }
+  interface ElementTagNameMap {
+    'app-tos': HTMLAppTosElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-tos': JSXElements.AppTosAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppTosAttributes extends HTMLAttributes {
+
     }
   }
 }

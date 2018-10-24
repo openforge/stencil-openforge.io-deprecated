@@ -66,11 +66,6 @@ export const translations = {
         text:
           'Our individual skills, backgrounds, and life experiences have shaped us into the company that we are today. Maintaining a diverse team helps us to perform better, attract top talent, and make smarter decisions.',
       },
-      about: {
-        title: 'Meet the Team',
-        text:
-          "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
-      },
       partners: {
         title: 'Our Industry Partners',
         text:
@@ -80,15 +75,28 @@ export const translations = {
         title: 'Ready to work with us?',
         link: 'Get in touch',
       },
-      member: {
-        title: {
-          founder: 'Founder and Head of Technology',
-          accountManager: 'Account Manager',
-          designer: 'Designer',
-          developer: 'Software Engineer',
-          frontEndDeveloper: 'Front End Developer',
-          projectManager: 'Project Manager / QA Engineer',
-          consultant: 'Consultant'
+    },
+    about: {
+      title: 'We Are Passionate About Technology and Design',
+      text:
+        "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
+      meet: {
+        header: 'Meet the Team',
+        text:
+          "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        member: {
+          title: {
+            founder: 'Founder and Head of Technology',
+            accountManager: 'Account Manager',
+            designer: 'Designer',
+            developer: 'Software Engineer',
+            frontEndDeveloper: 'Front End Developer',
+            projectManager: 'Project Manager / QA Engineer',
+            consultant: 'Consultant',
+            officer: 'Chief Happiness Officer',
+            softwareIntern: 'Software Intern',
+            marketing: 'Marketing',
+          },
         },
       },
     },
@@ -257,18 +265,30 @@ export const translations = {
     },
     opportunities: {
       hero: {
-        title: 'OpenForge is hiring two amazing developers!',
+        title: "Great News! We're Hiring.",
         text:
-          "Looking for a new adventure? Want to know if you're the right fit for the team?",
-        text2: 'Scroll to Learn More!',
+          "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+        text2: 'Learn More',
       },
       intro: {
         title: 'Forget normal interviews!',
-        text:
-          "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank' rel='noopener'>Ionic</a> or <a href='https://reactjs.org/' target='_blank' rel='noopener'>React App!</a>",
-        codeMaster: {
-          title: 'We want to put you to the test!',
-          body:
+        develop: {
+          text:
+            "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank' rel='noopener'>Ionic</a> or <a href='https://reactjs.org/' target='_blank' rel='noopener'>React App!</a>",
+        },
+        design: {
+          text:
+            'At OpenForge, we believe that sometimes actions speak louder than words, so as part of your interview assignment, we’d like to challenge you to design 3 pages of an app of your choosing.',
+        },
+      },
+      test: {
+        title: 'We want to put you to the test!',
+        design: {
+          text:
+            "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you identify problems and solve them using design principles, hierarchy, and UX best practices.",
+        },
+        develop: {
+          text:
             "Instead of asking you a million questions, we'd rather get to know you another way - seeing how you follow direction, develop, and learn a new technology or pattern that you have not used before.",
         },
       },
@@ -315,6 +335,50 @@ export const translations = {
             'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
         },
       },
+    },
+
+    resources: {
+      hero: {
+        title: 'What is a PWA and is it right for you?',
+        text:
+          'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.',
+        title1: 'Check Out the Awesome stuff we made with PWAs',
+        text1:
+          "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
+      },
+      form: {
+        fullName: 'Full Name',
+        industry: 'Industry',
+        email: 'E-mail',
+        organization: 'Organization',
+        button: {
+          send: 'Download',
+        },
+        error: {
+          fullName: 'Oops! You forgot your full name.',
+          industry: 'Oops! You forgot your industry.',
+          email: 'Oops! You forgot your e-mail.',
+          organization: 'Oops! You forgot your organization.',
+          endText: 'Please input all form fields to download the white paper!',
+        },
+      },
+      downloadinfo: {
+        title: "HERE'S WHAT IS INSIDE",
+        subtitle:
+          "A business owner's perspective on the benefits of PWAs (Progressive Web Apps)",
+        list: {
+          first: 'What a PWA is and what companies are using them',
+          second: 'Learn how a PWA can decrease several costs',
+          third: 'Discover how a PWA increases user engagement',
+          fourth: 'Understand the features and benefits of a PWA',
+        },
+        footer:
+          "Switching to a PWA can take your business to the next level and improve the performance of your business's digital engagement",
+      },
+      enjoy: 'Enjoy!',
+      enjoysub: 'Expand Your PWA Knowledge',
+      thanks:
+        'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
     header: {
