@@ -80,11 +80,11 @@ export class AppAbout {
       github: 'https://github.com/Fdom92',
     },
     {
-      name: 'William Holloran',
+      name: 'Billy Holloran',
       image: './../../assets/headshot-billy.png',
       title: translate('about.meet.member.title.projectManager'),
-      mail: 'william@openforge.io',
-      url: '/about/william-holloran',
+      mail: 'billy@openforge.io',
+      url: '/about/billy-holloran',
     },
     {
       name: 'Luis Chacon',

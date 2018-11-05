@@ -116,8 +116,8 @@ export class AppTeamLanding {
       team: 'development',
       backgroundPhoto: '/assets/team-landing-header.jpg',
     },
-    'william-holloran': {
-      firstname: 'William',
+    'billy-holloran': {
+      firstname: 'Billy',
       surname: 'Holloran',
       title: translate('about.meet.member.title.projectManager'),
       headerText:
