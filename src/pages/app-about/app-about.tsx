@@ -30,7 +30,7 @@ export class AppAbout {
       url: '/about/rachel-bennett',
     },
     {
-      name: 'Geoffery Melle',
+      name: 'Geoffrey Melle',
       image: './../../assets/headshot-geoff.jpg',
       title: translate('about.meet.member.title.accountManager'),
       mail: 'geoff@openforge.io',

@@ -7,11 +7,9 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  @Prop()
-  match: MatchResults;
+  @Prop() match: MatchResults;
 
-  @State()
-  chips;
+  @State() chips;
   data = {
     'rachel-bennett': {
       firstname: 'Rachel',
@@ -35,8 +33,8 @@ export class AppTeamLanding {
       team: 'design',
       backgroundPhoto: '/assets/bios-background-rachel.jpg',
     },
-    'geoffery-melle': {
-      firstname: 'Geoffery',
+    'geoffrey-melle': {
+      firstname: 'Geoffrey',
       surname: 'Melle',
       title: translate('about.meet.member.title.accountManager'),
       headerText:
