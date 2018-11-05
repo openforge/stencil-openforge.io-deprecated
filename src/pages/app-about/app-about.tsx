@@ -36,7 +36,7 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
-      url: '/about/geoffery-melle',
+      url: '/about/geoffrey-melle',
     },
     {
       name: 'Joni Lehto',
