@@ -270,7 +270,7 @@ export class AppTeamLanding {
       surname: '',
       title: translate('about.meet.member.title.officer'),
       headerText:
-        'Casey started her life out on the streets in the Kensignton section of Philadelphia where a good samaritan found her at just few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present. ',
+        'Casey started her life out on the streets in the Kensington section of Philadelphia where a good samaritan found her at just few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present. ',
       bodyText:
         'As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.',
       skills: [
