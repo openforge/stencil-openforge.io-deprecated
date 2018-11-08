@@ -274,7 +274,7 @@ export class AppCaseStudy {
           </p>
 
           <div class="download-link">
-            <a href="assets/pdf/juntoscope.sketch">
+            <a href="assets/pdf/juntoscope.sketch" download="juntoscope.sketch">
               <button class="btn btn-primary">Download our Sketch file</button>
             </a>
           </div>
