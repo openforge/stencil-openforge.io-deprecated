@@ -554,7 +554,7 @@
       }
 
       // TIMELINE MOBILE
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(md) {
         .timeline-items {
           display: grid;
           grid-template-columns: 1fr;
