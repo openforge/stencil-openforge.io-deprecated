@@ -364,7 +364,7 @@ export class AppDetailedService {
                     />
                   </p>
                   <p class="check-link">
-                    <a href="//try.juntoscope.com" target="_blank">
+                    <a href="https://try.juntoscope.com" target="_blank">
                       Check it out
                     </a>
                   </p>
