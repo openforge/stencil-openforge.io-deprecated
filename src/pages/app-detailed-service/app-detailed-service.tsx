@@ -8,8 +8,7 @@ declare var fbq;
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop()
-  match: MatchResults;
+  @Prop() match: MatchResults;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -55,10 +54,8 @@ export class AppDetailedService {
     },
   };
 
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -69,14 +66,10 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State()
-  nameError: string;
-  @State()
-  emailError: string;
-  @State()
-  messageError: string;
-  @State()
-  isDisabled = true;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() messageError: string;
+  @State() isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -370,7 +363,11 @@ export class AppDetailedService {
                       }.examples.first.desc`}
                     />
                   </p>
-                  {/* <p class="check-link">Check it out</p> */}
+                  <p class="check-link">
+                    <a href="//try.juntoscope.com" target="_blank">
+                      Check it out
+                    </a>
+                  </p>
                 </div>
               </div>
               <div class="text-img-container left-side">
@@ -389,7 +386,14 @@ export class AppDetailedService {
                       }.examples.second.desc`}
                     />
                   </p>
-                  {/* <p class="check-link">Check it out</p> */}
+                  <p class="check-link">
+                    <a
+                      href="https://www.newoceanhealthsolutions.com/product-and-programs/"
+                      target="_blank"
+                    >
+                      Check it out
+                    </a>
+                  </p>
                 </div>
                 <app-img
                   class=""
