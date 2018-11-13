@@ -183,7 +183,10 @@
       justify-content: center;
 
       h3 {
+        color: $orange;
+        font-weight: 600;
         margin-bottom: 20px;
+        text-decoration: underline;
       }
 
       @include media-breakpoint-down(sm) {
