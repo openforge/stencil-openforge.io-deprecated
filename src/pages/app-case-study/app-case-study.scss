@@ -443,30 +443,29 @@
               }
             }
           }
+        }
+        
+        .final-timeline-item {
+          display: grid;
+          grid-template-columns: 1fr;
+          margin-top: 32px;
 
-          .final-timeline-item {
-            display: grid;
-            grid-template-columns: 1fr;
-            margin-top: 32px;
-  
-            .blank-cell {
-              display: none;
-            }
-  
-            .timeline-item {
-              flex-direction: column-reverse;
-            }
-  
-            .timeline-item-content {
-              font-size: 18px;
-              font-weight: bold;
-              line-height: 2;
-              color: $gray-dark;
-              text-align: center;
-              text-transform: uppercase;
-            }
+          .blank-cell {
+            display: none;
           }
 
+          .timeline-item {
+            flex-direction: column-reverse;
+          }
+
+          .timeline-item-content {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 2;
+            color: $gray-dark;
+            text-align: center;
+            text-transform: uppercase;
+          }
         }
       }
 
