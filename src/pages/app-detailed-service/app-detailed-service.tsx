@@ -168,7 +168,7 @@ export class AppDetailedService {
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="col-lg-12">
                   <h2>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.title`}
@@ -194,7 +194,7 @@ export class AppDetailedService {
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="col-lg-12">
                   <h2>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.title`}
@@ -220,7 +220,7 @@ export class AppDetailedService {
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
+                <div class="col-lg-12">
                   <h2>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.title`}
@@ -242,13 +242,9 @@ export class AppDetailedService {
             </div>
           </header>
         )}
-        <div id="second-content" class="container">
+        <div id="second-content">
           <section class="text-img-container right-side">
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].first}
-              alt=""
-            />
+            <app-img src={this.imgs[this.match.params.service].first} alt="" />
             <div class="text-img-container-text">
               <h2>
                 <app-translate
@@ -275,18 +271,10 @@ export class AppDetailedService {
                 />
               </p>
             </div>
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].second}
-              alt=""
-            />
+            <app-img src={this.imgs[this.match.params.service].second} alt="" />
           </section>
           <section class="text-img-container right-side">
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].third}
-              alt=""
-            />
+            <app-img src={this.imgs[this.match.params.service].third} alt="" />
             <div class="text-img-container-text">
               <h2>
                 <app-translate
@@ -301,106 +289,96 @@ export class AppDetailedService {
             </div>
           </section>
         </div>
-        <section>
-          <div class="our-toolbox">
-            <h2>Our Toolbox</h2>
-            <p>let us show you our skills in:</p>
-            <div class="container">
-              <div class="row">
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.first}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.second}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.third}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-              </div>
+        <section class="our-toolbox">
+          <h2>Our Toolbox</h2>
+          <p>let us show you our skills in:</p>
+          <div class="image-container">
+            <div class="img-item">
+              <stencil-route-link url="/toolbox" exact={true}>
+                <app-img
+                  src={this.imgs[this.match.params.service].toolbox.first}
+                  alt=""
+                />
+              </stencil-route-link>
+            </div>
+            <div class="img-item">
+              <stencil-route-link url="/toolbox" exact={true}>
+                <app-img
+                  src={this.imgs[this.match.params.service].toolbox.second}
+                  alt=""
+                />
+              </stencil-route-link>
+            </div>
+            <div class="img-item">
+              <stencil-route-link url="/toolbox" exact={true}>
+                <app-img
+                  src={this.imgs[this.match.params.service].toolbox.third}
+                  alt=""
+                />
+              </stencil-route-link>
             </div>
           </div>
         </section>
         {this.imgs[this.match.params.service].examples ? (
-          <div class="container">
-            <section class="work-examples">
-              <h2>Work Examples</h2>
-              <div class="text-img-container right-side">
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.first}
-                  alt="voyage-app-image"
-                />
-                <div class="text-img-container-text">
-                  <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.name`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.desc`}
-                    />
-                  </p>
-                  <p>
-                    <a href="https://try.juntoscope.com" target="_blank">
-                      Try it!
-                    </a>
-                  </p>
-                </div>
+          <div class="work-examples">
+            <h2>Work Examples</h2>
+            <section class="text-img-container right-side">
+              <app-img
+                src={this.imgs[this.match.params.service].examples.first}
+                alt="voyage-app-image"
+              />
+              <div class="text-img-container-text">
+                <h2>
+                  <app-translate
+                    key={`services.${
+                      this.match.params.service
+                    }.examples.first.name`}
+                  />
+                </h2>
+                <p>
+                  <app-translate
+                    key={`services.${
+                      this.match.params.service
+                    }.examples.first.desc`}
+                  />
+                </p>
+                <p>
+                  <a href="https://try.juntoscope.com" target="_blank">
+                    Try it!
+                  </a>
+                </p>
               </div>
-              <div class="text-img-container left-side">
-                <div class="text-img-container-text">
-                  <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.name`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.desc`}
-                    />
-                  </p>
-                  <p>
-                    <a
-                      href="https://www.newoceanhealthsolutions.com/product-and-programs/"
-                      target="_blank"
-                    >
-                      Go to Link!
-                    </a>
-                  </p>
-                </div>
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.second}
-                  alt="voyage-app-image"
-                />
+            </section>
+            <section class="text-img-container left-side">
+              <div class="text-img-container-text">
+                <h2>
+                  <app-translate
+                    key={`services.${
+                      this.match.params.service
+                    }.examples.second.name`}
+                  />
+                </h2>
+                <p>
+                  <app-translate
+                    key={`services.${
+                      this.match.params.service
+                    }.examples.second.desc`}
+                  />
+                </p>
+                <p>
+                  <a
+                    href="https://www.newoceanhealthsolutions.com/product-and-programs/"
+                    target="_blank"
+                  >
+                    Go to Link!
+                  </a>
+                </p>
               </div>
+              <app-img
+                class=""
+                src={this.imgs[this.match.params.service].examples.second}
+                alt="voyage-app-image"
+              />
             </section>
           </div>
         ) : null}

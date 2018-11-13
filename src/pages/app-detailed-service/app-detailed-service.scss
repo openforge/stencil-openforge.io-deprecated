@@ -11,85 +11,79 @@ section.services {
     &.consulting {
       background-image: url('/assets/team-landing-header-management-team.jpg');
     }
-
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
       width: 100%;
       height: 100vh;
     }
-
     background-position: top center;
     background-size: cover;
     height: 100vh;
-
-    .container,
-    .row {
-      height: 100%;
+    .container {
+      margin: auto;
+      width: 80%;
+      @media (max-width: 990px) {
+        width: 85%;
+      }
+      @media (max-width: 768px) {
+        width: 90%;
+      }
     }
-
     h2 {
-      color: $white;
-      font-size: 4rem;
+      color: white;
+      font-size: 3rem;
+      margin-top: 4.5em;
       margin-bottom: 1rem;
-      @include media-breakpoint-down(lg) {
-        font-size: 3rem;
+      @media (max-width: 990px) {
+        font-size: 2.5rem;
       }
-      @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
+      @media (max-width: 768px) {
+        margin-top: 3.5em;
+      }
+      @media (max-width: 420px) {
+        font-size: 2rem;
+        margin-top: 2.5em;
+      }
+      @media (max-height: 570px) {
+        font-size: 1.5rem;
       }
     }
-
     p {
       color: $white;
       font-size: 1.2rem;
       font-weight: 300;
       margin-bottom: 3rem;
-      max-width: 500px;
-      @include media-breakpoint-down(lg) {
+      @media (max-width: 768px) {
         font-size: 1rem;
       }
-    }
-
-    &.development,
-    &.design,
-    &.consulting {
-      h2 {
-        text-align: initial;
+      @media (max-width: 420px) {
+        font-size: 0.9rem;
       }
-      p {
-        max-width: initial;
-        padding: 0;
+      @media (max-height: 570px) {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
       }
     }
   }
-
-  .text-img-container {
-    margin-top: 4rem;
-    &:first-child {
-      margin-top: 0;
-      padding-top: 6rem;
-    }
-    h2 {
-      text-align: center;
-    }
-    p {
-      padding: 2rem;
-    }
-  }
-
   .text-img-container {
     display: grid;
-
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 80%;
+    @media (max-width: 990px) {
+      width: 85%;
+    }
+    @media (max-width: 768px) {
+      width: 90%;
+    }
     app-img {
       justify-self: center;
-      img {
-        object-fit: cover;
-      }
+      object-fit: cover;
     }
-
     &.right-side {
-      grid-template-columns: 0.5fr 1fr;
+      grid-template-columns: 1fr 2fr;
       .text-img-container-text {
         margin-left: 10px;
         h2 {
@@ -98,10 +92,9 @@ section.services {
         }
         p {
           text-align: left;
-          padding: 0;
-          margin-bottom: 1rem;
+          margin-bottom: 5px;
           &.check-link {
-            font-size: 26px;
+            font-size: 20px;
             color: $orange;
             margin-bottom: 0;
           }
@@ -109,7 +102,7 @@ section.services {
       }
     }
     &.left-side {
-      grid-template-columns: 1fr 0.5fr;
+      grid-template-columns: 2fr 1fr;
       .text-img-container-text {
         margin-right: 10px;
         h2 {
@@ -118,21 +111,43 @@ section.services {
         }
         p {
           text-align: right;
-          padding: 0;
-          margin-bottom: 1rem;
+          margin-bottom: 5px;
           &.check-link {
-            font-size: 26px;
+            font-size: 20px;
             color: $orange;
             margin-bottom: 0;
           }
         }
       }
     }
+    @media (max-width: 768px) {
+      &.right-side {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
+        .text-img-container-text {
+          h2,
+          p {
+            text-align: center;
+          }
+        }
+      }
+      &.left-side {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
+        app-img {
+          grid-row: 1;
+        }
+        .text-img-container-text {
+          h2,
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
   }
-
   .our-toolbox {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 2rem 0;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
     background: linear-gradient(
       to right,
@@ -140,54 +155,40 @@ section.services {
       #666666 50%,
       #000000 90%
     );
+    .image-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: auto;
+      width: 80%;
+      @media (max-width: 990px) {
+        width: 85%;
+      }
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
     h2,
-    h3,
     p {
       color: white;
-      padding-top: 1rem;
       text-align: center;
+      margin-bottom: 12px;
     }
-
-    h2,
-    h3 {
+    h2 {
       text-transform: uppercase;
     }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    .image-column {
+    .img-item {
       display: flex;
       align-items: center;
       justify-content: center;
       img {
-        max-width: 250px;
-        width: 100%;
+        max-width: 20vw;
       }
     }
   }
 
   .work-examples {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    h2 {
-      text-align: center;
-    }
-    .single-example {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-
-      .single-example-text {
-        h2 {
-          color: $orange;
-          text-align: left;
-        }
-      }
-      app-img {
-        justify-self: center;
-      }
-    }
+    padding-top: 4rem;
+    text-align: center;
   }
 
   .no-examples {
