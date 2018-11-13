@@ -319,7 +319,11 @@
 
             img {
               width: 150px;
-              margin-top: 50%;
+              margin-top: 25%;
+
+              @include media-breakpoint-down(lg) {
+                margin-top: 50%;
+              }
             }
           }
         }
@@ -440,6 +444,7 @@
               img {
                 margin: 0;
                 width: 80px;
+  
               }
             }
           }
