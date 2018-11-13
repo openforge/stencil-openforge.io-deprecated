@@ -46,6 +46,11 @@ export class AppCaseStudy {
           </div>
         </section>
         <section class="container image-section">
+        <app-img
+            class=""
+            src="/assets/work-example-juntoscope-mobile.png"
+            alt="juntoscope mobile view"
+          />
           <div class="text-container">
             <h2>The Product</h2>
             <p>
@@ -86,11 +91,6 @@ export class AppCaseStudy {
               <li>Decrease time spent scoping tasks</li>
             </ul>
           </div>
-          <app-img
-            class=""
-            src="/assets/work-example-juntoscope-mobile.png"
-            alt="voyage-app-image"
-          />
         </section>
         <section class="timeline">
           <div class="container">
@@ -101,7 +101,7 @@ export class AppCaseStudy {
                   <app-img
                     class=""
                     src="/assets/case-study-discovery.png"
-                    alt="voyage-app-image"
+                    alt="case study discovery icon"
                   />
                   <div class="timeline-item-content">
                     <h3>Discovery</h3>
@@ -119,7 +119,7 @@ export class AppCaseStudy {
                 <app-img
                   class=""
                   src="/assets/case-study-design.png"
-                  alt="voyage-app-image"
+                  alt="case study design icon"
                 />
                 <div class="timeline-item-content">
                   <h3>Design</h3>
@@ -135,7 +135,7 @@ export class AppCaseStudy {
                   <app-img
                     class=""
                     src="/assets/case-study-development.png"
-                    alt="voyage-app-image"
+                    alt="case study development icon"
                   />
                   <div class="timeline-item-content">
                     <h3>Development</h3>
@@ -153,7 +153,7 @@ export class AppCaseStudy {
                 <app-img
                   class=""
                   src="/assets/case-study-qa.png"
-                  alt="voyage-app-image"
+                  alt="case study quality assurance icon"
                 />
                 <div class="timeline-item-content">
                   <h3>Quality Assurance</h3>
@@ -171,9 +171,11 @@ export class AppCaseStudy {
                 <app-img
                   class=""
                   src="/assets/graphic-home-deployment.png"
-                  alt="voyage-app-image"
+                  alt="case study deployment icon"
                 />
-                <div class="timeline-item-content">Launch!</div>
+                <div class="timeline-item-content">
+                  <h3>Launch!</h3>
+                </div>
               </div>
               <div class="blank-cell">&nbsp;</div>
             </div>
@@ -280,7 +282,7 @@ export class AppCaseStudy {
           </div>
 
           <p class="top-link" onClick={this.scrollToTop.bind(this)}>
-            Back to top
+            back to top
           </p>
         </section>
         <app-footer />
