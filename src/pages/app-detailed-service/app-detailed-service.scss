@@ -32,11 +32,24 @@ section.services {
       color: $white;
       font-size: 4rem;
       margin-bottom: 1rem;
-      @include media-breakpoint-down(lg) {
-        font-size: 3rem;
+      // @include media-breakpoint-down(lg) {
+      //   font-size: 3rem;
+      // }
+      // @include media-breakpoint-down(sm) {
+      //   font-size: 2.2rem;
+      // }
+      @media (max-width: 990px) {
+        font-size: 2.5rem;
       }
-      @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
+      @media (max-width: 768px) {
+        margin-top: 3.5em;
+      }
+      @media (max-width: 420px) {
+        font-size: 2rem;
+        margin-top: 2.5em;
+      }
+      @media (max-height: 570px) {
+        font-size: 1.5rem;
       }
     }
 
@@ -46,8 +59,18 @@ section.services {
       font-weight: 300;
       margin-bottom: 3rem;
       max-width: 500px;
-      @include media-breakpoint-down(lg) {
+      // @include media-breakpoint-down(lg) {
+      //   font-size: 1rem;
+      // }
+      @media (max-width: 768px) {
         font-size: 1rem;
+      }
+      @media (max-width: 420px) {
+        font-size: 0.9rem;
+      }
+      @media (max-height: 570px) {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
       }
     }
 
@@ -85,10 +108,6 @@ section.services {
       justify-self: center;
       img {
         object-fit: cover;
-      }
-      @include media-breakpoint-down(sm) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 20px;
       }
     }
 
@@ -138,11 +157,37 @@ section.services {
         }
       }
     }
+    @media (max-width: 768px) {
+      &.right-side {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
+        .text-img-container-text {
+          h2,
+          p {
+            text-align: center;
+          }
+        }
+      }
+      &.left-side {
+        grid-template-columns: 1fr;
+        grid-row-gap: 2rem;
+        app-img {
+          grid-row: 1;
+        }
+        .text-img-container-text {
+          h2,
+          p {
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 
   .our-toolbox {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
+    padding: 2rem 0;
+    // margin-top: 4rem;
+    // padding-bottom: 4rem;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
     background: linear-gradient(
       to right,
@@ -150,12 +195,25 @@ section.services {
       #666666 50%,
       #000000 90%
     );
+
+    .image-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: auto;
+      width: 80%;
+      @media (max-width: 990px) {
+        width: 85%;
+      }
+      @media (max-width: 768px) {
+        width: 90%;
+      }
+    }
+
     h2,
-    h3,
     p {
       color: white;
-      padding-top: 1rem;
       text-align: center;
+      margin-bottom: 12px;
     }
 
     h2,
@@ -163,19 +221,28 @@ section.services {
       text-transform: uppercase;
     }
 
-    p {
-      margin-bottom: 0;
-    }
+    // p {
+    //   margin-bottom: 0;
+    // }
 
-    .image-column {
+    .img-item {
       display: flex;
       align-items: center;
       justify-content: center;
       img {
-        max-width: 250px;
-        width: 100%;
+        max-width: 20vw;
       }
     }
+
+    // .image-column {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+    //   img {
+    //     max-width: 250px;
+    //     width: 100%;
+    //   }
+    // }
   }
 
   .work-examples {
