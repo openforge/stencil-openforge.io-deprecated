@@ -8,8 +8,7 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop()
-  history: RouterHistory;
+  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -36,6 +35,10 @@ export class AppHome {
       <div class="home">
         {/* header - hero */}
         <header class="hero">
+          <video controls={false} autoplay={true} loop={true}>
+            <source src="/assets/website-header-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">
