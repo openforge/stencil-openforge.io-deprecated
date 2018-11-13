@@ -86,6 +86,10 @@ section.services {
       img {
         object-fit: cover;
       }
+      @include media-breakpoint-down(sm) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 20px;
+      }
     }
 
     &.right-side {
@@ -95,6 +99,7 @@ section.services {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
       }
+
       .text-img-container-text {
         margin-left: 10px;
         h2 {

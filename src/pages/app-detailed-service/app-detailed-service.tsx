@@ -8,8 +8,7 @@ declare var fbq;
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop()
-  match: MatchResults;
+  @Prop() match: MatchResults;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -55,10 +54,8 @@ export class AppDetailedService {
     },
   };
 
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -69,14 +66,10 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State()
-  nameError: string;
-  @State()
-  emailError: string;
-  @State()
-  messageError: string;
-  @State()
-  isDisabled = true;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() messageError: string;
+  @State() isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -252,7 +245,7 @@ export class AppDetailedService {
         <div id="second-content" class="container">
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src={this.imgs[this.match.params.service].first}
               alt=""
             />
@@ -283,14 +276,14 @@ export class AppDetailedService {
               </p>
             </div>
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src={this.imgs[this.match.params.service].second}
               alt=""
             />
           </section>
           <section class="text-img-container right-side">
             <app-img
-              class="img-fluid d-none d-md-inline"
+              class="img-fluid d-md-inline"
               src={this.imgs[this.match.params.service].third}
               alt=""
             />
