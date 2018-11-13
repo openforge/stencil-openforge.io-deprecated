@@ -35,13 +35,20 @@ export class AppNavHeader {
       <nav class="navbar navbar-expand-xl navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
-            <h1>
-              <app-img
-                class="img-fluid"
-                src="/assets/logo-openforge.png"
-                alt={translate('nav.header.img.alt')}
-              />
-            </h1>
+            <stencil-route-link
+              url="/"
+              exact={true}
+              anchorClass="nav-link"
+              activeClass="active"
+            >
+              <h1>
+                <app-img
+                  class="img-fluid"
+                  src="/assets/logo-openforge.png"
+                  alt={translate('nav.header.img.alt')}
+                />
+              </h1>
+            </stencil-route-link>
           </div>
           <button
             class="navbar-toggler"

@@ -27,7 +27,7 @@ export class AppAbout {
       mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/rachel-bennett',
+      url: '/about/rachel-bennett',
     },
     {
       name: 'Geoffrey Melle',
@@ -36,7 +36,7 @@ export class AppAbout {
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/geoffrey-melle',
+      url: '/about/geoffrey-melle',
     },
     {
       name: 'Joni Lehto',
@@ -61,7 +61,7 @@ export class AppAbout {
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
-      url: '/team-landing/paulina-gallo',
+      url: '/about/paulina-gallo',
     },
     {
       name: 'Meredith Alcorn',
@@ -80,11 +80,11 @@ export class AppAbout {
       github: 'https://github.com/Fdom92',
     },
     {
-      name: 'William Holloran',
+      name: 'Billy Holloran',
       image: './../../assets/headshot-billy.png',
       title: translate('about.meet.member.title.projectManager'),
-      mail: 'william@openforge.io',
-      url: '/team-landing/william-holloran',
+      mail: 'billy@openforge.io',
+      url: '/about/billy-holloran',
     },
     {
       name: 'Luis Chacon',
@@ -109,7 +109,7 @@ export class AppAbout {
       mail: 'ethan@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/ethan-bohan',
+      url: '/about/ethan-bohan',
     },
     {
       name: 'Ted Grant',
@@ -118,7 +118,7 @@ export class AppAbout {
       mail: 'ted@openforge.io',
       twitter: '',
       github: '',
-      url: '/team-landing/ted-grant',
+      url: '/about/ted-grant',
     },
     {
       name: 'Kevon Chambers',
@@ -163,7 +163,7 @@ export class AppAbout {
       mail: '',
       twitter: 'https://twitter.com/YoungSongJS',
       github: 'https://github.com/Hogusong',
-      url: '/team-landing/young-song',
+      url: '/about/young-song',
     },
     {
       name: 'Sam Hudgens',
@@ -172,7 +172,7 @@ export class AppAbout {
       mail: 'sam@openforge.io',
       twitter: '',
       github: 'https://github.com/samhudgens',
-      url: '/team-landing/sam-hudgens',
+      url: '/about/sam-hudgens',
     },
     {
       name: 'Casey',
@@ -181,7 +181,7 @@ export class AppAbout {
       mail: '',
       twitter: '',
       github: '',
-      url: '/team-landing/casey',
+      url: '/about/casey',
     },
     // {
     //   name: 'YOU?',
