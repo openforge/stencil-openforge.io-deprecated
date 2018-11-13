@@ -1,19 +1,19 @@
 // hero
 .hero-home {
-  background-image: url('/assets/bg-hero-town.jpg');
+  // background-image: url('/assets/bg-hero-town.jpg');
   align-items: flex-end;
   background-position: top center;
   background-size: cover;
   display: flex;
   height: 100vh;
-  @include media-breakpoint-down(md) {
-    background-image: url('/assets/bg-hero-town-md.jpg');
-    display: block;
-    background-size: cover;
-  }
-  @include media-breakpoint-down(sm) {
-    background-image: url('/assets/bg-hero-town-sm.jpg');
-  }
+  // @include media-breakpoint-down(md) {
+  //   background-image: url('/assets/bg-hero-town-md.jpg');
+  //   display: block;
+  //   background-size: cover;
+  // }
+  // @include media-breakpoint-down(sm) {
+  //   background-image: url('/assets/bg-hero-town-sm.jpg');
+  // }
 
   h2 {
     color: $white;
@@ -41,7 +41,7 @@
   }
 
   .content {
-    background: url('/assets/graphic-home-monitor.png') top center no-repeat;
+    // background: url('/assets/graphic-home-monitor.png') top center no-repeat;
     background-size: contain;
     height: 630px;
     margin-left: -125px;
