@@ -113,11 +113,6 @@ section.services {
 
     &.right-side {
       grid-template-columns: 0.5fr 1fr;
-      @include media-breakpoint-down(sm) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 20px;
-      }
-
       .text-img-container-text {
         margin-left: 10px;
         h2 {
