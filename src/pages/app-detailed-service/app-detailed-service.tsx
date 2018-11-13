@@ -8,8 +8,7 @@ declare var fbq;
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop()
-  match: MatchResults;
+  @Prop() match: MatchResults;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -43,7 +42,7 @@ export class AppDetailedService {
         second: '/assets/work-example-loudcloud-mobile.png',
       },
     },
-    'tech-consulting': {
+    'startup-consulting': {
       first: '/assets/services-consulting-pc.png',
       second: '/assets/services-consulting-notepad.png',
       third: '/assets/services-consulting-arrow.png',
@@ -55,10 +54,8 @@ export class AppDetailedService {
     },
   };
 
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -69,14 +66,10 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State()
-  nameError: string;
-  @State()
-  emailError: string;
-  @State()
-  messageError: string;
-  @State()
-  isDisabled = true;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() messageError: string;
+  @State() isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -94,6 +87,60 @@ export class AppDetailedService {
       fbq('track', 'ViewContent');
     }
     this.resetFormValues();
+
+    // Change meta tags dynamically
+    if (this.match.params.service === 'app-developer') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute('content', 'OpenForge - Mobile App Developer Expert');
+      document
+        .querySelector("meta[name='Description']")
+        .setAttribute(
+          'content',
+          'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'Mobile App Developer, Mobile App Development, Progressive Web App'
+        );
+    } else if (this.match.params.service === 'app-designer') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute('content', 'OpenForge - Mobile App Design Experts');
+      document
+        .querySelector("meta[name='Description']")
+        .setAttribute(
+          'content',
+          'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'UI, UX, Design, Mobile App Design, User Experience Expert'
+        );
+    } else if (this.match.params.service === 'startup-consulting') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute(
+          'content',
+          'OpenForge - Startup Consulting Services in Philadelphia'
+        );
+      document
+        .querySelector("meta[name='Description']")
+        .setAttribute(
+          'content',
+          'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies. Let Us Help You With Marketing and CTO As a Service.'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting'
+        );
+    }
   }
 
   validateField(e) {
