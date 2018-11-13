@@ -189,11 +189,11 @@ export class AppOpportunities {
 
     if (this.match.params.type === 'design') {
       if (
-        this.formValues.sketch > 60 &&
-        this.formValues.adobe > 60 &&
-        this.formValues.interactive > 60 &&
-        this.formValues.ux > 60 &&
-        this.formValues.presentation > 60
+        this.formValues.sketch > 70 &&
+        this.formValues.adobe > 70 &&
+        this.formValues.interactive > 70 &&
+        this.formValues.ux > 70 &&
+        this.formValues.presentation > 70
       ) {
         this.interviewButtonDisabled = false;
       } else {
