@@ -113,7 +113,6 @@ section.services {
 
     &.right-side {
       grid-template-columns: 0.5fr 1fr;
-      // Nov 12, 2018
       @include media-breakpoint-down(sm) {
         grid-template-columns: 1fr;
         grid-row-gap: 20px;
@@ -186,8 +185,6 @@ section.services {
 
   .our-toolbox {
     padding: 2rem 0;
-    // margin-top: 4rem;
-    // padding-bottom: 4rem;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
     background: linear-gradient(
       to right,
@@ -220,11 +217,6 @@ section.services {
     h3 {
       text-transform: uppercase;
     }
-
-    // p {
-    //   margin-bottom: 0;
-    // }
-
     .img-item {
       display: flex;
       align-items: center;
@@ -233,16 +225,6 @@ section.services {
         max-width: 20vw;
       }
     }
-
-    // .image-column {
-    //   display: flex;
-    //   align-items: center;
-    //   justify-content: center;
-    //   img {
-    //     max-width: 250px;
-    //     width: 100%;
-    //   }
-    // }
   }
 
   .work-examples {
