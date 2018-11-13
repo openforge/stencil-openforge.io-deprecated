@@ -173,7 +173,9 @@ export class AppCaseStudy {
                   src="/assets/graphic-home-deployment.png"
                   alt="case study deployment icon"
                 />
-                <div class="timeline-item-content">Launch!</div>
+                <div class="timeline-item-content">
+                  <h3>Launch!</h3>
+                </div>
               </div>
               <div class="blank-cell">&nbsp;</div>
             </div>

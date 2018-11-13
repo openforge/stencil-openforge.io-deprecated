@@ -341,6 +341,14 @@
 
           .timeline-item-content {
             margin-top: 10px;
+
+            h3 {
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 2;
+              color: $gray-dark;
+              text-transform: uppercase;
+            }
           }
 
           app-img img {
