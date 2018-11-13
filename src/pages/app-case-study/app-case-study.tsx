@@ -46,6 +46,11 @@ export class AppCaseStudy {
           </div>
         </section>
         <section class="container image-section">
+        <app-img
+            class=""
+            src="/assets/work-example-juntoscope-mobile.png"
+            alt="juntoscope mobile view"
+          />
           <div class="text-container">
             <h2>The Product</h2>
             <p>
@@ -86,11 +91,6 @@ export class AppCaseStudy {
               <li>Decrease time spent scoping tasks</li>
             </ul>
           </div>
-          <app-img
-            class=""
-            src="/assets/work-example-juntoscope-mobile.png"
-            alt="juntoscope mobile view"
-          />
         </section>
         <section class="timeline">
           <div class="container">
