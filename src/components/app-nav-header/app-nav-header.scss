@@ -1,4 +1,6 @@
 nav.navbar .navbar-nav .nav-item {
+  text-align: right;
+
   &.dropdown {
     cursor: pointer;
 
@@ -12,6 +14,7 @@ nav.navbar .navbar-nav .nav-item {
 
     .dropdown-item {
       color: rgba(244, 245, 249, 0.75);
+      text-align: right;
 
       &:hover {
         background: rgba(23, 23, 25, 0.75);
