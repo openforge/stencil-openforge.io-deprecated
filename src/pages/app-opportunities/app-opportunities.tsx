@@ -60,6 +60,7 @@ export class AppOpportunities {
   @State()
   texts = {
     develop: {
+      backgroundPhoto: '/assets/graphic-opportunities-dev-header.png',
       firstSkill: {
         name: 'Angular',
         img: '/assets/graphic-opportunities-dev-phone1.png',
@@ -99,6 +100,7 @@ export class AppOpportunities {
       },
     },
     design: {
+      backgroundPhoto: '/assets/graphic-opportunities-design-header.png',
       firstSkill: {
         name: 'Wireframing',
         img: '/assets/graphic-opportunities-design-phone1.png',
@@ -347,7 +349,14 @@ export class AppOpportunities {
     return (
       <div class="opportunities">
         {/* header - hero */}
-        <header class="hero">
+        <header
+          class="hero"
+          style={{
+            'background-image': `url(${
+              this.texts[this.match.params.type].backgroundPhoto
+            })`,
+          }}
+        >
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
