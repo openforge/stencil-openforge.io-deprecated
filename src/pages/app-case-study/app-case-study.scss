@@ -94,7 +94,7 @@
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 50px;
 
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         grid-template-columns: 1fr;
         grid-column-gap: 0;
         grid-row-gap: 25px;
