@@ -101,9 +101,10 @@ section.services {
           padding: 0;
           margin-bottom: 1rem;
           &.check-link {
-            font-size: 26px;
             color: $orange;
+            font-size: 26px;
             margin-bottom: 0;
+            text-decoration: underline;
           }
         }
       }
@@ -121,9 +122,10 @@ section.services {
           padding: 0;
           margin-bottom: 1rem;
           &.check-link {
-            font-size: 26px;
             color: $orange;
+            font-size: 26px;
             margin-bottom: 0;
+            text-decoration: underline;
           }
         }
       }
