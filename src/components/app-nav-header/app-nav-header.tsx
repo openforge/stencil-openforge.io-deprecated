@@ -149,7 +149,7 @@ export class AppNavHeader {
                     Our Toolbox
                   </stencil-route-link>
                   <stencil-route-link
-                    url="/resources"
+                    url="/resources/pwa-white-paper"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >

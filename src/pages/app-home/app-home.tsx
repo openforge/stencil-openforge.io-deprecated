@@ -29,10 +29,10 @@ export class AppHome {
       .querySelector("meta[name='title']")
       .setAttribute(
         'content',
-        'OpenForge - Mobile Design - App Development - Startup Consulting'
+        'Mobile Design - App Development - Startup Consulting | OpenForge'
       );
     document
-      .querySelector("meta[name='Description']")
+      .querySelector("meta[name='description']")
       .setAttribute(
         'content',
         'OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular'

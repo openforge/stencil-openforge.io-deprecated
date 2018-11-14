@@ -1,4 +1,4 @@
-import { Component, Prop, State, Listen } from '@stencil/core';
+import { Component, Prop, State, Listen, Watch } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
 declare var fbq;
@@ -80,6 +80,11 @@ export class AppDetailedService {
     this.validateField(target);
   }
 
+  @Watch('match')
+  matchHandler() {
+    this.changeMetadata();
+  }
+
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
@@ -88,59 +93,7 @@ export class AppDetailedService {
     }
     this.resetFormValues();
 
-    // Change meta tags dynamically
-    if (this.match.params.service === 'app-developer') {
-      document
-        .querySelector("meta[name='title']")
-        .setAttribute('content', 'OpenForge - Mobile App Developer Expert');
-      document
-        .querySelector("meta[name='Description']")
-        .setAttribute(
-          'content',
-          'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'Mobile App Developer, Mobile App Development, Progressive Web App'
-        );
-    } else if (this.match.params.service === 'app-designer') {
-      document
-        .querySelector("meta[name='title']")
-        .setAttribute('content', 'OpenForge - Mobile App Design Experts');
-      document
-        .querySelector("meta[name='Description']")
-        .setAttribute(
-          'content',
-          'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'UI, UX, Design, Mobile App Design, User Experience Expert'
-        );
-    } else if (this.match.params.service === 'startup-consulting') {
-      document
-        .querySelector("meta[name='title']")
-        .setAttribute(
-          'content',
-          'OpenForge - Startup Consulting Services in Philadelphia'
-        );
-      document
-        .querySelector("meta[name='Description']")
-        .setAttribute(
-          'content',
-          'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies. Let Us Help You With Marketing and CTO As a Service.'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting'
-        );
-    }
+    this.changeMetadata();
   }
 
   validateField(e) {
@@ -211,6 +164,62 @@ export class AppDetailedService {
     const form = document.getElementById('second-content');
 
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
+  changeMetadata() {
+    // Change meta tags dynamically
+    if (this.match.params.service === 'app-developer') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute('content', 'Mobile App Developer Experts | OpenForge');
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'Mobile App Developer, Mobile App Development, Progressive Web App'
+        );
+    } else if (this.match.params.service === 'app-designer') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute('content', 'Mobile App Design Experts | OpenForge');
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'UI, UX, Design, Mobile App Design, User Experience Expert'
+        );
+    } else if (this.match.params.service === 'startup-consulting') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute(
+          'content',
+          'Startup Consulting Services in Philadelphia | OpenForge'
+        );
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies.   Let Us Help You With Marketing and CTO As a Service.'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting'
+        );
+    }
   }
 
   render() {

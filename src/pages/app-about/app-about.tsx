@@ -206,10 +206,10 @@ export class AppAbout {
       .querySelector("meta[name='title']")
       .setAttribute(
         'content',
-        'OpenForge - Philadelphia’s Top Mobile Technology and Design Experts'
+        'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge'
       );
     document
-      .querySelector("meta[name='Description']")
+      .querySelector("meta[name='description']")
       .setAttribute(
         'content',
         'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia'

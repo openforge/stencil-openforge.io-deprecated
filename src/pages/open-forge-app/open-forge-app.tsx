@@ -48,7 +48,10 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
-          <stencil-route url="/resources" component="app-resources" />
+          <stencil-route
+            url="/resources/pwa-white-paper"
+            component="app-resources"
+          />
           <stencil-route url="/about/:member" component="app-team-landing" />
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />

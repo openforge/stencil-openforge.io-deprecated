@@ -10,6 +10,24 @@ export class AppToolbox {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  componentDidLoad() {
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute(
+        'content',
+        'Toolbox - Development & Design Tools | OpenForge'
+      );
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'Our team members use a variety of tools to bring projects to light in an efficient and effective manner. Our development team and design team both use the latest technologies available to create innovative and beautiful products with the user in mind'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute('content', 'developer tools, designer tools');
+  }
+
   render() {
     return (
       <div class="toolbox">
