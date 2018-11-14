@@ -2,7 +2,7 @@
   .hero {
     height: 100vh;
 
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(lg) {
       background-image: url('/assets/bg-hero-team.jpg');
       background-position: top center;
       background-size: cover;
@@ -14,7 +14,7 @@
       width: 100%;
       background-color: black;
 
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(lg) {
         display: none;
       }
     }
