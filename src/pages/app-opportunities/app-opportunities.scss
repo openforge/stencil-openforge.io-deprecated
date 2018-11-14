@@ -37,6 +37,10 @@
   .interviews {
     padding: 3rem 0;
 
+    a {
+      text-decoration: underline;
+    }
+
     .challenge {
       background: linear-gradient(to bottom, $orange 0%, $orange-dark 100%);
       margin: 5rem 0;
