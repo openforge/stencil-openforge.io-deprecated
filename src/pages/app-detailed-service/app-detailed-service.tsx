@@ -363,11 +363,7 @@ export class AppDetailedService {
                       }.examples.first.desc`}
                     />
                   </p>
-                  <p class="check-link">
-                    <a href="https://try.juntoscope.com" target="_blank">
-                      Check it out
-                    </a>
-                  </p>
+                  {/* <p class="check-link">Check it out</p> */}
                 </div>
               </div>
               <div class="text-img-container left-side">
@@ -386,14 +382,7 @@ export class AppDetailedService {
                       }.examples.second.desc`}
                     />
                   </p>
-                  <p class="check-link">
-                    <a
-                      href="https://www.newoceanhealthsolutions.com/product-and-programs/"
-                      target="_blank"
-                    >
-                      Check it out
-                    </a>
-                  </p>
+                  {/* <p class="check-link">Check it out</p> */}
                 </div>
                 <app-img
                   class=""

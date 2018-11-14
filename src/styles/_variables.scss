@@ -61,4 +61,6 @@ $navbar-dark-color: rgba($gray-100, 0.75) !default;
 $of-boxshadow: 4px 4px 4px rgba(0, 0, 0, 0.2),
   0 0 4px lighten(rgba(0, 0, 0, 0.2), 5%);
 
+// Check Browser for .webp capability
+
 @import 'node_modules/bootstrap/scss/variables';

@@ -57,12 +57,13 @@ export class Img {
 
   render() {
     return (
-      <img
-        class={{ fit: this.fit }}
-        src={this.loadSrc}
-        alt={this.alt}
-        decoding="async"
-      />
+      <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />
+      // <img
+      //   class={{ fit: this.fit }}
+      //   src={this.loadSrc}
+      //   alt={this.alt}
+      //   decoding="async"
+      // />
     );
   }
 }
