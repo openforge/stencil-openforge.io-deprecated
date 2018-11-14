@@ -2,11 +2,21 @@
   .hero {
     height: 100vh;
 
+    @include media-breakpoint-down(xs) {
+      background-image: url('/assets/bg-hero-team.jpg');
+      background-position: top center;
+      background-size: cover;
+    }
+
     video {
       position: absolute;
       height: 100vh;
       width: 100%;
       background-color: black;
+
+      @include media-breakpoint-down(xs) {
+        display: none;
+      }
     }
 
     .overlay {
