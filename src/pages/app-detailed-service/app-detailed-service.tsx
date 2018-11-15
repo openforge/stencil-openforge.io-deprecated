@@ -342,7 +342,7 @@ export class AppDetailedService {
               <h2>Work Examples</h2>
               <div class="text-img-container right-side">
                 <app-img
-                  class=""
+                  class="voyage-app-image"
                   src={this.imgs[this.match.params.service].examples.first}
                   alt="voyage-app-image"
                 />
