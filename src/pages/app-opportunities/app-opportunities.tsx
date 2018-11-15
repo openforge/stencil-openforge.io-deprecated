@@ -61,7 +61,7 @@ export class AppOpportunities {
   texts = {
     develop: {
       googleDoc:
-        'https://docs.google.com/document/d/1wqwowtkU52JmLb8HkR-bOZhx_MpLIUXnTJSy47U_OuI/edit',
+        'https://docs.google.com/document/d/1WUrZp0FinRbT2fROmPjXAyqhCPlam-G3w0siFgbVgF4/edit',
       backgroundPhoto: '/assets/graphic-opportunities-dev-header.png',
       firstSkill: {
         name: 'Angular',
@@ -109,7 +109,7 @@ export class AppOpportunities {
     },
     design: {
       googleDoc:
-        'https://docs.google.com/document/d/1WUrZp0FinRbT2fROmPjXAyqhCPlam-G3w0siFgbVgF4/edit',
+        'https://docs.google.com/document/d/1wqwowtkU52JmLb8HkR-bOZhx_MpLIUXnTJSy47U_OuI/edit',
       backgroundPhoto: '/assets/graphic-opportunities-design-header.png',
       firstSkill: {
         name: 'Wireframing',
