@@ -203,7 +203,6 @@ export class AppCaseStudy {
             We began the{' '}
             <a
               href="https://openforge.io/services/app-designer"
-              target="_blank"
             >
               design process
             </a>{' '}
@@ -211,7 +210,9 @@ export class AppCaseStudy {
             features we liked and did not like about them. We then set up user
             flows and wireframing each identified screen. This process, along
             with the design and styling phase, occurs in{' '}
-            <a href="https://openforge.io/toolbox" target="_blank">
+            <a 
+            href="https://openforge.io/toolbox"
+            >
               Sketch
             </a>
             . After completing the full skeleton, we reviewed each user flow and
@@ -227,7 +228,6 @@ export class AppCaseStudy {
             We began the{' '}
             <a
               href="https://openforge.io/services/app-developer"
-              target="_blank"
             >
               development process
             </a>{' '}
@@ -250,7 +250,7 @@ export class AppCaseStudy {
           <h3>What we learned</h3>
           <p>
             Throughout the process of developing JuntoScope,{' '}
-            <a href="https://openforge.io/about" target="_blank">
+            <a href="https://openforge.io/about">
               our team
             </a>{' '}
             learned the importance of establishing a process that is fully
