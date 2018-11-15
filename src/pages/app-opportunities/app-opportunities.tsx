@@ -609,9 +609,10 @@ export class AppOpportunities {
                     Check out our
                     <a
                       class="doc-link"
+                      target="_blank"
                       href={this.texts[this.match.params.type].googleDoc}
                     >
-                      google doc
+                      Google Document
                     </a>
                     to see the ins and outs of what this epic adventure will
                     include!
