@@ -6,10 +6,8 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-resources.scss',
 })
 export class AppResources {
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
 
   @State()
   formValues: {
@@ -24,17 +22,12 @@ export class AppResources {
     organizationValid: false;
   };
 
-  @State()
-  nameError: string;
-  @State()
-  industryError: string;
-  @State()
-  emailError: string;
-  @State()
-  organizationError: string;
+  @State() nameError: string;
+  @State() industryError: string;
+  @State() emailError: string;
+  @State() organizationError: string;
 
-  @State()
-  isDisabled = true;
+  @State() isDisabled = true;
 
   @Prop()
   errorIconStyles = {
@@ -96,7 +89,14 @@ export class AppResources {
       : (this.isDisabled = true);
   }
 
-  async handleSubmit(event) {
+  prepareSubmit(event) {
+    // We create the window object here due to
+    // Safari blocking any call to window.open() inside an async call
+    const windowReference = window.open();
+    this.handleSubmit(event, windowReference);
+  }
+
+  async handleSubmit(event, windowReference) {
     event.preventDefault();
 
     try {
@@ -125,7 +125,7 @@ export class AppResources {
       const form = document.getElementById('top');
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
 
-      window.open('/assets/PWA%20White%20Paper.pdf', '_blank');
+      windowReference.location = '/assets/PWA%20White%20Paper.pdf';
     } catch (error) {
       console.log('Error', error);
     }
@@ -231,7 +231,7 @@ export class AppResources {
                   <div class="">
                     <form
                       id="pwa-form"
-                      onSubmit={this.handleSubmit.bind(this)}
+                      onSubmit={this.prepareSubmit.bind(this)}
                       novalidate={true}
                     >
                       <app-input
