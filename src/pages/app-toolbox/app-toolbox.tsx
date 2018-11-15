@@ -136,10 +136,10 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a href="https://github.com/">Github</a>
+                <a href="https://github.com/">GitHub</a>
               </h2>
               <p>
-                Github is an industry standard for hosting code, managing
+                GitHub is an industry standard for hosting code, managing
                 projects, and collaboration between developers. Github gives our
                 development team a channel to effectively produce, manage and
                 refine code.
@@ -170,7 +170,7 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a href="https://bitbucket.org/">Bit Bucket</a>
+                <a href="https://bitbucket.org/">BitBucket</a>
               </h2>
               <p>
                 Bitbucket shows a detailed breakdown of developer productivity
@@ -193,7 +193,7 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a href="https://www.teamwork.com/">Team Work</a>
+                <a href="https://www.teamwork.com/">Teamwork</a>
               </h2>
               <p>
                 Teamwork Projects is a powerful project management software that
