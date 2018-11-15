@@ -60,6 +60,8 @@ export class AppOpportunities {
   @State()
   texts = {
     develop: {
+      googleDoc:
+        'https://docs.google.com/document/d/1wqwowtkU52JmLb8HkR-bOZhx_MpLIUXnTJSy47U_OuI/edit',
       backgroundPhoto: '/assets/graphic-opportunities-dev-header.png',
       firstSkill: {
         name: 'Angular',
@@ -106,6 +108,8 @@ export class AppOpportunities {
       },
     },
     design: {
+      googleDoc:
+        'https://docs.google.com/document/d/1WUrZp0FinRbT2fROmPjXAyqhCPlam-G3w0siFgbVgF4/edit',
       backgroundPhoto: '/assets/graphic-opportunities-design-header.png',
       firstSkill: {
         name: 'Wireframing',
@@ -600,6 +604,18 @@ export class AppOpportunities {
                   id="myLittleAnchor"
                   onSubmit={this.handleSubmit.bind(this)}
                 >
+                  <p>
+                    Want to know exactly what you're getting yourself into?
+                    Check out our
+                    <a
+                      class="doc-link"
+                      href={this.texts[this.match.params.type].googleDoc}
+                    >
+                      google doc
+                    </a>
+                    to see the ins and outs of what this epic adventure will
+                    include!
+                  </p>
                   <h3>
                     <app-translate key="opportunities.form.submitTitle" />
                   </h3>
