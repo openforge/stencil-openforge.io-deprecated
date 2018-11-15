@@ -329,7 +329,7 @@ export class AppHome {
               />
               <app-img
                 class="img-fluid"
-                src="assets/logo-eli-lu-entertainment-black.png"
+                src="assets/logo-eli-lu-entertainment.jpg"
                 alt="Eli and Lu Entertainment"
               />
               <app-img
