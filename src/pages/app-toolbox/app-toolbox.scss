@@ -58,6 +58,10 @@
   .consulting {
     margin-bottom: 60px;
 
+    a {
+      text-decoration: underline;
+    }
+
     @include media-breakpoint-down(sm) {
       margin-bottom: 40px;
     }
