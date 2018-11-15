@@ -219,11 +219,11 @@ export class AppHome {
               </div>
 
               <div class="work">
-                <h3>DigiThermo</h3>
+                <h3>JuntoScope</h3>
                 <app-img
                   class=""
-                  src="assets/graphic-home-digithermo.png"
-                  alt="digithermo-app-image"
+                  src="assets/graphic-home-juntoscope.png"
+                  alt="juntoscope-app-image"
                 />
                 <div class="icons">
                   <app-img
