@@ -49,12 +49,6 @@
     }
 
     &.text-section {
-      &.background-image {
-        background-image: url('/assets/case-study-background-section.png');
-        background-position: top center;
-        background-size: cover;
-      }
-
       h2 {
         font-size: 48px;
         font-weight: 600;
@@ -87,9 +81,20 @@
           text-align: center;
         }
       }
+
+      &.background-image {
+        background-image: url('/assets/case-study-background-section-desktop.png');
+        background-position: top center;
+        background-size: cover;
+
+        @include media-breakpoint-down(sm) {
+          background-image: url('/assets/case-study-background-section-mobile.png');
+        }
+      }
+
     }
 
-    &.image-section {
+    &.product-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 50px;

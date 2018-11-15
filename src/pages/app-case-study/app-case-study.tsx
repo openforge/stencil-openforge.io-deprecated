@@ -60,11 +60,11 @@ export class AppCaseStudy {
             </p>
           </div>
         </section>
-        <section class="container image-section">
-        <app-img
-            class=""
-            src="/assets/work-example-juntoscope-mobile.png"
-            alt="juntoscope mobile view"
+        <section class="container product-section">
+          <app-img
+              class=""
+              src="/assets/work-example-juntoscope-mobile.png"
+              alt="juntoscope mobile view"
           />
           <div class="text-container">
             <h2>The Product</h2>
