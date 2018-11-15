@@ -377,8 +377,8 @@ export class AppOpportunities {
           </div>
         </header>
 
-        {/* section - intro */}
-        <section id="intro" class="intro">
+        {/* section -  interviews */}
+        <section id="interviews" class="interviews">
           <div class="container">
             <content-graphic
               img-url="/assets/graphic-opportunities-suck.jpg"

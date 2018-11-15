@@ -186,13 +186,14 @@
         color: $gray-brown;
 
         &.top-link {
-          margin-top: 15px;
+          color: $orange;
+          cursor: pointer;
           font-size: 15px;
           font-weight: bold;
           letter-spacing: 1.6px;
+          margin-top: 15px;
+          text-decoration: underline;
           text-align: center;
-          color: $orange;
-          cursor: pointer;
         }
 
         @include media-breakpoint-down(xs) {
