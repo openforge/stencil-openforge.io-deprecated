@@ -114,6 +114,10 @@
             @include media-breakpoint-down(sm) {
               text-align: center;
             }
+
+            a:hover {
+              color: $orange;
+            }
           }
 
           p {
@@ -158,6 +162,10 @@
 
             @include media-breakpoint-down(sm) {
               text-align: center;
+            }
+
+            a:hover {
+              color: $orange;
             }
           }
 
