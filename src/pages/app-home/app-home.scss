@@ -103,11 +103,11 @@
     }
 
     .card-container {
-      // display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
-      // grid-column-gap: 30px;
-      justify-content: space-between;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 50px;
+      // justify-content: space-between;
+      // display: flex;
 
       @include media-breakpoint-down(xs) {
         padding-left: none;
@@ -155,6 +155,11 @@
             margin-bottom: 0;
             line-height: 1.5rem;
           }
+        }
+
+        &--image img {
+          width: 100%;
+          height: auto;
         }
 
         @include media-breakpoint-down(xs) {
