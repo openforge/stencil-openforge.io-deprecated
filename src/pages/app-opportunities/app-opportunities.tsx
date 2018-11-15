@@ -363,7 +363,7 @@ export class AppOpportunities {
   }
 
   scrollToForm() {
-    const form = document.getElementById('intro');
+    const form = document.getElementById('interviews');
 
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
