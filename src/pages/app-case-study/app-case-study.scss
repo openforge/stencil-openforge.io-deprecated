@@ -83,12 +83,12 @@
       }
 
       &.background-image {
-        background-image: url('/assets/case-study-background-section-desktop.jpeg');
+        background-image: url('/assets/case-study-background-section-desktop.png');
         background-position: top center;
         background-size: cover;
 
         @include media-breakpoint-down(sm) {
-          background-image: url('/assets/case-study-background-section-mobile.jpeg');
+          background-image: url('/assets/case-study-background-section-mobile.png');
         }
       }
 
