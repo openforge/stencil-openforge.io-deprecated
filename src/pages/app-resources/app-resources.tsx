@@ -48,8 +48,21 @@ export class AppResources {
 
   componentDidLoad() {
     this.resetFormValues();
-  }
 
+    // Change meta tags dynamically
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute('content', 'Business Owner’s Guide to PWAs | OpenForge');
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute('content', 'Progressive Web App, PWA, White Paper');
+  }
   validateField(e) {
     switch (e.name) {
       case 'name':

@@ -1,15 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+ 
   <url>
-    <loc>http://www.openforge.io</loc> 
+    <loc>https://openforge.io/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>1.00</priority>
   </url>
   <url>
-    <loc>http://www.openforge.io/about</loc> 
+    <loc>https://openforge.io/services/app-developer/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>http://www.openforge.io/contact</loc> 
+    <loc>https://openforge.io/services/app-designer/</loc>
+    <lastmod>2018-11-05T22:53:54+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>http://www.openforge.io/opportunities</loc> 
+    <loc>https://openforge.io/services/startup-consulting/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://openforge.io/about/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/contact/</loc>
+    <lastmod>2018-11-05T22:53:54+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/juntoscope/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/toolbox/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/resources/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/opportunities/develop/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/opportunities/design/</loc>
+    <lastmod>2018-11-05T22:53:54+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/rachel-bennett/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/geoffrey-melle/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/paulina-gallo/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/billy-holloran/</loc>
+    <lastmod>2018-11-05T22:53:54+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/ethan-bohan/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/ted-grant/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/young-song/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/sam-hudgens/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/about/casey/</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://openforge.io/juntoscope/assets/pdf/juntoscope.sketch</loc>
+    <lastmod>2018-11-05T22:53:53+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+
 </urlset>

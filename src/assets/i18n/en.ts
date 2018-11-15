@@ -30,7 +30,7 @@ export const translations = {
           text:
             'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
         },
-        'tech-consulting': {
+        'startup-consulting': {
           meta:
             'With OpenForge as your tech consultant, we will determine what technologies and processes will help your business succeed in the digital world.',
           headline: 'Consulting',
@@ -236,14 +236,14 @@ export const translations = {
           },
         },
       },
-      'tech-consulting': {
+      'startup-consulting': {
         hero: {
-          title: 'Tech Consulting for all Industries',
+          title: 'Startup Consulting for all Industries',
           text:
-            'Our business and tech consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
         first: {
-          title: 'Tech Consulting',
+          title: 'Startup Consulting',
           text:
             "Is an app right for your company? Do the tools you're paying for give you the results you need? Are you paying for the correct level of service through your providers?",
         },

@@ -10,6 +10,21 @@ export class AppCaseStudy {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  componentDidLoad() {
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute('content', 'JuntoScope - Scoping Software | OpenForge');
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'Juntoscope will help your team determine scopes for tasks in Teamwork.com© Projects more accurately, quickly, and efficiently to keep your projects within budget. Integrating with Teamwork Projects API, your team will be able to scope, populate, and assign times to tasks automatically.'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute('content', 'juntoscope, scoping, project management');
+  }
+
   render() {
     return (
       <div class="case-study">

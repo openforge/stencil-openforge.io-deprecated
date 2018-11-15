@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 import { translate } from '../../services/translation.service';
 
@@ -32,6 +32,12 @@ export class AppTeamLanding {
       ],
       team: 'design',
       backgroundPhoto: '/assets/bios-background-rachel.jpg',
+      metatags: {
+        title: 'Rachel Bennett - Visual Designer | OpenForge',
+        description:
+          'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or concepting, she approaches each problem with an equal measure of discipline and curiosity.',
+        keywords: 'Rachel Bennett, designer, visual designer, UIUX',
+      },
     },
     'geoffrey-melle': {
       firstname: 'Geoffrey',
@@ -50,6 +56,12 @@ export class AppTeamLanding {
       ],
       team: 'management',
       backgroundPhoto: '/assets/bios-background-geoff.jpg',
+      metatags: {
+        title: 'Geoffrey Melle - Account Manager | OpenForge',
+        description:
+          'As account manager, Geoffrey tackles marketing and sales objectives for OpenForge with his experience in digital marketing. Additionally Geoffrey takes part in project management overseeing internal and client projects, ensuring smooth communication and delivery of assets.',
+        keywords: 'Geoffrey Melle',
+      },
     },
     'joni-lehto': {
       firstname: 'Joni',
@@ -95,6 +107,12 @@ export class AppTeamLanding {
       ],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-paulina.png',
+      metatags: {
+        title: 'Paulina Gallo - Software Engineer | OpenForge',
+        description:
+          'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the full development process of a project, including the initial scoping, architecture planning, client communication management, and deployment involved in all projects. Paulina volunteers for various organizations and is the co-organizer for Angular Philly and Ionic Philly.',
+        keywords: 'Paulina Gallo',
+      },
     },
     'fernando-del-olmo': {
       firstname: 'Fernando',
@@ -134,6 +152,12 @@ export class AppTeamLanding {
       ],
       team: 'management',
       backgroundPhoto: '/assets/bios-background-billy.jpg',
+      metatags: {
+        title: 'Billy Holloran - QA Engineer | OpenForge',
+        description:
+          'As Project Manager, Billy ensures that our team and your team have the resources and requirements needed in order to successfully launch your product. Heading up our quality assurance process, Billy leads the team in testing all deliverables maintaining high quality standards.',
+        keywords: 'Billy Holloran',
+      },
     },
     'luis-chacon': {
       firstname: 'Luis',
@@ -192,6 +216,12 @@ export class AppTeamLanding {
       ],
       team: 'design',
       backgroundPhoto: '/assets/bios-background-ethan.jpg',
+      metatags: {
+        title: 'Ethan Bohan- Visual Designer | OpenForge',
+        description:
+          "As a designer, Ethan leverages his design experience and front end development skills helping your team to create an intuitive user interface that translates into a positive user experience. Through close collaboration with our design team and development team, Ethan's skills streamline the design process.",
+        keywords: 'Ethan Bohan',
+      },
     },
     'dhairya-pujara': {
       firstname: 'Dhairya',
@@ -230,6 +260,12 @@ export class AppTeamLanding {
       ],
       team: 'design',
       backgroundPhoto: '/assets/bios-background-ted.png',
+      metatags: {
+        title: 'Ted Grant - Design Intern | OpenForge',
+        description:
+          "As a designer, Ted uses his experience in visual design and eye for user-flow to help make a product that is visually pleasing and tactually smooth. Thanks to Drexel's rapid-fire scheduling, he is adaptable and quick to learn new skills, helping to ease collaborators' work and get projects done faster.",
+        keywords: 'Ted Grant',
+      },
     },
     'kevon-chambers': {
       firstname: 'Kevon',
@@ -252,6 +288,12 @@ export class AppTeamLanding {
       skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-young.jpg',
+      metatags: {
+        title: 'Young Son - Software Intern | OpenForge',
+        description:
+          'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+        keywords: 'Young Song',
+      },
     },
     'sam-hudgens': {
       firstname: 'Sam',
@@ -264,6 +306,12 @@ export class AppTeamLanding {
       skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-sam.jpg',
+      metatags: {
+        title: 'Sam Hudgens - Software Intern | OpenForge',
+        description:
+          'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
+        keywords: 'Sam Hudgens',
+      },
     },
     casey: {
       firstname: 'Casey',
@@ -284,13 +332,50 @@ export class AppTeamLanding {
       ],
       team: 'pet',
       backgroundPhoto: '/assets/bios-background-casey.jpg',
+      metatags: {
+        title: 'Casey - Chief Happiness Officer | OpenForge',
+        description:
+          'As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.',
+        keywords: 'Casey',
+      },
     },
   };
+
+  @Watch('match')
+  matchHandler() {
+    this.changeMetadata();
+  }
 
   componentWillLoad() {
     this.chips = this.data[this.match.params.member].skills.map(skill => {
       return <label class="skill-chip">{skill}</label>;
     });
+  }
+
+  componentDidLoad() {
+    this.changeMetadata();
+  }
+
+  changeMetadata() {
+    // Change meta tags dynamically
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute(
+        'content',
+        this.data[this.match.params.member].metatags.title
+      );
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        this.data[this.match.params.member].metatags.description
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute(
+        'content',
+        this.data[this.match.params.member].metatags.keywords
+      );
   }
 
   render() {
