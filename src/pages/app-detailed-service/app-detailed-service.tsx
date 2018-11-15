@@ -21,7 +21,7 @@ export class AppDetailedService {
       toolbox: {
         first: '/assets/services-development-toolbox-first.png',
         second: '/assets/services-development-toolbox-second.png',
-        third: '/assets/services-development-toolbox-third.png',
+        third: '/assets/github-logo-white.png',
       },
       examples: {
         first: '/assets/work-example-juntoscope-mobile.png',

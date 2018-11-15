@@ -149,7 +149,7 @@ export class AppToolbox {
           <section class="text-img-container right-side">
             <app-img
               class="img-fluid d-md-inline"
-              src="/assets/services-development-toolbox-third.png"
+              src="/assets/github-logo-black.png"
               alt=""
             />
             <div class="text-img-container-text">
