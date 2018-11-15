@@ -36,12 +36,12 @@
     color: $white;
     font-size: 0.85rem;
     font-weight: 700;
+    text-decoration: underline;
 
     &:hover,
     &:focus,
     &:active {
       color: $white;
-      text-decoration: underline !important;
     }
   }
 

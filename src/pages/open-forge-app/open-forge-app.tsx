@@ -43,6 +43,7 @@ export class OpenForgeApp {
             component="app-opportunities"
           />
           <stencil-route url="/about" component="app-about" exact={true} />
+          <stencil-route url="/about/" component="app-about" exact={true} />
           <stencil-route url="/toolbox" component="app-toolbox" />
           <stencil-route
             url="/services/:service"

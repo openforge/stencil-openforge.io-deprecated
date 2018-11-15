@@ -12,18 +12,10 @@
 
     h2 {
       color: $orange-light;
-      font-size: 2rem;
-      font-weight: 200;
+      font-size: 3rem;
+      font-weight: 600;
       margin-bottom: 1rem;
       text-align: center;
-
-      @include media-breakpoint-down(lg) {
-        font-size: 2rem;
-      }
-
-      @include media-breakpoint-down(sm) {
-        font-size: 1.5rem;
-      }
     }
 
     p {
@@ -42,6 +34,7 @@
       @include media-breakpoint-down(sm) {
         font-size: 1.5rem;
         line-height: 3rem;
+        margin: 0 1rem;
       }
     }
   }
@@ -101,7 +94,7 @@
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 50px;
 
-      @include media-breakpoint-down(xs) {
+      @include media-breakpoint-down(lg) {
         grid-template-columns: 1fr;
         grid-column-gap: 0;
         grid-row-gap: 25px;
@@ -142,9 +135,9 @@
       }
 
       app-img {
-        justify-self: end;
+        justify-self: center;
 
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(md) {
           grid-row: 1;
         }
       }
@@ -193,13 +186,14 @@
         color: $gray-brown;
 
         &.top-link {
-          margin-top: 15px;
-          font-size: 25px;
-          font-weight: bold;
-          letter-spacing: 1.6px;
-          text-align: center;
           color: $orange;
           cursor: pointer;
+          font-size: 15px;
+          font-weight: bold;
+          letter-spacing: 1.6px;
+          margin-top: 15px;
+          text-decoration: underline;
+          text-align: center;
         }
 
         @include media-breakpoint-down(xs) {
@@ -218,8 +212,7 @@
 
     // TIMELINE
     &.timeline {
-      background: rgba(93, 83, 78, 0.3);
-
+      
       h2 {
         font-size: 48px;
         font-weight: 600;
@@ -246,60 +239,8 @@
           position: relative;
         }
 
-        // the bullets and lines for the items on left
         .timeline-bullet-left {
-          // bullet
-          &:before {
-            position: absolute;
-            height: 12px;
-            width: 12px;
-            background: #5d534e;
-            content: '';
-            border-radius: 10px;
-            right: -7px;
-            top: 119px;
-          }
-
-          @include media-breakpoint-down(lg) {
-            &:before {
-              position: absolute;
-              height: 12px;
-              width: 12px;
-              background: #5d534e;
-              content: '';
-              border-radius: 10px;
-              right: -7px;
-              top: 134px;
-            }
-          }
-
-          @include media-breakpoint-down(md) {
-            &:before {
-              position: absolute;
-              height: 12px;
-              width: 12px;
-              background: #5d534e;
-              content: '';
-              border-radius: 10px;
-              right: -7px;
-              top: 180px;
-            }
-          }
-
-          @include media-breakpoint-down(sm) {
-            &:before {
-              position: absolute;
-              height: 12px;
-              width: 12px;
-              background: #5d534e;
-              content: '';
-              border-radius: 10px;
-              right: -7px;
-              top: 196px;
-            }
-          }
-
-          // line
+          // left line
           &:after {
             position: absolute;
             height: 2px;
@@ -313,145 +254,28 @@
 
           @include media-breakpoint-down(lg) {
             &:after {
-              position: absolute;
-              height: 2px;
-              display: block;
               width: 70px;
-              background: $gray-brown;
-              content: '';
-              right: 0;
-              top: 50%;
-            }
-          }
-
-          @include media-breakpoint-down(md) {
-            &:after {
-              position: absolute;
-              height: 2px;
-              display: block;
-              width: 48px;
-              background: $gray-brown;
-              content: '';
-              right: 0;
-              top: 50%;
-            }
-          }
-
-          @include media-breakpoint-down(sm) {
-            &:after {
-              position: absolute;
-              height: 2px;
-              display: block;
-              width: 30px;
-              background: $gray-brown;
-              content: '';
-              right: 0;
-              top: 50%;
             }
           }
         }
 
-        // the bullets and lines for the items on right
         .timeline-bullet-right {
-          // bullet
-          &:before {
-            position: absolute;
-            height: 12px;
-            width: 12px;
-            background: #5d534e;
-            content: '';
-            border-radius: 10px;
-            left: -114px;
-            top: 99px;
-          }
-
-          @include media-breakpoint-down(lg) {
-            &:before {
-              position: absolute;
-              height: 12px;
-              width: 12px;
-              background: #5d534e;
-              content: '';
-              border-radius: 10px;
-              left: -80px;
-              top: 115px;
-            }
-          }
-
-          @include media-breakpoint-down(md) {
-            &:before {
-              position: absolute;
-              height: 12px;
-              width: 12px;
-              background: #5d534e;
-              content: '';
-              border-radius: 10px;
-              left: -56px;
-              top: 145px;
-            }
-          }
-
-          @include media-breakpoint-down(sm) {
-            &:before {
-              position: absolute;
-              height: 12px;
-              width: 12px;
-              background: #5d534e;
-              content: '';
-              border-radius: 10px;
-              left: -38px;
-              top: 177px;
-            }
-          }
-
-          // line
+          // right line
           &:after {
             position: absolute;
             height: 2px;
             display: block;
-            width: 105px;
+            width: 108px;
             background: $gray-brown;
             content: '';
-            left: -105px;
+            left: -108px;
             top: 50%;
           }
 
           @include media-breakpoint-down(lg) {
             &:after {
-              position: absolute;
-              height: 2px;
-              display: block;
-              width: 70px;
-              background: $gray-brown;
-              content: '';
-              left: -70px;
-              top: 50%;
-            }
-          }
-
-          @include media-breakpoint-down(md) {
-            &:after {
-              position: absolute;
-              height: 2px;
-              display: block;
-              width: 48px;
-              background: $gray-brown;
-              content: '';
-              left: -49px;
-              top: 50%;
-            }
-          }
-
-          @include media-breakpoint-down(sm) {
-            &:after {
-              position: absolute;
-              height: 2px;
-              display: block;
-              width: 35px;
-              background: $gray-brown;
-              content: '';
-              left: -35px;
-              top: 50%;
+              width: 75px;
+              left: -75px;
             }
           }
         }
@@ -464,18 +288,6 @@
           box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
           width: 80%;
           min-height: 208px;
-
-          @include media-breakpoint-down(lg) {
-            min-height: 240px;
-          }
-
-          @include media-breakpoint-down(md) {
-            min-height: 300px;
-          }
-
-          @include media-breakpoint-down(sm) {
-            min-height: 364px;
-          }
 
           &:nth-child(even) {
             position: relative;
@@ -507,7 +319,11 @@
 
             img {
               width: 150px;
-              margin-top: 50%;
+              margin-top: 25%;
+
+              @include media-breakpoint-down(lg) {
+                margin-top: 50%;
+              }
             }
           }
         }
@@ -529,39 +345,24 @@
 
           .timeline-item-content {
             margin-top: 10px;
+
+            h3 {
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 2;
+              color: $gray-dark;
+              text-transform: uppercase;
+            }
           }
 
           app-img img {
             width: 150px;
           }
         }
-
-        @include media-breakpoint-down(xs) {
-          display: grid;
-          grid-template-columns: 1fr;
-          margin-top: 52px;
-
-          .blank-cell {
-            display: none;
-          }
-
-          .timeline-item {
-            flex-direction: column-reverse;
-          }
-
-          .timeline-item-content {
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 2;
-            color: #292a2d;
-            text-align: center;
-            text-transform: uppercase;
-          }
-        }
       }
 
-      // TIMELINE MOBILE
-      @include media-breakpoint-down(xs) {
+      // TIMELINE MEDIUM DESKTOP BREAKPOINT
+      @include media-breakpoint-down(md) {
         .timeline-items {
           display: grid;
           grid-template-columns: 1fr;
@@ -576,44 +377,27 @@
             border-right: none;
           }
 
-          // the bullets and lines for the items on left
           .timeline-bullet-left {
-            // bullet
-            &:before {
-              display: none;
-            }
-
             // line
             &:after {
-              position: absolute;
               height: 2px;
-              width: 30px;
-              background: #5d534e;
-              content: '';
-              right: 50%;
-              top: 100%;
               margin-top: 15px;
+              right: 48%;
+              top: 100%;
               transform: rotate(90deg);
+              width: 30px;
             }
           }
 
-          // the bullets and lines for the items on right
           .timeline-bullet-right {
-            // bullet
-            &:before {
-              display: none;
-            }
-
             // line
             &:after {
-              position: absolute;
-              background: #5d534e;
-              content: '';
+              height: 2px;
+              left: 48%;
+              margin-top: 15px;
               top: 100%;
-              left: 30%;
-              width: 50px;
-              margin-top: 25px;
               transform: rotate(90deg);
+              width: 30px;
             }
           }
 
@@ -641,6 +425,7 @@
 
               ul {
                 padding-left: 20px;
+                margin-left: 2rem;
 
                 li {
                   font-size: 16px;
@@ -659,11 +444,70 @@
               img {
                 margin: 0;
                 width: 80px;
+  
               }
             }
           }
         }
+        
+        .final-timeline-item {
+          display: grid;
+          grid-template-columns: 1fr;
+          margin-top: 32px;
+
+          .blank-cell {
+            display: none;
+          }
+
+          .timeline-item {
+            flex-direction: column-reverse;
+          }
+
+          .timeline-item-content {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 2;
+            color: $gray-dark;
+            text-align: center;
+            text-transform: uppercase;
+          }
+        }
       }
+
+      // TIMELINE SMALL DESKTOP BREAKPOINT
+      @include media-breakpoint-down(sm) {
+        .timeline-items {
+          .timeline-bullet-left {
+            &:after {
+              right: 48%;
+            }
+          }
+
+          .timeline-bullet-right {
+            &:after {
+              left: 46%;         
+            }
+          }
+        }
+      }
+
+      // TIMELINE XSMALL MOBILE BREAKPOINT
+      @include media-breakpoint-down(xs) {
+        .timeline-items {
+          .timeline-bullet-left {
+            &:after {
+              right: 45%;
+            }
+          }
+
+          .timeline-bullet-right {
+            &:after {
+              left: 45%;         
+            }
+          }
+        }
+      }
+
     }
   }
 }

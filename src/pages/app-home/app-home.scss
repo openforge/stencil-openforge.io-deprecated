@@ -103,26 +103,23 @@
     }
 
     .card-container {
-      // display: grid;
-      // grid-template-columns: 1fr 1fr 1fr;
-      // grid-column-gap: 30px;
-      justify-content: space-between;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 50px;
 
       @include media-breakpoint-down(xs) {
-        padding-left: none;
+        display: flex;
         flex-wrap: wrap;
         justify-content: center;
       }
 
-      .card-service {
-        h1 {
-          text-align: center;
-          font-size: 24px;
-          text-decoration: underline;
-          color: $orange;
-        }
+      .card-service > h1 {
+        text-align: center;
+        font-size: 24px;
+        text-decoration: underline;
+        color: $orange;
       }
+
       .card {
         box-shadow: 0 5px 15px 0 rgba(158, 158, 158, 1);
         position: relative;
@@ -155,6 +152,11 @@
             margin-bottom: 0;
             line-height: 1.5rem;
           }
+        }
+
+        &--image img {
+          width: 100%;
+          height: auto;
         }
 
         @include media-breakpoint-down(xs) {

@@ -60,6 +60,7 @@ export class AppOpportunities {
   @State()
   texts = {
     develop: {
+      backgroundPhoto: '/assets/graphic-opportunities-dev-header.png',
       firstSkill: {
         name: 'Angular',
         img: '/assets/graphic-opportunities-dev-phone1.png',
@@ -105,6 +106,7 @@ export class AppOpportunities {
       },
     },
     design: {
+      backgroundPhoto: '/assets/graphic-opportunities-design-header.png',
       firstSkill: {
         name: 'Wireframing',
         img: '/assets/graphic-opportunities-design-phone1.png',
@@ -208,11 +210,11 @@ export class AppOpportunities {
 
     if (this.match.params.type === 'design') {
       if (
-        this.formValues.sketch > 60 &&
-        this.formValues.adobe > 60 &&
-        this.formValues.interactive > 60 &&
-        this.formValues.ux > 60 &&
-        this.formValues.presentation > 60
+        this.formValues.sketch > 70 &&
+        this.formValues.adobe > 70 &&
+        this.formValues.interactive > 70 &&
+        this.formValues.ux > 70 &&
+        this.formValues.presentation > 70
       ) {
         this.interviewButtonDisabled = false;
       } else {
@@ -388,7 +390,14 @@ export class AppOpportunities {
     return (
       <div class="opportunities">
         {/* header - hero */}
-        <header class="hero">
+        <header
+          class="hero"
+          style={{
+            'background-image': `url(${
+              this.texts[this.match.params.type].backgroundPhoto
+            })`,
+          }}
+        >
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
@@ -409,8 +418,8 @@ export class AppOpportunities {
           </div>
         </header>
 
-        {/* section - intro */}
-        <section id="intro" class="intro">
+        {/* section -  interviews */}
+        <section id="interviews" class="interviews">
           <div class="container">
             <content-graphic
               img-url="/assets/graphic-opportunities-suck.jpg"

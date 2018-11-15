@@ -392,6 +392,7 @@ export const translations = {
         line1: '1010 N Hancock St',
         line2: 'Philadelphia, PA 19123',
         email: 'hello@openforge.io',
+        phoneNumber: '(215)-821-8673'
       },
 
       partners: {
@@ -417,10 +418,10 @@ export const translations = {
       },
 
       webinar: {
-        signup: 'Sign Up for Our Webinar Series',
+        signup: 'Startup Junto',
         webinarText:
-          'Our FREE webinar series will cover topics including UI/UX design, app development, and SEO strategy.',
-        register: 'Register Today',
+          'Startup Junto is a curated community for startup founders and entrepreneurs.',
+        register: 'Register Today!',
       },
 
       blog: {
