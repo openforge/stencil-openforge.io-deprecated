@@ -19,35 +19,18 @@ export class OpenForgeApp {
     }
 
     if (this.mainEl) {
-      const navItems = document.getElementsByClassName('nav-item');
-      for (let index = 0; index < navItems.length; index += 1) {
-        if (!navItems[index].className.includes('dropdown')) {
-          navItems[index].addEventListener('click', () => {
-            const navbarButton: any = document.getElementsByClassName(
-              'navbar-toggler'
-            )[0];
-            navbarButton.click();
-          });
+      this.mainEl.addEventListener('click', ev => {
+        if (ev.srcElement.classList.contains('dropdown-toggle')) {
+          return;
         }
-      }
-      const dropdownItems = document.getElementsByClassName('dropdown-item');
-      for (let index = 0; index < dropdownItems.length; index += 1) {
-        dropdownItems[index].addEventListener('click', () => {
+        const opened = document.getElementsByClassName('navbar-collapse show');
+        if (opened.length > 0) {
           const navbarButton: any = document.getElementsByClassName(
             'navbar-toggler'
           )[0];
           navbarButton.click();
-        });
-      }
-      const brandItems = document.getElementsByClassName('navbar-brand');
-      for (let index = 0; index < brandItems.length; index += 1) {
-        brandItems[index].addEventListener('click', () => {
-          const navbarButton: any = document.getElementsByClassName(
-            'navbar-toggler'
-          )[0];
-          navbarButton.click();
-        });
-      }
+        }
+      });
     }
   }
 
