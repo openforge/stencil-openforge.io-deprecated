@@ -384,10 +384,10 @@
             width: 150px;
           }
 
-          @include media-breakpoint-down(md) {
-            width: 30%;
-            justify-self: center;
-          }
+          // @include media-breakpoint-down(md) {
+          //   justify-self: center;
+          //   width: 60%;
+          // }
         }
       }
 
@@ -492,6 +492,8 @@
 
           .timeline-item {
             flex-direction: column-reverse;
+            justify-self: center;
+            width: 60%;
           }
 
           .timeline-item-content {
@@ -541,6 +543,10 @@
               left: 45%;
             }
           }
+        }
+
+        .final-timeline-item > .timeline-item {
+          width: 100%;
         }
       }
     }
