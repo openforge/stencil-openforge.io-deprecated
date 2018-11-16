@@ -50,7 +50,7 @@ export class OpenForgeApp {
             component="app-detailed-service"
           />
           <stencil-route
-            url="/resources/pwa-white-paper"
+            url="/resources/:source"
             component="app-resources"
           />
           <stencil-route url="/about/:member" component="app-team-landing" />

@@ -1,5 +1,6 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
 import { translate } from '../../services/translation.service';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-resources',
@@ -35,6 +36,8 @@ export class AppResources {
     marginBottom: '.2rem',
     paddingRight: '5px',
   };
+  @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
 
   @Listen('check')
   @Listen('valueChange')
@@ -44,6 +47,12 @@ export class AppResources {
     this.formValues[field] = value;
 
     this.validateField(target);
+  }
+
+  componentWillLoad() {
+    if(this.match.params.source != 'pwa-white-paper') {
+      this.history.push(`/`, {});
+    }
   }
 
   componentDidLoad() {

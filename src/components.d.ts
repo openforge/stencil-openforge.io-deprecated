@@ -721,6 +721,8 @@ declare global {
   namespace StencilComponents {
     interface AppResources {
       'errorIconStyles': any;
+      'history': RouterHistory;
+      'match': MatchResults;
     }
   }
 
@@ -744,6 +746,8 @@ declare global {
   namespace JSXElements {
     export interface AppResourcesAttributes extends HTMLAttributes {
       'errorIconStyles'?: any;
+      'history'?: RouterHistory;
+      'match'?: MatchResults;
     }
   }
 }
