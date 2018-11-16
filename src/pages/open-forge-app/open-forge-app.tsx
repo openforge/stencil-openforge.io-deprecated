@@ -19,7 +19,10 @@ export class OpenForgeApp {
     }
 
     if (this.mainEl) {
-      this.mainEl.addEventListener('click', () => {
+      this.mainEl.addEventListener('click', ev => {
+        if (ev.srcElement.classList.contains('dropdown-toggle')) {
+          return;
+        }
         const opened = document.getElementsByClassName('navbar-collapse show');
         if (opened.length > 0) {
           const navbarButton: any = document.getElementsByClassName(
