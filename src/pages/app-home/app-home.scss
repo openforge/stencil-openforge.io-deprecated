@@ -186,6 +186,11 @@
 
       h3 {
         margin-bottom: 20px;
+
+        @include media-breakpoint-down(md) {
+          font-size: 25px;
+          font-weight: 500;
+        }
       }
 
       @include media-breakpoint-down(sm) {
