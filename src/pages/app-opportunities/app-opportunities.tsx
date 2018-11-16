@@ -1,6 +1,6 @@
 import { Component, State, Listen, Prop, Watch } from '@stencil/core';
 import { translate } from '../../services/translation.service';
-import { MatchResults } from '@stencil/router';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 declare var fbq;
 
@@ -167,10 +167,17 @@ export class AppOpportunities {
     paddingRight: '5px',
   };
   @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
 
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
+  }
+
+  componentWillLoad() {
+    if(!this.texts[this.match.params.type]) {
+      this.history.push(`/`, {});
+    }
   }
 
   componentDidLoad() {
@@ -369,31 +376,36 @@ export class AppOpportunities {
   }
 
   changeMetadata() {
-    // Change meta tags dynamically
-    document
-      .querySelector("meta[name='title']")
-      .setAttribute(
-        'content',
-        this.texts[this.match.params.type].metatags.title
+    if(this.texts[this.match.params.type]) {
+      // Change meta tags dynamically d
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.title
+        );
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.description
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.keywords
       );
-    document
-      .querySelector("meta[name='description']")
-      .setAttribute(
-        'content',
-        this.texts[this.match.params.type].metatags.description
-      );
-    document
-      .querySelector("meta[name='keywords']")
-      .setAttribute(
-        'content',
-        this.texts[this.match.params.type].metatags.keywords
-      );
+    }
+
   }
 
   render() {
     return (
       <div class="opportunities">
         {/* header - hero */}
+      {this.texts[this.match.params.type]
+      ? [
         <header
           class="hero"
           style={{
@@ -420,9 +432,9 @@ export class AppOpportunities {
               </div>
             </div>
           </div>
-        </header>
-
-        {/* section -  interviews */}
+        </header>,
+        
+        /* section -  interviews */
         <section id="interviews" class="interviews">
           <div class="container">
             <content-graphic
@@ -521,9 +533,9 @@ export class AppOpportunities {
               </p>
             </content-graphic>
           </div>
-        </section>
+        </section>,
 
-        {/* section - apply */}
+        /* section - apply */
         <section id="apply" class="apply">
           {!this.formSubmitted ? (
             <div class="container">
@@ -775,8 +787,9 @@ export class AppOpportunities {
               </content-graphic>
             </div>
           )}
-        </section>
-        <app-footer />
+        </section>,
+        <app-footer />,
+      ]: null }
       </div>
     );
   }
