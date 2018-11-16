@@ -29,7 +29,7 @@
       font-size: 4rem;
       margin-bottom: 1rem;
       text-align: center;
-      
+
       @include media-breakpoint-down(lg) {
         font-size: 3rem;
       }
@@ -203,7 +203,7 @@
       .work {
         text-align: center;
         flex-direction: column;
-        margin: 50px;
+        margin: 30px;
 
         .icons app-img {
           display: inline-block;
