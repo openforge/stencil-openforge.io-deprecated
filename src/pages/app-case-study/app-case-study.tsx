@@ -201,20 +201,20 @@ export class AppCaseStudy {
           <h3>Design</h3>
           <p>
             We began the{' '}
-            <a
-              href="https://openforge.io/services/app-designer"
+            <stencil-route-link
+              url="/services/app-designer"
             >
               design process
-            </a>{' '}
+            </stencil-route-link>{' '}
             by researching similar apps on the marketplace and identifying
             features we liked and did not like about them. We then set up user
             flows and wireframing each identified screen. This process, along
             with the design and styling phase, occurs in{' '}
-            <a 
-            href="https://openforge.io/toolbox"
+            <stencil-route-link
+            url="/toolbox"
             >
               Sketch
-            </a>
+            </stencil-route-link>
             . After completing the full skeleton, we reviewed each user flow and
             tried to identify any gaps or weaknesses in the user flow. From
             there, we made modifications and began identifying styles and colors
@@ -226,11 +226,11 @@ export class AppCaseStudy {
           <h3>Development</h3>
           <p>
             We began the{' '}
-            <a
-              href="https://openforge.io/services/app-developer"
+            <stencil-route-link
+              url="/services/app-developer"
             >
               development process
-            </a>{' '}
+            </stencil-route-link>{' '}
             with a full design review. Our team worked closely with the
             designers to document a list of feature requirements that would
             later translate into development requirements. From there, we
@@ -250,9 +250,9 @@ export class AppCaseStudy {
           <h3>What we learned</h3>
           <p>
             Throughout the process of developing JuntoScope,{' '}
-            <a href="https://openforge.io/about">
+            <stencil-route-link url="/about">
               our team
-            </a>{' '}
+            </stencil-route-link>{' '}
             learned the importance of establishing a process that is fully
             understood by each and every member. Our company was going through a
             transitional phase early on in the development of JuntoScope
