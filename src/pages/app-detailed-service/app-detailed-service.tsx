@@ -1,5 +1,5 @@
 import { Component, Prop, State, Listen, Watch } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 declare var fbq;
 
@@ -9,6 +9,7 @@ declare var fbq;
 })
 export class AppDetailedService {
   @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -83,6 +84,12 @@ export class AppDetailedService {
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
+  }
+
+  componentWillLoad() {
+    if (!this.imgs[this.match.params.service]) {
+      this.history.push(`/`, {});
+    }
   }
 
   componentDidLoad() {

@@ -615,6 +615,7 @@ declare global {
 
   namespace StencilComponents {
     interface AppDetailedService {
+      'history': RouterHistory;
       'match': MatchResults;
     }
   }
@@ -638,6 +639,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AppDetailedServiceAttributes extends HTMLAttributes {
+      'history'?: RouterHistory;
       'match'?: MatchResults;
     }
   }
