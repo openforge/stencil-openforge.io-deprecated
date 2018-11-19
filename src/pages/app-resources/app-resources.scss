@@ -173,15 +173,15 @@
         margin-right: 10px;
         h2 {
           color: $orange;
-          text-align: justify;
+          text-align: start;
         }
         h3 {
           color: $orange-light;
           font-size: 1.6rem;
-          text-align: justify;
+          text-align: start;
         }
         p {
-          text-align: justify;
+          text-align: start;
           padding: 0;
           margin-bottom: 1rem;
           &.check-link {
