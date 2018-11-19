@@ -50,7 +50,7 @@ export class AppResources {
   }
 
   componentWillLoad() {
-    if(this.match.params.source != 'pwa-white-paper') {
+    if (this.match.params.source !== 'pwa-white-paper') {
       this.history.push(`/`, {});
     }
   }
@@ -111,14 +111,7 @@ export class AppResources {
       : (this.isDisabled = true);
   }
 
-  prepareSubmit(event) {
-    // We create the window object here due to
-    // Safari blocking any call to window.open() inside an async call
-    const windowReference = window.open();
-    this.handleSubmit(event, windowReference);
-  }
-
-  async handleSubmit(event, windowReference) {
+  async handleSubmit(event) {
     event.preventDefault();
 
     try {
@@ -147,7 +140,11 @@ export class AppResources {
       const form = document.getElementById('top');
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
 
-      windowReference.location = '/assets/PWA%20White%20Paper.pdf';
+      // Create an anchor element with the attribute download for the pdf
+      const downloadLink: HTMLAnchorElement = document.createElement('a');
+      downloadLink.href = '/assets/PWA%20White%20Paper.pdf';
+      downloadLink.download = 'PWA White Paper.pdf';
+      downloadLink.click();
     } catch (error) {
       console.log('Error', error);
     }
@@ -253,7 +250,7 @@ export class AppResources {
                   <div class="">
                     <form
                       id="pwa-form"
-                      onSubmit={this.prepareSubmit.bind(this)}
+                      onSubmit={this.handleSubmit.bind(this)}
                       novalidate={true}
                     >
                       <app-input
