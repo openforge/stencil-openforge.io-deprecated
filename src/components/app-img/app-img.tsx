@@ -6,6 +6,7 @@ import { Component, Element, Prop, State, Watch } from '@stencil/core';
 })
 export class Img {
   private io: IntersectionObserver | null = null;
+  private switchToWebp: boolean = false;
 
   @Element() el: HTMLElement;
 
@@ -55,7 +56,76 @@ export class Img {
     }
   }
 
+  private changeExtension() {
+    this.switchToWebp = this.detectBrowser();
+    console.log('check browser', this.switchToWebp, this.loadSrc);
+    if (this.switchToWebp && this.loadSrc) {
+      const idx = this.loadSrc.lastIndexOf('.');
+      this.loadSrc = this.loadSrc.substr(0, idx) + '.webp';
+      console.log('Switch to .webp', this.loadSrc);
+    }
+  }
+
+  detectBrowser(): boolean {
+    // console.log('detect Browser')
+    const nAgt = navigator.userAgent;
+    let fullVersion = '' + parseFloat(navigator.appVersion);
+    let verIndex: any;
+
+    // detact 'Firefox'
+    if (/Firefox/i.test(navigator.userAgent)) {
+      // detact 'Firefox for Android'
+      if (/Android|android|FxiOS/i.test(navigator.userAgent)) {
+        return false;
+      }
+      verIndex = nAgt.indexOf('Firefox');
+      fullVersion = nAgt.substring(verIndex + 8);
+      const version = this.getMajorVersion(fullVersion);
+      return version >= 65 ? true : false;
+    }
+
+    // detact Opera Mini
+    if (/Opera Mini|Android|android/i.test(navigator.userAgent)) {
+      return true;
+    }
+
+    // In Opera, the true version is after "Opera" or after "Version"
+    if ((verIndex = nAgt.indexOf('Opera')) !== -1) {
+      fullVersion = nAgt.substring(verIndex + 6);
+      if ((verIndex = nAgt.indexOf('Version')) !== -1) {
+        fullVersion = nAgt.substring(verIndex + 8);
+      }
+      const version = this.getMajorVersion(fullVersion);
+      return version > 11.4 ? true : false;
+    }
+
+    // In Chrome, the true version is after "Chrome"
+    if ((verIndex = nAgt.indexOf('Chrome')) !== -1) {
+      fullVersion = nAgt.substring(verIndex + 7);
+      const version = this.getMajorVersion(fullVersion);
+      return version > 9 ? true : false;
+    }
+    return false;
+  }
+
+  getMajorVersion(fullVersion: string) {
+    let ix: number;
+    let majorVersion: number;
+    // trim the fullVersion string at semicolon/space if present
+    if ((ix = fullVersion.indexOf(';')) !== -1) {
+      majorVersion = parseFloat(fullVersion.substring(0, ix));
+    }
+    if ((ix = fullVersion.indexOf(' ')) !== -1) {
+      majorVersion = parseFloat(fullVersion.substring(0, ix));
+    }
+    if (isNaN(majorVersion)) {
+      majorVersion = parseFloat(navigator.appVersion);
+    }
+    return majorVersion;
+  }
+
   render() {
+    this.changeExtension();
     return (
       <img
         class={{ fit: this.fit }}

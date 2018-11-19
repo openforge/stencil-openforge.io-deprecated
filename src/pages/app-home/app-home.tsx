@@ -8,8 +8,7 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop()
-  history: RouterHistory;
+  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -163,16 +162,26 @@ export class AppHome {
                   alt="loudcloud-app-image"
                 />
                 <div class="icons">
-                  <app-img
-                    class=""
-                    src="assets/graphic-apple-appstore.png"
-                    alt="apple-app-store-icon"
-                  />
-                  <app-img
-                    class=""
-                    src="assets/graphic-google-googleplaystore.png"
-                    alt="google-play-store-icon"
-                  />
+                  <a
+                    href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8"
+                    target="_blank"
+                  >
+                    <app-img
+                      class=""
+                      src="assets/graphic-apple-appstore.png"
+                      alt="apple-app-store-icon"
+                    />
+                  </a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en"
+                    target="_blank"
+                  >
+                    <app-img
+                      class=""
+                      src="assets/graphic-google-googleplaystore.png"
+                      alt="google-play-store-icon"
+                    />
+                  </a>
                 </div>
               </div>
 
@@ -184,16 +193,26 @@ export class AppHome {
                   alt="voyage-app-image"
                 />
                 <div class="icons">
-                  <app-img
-                    class=""
-                    src="assets/graphic-apple-appstore.png"
-                    alt="apple-app-store-icon"
-                  />
-                  <app-img
-                    class=""
-                    src="assets/graphic-google-googleplaystore.png"
-                    alt="google-play-store-icon"
-                  />
+                  <a
+                    href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
+                    target="_blank"
+                  >
+                    <app-img
+                      class=""
+                      src="assets/graphic-apple-appstore.png"
+                      alt="apple-app-store-icon"
+                    />
+                  </a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
+                    target="_blank"
+                  >
+                    <app-img
+                      class=""
+                      src="assets/graphic-google-googleplaystore.png"
+                      alt="google-play-store-icon"
+                    />
+                  </a>
                 </div>
               </div>
 
@@ -205,16 +224,26 @@ export class AppHome {
                   alt="digithermo-app-image"
                 />
                 <div class="icons">
-                  <app-img
-                    class=""
-                    src="assets/graphic-apple-appstore.png"
-                    alt="apple-app-store-icon"
-                  />
-                  <app-img
-                    class=""
-                    src="assets/graphic-google-googleplaystore.png"
-                    alt="google-play-store-icon"
-                  />
+                  <a
+                    href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8"
+                    target="_blank"
+                  >
+                    <app-img
+                      class=""
+                      src="assets/graphic-apple-appstore.png"
+                      alt="apple-app-store-icon"
+                    />
+                  </a>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp"
+                    target="_blank"
+                  >
+                    <app-img
+                      class=""
+                      src="assets/graphic-google-googleplaystore.png"
+                      alt="google-play-store-icon"
+                    />
+                  </a>
                 </div>
               </div>
             </div>
