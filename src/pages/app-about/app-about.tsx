@@ -11,6 +11,8 @@ export class AppAbout {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
+  public images: any;
+
   members = [
     {
       name: 'Jedi Weller',
@@ -207,7 +209,16 @@ export class AppAbout {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  // buildImageArray() {
+  //   // this.images = document.querySelectorAll('img[src$=".jpg"], img[src$=".png"]');
+  //   this.images = document.querySelectorAll('app-img');
+  //   console.log(this.images);
+  //   console.log("build image array executed");
+  // }
+
   render() {
+    // this.buildImageArray();
+
     return (
       <div class="about">
         {/* header - hero */}

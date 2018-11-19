@@ -3,13 +3,13 @@ section.services {
   // hero
   .hero {
     &.development {
-      background-image: url('/assets/team-landing-header-development-team.webp');
+      background-image: url('/assets/team-landing-header-development-team.jpg');
     }
     &.design {
-      background-image: url('/assets/team-landing-header-design-team.webp');
+      background-image: url('/assets/team-landing-header-design-team.jpg');
     }
     &.consulting {
-      background-image: url('/assets/team-landing-header-management-team.webp');
+      background-image: url('/assets/team-landing-header-management-team.jpg');
     }
 
     .overlay {
