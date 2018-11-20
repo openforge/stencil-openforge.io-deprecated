@@ -20,7 +20,7 @@ export class AppFooter {
                 <br />
                 {translate('footer.address.line2')}
                 <br />
-                (215)821-8673
+                {translate('footer.address.phoneNumber')}
                 <br />
                 <a href="mailto:hello@openforge.io">
                   {translate('footer.address.email')}

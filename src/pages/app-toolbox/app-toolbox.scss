@@ -58,6 +58,10 @@
   .consulting {
     margin-bottom: 60px;
 
+    a {
+      text-decoration: underline;
+    }
+
     @include media-breakpoint-down(sm) {
       margin-bottom: 40px;
     }
@@ -114,6 +118,10 @@
             @include media-breakpoint-down(sm) {
               text-align: center;
             }
+
+            a:hover {
+              color: $orange;
+            }
           }
 
           p {
@@ -158,6 +166,10 @@
 
             @include media-breakpoint-down(sm) {
               text-align: center;
+            }
+
+            a:hover {
+              color: $orange;
             }
           }
 

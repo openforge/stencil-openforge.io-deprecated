@@ -2,6 +2,7 @@
   "name": "OpenForge",
   "short_name": "OpenForge",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "icons": [{
     "src": "assets/icon/icon.png",

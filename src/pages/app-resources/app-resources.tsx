@@ -1,15 +1,14 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
 import { translate } from '../../services/translation.service';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 @Component({
   tag: 'app-resources',
   styleUrl: 'app-resources.scss',
 })
 export class AppResources {
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
 
   @State()
   formValues: {
@@ -24,17 +23,12 @@ export class AppResources {
     organizationValid: false;
   };
 
-  @State()
-  nameError: string;
-  @State()
-  industryError: string;
-  @State()
-  emailError: string;
-  @State()
-  organizationError: string;
+  @State() nameError: string;
+  @State() industryError: string;
+  @State() emailError: string;
+  @State() organizationError: string;
 
-  @State()
-  isDisabled = true;
+  @State() isDisabled = true;
 
   @Prop()
   errorIconStyles = {
@@ -42,6 +36,8 @@ export class AppResources {
     marginBottom: '.2rem',
     paddingRight: '5px',
   };
+  @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
 
   @Listen('check')
   @Listen('valueChange')
@@ -53,10 +49,29 @@ export class AppResources {
     this.validateField(target);
   }
 
-  componentDidLoad() {
-    this.resetFormValues();
+  componentWillLoad() {
+    if (this.match.params.source !== 'pwa-white-paper') {
+      this.history.push(`/`, {});
+    }
   }
 
+  componentDidLoad() {
+    this.resetFormValues();
+
+    // Change meta tags dynamically
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute('content', 'Business Owner’s Guide to PWAs | OpenForge');
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute('content', 'Progressive Web App, PWA, White Paper');
+  }
   validateField(e) {
     switch (e.name) {
       case 'name':
@@ -125,7 +140,11 @@ export class AppResources {
       const form = document.getElementById('top');
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
 
-      window.open('/assets/PWA%20White%20Paper.pdf', '_blank');
+      // Create an anchor element with the attribute download for the pdf
+      const downloadLink: HTMLAnchorElement = document.createElement('a');
+      downloadLink.href = '/assets/PWA%20White%20Paper.pdf';
+      downloadLink.download = 'PWA White Paper.pdf';
+      downloadLink.click();
     } catch (error) {
       console.log('Error', error);
     }

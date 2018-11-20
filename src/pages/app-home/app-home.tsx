@@ -8,8 +8,7 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop()
-  history: RouterHistory;
+  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -24,6 +23,26 @@ export class AppHome {
     if (!this.isServer) {
       fbq('track', 'ViewContent');
     }
+
+    // Change meta tags dynamically
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute(
+        'content',
+        'Mobile Design - App Development - Startup Consulting | OpenForge'
+      );
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute(
+        'content',
+        'Mobile, Application, Development, Design, User Experience, Ionic'
+      );
   }
 
   scrollToForm() {
@@ -119,12 +138,14 @@ export class AppHome {
               </div>
               <div class="card-service">
                 <h1>
-                  <app-translate key="home.services.tech-consulting.headline" />
+                  <app-translate key="home.services.startup-consulting.headline" />
                 </h1>
                 <div class=" hvrbox card">
                   <stencil-route-link
                     url={
-                      this.isMobile === null ? '/services/tech-consulting' : ''
+                      this.isMobile === null
+                        ? '/services/startup-consulting'
+                        : ''
                     }
                   >
                     <div class="hvrbox-layer-bottom card--image">
@@ -136,7 +157,7 @@ export class AppHome {
                     </div>
                     <div class="hvrbox-layer-top card--text">
                       <p>
-                        <app-translate key="home.services.tech-consulting.meta" />
+                        <app-translate key="home.services.startup-consulting.meta" />
                       </p>
                     </div>
                   </stencil-route-link>
@@ -198,11 +219,11 @@ export class AppHome {
               </div>
 
               <div class="work">
-                <h3>DigiThermo</h3>
+                <h3>JuntoScope</h3>
                 <app-img
                   class=""
-                  src="assets/graphic-home-digithermo.png"
-                  alt="digithermo-app-image"
+                  src="assets/graphic-home-juntoscope.png"
+                  alt="juntoscope-app-image"
                 />
                 <div class="icons">
                   <app-img
@@ -329,7 +350,7 @@ export class AppHome {
               />
               <app-img
                 class="img-fluid"
-                src="assets/logo-eli-lu-entertainment-black.png"
+                src="assets/logo-eli-lu-entertainment.jpg"
                 alt="Eli and Lu Entertainment"
               />
               <app-img
