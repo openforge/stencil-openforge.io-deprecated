@@ -35,13 +35,20 @@ export class AppNavHeader {
       <nav class="navbar navbar-expand-xl navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
-            <h1>
-              <app-img
-                class="img-fluid"
-                src="/assets/logo-openforge.png"
-                alt={translate('nav.header.img.alt')}
-              />
-            </h1>
+            <stencil-route-link
+              url="/"
+              exact={true}
+              anchorClass="nav-link"
+              activeClass="active"
+            >
+              <h1>
+                <app-img
+                  class="img-fluid"
+                  src="/assets/logo-openforge.png"
+                  alt={translate('nav.header.img.alt')}
+                />
+              </h1>
+            </stencil-route-link>
           </div>
           <button
             class="navbar-toggler"
@@ -70,44 +77,46 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
-              <li
-                class="nav-item dropdown"
-                data-target="#navbarSupportedContent"
-              >
-                <a
-                  class="nav-link dropdown-toggle"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
+              {this.isMobile === null ? (
+                <li
+                  class="nav-item dropdown"
+                  data-target="#navbarSupportedContent"
                 >
-                  Services
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <stencil-route-link
-                    url="/services/app-developer"
-                    anchorClass="nav-link dropdown-item"
-                    activeClass="active"
+                  <a
+                    class="nav-link dropdown-toggle"
+                    id="navbarDropdown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
                   >
-                    Development
-                  </stencil-route-link>
-                  <stencil-route-link
-                    url="/services/app-designer"
-                    anchorClass="nav-link dropdown-item"
-                    activeClass="active"
-                  >
-                    UX/UI Design
-                  </stencil-route-link>
-                  <stencil-route-link
-                    url="/services/tech-consulting"
-                    anchorClass="nav-link dropdown-item"
-                    activeClass="active"
-                  >
-                    Consulting
-                  </stencil-route-link>
-                </div>
-              </li>
+                    Services
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <stencil-route-link
+                      url="/services/app-developer"
+                      anchorClass="nav-link dropdown-item"
+                      activeClass="active"
+                    >
+                      Development
+                    </stencil-route-link>
+                    <stencil-route-link
+                      url="/services/app-designer"
+                      anchorClass="nav-link dropdown-item"
+                      activeClass="active"
+                    >
+                      UX/UI Design
+                    </stencil-route-link>
+                    <stencil-route-link
+                      url="/services/startup-consulting"
+                      anchorClass="nav-link dropdown-item"
+                      activeClass="active"
+                    >
+                      Consulting
+                    </stencil-route-link>
+                  </div>
+                </li>
+              ) : null}
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <stencil-route-link
                   url="/about"
@@ -147,7 +156,7 @@ export class AppNavHeader {
                     Our Toolbox
                   </stencil-route-link>
                   <stencil-route-link
-                    url="/resources"
+                    url="/resources/pwa-white-paper"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >
