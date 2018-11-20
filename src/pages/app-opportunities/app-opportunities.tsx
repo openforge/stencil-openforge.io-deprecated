@@ -1,6 +1,6 @@
-import { Component, State, Listen, Prop } from '@stencil/core';
+import { Component, State, Listen, Prop, Watch } from '@stencil/core';
 import { translate } from '../../services/translation.service';
-import { MatchResults } from '@stencil/router';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 declare var fbq;
 
@@ -60,6 +60,8 @@ export class AppOpportunities {
   @State()
   texts = {
     develop: {
+      googleDoc:
+        'https://docs.google.com/document/d/1WUrZp0FinRbT2fROmPjXAyqhCPlam-G3w0siFgbVgF4/edit',
       backgroundPhoto: '/assets/graphic-opportunities-dev-header.png',
       firstSkill: {
         name: 'Angular',
@@ -98,8 +100,16 @@ export class AppOpportunities {
           name: 'css',
         },
       },
+      metatags: {
+        title: 'App Developer Job Application | OpenForge',
+        description:
+          'From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) Ionic or React App!',
+        keywords: 'Software Developer Job Application',
+      },
     },
     design: {
+      googleDoc:
+        'https://docs.google.com/document/d/1wqwowtkU52JmLb8HkR-bOZhx_MpLIUXnTJSy47U_OuI/edit',
       backgroundPhoto: '/assets/graphic-opportunities-design-header.png',
       firstSkill: {
         name: 'Wireframing',
@@ -138,6 +148,12 @@ export class AppOpportunities {
           name: 'presentation',
         },
       },
+      metatags: {
+        title: 'Graphic Designer Job Application | OpenForge',
+        description:
+          'At OpenForge, we believe that sometimes actions speak louder than words, so as part of your interview assignment, we’d like to challenge you to design 3 pages of an app of your choosing.',
+        keywords: 'Graphic Designer Job Application',
+      },
     },
   };
 
@@ -151,6 +167,18 @@ export class AppOpportunities {
     paddingRight: '5px',
   };
   @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
+
+  @Watch('match')
+  matchHandler() {
+    this.changeMetadata();
+  }
+
+  componentWillLoad() {
+    if(!this.texts[this.match.params.type]) {
+      this.history.push(`/`, {});
+    }
+  }
 
   componentDidLoad() {
     // isServer is false when running in the browser
@@ -160,6 +188,8 @@ export class AppOpportunities {
       fbq('track', 'Lead');
     }
     this.resetFormValues();
+
+    this.changeMetadata();
   }
 
   componentDidUpdate() {
@@ -340,15 +370,42 @@ export class AppOpportunities {
   }
 
   scrollToForm() {
-    const form = document.getElementById('intro');
+    const form = document.getElementById('interviews');
 
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
+  changeMetadata() {
+    if(this.texts[this.match.params.type]) {
+      // Change meta tags dynamically d
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.title
+        );
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.description
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.keywords
+      );
+    }
+
   }
 
   render() {
     return (
       <div class="opportunities">
         {/* header - hero */}
+      {this.texts[this.match.params.type]
+      ? [
         <header
           class="hero"
           style={{
@@ -375,10 +432,10 @@ export class AppOpportunities {
               </div>
             </div>
           </div>
-        </header>
-
-        {/* section - intro */}
-        <section id="intro" class="intro">
+        </header>,
+        
+        /* section -  interviews */
+        <section id="interviews" class="interviews">
           <div class="container">
             <content-graphic
               img-url="/assets/graphic-opportunities-suck.jpg"
@@ -476,9 +533,9 @@ export class AppOpportunities {
               </p>
             </content-graphic>
           </div>
-        </section>
+        </section>,
 
-        {/* section - apply */}
+        /* section - apply */
         <section id="apply" class="apply">
           {!this.formSubmitted ? (
             <div class="container">
@@ -559,6 +616,19 @@ export class AppOpportunities {
                   id="myLittleAnchor"
                   onSubmit={this.handleSubmit.bind(this)}
                 >
+                  <p>
+                    Want to know exactly what you're getting yourself into?
+                    Check out our
+                    <a
+                      class="doc-link"
+                      target="_blank"
+                      href={this.texts[this.match.params.type].googleDoc}
+                    >
+                      Google Document
+                    </a>
+                    to see the ins and outs of what this epic adventure will
+                    include!
+                  </p>
                   <h3>
                     <app-translate key="opportunities.form.submitTitle" />
                   </h3>
@@ -717,8 +787,9 @@ export class AppOpportunities {
               </content-graphic>
             </div>
           )}
-        </section>
-        <app-footer />
+        </section>,
+        <app-footer />,
+      ]: null }
       </div>
     );
   }
