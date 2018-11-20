@@ -9,7 +9,7 @@ section.services {
       background-image: url('/assets/team-landing-header-design-team.jpg');
     }
     &.consulting {
-      background-image: url('/assets/team-landing-header-management-team.jpg');
+      background-image: url('/assets/team-landing-header-management-team.jpeg');
     }
 
     .overlay {
@@ -90,40 +90,42 @@ section.services {
 
     &.right-side {
       grid-template-columns: 0.5fr 1fr;
+      grid-column-gap: 30px;
       .text-img-container-text {
-        margin-left: 10px;
         h2 {
           color: $orange;
           text-align: left;
         }
         p {
-          text-align: left;
-          padding: 0;
           margin-bottom: 1rem;
+          padding: 0;
+          text-align: left;
           &.check-link {
-            font-size: 26px;
             color: $orange;
+            font-size: 26px;
             margin-bottom: 0;
+            text-decoration: underline;
           }
         }
       }
     }
     &.left-side {
       grid-template-columns: 1fr 0.5fr;
+      grid-column-gap: 30px;
       .text-img-container-text {
-        margin-right: 10px;
         h2 {
           color: $orange;
           text-align: right;
         }
         p {
-          text-align: right;
-          padding: 0;
           margin-bottom: 1rem;
+          padding: 0;
+          text-align: right;
           &.check-link {
-            font-size: 26px;
             color: $orange;
+            font-size: 26px;
             margin-bottom: 0;
+            text-decoration: underline;
           }
         }
       }

@@ -20,7 +20,7 @@ export class AppFooter {
                 <br />
                 {translate('footer.address.line2')}
                 <br />
-                (215)821-8673
+                {translate('footer.address.phoneNumber')}
                 <br />
                 <a href="mailto:hello@openforge.io">
                   {translate('footer.address.email')}
@@ -81,7 +81,7 @@ export class AppFooter {
               <h2>{translate('footer.webinar.signup')}</h2>
               <p>{translate('footer.webinar.webinarText')}</p>
               <a
-                href="http://learn.openforge.io/"
+                href="http://startupjunto.org/"
                 target="_blank"
                 rel="noopener"
                 class="footer--btn btn btn-primary"

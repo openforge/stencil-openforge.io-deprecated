@@ -10,6 +10,24 @@ export class AppToolbox {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  componentDidLoad() {
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute(
+        'content',
+        'Toolbox - Development & Design Tools | OpenForge'
+      );
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'Our team members use a variety of tools to bring projects to light in an efficient and effective manner. Our development team and design team both use the latest technologies available to create innovative and beautiful products with the user in mind'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute('content', 'developer tools, designer tools');
+  }
+
   render() {
     return (
       <div class="toolbox">
@@ -43,7 +61,9 @@ export class AppToolbox {
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Abstract</h2>
+              <h2>
+                <a target="_blank" href="https://www.goabstract.com/">Abstract</a>
+              </h2>
               <p>
                 Abstract allows our team to track our projects across versions
                 and collaborate among team members. Having full transparency on
@@ -54,7 +74,9 @@ export class AppToolbox {
           </section>
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
-              <h2>Marvel</h2>
+              <h2>
+                <a target="_blank" href="https://marvelapp.com/">Marvel</a>
+              </h2>
               <p>
                 Marvel allows our design team to produce a working prototype of
                 a product before it reaches the marketplace. This prototype is
@@ -75,7 +97,9 @@ export class AppToolbox {
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Sketch</h2>
+              <h2>
+                <a target="_blank" href="https://www.sketchapp.com/">Sketch</a>
+              </h2>
               <p>
                 Sketch is a powerful tool that allows our designers to
                 seamlessly turn wireframes into beautifully designed products.
@@ -95,7 +119,9 @@ export class AppToolbox {
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Ionic Framework</h2>
+              <h2>
+                <a target="_blank" href="https://ionicframework.com/">Ionic Framework</a>
+              </h2>
               <p>
                 Ionic Framework gives our team of developers an array of
                 reliable tools and proven UI components. Hybrid Progressive Web
@@ -106,7 +132,9 @@ export class AppToolbox {
           </section>
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
-              <h2>Angular</h2>
+              <h2>
+                <a target="_blank" href="https://angular.io/">Angular</a>
+              </h2>
               <p>
                 Angular lays the foundations for our developer team to produce
                 and deploy cross platform mobile and web apps.
@@ -121,13 +149,15 @@ export class AppToolbox {
           <section class="text-img-container right-side">
             <app-img
               class="img-fluid d-md-inline"
-              src="/assets/services-development-toolbox-third.png"
+              src="/assets/github-logo-black.png"
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Github</h2>
+              <h2>
+                <a target="_blank" href="https://github.com/">GitHub</a>
+              </h2>
               <p>
-                Github is an industry standard for hosting code, managing
+                GitHub is an industry standard for hosting code, managing
                 projects, and collaboration between developers. Github gives our
                 development team a channel to effectively produce, manage and
                 refine code.
@@ -144,7 +174,9 @@ export class AppToolbox {
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Marvel</h2>
+              <h2>
+                <a target="_blank" href="https://marvelapp.com/">Marvel</a>
+              </h2>
               <p>
                 Marvel puts our team and your team on the same page with a
                 prototype that can be easily navigated and refined.
@@ -155,7 +187,9 @@ export class AppToolbox {
           </section>
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
-              <h2>Bit Bucket</h2>
+              <h2>
+                <a target="_blank" href="https://bitbucket.org/">BitBucket</a>
+              </h2>
               <p>
                 Bitbucket shows a detailed breakdown of developer productivity
                 by visualizing commit history and the efficiency in which work
@@ -176,7 +210,9 @@ export class AppToolbox {
               alt=""
             />
             <div class="text-img-container-text">
-              <h2>Team Work</h2>
+              <h2>
+                <a target="_blank" href="https://www.teamwork.com/">Teamwork</a>
+              </h2>
               <p>
                 Teamwork Projects is a powerful project management software that
                 incorporates communication, file storage, progress tracking and

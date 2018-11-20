@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+    import { Component } from '@stencil/core';
 import {
   translate,
   TranslationService,
@@ -35,13 +35,20 @@ export class AppNavHeader {
       <nav class="navbar navbar-expand-xl navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
-            <h1>
-              <app-img
-                class="img-fluid"
-                src="/assets/logo-openforge.png"
-                alt={translate('nav.header.img.alt')}
-              />
-            </h1>
+            <stencil-route-link
+              url="/"
+              exact={true}
+              anchorClass="nav-link"
+              activeClass="active"
+            >
+              <h1>
+                <app-img
+                  class="img-fluid"
+                  src="/assets/logo-openforge.png"
+                  alt={translate('nav.header.img.alt')}
+                />
+              </h1>
+            </stencil-route-link>
           </div>
           <button
             class="navbar-toggler"
@@ -101,7 +108,7 @@ export class AppNavHeader {
                       UX/UI Design
                     </stencil-route-link>
                     <stencil-route-link
-                      url="/services/tech-consulting"
+                      url="/services/startup-consulting"
                       anchorClass="nav-link dropdown-item"
                       activeClass="active"
                     >
@@ -149,7 +156,7 @@ export class AppNavHeader {
                     Our Toolbox
                   </stencil-route-link>
                   <stencil-route-link
-                    url="/resources"
+                    url="/resources/pwa-white-paper"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >

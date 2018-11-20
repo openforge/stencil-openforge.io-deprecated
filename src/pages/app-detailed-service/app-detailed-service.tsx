@@ -1,5 +1,5 @@
-import { Component, Prop, State, Listen } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { Component, Prop, State, Listen, Watch } from '@stencil/core';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 declare var fbq;
 
@@ -8,8 +8,8 @@ declare var fbq;
   styleUrl: 'app-detailed-service.scss',
 })
 export class AppDetailedService {
-  @Prop()
-  match: MatchResults;
+  @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -22,7 +22,7 @@ export class AppDetailedService {
       toolbox: {
         first: '/assets/services-development-toolbox-first.png',
         second: '/assets/services-development-toolbox-second.png',
-        third: '/assets/services-development-toolbox-third.png',
+        third: '/assets/github-logo-white.png',
       },
       examples: {
         first: '/assets/work-example-juntoscope-mobile.png',
@@ -43,7 +43,7 @@ export class AppDetailedService {
         second: '/assets/work-example-loudcloud-mobile.png',
       },
     },
-    'tech-consulting': {
+    'startup-consulting': {
       first: '/assets/services-consulting-pc.png',
       second: '/assets/services-consulting-notepad.png',
       third: '/assets/services-consulting-arrow.png',
@@ -55,10 +55,8 @@ export class AppDetailedService {
     },
   };
 
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
   @State()
   formValues: {
     name: '';
@@ -69,14 +67,10 @@ export class AppDetailedService {
     emailValid: false;
     messageValid: false;
   };
-  @State()
-  nameError: string;
-  @State()
-  emailError: string;
-  @State()
-  messageError: string;
-  @State()
-  isDisabled = true;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() messageError: string;
+  @State() isDisabled = true;
 
   @Listen('valueChange')
   valueChangeHandler(event) {
@@ -87,6 +81,17 @@ export class AppDetailedService {
     this.validateField(target);
   }
 
+  @Watch('match')
+  matchHandler() {
+    this.changeMetadata();
+  }
+
+  componentWillLoad() {
+    if (!this.imgs[this.match.params.service]) {
+      this.history.push(`/`, {});
+    }
+  }
+
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
@@ -94,6 +99,8 @@ export class AppDetailedService {
       fbq('track', 'ViewContent');
     }
     this.resetFormValues();
+
+    this.changeMetadata();
   }
 
   validateField(e) {
@@ -166,9 +173,66 @@ export class AppDetailedService {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  changeMetadata() {
+    // Change meta tags dynamically
+    if (this.match.params.service === 'app-developer') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute('content', 'Mobile App Developer Experts | OpenForge');
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'Mobile App Developer, Mobile App Development, Progressive Web App'
+        );
+    } else if (this.match.params.service === 'app-designer') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute('content', 'Mobile App Design Experts | OpenForge');
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'UI, UX, Design, Mobile App Design, User Experience Expert'
+        );
+    } else if (this.match.params.service === 'startup-consulting') {
+      document
+        .querySelector("meta[name='title']")
+        .setAttribute(
+          'content',
+          'Startup Consulting Services in Philadelphia | OpenForge'
+        );
+      document
+        .querySelector("meta[name='description']")
+        .setAttribute(
+          'content',
+          'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies.   Let Us Help You With Marketing and CTO As a Service.'
+        );
+      document
+        .querySelector("meta[name='keywords']")
+        .setAttribute(
+          'content',
+          'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting'
+        );
+    }
+  }
+
   render() {
     return (
       <section class="services">
+        {this.imgs[this.match.params.service] ? '' : ''}
         {/* header - hero */}
         {this.match.params.service === 'app-developer' ? (
           <header class="hero development">
@@ -249,103 +313,123 @@ export class AppDetailedService {
             </div>
           </header>
         )}
-        <div id="second-content" class="container">
-          <section class="text-img-container right-side">
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].first}
-              alt=""
-            />
-            <div class="text-img-container-text">
-              <h2>
-                <app-translate
-                  key={`services.${this.match.params.service}.first.title`}
-                />
-              </h2>
-              <p>
-                <app-translate
-                  key={`services.${this.match.params.service}.first.text`}
-                />
-              </p>
-            </div>
-          </section>
-          <section class="text-img-container left-side">
-            <div class="text-img-container-text">
-              <h2>
-                <app-translate
-                  key={`services.${this.match.params.service}.second.title`}
-                />
-              </h2>
-              <p>
-                <app-translate
-                  key={`services.${this.match.params.service}.second.text`}
-                />
-              </p>
-            </div>
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].second}
-              alt=""
-            />
-          </section>
-          <section class="text-img-container right-side">
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].third}
-              alt=""
-            />
-            <div class="text-img-container-text">
-              <h2>
-                <app-translate
-                  key={`services.${this.match.params.service}.third.title`}
-                />
-              </h2>
-              <p>
-                <app-translate
-                  key={`services.${this.match.params.service}.third.text`}
-                />
-              </p>
-            </div>
-          </section>
-        </div>
-        <section>
-          <div class="our-toolbox">
-            <h2>Our Toolbox</h2>
-            <p>let us show you our skills in:</p>
-            <div class="container">
-              <div class="row">
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.first}
-                      alt=""
-                    />
-                  </stencil-route-link>
+        {this.imgs[this.match.params.service]
+          ? [
+              <div id="second-content" class="container">
+                <section class="text-img-container right-side">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].first}
+                    alt=""
+                  />
+                  <div class="text-img-container-text">
+                    <h2>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.first.title`}
+                      />
+                    </h2>
+                    <p>
+                      <app-translate
+                        key={`services.${this.match.params.service}.first.text`}
+                      />
+                    </p>
+                  </div>
+                </section>
+                <section class="text-img-container left-side">
+                  <div class="text-img-container-text">
+                    <h2>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.second.title`}
+                      />
+                    </h2>
+                    <p>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.second.text`}
+                      />
+                    </p>
+                  </div>
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].second}
+                    alt=""
+                  />
+                </section>
+                <section class="text-img-container right-side">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].third}
+                    alt=""
+                  />
+                  <div class="text-img-container-text">
+                    <h2>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.third.title`}
+                      />
+                    </h2>
+                    <p>
+                      <app-translate
+                        key={`services.${this.match.params.service}.third.text`}
+                      />
+                    </p>
+                  </div>
+                </section>
+              </div>,
+              <section>
+                <div class="our-toolbox">
+                  <h2>Our Toolbox</h2>
+                  <p>let us show you our skills in:</p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="image-column col-sm-12 col-md-4">
+                        <stencil-route-link url="/toolbox" exact={true}>
+                          <app-img
+                            class="img-fluid d-none d-md-inline"
+                            src={
+                              this.imgs[this.match.params.service].toolbox.first
+                            }
+                            alt=""
+                          />
+                        </stencil-route-link>
+                      </div>
+                      <div class="image-column col-sm-12 col-md-4">
+                        <stencil-route-link url="/toolbox" exact={true}>
+                          <app-img
+                            class="img-fluid d-none d-md-inline"
+                            src={
+                              this.imgs[this.match.params.service].toolbox
+                                .second
+                            }
+                            alt=""
+                          />
+                        </stencil-route-link>
+                      </div>
+                      <div class="image-column col-sm-12 col-md-4">
+                        <stencil-route-link url="/toolbox" exact={true}>
+                          <app-img
+                            class="img-fluid d-none d-md-inline"
+                            src={
+                              this.imgs[this.match.params.service].toolbox.third
+                            }
+                            alt=""
+                          />
+                        </stencil-route-link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.second}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.third}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {this.imgs[this.match.params.service].examples ? (
+              </section>,
+            ]
+          : null}
+        {this.imgs[this.match.params.service] &&
+        this.imgs[this.match.params.service].examples ? (
           <div class="container">
             <section class="work-examples">
               <h2>Work Examples</h2>
@@ -370,7 +454,11 @@ export class AppDetailedService {
                       }.examples.first.desc`}
                     />
                   </p>
-                  {/* <p class="check-link">Check it out</p> */}
+                  <p class="check-link">
+                    <a href="https://try.juntoscope.com" target="_blank">
+                      Check it out
+                    </a>
+                  </p>
                 </div>
               </div>
               <div class="text-img-container left-side">
@@ -389,7 +477,14 @@ export class AppDetailedService {
                       }.examples.second.desc`}
                     />
                   </p>
-                  {/* <p class="check-link">Check it out</p> */}
+                  <p class="check-link">
+                    <a
+                      href="https://www.newoceanhealthsolutions.com/product-and-programs/"
+                      target="_blank"
+                    >
+                      Check it out
+                    </a>
+                  </p>
                 </div>
                 <app-img
                   class=""

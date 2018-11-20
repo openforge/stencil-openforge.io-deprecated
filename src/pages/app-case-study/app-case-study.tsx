@@ -10,6 +10,21 @@ export class AppCaseStudy {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  componentDidLoad() {
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute('content', 'JuntoScope - Scoping Software | OpenForge');
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'Juntoscope will help your team determine scopes for tasks in Teamwork.com© Projects more accurately, quickly, and efficiently to keep your projects within budget. Integrating with Teamwork Projects API, your team will be able to scope, populate, and assign times to tasks automatically.'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute('content', 'juntoscope, scoping, project management');
+  }
+
   render() {
     return (
       <div class="case-study">
@@ -45,7 +60,12 @@ export class AppCaseStudy {
             </p>
           </div>
         </section>
-        <section class="container image-section">
+        <section class="container product-section">
+          <app-img
+              class=""
+              src="/assets/work-example-juntoscope-mobile.png"
+              alt="juntoscope mobile view"
+          />
           <div class="text-container">
             <h2>The Product</h2>
             <p>
@@ -86,11 +106,6 @@ export class AppCaseStudy {
               <li>Decrease time spent scoping tasks</li>
             </ul>
           </div>
-          <app-img
-            class=""
-            src="/assets/work-example-juntoscope-mobile.png"
-            alt="voyage-app-image"
-          />
         </section>
         <section class="timeline">
           <div class="container">
@@ -101,7 +116,7 @@ export class AppCaseStudy {
                   <app-img
                     class=""
                     src="/assets/case-study-discovery.png"
-                    alt="voyage-app-image"
+                    alt="case study discovery icon"
                   />
                   <div class="timeline-item-content">
                     <h3>Discovery</h3>
@@ -119,7 +134,7 @@ export class AppCaseStudy {
                 <app-img
                   class=""
                   src="/assets/case-study-design.png"
-                  alt="voyage-app-image"
+                  alt="case study design icon"
                 />
                 <div class="timeline-item-content">
                   <h3>Design</h3>
@@ -135,7 +150,7 @@ export class AppCaseStudy {
                   <app-img
                     class=""
                     src="/assets/case-study-development.png"
-                    alt="voyage-app-image"
+                    alt="case study development icon"
                   />
                   <div class="timeline-item-content">
                     <h3>Development</h3>
@@ -153,7 +168,7 @@ export class AppCaseStudy {
                 <app-img
                   class=""
                   src="/assets/case-study-qa.png"
-                  alt="voyage-app-image"
+                  alt="case study quality assurance icon"
                 />
                 <div class="timeline-item-content">
                   <h3>Quality Assurance</h3>
@@ -171,9 +186,11 @@ export class AppCaseStudy {
                 <app-img
                   class=""
                   src="/assets/graphic-home-deployment.png"
-                  alt="voyage-app-image"
+                  alt="case study deployment icon"
                 />
-                <div class="timeline-item-content">Launch!</div>
+                <div class="timeline-item-content">
+                  <h3>Launch!</h3>
+                </div>
               </div>
               <div class="blank-cell">&nbsp;</div>
             </div>
@@ -184,19 +201,20 @@ export class AppCaseStudy {
           <h3>Design</h3>
           <p>
             We began the{' '}
-            <a
-              href="https://openforge.io/services/app-designer"
-              target="_blank"
+            <stencil-route-link
+              url="/services/app-designer"
             >
               design process
-            </a>{' '}
+            </stencil-route-link>{' '}
             by researching similar apps on the marketplace and identifying
             features we liked and did not like about them. We then set up user
             flows and wireframing each identified screen. This process, along
             with the design and styling phase, occurs in{' '}
-            <a href="https://openforge.io/toolbox" target="_blank">
+            <stencil-route-link
+            url="/toolbox"
+            >
               Sketch
-            </a>
+            </stencil-route-link>
             . After completing the full skeleton, we reviewed each user flow and
             tried to identify any gaps or weaknesses in the user flow. From
             there, we made modifications and began identifying styles and colors
@@ -208,12 +226,11 @@ export class AppCaseStudy {
           <h3>Development</h3>
           <p>
             We began the{' '}
-            <a
-              href="https://openforge.io/services/app-developer"
-              target="_blank"
+            <stencil-route-link
+              url="/services/app-developer"
             >
               development process
-            </a>{' '}
+            </stencil-route-link>{' '}
             with a full design review. Our team worked closely with the
             designers to document a list of feature requirements that would
             later translate into development requirements. From there, we
@@ -233,9 +250,9 @@ export class AppCaseStudy {
           <h3>What we learned</h3>
           <p>
             Throughout the process of developing JuntoScope,{' '}
-            <a href="https://openforge.io/about" target="_blank">
+            <stencil-route-link url="/about">
               our team
-            </a>{' '}
+            </stencil-route-link>{' '}
             learned the importance of establishing a process that is fully
             understood by each and every member. Our company was going through a
             transitional phase early on in the development of JuntoScope
@@ -274,13 +291,13 @@ export class AppCaseStudy {
           </p>
 
           <div class="download-link">
-            <a href="assets/pdf/juntoscope.sketch">
+            <a href="assets/pdf/juntoscope.sketch" download="juntoscope.sketch">
               <button class="btn btn-primary">Download our Sketch file</button>
             </a>
           </div>
 
           <p class="top-link" onClick={this.scrollToTop.bind(this)}>
-            Back to top
+            back to top
           </p>
         </section>
         <app-footer />

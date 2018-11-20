@@ -200,6 +200,26 @@ export class AppAbout {
     if (!this.isServer) {
       fbq('track', 'ViewContent');
     }
+
+    // Change meta tags dynamically
+    document
+      .querySelector("meta[name='title']")
+      .setAttribute(
+        'content',
+        'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge'
+      );
+    document
+      .querySelector("meta[name='description']")
+      .setAttribute(
+        'content',
+        'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia'
+      );
+    document
+      .querySelector("meta[name='keywords']")
+      .setAttribute(
+        'content',
+        'Technology, Design, Philadelphia, Mobile App, Development, Jedidiah Weller'
+      );
   }
 
   scrollToForm() {
