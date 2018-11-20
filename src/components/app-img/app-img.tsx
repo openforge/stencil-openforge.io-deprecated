@@ -126,13 +126,13 @@ export class Img {
     this.changeExtension();
     console.log(this.loadSrc);
     return (
-      // <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt}></lazy-img>
-      <img
-        class={{ fit: this.fit }}
-        src={this.loadSrc}
-        alt={this.alt}
-        decoding="async"
-      />
+      <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />
+      // <img
+      //   class={{ fit: this.fit }}
+      //   src={this.loadSrc}
+      //   alt={this.alt}
+      //   decoding="async"
+      // />
     );
   }
 }
