@@ -1,12 +1,33 @@
-<a name="1.4.4"></a>
-## [1.4.4](https://github.com/openforge/main-website/compare/v1.4.3...v1.4.4) (2018-11-16)
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/openforge/main-website/compare/v1.4.4...v1.5.0) (2018-11-21)
 
 
 ### Bug Fixes
 
+* update assets for SEO ([d7013c4](https://github.com/openforge/main-website/commit/d7013c4))
+
+
+### Features
+
+* update meta tags to include open graph tags ([563593c](https://github.com/openforge/main-website/commit/563593c))
+
+
+
+<a name="1.4.4"></a>
+## [1.4.4](https://github.com/openforge/main-website/compare/v1.4.3...v1.4.4) (2018-11-19)
+
+
+### Bug Fixes
+
+* **app:** fix download pdf on pwa android ([2c7ffc7](https://github.com/openforge/main-website/commit/2c7ffc7))
 * **app:** fix navbar dropdown clicks ([e3b128c](https://github.com/openforge/main-website/commit/e3b128c))
 * **app:** fix navbar dropdown items ([48efb4e](https://github.com/openforge/main-website/commit/48efb4e))
 * **app:** fix pwa links ([f273d56](https://github.com/openforge/main-website/commit/f273d56))
+* **app-case-study:** replace a link tags with stencil-route-link for internal links for PWA ([29400d9](https://github.com/openforge/main-website/commit/29400d9))
+* **app-case-study:** update timeline card style based on designer feedback ([24fa9ce](https://github.com/openforge/main-website/commit/24fa9ce))
+* **app-opportunities:** add history route block to sub-route ([65e6231](https://github.com/openforge/main-website/commit/65e6231))
+* **app-resources:** add history route block for sub-route ([738a7d3](https://github.com/openforge/main-website/commit/738a7d3))
+* **app-team-landing:** add history route block to sub-route ([3ced4a1](https://github.com/openforge/main-website/commit/3ced4a1))
 * **CHANGELOG:** manually found v1.4.2 and added correct tag ([8d78ccd](https://github.com/openforge/main-website/commit/8d78ccd))
 * **home:** fix our work styles on ipad ([eedea75](https://github.com/openforge/main-website/commit/eedea75))
 * **juntoscope:** fix tablet styles ([4ea692f](https://github.com/openforge/main-website/commit/4ea692f))
