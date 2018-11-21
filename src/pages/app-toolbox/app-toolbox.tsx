@@ -12,16 +12,28 @@ export class AppToolbox {
 
   componentDidLoad() {
     document
-      .querySelector("meta[name='title']")
+      .querySelector("meta[property='og:title']")
       .setAttribute(
         'content',
         'Toolbox - Development & Design Tools | OpenForge'
       );
     document
-      .querySelector("meta[name='description']")
+      .querySelector("meta[property='og:description']")
       .setAttribute(
         'content',
         'Our team members use a variety of tools to bring projects to light in an efficient and effective manner. Our development team and design team both use the latest technologies available to create innovative and beautiful products with the user in mind'
+      );
+    document
+      .querySelector("meta[property='og:url']")
+      .setAttribute(
+        'content',
+        'https://openforge.io/toolbox/'
+      );
+    document
+      .querySelector("meta[property='og:image']")
+      .setAttribute(
+        'content',
+        'https://openforge.io/assets/toolbox-hero-img.png'
       );
     document
       .querySelector("meta[name='keywords']")
