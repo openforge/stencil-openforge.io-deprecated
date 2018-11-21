@@ -1,5 +1,5 @@
 import { Component, Prop, State, Listen, Watch } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { MatchResults, RouterHistory } from '@stencil/router';
 
 declare var fbq;
 
@@ -9,6 +9,7 @@ declare var fbq;
 })
 export class AppDetailedService {
   @Prop() match: MatchResults;
+  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
@@ -83,6 +84,12 @@ export class AppDetailedService {
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
+  }
+
+  componentWillLoad() {
+    if (!this.imgs[this.match.params.service]) {
+      this.history.push(`/`, {});
+    }
   }
 
   componentDidLoad() {
@@ -225,6 +232,7 @@ export class AppDetailedService {
   render() {
     return (
       <section class="services">
+        {this.imgs[this.match.params.service] ? '' : ''}
         {/* header - hero */}
         {this.match.params.service === 'app-developer' ? (
           <header class="hero development">
@@ -305,103 +313,123 @@ export class AppDetailedService {
             </div>
           </header>
         )}
-        <div id="second-content" class="container">
-          <section class="text-img-container right-side">
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].first}
-              alt=""
-            />
-            <div class="text-img-container-text">
-              <h2>
-                <app-translate
-                  key={`services.${this.match.params.service}.first.title`}
-                />
-              </h2>
-              <p>
-                <app-translate
-                  key={`services.${this.match.params.service}.first.text`}
-                />
-              </p>
-            </div>
-          </section>
-          <section class="text-img-container left-side">
-            <div class="text-img-container-text">
-              <h2>
-                <app-translate
-                  key={`services.${this.match.params.service}.second.title`}
-                />
-              </h2>
-              <p>
-                <app-translate
-                  key={`services.${this.match.params.service}.second.text`}
-                />
-              </p>
-            </div>
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].second}
-              alt=""
-            />
-          </section>
-          <section class="text-img-container right-side">
-            <app-img
-              class="img-fluid d-none d-md-inline"
-              src={this.imgs[this.match.params.service].third}
-              alt=""
-            />
-            <div class="text-img-container-text">
-              <h2>
-                <app-translate
-                  key={`services.${this.match.params.service}.third.title`}
-                />
-              </h2>
-              <p>
-                <app-translate
-                  key={`services.${this.match.params.service}.third.text`}
-                />
-              </p>
-            </div>
-          </section>
-        </div>
-        <section>
-          <div class="our-toolbox">
-            <h2>Our Toolbox</h2>
-            <p>let us show you our skills in:</p>
-            <div class="container">
-              <div class="row">
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.first}
-                      alt=""
-                    />
-                  </stencil-route-link>
+        {this.imgs[this.match.params.service]
+          ? [
+              <div id="second-content" class="container">
+                <section class="text-img-container right-side">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].first}
+                    alt=""
+                  />
+                  <div class="text-img-container-text">
+                    <h2>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.first.title`}
+                      />
+                    </h2>
+                    <p>
+                      <app-translate
+                        key={`services.${this.match.params.service}.first.text`}
+                      />
+                    </p>
+                  </div>
+                </section>
+                <section class="text-img-container left-side">
+                  <div class="text-img-container-text">
+                    <h2>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.second.title`}
+                      />
+                    </h2>
+                    <p>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.second.text`}
+                      />
+                    </p>
+                  </div>
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].second}
+                    alt=""
+                  />
+                </section>
+                <section class="text-img-container right-side">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={this.imgs[this.match.params.service].third}
+                    alt=""
+                  />
+                  <div class="text-img-container-text">
+                    <h2>
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.third.title`}
+                      />
+                    </h2>
+                    <p>
+                      <app-translate
+                        key={`services.${this.match.params.service}.third.text`}
+                      />
+                    </p>
+                  </div>
+                </section>
+              </div>,
+              <section>
+                <div class="our-toolbox">
+                  <h2>Our Toolbox</h2>
+                  <p>let us show you our skills in:</p>
+                  <div class="container">
+                    <div class="row">
+                      <div class="image-column col-sm-12 col-md-4">
+                        <stencil-route-link url="/toolbox" exact={true}>
+                          <app-img
+                            class="img-fluid d-none d-md-inline"
+                            src={
+                              this.imgs[this.match.params.service].toolbox.first
+                            }
+                            alt=""
+                          />
+                        </stencil-route-link>
+                      </div>
+                      <div class="image-column col-sm-12 col-md-4">
+                        <stencil-route-link url="/toolbox" exact={true}>
+                          <app-img
+                            class="img-fluid d-none d-md-inline"
+                            src={
+                              this.imgs[this.match.params.service].toolbox
+                                .second
+                            }
+                            alt=""
+                          />
+                        </stencil-route-link>
+                      </div>
+                      <div class="image-column col-sm-12 col-md-4">
+                        <stencil-route-link url="/toolbox" exact={true}>
+                          <app-img
+                            class="img-fluid d-none d-md-inline"
+                            src={
+                              this.imgs[this.match.params.service].toolbox.third
+                            }
+                            alt=""
+                          />
+                        </stencil-route-link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.second}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <stencil-route-link url="/toolbox" exact={true}>
-                    <app-img
-                      class="img-fluid d-none d-md-inline"
-                      src={this.imgs[this.match.params.service].toolbox.third}
-                      alt=""
-                    />
-                  </stencil-route-link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        {this.imgs[this.match.params.service].examples ? (
+              </section>,
+            ]
+          : null}
+        {this.imgs[this.match.params.service] &&
+        this.imgs[this.match.params.service].examples ? (
           <div class="container">
             <section class="work-examples">
               <h2>Work Examples</h2>

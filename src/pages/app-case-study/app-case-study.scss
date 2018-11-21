@@ -95,7 +95,6 @@
           background-image: url('/assets/case-study-background-section-mobile.png');
         }
       }
-
     }
 
     &.product-section {
@@ -117,6 +116,10 @@
           letter-spacing: 1.6px;
           color: $gray-dark;
 
+          @include media-breakpoint-down(md) {
+            text-align: center;
+          }
+
           @include media-breakpoint-down(xs) {
             font-size: 32px;
             font-weight: bold;
@@ -130,6 +133,10 @@
           font-size: 16px;
           line-height: 2;
           color: $gray-brown;
+
+          @include media-breakpoint-down(md) {
+            text-align: center;
+          }
 
           @include media-breakpoint-down(xs) {
             font-size: 16px;
@@ -205,6 +212,10 @@
           text-align: center;
         }
 
+        @include media-breakpoint-down(md) {
+          text-align: center;
+        }
+
         @include media-breakpoint-down(xs) {
           font-size: 16px;
           line-height: 2;
@@ -221,7 +232,6 @@
 
     // TIMELINE
     &.timeline {
-      
       h2 {
         font-size: 48px;
         font-weight: 600;
@@ -302,7 +312,13 @@
             position: relative;
             justify-self: end;
 
+            @include media-breakpoint-down(md) {
+              width: 60%;
+              justify-self: center;
+            }
+
             @include media-breakpoint-down(xs) {
+              width: initial;
               justify-self: initial;
             }
           }
@@ -367,6 +383,11 @@
           app-img img {
             width: 150px;
           }
+
+          // @include media-breakpoint-down(md) {
+          //   justify-self: center;
+          //   width: 60%;
+          // }
         }
       }
 
@@ -383,6 +404,8 @@
 
           // a wrapper to made the border make the middle line
           .timeline-wrapper {
+            width: 60%;
+            justify-self: center;
             border-right: none;
           }
 
@@ -453,12 +476,11 @@
               img {
                 margin: 0;
                 width: 80px;
-  
               }
             }
           }
         }
-        
+
         .final-timeline-item {
           display: grid;
           grid-template-columns: 1fr;
@@ -470,6 +492,8 @@
 
           .timeline-item {
             flex-direction: column-reverse;
+            justify-self: center;
+            width: 60%;
           }
 
           .timeline-item-content {
@@ -494,7 +518,7 @@
 
           .timeline-bullet-right {
             &:after {
-              left: 46%;         
+              left: 46%;
             }
           }
         }
@@ -503,6 +527,11 @@
       // TIMELINE XSMALL MOBILE BREAKPOINT
       @include media-breakpoint-down(xs) {
         .timeline-items {
+          .timeline-wrapper {
+            width: initial;
+            justify-self: initial;
+          }
+
           .timeline-bullet-left {
             &:after {
               right: 45%;
@@ -511,12 +540,15 @@
 
           .timeline-bullet-right {
             &:after {
-              left: 45%;         
+              left: 45%;
             }
           }
         }
-      }
 
+        .final-timeline-item > .timeline-item {
+          width: 100%;
+        }
+      }
     }
   }
 }
