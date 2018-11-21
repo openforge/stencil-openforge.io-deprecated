@@ -1,3 +1,20 @@
+<a name="1.4.4"></a>
+## [1.4.4](https://github.com/openforge/main-website/compare/v1.4.3...v1.4.4) (2018-11-16)
+
+
+### Bug Fixes
+
+* **app:** fix navbar dropdown clicks ([e3b128c](https://github.com/openforge/main-website/commit/e3b128c))
+* **app:** fix navbar dropdown items ([48efb4e](https://github.com/openforge/main-website/commit/48efb4e))
+* **app:** fix pwa links ([f273d56](https://github.com/openforge/main-website/commit/f273d56))
+* **CHANGELOG:** manually found v1.4.2 and added correct tag ([8d78ccd](https://github.com/openforge/main-website/commit/8d78ccd))
+* **home:** fix our work styles on ipad ([eedea75](https://github.com/openforge/main-website/commit/eedea75))
+* **juntoscope:** fix tablet styles ([4ea692f](https://github.com/openforge/main-website/commit/4ea692f))
+* **services:** fix console error ([b90db59](https://github.com/openforge/main-website/commit/b90db59))
+* **services:** fix navigate to non existent component ([df935e2](https://github.com/openforge/main-website/commit/df935e2))
+
+
+
 <a name="1.4.3"></a>
 ## [1.4.3](https://github.com/openforge/main-website/compare/v1.4.2...v1.4.3) (2018-11-15)
 
