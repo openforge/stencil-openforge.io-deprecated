@@ -177,13 +177,28 @@ export class AppDetailedService {
     // Change meta tags dynamically
     if (this.match.params.service === 'app-developer') {
       document
-        .querySelector("meta[name='title']")
-        .setAttribute('content', 'Mobile App Developer Experts | OpenForge');
+        .querySelector("meta[property='og:title']")
+        .setAttribute(
+          'content', 
+          'Mobile App Developer Experts | OpenForge'
+        );
       document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
+        );
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute(
+          'content',
+          'https://openforge.io/services/app-developer/'
+        );
+      document
+        .querySelector("meta[property='og:image']")
+        .setAttribute(
+          'content',
+          'https://openforge.io/assets/team-landing-header-development-team.jpg'
         );
       document
         .querySelector("meta[name='keywords']")
@@ -193,13 +208,28 @@ export class AppDetailedService {
         );
     } else if (this.match.params.service === 'app-designer') {
       document
-        .querySelector("meta[name='title']")
-        .setAttribute('content', 'Mobile App Design Experts | OpenForge');
+        .querySelector("meta[property='og:title']")
+        .setAttribute(
+          'content', 
+          'Mobile App Design Experts | OpenForge'
+        );
       document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
+        );
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute(
+          'content',
+          'https://openforge.io/services/app-designer/'
+        );
+      document
+        .querySelector("meta[property='og:image']")
+        .setAttribute(
+          'content',
+          'https://openforge.io/assets/team-landing-header-design-team.jpg'
         );
       document
         .querySelector("meta[name='keywords']")
@@ -209,16 +239,28 @@ export class AppDetailedService {
         );
     } else if (this.match.params.service === 'startup-consulting') {
       document
-        .querySelector("meta[name='title']")
+        .querySelector("meta[property='og:title']")
         .setAttribute(
           'content',
           'Startup Consulting Services in Philadelphia | OpenForge'
         );
       document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies.   Let Us Help You With Marketing and CTO As a Service.'
+        );
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute(
+          'content',
+          'https://openforge.io/services/startup-consulting/'
+        );
+      document
+        .querySelector("meta[property='og:image']")
+        .setAttribute(
+          'content',
+          'https://openforge.io/assets/team-landing-header-management-team.jpeg'
         );
       document
         .querySelector("meta[name='keywords']")

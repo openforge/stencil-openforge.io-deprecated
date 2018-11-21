@@ -203,16 +203,28 @@ export class AppAbout {
 
     // Change meta tags dynamically
     document
-      .querySelector("meta[name='title']")
+      .querySelector("meta[property='og:title']")
       .setAttribute(
         'content',
         'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge'
       );
     document
-      .querySelector("meta[name='description']")
+      .querySelector("meta[property='og:description']")
       .setAttribute(
         'content',
         'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia'
+      );
+    document
+      .querySelector("meta[property='og:url']")
+      .setAttribute(
+        'content',
+        'https://openforge.io/about/'
+      );
+    document
+      .querySelector("meta[property='og:image']")
+      .setAttribute(
+        'content',
+        'https://openforge.io/assets/bg-hero-icons.jpg'
       );
     document
       .querySelector("meta[name='keywords']")

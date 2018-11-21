@@ -38,6 +38,8 @@ export class AppTeamLanding {
         description:
           'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or concepting, she approaches each problem with an equal measure of discipline and curiosity.',
         keywords: 'Rachel Bennett, designer, visual designer, UIUX',
+        url: 'https://openforge.io/about/rachel-bennett/',
+        image: 'https://openforge.io/assets/bios-background-rachel.jpg'
       },
     },
     'geoffrey-melle': {
@@ -62,6 +64,8 @@ export class AppTeamLanding {
         description:
           'As account manager, Geoffrey tackles marketing and sales objectives for OpenForge with his experience in digital marketing. Additionally Geoffrey takes part in project management overseeing internal and client projects, ensuring smooth communication and delivery of assets.',
         keywords: 'Geoffrey Melle',
+        url: 'https://openforge.io/about/geoffrey-melle/',
+        image: 'https://openforge.io/assets/bios-background-geoff.jpg'
       },
     },
     'joni-lehto': {
@@ -113,6 +117,8 @@ export class AppTeamLanding {
         description:
           'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the full development process of a project, including the initial scoping, architecture planning, client communication management, and deployment involved in all projects. Paulina volunteers for various organizations and is the co-organizer for Angular Philly and Ionic Philly.',
         keywords: 'Paulina Gallo',
+        url: 'https://openforge.io/about/paulina-gallo/',
+        image: 'https://openforge.io/assets/bios-background-paulina.png'
       },
     },
     'fernando-del-olmo': {
@@ -158,6 +164,8 @@ export class AppTeamLanding {
         description:
           'As Project Manager, Billy ensures that our team and your team have the resources and requirements needed in order to successfully launch your product. Heading up our quality assurance process, Billy leads the team in testing all deliverables maintaining high quality standards.',
         keywords: 'Billy Holloran',
+        url: 'https://openforge.io/about/billy-holloran/',
+        image: 'https://openforge.io/assets/bios-background-billy.jpg'
       },
     },
     'luis-chacon': {
@@ -222,6 +230,8 @@ export class AppTeamLanding {
         description:
           "As a designer, Ethan leverages his design experience and front end development skills helping your team to create an intuitive user interface that translates into a positive user experience. Through close collaboration with our design team and development team, Ethan's skills streamline the design process.",
         keywords: 'Ethan Bohan',
+        url: 'https://openforge.io/about/ethan-bohan/',
+        image: 'https://openforge.io/assets/bios-background-ethan.jpg'
       },
     },
     'dhairya-pujara': {
@@ -266,6 +276,8 @@ export class AppTeamLanding {
         description:
           "As a designer, Ted uses his experience in visual design and eye for user-flow to help make a product that is visually pleasing and tactually smooth. Thanks to Drexel's rapid-fire scheduling, he is adaptable and quick to learn new skills, helping to ease collaborators' work and get projects done faster.",
         keywords: 'Ted Grant',
+        url: 'https://openforge.io/about/ted-grant/',
+        image: 'https://openforge.io/assets/bios-background-ted.png'
       },
     },
     'kevon-chambers': {
@@ -294,6 +306,8 @@ export class AppTeamLanding {
         description:
           'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
         keywords: 'Young Song',
+        url: 'https://openforge.io/about/young-song/',
+        image: 'https://openforge.io/assets/bios-background-young.jpg'
       },
     },
     'sam-hudgens': {
@@ -312,6 +326,8 @@ export class AppTeamLanding {
         description:
           'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
         keywords: 'Sam Hudgens',
+        url: 'https://openforge.io/about/sam-hudgens/',
+        image: 'https://openforge.io/assets/bios-background-sam.jpg'
       },
     },
     casey: {
@@ -338,6 +354,8 @@ export class AppTeamLanding {
         description:
           'As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.',
         keywords: 'Casey',
+        url: 'https://openforge.io/about/casey/',
+        image: 'https://openforge.io/assets/bios-background-casey.jpg'
       },
     },
   };
@@ -365,16 +383,28 @@ export class AppTeamLanding {
     if(this.data[this.match.params.member]) {
       // Change meta tags dynamically
       document
-        .querySelector("meta[name='title']")
+        .querySelector("meta[property='og:title']")
         .setAttribute(
           'content',
           this.data[this.match.params.member].metatags.title
         );
       document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           this.data[this.match.params.member].metatags.description
+        );
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute(
+          'content',
+          this.data[this.match.params.member].metatags.url
+        );
+      document
+        .querySelector("meta[property='og:image']")
+        .setAttribute(
+          'content',
+          this.data[this.match.params.member].metatags.image
         );
       document
         .querySelector("meta[name='keywords']")

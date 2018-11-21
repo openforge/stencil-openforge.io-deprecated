@@ -105,6 +105,8 @@ export class AppOpportunities {
         description:
           'From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) Ionic or React App!',
         keywords: 'Software Developer Job Application',
+        url: 'https://openforge.io/opportunities/develop/',
+        image: 'https://openforge.io/assets/graphic-opportunities-dev-header.png'
       },
     },
     design: {
@@ -153,6 +155,8 @@ export class AppOpportunities {
         description:
           'At OpenForge, we believe that sometimes actions speak louder than words, so as part of your interview assignment, we’d like to challenge you to design 3 pages of an app of your choosing.',
         keywords: 'Graphic Designer Job Application',
+        url: 'https://openforge.io/opportunities/design/',
+        image: 'https://openforge.io/assets/graphic-opportunities-design-header.png'
       },
     },
   };
@@ -379,16 +383,28 @@ export class AppOpportunities {
     if(this.texts[this.match.params.type]) {
       // Change meta tags dynamically d
       document
-        .querySelector("meta[name='title']")
+        .querySelector("meta[property='og:title']")
         .setAttribute(
           'content',
           this.texts[this.match.params.type].metatags.title
         );
       document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           this.texts[this.match.params.type].metatags.description
+        );
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.url
+        );
+      document
+        .querySelector("meta[property='og:image']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.image
         );
       document
         .querySelector("meta[name='keywords']")

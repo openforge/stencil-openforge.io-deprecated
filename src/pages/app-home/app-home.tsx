@@ -25,24 +25,24 @@ export class AppHome {
     }
 
     // Change meta tags dynamically
-    document
-      .querySelector("meta[name='title']")
-      .setAttribute(
-        'content',
-        'Mobile Design - App Development - Startup Consulting | OpenForge'
-      );
-    document
-      .querySelector("meta[name='description']")
-      .setAttribute(
-        'content',
-        'OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular'
-      );
-    document
-      .querySelector("meta[name='keywords']")
-      .setAttribute(
-        'content',
-        'Mobile, Application, Development, Design, User Experience, Ionic'
-      );
+    // document
+    //   .querySelector("meta[name='title']")
+    //   .setAttribute(
+    //     'content',
+    //     'Mobile Design - App Development - Startup Consulting | OpenForge'
+    //   );
+    // document
+    //   .querySelector("meta[name='description']")
+    //   .setAttribute(
+    //     'content',
+    //     'OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular'
+    //   );
+    // document
+    //   .querySelector("meta[name='keywords']")
+    //   .setAttribute(
+    //     'content',
+    //     'Mobile, Application, Development, Design, User Experience, Ionic'
+    //   );
   }
 
   scrollToForm() {
