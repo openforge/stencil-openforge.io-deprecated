@@ -5,6 +5,9 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-service-level-agreement.scss',
 })
 export class AppServiceLevelAgreement {
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+
   scrollTo() {
     const form = document.getElementById('sla');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -18,7 +21,7 @@ export class AppServiceLevelAgreement {
   render() {
     return (
       <div class="service-level-agreement">
-        <header class="hero">
+        <header class={this.clsName}>
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">

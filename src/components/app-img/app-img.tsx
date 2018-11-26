@@ -16,6 +16,13 @@ export class Img {
   @Prop() preLoad: boolean = false;
   @Prop() src: string;
   @Watch('src')
+  changeExtension() {
+    if (localStorage.getItem('allowWebp') === 'true' && this.loadSrc) {
+      const idx = this.loadSrc.lastIndexOf('.');
+      this.loadSrc = this.loadSrc.substr(0, idx) + '.webp';
+    }
+  }
+
   srcChanged() {
     this.addIntersectionObserver();
   }
@@ -56,13 +63,24 @@ export class Img {
   }
 
   render() {
+    this.changeExtension();
     return (
-      <img
-        class={{ fit: this.fit }}
-        src={this.loadSrc}
-        alt={this.alt}
-        decoding="async"
-      />
+      <div>
+        {localStorage.getItem('isSafari') !== 'true' ? (
+          <lazy-img
+            class={{ fit: this.fit }}
+            src={this.loadSrc}
+            alt={this.alt}
+          />
+        ) : (
+          <img
+            class={{ fit: this.fit }}
+            src={this.loadSrc}
+            alt={this.alt}
+            decoding="async"
+          />
+        )}
+      </div>
     );
   }
 }

@@ -9,6 +9,8 @@ import { translate } from '../../services/translation.service';
 export class AppTeamLanding {
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
+  private allowWebp =
+    localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   @State() chips;
   data = {
@@ -348,7 +350,7 @@ export class AppTeamLanding {
   }
 
   componentWillLoad() {
-    if(!this.data[this.match.params.member]) {
+    if (!this.data[this.match.params.member]) {
       this.history.push(`/`, {});
     } else {
       this.chips = this.data[this.match.params.member].skills.map(skill => {
@@ -362,7 +364,7 @@ export class AppTeamLanding {
   }
 
   changeMetadata() {
-    if(this.data[this.match.params.member]) {
+    if (this.data[this.match.params.member]) {
       // Change meta tags dynamically
       document
         .querySelector("meta[name='title']")
@@ -381,63 +383,75 @@ export class AppTeamLanding {
         .setAttribute(
           'content',
           this.data[this.match.params.member].metatags.keywords
-      );
+        );
     }
   }
 
+  changeImgFormat(filename: string) {
+    if (filename && this.allowWebp) {
+      console.log(filename);
+      const idx = filename.lastIndexOf('.');
+      return filename.substring(0, idx) + '.webp';
+    }
+    return filename;
+  }
+
   render() {
+    const backgroundPhoto = this.changeImgFormat(
+      this.data[this.match.params.member].backgroundPhoto
+    );
     return (
       <section class="team-landing">
-      {/* header - hero */}
-      {this.data[this.match.params.member] 
-      ? [
-          <header
-            class="hero"
-            style={{
-              'background-image': `url(${
-                this.data[this.match.params.member].backgroundPhoto
-              })`,
-            }}
-          >
-          <div class="overlay" />,
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
-                    {`${this.data[this.match.params.member].firstname} ${
-                      this.data[this.match.params.member].surname
-                    }`}
-                  </h2>
-                  <h4>{this.data[this.match.params.member].title}</h4>
-                  <p>{this.data[this.match.params.member].headerText}</p>
+        {/* header - hero */}
+        {this.data[this.match.params.member]
+          ? [
+              <header
+                class="hero"
+                style={{
+                  'background-image': `url(${backgroundPhoto})`,
+                }}
+              >
+                <div class="overlay" />,
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-8 col-lg-8">
+                      <h2>
+                        {`${this.data[this.match.params.member].firstname} ${
+                          this.data[this.match.params.member].surname
+                        }`}
+                      </h2>
+                      <h4>{this.data[this.match.params.member].title}</h4>
+                      <p>{this.data[this.match.params.member].headerText}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </header>,
-          <div class="container">
-            <section class="text-img-container right-side">
-              <app-img
-                class="img-fluid d-none d-md-inline"
-                src={`/assets/team-landing-${
-                  this.data[this.match.params.member].team
-                }.png`}
-                alt=""
-              />
-              <div class="text-img-container-text">
-                <h2>What {this.data[this.match.params.member].firstname} Does</h2>
-                <p>{this.data[this.match.params.member].bodyText}</p>
-                <h4>Skills</h4>
-                {this.chips}
-              </div>
-            </section>
-          </div>,
-          <app-cta link-url="/about">
-            <span slot="header">Meet The Team</span>
-            <span slot="link">Let's go</span>
-          </app-cta>,
-          <app-footer />,
-        ]
-      : null }
+              </header>,
+              <div class="container">
+                <section class="text-img-container right-side">
+                  <app-img
+                    class="img-fluid d-none d-md-inline"
+                    src={`/assets/team-landing-${
+                      this.data[this.match.params.member].team
+                    }.png`}
+                    alt=""
+                  />
+                  <div class="text-img-container-text">
+                    <h2>
+                      What {this.data[this.match.params.member].firstname} Does
+                    </h2>
+                    <p>{this.data[this.match.params.member].bodyText}</p>
+                    <h4>Skills</h4>
+                    {this.chips}
+                  </div>
+                </section>
+              </div>,
+              <app-cta link-url="/about">
+                <span slot="header">Meet The Team</span>
+                <span slot="link">Let's go</span>
+              </app-cta>,
+              <app-footer />,
+            ]
+          : null}
       </section>
     );
   }

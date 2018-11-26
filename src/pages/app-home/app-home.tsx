@@ -11,6 +11,8 @@ export class AppHome {
   @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   members: any[];
   isMobile = navigator.userAgent.match(
@@ -54,7 +56,7 @@ export class AppHome {
     return (
       <div class="home">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.clsName}>
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">

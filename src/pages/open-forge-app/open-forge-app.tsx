@@ -1,6 +1,7 @@
 import '@stencil/router';
 import { Component } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
+import { BrowserService } from '../../services/browser.service';
 
 polyfill();
 
@@ -10,6 +11,11 @@ polyfill();
 })
 export class OpenForgeApp {
   mainEl: HTMLElement;
+
+  constructor() {
+    const browserService = new BrowserService();
+    browserService.detectBrowser();
+  }
 
   componentDidLoad() {
     try {
@@ -52,10 +58,7 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
-          <stencil-route
-            url="/resources/:source"
-            component="app-resources"
-          />
+          <stencil-route url="/resources/:source" component="app-resources" />
           <stencil-route url="/about/:member" component="app-team-landing" />
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />

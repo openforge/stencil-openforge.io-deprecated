@@ -8,10 +8,8 @@ declare var fbq;
   styleUrl: 'app-contact.scss',
 })
 export class AppContact {
-  @State()
-  formSubmitted = false;
-  @State()
-  formSubmitting = false;
+  @State() formSubmitted = false;
+  @State() formSubmitting = false;
 
   @State()
   formValues: {
@@ -26,17 +24,12 @@ export class AppContact {
     messageValid: false;
   };
 
-  @State()
-  nameError: string;
-  @State()
-  emailError: string;
-  @State()
-  phoneError: string;
-  @State()
-  messageError: string;
+  @State() nameError: string;
+  @State() emailError: string;
+  @State() phoneError: string;
+  @State() messageError: string;
 
-  @State()
-  isDisabled = true;
+  @State() isDisabled = true;
 
   @Prop({ context: 'isServer' })
   private isServer: boolean;
@@ -48,6 +41,8 @@ export class AppContact {
   };
 
   radioChoices: any;
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   constructor() {}
 
@@ -163,7 +158,7 @@ export class AppContact {
     return (
       <div class="contact">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.clsName}>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">

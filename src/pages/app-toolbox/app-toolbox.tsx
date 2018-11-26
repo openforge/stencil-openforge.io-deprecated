@@ -5,6 +5,9 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-toolbox.scss',
 })
 export class AppToolbox {
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+
   scrollToForm() {
     const form = document.getElementById('second-content');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -32,7 +35,7 @@ export class AppToolbox {
     return (
       <div class="toolbox">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.clsName}>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-9 col-md-8 col-lg-9">
@@ -62,7 +65,9 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://www.goabstract.com/">Abstract</a>
+                <a target="_blank" href="https://www.goabstract.com/">
+                  Abstract
+                </a>
               </h2>
               <p>
                 Abstract allows our team to track our projects across versions
@@ -75,7 +80,9 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://marvelapp.com/">Marvel</a>
+                <a target="_blank" href="https://marvelapp.com/">
+                  Marvel
+                </a>
               </h2>
               <p>
                 Marvel allows our design team to produce a working prototype of
@@ -98,7 +105,9 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://www.sketchapp.com/">Sketch</a>
+                <a target="_blank" href="https://www.sketchapp.com/">
+                  Sketch
+                </a>
               </h2>
               <p>
                 Sketch is a powerful tool that allows our designers to
@@ -120,7 +129,9 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://ionicframework.com/">Ionic Framework</a>
+                <a target="_blank" href="https://ionicframework.com/">
+                  Ionic Framework
+                </a>
               </h2>
               <p>
                 Ionic Framework gives our team of developers an array of
@@ -133,7 +144,9 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://angular.io/">Angular</a>
+                <a target="_blank" href="https://angular.io/">
+                  Angular
+                </a>
               </h2>
               <p>
                 Angular lays the foundations for our developer team to produce
@@ -154,7 +167,9 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://github.com/">GitHub</a>
+                <a target="_blank" href="https://github.com/">
+                  GitHub
+                </a>
               </h2>
               <p>
                 GitHub is an industry standard for hosting code, managing
@@ -175,7 +190,9 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://marvelapp.com/">Marvel</a>
+                <a target="_blank" href="https://marvelapp.com/">
+                  Marvel
+                </a>
               </h2>
               <p>
                 Marvel puts our team and your team on the same page with a
@@ -188,7 +205,9 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://bitbucket.org/">BitBucket</a>
+                <a target="_blank" href="https://bitbucket.org/">
+                  BitBucket
+                </a>
               </h2>
               <p>
                 Bitbucket shows a detailed breakdown of developer productivity
@@ -211,7 +230,9 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://www.teamwork.com/">Teamwork</a>
+                <a target="_blank" href="https://www.teamwork.com/">
+                  Teamwork
+                </a>
               </h2>
               <p>
                 Teamwork Projects is a powerful project management software that

@@ -10,6 +10,8 @@ declare var fbq;
 export class AppAbout {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   members = [
     {
@@ -231,7 +233,7 @@ export class AppAbout {
     return (
       <div class="about">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.clsName}>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-9 col-md-8 col-lg-9">

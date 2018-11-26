@@ -1,4 +1,4 @@
-    import { Component } from '@stencil/core';
+import { Component } from '@stencil/core';
 import {
   translate,
   TranslationService,

@@ -2,6 +2,14 @@
   // hero
   .hero {
     background-image: url('/assets/case-study-background-header.png');
+  }
+
+  .webp {
+    background-image: url('/assets/case-study-background-header.webp');
+  }
+
+  .hero,
+  .webp {
     background-position: top center;
     height: 100vh;
 

@@ -12,6 +12,11 @@ export class AppDetailedService {
   @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  private devClsName = this.clsName + ' development';
+  private designClsName = this.clsName + ' design';
+  private consultClsName = this.clsName + ' consulting';
 
   @State()
   imgs = {
@@ -235,7 +240,7 @@ export class AppDetailedService {
         {this.imgs[this.match.params.service] ? '' : ''}
         {/* header - hero */}
         {this.match.params.service === 'app-developer' ? (
-          <header class="hero development">
+          <header class={this.devClsName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
@@ -261,7 +266,7 @@ export class AppDetailedService {
             </div>
           </header>
         ) : this.match.params.service === 'app-designer' ? (
-          <header class="hero design">
+          <header class={this.designClsName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
@@ -287,7 +292,7 @@ export class AppDetailedService {
             </div>
           </header>
         ) : (
-          <header class="hero consulting">
+          <header class={this.consultClsName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">

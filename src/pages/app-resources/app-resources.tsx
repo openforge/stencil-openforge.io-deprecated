@@ -38,6 +38,8 @@ export class AppResources {
   };
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
+  private clsName =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   @Listen('check')
   @Listen('valueChange')
@@ -160,7 +162,7 @@ export class AppResources {
       <div id="top" class="resources">
         {/* header - hero */}
         {!this.formSubmitted ? (
-          <header class="hero">
+          <header class={this.clsName}>
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">
