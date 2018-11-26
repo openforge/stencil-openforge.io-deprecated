@@ -389,7 +389,6 @@ export class AppTeamLanding {
 
   changeImgFormat(filename: string) {
     if (filename && this.allowWebp) {
-      console.log(filename);
       const idx = filename.lastIndexOf('.');
       return filename.substring(0, idx) + '.webp';
     }
