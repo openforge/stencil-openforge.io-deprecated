@@ -5,6 +5,9 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
+  private className =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+
   scrollToTop() {
     const form = document.getElementsByTagName('header')[0];
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -25,14 +28,10 @@ export class AppCaseStudy {
       .setAttribute('content', 'juntoscope, scoping, project management');
   }
 
-  // private className = localStorage.getItem('allowWebp')==='true' ? 'webp' : 'hero';
-
   render() {
-    const className =
-      localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
     return (
       <div class="case-study">
-        <header class={className}>
+        <header class={this.className}>
           <div class="container">
             <div class="row align-items-center">
               <div style={{ margin: 'auto' }}>

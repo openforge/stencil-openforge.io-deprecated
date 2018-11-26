@@ -10,6 +10,8 @@ declare var fbq;
 export class AppAbout {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
+  private className =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   public images: any;
 
@@ -228,9 +230,6 @@ export class AppAbout {
     const form = document.getElementById('about-section');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
-
-  private className =
-    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   render() {
     return (

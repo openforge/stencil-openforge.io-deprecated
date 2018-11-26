@@ -12,6 +12,18 @@ export class AppDetailedService {
   @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
+  private devClassName =
+    localStorage.getItem('allowWebp') === 'true'
+      ? 'webp development'
+      : 'hero development';
+  private designClassName =
+    localStorage.getItem('allowWebp') === 'true'
+      ? 'webp design'
+      : 'hero design';
+  private consultingClassName =
+    localStorage.getItem('allowWebp') === 'true'
+      ? 'webp consulting'
+      : 'hero consulting';
 
   @State()
   imgs = {
@@ -229,29 +241,13 @@ export class AppDetailedService {
     }
   }
 
-  // private devClassName = localStorage.getItem('allowWebp') === 'true' ? 'webp development' : 'hero development';
-  // private designClassName = localStorage.getItem("allowWebp") === "true" ? "webp design" : "hero design";
-  // private consultingClassName = localStorage.getItem("allowWebp") === "true" ? "webp consulting" : "hero consulting";
-
   render() {
-    const devClassName =
-      localStorage.getItem('allowWebp') === 'true'
-        ? 'webp development'
-        : 'hero development';
-    const designClassName =
-      localStorage.getItem('allowWebp') === 'true'
-        ? 'webp design'
-        : 'hero design';
-    const consultingClassName =
-      localStorage.getItem('allowWebp') === 'true'
-        ? 'webp consulting'
-        : 'hero consulting';
     return (
       <section class="services">
         {this.imgs[this.match.params.service] ? '' : ''}
         {/* header - hero */}
         {this.match.params.service === 'app-developer' ? (
-          <header class={devClassName}>
+          <header class={this.devClassName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
@@ -277,7 +273,7 @@ export class AppDetailedService {
             </div>
           </header>
         ) : this.match.params.service === 'app-designer' ? (
-          <header class={designClassName}>
+          <header class={this.designClassName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
@@ -303,7 +299,7 @@ export class AppDetailedService {
             </div>
           </header>
         ) : (
-          <header class={consultingClassName}>
+          <header class={this.consultingClassName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">

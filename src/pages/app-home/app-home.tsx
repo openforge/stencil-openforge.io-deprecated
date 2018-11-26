@@ -12,6 +12,9 @@ export class AppHome {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
+  private className =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+
   members: any[];
   isMobile = navigator.userAgent.match(
     /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
@@ -49,9 +52,6 @@ export class AppHome {
     const form = document.getElementById('services');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
-
-  private className =
-    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   render() {
     return (

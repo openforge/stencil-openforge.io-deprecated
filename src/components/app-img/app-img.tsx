@@ -81,7 +81,7 @@ export class Img {
             alt={this.alt}
             decoding="async"
           />
-        )};
+        )}
       </div>
     );
   }

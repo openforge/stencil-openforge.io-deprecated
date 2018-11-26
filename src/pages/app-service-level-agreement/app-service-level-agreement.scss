@@ -2,6 +2,14 @@
   // hero
   .hero {
     background-image: url('/assets/sla-background-header.png');
+  }
+
+  .webp {
+    background-image: url('/assets/sla-background-header.webp');
+  }
+
+  .hero,
+  .webp {
     background-position: top center;
     background-size: cover;
     height: 100vh;
