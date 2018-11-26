@@ -92,7 +92,7 @@ export class LazyImg {
         ref={el => (this.image = el as HTMLImageElement)}
         data-src={this.src}
         alt={this.alt}
-        width={this.width}
+        // width={this.width}
       />
     );
   }
