@@ -229,20 +229,14 @@ export class AppAbout {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
-  // buildImageArray() {
-  //   // this.images = document.querySelectorAll('img[src$=".jpg"], img[src$=".png"]');
-  //   this.images = document.querySelectorAll('app-img');
-  //   console.log(this.images);
-  //   console.log("build image array executed");
-  // }
+  private className =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   render() {
-    // this.buildImageArray();
-
     return (
       <div class="about">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.className}>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-9 col-md-8 col-lg-9">

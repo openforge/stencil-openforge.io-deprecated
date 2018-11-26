@@ -34,99 +34,76 @@ export class OpenForgeApp {
     }
   }
 
-  // supportWebp() {
-  //   let appVersion = navigator.appVersion;
-  //   let userAgent = navigator.userAgent;
-  //   let browserName = navigator.appName;
-  //   let fullVersion = '' + parseFloat(navigator.appVersion);
-  //   let majorVersion = parseInt(navigator.appVersion, 10);
-  //   let nameOffset: any;
-  //   let verOffset: any;
-  //   let ix: any;
-  //   let supportWebp = false;
+  detectBrowser() {
+    const allowWebp = String(this.detectWebpSupport());
+    const isSafari =
+      !/Chrome/i.test(navigator.userAgent) &&
+      /Safari/i.test(navigator.userAgent)
+        ? 'true'
+        : 'false';
+    localStorage.setItem('allowWebp', allowWebp);
+    localStorage.setItem('isSafari', isSafari);
+  }
 
-  //   // In Opera, the true version is after "Opera" or after "Version"
-  //   if ((verOffset = userAgent.indexOf("Opera")) != -1) {
-  //     browserName = "Opera";
-  //     fullVersion = userAgent.substring(verOffset + 6);
+  detectWebpSupport(): boolean {
+    const nAgt = navigator.userAgent;
+    let fullVersion = '' + parseFloat(navigator.appVersion);
+    let verIndex: any;
 
-  //     if ((verOffset = userAgent.indexOf("Version")) != -1) {
-  //       fullVersion = userAgent.substring(verOffset + 8);
-  //     }
-  //   }
-  //   // In MSIE, the true version is after "MSIE" in userAgent
-  //   else if ((verOffset=userAgent.indexOf("MSIE"))!=-1) {
-  //     browserName = "Microsoft Internet Explorer";
-  //     fullVersion = userAgent.substring(verOffset+5);
-  //  }
-  //  // In Chrome, the true version is after "Chrome"
-  //   else if ((verOffset=userAgent.indexOf("Chrome"))!=-1) {
-  //     browserName = "Chrome";
-  //     fullVersion = userAgent.substring(verOffset+7);
-  //   }
-  //   // In Safari, the true version is after "Safari" or after "Version"
-  //   else if ((verOffset=userAgent.indexOf("Safari"))!=-1) {
-  //     browserName = "Safari";
-  //     fullVersion = userAgent.substring(verOffset+7);
-  //     if ((verOffset=userAgent.indexOf("Version"))!=-1)
-  //       fullVersion = userAgent.substring(verOffset+8);
-  //   }
-  //   // In Firefox, the true version is after "Firefox"
-  //   else if ((verOffset=userAgent.indexOf("Firefox"))!=-1) {
-  //     browserName = "Firefox";
-  //     fullVersion = userAgent.substring(verOffset+8);
-  //   }
-  //   // Adding logic for detecting Chrome on mobile devices
-  //   else if (userAgent.includes("Android") && userAgent.includes("Chrome")) {
-  //     if ((verOffset = userAgent.indexOf("Chrome")) != -1) {
-  //       browserName = "Android Chrome";
-  //       fullVersion = userAgent.substring(verOffset + 7);
-  //     }
-  //   }
-  //  // In most other browsers, "name/version" is at the end of userAgent
-  //   else if ( (nameOffset=userAgent.lastIndexOf(' ')+1) < (verOffset=userAgent.lastIndexOf('/')) ) {
-  //     browserName = userAgent.substring(nameOffset,verOffset);
-  //     fullVersion = userAgent.substring(verOffset+1);
-  //     if (browserName.toLowerCase()==browserName.toUpperCase()) {
-  //       browserName = navigator.appName;
-  //     }
-  //   }
-  //   // trim the fullVersion string at semicolon/space if present
-  //   if (( ix=fullVersion.indexOf(";")) != -1) {
-  //     fullVersion = fullVersion.substring(0, ix);
-  //   }
-  //   if (( ix = fullVersion.indexOf(" ")) != -1) {
-  //     fullVersion = fullVersion.substring(0, ix);
-  //   }
+    // detect 'Firefox'
+    if (/Firefox/i.test(navigator.userAgent)) {
+      // detect 'Firefox for Android'
+      if (/Android|android|FxiOS/i.test(navigator.userAgent)) {
+        return false;
+      }
+      verIndex = nAgt.indexOf('Firefox');
+      fullVersion = nAgt.substring(verIndex + 8);
+      const version = this.getMajorVersion(fullVersion);
+      return version >= 65 ? true : false;
+    }
 
-  //   majorVersion = parseInt("" + fullVersion, 10);
-  //   if (isNaN(majorVersion)) {
-  //     fullVersion = "" + parseFloat(navigator.appVersion);
-  //     majorVersion = parseInt(navigator.appVersion, 10);
-  //   }
+    // detect Opera Mini
+    if (/Opera Mini|Android|android/i.test(navigator.userAgent)) {
+      return true;
+    }
 
-  //   console.log(browserName);
-  //   console.log(majorVersion);
-  //   console.log(fullVersion);
+    // In Opera, the true version is after "Opera" or after "Version"
+    if ((verIndex = nAgt.indexOf('Opera')) !== -1) {
+      fullVersion = nAgt.substring(verIndex + 6);
+      if ((verIndex = nAgt.indexOf('Version')) !== -1) {
+        fullVersion = nAgt.substring(verIndex + 8);
+      }
+      const version = this.getMajorVersion(fullVersion);
+      return version > 11.4 ? true : false;
+    }
 
-  //   if (browserName === "Chrome" && majorVersion >= 9) {
-  //     supportWebp = true;
-  //   }
-  //   if (browserName === "Firefox" && majorVersion >= 65) {
-  //     supportWebp = true;
-  //   }
-  //   if (browserName === "Opera" && majorVersion >= 12) {
-  //     supportWebp = true;
-  //   }
-  //   if (browserName === "Android Chrome" && majorVersion >= 70) {
-  //     supportWebp = true;
-  //   }
+    // In Chrome, the true version is after "Chrome"
+    if ((verIndex = nAgt.indexOf('Chrome')) !== -1) {
+      fullVersion = nAgt.substring(verIndex + 7);
+      const version = this.getMajorVersion(fullVersion);
+      return version > 9 ? true : false;
+    }
+    return false;
+  }
 
-  //   return supportWebp;
-  // }
+  getMajorVersion(fullVersion: string) {
+    let ix: number;
+    let majorVersion: number;
+    // trim the fullVersion string at semicolon/space if present
+    if ((ix = fullVersion.indexOf(';')) !== -1) {
+      majorVersion = parseFloat(fullVersion.substring(0, ix));
+    }
+    if ((ix = fullVersion.indexOf(' ')) !== -1) {
+      majorVersion = parseFloat(fullVersion.substring(0, ix));
+    }
+    if (isNaN(majorVersion)) {
+      majorVersion = parseFloat(navigator.appVersion);
+    }
+    return majorVersion;
+  }
 
   render() {
-    // this.supportWebp();
+    this.detectBrowser();
     return (
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
@@ -144,10 +121,7 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
-          <stencil-route
-            url="/resources/:source"
-            component="app-resources"
-          />
+          <stencil-route url="/resources/:source" component="app-resources" />
           <stencil-route url="/about/:member" component="app-team-landing" />
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />

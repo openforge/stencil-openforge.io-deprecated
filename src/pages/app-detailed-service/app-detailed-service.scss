@@ -11,7 +11,22 @@ section.services {
     &.consulting {
       background-image: url('/assets/team-landing-header-management-team.jpeg');
     }
+  }
 
+  .webp {
+    &.development {
+      background-image: url('/assets/team-landing-header-development-team.webp');
+    }
+    &.design {
+      background-image: url('/assets/team-landing-header-design-team.webp');
+    }
+    &.consulting {
+      background-image: url('/assets/team-landing-header-management-team.webp');
+    }
+  }
+
+  .hero,
+  .webp {
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;

@@ -50,11 +50,14 @@ export class AppHome {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
+  private className =
+    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+
   render() {
     return (
       <div class="home">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.className}>
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">

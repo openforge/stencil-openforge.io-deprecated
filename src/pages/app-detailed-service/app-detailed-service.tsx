@@ -229,13 +229,29 @@ export class AppDetailedService {
     }
   }
 
+  // private devClassName = localStorage.getItem('allowWebp') === 'true' ? 'webp development' : 'hero development';
+  // private designClassName = localStorage.getItem("allowWebp") === "true" ? "webp design" : "hero design";
+  // private consultingClassName = localStorage.getItem("allowWebp") === "true" ? "webp consulting" : "hero consulting";
+
   render() {
+    const devClassName =
+      localStorage.getItem('allowWebp') === 'true'
+        ? 'webp development'
+        : 'hero development';
+    const designClassName =
+      localStorage.getItem('allowWebp') === 'true'
+        ? 'webp design'
+        : 'hero design';
+    const consultingClassName =
+      localStorage.getItem('allowWebp') === 'true'
+        ? 'webp consulting'
+        : 'hero consulting';
     return (
       <section class="services">
         {this.imgs[this.match.params.service] ? '' : ''}
         {/* header - hero */}
         {this.match.params.service === 'app-developer' ? (
-          <header class="hero development">
+          <header class={devClassName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
@@ -261,7 +277,7 @@ export class AppDetailedService {
             </div>
           </header>
         ) : this.match.params.service === 'app-designer' ? (
-          <header class="hero design">
+          <header class={designClassName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
@@ -287,7 +303,7 @@ export class AppDetailedService {
             </div>
           </header>
         ) : (
-          <header class="hero consulting">
+          <header class={consultingClassName}>
             <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
