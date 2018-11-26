@@ -29,9 +29,6 @@ import '@stencil/router';
 import '@stencil/state-tunnel';
 
 import {
-  EventEmitter,
-} from '@stencil/core';
-import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
@@ -171,44 +168,6 @@ declare global {
       'fit'?: boolean;
       'preLoad'?: boolean;
       'src'?: string;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface LazyImg {
-      'alt': string;
-      'src': string;
-      'width': number;
-    }
-  }
-
-  interface HTMLLazyImgElement extends StencilComponents.LazyImg, HTMLStencilElement {}
-
-  var HTMLLazyImgElement: {
-    prototype: HTMLLazyImgElement;
-    new (): HTMLLazyImgElement;
-  };
-  interface HTMLElementTagNameMap {
-    'lazy-img': HTMLLazyImgElement;
-  }
-  interface ElementTagNameMap {
-    'lazy-img': HTMLLazyImgElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'lazy-img': JSXElements.LazyImgAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface LazyImgAttributes extends HTMLAttributes {
-      'alt'?: string;
-      'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
-      'src'?: string;
-      'width'?: number;
     }
   }
 }

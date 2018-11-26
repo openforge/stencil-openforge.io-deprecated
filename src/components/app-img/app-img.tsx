@@ -56,7 +56,7 @@ export class Img {
     }
   }
 
-  private changeExtension() {
+  private changeImageFormat() {
     if (this.loadSrc && localStorage.getItem('allowWebp') === 'true') {
       const idx = this.loadSrc.lastIndexOf('.');
       this.loadSrc = this.loadSrc.substring(0, idx) + '.webp';
@@ -64,7 +64,7 @@ export class Img {
   }
 
   render() {
-    this.changeExtension();
+    this.changeImageFormat();
     console.log(this.loadSrc);
     return (
       <div>
