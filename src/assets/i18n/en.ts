@@ -172,7 +172,7 @@ export const translations = {
         hero: {
           title: 'Your Go-To App Developer',
           text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
         },
         first: {
           title: 'Progressive Web App Development',
@@ -182,7 +182,7 @@ export const translations = {
         second: {
           title: 'Mobile App Development',
           text:
-            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and everyone one of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
+            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and every one  of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
         },
         third: {
           title: 'Web App Development',
@@ -392,7 +392,7 @@ export const translations = {
         line1: '1010 N Hancock St',
         line2: 'Philadelphia, PA 19123',
         email: 'hello@openforge.io',
-        phoneNumber: '(215)-821-8673'
+        phoneNumber: '(215)-821-8673',
       },
 
       partners: {
