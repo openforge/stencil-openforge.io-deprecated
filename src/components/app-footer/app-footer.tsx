@@ -26,10 +26,19 @@ export class AppFooter {
                   {translate('footer.address.email')}
                 </a>
               </p>
-
-              {/* <a href="https://www.openforge.io" target="_blank">
-                Work at OpenForge
-              </a> */}
+              <h3>Work at OpenForge</h3>
+              <a
+                href="/opportunities/develop"
+                class="btn-primary opportunities-button-link"
+              >
+                I'm a developer
+              </a>
+              <a
+                href="/opportunities/design"
+                class="btn-primary opportunities-button-link"
+              >
+                I'm a designer
+              </a>
             </div>
 
             <div class="footer--column col-12 col-sm-4">
@@ -74,6 +83,11 @@ export class AppFooter {
                     <i class="fab fa-instagram" aria-hidden="true" />{' '}
                     @OpenForgeTeam
                   </a>
+                </li>
+                <li>
+                  <stencil-route-link url="/service-level-agreement">
+                    Read our SLA
+                  </stencil-route-link>
                 </li>
               </ul>
             </div>
