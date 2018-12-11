@@ -238,7 +238,7 @@ export const translations = {
       },
       'startup-consulting': {
         hero: {
-          title: 'Startup Consulting for all Industries',
+          title: 'Consulting for all Industries',
           text:
             'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
