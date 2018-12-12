@@ -127,6 +127,7 @@ export class AppAbout {
       mail: 'kevon@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/kevon-chambers',
     },
     {
       name: 'Eli',
@@ -216,16 +217,10 @@ export class AppAbout {
       );
     document
       .querySelector("meta[property='og:url']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/about/'
-      );
+      .setAttribute('content', 'https://openforge.io/about/');
     document
       .querySelector("meta[property='og:image']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/assets/bg-hero-icons.jpg'
-      );
+      .setAttribute('content', 'https://openforge.io/assets/bg-hero-icons.jpg');
     document
       .querySelector("meta[name='keywords']")
       .setAttribute(
