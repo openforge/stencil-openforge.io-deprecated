@@ -64,6 +64,10 @@ export class AppHome {
           </div>
         </header>
 
+
+      <img class="test" src="assets/svg/process-development.svg" />
+
+
         {/* section - contact us */}
         <section id="contat-us" class="contact-us">
           <div class="row">
@@ -80,7 +84,6 @@ export class AppHome {
             </div>
           </div>
         </section>
-
 
         <app-footer />
       </div>
