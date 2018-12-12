@@ -1,4 +1,4 @@
-    import { Component } from '@stencil/core';
+import { Component } from '@stencil/core';
 import {
   translate,
   TranslationService,
@@ -117,15 +117,6 @@ export class AppNavHeader {
                   </div>
                 </li>
               ) : null}
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link
-                  url="/about"
-                  anchorClass="nav-link"
-                  activeClass="active"
-                >
-                  {translate('nav.links.about')}
-                </stencil-route-link>
-              </li>
               <li
                 class="nav-item dropdown"
                 data-target="#navbarSupportedContent"
@@ -138,29 +129,36 @@ export class AppNavHeader {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >
-                  Our Work
+                  {translate('nav.links.about')}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link
+                    url="/about"
+                    anchorClass="nav-link dropdown-item"
+                    activeClass="active"
+                  >
+                    Meet the team
+                  </stencil-route-link>
                   <stencil-route-link
                     url="/juntoscope"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >
-                    JuntoScope
+                    Juntoscope Case Study
                   </stencil-route-link>
                   <stencil-route-link
                     url="/toolbox"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >
-                    Our Toolbox
+                    Toolbox
                   </stencil-route-link>
                   <stencil-route-link
                     url="/resources/pwa-white-paper"
                     anchorClass="nav-link dropdown-item"
                     activeClass="active"
                   >
-                    Resources
+                    PWA White Paper
                   </stencil-route-link>
                 </div>
               </li>
@@ -172,37 +170,6 @@ export class AppNavHeader {
                 >
                   {translate('nav.links.contact')}
                 </stencil-route-link>
-              </li>
-              <li
-                class="nav-item dropdown"
-                data-target="#navbarSupportedContent"
-              >
-                <a
-                  class="nav-link dropdown-toggle"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {translate('nav.links.opportunities')}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <stencil-route-link
-                    url="/opportunities/develop"
-                    anchorClass="nav-link dropdown-item"
-                    activeClass="active"
-                  >
-                    Develop
-                  </stencil-route-link>
-                  <stencil-route-link
-                    url="/opportunities/design"
-                    anchorClass="nav-link dropdown-item"
-                    activeClass="active"
-                  >
-                    Design
-                  </stencil-route-link>
-                </div>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
                 <a
