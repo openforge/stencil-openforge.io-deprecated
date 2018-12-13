@@ -31,6 +31,7 @@ export class AppHome {
       bottomSpacing: 0,
       containerSelector: '.main-content',
       innerWrapperSelector: '.sidebar-inner',
+      minWidth: 767,
     });
 
     // Change meta tags dynamically
