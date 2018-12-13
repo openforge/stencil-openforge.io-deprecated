@@ -64,9 +64,61 @@ export class AppHome {
           </div>
         </header>
 
+        <section id="process" class="process">
+          <div class="text-center">
+            <h2>Our Process</h2>
+          </div>
 
-      <img class="test" src="assets/svg/process-development.svg" />
+          <div id="processCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#processCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#processCarousel"  data-slide-to="1"></li>
+              <li data-target="#processCarousel"  data-slide-to="2"></li>
+              <li data-target="#processCarousel"  data-slide-to="3"></li>
+              <li data-target="#processCarousel"  data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row --container">
+                  <div class="col-6 align-self-center --image">
+                    <img src="assets/svg/process-development.svg"/>
+                  </div>
+                  <div class="col-6 align-self-center --text">
+                    <h2>
+                      Discovery
+                    </h2>
+                    <p>
+                      We'll help you evaluate your business needs and challenge your
+                      assumptions before entering into the Design and Development process.
+                      Make sure that the technology you're building makes sense for your business.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block" src="..." alt="Second slide" />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block" src="..." alt="Third slide" />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block" src="..." alt="Fourth slide" />
+              </div>
+              <div class="carousel-item">
+                <img class="d-block" src="..." alt="Fifth slide" />
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#processCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#processCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
+        </section>
 
         {/* section - contact us */}
         <section id="contat-us" class="contact-us">

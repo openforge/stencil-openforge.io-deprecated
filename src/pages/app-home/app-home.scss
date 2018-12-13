@@ -8,7 +8,34 @@
   section {
     height: 100vh;
   }
-  
+
+  .process {
+    height: 583px;
+    background-color: black;
+
+    .carousel-indicators li {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      margin: 0.5rem;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+      display: none;
+    }
+
+    .--container {
+      max-height: 484px;
+    }
+
+    // img {
+    //   max-height: 484px;
+    //   max-width: 289px;
+    // }
+
+  }
+
   .contact-us {
     height: 344px;
 
