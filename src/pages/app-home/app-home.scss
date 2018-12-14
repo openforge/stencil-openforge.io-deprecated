@@ -138,10 +138,6 @@
   .work {
     height: auto;
 
-    .description {
-      display: none;
-    }
-
     .main-content {
       width: 100%;
       display: flex;
@@ -154,7 +150,7 @@
     .sidebar {
       width: 50%;
       @include media-breakpoint-down(sm) {
-        width: 100%;
+        display: none;
       }
     }
 
@@ -189,6 +185,14 @@
       }
     }
 
+    .description {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: flex;
+      }
+    }
+
     .content {
       width: 50%;
       @include media-breakpoint-down(sm) {
@@ -201,6 +205,10 @@
         align-items: flex-end;
         justify-content: center;
         text-align: center;
+
+        @include media-breakpoint-down(sm) {
+          display: table;
+        }
       }
 
       .loudcloud {

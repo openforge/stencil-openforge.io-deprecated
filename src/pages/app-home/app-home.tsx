@@ -36,22 +36,33 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
-      const pos = $('#sidebar-inner-text').offset();
+      const pos = $('#sidebar-inner').offset();
       $('.content-panel').each(function() {
         if (
-          pos.top >= $(this).offset().top &&
+          pos.top >= Math.floor($(this).offset().top) &&
           ($(this)
             .next()
             .offset() &&
             pos.top <=
-              $(this)
-                .next()
-                .offset().top)
+              Math.floor(
+                $(this)
+                  .next()
+                  .offset().top
+              ))
         ) {
+          console.log(pos.top);
+          console.log($(this).offset().top);
+          console.log(
+            $(this)
+              .next()
+              .offset().top
+          );
           const newDescr = $(this)
             .find('.description')
             .html();
-          $('#sidebar-inner-text').html(newDescr);
+
+          console.log(newDescr);
+          $('#sidebar-inner').html(newDescr);
         }
       });
     });
@@ -276,21 +287,22 @@ export class AppHome {
         <section id="work" class="work">
           <div class="main-content">
             <div class="sidebar">
-              <div class="sidebar-inner">
-                <div class="sidebar-inner-text" id="sidebar-inner-text" />
-              </div>
+              <div class="sidebar-inner" id="sidebar-inner" />
             </div>
             <div class="content">
               <div class="content-panel loudcloud">
-                <div class="description">
-                  <h2>Mobile Technology</h2>
-                  <p>
-                    We utilize technologies such as VoIP, Bluetooth LE, and
-                    other IOT technologies to bring a whole new level of
-                    connectivity to your application. Our experts in mobile
-                    application development can interface with any existing API
-                    or standard to integrate systems properly and securely.
-                  </p>
+                <div class="sidebar-inner description">
+                  <div class="sidebar-inner-text">
+                    <h2>Mobile Technology</h2>
+                    <p>
+                      We utilize technologies such as VoIP, Bluetooth LE, and
+                      other IOT technologies to bring a whole new level of
+                      connectivity to your application. Our experts in mobile
+                      application development can interface with any existing
+                      API or standard to integrate systems properly and
+                      securely.
+                    </p>
+                  </div>
                 </div>
                 <div class="content-panel-text">
                   <h2>Loud Cloud</h2>
@@ -306,15 +318,17 @@ export class AppHome {
                 </div>
               </div>
               <div class="content-panel voyage">
-                <div class="description">
-                  <h2>Digital Experience</h2>
-                  <p>
-                    It is our firm belief that we should engage users by
-                    providing value, both fundamentally and visually. By
-                    combining the psychology of design with the capabilities of
-                    the digital age, we are able to develop solutions that think
-                    outside the box.
-                  </p>
+                <div class="sidebar-inner description">
+                  <div class="sidebar-inner-text">
+                    <h2>Digital Experience</h2>
+                    <p>
+                      It is our firm belief that we should engage users by
+                      providing value, both fundamentally and visually. By
+                      combining the psychology of design with the capabilities
+                      of the digital age, we are able to develop solutions that
+                      think outside the box.
+                    </p>
+                  </div>
                 </div>
                 <div class="content-panel-text">
                   <h2>The Voyage By New Ocean</h2>
@@ -330,15 +344,18 @@ export class AppHome {
                 </div>
               </div>
               <div class="content-panel juntoscope">
-                <div class="description">
-                  <h2>Mobile Technology 3</h2>
-                  <p>
-                    We utilize technologies such as VoIP, Bluetooth LE, and
-                    other IOT technologies to bring a whole new level of
-                    connectivity to your application. Our experts in mobile
-                    application development can interface with any existing API
-                    or standard to integrate systems properly and securely.
-                  </p>
+                <div class="sidebar-inner description">
+                  <div class="sidebar-inner-text">
+                    <h2>Mobile Technology 3</h2>
+                    <p>
+                      We utilize technologies such as VoIP, Bluetooth LE, and
+                      other IOT technologies to bring a whole new level of
+                      connectivity to your application. Our experts in mobile
+                      application development can interface with any existing
+                      API or standard to integrate systems properly and
+                      securely.
+                    </p>
+                  </div>
                 </div>
                 <div class="content-panel-text">
                   <h2>JuntoScope</h2>
