@@ -34,6 +34,33 @@ export class AppHome {
       minWidth: 767,
     });
 
+    /* tslint:disable-next-line */
+    $(window).on('scroll resize', function() {
+      const pos = $('#sidebar-inner-text').offset();
+      $('.content-panel').each(function() {
+        if (
+          pos.top >= $(this).offset().top &&
+          ($(this)
+            .next()
+            .offset() &&
+            pos.top <=
+              $(this)
+                .next()
+                .offset().top)
+        ) {
+          const newDescr = $(this)
+            .find('.description')
+            .html();
+          $('#sidebar-inner-text').html(newDescr);
+        }
+      });
+    });
+
+    /* tslint:disable-next-line */
+    $(document).ready(function() {
+      $(window).trigger('scroll'); // init the value
+    });
+
     // Change meta tags dynamically
     // document
     //   .querySelector("meta[name='title']")
@@ -250,8 +277,13 @@ export class AppHome {
           <div class="main-content">
             <div class="sidebar">
               <div class="sidebar-inner">
-                <div class="sidebar-inner-text">
-                  <h2>Mobile Technology</h2>
+                <div class="sidebar-inner-text" id="sidebar-inner-text" />
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-panel loudcloud">
+                <div class="description">
+                  <h2>Mobile Technology 1</h2>
                   <p>
                     We utilize technologies such as VoIP, Bluetooth LE, and
                     other IOT technologies to bring a whole new level of
@@ -260,10 +292,6 @@ export class AppHome {
                     or standard to integrate systems properly and securely.
                   </p>
                 </div>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-panel loudcloud">
                 <div class="content-panel-text">
                   <h2>Loud Cloud</h2>
                   <div class="row store-buttons">
@@ -278,6 +306,16 @@ export class AppHome {
                 </div>
               </div>
               <div class="content-panel voyage">
+                <div class="description">
+                  <h2>Mobile Technology 2</h2>
+                  <p>
+                    We utilize technologies such as VoIP, Bluetooth LE, and
+                    other IOT technologies to bring a whole new level of
+                    connectivity to your application. Our experts in mobile
+                    application development can interface with any existing API
+                    or standard to integrate systems properly and securely.
+                  </p>
+                </div>
                 <div class="content-panel-text">
                   <h2>The Voyage By New Ocean</h2>
                   <div class="row store-buttons">
@@ -292,6 +330,16 @@ export class AppHome {
                 </div>
               </div>
               <div class="content-panel juntoscope">
+                <div class="description">
+                  <h2>Mobile Technology 3</h2>
+                  <p>
+                    We utilize technologies such as VoIP, Bluetooth LE, and
+                    other IOT technologies to bring a whole new level of
+                    connectivity to your application. Our experts in mobile
+                    application development can interface with any existing API
+                    or standard to integrate systems properly and securely.
+                  </p>
+                </div>
                 <div class="content-panel-text">
                   <h2>JuntoScope</h2>
                   <div class="row store-buttons">
@@ -305,6 +353,7 @@ export class AppHome {
                   <img src="assets/graphic-home-juntoscope.png" />
                 </div>
               </div>
+              <div class="content-panel last-panel" />
             </div>
           </div>
         </section>
