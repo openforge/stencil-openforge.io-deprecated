@@ -305,7 +305,7 @@ export class AppHome {
                   </div>
                 </div>
                 <div class="content-panel-text">
-                  <h2>Loud Cloud</h2>
+                  <h2>LoudCloud</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right --image">
                       <img src="assets/graphic-apple-appstore.png" />
