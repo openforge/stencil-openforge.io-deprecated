@@ -31,6 +31,9 @@
 
   .process {
     height: 583px;
+    @include media-breakpoint-down(sm) {
+      height: auto;
+    }
     background-color: #ffffff;
 
     h2 {
@@ -38,8 +41,25 @@
       font-weight: 600;
     }
 
+    .carousel-main-indicators {
+      display: block;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    .carousel-mobile-indicators {
+      display: none;
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
     .carousel-indicators {
       bottom: 0;
+      @include media-breakpoint-down(sm) {
+        position: initial;
+      }
     }
 
     .carousel-indicators li {
@@ -63,15 +83,24 @@
       .row {
         margin: 0;
         height: 500px;
+        @include media-breakpoint-down(sm) {
+          height: auto;
+        }
       }
     }
 
     .carousel-image {
       height: 448px;
+      @include media-breakpoint-down(sm) {
+        height: 200px;
+      }
     }
 
     .carousel-image-userfeedback {
       height: 306px;
+      @include media-breakpoint-down(sm) {
+        height: 200px;
+      }
     }
 
     .carousel-panel {
@@ -93,6 +122,10 @@
         font-size: 18px;
         line-height: 1.78;
         color: #292a2d;
+        text-align: left;
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
       }
     }
   }

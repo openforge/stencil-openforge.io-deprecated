@@ -83,29 +83,26 @@ export class AppHome {
           </div>
 
           <div id="processCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li
-                data-target="#processCarousel"
-                data-slide-to="0"
-                class="active"
-              />
-              <li data-target="#processCarousel" data-slide-to="1" />
-              <li data-target="#processCarousel" data-slide-to="2" />
-              <li data-target="#processCarousel" data-slide-to="3" />
-              <li data-target="#processCarousel" data-slide-to="4" />
-            </ol>
+            <app-carousel-indicators
+              class="carousel-main-indicators"
+              activeIndex="0"
+            />
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="row --container">
-                  <div class="col-6 align-self-center text-center --image">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-analytics.svg"
                     />
                   </div>
-                  <div class="col-6 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
                     <div class="carousel-text">
                       <h2>Discovery</h2>
+                      <app-carousel-indicators
+                        class="carousel-mobile-indicators"
+                        activeIndex="0"
+                      />
                       <p>
                         We'll help you evaluate your business needs and
                         challenge your assumptions before entering into the
@@ -119,15 +116,19 @@ export class AppHome {
               </div>
               <div class="carousel-item">
                 <div class="row --container">
-                  <div class="col-6 align-self-center text-center --image">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-development.svg"
                     />
                   </div>
-                  <div class="col-6 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
                     <div class="carousel-text">
                       <h2>Design</h2>
+                      <app-carousel-indicators
+                        class="carousel-mobile-indicators"
+                        activeIndex="1"
+                      />
                       <p>
                         At OpenForge, logic and user psychology is the
                         foundation of everything we design. Our team of experts
@@ -142,15 +143,19 @@ export class AppHome {
               </div>
               <div class="carousel-item">
                 <div class="row --container">
-                  <div class="col-6 align-self-center text-center --image">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-development.svg"
                     />
                   </div>
-                  <div class="col-6 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
                     <div class="carousel-text">
                       <h2>Development</h2>
+                      <app-carousel-indicators
+                        class="carousel-mobile-indicators"
+                        activeIndex="2"
+                      />
                       <p>
                         Throw away the development practices of the 1990's and
                         2000's. In order to utilize modern technologies we must
@@ -166,15 +171,19 @@ export class AppHome {
               </div>
               <div class="carousel-item">
                 <div class="row --container">
-                  <div class="col-6 align-self-center text-center --image">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-deployment.svg"
                     />
                   </div>
-                  <div class="col-6 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
                     <div class="carousel-text">
                       <h2>Deployment</h2>
+                      <app-carousel-indicators
+                        class="carousel-mobile-indicators"
+                        activeIndex="3"
+                      />
                       <p>
                         Do you have a dashboard to monitor the state of your
                         application? Do you have Continuous Integration and
@@ -190,15 +199,19 @@ export class AppHome {
               </div>
               <div class="carousel-item">
                 <div class="row --container">
-                  <div class="col-6 align-self-center text-center --image">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
                     <img
                       class="carousel-image-userfeedback"
                       src="assets/svg/process-userfeedback.svg"
                     />
                   </div>
-                  <div class="col-6 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
                     <div class="carousel-text">
                       <h2>User Feedback</h2>
+                      <app-carousel-indicators
+                        class="carousel-mobile-indicators"
+                        activeIndex="4"
+                      />
                       <p>
                         The biggest mistake businesses make is to launch a
                         product and then stop there. That initial data from the

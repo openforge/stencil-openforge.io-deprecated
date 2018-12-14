@@ -36,6 +36,39 @@ import {
 declare global {
 
   namespace StencilComponents {
+    interface AppCarouselIndicators {
+      'activeIndex': string;
+    }
+  }
+
+  interface HTMLAppCarouselIndicatorsElement extends StencilComponents.AppCarouselIndicators, HTMLStencilElement {}
+
+  var HTMLAppCarouselIndicatorsElement: {
+    prototype: HTMLAppCarouselIndicatorsElement;
+    new (): HTMLAppCarouselIndicatorsElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
+  }
+  interface ElementTagNameMap {
+    'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'app-carousel-indicators': JSXElements.AppCarouselIndicatorsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AppCarouselIndicatorsAttributes extends HTMLAttributes {
+      'activeIndex'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface AppCta {
       'hideButton': boolean;
       'linkUrl': string;
