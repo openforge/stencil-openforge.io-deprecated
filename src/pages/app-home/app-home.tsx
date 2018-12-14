@@ -283,7 +283,7 @@ export class AppHome {
             <div class="content">
               <div class="content-panel loudcloud">
                 <div class="description">
-                  <h2>Mobile Technology 1</h2>
+                  <h2>Mobile Technology</h2>
                   <p>
                     We utilize technologies such as VoIP, Bluetooth LE, and
                     other IOT technologies to bring a whole new level of
@@ -307,13 +307,13 @@ export class AppHome {
               </div>
               <div class="content-panel voyage">
                 <div class="description">
-                  <h2>Mobile Technology 2</h2>
+                  <h2>Digital Experience</h2>
                   <p>
-                    We utilize technologies such as VoIP, Bluetooth LE, and
-                    other IOT technologies to bring a whole new level of
-                    connectivity to your application. Our experts in mobile
-                    application development can interface with any existing API
-                    or standard to integrate systems properly and securely.
+                    It is our firm belief that we should engage users by
+                    providing value, both fundamentally and visually. By
+                    combining the psychology of design with the capabilities of
+                    the digital age, we are able to develop solutions that think
+                    outside the box.
                   </p>
                 </div>
                 <div class="content-panel-text">
