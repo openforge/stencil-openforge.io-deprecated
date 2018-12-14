@@ -50,18 +50,10 @@ export class AppHome {
                   .offset().top
               ))
         ) {
-          console.log(pos.top);
-          console.log($(this).offset().top);
-          console.log(
-            $(this)
-              .next()
-              .offset().top
-          );
           const newDescr = $(this)
             .find('.description')
             .html();
 
-          console.log(newDescr);
           $('#sidebar-inner').html(newDescr);
         }
       });
