@@ -93,31 +93,119 @@ export class AppHome {
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="row --container">
-                  <div class="col-6 align-self-center --image">
-                    <img src="assets/svg/process-development.svg" />
+                  <div class="col-6 align-self-center text-center --image">
+                    <img
+                      class="carousel-image"
+                      src="assets/svg/process-analytics.svg"
+                    />
                   </div>
-                  <div class="col-6 align-self-center --text">
-                    <h2>Discovery</h2>
-                    <p>
-                      We'll help you evaluate your business needs and challenge
-                      your assumptions before entering into the Design and
-                      Development process. Make sure that the technology you're
-                      building makes sense for your business.
-                    </p>
+                  <div class="col-6 carousel-panel align-self-center --text">
+                    <div class="carousel-text">
+                      <h2>Discovery</h2>
+                      <p>
+                        We'll help you evaluate your business needs and
+                        challenge your assumptions before entering into the
+                        Design and Development process. Make sure that the
+                        technology you're building makes sense for your
+                        business.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block" src="..." alt="Second slide" />
+                <div class="row --container">
+                  <div class="col-6 align-self-center text-center --image">
+                    <img
+                      class="carousel-image"
+                      src="assets/svg/process-development.svg"
+                    />
+                  </div>
+                  <div class="col-6 carousel-panel align-self-center --text">
+                    <div class="carousel-text">
+                      <h2>Design</h2>
+                      <p>
+                        At OpenForge, logic and user psychology is the
+                        foundation of everything we design. Our team of experts
+                        works with you and matches our knowledge of Design &
+                        User Experience principles with your subject-matter
+                        knowledge to jointly create the most effective
+                        representation of your business.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block" src="..." alt="Third slide" />
+                <div class="row --container">
+                  <div class="col-6 align-self-center text-center --image">
+                    <img
+                      class="carousel-image"
+                      src="assets/svg/process-development.svg"
+                    />
+                  </div>
+                  <div class="col-6 carousel-panel align-self-center --text">
+                    <div class="carousel-text">
+                      <h2>Development</h2>
+                      <p>
+                        Throw away the development practices of the 1990's and
+                        2000's. In order to utilize modern technologies we must
+                        use modern approaches to software development, including
+                        Design & Dev integration, Continuous Integration
+                        strategies, and sophisticated Automated Testing
+                        strategies to assure your business is always
+                        operational.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block" src="..." alt="Fourth slide" />
+                <div class="row --container">
+                  <div class="col-6 align-self-center text-center --image">
+                    <img
+                      class="carousel-image"
+                      src="assets/svg/process-deployment.svg"
+                    />
+                  </div>
+                  <div class="col-6 carousel-panel align-self-center --text">
+                    <div class="carousel-text">
+                      <h2>Deployment</h2>
+                      <p>
+                        Do you have a dashboard to monitor the state of your
+                        application? Do you have Continuous Integration and
+                        Automated Testing strategies to decrease your
+                        development and QA testing costs? Does releasing an
+                        update take more than 1 (one) day? If so, let us help
+                        you improve your deployment strategy so you can get to
+                        market quicker, on time, and on budget.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="carousel-item">
-                <img class="d-block" src="..." alt="Fifth slide" />
+                <div class="row --container">
+                  <div class="col-6 align-self-center text-center --image">
+                    <img
+                      class="carousel-image-userfeedback"
+                      src="assets/svg/process-userfeedback.svg"
+                    />
+                  </div>
+                  <div class="col-6 carousel-panel align-self-center --text">
+                    <div class="carousel-text">
+                      <h2>User Feedback</h2>
+                      <p>
+                        The biggest mistake businesses make is to launch a
+                        product and then stop there. That initial data from the
+                        first 3 months is crucial for engaging your consumer and
+                        enhancing your experience. Expand your business by
+                        capturing this crucial moment; we will help you monitor
+                        and improve the entire way.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <a

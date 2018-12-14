@@ -10,19 +10,69 @@
 
   .process {
     height: 583px;
-    background-color: black;
+    background-color: #ffffff;
+
+    h2 {
+      font-size: 48px;
+      font-weight: 600;
+    }
+
+    .carousel-indicators {
+      bottom: 0;
+    }
 
     .carousel-indicators li {
-      position: fixed;
       width: 10px;
       height: 10px;
       border-radius: 100%;
       margin: 0.5rem;
+      background-color: #d8d8d8;
+    }
+
+    .carousel-indicators .active {
+      background-color: #e88212;
     }
 
     .carousel-control-prev,
     .carousel-control-next {
       display: none;
+    }
+
+    .carousel-item {
+      .row {
+        margin: 0;
+        height: 500px;
+      }
+    }
+
+    .carousel-image {
+      height: 448px;
+    }
+
+    .carousel-image-userfeedback {
+      height: 306px;
+    }
+
+    .carousel-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-text {
+      max-width: 425px;
+
+      h2 {
+        font-size: 42px;
+        font-weight: bold;
+        color: #ff5d00;
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.78;
+        color: #292a2d;
+      }
     }
   }
 
@@ -91,15 +141,15 @@
       }
 
       .loudcloud {
-        background-color: #d9534f;
+        background-image: url('/assets/graphic-home-loudcloud-pattern.png');
       }
 
       .voyage {
-        background-color: #029de5;
+        background-image: url('/assets/graphic-home-voyage-pattern.png');
       }
 
       .juntoscope {
-        background-color: #c94313;
+        background-image: url('/assets/graphic-home-juntoscope-pattern.png');
       }
 
       .content-panel-text {
