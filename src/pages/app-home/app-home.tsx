@@ -68,7 +68,11 @@ export class AppHome {
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">
-              <div class="hero-content col-sm-12" />
+              <div class="hero-content col-sm-12">
+                <h1>CREATING DIGITAL EXPERIENCES</h1>
+                <h2>EVERY DAY*</h2>
+                <p>*Monday–Friday</p>
+              </div>
             </div>
           </div>
         </header>
