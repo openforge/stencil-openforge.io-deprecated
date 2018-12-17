@@ -119,14 +119,14 @@ export class AppHome {
             />
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <div class="row --container">
-                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
                       src="assets/svg/discovery.svg"
                     />
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>Discovery</h2>
                       <app-carousel-indicators
@@ -145,14 +145,14 @@ export class AppHome {
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="row --container">
-                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-development.svg"
                     />
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>Design</h2>
                       <app-carousel-indicators
@@ -172,14 +172,14 @@ export class AppHome {
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="row --container">
-                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-development.svg"
                     />
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>Development</h2>
                       <app-carousel-indicators
@@ -200,14 +200,14 @@ export class AppHome {
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="row --container">
-                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
                       src="assets/svg/process-deployment.svg"
                     />
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>Deployment</h2>
                       <app-carousel-indicators
@@ -228,14 +228,14 @@ export class AppHome {
                 </div>
               </div>
               <div class="carousel-item">
-                <div class="row --container">
-                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
+                <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
                     <img
                       class="carousel-image-userfeedback"
                       src="assets/svg/process-userfeedback.svg"
                     />
                   </div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
+                  <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>User Feedback</h2>
                       <app-carousel-indicators
@@ -299,10 +299,10 @@ export class AppHome {
                 <div class="content-panel-text">
                   <h2>LoudCloud</h2>
                   <div class="row store-buttons">
-                    <div class="col-6 text-right --image">
+                    <div class="col-6 text-right">
                       <img src="assets/graphic-apple-appstore.png" />
                     </div>
-                    <div class="col-6 text-left --image">
+                    <div class="col-6 text-left">
                       <img src="assets/graphic-google-googleplaystore.png" />
                     </div>
                   </div>
@@ -325,10 +325,10 @@ export class AppHome {
                 <div class="content-panel-text">
                   <h2>The Voyage By New Ocean</h2>
                   <div class="row store-buttons">
-                    <div class="col-6 text-right --image">
+                    <div class="col-6 text-right">
                       <img src="assets/graphic-apple-appstore.png" />
                     </div>
-                    <div class="col-6 text-left --image">
+                    <div class="col-6 text-left">
                       <img src="assets/graphic-google-googleplaystore.png" />
                     </div>
                   </div>
@@ -351,10 +351,10 @@ export class AppHome {
                 <div class="content-panel-text">
                   <h2>JuntoScope</h2>
                   <div class="row store-buttons">
-                    <div class="col-6 text-right --image">
+                    <div class="col-6 text-right">
                       <img src="assets/graphic-apple-appstore.png" />
                     </div>
-                    <div class="col-6 text-left --image">
+                    <div class="col-6 text-left">
                       <img src="assets/graphic-google-googleplaystore.png" />
                     </div>
                   </div>
@@ -370,7 +370,7 @@ export class AppHome {
         <section id="contat-us" class="contact-us">
           <div class="row">
             <div class="col-6 align-self-start text-center">
-              <img src="assets/svg/vision.svg" class="something" />
+              <img src="assets/svg/vision.svg" />
             </div>
 
             <div class="col-6 align-self-center text-center">
