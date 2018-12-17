@@ -107,7 +107,7 @@ export class AppHome {
         </header>
 
         <section id="process" class="process">
-          <div class="text-center">
+          <div class="text-center header">
             <h2>Our Process</h2>
           </div>
 
@@ -148,7 +148,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
-                      src="assets/svg/process-development.svg"
+                      src="assets/svg/process-design.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">

@@ -2,14 +2,14 @@
   overflow-x: hidden;
 
   .hero {
-    background-color: #ffffff;
+    background-color: white;
     background-image: url('/assets/svg/graphic-home-header.svg');
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
     height: 120vh;
 
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(lg) {
       height: 100vh;
     }
 
@@ -17,7 +17,7 @@
       font-size: 48px;
       font-weight: 600;
       text-align: center;
-      color: #292a2d;
+      color: $gray-dark;
       margin-top: 130px;
     }
 
@@ -25,13 +25,13 @@
       font-size: 36px;
       font-weight: bold;
       text-align: center;
-      color: #ff5d00;
+      color: $orange-dark;
     }
 
     p {
       font-size: 16px;
       text-align: center;
-      color: #292a2d;
+      color: $gray-dark;
     }
   }
 
@@ -40,15 +40,18 @@
   }
 
   .process {
+    background-color: white;
     height: 583px;
     @include media-breakpoint-down(sm) {
       height: auto;
     }
-    background-color: #ffffff;
 
-    h2 {
+    .header > h2 {
       font-size: 48px;
       font-weight: 600;
+      @include media-breakpoint-down(sm) {
+        margin: 5rem 0;
+      }
     }
 
     .carousel-main-indicators {
@@ -73,15 +76,15 @@
     }
 
     .carousel-indicators li {
-      width: 10px;
-      height: 10px;
       border-radius: 100%;
-      margin: 0.5rem;
       background-color: #d8d8d8;
+      height: 10px;
+      margin: 0.5rem;
+      width: 10px;
     }
 
     .carousel-indicators .active {
-      background-color: #e88212;
+      background-color: $orange;
     }
 
     .carousel-control-prev,
@@ -91,8 +94,8 @@
 
     .carousel-item {
       .row {
-        margin: 0;
         height: 500px;
+        margin: 0;
         @include media-breakpoint-down(sm) {
           height: auto;
         }
@@ -114,8 +117,8 @@
     }
 
     .carousel-panel {
-      display: flex;
       align-items: center;
+      display: flex;
       justify-content: center;
     }
 
@@ -123,15 +126,18 @@
       max-width: 425px;
 
       h2 {
+        color: $orange-dark;
         font-size: 42px;
         font-weight: bold;
-        color: #ff5d00;
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
       }
 
       p {
+        color: $gray-dark;
         font-size: 18px;
         line-height: 1.78;
-        color: #292a2d;
         text-align: left;
         @include media-breakpoint-down(sm) {
           text-align: center;
