@@ -95,13 +95,12 @@ export class AppHome {
       <div class="home">
         {/* header - hero */}
         <header class="hero">
-          <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">
               <div class="hero-content col-sm-12">
                 <h1>CREATING DIGITAL EXPERIENCES</h1>
                 <h2>EVERY DAY*</h2>
-                <p>*Monday–Friday</p>
+                <p><i>*Monday-Friday</i></p>
               </div>
             </div>
           </div>
