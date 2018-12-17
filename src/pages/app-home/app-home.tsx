@@ -120,7 +120,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center --image">
                     <img
                       class="carousel-image"
-                      src="assets/svg/process-analytics.svg"
+                      src="assets/svg/discovery.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center --text">
@@ -283,7 +283,7 @@ export class AppHome {
             <div class="content">
               <div class="content-panel loudcloud">
                 <div class="description">
-                  <h2>Mobile Technology 1</h2>
+                  <h2>Mobile Technology</h2>
                   <p>
                     We utilize technologies such as VoIP, Bluetooth LE, and
                     other IOT technologies to bring a whole new level of
@@ -307,13 +307,13 @@ export class AppHome {
               </div>
               <div class="content-panel voyage">
                 <div class="description">
-                  <h2>Mobile Technology 2</h2>
+                  <h2>Digital Experience</h2>
                   <p>
-                    We utilize technologies such as VoIP, Bluetooth LE, and
-                    other IOT technologies to bring a whole new level of
-                    connectivity to your application. Our experts in mobile
-                    application development can interface with any existing API
-                    or standard to integrate systems properly and securely.
+                    It is our firm belief that we should engage users by 
+                    providing value, both fundamentally and visually. 
+                    By combining the psychology of design with the capabilities 
+                    of the digital age, we are able to develop solutions that 
+                    think outside the box.
                   </p>
                 </div>
                 <div class="content-panel-text">
@@ -331,13 +331,13 @@ export class AppHome {
               </div>
               <div class="content-panel juntoscope">
                 <div class="description">
-                  <h2>Mobile Technology 3</h2>
+                  <h2>Digital Branding & Web Design</h2>
                   <p>
-                    We utilize technologies such as VoIP, Bluetooth LE, and
-                    other IOT technologies to bring a whole new level of
-                    connectivity to your application. Our experts in mobile
-                    application development can interface with any existing API
-                    or standard to integrate systems properly and securely.
+                    Our team of industry leading designers will help bring your 
+                    vision to market with a complete branding design package. 
+                    Don’t let your customers feel disconnected. 
+                    Let our experts use design theory and psychology 
+                    to help better connect to your business with your customers.
                   </p>
                 </div>
                 <div class="content-panel-text">
@@ -361,8 +361,8 @@ export class AppHome {
         {/* section - contact us */}
         <section id="contat-us" class="contact-us">
           <div class="row">
-            <div class="col-6 align-self-center">
-              <div class="card card-block" />
+            <div class="col-6 align-self-start text-center">
+              <img src="assets/svg/vision.svg" class="something" />
             </div>
 
             <div class="col-6 align-self-center text-center">
