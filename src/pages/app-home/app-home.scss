@@ -4,6 +4,7 @@
   .hero {
     background-color: #ffffff;
     background-image: url('/assets/graphic-home-header.svg');
+    background-size: 100%;
     background-position-y: bottom;
     background-repeat: no-repeat;
     height: 100vh;
@@ -248,6 +249,12 @@
         rgba(108, 144, 152, 0.99),
         #3f5a60
       );
+
+      img {
+        margin-top: -36px; // remove this when SVG is fixed
+        width: 380px;
+        height: 380px;
+      }
     }
 
     h2 {
