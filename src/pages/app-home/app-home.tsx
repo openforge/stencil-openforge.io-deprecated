@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Listen } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import stickySidebar from 'sticky-sidebar';
 
@@ -11,15 +11,21 @@ declare var fbq;
 export class AppHome {
   @Prop()
   history: RouterHistory;
+
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
-  members: any[];
-  isMobile = navigator.userAgent.match(
-    /(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i
-  );
+  @Listen('window:resize')
+  handleMobile() {
+    if(window.innerWidth < 576) {
+      $('#vision-svg').attr('src', 'assets/svg/mobile-vision.svg');
+    }
+  }
+  
 
   componentDidLoad() {
+    this.handleMobile();
+
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {
@@ -64,25 +70,6 @@ export class AppHome {
       $(window).trigger('scroll'); // init the value
     });
 
-    // Change meta tags dynamically
-    // document
-    //   .querySelector("meta[name='title']")
-    //   .setAttribute(
-    //     'content',
-    //     'Mobile Design - App Development - Startup Consulting | OpenForge'
-    //   );
-    // document
-    //   .querySelector("meta[name='description']")
-    //   .setAttribute(
-    //     'content',
-    //     'OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular'
-    //   );
-    // document
-    //   .querySelector("meta[name='keywords']")
-    //   .setAttribute(
-    //     'content',
-    //     'Mobile, Application, Development, Design, User Experience, Ionic'
-    //   );
   }
 
   scrollToForm() {
@@ -368,11 +355,11 @@ export class AppHome {
         {/* section - contact us */}
         <section id="contat-us" class="contact-us">
           <div class="row">
-            <div class="col-6 align-self-start text-center">
-              <img src="assets/svg/vision.svg" />
+            <div class="col-md-6 col-sm-12 align-self-center text-center">
+              <img src="assets/svg/vision.svg" id="vision-svg" />
             </div>
 
-            <div class="col-6 align-self-center text-center">
+            <div class="col-md-6 col-sm-12 align-self-center text-center cta-text-container">
               <h2>Got a vision?</h2>
               <p>We've got your back.</p>
               <h2>Contact us today to get started!</h2>

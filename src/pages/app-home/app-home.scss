@@ -1,5 +1,6 @@
 .home {
   overflow-x: hidden;
+  font-family: 'Muli', sans-serif;
 
   .hero {
     background-color: white;
@@ -166,7 +167,7 @@
 
     .content {
       width: 50%;
-      
+
       @include media-breakpoint-down(sm) {
         width: 100%;
       }
@@ -259,6 +260,10 @@
   .contact-us {
     height: 344px;
 
+    @include media-breakpoint-down(sm) {
+      height: 780px;
+    }
+
     .row {
       height: 100%;
       background: linear-gradient(
@@ -269,8 +274,28 @@
 
       img {
         margin-top: -36px; // remove this when SVG is fixed
-        width: 380px;
         height: 380px;
+        width: 380px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: -90px; // remove this when SVG is fixed
+        }
+      }
+    }
+
+    .svg-mobile {
+      @include media-breakpoint-up(sm) {
+        display: hidden;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .cta-text-container {
+      @include media-breakpoint-down(sm) {
+        margin-top: -10rem; // remove this when SVG is fixed
       }
     }
 
@@ -284,10 +309,20 @@
       color: $white;
       font-size: 40px;
       margin: 1rem 0;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 55px;
+        line-height: 60px;
+        margin: 2rem 0;
+      }
     }
 
     .btn {
       margin-top: 4rem;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 1rem;
+      }
     }
   }
 }
