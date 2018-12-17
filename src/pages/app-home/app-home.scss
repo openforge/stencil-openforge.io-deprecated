@@ -150,7 +150,6 @@
     height: auto;
 
     .main-content {
-      width: 100%;
       display: flex;
 
       @include media-breakpoint-down(sm) {
@@ -165,47 +164,9 @@
       }
     }
 
-    .sidebar-inner {
-      height: calc(100vh - 75.45px);
-      background-color: #f4f5f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      .sidebar-inner-text {
-        margin-left: 26px;
-        max-width: 400px;
-
-        @include media-breakpoint-down(sm) {
-          margin-left: 0;
-          padding: 10px;
-        }
-
-        h2 {
-          font-size: 42px;
-          font-weight: bold;
-          line-height: 1.19;
-          color: #ff5d00;
-        }
-
-        p {
-          font-size: 18px;
-          line-height: 1.78;
-          color: #292a2d;
-        }
-      }
-    }
-
-    .description {
-      display: none;
-
-      @include media-breakpoint-down(sm) {
-        display: flex;
-      }
-    }
-
     .content {
       width: 50%;
+      
       @include media-breakpoint-down(sm) {
         width: 100%;
       }
@@ -222,38 +183,76 @@
         }
       }
 
-      .loudcloud {
-        background-image: url('/assets/graphic-home-loudcloud-pattern.png');
-      }
-
-      .voyage {
-        background-image: url('/assets/graphic-home-voyage-pattern.png');
-      }
-
-      .juntoscope {
-        background-image: url('/assets/graphic-home-juntoscope-pattern.png');
-      }
-
       .last-panel {
-        height: 0;
+        height: 0px;
       }
+    }
 
-      .content-panel-text {
-        h2 {
-          padding: 16px;
-          font-size: 40px;
-          font-weight: bold;
+    .content-panel-inner {
+      height: calc(100vh - 75.45px);
+      background-color: $gray-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .panel-inner-text {
+        margin: 0 4rem;
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          margin: 0 1rem;
           text-align: center;
-          color: #ffffff;
         }
 
-        .store-buttons {
-          padding: 0 0 60px 0;
-          @include media-breakpoint-down(sm) {
-            padding: 0 0 40px 0;
-          }
+        h2 {
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.19;
+          color: $orange-dark;
+        }
+
+        p {
+          font-size: 18px;
+          line-height: 1.78;
+          color: $gray-dark;
         }
       }
+    }
+    .content-panel-image {
+      h2 {
+        padding: 16px;
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+      }
+
+      .store-buttons {
+        padding: 0 0 60px 0;
+        @include media-breakpoint-down(sm) {
+          padding: 0 0 40px 0;
+        }
+      }
+    }
+
+    .description {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: flex;
+      }
+    }
+
+    .loudcloud {
+      background-image: url('/assets/graphic-home-loudcloud-pattern.png');
+    }
+
+    .voyage {
+      background-image: url('/assets/graphic-home-voyage-pattern.png');
+    }
+
+    .juntoscope {
+      background-image: url('/assets/graphic-home-juntoscope-pattern.png');
     }
   }
 

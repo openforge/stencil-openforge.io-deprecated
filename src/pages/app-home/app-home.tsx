@@ -30,13 +30,13 @@ export class AppHome {
       topSpacing: 75.45,
       bottomSpacing: 0,
       containerSelector: '.main-content',
-      innerWrapperSelector: '.sidebar-inner',
+      innerWrapperSelector: '.content-panel-inner',
       minWidth: 767,
     });
 
     /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
-      const pos = $('#sidebar-inner').offset();
+      const pos = $('#content-panel-inner').offset();
       $('.content-panel').each(function() {
         if (
           pos.top >= Math.floor($(this).offset().top) &&
@@ -54,7 +54,7 @@ export class AppHome {
             .find('.description')
             .html();
 
-          $('#sidebar-inner').html(newDescr);
+          $('#content-panel-inner').html(newDescr);
         }
       });
     });
@@ -278,12 +278,12 @@ export class AppHome {
         <section id="work" class="work">
           <div class="main-content">
             <div class="sidebar">
-              <div class="sidebar-inner" id="sidebar-inner" />
+              <div class="content-panel-inner" id="content-panel-inner" />
             </div>
             <div class="content">
               <div class="content-panel loudcloud">
-                <div class="sidebar-inner description">
-                  <div class="sidebar-inner-text">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
                     <h2>Mobile Technology</h2>
                     <p>
                       We utilize technologies such as VoIP, Bluetooth LE, and
@@ -295,7 +295,7 @@ export class AppHome {
                     </p>
                   </div>
                 </div>
-                <div class="content-panel-text">
+                <div class="content-panel-image">
                   <h2>LoudCloud</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
@@ -309,8 +309,8 @@ export class AppHome {
                 </div>
               </div>
               <div class="content-panel voyage">
-                <div class="sidebar-inner description">
-                  <div class="sidebar-inner-text">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
                     <h2>Digital Experience</h2>
                     <p>
                       It is our firm belief that we should engage users by
@@ -321,7 +321,7 @@ export class AppHome {
                     </p>
                   </div>
                 </div>
-                <div class="content-panel-text">
+                <div class="content-panel-image">
                   <h2>The Voyage By New Ocean</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
@@ -335,8 +335,8 @@ export class AppHome {
                 </div>
               </div>
               <div class="content-panel juntoscope">
-                <div class="sidebar-inner description">
-                  <div class="sidebar-inner-text">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
                     <h2>Digital Branding & Web Design</h2>
                     <p>
                     Our team of industry leading designers will help bring your 
@@ -347,7 +347,7 @@ export class AppHome {
                     </p>
                   </div>
                 </div>
-                <div class="content-panel-text">
+                <div class="content-panel-image">
                   <h2>JuntoScope</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
