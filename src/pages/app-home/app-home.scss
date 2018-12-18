@@ -7,7 +7,6 @@
     background: url('/assets/svg/graphic-home-header.svg') center bottom, url('/assets/svg/graphic-home-header-background.svg') center top;
     background-size: 100%;
     background-repeat: no-repeat;
-    // background-position: center bottom;
     height: 120vh;
 
     @include media-breakpoint-down(lg) {
@@ -15,16 +14,9 @@
     }
 
     @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/mobile-graphic-home-header.svg') top, url('/assets/svg/mobile-graphic-home-header-background.svg') left no-repeat;
-      background-size: cover;
+      background: url('/assets/svg/mobile-graphic-home-header.svg') top no-repeat, url('/assets/svg/mobile-graphic-home-header-background.svg') left no-repeat;
+      background-size: 600px 720px, 600px 850px;
       margin-top: 75px;
-      margin-right: 40px;
-      background-size: 600px 720px;
-      height: 75vh;
-    }
-
-    @include media-breakpoint-down(xs) {
-      height: 100vh;
     }
 
     h1 {

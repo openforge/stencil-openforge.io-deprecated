@@ -91,7 +91,7 @@ export class AppHome {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="hero-content col-sm-12">
+              <div class="hero-content col-12">
                 <h1>Creating Digital Experiences</h1>
                 <h2>Every Day*</h2>
                 <p class="subtext"><i>*Monday-Friday</i></p>
