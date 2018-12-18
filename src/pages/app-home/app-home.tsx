@@ -92,9 +92,13 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="hero-content col-sm-12">
-                <h1>CREATING DIGITAL EXPERIENCES</h1>
-                <h2>EVERY DAY*</h2>
-                <p><i>*Monday-Friday</i></p>
+                <h1>Creating Digital Experiences</h1>
+                <h2>Every Day*</h2>
+                <p class="subtext"><i>*Monday-Friday</i></p>
+                <p class="subtext-mobile">Work with our team of highly skilled designers,
+                developers, and consultants to develop solutions and processes that fit
+                your business requirements.
+                </p>
               </div>
             </div>
           </div>

@@ -14,25 +14,75 @@
       height: 100vh;
     }
 
+    @include media-breakpoint-down(sm) {
+      background-image: url('assets/svg/mobile-graphic-home-header.svg');
+      background-size: 100%;
+      background-position: top;
+      margin-top: 75px;
+      margin-right: 40px;
+      background-size: 600px 720px;
+      height: 75vh;
+    }
+
+    @include media-breakpoint-down(xs) {
+      height: 100vh;
+    }
+
     h1 {
+      color: $gray-dark;
       font-size: 48px;
       font-weight: 600;
-      text-align: center;
-      color: $gray-dark;
       margin-top: 130px;
+      text-align: center;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 42px;
+        margin-top: 180px;
+        text-transform: none;
+        text-align: left;
+      }
     }
 
     h2 {
+      color: $orange-dark;
       font-size: 36px;
       font-weight: bold;
       text-align: center;
-      color: $orange-dark;
+      text-transform: uppercase;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 25px;
+        text-transform: none;
+        text-align: left;
+      }
     }
 
-    p {
+    .subtext {
+      color: $gray-dark;
       font-size: 16px;
       text-align: center;
-      color: $gray-dark;
+
+      @include media-breakpoint-down(sm) {
+        text-align: left;
+        margin-bottom: 10px;
+      }
+    }
+
+    .subtext-mobile {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        color: #6b635f;
+        display: block;
+        font-size: 16px;
+        padding-right: 15rem;
+        text-align: left;
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding-right: 10rem;
+      }
     }
   }
 
