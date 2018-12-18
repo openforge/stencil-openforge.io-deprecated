@@ -4,10 +4,10 @@
 
   .hero {
     background-color: white;
-    background-image: url('/assets/svg/graphic-home-header.svg');
+    background: url('/assets/svg/graphic-home-header.svg') center bottom, url('/assets/svg/graphic-home-header-background.svg') center top;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-position: center bottom;
+    // background-position: center bottom;
     height: 120vh;
 
     @include media-breakpoint-down(lg) {
@@ -15,9 +15,8 @@
     }
 
     @include media-breakpoint-down(sm) {
-      background-image: url('assets/svg/mobile-graphic-home-header.svg');
-      background-size: 100%;
-      background-position: top;
+      background: url('/assets/svg/mobile-graphic-home-header.svg') top, url('/assets/svg/mobile-graphic-home-header-background.svg') left no-repeat;
+      background-size: cover;
       margin-top: 75px;
       margin-right: 40px;
       background-size: 600px 720px;
@@ -232,6 +231,7 @@
         @include media-breakpoint-down(sm) {
           display: table;
         }
+
       }
 
       .last-panel {
@@ -249,19 +249,19 @@
       .panel-inner-text {
         margin: 0 4rem;
         text-align: left;
-
+  
         @include media-breakpoint-down(sm) {
           margin: 0 1rem;
           text-align: center;
         }
-
+  
         h2 {
           font-size: 42px;
           font-weight: bold;
           line-height: 1.19;
           color: $orange-dark;
         }
-
+  
         p {
           font-size: 18px;
           line-height: 1.78;
@@ -269,6 +269,7 @@
         }
       }
     }
+
     .content-panel-image {
       h2 {
         padding: 16px;
