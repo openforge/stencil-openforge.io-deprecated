@@ -331,8 +331,8 @@
       align-self: center;
 
       img {
-        margin-top: -36px; // remove this when SVG is fixed
-        height: 380px;
+        margin-top: -36px;
+        height: 480px;
         width: 380px;
 
         @include media-breakpoint-down(sm) {
@@ -352,7 +352,7 @@
 
     h2 {
       color: white;
-      font-size: 24px;
+      font-size: 22px;
       margin: 0;
     }
 
@@ -360,6 +360,7 @@
       color: $white;
       font-size: 40px;
       margin: 1rem 0;
+      white-space: nowrap;
 
       @include media-breakpoint-down(sm) {
         font-size: 55px;
@@ -370,10 +371,6 @@
 
     .btn {
       margin-top: 4rem;
-
-      @include media-breakpoint-down(sm) {
-        margin-top: 1rem;
-      }
     }
   }
 }
