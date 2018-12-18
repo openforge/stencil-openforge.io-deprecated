@@ -1,6 +1,8 @@
-import { Component, Prop, Listen } from '@stencil/core';
+import { Component, Prop, Listen} from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import stickySidebar from 'sticky-sidebar';
+
+import $ from 'jquery';
 
 declare var fbq;
 
@@ -9,6 +11,7 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
+
   @Prop()
   history: RouterHistory;
 
@@ -18,10 +21,10 @@ export class AppHome {
   @Listen('window:resize')
   handleMobile() {
     if(window.innerWidth < 576) {
+      /* tslint:disable-next-line */
       $('#vision-svg').attr('src', 'assets/svg/mobile-vision.svg');
     }
   }
-  
 
   componentDidLoad() {
     this.handleMobile();
@@ -286,10 +289,14 @@ export class AppHome {
                   <h2>LoudCloud</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <img src="assets/graphic-apple-appstore.png" />
+                      <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank">
+                        <img src="assets/graphic-apple-appstore.png" />
+                      </a>
                     </div>
                     <div class="col-6 text-left">
-                      <img src="assets/graphic-google-googleplaystore.png" />
+                      <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank">
+                        <img src="assets/graphic-google-googleplaystore.png" />
+                      </a>
                     </div>
                   </div>
                   <img src="assets/graphic-home-loudcloud.png" />
@@ -312,10 +319,14 @@ export class AppHome {
                   <h2>The Voyage By New Ocean</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <img src="assets/graphic-apple-appstore.png" />
+                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank">
+                        <img src="assets/graphic-apple-appstore.png" />
+                      </a>
                     </div>
                     <div class="col-6 text-left">
-                      <img src="assets/graphic-google-googleplaystore.png" />
+                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank">
+                        <img src="assets/graphic-google-googleplaystore.png" />
+                      </a>
                     </div>
                   </div>
                   <img src="assets/graphic-home-voyage.png" />
@@ -338,10 +349,14 @@ export class AppHome {
                   <h2>JuntoScope</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <img src="assets/graphic-apple-appstore.png" />
+                      <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank">
+                        <img src="assets/graphic-apple-appstore.png" />
+                      </a>
                     </div>
                     <div class="col-6 text-left">
-                      <img src="assets/graphic-google-googleplaystore.png" />
+                      <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank">
+                        <img src="assets/graphic-google-googleplaystore.png" />
+                      </a>
                     </div>
                   </div>
                   <img src="assets/graphic-home-juntoscope.png" />
@@ -355,16 +370,18 @@ export class AppHome {
         {/* section - contact us */}
         <section id="contat-us" class="contact-us">
           <div class="row">
-            <div class="col-md-6 col-sm-12 align-self-center text-center">
+            <div class="col-md-6 col-sm-12 text-center cta-image">
               <img src="assets/svg/vision.svg" id="vision-svg" />
             </div>
 
-            <div class="col-md-6 col-sm-12 align-self-center text-center cta-text-container">
+            <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
               <h2>Got a vision?</h2>
               <p>We've got your back.</p>
               <h2>Contact us today to get started!</h2>
 
-              <button class="btn btn-primary">GET IN TOUCH</button>
+              <stencil-route-link url="/contact">
+                <button class="btn btn-primary">GET IN TOUCH</button>
+              </stencil-route-link>
             </div>
           </div>
         </section>

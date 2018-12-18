@@ -278,22 +278,30 @@
         width: 380px;
 
         @include media-breakpoint-down(sm) {
-          margin-top: -90px; // remove this when SVG is fixed
+          margin-top: 0;
+          align-self: auto;
         }
       }
     }
 
-    .svg-mobile {
-      @include media-breakpoint-up(sm) {
-        display: hidden;
+    .cta-image {
+      align-self: center;
+
+      img {
+        margin-top: -36px; // remove this when SVG is fixed
+        height: 380px;
+        width: 380px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: 0;
+        }
       }
 
       @include media-breakpoint-down(sm) {
-        display: block;
+        align-self: normal;
       }
     }
-
-    .cta-text-container {
+    .cta-text {
       @include media-breakpoint-down(sm) {
         margin-top: -10rem; // remove this when SVG is fixed
       }
