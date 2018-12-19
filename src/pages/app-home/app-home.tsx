@@ -102,6 +102,7 @@ export class AppHome {
               </div>
             </div>
           </div>
+          <img src="/assets/svg/graphic-home-header.svg" class="svg-header-desktop"/>
         </header>
 
         <section id="process" class="process">
@@ -276,7 +277,7 @@ export class AppHome {
         <section id="work" class="work">
           <div class="main-content">
             <div class="sidebar">
-              <div class="content-panel-inner" id="content-panel-inner" />
+              <div class="sidebar__inner content-panel-inner" id="content-panel-inner" />
             </div>
             <div class="content">
               <div class="content-panel loudcloud">

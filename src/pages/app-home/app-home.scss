@@ -4,7 +4,7 @@
 
   .hero {
     background-color: white;
-    background: url('/assets/svg/graphic-home-header.svg') center bottom, url('/assets/svg/graphic-home-header-background.svg') center top;
+    background: url('/assets/svg/graphic-home-header-background.svg') center top;
     background-size: 100%;
     background-repeat: no-repeat;
     height: 120vh;
@@ -14,9 +14,17 @@
     }
 
     @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/mobile-graphic-home-header.svg') top no-repeat, url('/assets/svg/mobile-graphic-home-header-background.svg') left no-repeat;
-      background-size: 600px 720px, 600px 850px;
+      background: url('/assets/svg/mobile-graphic-home-header.svg') top no-repeat, url('/assets/svg/mobile-graphic-home-header-background.svg') center top no-repeat;
+      background-size: 600px 720px, cover;
       margin-top: 75px;
+
+      .svg-header-desktop {
+        display: none;
+      }
+    }
+
+    img {
+      width: 100%;
     }
 
     h1 {
@@ -237,6 +245,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: fixed;
+      // top: initial !important;
+      // width: initial !important;
 
       .panel-inner-text {
         margin: 0 4rem;
@@ -288,15 +299,15 @@
     }
 
     .loudcloud {
-      background-image: url('/assets/graphic-home-loudcloud-pattern.png');
+      background-image: url('/assets/home-graphic-loudcloud-pattern.png');
     }
 
     .voyage {
-      background-image: url('/assets/graphic-home-voyage-pattern.png');
+      background-image: url('/assets/home-graphic-voyage-pattern.png');
     }
 
     .juntoscope {
-      background-image: url('/assets/graphic-home-juntoscope-pattern.png');
+      background-image: url('/assets/home-graphic-juntoscope-pattern.png');
     }
   }
 
