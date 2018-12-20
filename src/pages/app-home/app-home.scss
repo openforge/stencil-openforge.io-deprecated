@@ -321,34 +321,20 @@
         rgba(108, 144, 152, 0.99),
         #3f5a60
       );
-
-      img {
-        margin-top: -36px; // remove this when SVG is fixed
-        height: 380px;
-        width: 380px;
-
-        @include media-breakpoint-down(sm) {
-          margin-top: 0;
-          align-self: auto;
-        }
-      }
     }
 
     .cta-image {
       img {
-        margin-top: -36px;
-        height: 480px;
+        height: 280px;
         width: 380px;
 
         @include media-breakpoint-down(sm) {
+          height: 480px;
           margin-top: 0;
         }
       }
-
-      @include media-breakpoint-down(sm) {
-        align-self: normal;
-      }
     }
+
     .cta-text {
       @include media-breakpoint-down(sm) {
         margin-top: -10rem; // remove this when SVG is fixed
