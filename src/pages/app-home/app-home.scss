@@ -7,11 +7,7 @@
     background: url('/assets/svg/graphic-home-header-background.svg') center top;
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 120vh;
-
-    @include media-breakpoint-down(lg) {
-      height: 100vh;
-    }
+    height: auto;
 
     @include media-breakpoint-down(sm) {
       background: url('/assets/svg/mobile-graphic-home-header.svg') top no-repeat, url('/assets/svg/mobile-graphic-home-header-background.svg') center top no-repeat;
@@ -83,10 +79,6 @@
         padding-right: 10rem;
       }
     }
-  }
-
-  section {
-    height: 100vh;
   }
 
   .process {
@@ -222,7 +214,7 @@
       }
 
       .content-panel {
-        height: calc(100vh - 75.45px);
+        height: auto;
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -245,9 +237,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      position: fixed;
-      // top: initial !important;
-      // width: initial !important;
+
 
       .panel-inner-text {
         margin: 0 4rem;
