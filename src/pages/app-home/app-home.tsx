@@ -49,33 +49,44 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
-      const pos = $('#content-panel-inner').offset();
+      const pos =
+        $('#content-panel-inner').offset().top +
+        $('#content-panel-inner').height();
+      let done = false;
       $('.content-panel').each(function() {
         if (
-          pos.top >= Math.floor($(this).offset().top) &&
-          ($(this)
-            .next()
-            .offset() &&
-            pos.top <=
-              Math.floor(
-                $(this)
-                  .next()
-                  .offset().top
-              ))
+          !done &&
+          pos <= Math.floor($(this).offset().top + $(this).height())
         ) {
           const newDescr = $(this)
             .find('.description')
             .html();
 
           $('#content-panel-inner').html(newDescr);
+
+          done = true;
         }
       });
+
+      if (
+        $('#content-panel-inner').offset().top ===
+        $('.content-panel')
+          .first()
+          .offset().top
+      ) {
+        const newDescr = $('.content-panel')
+          .first()
+          .find('.description')
+          .html();
+
+        $('#content-panel-inner').html(newDescr);
+      }
+
       if (
         !$('.sidebar')
           .first()
           .hasClass('is-affixed')
       ) {
-        console.log('not affixed');
         $('#content-panel-inner').css({ width: 'initial' });
       }
     });
