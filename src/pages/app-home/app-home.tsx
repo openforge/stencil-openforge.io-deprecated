@@ -1,7 +1,8 @@
-import { Component, Prop, Listen} from '@stencil/core';
+import { Component, Prop, Listen } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import stickySidebar from 'sticky-sidebar';
 
+/* tslint:disable-next-line */
 import $ from 'jquery';
 
 declare var fbq;
@@ -11,7 +12,6 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-
   @Prop()
   history: RouterHistory;
 
@@ -20,7 +20,7 @@ export class AppHome {
 
   @Listen('window:resize')
   handleMobile() {
-    if(window.innerWidth < 768) {
+    if (window.innerWidth < 768) {
       console.log('innerWidth');
       /* tslint:disable-next-line */
       $('#vision-svg').attr('src', 'assets/svg/mobile-vision.svg');
@@ -70,13 +70,31 @@ export class AppHome {
           $('#content-panel-inner').html(newDescr);
         }
       });
+      if (
+        !$('.sidebar')
+          .first()
+          .hasClass('is-affixed')
+      ) {
+        console.log('not affixed');
+        $('#content-panel-inner').css({ width: 'initial' });
+      }
     });
 
     /* tslint:disable-next-line */
     $(document).ready(function() {
       $(window).trigger('scroll'); // init the value
-    });
 
+      if (
+        $('.sidebar')
+          .first()
+          .hasClass('is-affixed')
+      ) {
+        $('.sidebar')
+          .first()
+          .removeClass('is-affixed');
+        $('#content-panel-inner').css({ width: 'initial' });
+      }
+    });
   }
 
   scrollToForm() {
@@ -94,15 +112,21 @@ export class AppHome {
               <div class="hero-content col-12">
                 <h1>Creating Digital Experiences</h1>
                 <h2>Every Day*</h2>
-                <p class="subtext"><i>*Monday-Friday</i></p>
-                <p class="subtext-mobile">Work with our team of highly skilled designers,
-                developers, and consultants to develop solutions and processes that fit
-                your business requirements.
+                <p class="subtext">
+                  <i>*Monday-Friday</i>
+                </p>
+                <p class="subtext-mobile">
+                  Work with our team of highly skilled designers, developers,
+                  and consultants to develop solutions and processes that fit
+                  your business requirements.
                 </p>
               </div>
             </div>
           </div>
-          <img src="/assets/svg/graphic-home-header.svg" class="svg-header-desktop"/>
+          <img
+            src="/assets/svg/graphic-home-header.svg"
+            class="svg-header-desktop"
+          />
         </header>
 
         <section id="process" class="process">
@@ -277,7 +301,10 @@ export class AppHome {
         <section id="work" class="work">
           <div class="main-content">
             <div class="sidebar">
-              <div class="sidebar__inner content-panel-inner" id="content-panel-inner" />
+              <div
+                class="sidebar__inner content-panel-inner"
+                id="content-panel-inner"
+              />
             </div>
             <div class="content">
               <div class="content-panel loudcloud">
@@ -298,12 +325,18 @@ export class AppHome {
                   <h2>LoudCloud</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank">
+                      <a
+                        href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8"
+                        target="_blank"
+                      >
                         <img src="assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en"
+                        target="_blank"
+                      >
                         <img src="assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
@@ -328,12 +361,18 @@ export class AppHome {
                   <h2>The Voyage By New Ocean</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank">
+                      <a
+                        href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
+                        target="_blank"
+                      >
                         <img src="assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
+                        target="_blank"
+                      >
                         <img src="assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
@@ -346,11 +385,11 @@ export class AppHome {
                   <div class="panel-inner-text">
                     <h2>Digital Branding & Web Design</h2>
                     <p>
-                    Our team of industry leading designers will help bring your 
-                    vision to market with a complete branding design package. 
-                    Don’t let your customers feel disconnected. 
-                    Let our experts use design theory and psychology 
-                    to help better connect to your business with your customers.
+                      Our team of industry leading designers will help bring
+                      your vision to market with a complete branding design
+                      package. Don’t let your customers feel disconnected. Let
+                      our experts use design theory and psychology to help
+                      better connect to your business with your customers.
                     </p>
                   </div>
                 </div>
@@ -358,12 +397,18 @@ export class AppHome {
                   <h2>JuntoScope</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank">
+                      <a
+                        href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8"
+                        target="_blank"
+                      >
                         <img src="assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp"
+                        target="_blank"
+                      >
                         <img src="assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
