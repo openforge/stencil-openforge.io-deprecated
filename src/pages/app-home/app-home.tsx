@@ -352,7 +352,7 @@ export class AppHome {
                       </a>
                     </div>
                   </div>
-                  <img src="assets/graphic-home-loudcloud.png" />
+                  <img src="assets/home-graphic-loudcloud.png" class="phone-image" />
                 </div>
               </div>
               <div class="content-panel voyage">
@@ -388,7 +388,7 @@ export class AppHome {
                       </a>
                     </div>
                   </div>
-                  <img src="assets/graphic-home-voyage.png" />
+                  <img src="assets/home-graphic-voyage.png" class="phone-image" />
                 </div>
               </div>
               <div class="content-panel juntoscope">
@@ -424,7 +424,7 @@ export class AppHome {
                       </a>
                     </div>
                   </div>
-                  <img src="assets/graphic-home-juntoscope.png" />
+                  <img src="assets/home-graphic-juntoscope.png" class="phone-image" />
                 </div>
               </div>
               <div class="content-panel last-panel" />
