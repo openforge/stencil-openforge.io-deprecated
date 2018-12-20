@@ -53,6 +53,16 @@
       }
     }
 
+    .hero-content {
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 14rem;
+      }
+
+      @include media-breakpoint-down(xs) {
+        margin-bottom: 5rem;
+      }
+    }
+
     .subtext {
       color: $gray-dark;
       font-size: 16px;
@@ -60,7 +70,6 @@
 
       @include media-breakpoint-down(sm) {
         text-align: left;
-        margin-bottom: 10px;
       }
     }
 
@@ -71,12 +80,8 @@
         color: #6b635f;
         display: block;
         font-size: 16px;
-        padding-right: 15rem;
+        padding-right: 12rem;
         text-align: left;
-      }
-
-      @include media-breakpoint-down(xs) {
-        padding-right: 10rem;
       }
     }
   }
@@ -192,6 +197,7 @@
     height: auto;
 
     .main-content {
+      background-color: $gray-light;
       display: flex;
 
       @include media-breakpoint-down(sm) {
@@ -214,9 +220,9 @@
       }
 
       .content-panel {
-        height: auto;
-        display: flex;
         align-items: flex-end;
+        display: flex;
+        height: auto;
         justify-content: center;
         text-align: center;
 
@@ -232,12 +238,11 @@
     }
 
     .content-panel-inner {
-      height: calc(100vh - 75.45px);
+      align-items: center;
       background-color: $gray-light;
       display: flex;
-      align-items: center;
+      height: calc(100vh - 75.45px);
       justify-content: center;
-
 
       .panel-inner-text {
         margin: 0 4rem;
@@ -249,27 +254,28 @@
         }
   
         h2 {
+          color: $orange-dark;
           font-size: 42px;
           font-weight: bold;
           line-height: 1.19;
-          color: $orange-dark;
         }
   
         p {
+          color: $gray-dark;
           font-size: 18px;
           line-height: 1.78;
-          color: $gray-dark;
         }
       }
     }
 
     .content-panel-image {
       h2 {
-        padding: 16px;
+        color: white;
         font-size: 40px;
         font-weight: bold;
+        padding: 16px;
         text-align: center;
-        color: white;
+        margin-top: 8rem;
       }
 
       .store-buttons {
