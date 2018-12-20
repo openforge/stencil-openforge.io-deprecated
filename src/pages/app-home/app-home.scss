@@ -10,7 +10,10 @@
     height: auto;
 
     @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/mobile-graphic-home-header.svg') top no-repeat, url('/assets/svg/mobile-graphic-home-header-background.svg') center top no-repeat;
+      background: url('/assets/svg/mobile-graphic-home-header.svg') top
+          no-repeat,
+        url('/assets/svg/mobile-graphic-home-header-background.svg') center top
+          no-repeat;
       background-size: 600px 720px, cover;
       margin-top: 75px;
 
@@ -20,6 +23,10 @@
     }
 
     img {
+      width: 100%;
+    }
+
+    object {
       width: 100%;
     }
 
@@ -156,6 +163,10 @@
       }
     }
 
+    .carousel-image-h {
+      height: auto;
+    }
+
     .carousel-image-userfeedback {
       height: 306px;
       @include media-breakpoint-down(sm) {
@@ -229,11 +240,10 @@
         @include media-breakpoint-down(sm) {
           display: table;
         }
-
       }
 
       .last-panel {
-        height: 0px;
+        height: 0;
       }
     }
 
@@ -247,19 +257,19 @@
       .panel-inner-text {
         margin: 0 4rem;
         text-align: left;
-  
+
         @include media-breakpoint-down(sm) {
           margin: 0 1rem;
           text-align: center;
         }
-  
+
         h2 {
           color: $orange-dark;
           font-size: 42px;
           font-weight: bold;
           line-height: 1.19;
         }
-  
+
         p {
           color: $gray-dark;
           font-size: 18px;
@@ -328,7 +338,7 @@
     }
 
     .cta-image {
-      img {
+      object {
         height: 280px;
         width: 380px;
 

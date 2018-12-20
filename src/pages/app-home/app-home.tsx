@@ -134,8 +134,8 @@ export class AppHome {
               </div>
             </div>
           </div>
-          <img
-            src="/assets/svg/graphic-home-header.svg"
+          <object
+            data="/assets/svg/graphic-home-header.svg"
             class="svg-header-desktop"
           />
         </header>
@@ -154,9 +154,9 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
-                      class="carousel-image"
-                      src="assets/svg/discovery.svg"
+                    <object
+                      class="carousel-image-h"
+                      data="assets/svg/discovery.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -180,9 +180,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
-                      class="carousel-image"
-                      src="assets/svg/process-design.svg"
+                    <object
+                      class="carousel-image-h"
+                      data="assets/svg/process-design.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -207,9 +207,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
+                    <object
                       class="carousel-image"
-                      src="assets/svg/process-development.svg"
+                      data="assets/svg/process-development.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -235,9 +235,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
+                    <object
                       class="carousel-image"
-                      src="assets/svg/process-deployment.svg"
+                      data="assets/svg/process-deployment.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -263,9 +263,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <img
+                    <object
                       class="carousel-image-userfeedback"
-                      src="assets/svg/process-userfeedback.svg"
+                      data="assets/svg/process-userfeedback.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -352,7 +352,10 @@ export class AppHome {
                       </a>
                     </div>
                   </div>
-                  <img src="assets/home-graphic-loudcloud.png" class="phone-image" />
+                  <img
+                    src="assets/home-graphic-loudcloud.png"
+                    class="phone-image"
+                  />
                 </div>
               </div>
               <div class="content-panel voyage">
@@ -388,7 +391,10 @@ export class AppHome {
                       </a>
                     </div>
                   </div>
-                  <img src="assets/home-graphic-voyage.png" class="phone-image" />
+                  <img
+                    src="assets/home-graphic-voyage.png"
+                    class="phone-image"
+                  />
                 </div>
               </div>
               <div class="content-panel juntoscope">
@@ -424,7 +430,10 @@ export class AppHome {
                       </a>
                     </div>
                   </div>
-                  <img src="assets/home-graphic-juntoscope.png" class="phone-image" />
+                  <img
+                    src="assets/home-graphic-juntoscope.png"
+                    class="phone-image"
+                  />
                 </div>
               </div>
               <div class="content-panel last-panel" />
@@ -436,7 +445,7 @@ export class AppHome {
         <section id="contat-us" class="contact-us">
           <div class="row">
             <div class="col-md-6 col-sm-12 text-center cta-image">
-              <img src="assets/svg/vision.svg" id="vision-svg" />
+              <object data="assets/svg/vision.svg" id="vision-svg" />
             </div>
 
             <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
