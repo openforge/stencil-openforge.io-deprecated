@@ -39,13 +39,16 @@ export class AppHome {
       fbq('track', 'ViewContent');
     }
 
-    new stickySidebar('.sidebar', {
-      topSpacing: 75.45,
-      bottomSpacing: 0,
-      containerSelector: '.main-content',
-      innerWrapperSelector: '.content-panel-inner',
-      minWidth: 767,
-    });
+    /* tslint:disable-next-line */
+    setTimeout(function() {
+      new stickySidebar('.sidebar', {
+        topSpacing: 75.45,
+        bottomSpacing: 0,
+        containerSelector: '.main-content',
+        innerWrapperSelector: '.content-panel-inner',
+        minWidth: 767,
+      });
+    }, 0);
 
     /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
@@ -80,14 +83,6 @@ export class AppHome {
           .html();
 
         $('#content-panel-inner').html(newDescr);
-      }
-
-      if (
-        !$('.sidebar')
-          .first()
-          .hasClass('is-affixed')
-      ) {
-        $('#content-panel-inner').css({ width: 'initial' });
       }
     });
 
