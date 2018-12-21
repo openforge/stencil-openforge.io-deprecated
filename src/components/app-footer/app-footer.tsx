@@ -12,33 +12,37 @@ export class AppFooter {
         <div class="container">
           <div class="row">
             <div class="footer--column col-12 col-sm-4">
-              <h2>{translate('footer.address.header')}</h2>
-              <p>
-                {translate('footer.address.name')}
-                <br />
-                {translate('footer.address.line1')}
-                <br />
-                {translate('footer.address.line2')}
-                <br />
-                {translate('footer.address.phoneNumber')}
-                <br />
-                <a href="mailto:hello@openforge.io">
-                  {translate('footer.address.email')}
+              <div>
+                <h2>{translate('footer.address.header')}</h2>
+                <p>
+                  {translate('footer.address.name')}
+                  <br />
+                  {translate('footer.address.line1')}
+                  <br />
+                  {translate('footer.address.line2')}
+                  <br />
+                  {translate('footer.address.phoneNumber')}
+                  <br />
+                  <a href="mailto:hello@openforge.io">
+                    {translate('footer.address.email')}
+                  </a>
+                </p>
+              </div>
+              <div class="mt-4">
+                <h3>Work at OpenForge</h3>
+                <a
+                  href="/opportunities/develop"
+                  class="btn-primary opportunities-button-link"
+                >
+                  I'm a developer
                 </a>
-              </p>
-              <h3>Work at OpenForge</h3>
-              <a
-                href="/opportunities/develop"
-                class="btn-primary opportunities-button-link"
-              >
-                I'm a developer
-              </a>
-              <a
-                href="/opportunities/design"
-                class="btn-primary opportunities-button-link"
-              >
-                I'm a designer
-              </a>
+                <a
+                  href="/opportunities/design"
+                  class="btn-primary opportunities-button-link"
+                >
+                  I'm a designer
+                </a>
+              </div>
             </div>
 
             <div class="footer--column col-12 col-sm-4">

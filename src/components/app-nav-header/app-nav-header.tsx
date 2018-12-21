@@ -32,7 +32,7 @@ export class AppNavHeader {
 
   render() {
     return (
-      <nav class="navbar navbar-expand-xl navbar-dark align-items-lg-end fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
             <stencil-route-link
