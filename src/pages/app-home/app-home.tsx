@@ -18,6 +18,8 @@ export class AppHome {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
+  private sticky;
+
   @Listen('window:resize')
   handleMobile() {
     if (window.innerWidth < 768) {
@@ -40,14 +42,17 @@ export class AppHome {
     }
 
     /* tslint:disable-next-line */
-    setTimeout(function() {
-      new stickySidebar('.sidebar', {
+    const self = this;
+    /* tslint:disable-next-line */
+    window.setTimeout(function() {
+      self.sticky = new stickySidebar('.sidebar', {
         topSpacing: 75.45,
         bottomSpacing: 0,
         containerSelector: '.main-content',
         innerWrapperSelector: '.content-panel-inner',
         minWidth: 767,
       });
+      self.sticky.updateSticky();
     }, 0);
 
     /* tslint:disable-next-line */
@@ -101,6 +106,10 @@ export class AppHome {
         $('#content-panel-inner').css({ width: 'initial' });
       }
     });
+  }
+
+  componentDidUnload() {
+    this.sticky.destroy();
   }
 
   scrollToForm() {
