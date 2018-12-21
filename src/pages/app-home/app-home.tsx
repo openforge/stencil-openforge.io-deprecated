@@ -23,10 +23,10 @@ export class AppHome {
     if (window.innerWidth < 768) {
       console.log('innerWidth');
       /* tslint:disable-next-line */
-      $('#vision-svg').attr('src', 'assets/svg/mobile-vision.svg');
+      $('#vision-svg').attr('data', '/assets/svg/mobile-vision.svg');
     } else {
       /* tslint:disable-next-line */
-      $('#vision-svg').attr('src', 'assets/svg/vision.svg');
+      $('#vision-svg').attr('data', '/assets/svg/vision.svg');
     }
   }
 
@@ -156,7 +156,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <object
                       class="carousel-image-h"
-                      data="assets/svg/discovery.svg"
+                      data="/assets/svg/discovery.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -182,7 +182,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <object
                       class="carousel-image-h"
-                      data="assets/svg/process-design.svg"
+                      data="/assets/svg/process-design.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -209,7 +209,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <object
                       class="carousel-image"
-                      data="assets/svg/process-development.svg"
+                      data="/assets/svg/process-development.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -237,7 +237,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <object
                       class="carousel-image"
-                      data="assets/svg/process-deployment.svg"
+                      data="/assets/svg/process-deployment.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -265,7 +265,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
                     <object
                       class="carousel-image-userfeedback"
-                      data="assets/svg/process-userfeedback.svg"
+                      data="/assets/svg/process-userfeedback.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -445,7 +445,7 @@ export class AppHome {
         <section id="contat-us" class="contact-us">
           <div class="row">
             <div class="col-md-6 col-sm-12 text-center cta-image">
-              <object data="assets/svg/vision.svg" id="vision-svg" />
+              <object data="/assets/svg/vision.svg" id="vision-svg" />
             </div>
 
             <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
