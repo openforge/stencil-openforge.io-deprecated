@@ -295,7 +295,7 @@ export class AppTeamLanding {
         'Event Planning',
         'Creative Planning',
       ],
-      team: 'management',
+      team: 'marketing',
       backgroundPhoto: '/assets/bios-background-kevon.png',
       metatags: {
         title: 'Kevon Chambers - Marketing Intern | OpenForge',
