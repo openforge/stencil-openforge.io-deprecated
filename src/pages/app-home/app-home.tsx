@@ -42,20 +42,6 @@ export class AppHome {
     }
 
     /* tslint:disable-next-line */
-    const self = this;
-    /* tslint:disable-next-line */
-    window.setTimeout(function() {
-      self.sticky = new stickySidebar('.sidebar', {
-        topSpacing: 75.45,
-        bottomSpacing: 0,
-        containerSelector: '.main-content',
-        innerWrapperSelector: '.content-panel-inner',
-        minWidth: 767,
-      });
-      self.sticky.updateSticky();
-    }, 0);
-
-    /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
       const pos =
         $('#content-panel-inner').offset().top +
@@ -93,6 +79,21 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(document).ready(function() {
+      /* tslint:disable-next-line */
+      const self = this;
+      /* tslint:disable-next-line */
+      window.setTimeout(function() {
+        console.log('init sticky');
+        self.sticky = new stickySidebar('.sidebar', {
+          topSpacing: 75.45,
+          bottomSpacing: 0,
+          containerSelector: '.main-content',
+          innerWrapperSelector: '.content-panel-inner',
+          minWidth: 767,
+        });
+        self.sticky.updateSticky();
+      }, 0);
+
       $(window).trigger('scroll'); // init the value
 
       if (

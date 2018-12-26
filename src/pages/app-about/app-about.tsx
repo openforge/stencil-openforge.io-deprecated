@@ -78,6 +78,7 @@ export class AppAbout {
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
+      url: '/about/fernando-del-olmo',
     },
     {
       name: 'Billy Holloran',
@@ -93,6 +94,7 @@ export class AppAbout {
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
+      url: '/about/luis-chacon',
     },
     {
       name: 'Claudio Del Valle',
@@ -216,16 +218,10 @@ export class AppAbout {
       );
     document
       .querySelector("meta[property='og:url']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/about/'
-      );
+      .setAttribute('content', 'https://openforge.io/about/');
     document
       .querySelector("meta[property='og:image']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/assets/bg-hero-icons.jpg'
-      );
+      .setAttribute('content', 'https://openforge.io/assets/bg-hero-icons.jpg');
     document
       .querySelector("meta[name='keywords']")
       .setAttribute(
