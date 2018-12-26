@@ -99,7 +99,7 @@ If a developer went through providing all the information during a `npm run cz` 
 ## Deployment
 
 ```
-npm run build
+npm run prepublish
 ```
 
 _Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase_
