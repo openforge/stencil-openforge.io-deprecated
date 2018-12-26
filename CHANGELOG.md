@@ -1,15 +1,66 @@
-<a name="1.5.0"></a>
-# [1.5.0](https://github.com/openforge/main-website/compare/v1.4.4...v1.5.0) (2018-11-21)
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/openforge/main-website/compare/v1.4.4...v2.0.0) (2018-12-26)
 
 
 ### Bug Fixes
 
+* add language and copy to view ([9cbdeb6](https://github.com/openforge/main-website/commit/9cbdeb6))
+* **app-home:** update mobile styles for process ([0c90011](https://github.com/openforge/main-website/commit/0c90011))
 * update assets for SEO ([d7013c4](https://github.com/openforge/main-website/commit/d7013c4))
+* **app-footer:** update mobile responsiveness ([ade9435](https://github.com/openforge/main-website/commit/ade9435))
+* **app-home:** add link to cta, add link to app store, fix mobile optimization for cta ([b83f909](https://github.com/openforge/main-website/commit/b83f909))
+* **app-home:** cleanup unused styles ([0bb1fc1](https://github.com/openforge/main-website/commit/0bb1fc1))
+* **app-home:** cleanup work style changes ([8e7bda1](https://github.com/openforge/main-website/commit/8e7bda1))
+* **app-home:** fix spelling for LoudCloud ([0ac81ec](https://github.com/openforge/main-website/commit/0ac81ec))
+* **app-home:** fixed issues with SVG overlap on firefox ([d474681](https://github.com/openforge/main-website/commit/d474681))
+* **app-home:** update @Listen for window resize selector ([3aeff34](https://github.com/openforge/main-website/commit/3aeff34))
+* **app-home:** update desktop -> mobile mid-breakpoint for text not to wrap ([5a4e372](https://github.com/openforge/main-website/commit/5a4e372))
+* **app-home:** update font, add mobile responsive svg ([364d107](https://github.com/openforge/main-website/commit/364d107))
+* **app-home:** update header height for container ([5b9022d](https://github.com/openforge/main-website/commit/5b9022d))
+* **app-home:** update header padding for our work container ([f74b5e9](https://github.com/openforge/main-website/commit/f74b5e9))
+* **app-home:** update header styles and breakpoints ([9398267](https://github.com/openforge/main-website/commit/9398267))
+* **app-home:** update home svg and mobile breakpoints ([89eed20](https://github.com/openforge/main-website/commit/89eed20))
+* **app-home:** update mobile breakpoint and positioning for header svg ([b98cfc8](https://github.com/openforge/main-website/commit/b98cfc8))
+* **app-home:** update mobile selector for safari svg fix ([47c107d](https://github.com/openforge/main-website/commit/47c107d))
+* **app-home:** update phone assets and fix white-space wrap in cta text ([afa2076](https://github.com/openforge/main-website/commit/afa2076))
+* **app-home:** update phone assets and size in our work ([b8d4566](https://github.com/openforge/main-website/commit/b8d4566))
+* **app-home:** update styles for process sliders ([cfd8f87](https://github.com/openforge/main-website/commit/cfd8f87))
+* **app-home:** update svg graphics + cleanup scss ([ea16129](https://github.com/openforge/main-website/commit/ea16129))
+* **app-nav-header:** update breakpoint for collapsed menu ([aff6afd](https://github.com/openforge/main-website/commit/aff6afd))
+* **app-team-landing.tsx:** add luis and fer bios ([f81a880](https://github.com/openforge/main-website/commit/f81a880))
+* **app-team-landing.tsx:** typo fix ([c8926f0](https://github.com/openforge/main-website/commit/c8926f0))
+* **en.ts:** fix two typos on services/app-developer ([d207f27](https://github.com/openforge/main-website/commit/d207f27))
+* **home:** change voyage text ([1afd5c1](https://github.com/openforge/main-website/commit/1afd5c1))
+* **home:** changed voyage pattern ([ba9ef29](https://github.com/openforge/main-website/commit/ba9ef29))
+* **home:** fix js bkg pattern ([022ae81](https://github.com/openforge/main-website/commit/022ae81))
+* **home:** fix our work bug on reload on safari ([13b6b0d](https://github.com/openforge/main-website/commit/13b6b0d))
+* **home:** fix svgs for safari ([5d5c8e6](https://github.com/openforge/main-website/commit/5d5c8e6))
+* update header svg styles ([afabbf2](https://github.com/openforge/main-website/commit/afabbf2))
+* **home:** fix to our work left column ([f854f98](https://github.com/openforge/main-website/commit/f854f98))
+* **home:** fix to sticky after going to another page and back ([11bfaea](https://github.com/openforge/main-website/commit/11bfaea))
+* **home:** fix to text change on scroll on our work ([52e0899](https://github.com/openforge/main-website/commit/52e0899))
+* **home:** svg and style fixes ([5aad095](https://github.com/openforge/main-website/commit/5aad095))
+* **startup-consulting:** changes startup-consulting page title ([1d01f46](https://github.com/openforge/main-website/commit/1d01f46))
 
 
 ### Features
 
+* **home:** add mobile version to our work section ([7c5c631](https://github.com/openforge/main-website/commit/7c5c631))
 * update meta tags to include open graph tags ([563593c](https://github.com/openforge/main-website/commit/563593c))
+* **app:** make some updates on navbar and footer ([69e4dec](https://github.com/openforge/main-website/commit/69e4dec))
+* **app-home:** add base skeleton for new cta ([963747d](https://github.com/openforge/main-website/commit/963747d))
+* **app-home:** add home header svg and breakpoints ([959d8f7](https://github.com/openforge/main-website/commit/959d8f7))
+* **app-home:** add svg assets for home ([9d8ad5b](https://github.com/openforge/main-website/commit/9d8ad5b))
+* **app-home:** in-progress fix content in carousel ([ccb7a27](https://github.com/openforge/main-website/commit/ccb7a27))
+* **app-home:** in-progress of process carousel ([6ab9eb6](https://github.com/openforge/main-website/commit/6ab9eb6))
+* **app-home:** test export svg animation ([f97246a](https://github.com/openforge/main-website/commit/f97246a))
+* **home:** add first version of our process, add our work backgrounds ([ce54f1e](https://github.com/openforge/main-website/commit/ce54f1e))
+* **home:** add hero background ([08827c3](https://github.com/openforge/main-website/commit/08827c3))
+* **home:** add hero titles ([cc3cefc](https://github.com/openforge/main-website/commit/cc3cefc))
+* **home:** add our work section ([0a3c2a0](https://github.com/openforge/main-website/commit/0a3c2a0))
+* **home:** add process section mobile version ([4240149](https://github.com/openforge/main-website/commit/4240149))
+* **home:** change our work text on scroll ([9948b44](https://github.com/openforge/main-website/commit/9948b44))
+* **home:** stack our work on mobile ([10d1c6b](https://github.com/openforge/main-website/commit/10d1c6b))
 
 
 
