@@ -139,7 +139,15 @@ export class AppTeamLanding {
         'Frontend Development',
       ],
       team: 'development',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-fernando.png',
+      metatags: {
+        title: 'Fernando Del Olmo - Software Engineer | OpenForge',
+        description:
+          'Fernando is originally from Madrid, Spain where he recieved his Bachelors degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.',
+        keywords: 'Fernano Del Olmo',
+        url: 'https://openforge.io/about/fernando-del-olmo/',
+        image: 'https://openforge.io/assets/bios-background-fernando.png',
+      },
     },
     'billy-holloran': {
       firstname: 'Billy',
@@ -184,7 +192,15 @@ export class AppTeamLanding {
         'Video Game Development',
       ],
       team: 'development',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      backgroundPhoto: '/assets/bios-background-luis.png',
+      metatags: {
+        title: 'Luis Chacon - Software Engineer | OpenForge',
+        description:
+          'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Masters in Software Engineering with a full scholarship form the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
+        keywords: 'Luis Chacon',
+        url: 'https://openforge.io/about/luis-chacon/',
+        image: 'https://openforge.io/assets/bios-background-luis.jpg',
+      },
     },
     'claudio-del-valle': {
       firstname: 'Claudio',
