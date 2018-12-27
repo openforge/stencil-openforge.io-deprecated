@@ -94,6 +94,8 @@ export class AppHome {
         self.sticky.updateSticky();
       }, 0);
 
+      $('[data-slide-to=0]').trigger('click');
+
       $(window).trigger('scroll'); // init the value
 
       if (
