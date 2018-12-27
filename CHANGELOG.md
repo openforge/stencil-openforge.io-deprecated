@@ -1,3 +1,18 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/openforge/main-website/compare/v2.0.0...v2.0.1) (2018-12-27)
+
+
+### Bug Fixes
+
+* **home:** readd swipe images on carousel ([b98fe36](https://github.com/openforge/main-website/commit/b98fe36))
+
+
+### Features
+
+* **home:** add swipe to carousel by updating bootstrap ([20b435c](https://github.com/openforge/main-website/commit/20b435c))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/openforge/main-website/compare/v1.4.4...v2.0.0) (2018-12-26)
 
