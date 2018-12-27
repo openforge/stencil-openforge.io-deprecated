@@ -159,9 +159,9 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <object
+                    <img
                       class="carousel-image-h"
-                      data="/assets/svg/discovery.svg"
+                      src="/assets/svg/discovery.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -185,9 +185,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <object
+                    <img
                       class="carousel-image-h"
-                      data="/assets/svg/process-design.svg"
+                      src="/assets/svg/process-design.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -212,9 +212,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <object
+                    <img
                       class="carousel-image"
-                      data="/assets/svg/process-development.svg"
+                      src="/assets/svg/process-development.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -240,9 +240,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <object
+                    <img
                       class="carousel-image"
-                      data="/assets/svg/process-deployment.svg"
+                      src="/assets/svg/process-deployment.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -268,9 +268,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <object
+                    <img
                       class="carousel-image-userfeedback"
-                      data="/assets/svg/process-userfeedback.svg"
+                      src="/assets/svg/process-userfeedback.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
