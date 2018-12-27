@@ -1,6 +1,7 @@
 describe('Contact Page', function () {
+  var env = 'https://openforge.io';
   beforeEach(() => {
-    cy.visit('localhost:3333/contact')
+    cy.visit( env + '/contact')
     cy.get('button[type=submit]').as('submitBtn')
   })
 
@@ -25,60 +26,44 @@ describe('Contact Page', function () {
         .find('.btn')
         .should('exist')
         .and('be.visible')
-        .and('contain', 'Request Now')
+        .and('contain', 'Request Free Quote')
         .click()
       cy.get('#second-content').click()
     })
   })
 
   describe('Contact Form', function() {
-    let nameField;
-    let emailField;
-    let companyField;
-    let phoneField;
-    let messageField;
-    let radioField1;
-    let radioField2;
+    let nameField
+    let emailField
+    let phoneField
+    let messageField
 
     describe('Successful form submission', function () {
       beforeEach(() => {
-        nameField = cy.get('input[name=name]')
-        .type('Test Name')
-        emailField = cy.get('input[name=email]')
-        .type('testEmail@gmail.com')
-        companyField = cy.get('input[name=company]')
-        .type('Test Company Name')
-        phoneField = cy.get('input[name=phone]')
-        .type('1459341234')
-        messageField = cy.get('input[name=message]')
-        .type('This is a test message')
-        radioField1 = cy.get('[type="radio"]')
-        .check('Web Development')
-        radioField2 = cy.get('[type="radio"]')
-        .check('200K')
+        cy.get('input[name=name]').type('Testing')
+        cy.get('input[name=email]').type('testEmail@gmail.com')
+        cy.get('input[name=phone]').type('1459341234')
+        cy.get('input[name=message]').type('This is a test message')
         cy.get('@submitBtn').click()
       })
 
       it('Should show a success message on submit when all form values have been filled out', function() {
-        cy.get('div.alert')
-        .should('exist')
-        .contains('Thank you')
+        cy.contains('Thank you')
       })
 
       it('All fields should be clear after successful form submission', function() {
-        nameField.should('have.value', '')
-        emailField.should('have.value', '')
-        companyField.should('have.value', '')
-        phoneField.should('have.value', '')
-        messageField.should('have.value', '')
+       cy.get('input[name=name]').should('not.have.value', 'Testing')
+       cy.get('input[name=email]').should('not.have.value', 'testEmail@gmail.com')
+       cy.get('input[name=phone]').should('not.have.value', '1459341234')
+       cy.get('input[name=message]').should('not.have.value', 'This is a test message')
+
       })
     })
     describe('Unsucessful form submission', function() {
       it('DOM should not show success message when all fields of the form are not filled out', function () {
         nameField = cy.get('input[name=name]')
         .type('Test Name')
-        cy.get('@submitBtn').click()
-        cy.get('div.alert').should('not.exist')
+        cy.get('@submitBtn').should('be.disabled')
       })
     })
   })
