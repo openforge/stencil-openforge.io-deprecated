@@ -389,8 +389,8 @@ export const translations = {
       address: {
         header: 'Our Headquarters',
         name: 'OpenForge',
-        line1: '1010 N Hancock St',
-        line2: 'Philadelphia, PA 19123',
+        line1: '1608 Walnut Street',
+        line2: 'Philadelphia, PA 19103',
         email: 'hello@openforge.io',
         phoneNumber: '(215)-821-8673',
       },
