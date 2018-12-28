@@ -2,6 +2,8 @@ import { Component, Prop, Listen } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import stickySidebar from 'sticky-sidebar';
 
+import { translate } from '../../services/translation.service';
+
 /* tslint:disable-next-line */
 import $ from 'jquery';
 
@@ -128,15 +130,19 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="hero-content col-12">
-                <h1>Creating Digital Experiences</h1>
-                <h2>Every Day*</h2>
+                <h1>
+                  <app-translate key="home.hero.title" />
+                </h1>
+                <h2>
+                  <app-translate key="home.hero.subTitle" />
+                </h2>
                 <p class="subtext">
-                  <i>*Monday-Friday</i>
+                  <i>
+                    <app-translate key="home.hero.subtext" />
+                  </i>
                 </p>
                 <p class="subtext-mobile">
-                  Work with our team of highly skilled designers, developers,
-                  and consultants to develop solutions and processes that fit
-                  your business requirements.
+                  <app-translate key="home.hero.subtextMobile" />
                 </p>
               </div>
             </div>
@@ -149,7 +155,9 @@ export class AppHome {
 
         <section id="process" class="process">
           <div class="text-center header">
-            <h2>Our Process</h2>
+            <h2>
+              <app-translate key="home.process.title" />
+            </h2>
           </div>
 
           <div id="processCarousel" class="carousel slide" data-ride="carousel">
@@ -168,17 +176,15 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>Discovery</h2>
+                      <h2>
+                        <app-translate key="home.process.discovery.title" />
+                      </h2>
                       <app-carousel-indicators
                         class="carousel-mobile-indicators"
                         activeIndex="0"
                       />
                       <p>
-                        We'll help you evaluate your business needs and
-                        challenge your assumptions before entering into the
-                        Design and Development process. Make sure that the
-                        technology you're building makes sense for your
-                        business.
+                        <app-translate key="home.process.discovery.text" />
                       </p>
                     </div>
                   </div>
@@ -194,18 +200,15 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>Design</h2>
+                      <h2>
+                        <app-translate key="home.process.design.title" />
+                      </h2>
                       <app-carousel-indicators
                         class="carousel-mobile-indicators"
                         activeIndex="1"
                       />
                       <p>
-                        At OpenForge, logic and user psychology is the
-                        foundation of everything we design. Our team of experts
-                        works with you and matches our knowledge of Design &
-                        User Experience principles with your subject-matter
-                        knowledge to jointly create the most effective
-                        representation of your business.
+                        <app-translate key="home.process.design.text" />
                       </p>
                     </div>
                   </div>
@@ -221,19 +224,15 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>Development</h2>
+                      <h2>
+                        <app-translate key="home.process.development.title" />
+                      </h2>
                       <app-carousel-indicators
                         class="carousel-mobile-indicators"
                         activeIndex="2"
                       />
                       <p>
-                        Throw away the development practices of the 1990's and
-                        2000's. In order to utilize modern technologies we must
-                        use modern approaches to software development, including
-                        Design & Dev integration, Continuous Integration
-                        strategies, and sophisticated Automated Testing
-                        strategies to assure your business is always
-                        operational.
+                        <app-translate key="home.process.development.text" />
                       </p>
                     </div>
                   </div>
@@ -249,19 +248,15 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>Deployment</h2>
+                      <h2>
+                      < app-translate key="home.process.deployment.title" />
+                      </h2>
                       <app-carousel-indicators
                         class="carousel-mobile-indicators"
                         activeIndex="3"
                       />
                       <p>
-                        Do you have a dashboard to monitor the state of your
-                        application? Do you have Continuous Integration and
-                        Automated Testing strategies to decrease your
-                        development and QA testing costs? Does releasing an
-                        update take more than 1 (one) day? If so, let us help
-                        you improve your deployment strategy so you can get to
-                        market quicker, on time, and on budget.
+                        <app-translate key="home.process.deployment.text" />
                       </p>
                     </div>
                   </div>
@@ -277,18 +272,15 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>User Feedback</h2>
+                      <h2>
+                        <app-translate key="home.process.userfeedback.title" />
+                      </h2>
                       <app-carousel-indicators
                         class="carousel-mobile-indicators"
                         activeIndex="4"
                       />
                       <p>
-                        The biggest mistake businesses make is to launch a
-                        product and then stop there. That initial data from the
-                        first 3 months is crucial for engaging your consumer and
-                        enhancing your experience. Expand your business by
-                        capturing this crucial moment; we will help you monitor
-                        and improve the entire way.
+                        <app-translate key="home.process.userfeedback.text" />
                       </p>
                     </div>
                   </div>
@@ -328,19 +320,18 @@ export class AppHome {
               <div class="content-panel loudcloud">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h2>Mobile Technology</h2>
+                    <h2>
+                      {translate('home.services.mobileTechnology.title')}
+                    </h2>
                     <p>
-                      We utilize technologies such as VoIP, Bluetooth LE, and
-                      other IOT technologies to bring a whole new level of
-                      connectivity to your application. Our experts in mobile
-                      application development can interface with any existing
-                      API or standard to integrate systems properly and
-                      securely.
+                      {translate('home.services.mobileTechnology.text')}
                     </p>
                   </div>
                 </div>
                 <div class="content-panel-image">
-                  <h2>LoudCloud</h2>
+                  <h2>
+                    <app-translate key="home.services.mobileTechnology.example" />
+                  </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a
@@ -368,18 +359,18 @@ export class AppHome {
               <div class="content-panel voyage">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h2>Digital Experience</h2>
+                    <h2>
+                      {translate('home.services.digitalExperience.title')}
+                    </h2>
                     <p>
-                      It is our firm belief that we should engage users by
-                      providing value, both fundamentally and visually. By
-                      combining the psychology of design with the capabilities
-                      of the digital age, we are able to develop solutions that
-                      think outside the box.
+                      {translate('home.services.digitalExperience.text')}
                     </p>
                   </div>
                 </div>
                 <div class="content-panel-image">
-                  <h2>The Voyage By New Ocean</h2>
+                  <h2>
+                    <app-translate key="home.services.digitalExperience.example" />
+                  </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a
@@ -407,18 +398,18 @@ export class AppHome {
               <div class="content-panel juntoscope">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h2>Digital Branding & Web Design</h2>
+                    <h2>
+                      {translate('home.services.brandingDesign.title')}
+                    </h2>
                     <p>
-                      Our team of industry leading designers will help bring
-                      your vision to market with a complete branding design
-                      package. Don’t let your customers feel disconnected. Let
-                      our experts use design theory and psychology to help
-                      better connect to your business with your customers.
+                      {translate('home.services.brandingDesign.text')}
                     </p>
                   </div>
                 </div>
                 <div class="content-panel-image">
-                  <h2>JuntoScope</h2>
+                  <h2>
+                    <app-translate key="home.services.brandingDesign.example" />
+                  </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a
@@ -456,12 +447,20 @@ export class AppHome {
             </div>
 
             <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
-              <h2>Got a vision?</h2>
-              <p>We've got your back.</p>
-              <h2>Contact us today to get started!</h2>
+              <h2>
+                <app-translate key="home.contact.title" />
+              </h2>
+              <p>
+                <app-translate key="home.contact.subTitle" />
+              </p>
+              <h2>
+                <app-translate key="home.contact.subText" />
+              </h2>
 
               <stencil-route-link url="/contact">
-                <button class="btn btn-primary">GET IN TOUCH</button>
+                <button class="btn btn-primary">
+                  <app-translate key="home.contact.link" />
+                </button>
               </stencil-route-link>
             </div>
           </div>
