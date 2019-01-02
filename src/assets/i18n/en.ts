@@ -2,78 +2,56 @@ export const translations = {
   translation: {
     home: {
       hero: {
-        header: 'We are Thinkers. Makers. Doers.',
-        body:
-          'Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.',
-        link: "Let's Get Started",
-      },
-      services: {
-        what: {
-          title: 'What do we provide?',
-          text:
-            'Whether you are a start up, an enterprise, or somewhere in between, we will work with you every step of the way. Choose your path below to learm more about our custom services.',
-          fromStartupToEnterprise:
-            'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
-          ourWork: 'Check Out Our Work',
-        },
-        'app-developer': {
-          meta:
-            'At OpenForge our app developer team will create an application that fits your needs.',
-          headline: 'App Development',
-          text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
-        },
-        'app-designer': {
-          meta:
-            'At OpenForge our app designers will design a beautiful and intuitive app that will engage users and produce results.',
-          headline: 'UI/UX Design',
-          text:
-            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
-        },
-        'startup-consulting': {
-          meta:
-            'With OpenForge as your tech consultant, we will determine what technologies and processes will help your business succeed in the digital world.',
-          headline: 'Consulting',
-          text:
-            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
-        },
-      },
-      learnAbout: {
-        header: 'Want to learn more about us?',
-        link: 'Get to know us',
+        title: 'Creating Digital Experiences',
+        subTitle: 'Every Day*',
+        subtext: '*Monday-Friday',
+        subtextMobile: `Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.`
       },
       process: {
         title: 'Our Process',
-        discovery: 'Discovery',
-        discoveryBody:
-          "We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.",
-        devConsulting: 'Development Consulting',
-        development: 'Development',
-        developmentBody:
-          "Throw away the development practices of the 1990's and 2000's. In order to utilize modern technologies we must use modern approaches to software development, including Design & Dev integration, Continuous Integration strategies, and sophisticated Automated Testing strategies to assure your business is always operational.",
-        deployment: 'Deployment',
-        deploymentBody:
-          'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
-        userFeedback: 'User Feedback',
-        userFeedbackBody:
-          'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
-        designUserExperience: 'Design & User Experience',
-        designUserExperienceBody:
-          'There is psychology and thought behind every effective design. Our team of experts sits with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
+        discovery: {
+          title: 'Discovery',
+          text: `We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.`,
+        },
+        design: {
+          title: 'Design',
+          text: 'At OpenForge, logic and user psychology is the foundation of everything we design. Our team of experts works with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
+        },
+        development: {
+          title: 'Development',
+          text: `Throw away the development practices of the 1990's and 2000's. In order to utilize modern technologies we must use modern approaches to software development, including Design & Dev integration, Continuous Integration strategies, and sophisticated Automated Testing strategies to assure your business is always operational.`,
+        },
+        deployment: {
+          title: 'Deployment',
+          text: 'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
+        },
+        userfeedback: {
+          title: 'User Feedback',
+          text: 'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.'
+        }
       },
-      perspectives: {
-        title: 'We Are Powered by Multiple Perspectives',
-        text:
-          'Our individual skills, backgrounds, and life experiences have shaped us into the company that we are today. Maintaining a diverse team helps us to perform better, attract top talent, and make smarter decisions.',
-      },
-      partners: {
-        title: 'Our Industry Partners',
-        text:
-          "Here are some of our trusted partners. We frequently work with these companies to ensure the highest quality to our products and to use the program that best fits your app's needs.",
+      services: {
+        mobileTechnology: {
+          title: 'Mobile Technology',
+          text: 'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          example: 'LoudCloud'
+        },
+        digitalExperience: {
+          title: 'Digital Experience',
+          text: 'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+          example: 'The Voyage by New Ocean'
+        },
+        brandingDesign: {
+          title: 'Digital Branding & Web Design',
+          text: 'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
+          example: 'JuntoScope'
+        }
       },
       contact: {
-        title: 'Ready to work with us?',
-        link: 'Get in touch',
+        title: 'Got a vision?',
+        subTitle: `We've got your back.`,
+        subText: 'Contact us today to get started!',
+        link: 'GET IN TOUCH',
       },
     },
     about: {
