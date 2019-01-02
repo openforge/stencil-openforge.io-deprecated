@@ -1,8 +1,6 @@
 .about {
   font-family: 'Muli', sans-serif;
 
-
-  // hero
   .hero {
     background-image: url('/assets/bg-hero-icons.jpg');
     background-position: top center;
@@ -43,15 +41,12 @@
     }
   }
 
-  section {
+  #values, #about {
     padding: 5rem 0;
 
     .header {
       margin: 0 auto 3rem;
       max-width: 768px;
-      @include media-breakpoint-down(sm) {
-        text-align: left;
-      }
     }
   }
 

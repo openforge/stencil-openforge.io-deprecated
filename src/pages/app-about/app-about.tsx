@@ -15,7 +15,7 @@ export class AppAbout {
     {
       name: 'Jedi Weller',
       image: './../../assets/headshot-jedi.jpg',
-      title: translate('about.meet.member.title.founder'),
+      title: translate('about.team.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
@@ -23,7 +23,7 @@ export class AppAbout {
     {
       name: 'Paulina Gallo',
       image: './../../assets/headshot-paulina.png',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
@@ -32,7 +32,7 @@ export class AppAbout {
     {
       name: 'Geoffrey Melle',
       image: './../../assets/headshot-geoff.jpg',
-      title: translate('about.meet.member.title.accountManager'),
+      title: translate('about.team.member.title.accountManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
@@ -41,7 +41,7 @@ export class AppAbout {
     {
       name: 'Rachel Bennett',
       image: './../../assets/headshot-rachel.jpg',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       mail: 'rachel@openforge.io',
       twitter: '',
       github: '',
@@ -50,14 +50,14 @@ export class AppAbout {
     {
       name: 'Billy Holloran',
       image: './../../assets/headshot-billy.png',
-      title: translate('about.meet.member.title.projectManager'),
+      title: translate('about.team.member.title.projectManager'),
       mail: 'billy@openforge.io',
       url: '/about/billy-holloran',
     },
     {
       name: 'Ethan Bohan',
       image: './../../assets/headshot-ethan.jpg',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       mail: 'ethan@openforge.io',
       twitter: '',
       github: '',
@@ -66,7 +66,7 @@ export class AppAbout {
     {
       name: 'Fernando Del Olmo',
       image: './../../assets/headshot-fernando.jpg',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
@@ -75,7 +75,7 @@ export class AppAbout {
     {
       name: 'Luis Chacon',
       image: './../../assets/headshot-luis.jpg',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
@@ -84,7 +84,7 @@ export class AppAbout {
     {
       name: 'Kevon Chambers',
       image: '/assets/headshot-kevon.png',
-      title: translate('about.meet.member.title.marketing'),
+      title: translate('about.team.member.title.marketing'),
       mail: 'kevon@openforge.io',
       twitter: '',
       github: '',
@@ -92,7 +92,7 @@ export class AppAbout {
     {
       name: 'Sam Hudgens',
       image: './../../assets/headshot-sam.jpg',
-      title: translate('about.meet.member.title.softwareIntern'),
+      title: translate('about.team.member.title.softwareIntern'),
       mail: 'sam@openforge.io',
       twitter: '',
       github: 'https://github.com/samhudgens',
@@ -101,7 +101,7 @@ export class AppAbout {
     {
       name: 'Young Song',
       image: './../../assets/headshot-young.jpg',
-      title: translate('about.meet.member.title.softwareIntern'),
+      title: translate('about.team.member.title.softwareIntern'),
       mail: '',
       twitter: 'https://twitter.com/YoungSongJS',
       github: 'https://github.com/Hogusong',
@@ -110,7 +110,7 @@ export class AppAbout {
     {
       name: 'Ted Grant',
       image: '/assets/headshot-ted.png',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       mail: 'ted@openforge.io',
       twitter: '',
       github: '',
@@ -119,7 +119,7 @@ export class AppAbout {
     {
       name: 'Joni Lehto',
       image: './../../assets/headshot-joni.jpg',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
       github: '',
@@ -127,7 +127,7 @@ export class AppAbout {
     {
       name: 'Meredith Alcorn',
       image: './../../assets/headshot-meredith.jpg',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'meredith@openforge.io',
       twitter: '',
       github: 'https://github.com/mmalcorn',
@@ -135,7 +135,7 @@ export class AppAbout {
     {
       name: 'Claudio Del Valle',
       image: './../../assets/headshot-claudio.jpg',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'claudio@openforge.io',
       titter: '',
       github: 'https://github.com/daftclaud',
@@ -143,7 +143,7 @@ export class AppAbout {
     {
       name: 'Auvo Severinkangas',
       image: './../../assets/headshot-auvo.jpg',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
@@ -151,7 +151,7 @@ export class AppAbout {
     {
       name: 'Dhairya Pujara',
       image: './../../assets/headshot-dhairya.jpg',
-      title: translate('about.meet.member.title.consultant'),
+      title: translate('about.team.member.title.consultant'),
       mail: '',
       twitter: 'https://twitter.com/dhairyapujara',
       github: '',
@@ -179,7 +179,7 @@ export class AppAbout {
     {
       name: 'Casey',
       image: './../../assets/headshot-casey.jpg',
-      title: translate('about.meet.member.title.officer'),
+      title: translate('about.team.member.title.officer'),
       mail: '',
       twitter: '',
       github: '',
@@ -231,7 +231,7 @@ export class AppAbout {
   }
 
   scrollToForm() {
-    const form = document.getElementById('about-section');
+    const form = document.getElementById('about');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -304,7 +304,7 @@ export class AppAbout {
         </section>
 
         {/* section - about */}
-        <section id="about-section" class="about bg-gray">
+        <section id="about" class="about bg-gray">
           <div class="container text-center">
             <div class="about header">
               <h2>
@@ -320,10 +320,7 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="/contact">
-          <span slot="header">Want to work with us?</span>
-          <span slot="link">Get in touch</span>
-        </app-cta>
+        <app-cta />
 
 
         <app-footer />
