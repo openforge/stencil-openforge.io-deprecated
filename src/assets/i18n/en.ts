@@ -48,6 +48,7 @@ export const translations = {
         }
       }
     },
+
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
@@ -85,6 +86,7 @@ export const translations = {
         },
       },
     },
+
     contact: {
       hero: {
         title: "Let's Work Together",
@@ -135,6 +137,7 @@ export const translations = {
         unsure: 'Unsure',
       },
     },
+
     services: {
       general: {
         development: {
@@ -248,6 +251,7 @@ export const translations = {
         link: 'Get in touch',
       },
     },
+    
     opportunities: {
       hero: {
         title: "Great News! We're Hiring.",
