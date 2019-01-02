@@ -438,34 +438,9 @@ export class AppHome {
           </div>
         </section>
 
-        {/* section - contact us */}
-        <section id="contat-us" class="contact-us">
-          <div class="row">
-            <div class="col-md-6 col-sm-12 text-center cta-image">
-              <object data="/assets/svg/vision.svg" id="vision-svg" />
-            </div>
-
-            <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
-              <h2>
-                <app-translate key="home.contact.title" />
-              </h2>
-              <p>
-                <app-translate key="home.contact.subTitle" />
-              </p>
-              <h2>
-                <app-translate key="home.contact.subText" />
-              </h2>
-
-              <stencil-route-link url="/contact">
-                <button class="btn btn-primary">
-                  <app-translate key="home.contact.link" />
-                </button>
-              </stencil-route-link>
-            </div>
-          </div>
-        </section>
-
+        <app-cta />
         <app-footer />
+        
       </div>
     );
   }

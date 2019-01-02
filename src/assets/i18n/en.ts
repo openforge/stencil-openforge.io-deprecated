@@ -46,13 +46,7 @@ export const translations = {
           text: 'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
           example: 'JuntoScope'
         }
-      },
-      contact: {
-        title: 'Got a vision?',
-        subTitle: `We've got your back.`,
-        subText: 'Contact us today to get started!',
-        link: 'GET IN TOUCH',
-      },
+      }
     },
     about: {
       header: {
@@ -372,6 +366,13 @@ export const translations = {
         'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
+    cta: {
+      title: 'Got a vision?',
+      subTitle: `We've got your back.`,
+      text: 'Contact us today to get started!',
+      link: 'GET IN TOUCH',
+    },
+
     header: {
       scrollText: 'Scroll to content',
     },
@@ -436,12 +437,6 @@ export const translations = {
         opportunities: 'Opportunities',
         github: 'Openforge Github account',
       },
-    },
-
-    members: {
-      mailAccount: 'mail account',
-      twitterAccount: 'twitter account',
-      githubAccount: 'github account',
     },
   },
 };

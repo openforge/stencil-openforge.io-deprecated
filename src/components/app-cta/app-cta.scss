@@ -1,18 +1,60 @@
-// cta
 .cta {
-  background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
-  padding: 5rem 0;
+  height: 344px;
 
-  .cta-container {
-    line-height: 2.5rem;
+  @include media-breakpoint-down(sm) {
+    height: 780px;
   }
 
-  h3 {
-    font-size: 2rem;
-    margin: 0;
-    @include media-breakpoint-down(sm) {
-      font-size: 1.75rem;
-      margin: 0 auto 2rem;
+  .row {
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(108, 144, 152, 0.99),
+      #3f5a60
+    );
+  }
+
+  .cta-image {
+    object {
+      height: 280px;
+      width: 380px;
+
+      @include media-breakpoint-down(sm) {
+        height: 480px;
+        margin-top: 0;
+      }
     }
+  }
+
+  .cta-text {
+    @include media-breakpoint-down(sm) {
+      margin-top: -10rem; // remove this when SVG is fixed
+    }
+  }
+
+  h2 {
+    color: white;
+    font-size: 22px;
+    margin: 0;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    color: $white;
+    font-size: 40px;
+    margin: 1rem 0;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 55px;
+      line-height: 60px;
+      margin: 2rem 0;
+    }
+  }
+
+  .btn {
+    margin-top: 4rem;
   }
 }
