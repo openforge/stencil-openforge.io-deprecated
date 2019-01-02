@@ -12,8 +12,7 @@ declare var fbq;
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
-  @Prop()
-  history: RouterHistory;
+  @Prop() history: RouterHistory;
 
   @Prop({ context: 'isServer' })
   private isServer: boolean;
@@ -128,7 +127,8 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="hero-content col-12">
-                <h1>Creating Digital Experiences</h1>
+                {/* <h1>Creating Digital Experiences</h1> */}
+                <h1>Test</h1>
                 <h2>Every Day*</h2>
                 <p class="subtext">
                   <i>*Monday-Friday</i>
