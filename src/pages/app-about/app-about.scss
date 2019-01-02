@@ -1,18 +1,13 @@
 .about {
+  font-family: 'Muli', sans-serif;
+
+
   // hero
   .hero {
     background-image: url('/assets/bg-hero-icons.jpg');
     background-position: top center;
     background-size: cover;
     height: 100vh;
-
-    @include media-breakpoint-down(md) {
-      background-image: url('/assets/bg-hero-icons-md.jpg');
-    }
-
-    @include media-breakpoint-down(sm) {
-      background-image: url('/assets/bg-hero-icons-sm.jpg');
-    }
 
     .container,
     .row {
@@ -38,7 +33,7 @@
     p {
       color: $white;
       font-size: 1.2rem;
-      font-weight: 300;
+      // font-weight: 300;
       margin-bottom: 3rem;
       max-width: 500px;
       @include media-breakpoint-down(sm) {
@@ -48,17 +43,27 @@
     }
   }
 
-  // section - about
-  .about {
+  section {
     padding: 5rem 0;
 
-    &--header {
+    .header {
       margin: 0 auto 3rem;
       max-width: 768px;
-      text-align: center;
       @include media-breakpoint-down(sm) {
         text-align: left;
       }
+    }
+  }
+
+  .image {
+    background-image: url('/assets/bg-hero-handshake-desk.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+
+    p {
+      color: white;
     }
   }
 }
