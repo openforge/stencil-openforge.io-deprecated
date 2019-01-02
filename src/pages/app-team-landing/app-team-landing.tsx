@@ -480,10 +480,7 @@ export class AppTeamLanding {
                   </div>
                 </section>
               </div>,
-              <app-cta link-url="/about">
-                <span slot="header">Meet The Team</span>
-                <span slot="link">Let's go</span>
-              </app-cta>,
+              <app-cta />,
               <app-footer />,
             ]
           : null}

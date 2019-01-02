@@ -537,14 +537,7 @@ export class AppDetailedService {
             </section>
           </div>
         ) : null}
-        <app-cta link-url="/contact">
-          <span slot="header">
-            <app-translate key="services.aside.title" />
-          </span>
-          <span slot="link">
-            <app-translate key="services.aside.link" />
-          </span>
-        </app-cta>
+        <app-cta />
         <app-footer />
       </section>
     );
