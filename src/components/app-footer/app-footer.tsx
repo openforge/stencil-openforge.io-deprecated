@@ -29,18 +29,18 @@ export class AppFooter {
                 </p>
               </div>
               <div class="mt-4">
-                <h3>Work at OpenForge</h3>
+                <h3>{translate('footer.work.header')}</h3>
                 <a
                   href="/opportunities/develop"
                   class="btn-primary opportunities-button-link"
                 >
-                  I'm a developer
+                  {translate('footer.work.developer')}
                 </a>
                 <a
                   href="/opportunities/design"
                   class="btn-primary opportunities-button-link"
                 >
-                  I'm a designer
+                  {translate('footer.work.designer')}
                 </a>
               </div>
             </div>
@@ -55,7 +55,7 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-twitter-square" aria-hidden="true" />{' '}
-                    @OpenForge_US
+                    {translate('footer.social.twitter')}
                   </a>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-facebook-square" aria-hidden="true" />{' '}
-                    OpenForge_US
+                    {translate('footer.social.facebook')}
                   </a>
                 </li>
                 <li>
@@ -75,7 +75,7 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-linkedin" aria-hidden="true" />{' '}
-                    OpenForge_US
+                    {translate('footer.social.linkedin')}
                   </a>
                 </li>
                 <li>
@@ -85,12 +85,12 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-instagram" aria-hidden="true" />{' '}
-                    @OpenForgeTeam
+                    {translate('footer.social.instagram')}
                   </a>
                 </li>
                 <li>
                   <stencil-route-link url="/service-level-agreement">
-                    Read our SLA
+                  {translate('footer.social.sla')}
                   </stencil-route-link>
                 </li>
               </ul>
