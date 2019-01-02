@@ -24,7 +24,6 @@ export class AppHome {
   @Listen('window:resize')
   handleMobile() {
     if (window.innerWidth < 768) {
-      console.log('innerWidth');
       /* tslint:disable-next-line */
       $('#vision-svg').attr('data', '/assets/svg/mobile-vision.svg');
     } else {
@@ -438,9 +437,11 @@ export class AppHome {
           </div>
         </section>
 
+        {/* aside - cta */}
         <app-cta />
-        <app-footer />
         
+        <app-footer />
+
       </div>
     );
   }
