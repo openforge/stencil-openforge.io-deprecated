@@ -274,13 +274,13 @@ export class AppAbout {
         </section>
 
         {/* section - values */}
-        <section id="values" class="">
+        <section id="values" class="values">
           <div class="container text-center">
             <div class="row header">
               <div class="col-12">
-                <h3>
+                <h2>
                   <app-translate key="about.values.title" />
-                </h3>
+                </h2>
                 <p>
                   <app-translate key="about.values.text" />
                 </p>
@@ -288,16 +288,16 @@ export class AppAbout {
             </div>
             <div class="row">
               <div class="col-md-4 col-sm-12">
-                <img src="assets/about-graphic-honesty.png" />
-                <app-translate key="about.values.value1" />
+                <object data="assets/svg/about-graphic-integrity.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value2" />
               </div>
               <div class="col-md-4 col-sm-12">
-                <img src="assets/about-graphic-integrity.png" />
-                <app-translate key="about.values.value2" />
+                <object data="assets/svg/about-graphic-honesty.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value1" />
               </div>
               <div class="col-md-4 col-sm-12">
-                <img src="assets/about-graphic-transparency.png" />
-                <app-translate key="about.values.value3" />
+                <object data="assets/svg/about-graphic-transparency.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value3" />
               </div>
             </div>
           </div>
