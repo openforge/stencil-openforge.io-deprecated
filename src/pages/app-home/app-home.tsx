@@ -25,10 +25,10 @@ export class AppHome {
   handleMobile() {
     if (window.innerWidth < 768) {
       /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/mobile-vision.svg');
+      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision-mobile.svg');
     } else {
       /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/vision.svg');
+      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision.svg');
     }
   }
 
@@ -146,7 +146,7 @@ export class AppHome {
             </div>
           </div>
           <object
-            data="/assets/svg/graphic-home-header.svg"
+            data="/assets/svg/home-graphic-header.svg"
             class="svg-header-desktop"
           />
         </header>
@@ -169,7 +169,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image-h"
-                      src="/assets/svg/discovery.svg"
+                      src="/assets/svg/home-graphic-process-discovery.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -193,7 +193,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image-h"
-                      src="/assets/svg/process-design.svg"
+                      src="/assets/svg/home-graphic-process-design.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -217,7 +217,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
-                      src="/assets/svg/process-development.svg"
+                      src="/assets/svg/home-graphic-process-development.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -241,7 +241,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <img
                       class="carousel-image"
-                      src="/assets/svg/process-deployment.svg"
+                      src="/assets/svg/home-graphic-process-deployment.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
@@ -265,7 +265,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
                     <img
                       class="carousel-image-userfeedback"
-                      src="/assets/svg/process-userfeedback.svg"
+                      src="/assets/svg/home-graphic-process-userfeedback.svg"
                     />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">

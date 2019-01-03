@@ -4,15 +4,15 @@
 
   .hero {
     background-color: white;
-    background: url('/assets/svg/graphic-home-header-background.svg') center top;
+    background: url('/assets/svg/home-graphic-header-background.svg') center top;
     background-size: 100%;
     background-repeat: no-repeat;
     height: auto;
 
     @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/mobile-graphic-home-header.svg') top
+      background: url('/assets/svg/home-graphic-header-mobile.svg') top
           no-repeat,
-        url('/assets/svg/mobile-graphic-home-header-background.svg') center top
+        url('/assets/svg/home-graphic-header-background-mobile.svg') center top
           no-repeat;
       background-size: 600px 720px, cover;
       margin-top: 75px;
