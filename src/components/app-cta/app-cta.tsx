@@ -11,7 +11,7 @@ export class AppCta {
       <section id="cta" class="cta">
         <div class="row">
           <div class="col-md-6 col-sm-12 text-center cta-image">
-            <object data="/assets/svg/vision.svg" id="vision-svg" />
+            <object data="/assets/svg/cta-graphic-vision.svg" id="vision-svg" />
           </div>
 
           <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
