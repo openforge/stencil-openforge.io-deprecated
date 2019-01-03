@@ -208,7 +208,7 @@
     height: auto;
 
     .main-content {
-      background-color: $gray-light;
+      background-color: $gray-100;
       display: flex;
 
       @include media-breakpoint-down(sm) {
@@ -249,7 +249,7 @@
 
     .content-panel-inner {
       align-items: center;
-      background-color: $gray-light;
+      background-color: $gray-100;
       display: flex;
       height: calc(100vh - 75.45px);
       justify-content: center;
