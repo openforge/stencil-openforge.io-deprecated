@@ -16,7 +16,6 @@ describe('Contact Page', function () {
       cy.get('.navbar').contains('Development').click()
       cy.url().should('include', '/app-developer')
       cy.contains('Your Go-To App Developer')
-
     })
     it('Services should drop down to display UI/UX Design and navigate to design page', function(){
       cy.get('.navbar').contains('Services').click()
@@ -56,75 +55,57 @@ describe('Contact Page', function () {
     })
   })
   describe('Nav Bar Navigation (Mobile)', function(){
-    it('Nav menu should expand', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
+    beforeEach(() => {
+      cy.viewport(960,600) // Sets view to large to enable nav menu
+      cy.get('.navbar-toggler').click() //expands nav menu before each test
     })
     it('Nav menu should collapse', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.wait(2000)
       cy.get('.navbar-toggler').click()
       //cy.get('.navbar').should('not.be.visible', 'About')
     })
     it('Home on nav Bar should redirect to home page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('Home').click()
       cy.url().should('include', '/')
       cy.contains('Creating Digital Experiences')
     })
     it('Services should drop down to display Development and navigate to developer page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('Services').click()
       cy.get('.navbar').contains('Development').click()
       cy.url().should('include', '/app-developer')
       cy.contains('Your Go-To App Developer')
     })
     it('Services should drop down to display UI/UX Design and navigate to design page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('Services').click()
       cy.get('.navbar').contains('UX/UI Design').click()
       cy.url().should('include', '/app-designer')
       cy.contains('UI/UX App Designer')
     })
     it('Services should drop down to display Consulting and navigate to consulting page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('Services').click()
       cy.get('.navbar').contains('Consulting').click()
       cy.url().should('include', '/startup-consulting')
       cy.contains('Consulting for all Industries')
     })
     it('About should drop down to display Meet the team and navigate to about page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('About').click()
       cy.get('.navbar').contains('Meet the team').click()
       cy.url().should('include', '/about')
       cy.contains('We Are Passionate About Technology and Design')
     })
     it('About should drop down to display Juntoscope Case Study and navigate to juntoscope page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('About').click()
       cy.get('.navbar').contains('Juntoscope Case Study').click()
       cy.url().should('include', '/juntoscope')
       cy.contains('Case Study')
     })
     it('About should drop down to display Toolbox and navigate to Toolbox page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('About').click()
       cy.get('.navbar').contains('Toolbox').click()
       cy.url().should('include', '/toolbox')
       cy.contains('Here are some of the tools we use')
     })
     it('About should drop down to display PWA White Paper and navigate to PWA White Paper page', function(){
-      cy.viewport(960,600)
-      cy.get('.navbar-toggler').click()
       cy.get('.navbar').contains('About').click()
       cy.get('.navbar').contains('PWA White Paper').click()
       cy.url().should('include', '/resources/pwa-white-paper')
@@ -219,5 +200,5 @@ describe('Contact Page', function () {
     //it('Open native mail to contact Hello@openforge.io', function () {
      //cy.contains('hello@openforge.io').click()
      //})
-  })
+  }) 
 })
