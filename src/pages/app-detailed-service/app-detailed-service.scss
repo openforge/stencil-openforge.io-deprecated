@@ -200,4 +200,19 @@ section.services {
       text-align: center;
     }
   }
+
+  .services {
+    .card {
+      background: rgba($gray-100, 0.5);
+      border-radius: 22px;
+
+      &:hover {
+        background: pink;
+      }
+
+      img {
+        padding: 3rem;
+      }
+    }
+  }
 }

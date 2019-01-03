@@ -357,117 +357,158 @@ export class AppDetailedService {
         )}
         {this.imgs[this.match.params.service]
           ? [
-              <div id="second-content" class="container">
-                <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].first}
-                    alt=""
-                  />
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.first.title`}
-                      />
-                    </h2>
-                    <p>
-                      <app-translate
-                        key={`services.${this.match.params.service}.first.text`}
-                      />
-                    </p>
+
+            <div id="services" class="services">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-12">
+                    <h3>Our Services</h3>
                   </div>
-                </section>
-                <section class="text-img-container left-side">
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.second.title`}
-                      />
-                    </h2>
-                    <p>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.second.text`}
-                      />
-                    </p>
-                  </div>
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].second}
-                    alt=""
-                  />
-                </section>
-                <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].third}
-                    alt=""
-                  />
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.third.title`}
-                      />
-                    </h2>
-                    <p>
-                      <app-translate
-                        key={`services.${this.match.params.service}.third.text`}
-                      />
-                    </p>
-                  </div>
-                </section>
-              </div>,
-              <section>
-                <div class="our-toolbox">
-                  <h2>Our Toolbox</h2>
-                  <p>let us show you our skills in:</p>
-                  <div class="container">
-                    <div class="row">
-                      <div class="image-column col-sm-12 col-md-4">
-                        <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox.first
-                            }
-                            alt=""
-                          />
-                        </stencil-route-link>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                      <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                      <div class="card-body">
+                        <p class="card-text">Quick example of card text to flow into here</p>
                       </div>
-                      <div class="image-column col-sm-12 col-md-4">
-                        <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox
-                                .second
-                            }
-                            alt=""
-                          />
-                        </stencil-route-link>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                      <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                      <div class="card-body">
+                        <p class="card-text">Quick example of card text to flow into here</p>
                       </div>
-                      <div class="image-column col-sm-12 col-md-4">
-                        <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox.third
-                            }
-                            alt=""
-                          />
-                        </stencil-route-link>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-sm-12">
+                    <div class="card">
+                      <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                      <div class="card-body">
+                        <p class="card-text">Quick example of card text to flow into here</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </section>,
+              
+              </div>
+            </div>
+
+
+
+              // <div id="second-content" class="container">
+              //   <section class="text-img-container right-side">
+              //     <app-img
+              //       class="img-fluid d-none d-md-inline"
+              //       src={this.imgs[this.match.params.service].first}
+              //       alt=""
+              //     />
+              //     <div class="text-img-container-text">
+              //       <h2>
+              //         <app-translate
+              //           key={`services.${
+              //             this.match.params.service
+              //           }.first.title`}
+              //         />
+              //       </h2>
+              //       <p>
+              //         <app-translate
+              //           key={`services.${this.match.params.service}.first.text`}
+              //         />
+              //       </p>
+              //     </div>
+              //   </section>
+              //   <section class="text-img-container left-side">
+              //     <div class="text-img-container-text">
+              //       <h2>
+              //         <app-translate
+              //           key={`services.${
+              //             this.match.params.service
+              //           }.second.title`}
+              //         />
+              //       </h2>
+              //       <p>
+              //         <app-translate
+              //           key={`services.${
+              //             this.match.params.service
+              //           }.second.text`}
+              //         />
+              //       </p>
+              //     </div>
+              //     <app-img
+              //       class="img-fluid d-none d-md-inline"
+              //       src={this.imgs[this.match.params.service].second}
+              //       alt=""
+              //     />
+              //   </section>
+              //   <section class="text-img-container right-side">
+              //     <app-img
+              //       class="img-fluid d-none d-md-inline"
+              //       src={this.imgs[this.match.params.service].third}
+              //       alt=""
+              //     />
+              //     <div class="text-img-container-text">
+              //       <h2>
+              //         <app-translate
+              //           key={`services.${
+              //             this.match.params.service
+              //           }.third.title`}
+              //         />
+              //       </h2>
+              //       <p>
+              //         <app-translate
+              //           key={`services.${this.match.params.service}.third.text`}
+              //         />
+              //       </p>
+              //     </div>
+              //   </section>
+              // </div>,
+              // <section>
+              //   <div class="our-toolbox">
+              //     <h2>Our Toolbox</h2>
+              //     <p>let us show you our skills in:</p>
+              //     <div class="container">
+              //       <div class="row">
+              //         <div class="image-column col-sm-12 col-md-4">
+              //           <stencil-route-link url="/toolbox" exact={true}>
+              //             <app-img
+              //               class="img-fluid d-none d-md-inline"
+              //               src={
+              //                 this.imgs[this.match.params.service].toolbox.first
+              //               }
+              //               alt=""
+              //             />
+              //           </stencil-route-link>
+              //         </div>
+              //         <div class="image-column col-sm-12 col-md-4">
+              //           <stencil-route-link url="/toolbox" exact={true}>
+              //             <app-img
+              //               class="img-fluid d-none d-md-inline"
+              //               src={
+              //                 this.imgs[this.match.params.service].toolbox
+              //                   .second
+              //               }
+              //               alt=""
+              //             />
+              //           </stencil-route-link>
+              //         </div>
+              //         <div class="image-column col-sm-12 col-md-4">
+              //           <stencil-route-link url="/toolbox" exact={true}>
+              //             <app-img
+              //               class="img-fluid d-none d-md-inline"
+              //               src={
+              //                 this.imgs[this.match.params.service].toolbox.third
+              //               }
+              //               alt=""
+              //             />
+              //           </stencil-route-link>
+              //         </div>
+              //       </div>
+              //     </div>
+              //   </div>
+              // </section>,
             ]
           : null}
         {this.imgs[this.match.params.service] &&
