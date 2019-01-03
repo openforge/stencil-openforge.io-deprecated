@@ -260,13 +260,13 @@ export class AppAbout {
           </div>
         </header>
 
-        {/* section - image */}
-        <section id="image" class="image">
-          <div class="container text-center">
-            <div class="row header">
+        {/* section - team */}
+        <section id="team-photo" class="team-photo">
+          <div class="container">
+            <div class="row align-items-end text-center">
               <div class="col-12">
                 <p>
-                  <app-translate key="about.image.text" />
+                  <app-translate key="about.teamPhoto.text" />
                 </p>
               </div>
             </div>
@@ -303,10 +303,10 @@ export class AppAbout {
           </div>
         </section>
 
-        {/* section - about */}
-        <section id="about" class="about bg-gray">
+        {/* section - members */}
+        <section id="members" class="members">
           <div class="container text-center">
-            <div class="about header">
+            <div class="header">
               <h2>
                 <app-translate key="about.team.title" />
               </h2>

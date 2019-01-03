@@ -41,7 +41,21 @@
     }
   }
 
-  #values, #about {
+  .team-photo {
+    background-image: url('/assets/about-photo-team.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+  
+    .row {
+      height: 660px;
+    }
+
+    p {
+      color: white;
+    }
+  }
+
+  .values, .members {
     padding: 5rem 0;
 
     .header {
@@ -52,17 +66,5 @@
 
   .value-text {
     font-size: 24px;
-  }
-
-  .image {
-    background-image: url('/assets/bg-hero-handshake-desk.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: auto;
-    width: auto;
-
-    p {
-      color: white;
-    }
   }
 }
