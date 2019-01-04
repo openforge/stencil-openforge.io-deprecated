@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component } from '@stencil/core';
+import { Component, Listen } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -10,6 +10,7 @@ polyfill();
 })
 export class OpenForgeApp {
   mainEl: HTMLElement;
+  newServiceWorker: boolean = true;
 
   componentDidLoad() {
     try {
@@ -32,12 +33,71 @@ export class OpenForgeApp {
         }
       });
     }
+    console.log('new Service Worker available: ' + `${this.newServiceWorker}`);
+  }
+
+  showRefreshUI() {
+    this.newServiceWorker = true;
+  }
+
+  onNewServiceWorker(registration, callback) {
+    if (registration.waiting) {
+      return callback();
+    }
+
+    function listenInstalledStateChange() {
+      registration.installing.addEventListener('statechange', event => {
+        if (event.target.state === 'installed') {
+          // A new service worker is available, so trigger the callback to inform the user
+          callback();
+        }
+      });
+    }
+
+    if (registration.installing) {
+      return listenInstalledStateChange();
+    }
+
+    // We are currently controlled so a new SW may be found...
+    // Add a listener in case a new SW is found,
+    registration.addEventListener('updatefound', listenInstalledStateChange);
+  }
+
+  @Listen('load')
+  handleServiceWorker() {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      // Track updates to the Service Worker
+      if (!navigator.serviceWorker.controller) {
+        // The window client isn't currently controlled so it's a new service worker that will activate immediately
+        return;
+      }
+
+      // When the user asks to refresh the UI, we'll need to reload the window
+      let preventDevToolsReloadLoop;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        // Ensure refresh is only called once.
+        // This works around a bug in "force update on reload".
+        if (preventDevToolsReloadLoop) return;
+        preventDevToolsReloadLoop = true;
+        console.log('Controller loaded');
+        window.location.reload();
+      });
+
+      this.onNewServiceWorker(registration, this.showRefreshUI);
+    });
   }
 
   render() {
     return (
       <stencil-router>
-        <button id="sw">Here's a button</button>
+        <div>
+          {this.newServiceWorker ? (
+            <button class="sw">Here's a button</button>
+          ) : (
+            <span />
+          )}
+          {/* <button class="sw">Here's a button</button> */}
+        </div>
         <stencil-route-switch scrollTopOffset={0}>
           <stencil-route url="/" component="app-home" exact={true} />
           <stencil-route url="/404" component="app-404" exact={true} />
