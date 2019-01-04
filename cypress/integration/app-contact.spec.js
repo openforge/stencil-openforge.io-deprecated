@@ -171,7 +171,7 @@ describe('Contact Page', function () {
 
   describe('Footer Navigation', function() {
     it('Navigate to SLA page', function () {
-      cy.contains('Read our SLA').click()
+      cy.contains('Ready our SLA').click()
       cy.url().should('include', '/service-level-agreement')
     })
     it('Navigate to Developer page', function () {
