@@ -24,4 +24,13 @@ self.workbox.routing.registerRoute(
     }),
 );
 
+workbox.routing.registerRoute(
+  new RegExp('/api/'),
+  workbox.strategies.staleWhileRevalidate({
+    plugins: [
+      new workbox.broadcastUpdate.Plugin('api-updates')
+    ]
+  })
+);
+
 self.workbox.precaching.precacheAndRoute([]);

@@ -37,6 +37,7 @@ export class OpenForgeApp {
   render() {
     return (
       <stencil-router>
+        <button id="sw">Here's a button</button>
         <stencil-route-switch scrollTopOffset={0}>
           <stencil-route url="/" component="app-home" exact={true} />
           <stencil-route url="/404" component="app-404" exact={true} />
@@ -52,10 +53,7 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
-          <stencil-route
-            url="/resources/:source"
-            component="app-resources"
-          />
+          <stencil-route url="/resources/:source" component="app-resources" />
           <stencil-route url="/about/:member" component="app-team-landing" />
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
