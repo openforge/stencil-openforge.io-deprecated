@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -10,7 +10,7 @@ polyfill();
 })
 export class OpenForgeApp {
   mainEl: HTMLElement;
-  newServiceWorker: boolean = true;
+  newServiceWorker: boolean = false;
 
   componentDidLoad() {
     try {
@@ -36,11 +36,8 @@ export class OpenForgeApp {
     console.log('new Service Worker available: ' + `${this.newServiceWorker}`);
   }
 
-  showRefreshUI() {
-    this.newServiceWorker = true;
-  }
-
   onNewServiceWorker(registration, callback) {
+    console.log('onNewServiceWorker called');
     if (registration.waiting) {
       return callback();
     }
@@ -63,41 +60,89 @@ export class OpenForgeApp {
     registration.addEventListener('updatefound', listenInstalledStateChange);
   }
 
-  @Listen('load')
-  handleServiceWorker() {
+  listenForNewServiceWorker = window.addEventListener('load', event => {
+    console.log('load event detected');
+    console.log(event);
+    console.log('listenForNewServiceWorker function called');
     navigator.serviceWorker.register('/sw.js').then(registration => {
+      console.log('The Service Worker is registering');
+      console.log(registration);
       // Track updates to the Service Worker
       if (!navigator.serviceWorker.controller) {
+        console.log('This window client is not currently controlled');
         // The window client isn't currently controlled so it's a new service worker that will activate immediately
         return;
       }
 
       // When the user asks to refresh the UI, we'll need to reload the window
       let preventDevToolsReloadLoop;
-      navigator.serviceWorker.addEventListener('controllerchange', () => {
+      navigator.serviceWorker.addEventListener('controllerchange', event => {
+        console.log('controllerchange event detected');
+        console.log(event);
         // Ensure refresh is only called once.
         // This works around a bug in "force update on reload".
         if (preventDevToolsReloadLoop) return;
         preventDevToolsReloadLoop = true;
-        console.log('Controller loaded');
         window.location.reload();
       });
 
-      this.onNewServiceWorker(registration, this.showRefreshUI);
+      setTimeout(
+        this.onNewServiceWorker(registration, () => {
+          console.log('new service worker detected');
+          this.newServiceWorker = true;
+        }),
+        5000
+      );
     });
-  }
+  });
+
+  // @Listen('load')
+  // handleServiceWorker() {
+  //   console.log('load event detected');
+  //   console.log(event);
+  //   console.log('listenForNewServiceWorker function called');
+  //   navigator.serviceWorker.register('/sw.js').then(registration => {
+  //     console.log('The Service Worker is registering');
+  //     console.log(registration);
+  //     // Track updates to the Service Worker
+  //     if (!navigator.serviceWorker.controller) {
+  //       console.log('This window client is not currently controlled');
+  //       // The window client isn't currently controlled so it's a new service worker that will activate immediately
+  //       return;
+  //     }
+
+  //     // When the user asks to refresh the UI, we'll need to reload the window
+  //     let preventDevToolsReloadLoop;
+  //     navigator.serviceWorker.addEventListener('controllerchange', (event) => {
+  //       console.log('controllerchange event detected');
+  //       console.log(event);
+  //       // Ensure refresh is only called once.
+  //       // This works around a bug in "force update on reload".
+  //       if (preventDevToolsReloadLoop) return;
+  //       preventDevToolsReloadLoop = true;
+  //       console.log(event + ' Controller loaded');
+  //       window.location.reload();
+  //     });
+
+  //     setTimeout(
+  //       this.onNewServiceWorker(registration, () => {
+  //       console.log('new service worker detected');
+  //       this.newServiceWorker = true;
+  //     })
+  //     , 3000);
+  //   });
+  // }
 
   render() {
     return (
       <stencil-router>
-        <div>
+        {/* <div>
           {this.newServiceWorker ? (
             <button class="sw">Here's a button</button>
           ) : (
             <span />
           )}
-          {/* <button class="sw">Here's a button</button> */}
-        </div>
+        </div> */}
         <stencil-route-switch scrollTopOffset={0}>
           <stencil-route url="/" component="app-home" exact={true} />
           <stencil-route url="/404" component="app-404" exact={true} />
