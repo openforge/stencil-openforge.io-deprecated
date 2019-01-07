@@ -22,10 +22,7 @@ export class AppCaseStudy {
       );
     document
       .querySelector("meta[property='og:url']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/juntoscope/'
-      );
+      .setAttribute('content', 'https://openforge.io/juntoscope/');
     document
       .querySelector("meta[property='og:image']")
       .setAttribute(
@@ -74,9 +71,10 @@ export class AppCaseStudy {
         </section>
         <section class="container product-section">
           <app-img
-              class=""
-              src="/assets/work-example-juntoscope-mobile.png"
-              alt="juntoscope mobile view"
+            class=""
+            id="product-section-image"
+            src="/assets/work-example-juntoscope-mobile.png"
+            alt="juntoscope mobile view"
           />
           <div class="text-container">
             <h2>The Product</h2>
@@ -127,6 +125,7 @@ export class AppCaseStudy {
                 <div class="timeline-item left">
                   <app-img
                     class=""
+                    id="timeline-discovery-image"
                     src="/assets/case-study-discovery.png"
                     alt="case study discovery icon"
                   />
@@ -145,6 +144,7 @@ export class AppCaseStudy {
               <div class="timeline-item right timeline-bullet-right">
                 <app-img
                   class=""
+                  id="timeline-design-image"
                   src="/assets/case-study-design.png"
                   alt="case study design icon"
                 />
@@ -161,6 +161,7 @@ export class AppCaseStudy {
                 <div class="timeline-item left timeline-bullet-left">
                   <app-img
                     class=""
+                    id="timeline-development-image"
                     src="/assets/case-study-development.png"
                     alt="case study development icon"
                   />
@@ -179,6 +180,7 @@ export class AppCaseStudy {
               <div class="timeline-item right timeline-bullet-right">
                 <app-img
                   class=""
+                  id="timeline-quality-assurance-image"
                   src="/assets/case-study-qa.png"
                   alt="case study quality assurance icon"
                 />
@@ -196,7 +198,8 @@ export class AppCaseStudy {
               <div class="blank-cell">&nbsp;</div>
               <div class="timeline-item">
                 <app-img
-                  class=""
+                  class="timeline-launch-image"
+                  id=""
                   src="/assets/graphic-home-deployment.png"
                   alt="case study deployment icon"
                 />
@@ -208,26 +211,20 @@ export class AppCaseStudy {
             </div>
           </div>
         </section>
-        <section class="container conclusion-section">
+        <section class="container conclusion-section" id="conclusion-section">
           <h2>A Deeper Dive</h2>
           <h3>Design</h3>
           <p>
             We began the{' '}
-            <stencil-route-link
-              url="/services/app-designer"
-            >
+            <stencil-route-link url="/services/app-designer">
               design process
             </stencil-route-link>{' '}
             by researching similar apps on the marketplace and identifying
             features we liked and did not like about them. We then set up user
             flows and wireframing each identified screen. This process, along
             with the design and styling phase, occurs in{' '}
-            <stencil-route-link
-            url="/toolbox"
-            >
-              Sketch
-            </stencil-route-link>
-            . After completing the full skeleton, we reviewed each user flow and
+            <stencil-route-link url="/toolbox">Sketch</stencil-route-link>.
+            After completing the full skeleton, we reviewed each user flow and
             tried to identify any gaps or weaknesses in the user flow. From
             there, we made modifications and began identifying styles and colors
             for the app. We created a logo and a splash screen and applied the
@@ -238,9 +235,7 @@ export class AppCaseStudy {
           <h3>Development</h3>
           <p>
             We began the{' '}
-            <stencil-route-link
-              url="/services/app-developer"
-            >
+            <stencil-route-link url="/services/app-developer">
               development process
             </stencil-route-link>{' '}
             with a full design review. Our team worked closely with the
@@ -262,9 +257,7 @@ export class AppCaseStudy {
           <h3>What we learned</h3>
           <p>
             Throughout the process of developing JuntoScope,{' '}
-            <stencil-route-link url="/about">
-              our team
-            </stencil-route-link>{' '}
+            <stencil-route-link url="/about">our team</stencil-route-link>{' '}
             learned the importance of establishing a process that is fully
             understood by each and every member. Our company was going through a
             transitional phase early on in the development of JuntoScope
