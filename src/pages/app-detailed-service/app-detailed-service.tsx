@@ -273,321 +273,163 @@ export class AppDetailedService {
 
   render() {
     return (
-      <section class="services">
-        {this.imgs[this.match.params.service] ? '' : ''}
+      <div class="services">
         {/* header - hero */}
         {this.match.params.service === 'app-developer' ? (
           <header class="hero development">
-            <div class="overlay" />
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
+                <div class="col-sm-12 col-md-6">
+                  <h1>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.title`}
                     />
-                  </h2>
+                  </h1>
                   <p>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.text`}
                     />
                   </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    <app-translate key="opportunities.hero.text2" />
-                  </button>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <img src="/assets/svg/process-development.svg" />
                 </div>
               </div>
+              <div class="line-break" />
             </div>
           </header>
         ) : this.match.params.service === 'app-designer' ? (
-          <header class="hero design">
-            <div class="overlay" />
+          <header class="hero development">
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
+                <div class="col-sm-12 col-md-6">
+                  <h1>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.title`}
                     />
-                  </h2>
+                  </h1>
                   <p>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.text`}
                     />
                   </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    <app-translate key="opportunities.hero.text2" />
-                  </button>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <img src="/assets/svg/process-design.svg" />
                 </div>
               </div>
+              <div class="line-break" />
             </div>
           </header>
         ) : (
-          <header class="hero consulting">
-            <div class="overlay" />
+          <header class="hero development">
             <div class="container">
               <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
+                <div class="col-sm-12 col-md-6">
+                  <h1>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.title`}
                     />
-                  </h2>
+                  </h1>
                   <p>
                     <app-translate
                       key={`services.${this.match.params.service}.hero.text`}
                     />
                   </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    <app-translate key="opportunities.hero.text2" />
-                  </button>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <img src="/assets/svg/discovery.svg" />
                 </div>
               </div>
+              <div class="line-break" />
             </div>
           </header>
         )}
-        {this.imgs[this.match.params.service]
-          ? [
 
-            <div id="services" class="services">
-              <div class="container text-center">
-                <div class="row">
-                  <div class="col-12">
-                    <h3>Our Services</h3>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4 col-sm-12">
-                    <div class="card">
-                      <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
-                      <div class="card-body">
-                        <p class="card-text">Quick example of card text to flow into here</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-12">
-                    <div class="card">
-                      <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
-                      <div class="card-body">
-                        <p class="card-text">Quick example of card text to flow into here</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 col-sm-12">
-                    <div class="card">
-                      <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
-                      <div class="card-body">
-                        <p class="card-text">Quick example of card text to flow into here</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              
+        <section id="our-services" class="our-services">
+          <div class="container text-center">
+            <div class="row header">
+              <div class="col-12">
+                <h2>Our Services</h2>
               </div>
             </div>
 
-
-
-              // <div id="second-content" class="container">
-              //   <section class="text-img-container right-side">
-              //     <app-img
-              //       class="img-fluid d-none d-md-inline"
-              //       src={this.imgs[this.match.params.service].first}
-              //       alt=""
-              //     />
-              //     <div class="text-img-container-text">
-              //       <h2>
-              //         <app-translate
-              //           key={`services.${
-              //             this.match.params.service
-              //           }.first.title`}
-              //         />
-              //       </h2>
-              //       <p>
-              //         <app-translate
-              //           key={`services.${this.match.params.service}.first.text`}
-              //         />
-              //       </p>
-              //     </div>
-              //   </section>
-              //   <section class="text-img-container left-side">
-              //     <div class="text-img-container-text">
-              //       <h2>
-              //         <app-translate
-              //           key={`services.${
-              //             this.match.params.service
-              //           }.second.title`}
-              //         />
-              //       </h2>
-              //       <p>
-              //         <app-translate
-              //           key={`services.${
-              //             this.match.params.service
-              //           }.second.text`}
-              //         />
-              //       </p>
-              //     </div>
-              //     <app-img
-              //       class="img-fluid d-none d-md-inline"
-              //       src={this.imgs[this.match.params.service].second}
-              //       alt=""
-              //     />
-              //   </section>
-              //   <section class="text-img-container right-side">
-              //     <app-img
-              //       class="img-fluid d-none d-md-inline"
-              //       src={this.imgs[this.match.params.service].third}
-              //       alt=""
-              //     />
-              //     <div class="text-img-container-text">
-              //       <h2>
-              //         <app-translate
-              //           key={`services.${
-              //             this.match.params.service
-              //           }.third.title`}
-              //         />
-              //       </h2>
-              //       <p>
-              //         <app-translate
-              //           key={`services.${this.match.params.service}.third.text`}
-              //         />
-              //       </p>
-              //     </div>
-              //   </section>
-              // </div>,
-              // <section>
-              //   <div class="our-toolbox">
-              //     <h2>Our Toolbox</h2>
-              //     <p>let us show you our skills in:</p>
-              //     <div class="container">
-              //       <div class="row">
-              //         <div class="image-column col-sm-12 col-md-4">
-              //           <stencil-route-link url="/toolbox" exact={true}>
-              //             <app-img
-              //               class="img-fluid d-none d-md-inline"
-              //               src={
-              //                 this.imgs[this.match.params.service].toolbox.first
-              //               }
-              //               alt=""
-              //             />
-              //           </stencil-route-link>
-              //         </div>
-              //         <div class="image-column col-sm-12 col-md-4">
-              //           <stencil-route-link url="/toolbox" exact={true}>
-              //             <app-img
-              //               class="img-fluid d-none d-md-inline"
-              //               src={
-              //                 this.imgs[this.match.params.service].toolbox
-              //                   .second
-              //               }
-              //               alt=""
-              //             />
-              //           </stencil-route-link>
-              //         </div>
-              //         <div class="image-column col-sm-12 col-md-4">
-              //           <stencil-route-link url="/toolbox" exact={true}>
-              //             <app-img
-              //               class="img-fluid d-none d-md-inline"
-              //               src={
-              //                 this.imgs[this.match.params.service].toolbox.third
-              //               }
-              //               alt=""
-              //             />
-              //           </stencil-route-link>
-              //         </div>
-              //       </div>
-              //     </div>
-              //   </div>
-              // </section>,
-            ]
-          : null}
-        {this.imgs[this.match.params.service] &&
-        this.imgs[this.match.params.service].examples ? (
-          <div class="container">
-            <section class="work-examples">
-              <h2>Work Examples</h2>
-              <div class="text-img-container right-side">
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.first}
-                  alt="voyage-app-image"
-                />
-                <div class="text-img-container-text">
-                  <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.name`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.desc`}
-                    />
-                  </p>
-                  <p class="check-link">
-                    <a href="https://try.juntoscope.com" target="_blank">
-                      Check it out
-                    </a>
-                  </p>
+            <div class="row">
+              <div class="col-md-4 col-sm-12 d-flex">
+                <div class="card flex-fill">
+                  <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                  {/* {this.imgs[this.match.params.service].first} */}
+                  <div class="line-break" />
+                  <div class="card-body text-left">
+                    <h3>
+                      <app-translate key={`services.${this.match.params.service}.first.title`} />
+                    </h3>
+                    <p class="card-text">
+                      <app-translate key={`services.${this.match.params.service}.first.text`} />
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="text-img-container left-side">
-                <div class="text-img-container-text">
-                  <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.name`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.desc`}
-                    />
-                  </p>
-                  <p class="check-link">
-                    <a
-                      href="https://www.newoceanhealthsolutions.com/product-and-programs/"
-                      target="_blank"
-                    >
-                      Check it out
-                    </a>
-                  </p>
+              <div class="col-md-4 col-sm-12 d-flex">
+                <div class="card flex-fill">
+                  <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                  <div class="line-break" />
+                  <div class="card-body text-left">
+                    <h3>
+                      <app-translate key={`services.${this.match.params.service}.second.title`} />
+                    </h3>
+                    <p class="card-text">
+                      <app-translate key={`services.${this.match.params.service}.second.text`} />
+                    </p>
+                  </div>
                 </div>
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.second}
-                  alt="voyage-app-image"
-                />
               </div>
-            </section>
+              <div class="col-md-4 col-sm-12 d-flex">
+                <div class="card flex-fill">
+                  <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                  <div class="line-break" />
+                  <div class="card-body text-left">
+                    <h3>
+                      <app-translate key={`services.${this.match.params.service}.third.title`} />
+                    </h3>
+                    <p class="card-text">
+                      <app-translate key={`services.${this.match.params.service}.third.text`} />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
           </div>
-        ) : null}
-        <app-cta link-url="/contact">
-          <span slot="header">
-            <app-translate key="services.aside.title" />
-          </span>
-          <span slot="link">
-            <app-translate key="services.aside.link" />
-          </span>
-        </app-cta>
+        </section>
+
+        <section id="worked-with" class="worked-with">
+          <div class="container text-center">
+            <div class="row header">
+              <div class="col-12">
+                <h2>Who We've Worked With</h2>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {this.match.params.service === 'app-developer' ? (
+          <section>
+            <div class="header">Development</div>
+          </section>
+        ) : this.match.params.service === 'app-designer' ? (
+          <section>
+            <div class="header">Design</div>
+          </section>
+        ) : (
+          <section>
+            <div class="header">Consulting</div>
+          </section>
+        )}
+
+        {/* <app-cta /> */}
         <app-footer />
-      </section>
+      </div>
     );
   }
 
