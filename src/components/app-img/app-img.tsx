@@ -59,7 +59,7 @@ export class Img {
   private changeImageFormat() {
     if (this.loadSrc && localStorage.getItem('allowWebp') === 'true') {
       const idx = this.loadSrc.lastIndexOf('.');
-      this.loadSrc = this.loadSrc.substring(0, idx) + '.webp';
+      this.loadSrc = `${this.loadSrc.substring(0, idx)}.webp`;
     }
   }
 
@@ -67,22 +67,12 @@ export class Img {
     this.changeImageFormat();
     console.log(this.loadSrc);
     return (
-      <div>
-        {localStorage.getItem('isSafari') === 'false' ? (
-          <lazy-img
-            class={{ fit: this.fit }}
-            src={this.loadSrc}
-            alt={this.alt}
-          />
-        ) : (
-          <img
-            class={{ fit: this.fit }}
-            src={this.loadSrc}
-            alt={this.alt}
-            decoding="async"
-          />
-        )}
-      </div>
+      <img
+        class={{ fit: this.fit }}
+        src={this.loadSrc}
+        alt={this.alt}
+        decoding="async"
+      />
     );
   }
 }
