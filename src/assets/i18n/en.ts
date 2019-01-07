@@ -129,23 +129,6 @@ export const translations = {
       },
     },
     services: {
-      general: {
-        development: {
-          title: 'App Development',
-          text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
-        },
-        design: {
-          title: 'UI/UX Design',
-          text:
-            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
-        },
-        consulting: {
-          title: 'Consulting',
-          text:
-            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
-        },
-      },
       'app-developer': {
         hero: {
           title: 'Your Go-To App Developer',
@@ -166,19 +149,7 @@ export const translations = {
           title: 'Web App Development',
           text:
             'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
-        },
-        examples: {
-          first: {
-            name: 'JuntoScope',
-            desc:
-              'JuntoScope was a project that OpenForge created in response to the need for a tool that would allow developers to scope tasks more accurately and efficiently. Our team came together and designed and developed this tool to function as an integration with Teamwork Projects that would allow users to scope tasks with their team and plug those times directly into Teamwork through the API.',
-          },
-          second: {
-            name: 'The Voyage Admin Portal',
-            desc:
-              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. New Ocean wanted a platform where users could manage their own company accounts and easily invite users and add challenges for their Voyage users. We developed the admin portal using Angular and the framework Bootstrap. We also hooked it up with their existing backend.',
-          },
-        },
+        }
       },
       'app-designer': {
         hero: {
@@ -192,7 +163,7 @@ export const translations = {
             'If you bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.',
         },
         second: {
-          title: 'UI/UX Design',
+          title: 'Experience Design',
           text:
             'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good”. Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
         },
@@ -200,19 +171,7 @@ export const translations = {
           title: 'Clickable Prototype',
           text:
             'Does your company or startup need an app prototype before moving forward with development? Our design to will use Marvel to bring your ideas to life with a clickable prototype. Interact with your prototype and provide feedback directly on specific elements to refine the feel to your liking.',
-        },
-        examples: {
-          first: {
-            name: 'The Voyage',
-            desc:
-              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. They came to us with an existing mobile application, which lacked consistency and a user experience that matched their target user base. We updated the flow of the application to be consistent across operating systems and to create a more intuitive experience.',
-          },
-          second: {
-            name: 'LoudCloud',
-            desc:
-              'LoudCloud is a mobile application that lets users call and text with temporary numbers from around the world. Loudcloud came to Webjunto with an iOS app looking for a hybrid update and redesign. In our UX audit, we found a need for flatter UX that focuses on conversions rather than numbers as well as a clean and light look and feel.',
-          },
-        },
+        }
       },
       'startup-consulting': {
         hero: {
@@ -234,12 +193,8 @@ export const translations = {
           title: 'Marketing Consulting',
           text:
             'We will help you understand your current ROI on your marketing initiatives. Our marketing audit will help you see the results from your marketing campaigns, what channels are most profitable, and what you aren’t doing that you’re losing out on! We will perform an in-depth analysis of your strengths and weaknesses and provide advice on options you can do yourself or take back to your marketing agency to improve your reach and boost your ROI',
-        },
-      },
-      aside: {
-        title: 'Want to learn more?',
-        link: 'Get in touch',
-      },
+        }
+      }
     },
     opportunities: {
       hero: {
