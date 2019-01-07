@@ -14,7 +14,7 @@ export class OpenForgeApp {
 
   constructor() {
     const browserService = new BrowserService();
-    browserService.detectBrowser();
+    browserService.check_webp();
   }
 
   componentDidLoad() {
