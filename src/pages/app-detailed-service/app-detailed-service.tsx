@@ -16,42 +16,28 @@ export class AppDetailedService {
   @State()
   imgs = {
     'app-developer': {
-      first: '/assets/services-development-box.png',
-      second: '/assets/services-development-robot.png',
-      third: '/assets/services-development-phone.png',
-      toolbox: {
-        first: '/assets/services-development-toolbox-first.png',
-        second: '/assets/services-development-toolbox-second.png',
-        third: '/assets/github-logo-white.png',
-      },
-      examples: {
-        first: '/assets/work-example-juntoscope-mobile.png',
-        second: '/assets/work-example-cap.png',
-      },
+      header: '/assets/svg/services-graphic-development-header.svg',
+      services: {
+        first: '/assets/svg/services-graphic-development1.svg',
+        second: '/assets/svg/services-graphic-development2.svg',
+        third: '/assets/svg/services-graphic-development3.svg',
+      }
     },
     'app-designer': {
-      first: '/assets/services-design-bulb.png',
-      second: '/assets/services-design-notebook.png',
-      third: '/assets/services-design-pencil.png',
-      toolbox: {
-        first: '/assets/services-design-toolbox-first.png',
-        second: '/assets/services-design-toolbox-second.png',
-        third: '/assets/services-design-toolbox-third.png',
-      },
-      examples: {
-        first: '/assets/work-example-voyage.png',
-        second: '/assets/work-example-loudcloud-mobile.png',
-      },
+      header: '/assets/svg/process-design.svg',
+      services: {
+        first: '/assets/svg/services-graphic-design1.svg',
+        second: '/assets/svg/services-graphic-design2.svg',
+        third: '/assets/svg/services-graphic-design3.svg',
+      }
     },
     'startup-consulting': {
-      first: '/assets/services-consulting-pc.png',
-      second: '/assets/services-consulting-notepad.png',
-      third: '/assets/services-consulting-arrow.png',
-      toolbox: {
-        first: '/assets/services-consulting-toolbox-first.png',
-        second: '/assets/services-consulting-toolbox-second.png',
-        third: '/assets/services-consulting-toolbox-third.png',
-      },
+      header: '/assets/svg/discovery.svg',
+      services: {
+        first: '/assets/svg/services-graphic-consulting1.svg',
+        second: '/assets/svg/services-graphic-consulting2.svg',
+        third: '/assets/svg/services-graphic-consulting3.svg',
+      }
     },
   };
 
@@ -275,76 +261,28 @@ export class AppDetailedService {
     return (
       <div class="services">
         {/* header - hero */}
-        {this.match.params.service === 'app-developer' ? (
-          <header class="hero development">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-6">
-                  <h1>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
-                  </h1>
-                  <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
-                  </p>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <img src="/assets/svg/process-development.svg" />
-                </div>
+        <header class="hero development">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-6">
+                <h1>
+                  <app-translate
+                    key={`services.${this.match.params.service}.hero.title`}
+                  />
+                </h1>
+                <p>
+                  <app-translate
+                    key={`services.${this.match.params.service}.hero.text`}
+                  />
+                </p>
               </div>
-              <div class="line-break" />
-            </div>
-          </header>
-        ) : this.match.params.service === 'app-designer' ? (
-          <header class="hero development">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-6">
-                  <h1>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
-                  </h1>
-                  <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
-                  </p>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <img src="/assets/svg/process-design.svg" />
-                </div>
+              <div class="col-sm-12 col-md-6">
+                <img src={this.imgs[this.match.params.service].header} />
               </div>
-              <div class="line-break" />
             </div>
-          </header>
-        ) : (
-          <header class="hero development">
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-6">
-                  <h1>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
-                  </h1>
-                  <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
-                  </p>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                  <img src="/assets/svg/discovery.svg" />
-                </div>
-              </div>
-              <div class="line-break" />
-            </div>
-          </header>
-        )}
+            <div class="line-break" />
+          </div>
+        </header>
 
         <section id="our-services" class="our-services">
           <div class="container text-center">
@@ -353,12 +291,10 @@ export class AppDetailedService {
                 <h2>Our Services</h2>
               </div>
             </div>
-
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex">
                 <div class="card flex-fill">
-                  <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
-                  {/* {this.imgs[this.match.params.service].first} */}
+                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
                   <div class="line-break" />
                   <div class="card-body text-left">
                     <h3>
@@ -372,7 +308,7 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 d-flex">
                 <div class="card flex-fill">
-                  <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
                   <div class="line-break" />
                   <div class="card-body text-left">
                     <h3>
@@ -386,7 +322,7 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 d-flex">
                 <div class="card flex-fill">
-                  <img class="card-img-top" src="/assets/services-consulting-arrow.png"/>
+                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
                   <div class="line-break" />
                   <div class="card-body text-left">
                     <h3>
