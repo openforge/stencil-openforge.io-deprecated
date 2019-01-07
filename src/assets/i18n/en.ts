@@ -322,47 +322,30 @@ export const translations = {
       address: {
         header: 'Our Headquarters',
         name: 'OpenForge',
-        line1: '1010 N Hancock St',
-        line2: 'Philadelphia, PA 19123',
+        line1: '1608 Walnut Street',
+        line2: 'Philadelphia, PA 19103',
         email: 'hello@openforge.io',
         phoneNumber: '(215)-821-8673',
       },
-
-      partners: {
-        header: 'Our Partners',
-
-        ionic: {
-          title: 'Ionic framework website',
-          alt: 'Ionic',
-        },
-        marketing215: {
-          title: '215 marketing website',
-          alt: '215 Marketing',
-        },
-
-        goEmerchant: {
-          title: 'go emerchant website',
-          alt: 'goEmerchant Payment Processing',
-        },
+      work: {
+        header: 'Work At OpenForge',
+        developer: `I'M A DEVELOPER`,
+        designer: `I'M A DESIGNER`
       },
-
       social: {
         followUs: 'Follow Us',
+        twitter: '@OpenForge_US',
+        facebook: 'OpenForge_US',
+        linkedin: 'OpenForge_US',
+        instagram: '@OpenForgeTeam',
+        sla: 'Ready our SLA'
       },
-
       webinar: {
         signup: 'Startup Junto',
         webinarText:
           'Startup Junto is a curated community for startup founders and entrepreneurs.',
-        register: 'Register Today!',
+        register: 'JOIN US',
       },
-
-      blog: {
-        header: 'Subscribe to Blog via Email',
-        content: 'Coming soon!',
-      },
-
-      copyright: '&copy; OpenForge. All rights reserved.',
     },
 
     nav: {
