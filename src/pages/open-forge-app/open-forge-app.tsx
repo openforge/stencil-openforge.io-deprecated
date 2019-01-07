@@ -78,6 +78,7 @@ export class OpenForgeApp {
 
       setTimeout(
         this.onNewServiceWorker(registration, () => {
+          console.log('New service worker detected');
           this.newServiceWorker = true;
         }),
         10000
