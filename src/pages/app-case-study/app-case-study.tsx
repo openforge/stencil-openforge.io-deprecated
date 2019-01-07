@@ -47,7 +47,7 @@ export class AppCaseStudy {
             </div>
           </div>
         </header>
-        <section class="container text-section">
+        <section class="container text-section" id="the-problem-text">
           <h2>The Problem</h2>
           <p>
             Determining a scope of hours for a large project that will be
@@ -57,7 +57,7 @@ export class AppCaseStudy {
             that accounts for differences in experience levels across a team.
           </p>
         </section>
-        <section class="text-section background-image">
+        <section class="text-section background-image" id="the-goal-text">
           <div class="container" style={{ padding: '25px' }}>
             <h2>The Goal</h2>
             <p>
@@ -76,7 +76,7 @@ export class AppCaseStudy {
             src="/assets/work-example-juntoscope-mobile.png"
             alt="juntoscope mobile view"
           />
-          <div class="text-container">
+          <div class="text-container" id="the-product-text">
             <h2>The Product</h2>
             <p>
               The goal of{' '}

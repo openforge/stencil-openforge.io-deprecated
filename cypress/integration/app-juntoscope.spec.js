@@ -4,7 +4,7 @@ describe('JuntoScope Page', function () {
       cy.visit( env + '/juntoscope')
     })
 
-    /** describe('Nav Bar Navigation (Desktop)', function(){
+    describe('Nav Bar Navigation (Desktop)', function(){
         it('Home on nav Bar should redirect to home page', function(){
           cy.get('.navbar').contains('Home').click()
           cy.url().should('include', '/')
@@ -111,8 +111,8 @@ describe('JuntoScope Page', function () {
           cy.url().should('include', '/resources/pwa-white-paper')
           cy.contains('What is a PWA and is it right for you?')
         })
-      })*/
-      /** 
+      })
+      
       describe('Header', function() {
         it('Header should display with appropriate text content within it', function() {
           const h2Content =  'CASE STUDY'
@@ -126,19 +126,19 @@ describe('JuntoScope Page', function () {
 
     describe('Content', function() {
         it('The problem should display with content', function() {
-            cy.get('.container').contains('The Problem')
-            cy.get('.container').contains('Determining a scope of hours for a large project that will be completed by a team of developers is difficult and leaves too high of a margin of error - and mistakes can be costly! Project Managers need a way to accurately determine the scope of a project in a way that accounts for differences in experience levels across a team.')
+            cy.get('#the-problem-text').contains('The Problem')
+            cy.get('#the-problem-text').contains('Determining a scope of hours for a large project that will be completed by a team of developers is difficult and leaves too high of a margin of error - and mistakes can be costly! Project Managers need a way to accurately determine the scope of a project in a way that accounts for differences in experience levels across a team.')
         })
         it('The Goal displays with content and background graphic', function(){
-            cy.get('.container').contains('The Goal')//fails randomly
-            cy.get('.container').contains('Create an app that allows a team to accurately scope a collaborative project in a way that is seamless, painless and reduces the margin of error. Our audience? Developers, project managers, consultants, and anyone looking to maximize the efficiency of their team.')
+            cy.get('#the-goal-text').contains('The Goal')//fails randomly
+            cy.get('#the-goal-text').contains('Create an app that allows a team to accurately scope a collaborative project in a way that is seamless, painless and reduces the margin of error. Our audience? Developers, project managers, consultants, and anyone looking to maximize the efficiency of their team.')
         })
     })
     
     describe('The Product', function(){
         it('The Product displays with content and Graphic', function(){
-            cy.get('.text-container').contains('The Product')//fails randomly
-            cy.get('.text-container').contains('The goal of JuntoScope is to help teams determine scopes for tasks in Teamwork.com© Projects more accurately, quickly, and efficiently to keep projects within budget and on time. Integrating with Teamwork Projects API, teams will be able to:')
+            cy.get('#the-product-text').contains('The Product')//fails randomly
+            cy.get('#the-product-text').contains('The goal of JuntoScope is to help teams determine scopes for tasks in Teamwork.com© Projects more accurately, quickly, and efficiently to keep projects within budget and on time. Integrating with Teamwork Projects API, teams will be able to:')
             cy.get('#product-section-image').should('exist').and('be.visible')
         })
         it('The product bullets dispaly', function(){
@@ -198,7 +198,7 @@ describe('JuntoScope Page', function () {
                 cy.get('#timeline-quality-assurance-image').should('exist').and('be.visible')
             })
         })
-    })*/
+    })
 
     describe('A Deeper Dive section', function(){
         it('A Deeper Dive Displays', function(){
@@ -237,22 +237,42 @@ describe('JuntoScope Page', function () {
     describe('Back To Top', function(){
         it('Back To Top Scrolls To Top', function(){
             cy.get('.top-link').contains('back to top').click()
-            //should check current scroll point
-            //cy.window().then(($window) => {
-            //    expect($window.scrollY).to.be.closeTo(0, 100);
-            //  })
         })
     })
 
     describe('Page Hyperlinks Work', function(){
-        it('Page Hyperlinks Work', function(){
-            
+        it('Temawork Hyperlinks Work', function(){
+            cy.get('.text-container').contains('Teamwork.com').click()
+            cy.request('https://www.teamwork.com/?partner=gqfq4mb55o')
         })
+        it('JuntoScope Hyperlinks Work', function(){
+            cy.get('.text-container').contains('JuntoScope').click()
+            cy.request('http://try.juntoscope.com/')
+        })
+        it('Design Process Hyperlinks Work', function(){
+            cy.get('#conclusion-section').contains('design process').click()
+            cy.url().should('include', '/app-designer')
+        })
+        it('Sketch Hyperlinks Work', function(){
+            cy.get('#conclusion-section').contains('Sketch').click()
+            cy.url().should('include', '/toolbox')
+        })
+        it('development process Hyperlinks Work', function(){
+            cy.get('#conclusion-section').contains('development process').click()
+            cy.url().should('include', '/app-developer')
+        })
+        it('Our Team Hyperlinks Work', function(){
+            cy.get('#conclusion-section').contains('our team').click()
+            cy.url().should('include', '/about')
+        })
+        it('JuntoScope Hyperlinks Work', function(){
+            cy.get('#conclusion-section').contains('JuntoScope').click()
+            cy.request('http://try.juntoscope.com/')
+        })
+
     })
 
-
-
-      /** describe('Footer Navigation', function() {
+    describe('Footer Navigation', function() {
         it('Navigate to SLA page', function () {
           cy.contains('Ready our SLA').click()
           cy.url().should('include', '/service-level-agreement')
@@ -283,5 +303,5 @@ describe('JuntoScope Page', function () {
         //it('Open native mail to contact Hello@openforge.io', function () {
          //cy.contains('hello@openforge.io').click()
          //})
-      }) */
+    })
 })
