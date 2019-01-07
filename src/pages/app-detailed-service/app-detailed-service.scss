@@ -52,12 +52,115 @@
     }
   }
 
-  .our-work {
-
-  }
-
   .line-break {
     border-bottom: 1px solid $gray-800;
+  }
+  
+  .work {
+    height: auto;
+
+    .main-content {
+      background-color: $gray-100;
+      display: flex;
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .sidebar {
+      width: 50%;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    .content {
+      width: 50%;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+
+      .content-panel {
+        align-items: flex-end;
+        background-image: url('/assets/home-graphic-juntoscope-pattern.png');
+        display: flex;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+
+        @include media-breakpoint-down(sm) {
+          display: table;
+        }
+      }
+
+      .last-panel {
+        height: 0;
+      }
+    }
+
+    .content-panel-inner {
+      align-items: center;
+      background-color: $gray-100;
+      display: flex;
+      height: calc(100vh - 75.45px);
+      justify-content: center;
+
+      .panel-inner-text {
+        margin: 0 4rem;
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          margin: 0 1rem;
+          text-align: center;
+        }
+
+        h2 {
+          color: $orange-dark;
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.19;
+        }
+
+        p {
+          color: $gray-dark;
+          font-size: 18px;
+          line-height: 1.78;
+        }
+      }
+    }
+
+    .content-panel-image {
+      
+      h2 {
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 16px;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .store-buttons {
+        padding: 0 0 60px 0;
+        @include media-breakpoint-down(sm) {
+          padding: 0 0 40px 0;
+        }
+      }
+
+      .phone-image {
+        height: 440px;
+      }
+    }
+
+    .description {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: flex;
+      }
+    }
   }
 
 }

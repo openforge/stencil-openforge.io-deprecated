@@ -21,7 +21,7 @@ export class AppDetailedService {
         first: '/assets/svg/services-graphic-development1.svg',
         second: '/assets/svg/services-graphic-development2.svg',
         third: '/assets/svg/services-graphic-development3.svg',
-      }
+      },
     },
     'app-designer': {
       header: '/assets/svg/process-design.svg',
@@ -29,7 +29,7 @@ export class AppDetailedService {
         first: '/assets/svg/services-graphic-design1.svg',
         second: '/assets/svg/services-graphic-design2.svg',
         third: '/assets/svg/services-graphic-design3.svg',
-      }
+      },
     },
     'startup-consulting': {
       header: '/assets/svg/discovery.svg',
@@ -37,7 +37,7 @@ export class AppDetailedService {
         first: '/assets/svg/services-graphic-consulting1.svg',
         second: '/assets/svg/services-graphic-consulting2.svg',
         third: '/assets/svg/services-graphic-consulting3.svg',
-      }
+      },
     },
   };
 
@@ -371,6 +371,60 @@ export class AppDetailedService {
               </div>
             </div>
 
+          </div>
+        </section>
+
+
+        <section id="work" class="work">
+          <div class="main-content">
+            <div class="sidebar">
+              <div
+                class="sidebar__inner content-panel-inner"
+                id="content-panel-inner"
+              />
+            </div>
+            <div class="content">
+              <div class="content-panel juntoscope">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h2>
+                     User-Centered Design
+                    </h2>
+                    <p>
+                      Our team leads the industry in digital experiences for mobile-centric design principles. We believe it is of the utmost importance for all of our designers to be trained in digital technologies so that our team can advise on the best practices in user experience in mobile and web technologies.  Whether you’re looking for a complete solution or consulting for your existing project, consider our team an extension of your own.
+                    </p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    JuntoScope
+                  </h2>
+                  <div class="row store-buttons">
+                    <div class="col-6 text-right">
+                      <a
+                        href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
+                        target="_blank"
+                      >
+                        <img src="/assets/graphic-apple-appstore.png" />
+                      </a>
+                    </div>
+                    <div class="col-6 text-left">
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
+                        target="_blank"
+                      >
+                        <img src="/assets/graphic-google-googleplaystore.png" />
+                      </a>
+                    </div>
+                  </div>
+                  <img
+                    src="/assets/home-graphic-juntoscope.png"
+                    class="phone-image"
+                  />
+                </div>
+              </div>
+              <div class="content-panel last-panel" />
+            </div>
           </div>
         </section>
 
