@@ -33,35 +33,4 @@ workbox.routing.registerRoute(
   })
 );
 
-// addEventListener('fetch', fetchEvent => {
-//   console.log('fetching', fetchEvent.request);
-//   fetchEvent.respondWith(caches.match(fetchEvent.request)
-//     .then(async cachedResponse => {
-//       if (cachedResponse) return cachedResponse;
-//       const response = await fetch(fetchEvent.request);
-//       caches.open('whatever').then(cache => cache.put(
-//         fetchEvent.request, response
-//       ));
-//       return response.clone();
-//     })
-//   );
-// });
-
-self.addEventListener('message', (event) => {
-  if (!event.data){
-    console.log("no event data");
-    return;
-  }
-
-  switch (event.data) {
-    case 'skipWaiting':
-    console.log("event data detected");
-      self.skipWaiting();
-      break;
-    default:
-      // NOOP
-      break;
-  }
-});
-
 self.workbox.precaching.precacheAndRoute([]);
