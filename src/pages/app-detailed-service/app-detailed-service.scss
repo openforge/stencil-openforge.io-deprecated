@@ -27,6 +27,12 @@
       max-width: 960px;
     }
 
+    .card-container {
+      @include media-breakpoint-down(sm) {
+        padding: 2rem;
+      }
+    }
+
     .card {
       background: rgba($gray-100, 0.5);
       border-radius: 22px;

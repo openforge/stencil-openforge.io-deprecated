@@ -276,7 +276,7 @@ export class AppDetailedService {
                   />
                 </p>
               </div>
-              <div class="col-sm-12 col-md-6">
+              <div class="col-sm-12 col-md-6 align-self-center">
                 <img src={this.imgs[this.match.params.service].header} />
               </div>
             </div>
@@ -292,7 +292,7 @@ export class AppDetailedService {
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 col-sm-12 d-flex">
+              <div class="col-md-4 col-sm-12 d-flex card-container">
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
                   <div class="line-break" />
@@ -306,7 +306,7 @@ export class AppDetailedService {
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 d-flex">
+              <div class="col-md-4 col-sm-12 d-flex card-container">
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
                   <div class="line-break" />
@@ -320,7 +320,7 @@ export class AppDetailedService {
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 d-flex">
+              <div class="col-md-4 col-sm-12 d-flex card-container">
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
                   <div class="line-break" />
@@ -427,20 +427,6 @@ export class AppDetailedService {
             </div>
           </div>
         </section>
-
-        {this.match.params.service === 'app-developer' ? (
-          <section>
-            <div class="header">Development</div>
-          </section>
-        ) : this.match.params.service === 'app-designer' ? (
-          <section>
-            <div class="header">Design</div>
-          </section>
-        ) : (
-          <section>
-            <div class="header">Consulting</div>
-          </section>
-        )}
 
         {/* <app-cta /> */}
         <app-footer />
