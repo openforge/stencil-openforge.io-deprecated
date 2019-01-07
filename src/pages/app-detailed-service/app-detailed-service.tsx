@@ -346,6 +346,31 @@ export class AppDetailedService {
                 <h2>Who We've Worked With</h2>
               </div>
             </div>
+
+            <div class="row">
+              <div class="col-md-3 col-sm-12">
+                <img class="img-fluid" src="/assets/services-logo-aeris.png" />
+                <img class="img-fluid" src="/assets/services-logo-bb.png" />
+              </div>
+              
+              <div class="col-md-3 col-sm-12">
+                <img class="img-fluid" src="/assets/services-logo-kemin.png" />
+                <img class="img-fluid" src="/assets/services-logo-livegistics.png" />
+                <img class="img-fluid" src="/assets/services-logo-loudcloud.png" />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <img class="img-fluid" src="/assets/services-logo-yellowdig.png" />
+                <img class="img-fluid" src="/assets/services-logo-redqueen.jpg" />
+                <img class="img-fluid" src="/assets/services-logo-newocean.png" />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <img class="img-fluid" src="/assets/services-logo-wharton.png" />
+                <img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" />
+              </div>
+            </div>
+
           </div>
         </section>
 
