@@ -242,7 +242,7 @@ export class AppAbout {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-8">
+              <div class="col-md-8 col-sm-10 text-container">
                 <h1>
                   <app-translate key="about.header.title" />
                 </h1>

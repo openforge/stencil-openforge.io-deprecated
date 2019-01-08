@@ -4,6 +4,9 @@
   .hero {
 
     background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
+    @include media-breakpoint-down(md) {
+      background-position: right bottom;
+    }
 
     @include media-breakpoint-down(sm) {
       background-position: right bottom;
@@ -11,6 +14,16 @@
 
     .row {
       height: 700px;
+
+      @include media-breakpoint-down(md) {
+        height: 900px;
+      }
+
+      .text-container {
+        @include media-breakpoint-down(md) {
+          margin-bottom: 10rem;
+        }
+      }
     }
   }
 
