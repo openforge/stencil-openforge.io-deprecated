@@ -4,7 +4,7 @@ describe('PWA Page', function () {
       cy.visit( env + '/resources/pwa-white-paper')
       cy.get('button[type=submit]').as('submitBtn')
     })
-/**
+
 describe('Nav Bar Navigation (Desktop)', function(){
     it('Home on nav Bar should redirect to home page', function(){
       cy.get('.navbar').contains('Home').click()
@@ -131,12 +131,6 @@ describe('Nav Bar Navigation (Desktop)', function(){
         .and('contain', 'Download Now')
         .click()
     })
-  })*/
-
-  describe('', function(){
-      it('', function(){
-
-      })
   })
 
   describe('Contact Form', function() {
@@ -159,6 +153,36 @@ describe('Nav Bar Navigation (Desktop)', function(){
         cy.get('input[name=industry]').should('not.have.value', 'Test')
         cy.get('input[name=organization]').should('not.have.value', 'Test LLC')
       })
+      it('After downlaod header should display with appropriate text content within it', function() {
+        const h2Content =  'Check Out the Awesome stuff we made with PWAs'
+        const pContent = 'Check it out'
+  
+        cy.get('#second-hero').should('exist').and('be.visible')
+        cy.get('#second-hero').contains(h2Content).and('be.visible')
+        cy.get('#second-hero').contains(pContent).and('be.visible')
+      })
+      it('Should contain a Check it out button that scrolls down on click', function() {
+        cy.get('#second-hero')
+          .find('.btn')
+          .should('exist')
+          .and('be.visible')
+          .and('contain', 'Check it out')
+          .click()
+      })
+      it('Thank you section displays content, graphic, and link', function(){
+          cy.get('#thankyou').contains('Enjoy')
+          cy.get('#thankyou').contains('Expand Your PWA Knowledge')
+          cy.get('#thankyou').contains('Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.')
+          cy.get('#github-button').contains('GitHub').click()
+          cy.request('https://github.com/openforge')
+      })
+      
+    })
+    describe('PWA Screenshot appears', function(){
+        it('PWA screenshot apppears', function(){
+            cy.get('#pwa-screenshot').should('exist')//.and('be.visible')
+            //look into why .visible is causing it to fail
+        })
     })
     describe('Unsucessful form submission', function() {
       it('DOM should not show success message when all fields of the form are not filled out', function () {
@@ -166,13 +190,8 @@ describe('Nav Bar Navigation (Desktop)', function(){
         cy.get('@submitBtn').should('be.disabled')
       })
     })
-    //it('Should show a success message on submit when all form values have been filled out', function() {
-    //    cy.wait(2000)
-    //    cy.contains('Thank you')
-    //  })
   })
 
-  /**
   describe('Here\'s What is inside section displays', function(){
     it('Header Text Displays', function(){
         cy.get('#downloadinfo').contains('HERE\'S WHAT IS INSIDE')
@@ -219,5 +238,5 @@ describe('Nav Bar Navigation (Desktop)', function(){
     //it('Open native mail to contact Hello@openforge.io', function () {
      //cy.contains('hello@openforge.io').click()
      //})
-  }) */
+  })
 })

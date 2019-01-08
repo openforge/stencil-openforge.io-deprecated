@@ -197,7 +197,7 @@ export class AppResources {
         ) : null}
 
         {this.formSubmitted ? (
-          <header class="hero changed-bkg">
+          <header class="hero changed-bkg" id="second-hero">
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">
@@ -252,6 +252,7 @@ export class AppResources {
                 <div class="colunm">
                   <app-img
                     class="img-fluid d-none d-md-inline"
+                    id="pwa-screenshot"
                     src="/assets/pwa-white-paper-front-page.jpg"
                     alt=""
                   />
@@ -447,6 +448,7 @@ export class AppResources {
                 </p>
                 <a
                   class="btn btn-primary"
+                  id="github-button"
                   href="https://github.com/openforge"
                   title={translate('nav.links.github')}
                   target="_blank"
