@@ -1,11 +1,11 @@
-describe('Contact Page', function () {
-  var env = 'http://localhost:3333';
-  beforeEach(() => {
-    cy.visit( env + '/contact')
-    cy.get('button[type=submit]').as('submitBtn')
-  })
-
-   describe('Nav Bar Navigation (Desktop)', function(){
+describe('PWA Page', function () {
+    var env = 'http://localhost:3333';
+    beforeEach(() => {
+      cy.visit( env + '/resources/pwa-white-paper')
+      cy.get('button[type=submit]').as('submitBtn')
+    })
+/**
+describe('Nav Bar Navigation (Desktop)', function(){
     it('Home on nav Bar should redirect to home page', function(){
       cy.get('.navbar').contains('Home').click()
       cy.url().should('include', '/')
@@ -115,50 +115,49 @@ describe('Contact Page', function () {
 
   describe('Header', function() {
     it('Header should display with appropriate text content within it', function() {
-      const h2Content =  'Let\'s Work Together'
-      const pContent = 'Request Free Quote'
+      const h2Content =  'What is a PWA and is it right for you?'
+      const pContent = 'Download Now'
 
       cy.get('header').should('exist').and('be.visible')
       cy.get('.hero').contains(h2Content).and('be.visible')
       cy.get('.hero').contains(pContent).and('be.visible')
     })
 
-    it('Should contain a Request Now button that scrolls to the form on click', function() {
+    it('Should contain a Download Now button that scrolls to the form on click', function() {
       cy.get('header')
         .find('.btn')
         .should('exist')
         .and('be.visible')
-        .and('contain', 'Request Free Quote')
+        .and('contain', 'Download Now')
         .click()
-      cy.get('#second-content').click()
     })
+  })*/
+
+  describe('', function(){
+      it('', function(){
+
+      })
   })
 
   describe('Contact Form', function() {
     let nameField;
     let emailField;
-    let phoneField;
-    let messageField;
+    let industryField;
+    let organizationField;
 
-    describe('Successful form submission', function () {
+    describe('Successful form submission and Download', function () {
       beforeEach(() => {
         nameField = cy.get('input[name=name]').type('Testing')
         emailField = cy.get('input[name=email]').type('testEmail@gmail.com')
-        phoneField = cy.get('input[name=phone]').type('1459341234')
-        messageField = cy.get('input[name=message]').type('This is a test message')
+        industryField = cy.get('input[name=industry]').type('Test')
+        organizationField = cy.get('input[name=organization]').type('Test LLC')
         cy.get('@submitBtn').click()
       })
-
-      it('Should show a success message on submit when all form values have been filled out', function() {
-        cy.wait(2000)
-        cy.contains('Thank you')
-      })
-
       it('All fields should be clear after successful form submission', function() {
-        cy.get('input[name=name]').should('have.value', 'Testing')
-        cy.get('input[name=email]').should('have.value', 'testEmail@gmail.com')
-        cy.get('input[name=phone]').should('have.value', '1459341234')
-        cy.get('input[name=message]').should('have.value', 'This is a test message')
+        cy.get('input[name=name]').should('not.have.value', 'Testing')
+        cy.get('input[name=email]').should('not.have.value', 'testEmail@gmail.com')
+        cy.get('input[name=industry]').should('not.have.value', 'Test')
+        cy.get('input[name=organization]').should('not.have.value', 'Test LLC')
       })
     })
     describe('Unsucessful form submission', function() {
@@ -167,7 +166,27 @@ describe('Contact Page', function () {
         cy.get('@submitBtn').should('be.disabled')
       })
     })
+    //it('Should show a success message on submit when all form values have been filled out', function() {
+    //    cy.wait(2000)
+    //    cy.contains('Thank you')
+    //  })
   })
+
+  /**
+  describe('Here\'s What is inside section displays', function(){
+    it('Header Text Displays', function(){
+        cy.get('#downloadinfo').contains('HERE\'S WHAT IS INSIDE')
+        cy.get('#downloadinfo').contains('A business owner\'s perspective on the benefits of PWAs (Progressive Web Apps')
+    })
+    it('Body Text Displays With Graphic', function(){
+        cy.get('#heres-whats-inside-text').contains('What a PWA is and what companies are using them')
+        cy.get('#heres-whats-inside-text').contains('Learn how a PWA can decrease several costs')
+        cy.get('#heres-whats-inside-text').contains('Discover how a PWA increases user engagement')
+        cy.get('#heres-whats-inside-text').contains('Understand the features and benefits of a PWA')
+        cy.get('#heres-whats-inside-text').contains('Switching to a PWA can take your business to the next level and improve the performance of your business\'s digital engagement')
+        //cy.get('#heres-whats-inside-image').should('exist').and('be.visible')
+    })
+})
 
   describe('Footer Navigation', function() {
     it('Navigate to SLA page', function () {
@@ -200,5 +219,5 @@ describe('Contact Page', function () {
     //it('Open native mail to contact Hello@openforge.io', function () {
      //cy.contains('hello@openforge.io').click()
      //})
-  }) 
+  }) */
 })
