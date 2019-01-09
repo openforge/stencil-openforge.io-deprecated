@@ -27,15 +27,20 @@
       max-width: 960px;
     }
 
-    .card-container {
-      @include media-breakpoint-down(sm) {
-        padding: 2rem;
-      }
-    }
+    // .card-container {
+    //   @include media-breakpoint-down(sm) {
+    //     padding: 2rem;
+    //   }
+    // }
 
     .card {
       background: rgba($gray-100, 0.5);
       border-radius: 22px;
+      max-width: 290px;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+      }
 
       h3 {
         color: $orange-dark;

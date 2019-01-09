@@ -292,7 +292,7 @@ export class AppDetailedService {
               </div>
             </div>
             <div class="row">
-              <div class="col-md-4 col-sm-12 d-flex card-container">
+              <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
                   <div class="line-break" />
@@ -306,7 +306,7 @@ export class AppDetailedService {
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 d-flex card-container">
+              <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
                   <div class="line-break" />
@@ -320,7 +320,7 @@ export class AppDetailedService {
                   </div>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 d-flex card-container">
+              <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
                   <div class="line-break" />
@@ -349,7 +349,7 @@ export class AppDetailedService {
 
             <div class="row">
               <div class="col-md-3 col-sm-12">
-                <img class="img-fluid" src="/assets/services-logo-aeris.png" />
+                <img class="img-fluid" src="/assets/services-logo-newocean.png" />
                 <img class="img-fluid" src="/assets/services-logo-bb.png" />
               </div>
               
@@ -362,7 +362,7 @@ export class AppDetailedService {
               <div class="col-md-3 col-sm-12">
                 <img class="img-fluid" src="/assets/services-logo-yellowdig.png" />
                 <img class="img-fluid" src="/assets/services-logo-redqueen.jpg" />
-                <img class="img-fluid" src="/assets/services-logo-newocean.png" />
+                <img class="img-fluid" src="/assets/services-logo-aeris.png" />
               </div>
 
               <div class="col-md-3 col-sm-12">
