@@ -10,8 +10,7 @@ declare var fbq;
 export class AppAbout {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
-  private className =
-    localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   public images: any;
 
@@ -82,6 +81,7 @@ export class AppAbout {
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
       github: 'https://github.com/Fdom92',
+      url: '/about/fernando-del-olmo',
     },
     {
       name: 'Billy Holloran',
@@ -97,6 +97,7 @@ export class AppAbout {
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
       github: 'https://github.com/luiskcs89',
+      url: '/about/luis-chacon',
     },
     {
       name: 'Claudio Del Valle',
@@ -206,24 +207,11 @@ export class AppAbout {
     }
 
     // Change meta tags dynamically
-    document
-      .querySelector("meta[name='title']")
-      .setAttribute(
-        'content',
-        'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge'
-      );
-    document
-      .querySelector("meta[name='description']")
-      .setAttribute(
-        'content',
-        'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia'
-      );
-    document
-      .querySelector("meta[name='keywords']")
-      .setAttribute(
-        'content',
-        'Technology, Design, Philadelphia, Mobile App, Development, Jedidiah Weller'
-      );
+    document.querySelector("meta[property='og:title']").setAttribute('content', 'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge');
+    document.querySelector("meta[property='og:description']").setAttribute('content', 'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia');
+    document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/about/');
+    document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/bg-hero-icons.jpg');
+    document.querySelector("meta[name='keywords']").setAttribute('content', 'Technology, Design, Philadelphia, Mobile App, Development, Jedidiah Weller');
   }
 
   scrollToForm() {
@@ -245,10 +233,7 @@ export class AppAbout {
                 <p>
                   <app-translate key="about.text" />
                 </p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
+                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                   Learn More
                 </button>
               </div>

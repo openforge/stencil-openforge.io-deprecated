@@ -12,18 +12,9 @@ export class AppDetailedService {
   @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' })
   private isServer: boolean;
-  private devClassName =
-    localStorage.getItem('allowWebp') === 'true'
-      ? 'webp development'
-      : 'hero development';
-  private designClassName =
-    localStorage.getItem('allowWebp') === 'true'
-      ? 'webp design'
-      : 'hero design';
-  private consultingClassName =
-    localStorage.getItem('allowWebp') === 'true'
-      ? 'webp consulting'
-      : 'hero consulting';
+  private devClassName = localStorage.getItem('allowWebp') === 'true' ? 'webp development' : 'hero development';
+  private designClassName = localStorage.getItem('allowWebp') === 'true' ? 'webp design' : 'hero design';
+  private consultingClassName = localStorage.getItem('allowWebp') === 'true' ? 'webp consulting' : 'hero consulting';
 
   @State()
   imgs = {
@@ -119,31 +110,21 @@ export class AppDetailedService {
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
-        this.nameError = this.formValues.nameValid
-          ? ''
-          : (this.nameError = e.validationMessage);
+        this.nameError = this.formValues.nameValid ? '' : (this.nameError = e.validationMessage);
         break;
 
       case 'email':
         this.formValues.emailValid = e.checkValidity();
-        this.emailError = this.formValues.emailValid
-          ? ''
-          : (this.emailError = e.validationMessage);
+        this.emailError = this.formValues.emailValid ? '' : (this.emailError = e.validationMessage);
         break;
 
       case 'message':
         this.formValues.messageValid = e.checkValidity();
-        this.messageError = this.formValues.messageValid
-          ? ''
-          : (this.messageError = e.validationMessage);
+        this.messageError = this.formValues.messageValid ? '' : (this.messageError = e.validationMessage);
         break;
     }
 
-    this.formValues.nameValid &&
-    this.formValues.emailValid &&
-    this.formValues.messageValid
-      ? (this.isDisabled = false)
-      : (this.isDisabled = true);
+    this.formValues.nameValid && this.formValues.emailValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
@@ -153,17 +134,14 @@ export class AppDetailedService {
       this.formSubmitting = true;
       this.isDisabled = true;
 
-      await fetch(
-        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
-        {
-          method: 'post',
-          mode: 'no-cors',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          },
-          body: JSON.stringify(this.formValues),
-        }
-      );
+      await fetch('https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs', {
+        method: 'post',
+        mode: 'no-cors',
+        headers: {
+          'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        },
+        body: JSON.stringify(this.formValues),
+      });
 
       event.target.reset();
       this.resetFormValues();
@@ -188,56 +166,32 @@ export class AppDetailedService {
   changeMetadata() {
     // Change meta tags dynamically
     if (this.match.params.service === 'app-developer') {
+      document.querySelector("meta[property='og:title']").setAttribute('content', 'Mobile App Developer Experts | OpenForge');
       document
-        .querySelector("meta[name='title']")
-        .setAttribute('content', 'Mobile App Developer Experts | OpenForge');
-      document
-        .querySelector("meta[name='description']")
-        .setAttribute(
-          'content',
-          'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'Mobile App Developer, Mobile App Development, Progressive Web App'
-        );
+        .querySelector("meta[property='og:description']")
+        .setAttribute('content', 'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency');
+      document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/app-developer/');
+      document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-development-team.jpg');
+      document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile App Developer, Mobile App Development, Progressive Web App');
     } else if (this.match.params.service === 'app-designer') {
+      document.querySelector("meta[property='og:title']").setAttribute('content', 'Mobile App Design Experts | OpenForge');
       document
-        .querySelector("meta[name='title']")
-        .setAttribute('content', 'Mobile App Design Experts | OpenForge');
-      document
-        .querySelector("meta[name='description']")
-        .setAttribute(
-          'content',
-          'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'UI, UX, Design, Mobile App Design, User Experience Expert'
-        );
+        .querySelector("meta[property='og:description']")
+        .setAttribute('content', 'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting');
+      document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/app-designer/');
+      document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-design-team.jpg');
+      document.querySelector("meta[name='keywords']").setAttribute('content', 'UI, UX, Design, Mobile App Design, User Experience Expert');
     } else if (this.match.params.service === 'startup-consulting') {
+      document.querySelector("meta[property='og:title']").setAttribute('content', 'Startup Consulting Services in Philadelphia | OpenForge');
       document
-        .querySelector("meta[name='title']")
-        .setAttribute(
-          'content',
-          'Startup Consulting Services in Philadelphia | OpenForge'
-        );
-      document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies.   Let Us Help You With Marketing and CTO As a Service.'
         );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting'
-        );
+      document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/startup-consulting/');
+      document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-management-team.jpeg');
+      document.querySelector("meta[name='keywords']").setAttribute('content', 'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting');
     }
   }
 
@@ -253,19 +207,12 @@ export class AppDetailedService {
               <div class="row align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-8">
                   <h2>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.hero.title`} />
                   </h2>
                   <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.hero.text`} />
                   </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
+                  <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                     <app-translate key="opportunities.hero.text2" />
                   </button>
                 </div>
@@ -279,19 +226,12 @@ export class AppDetailedService {
               <div class="row align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-8">
                   <h2>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.hero.title`} />
                   </h2>
                   <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.hero.text`} />
                   </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
+                  <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                     <app-translate key="opportunities.hero.text2" />
                   </button>
                 </div>
@@ -305,19 +245,12 @@ export class AppDetailedService {
               <div class="row align-items-center">
                 <div class="col-sm-12 col-md-8 col-lg-8">
                   <h2>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.hero.title`} />
                   </h2>
                   <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.hero.text`} />
                   </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
+                  <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                     <app-translate key="opportunities.hero.text2" />
                   </button>
                 </div>
@@ -329,67 +262,35 @@ export class AppDetailedService {
           ? [
               <div id="second-content" class="container">
                 <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].first}
-                    alt=""
-                  />
+                  <app-img class="img-fluid d-none d-md-inline" src={this.imgs[this.match.params.service].first} alt="" />
                   <div class="text-img-container-text">
                     <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.first.title`}
-                      />
+                      <app-translate key={`services.${this.match.params.service}.first.title`} />
                     </h2>
                     <p>
-                      <app-translate
-                        key={`services.${this.match.params.service}.first.text`}
-                      />
+                      <app-translate key={`services.${this.match.params.service}.first.text`} />
                     </p>
                   </div>
                 </section>
                 <section class="text-img-container left-side">
                   <div class="text-img-container-text">
                     <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.second.title`}
-                      />
+                      <app-translate key={`services.${this.match.params.service}.second.title`} />
                     </h2>
                     <p>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.second.text`}
-                      />
+                      <app-translate key={`services.${this.match.params.service}.second.text`} />
                     </p>
                   </div>
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].second}
-                    alt=""
-                  />
+                  <app-img class="img-fluid d-none d-md-inline" src={this.imgs[this.match.params.service].second} alt="" />
                 </section>
                 <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].third}
-                    alt=""
-                  />
+                  <app-img class="img-fluid d-none d-md-inline" src={this.imgs[this.match.params.service].third} alt="" />
                   <div class="text-img-container-text">
                     <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.third.title`}
-                      />
+                      <app-translate key={`services.${this.match.params.service}.third.title`} />
                     </h2>
                     <p>
-                      <app-translate
-                        key={`services.${this.match.params.service}.third.text`}
-                      />
+                      <app-translate key={`services.${this.match.params.service}.third.text`} />
                     </p>
                   </div>
                 </section>
@@ -402,36 +303,17 @@ export class AppDetailedService {
                     <div class="row">
                       <div class="image-column col-sm-12 col-md-4">
                         <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox.first
-                            }
-                            alt=""
-                          />
+                          <app-img class="img-fluid d-none d-md-inline" src={this.imgs[this.match.params.service].toolbox.first} alt="" />
                         </stencil-route-link>
                       </div>
                       <div class="image-column col-sm-12 col-md-4">
                         <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox
-                                .second
-                            }
-                            alt=""
-                          />
+                          <app-img class="img-fluid d-none d-md-inline" src={this.imgs[this.match.params.service].toolbox.second} alt="" />
                         </stencil-route-link>
                       </div>
                       <div class="image-column col-sm-12 col-md-4">
                         <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox.third
-                            }
-                            alt=""
-                          />
+                          <app-img class="img-fluid d-none d-md-inline" src={this.imgs[this.match.params.service].toolbox.third} alt="" />
                         </stencil-route-link>
                       </div>
                     </div>
@@ -440,31 +322,18 @@ export class AppDetailedService {
               </section>,
             ]
           : null}
-        {this.imgs[this.match.params.service] &&
-        this.imgs[this.match.params.service].examples ? (
+        {this.imgs[this.match.params.service] && this.imgs[this.match.params.service].examples ? (
           <div class="container">
             <section class="work-examples">
               <h2>Work Examples</h2>
               <div class="text-img-container right-side">
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.first}
-                  alt="voyage-app-image"
-                />
+                <app-img class="" src={this.imgs[this.match.params.service].examples.first} alt="voyage-app-image" />
                 <div class="text-img-container-text">
                   <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.name`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.examples.first.name`} />
                   </h2>
                   <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.desc`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.examples.first.desc`} />
                   </p>
                   {/* <p class="check-link">Check it out</p> */}
                 </div>
@@ -472,26 +341,14 @@ export class AppDetailedService {
               <div class="text-img-container left-side">
                 <div class="text-img-container-text">
                   <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.name`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.examples.second.name`} />
                   </h2>
                   <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.desc`}
-                    />
+                    <app-translate key={`services.${this.match.params.service}.examples.second.desc`} />
                   </p>
                   {/* <p class="check-link">Check it out</p> */}
                 </div>
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.second}
-                  alt="voyage-app-image"
-                />
+                <app-img class="" src={this.imgs[this.match.params.service].examples.second} alt="voyage-app-image" />
               </div>
             </section>
           </div>
