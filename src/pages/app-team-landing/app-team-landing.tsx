@@ -15,7 +15,7 @@ export class AppTeamLanding {
     'rachel-bennett': {
       firstname: 'Rachel',
       surname: 'Bennett',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       headerText:
         "Rachel is originally from the suburbs of Washington, DC and moved to Philadelphia for school, ultimately deciding to stay in Philly after graduating. Her interest in art and language led her to pursue a degree in Graphic Design at Philadelphia University. After graduating with a Bachelor's of Science in 2012, she has been working in the field of design ever since.",
       bodyText:
@@ -45,7 +45,7 @@ export class AppTeamLanding {
     'geoffrey-melle': {
       firstname: 'Geoffrey',
       surname: 'Melle',
-      title: translate('about.meet.member.title.projectManager'),
+      title: translate('about.team.member.title.projectManager'),
       headerText:
         'Geoffrey grew up in the suburbs of Philadelphia and started his college career pursuing engineering at Drexel University. He formed a new found love for the marketing field though graduating Summa Cum Laude with a Marketing and Business Management degree from West Chester University.',
       bodyText:
@@ -71,7 +71,7 @@ export class AppTeamLanding {
     'joni-lehto': {
       firstname: 'Joni',
       surname: 'Lehto',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       headerText:
         'Joni grew up and currently lives in Rovaniemi Finland. After receiving a Bachelor’s degree he has worked as a senior software developer for several prominent companies. He joined OpenForge team to get new international experiences and become a part of a diverse and growing organization.',
       bodyText:
@@ -93,7 +93,7 @@ export class AppTeamLanding {
     'paulina-gallo': {
       firstname: 'Paulina',
       surname: 'Gallo',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       headerText:
         'Paulina started her technical journey at a very young age through an interest of video games. This interest sparked her drive to study and receive her Bachelor’s in Computer Science and Digital Media. She has spent the past few years developing web and mobile applications for a wide range of startup and enterprise level clients, all while attending, volunteering, and speaking at various conferences within the development community. In her spare time she is the co-organizer of both the Ionic Philly meetup and Philly Angular meetup.',
       bodyText:
@@ -124,7 +124,7 @@ export class AppTeamLanding {
     'fernando-del-olmo': {
       firstname: 'Fernando',
       surname: 'Del Olmo',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       headerText:
         "Fernando is originally from Madrid, Spain where he received his Bachelor's degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.",
       bodyText:
@@ -152,7 +152,7 @@ export class AppTeamLanding {
     'billy-holloran': {
       firstname: 'Billy',
       surname: 'Holloran',
-      title: translate('about.meet.member.title.qualityManager'),
+      title: translate('about.team.member.title.qualityManager'),
       headerText:
         'Billy, our hometown guy, was born and raised in Philadelphia and started his career training right out of high school. Forgoing of the path of college, Billy attended the pre-apprenticeship program at The Urban Technology Project. His tenacity and dedication for a career in technology landed him with our team as head of Quality Management.',
       bodyText:
@@ -179,7 +179,7 @@ export class AppTeamLanding {
     'luis-chacon': {
       firstname: 'Luis',
       surname: 'Chacon',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       headerText:
         'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Masters in Software Engineering with a full scholarship from the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
       bodyText:
@@ -205,7 +205,7 @@ export class AppTeamLanding {
     'claudio-del-valle': {
       firstname: 'Claudio',
       surname: 'Del Valle',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       headerText:
         'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
       bodyText:
@@ -226,7 +226,7 @@ export class AppTeamLanding {
     'ethan-bohan': {
       firstname: 'Ethan',
       surname: 'Bohan',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       headerText:
         'Ethan is originally from Long Island New York. He received his Bachelor’s degree in Interactive Digital Media from Drexel University. While at Drexel University he worked with our team as an intern which lead him to his full-time position with Open Forge after graduation.',
       bodyText:
@@ -253,7 +253,7 @@ export class AppTeamLanding {
     'dhairya-pujara': {
       firstname: 'Dhairya',
       surname: 'Pujara',
-      title: translate('about.meet.member.title.consultant'),
+      title: translate('about.team.member.title.consultant'),
       headerText:
         "Dhairya Pujara is the Founder, CEO at Ycenter, he is responsible for building a global ecosystem bringing in corporates, universities, NGOs for creating experiential educational programs. Dhairya's core expertise is in Design Thinking, Business Model, Market Research, Customer Journey using Empathy maps and Story-telling for Brand positioning.",
       bodyText:
@@ -273,7 +273,7 @@ export class AppTeamLanding {
     'ted-grant': {
       firstname: 'Ted',
       surname: 'Grant',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       headerText:
         'Ted grew up in Westchester, New York and Atlanta, Georgia. He is a Junior attending Drexel University in Philadelphia, pursuing a degree in Game Design and Production, and is on a co-op with Open Forge. He enjoys working with 3D modeling, 2D art, and pen-and-paper games.',
       bodyText:
@@ -299,7 +299,7 @@ export class AppTeamLanding {
     'kevon-chambers': {
       firstname: 'Kevon',
       surname: 'Chambers',
-      title: translate('about.meet.member.title.marketing'),
+      title: translate('about.team.member.title.marketing'),
       headerText:
         'Kevon was raised by Jamaican parents in northern New Jersey, Irvington to be exact. He would leave home at 14 years to attend The Kiski School in Saltsburg PA. Kevon is currently an entrepreneurship and innovation major at Temple University. He has interned for the Philly Startup Leaders accelerator, College Money Search. He has worked for Pomeroy as a computer technician and Wells Fargo.',
       bodyText: '',
@@ -310,7 +310,7 @@ export class AppTeamLanding {
     'young-song': {
       firstname: 'Young',
       surname: 'Song',
-      title: translate('about.meet.member.title.softwareIntern'),
+      title: translate('about.team.member.title.softwareIntern'),
       headerText:
         'Young was born in Korea. He came to the USA in 1990 to study Physics. His first programming experience was about 25 years ago. However, he had to stop his coding job after he failed to get a working visa. In 2017, after he received a green card, He restarted coding. He learned coding using a mixture of Udemy, YouTube, and Collegiate courses.',
       bodyText:
@@ -330,7 +330,7 @@ export class AppTeamLanding {
     'sam-hudgens': {
       firstname: 'Sam',
       surname: 'Hudgens',
-      title: translate('about.meet.member.title.softwareIntern'),
+      title: translate('about.team.member.title.softwareIntern'),
       headerText:
         'Sam is originally from Montgomery, Alabama. He studied Chinese and Business Administration at the University of Southern California in Los Angeles with plans of going into finance, but decided on a career change into tech at the last minute. He attended a programming boot camp after graduating college and ended up in Philadelphia. Sam likes learning both computer languages and human languages.',
       bodyText:
@@ -350,7 +350,7 @@ export class AppTeamLanding {
     casey: {
       firstname: 'Casey',
       surname: '',
-      title: translate('about.meet.member.title.officer'),
+      title: translate('about.team.member.title.officer'),
       headerText:
         'Casey started her life out on the streets in the Kensington section of Philadelphia where a good samaritan found her at just a few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present.',
       bodyText:
