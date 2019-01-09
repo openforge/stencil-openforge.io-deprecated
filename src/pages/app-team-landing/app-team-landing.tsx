@@ -45,11 +45,11 @@ export class AppTeamLanding {
     'geoffrey-melle': {
       firstname: 'Geoffrey',
       surname: 'Melle',
-      title: translate('about.meet.member.title.accountManager'),
+      title: translate('about.meet.member.title.projectManager'),
       headerText:
         'Geoffrey grew up in the suburbs of Philadelphia and started his college career pursuing engineering at Drexel University. He formed a new found love for the marketing field though graduating Summa Cum Laude with a Marketing and Business Management degree from West Chester University.',
       bodyText:
-        'As account manager, Geoffrey tackles marketing and sales objectives for OpenForge. Additionally Geoffrey takes part in project management overseeing both internal and client projects, ensuring smooth communication and delivery of assets.',
+        'As Project Manager, Geoffrey ensures that our team and your team have the resources and requirements needed to launch your product successfully.  Additionally, Geoffrey takes part in tackles marketing and sales objectives for OpenForge with his experience in digital marketing.',
       skills: [
         'Email Marketing',
         'SEO',
@@ -152,11 +152,11 @@ export class AppTeamLanding {
     'billy-holloran': {
       firstname: 'Billy',
       surname: 'Holloran',
-      title: translate('about.meet.member.title.projectManager'),
+      title: translate('about.meet.member.title.qualityManager'),
       headerText:
-        'Billy, our hometown guy, was born and raised in Philadelphia and started his career training right out of high school. Forgoing of the path of college, Billy attended the pre-apprenticeship program at The Urban Technology Project. His tenacity and dedication for a career in technology landed him with our team as Project Manager and Quality Assurance Engineer.',
+        'Billy, our hometown guy, was born and raised in Philadelphia and started his career training right out of high school. Forgoing of the path of college, Billy attended the pre-apprenticeship program at The Urban Technology Project. His tenacity and dedication for a career in technology landed him with our team as head of Quality Management.',
       bodyText:
-        'As Project Manager, Billy ensures that our team and your team have the resources and have met requirements needed in order to successfully launch your product. While heading our quality assurance process, Billy leads the team in testing all deliverables and maintaining high quality standards.',
+        'As Quality Management, Billy leads the team in testing all company deliverables. Through manual and automated testing, Billy reviews projects to ensure that all functional requirements are met, and releases contain only expectable bugs.',
       skills: [
         'Quality Assurance',
         'Organization',

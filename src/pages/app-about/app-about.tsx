@@ -32,7 +32,7 @@ export class AppAbout {
     {
       name: 'Geoffrey Melle',
       image: './../../assets/headshot-geoff.jpg',
-      title: translate('about.team.member.title.accountManager'),
+      title: translate('about.team.member.title.projectManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
@@ -50,7 +50,7 @@ export class AppAbout {
     {
       name: 'Billy Holloran',
       image: './../../assets/headshot-billy.png',
-      title: translate('about.team.member.title.projectManager'),
+      title: translate('about.team.member.title.qualityManager'),
       mail: 'billy@openforge.io',
       url: '/about/billy-holloran',
     },
