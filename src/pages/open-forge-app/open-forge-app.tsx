@@ -10,6 +10,7 @@ polyfill();
 })
 export class OpenForgeApp {
   mainEl: HTMLElement;
+  newServiceWorker: boolean = false;
 
   componentDidLoad() {
     try {
@@ -34,6 +35,57 @@ export class OpenForgeApp {
     }
   }
 
+  onNewServiceWorker(registration, callback) {
+    if (registration.waiting) {
+      return callback();
+    }
+
+    function listenInstalledStateChange() {
+      registration.installing.addEventListener('statechange', event => {
+        if (event.target.state === 'installed') {
+          // A new service worker is available, so trigger the callback to inform the user
+          callback();
+        }
+      });
+    }
+
+    if (registration.installing) {
+      return listenInstalledStateChange();
+    }
+
+    // We are currently controlled so a new SW may be found...
+    // Add a listener in case a new SW is found,
+    registration.addEventListener('updatefound', listenInstalledStateChange);
+  }
+
+  listenForNewServiceWorker = window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').then(registration => {
+      // Track updates to the Service Worker
+      if (!navigator.serviceWorker.controller) {
+        // The window client isn't currently controlled so it's a new service worker that will activate immediately
+        return;
+      }
+
+      // When the user asks to refresh the UI, we'll need to reload the window
+      let preventDevToolsReloadLoop;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        // Ensure refresh is only called once.
+        // This works around a bug in "force update on reload".
+        if (preventDevToolsReloadLoop) return;
+        preventDevToolsReloadLoop = true;
+        window.location.reload();
+      });
+
+      setTimeout(
+        this.onNewServiceWorker(registration, () => {
+          console.log('New service worker detected');
+          this.newServiceWorker = true;
+        }),
+        10000
+      );
+    });
+  });
+
   render() {
     return (
       <stencil-router>
@@ -52,10 +104,7 @@ export class OpenForgeApp {
             url="/services/:service"
             component="app-detailed-service"
           />
-          <stencil-route
-            url="/resources/:source"
-            component="app-resources"
-          />
+          <stencil-route url="/resources/:source" component="app-resources" />
           <stencil-route url="/about/:member" component="app-team-landing" />
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
