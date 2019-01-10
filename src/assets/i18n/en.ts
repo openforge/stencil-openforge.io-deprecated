@@ -58,7 +58,7 @@ export const translations = {
       },
       values: {
         title: 'Our Values',
-        text: 'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is a paramount to a happy and successful lifestyle. We love working with our partners who share similar belifs; and hope to collaborate on impactful projects worldwide!',
+        text: 'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is paramount to a happy and successful lifestyle. We love working with our partners who share similar beliefs; and hope to collaborate on impactful projects worldwide!',
         value1: 'Honesty',
         value2: 'Integrity',
         value3: 'Transparency'
