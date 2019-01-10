@@ -1,6 +1,7 @@
 .home {
   font-family: 'Muli', sans-serif;
-
+  overflow-x: hidden;
+  
   .hero {
     background-color: white;
     background: url('/assets/svg/home-graphic-header-background.svg') center top;
