@@ -15,6 +15,15 @@
         height: 780px;
       }
 
+      p {
+        color: black;
+        font-weight: bolder;
+      }
+
+      h1 { 
+        font-size: 2rem;
+      }
+
       .text-container {
         @include media-breakpoint-down(md) {
           margin-bottom: 10rem;
