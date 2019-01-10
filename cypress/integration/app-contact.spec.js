@@ -171,19 +171,19 @@ describe('Contact Page', function () {
 
   describe('Footer Navigation', function() {
     it('Navigate to SLA page', function () {
-      cy.contains('Ready our SLA').click()
+      cy.contains('Read our SLA').click()
       cy.url().should('include', '/service-level-agreement')
     })
     it('Navigate to Developer page', function () {
-      cy.contains('I\'M A DEVELOPER').click()
+      cy.contains('I\'m a developer').click()
       cy.url().should('include', '/opportunities/develop')
     })
     it('Navigate to Design page', function () {
-      cy.contains('I\'M A DESIGNER').click()
+      cy.contains('I\'m a designer').click()
       cy.url().should('include', '/opportunities/design')
     })
     it('Navigates to StartupJunto Registration Page', function () {
-      cy.contains('JOIN US').click()
+      cy.contains('Register Today!').click()
     })
     it('Navigates to OpenForge Twitter', function () {
       cy.contains('@OpenForge_US').click()
