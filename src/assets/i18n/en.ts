@@ -46,20 +46,25 @@ export const translations = {
           text: 'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
           example: 'JuntoScope'
         }
-      },
-      contact: {
-        title: 'Got a vision?',
-        subTitle: `We've got your back.`,
-        subText: 'Contact us today to get started!',
-        link: 'GET IN TOUCH',
-      },
+      }
     },
+
     about: {
-      title: 'We Are Passionate About Technology and Design',
-      text:
-        "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-      meet: {
-        header: 'Meet the Team',
+      header: {
+        title: 'We Are Passionate About Technology and Design',
+        text:
+          "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
+        action: "LEARN MORE"
+      },
+      values: {
+        title: 'Our Values',
+        text: 'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is paramount to a happy and successful lifestyle. We love working with our partners who share similar beliefs; and hope to collaborate on impactful projects worldwide!',
+        value1: 'Honesty',
+        value2: 'Integrity',
+        value3: 'Transparency'
+      },
+      team: {
+        title: 'Get to Know Us',
         text:
           "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
         member: {
@@ -69,7 +74,8 @@ export const translations = {
             designer: 'Designer',
             developer: 'Software Engineer',
             frontEndDeveloper: 'Front End Developer',
-            projectManager: 'Project Manager / QA Engineer',
+            projectManager: 'Project Manager',
+            qualityManager: 'Quality Manager',
             consultant: 'Consultant',
             officer: 'Chief Happiness Officer',
             softwareIntern: 'Software Intern',
@@ -78,6 +84,7 @@ export const translations = {
         },
       },
     },
+
     contact: {
       hero: {
         title: "Let's Work Together",
@@ -128,6 +135,7 @@ export const translations = {
         unsure: 'Unsure',
       },
     },
+
     services: {
       general: {
         development: {
@@ -241,6 +249,7 @@ export const translations = {
         link: 'Get in touch',
       },
     },
+    
     opportunities: {
       hero: {
         title: "Great News! We're Hiring.",
@@ -359,6 +368,13 @@ export const translations = {
         'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
+    cta: {
+      title: 'Got a vision?',
+      subTitle: `We've got your back.`,
+      text: 'Contact us today to get started!',
+      link: 'GET IN TOUCH',
+    },
+
     header: {
       scrollText: 'Scroll to content',
     },
@@ -406,12 +422,6 @@ export const translations = {
         opportunities: 'Opportunities',
         github: 'Openforge Github account',
       },
-    },
-
-    members: {
-      mailAccount: 'mail account',
-      twitterAccount: 'twitter account',
-      githubAccount: 'github account',
     },
   },
 };

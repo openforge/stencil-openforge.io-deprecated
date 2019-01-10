@@ -1,30 +1,53 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Listen } from '@stencil/core';
 
 @Component({
   tag: 'app-cta',
   styleUrl: 'app-cta.scss',
 })
 export class AppCta {
-  @Prop() linkUrl: string;
-  @Prop() hideButton: boolean = false;
+
+  @Listen('window:resize')
+  handleMobile() {
+    if (window.innerWidth < 768) {
+      /* tslint:disable-next-line */
+      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision-mobile.svg');
+    } else {
+      /* tslint:disable-next-line */
+      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision.svg');
+    }
+  }
+
+  componentDidLoad() {
+    this.handleMobile();
+  }
 
   render() {
     return (
-      <aside class="cta px-2 text-center text-white">
-        <div class="cta-container d-sm-inline-flex d-md-flex flex-sm-column flex-md-row justify-content-center">
-          <h3 class="mr-sm-0 mr-md-5">
-            <slot name="header" />
-          </h3>
+      <section id="cta" class="cta">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 text-center cta-image">
+            {/* <object data="/assets/svg/cta-graphic-vision.svg" id="vision-svg" /> */}
+          </div>
 
-          {this.hideButton ? null : (
-            <stencil-route-link url={this.linkUrl}>
-              <button class="cta-link btn btn-primary">
-                <slot name="link" />
+          <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
+            <h2>
+              <app-translate key="cta.title" />
+            </h2>
+            <p>
+              <app-translate key="cta.subTitle" />
+            </p>
+            <h2>
+              <app-translate key="cta.text" />
+            </h2>
+
+            <stencil-route-link url="/contact">
+              <button class="btn btn-primary">
+                <app-translate key="cta.link" />
               </button>
             </stencil-route-link>
-          )}
+          </div>
         </div>
-      </aside>
+      </section>
     );
   }
 }
