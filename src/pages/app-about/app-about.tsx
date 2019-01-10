@@ -231,7 +231,7 @@ export class AppAbout {
   }
 
   scrollToForm() {
-    const form = document.getElementById('about');
+    const form = document.getElementById('team-photo');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
