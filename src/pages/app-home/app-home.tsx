@@ -1,4 +1,4 @@
-import { Component, Prop, Listen } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import stickySidebar from 'sticky-sidebar';
 
@@ -21,20 +21,8 @@ export class AppHome {
 
   private sticky;
 
-  @Listen('window:resize')
-  handleMobile() {
-    if (window.innerWidth < 768) {
-      /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision-mobile.svg');
-    } else {
-      /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision.svg');
-    }
-  }
 
   componentDidLoad() {
-    this.handleMobile();
-
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {
