@@ -18,7 +18,10 @@
     "cypress": "cypress open",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "st:generate": "node scripts/st-generate.js",
-    "prepublish": "stencil build --prod",
+    "jpg-webp": "for file in src/assets/*.jpg; do cwebp -q 75 \"$file\" -o \"${file%.jpg}.webp\"; done",
+    "png-webp": "for file in src/assets/*.png; do cwebp -q 75 \"$file\" -o \"${file%.png}.webp\"; done",
+    "jpeg-webp": "for file in src/assets/*.jpeg; do cwebp -q 75 \"$file\" -o \"${file%.jpeg}.webp\"; done",
+    "prepublish": "npm run jpg-webp && npm run png-webp && npm run jpeg-webp && stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
