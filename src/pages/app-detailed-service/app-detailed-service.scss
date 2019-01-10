@@ -3,16 +3,6 @@
 .services {
   font-family: 'Muli', sans-serif;
 
-  section {
-    padding: 5rem 0;
-
-    .header {
-      margin: 0 auto 3rem;
-      max-width: 768px;
-    }
-  }
-
-
   .hero {
     padding-top: 150px;
 
@@ -22,16 +12,19 @@
     }
   }
 
+  .our-services, .worked-with {
+    padding: 5rem 0;
+
+    .header {
+      margin: 0 auto 3rem;
+      max-width: 768px;
+    }
+  }
+
   .our-services {
     .container {
       max-width: 960px;
     }
-
-    // .card-container {
-    //   @include media-breakpoint-down(sm) {
-    //     padding: 2rem;
-    //   }
-    // }
 
     .card {
       background: rgba($gray-100, 0.5);
@@ -115,7 +108,7 @@
       align-items: center;
       background-color: $gray-100;
       display: flex;
-      height: calc(100vh - 75.45px);
+      height: 655px;
       justify-content: center;
 
       .panel-inner-text {

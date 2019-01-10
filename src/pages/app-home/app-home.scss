@@ -1,18 +1,18 @@
 .home {
-  overflow-x: hidden;
   font-family: 'Muli', sans-serif;
-
+  overflow-x: hidden;
+  
   .hero {
     background-color: white;
-    background: url('/assets/svg/graphic-home-header-background.svg') center top;
+    background: url('/assets/svg/home-graphic-header-background.svg') center top;
     background-size: 100%;
     background-repeat: no-repeat;
     height: auto;
 
     @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/mobile-graphic-home-header.svg') top
+      background: url('/assets/svg/home-graphic-header-mobile.svg') top
           no-repeat,
-        url('/assets/svg/mobile-graphic-home-header-background.svg') center top
+        url('/assets/svg/home-graphic-header-background-mobile.svg') center top
           no-repeat;
       background-size: 600px 720px, cover;
       margin-top: 75px;
@@ -318,67 +318,6 @@
 
     .juntoscope {
       background-image: url('/assets/home-graphic-juntoscope-pattern.png');
-    }
-  }
-
-  .contact-us {
-    height: 344px;
-
-    @include media-breakpoint-down(sm) {
-      height: 780px;
-    }
-
-    .row {
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(108, 144, 152, 0.99),
-        #3f5a60
-      );
-    }
-
-    .cta-image {
-      object {
-        height: 280px;
-        width: 380px;
-
-        @include media-breakpoint-down(sm) {
-          height: 480px;
-          margin-top: 0;
-        }
-      }
-    }
-
-    .cta-text {
-      @include media-breakpoint-down(sm) {
-        margin-top: -10rem; // remove this when SVG is fixed
-      }
-    }
-
-    h2 {
-      color: white;
-      font-size: 22px;
-      margin: 0;
-
-      @include media-breakpoint-down(sm) {
-        font-size: 20px;
-      }
-    }
-
-    p {
-      color: $white;
-      font-size: 40px;
-      margin: 1rem 0;
-
-      @include media-breakpoint-down(sm) {
-        font-size: 55px;
-        line-height: 60px;
-        margin: 2rem 0;
-      }
-    }
-
-    .btn {
-      margin-top: 4rem;
     }
   }
 }

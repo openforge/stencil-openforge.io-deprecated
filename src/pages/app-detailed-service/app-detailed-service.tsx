@@ -261,7 +261,7 @@ export class AppDetailedService {
     return (
       <div class="services">
         {/* header - hero */}
-        <header class="hero development">
+        <header class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-6">
@@ -384,7 +384,7 @@ export class AppDetailedService {
               />
             </div>
             <div class="content">
-              <div class="content-panel juntoscope">
+              <div class="content-panel">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
                     <h2>
@@ -428,7 +428,7 @@ export class AppDetailedService {
           </div>
         </section>
 
-        {/* <app-cta /> */}
+        <app-cta />
         <app-footer />
       </div>
     );
