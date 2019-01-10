@@ -32,7 +32,7 @@ export class AppAbout {
     {
       name: 'Geoffrey Melle',
       image: './../../assets/headshot-geoff.jpg',
-      title: translate('about.team.member.title.projectManager'),
+      title: translate('about.team.member.title.accountManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
@@ -265,9 +265,7 @@ export class AppAbout {
           <div class="container">
             <div class="row align-items-end text-center">
               <div class="col-12">
-                <p>
-                  <app-translate key="about.teamPhoto.text" />
-                </p>
+                <app-img src="/assets/svg/about-graphic-ribbon.svg" alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences."/>
               </div>
             </div>
           </div>

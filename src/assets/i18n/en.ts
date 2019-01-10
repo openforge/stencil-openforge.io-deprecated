@@ -56,9 +56,6 @@ export const translations = {
           "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
         action: "LEARN MORE"
       },
-      teamPhoto: {
-        text: 'Lorem ipsum dolor sit amet, an his mutat mnesarchum honestatis, eu complectitur conclusionemque vix. Te partiendo petentium has, eu case alterum nec, dicit habemus no has. Usu ullum iusto vidisse an. An mel possit alienum definitiones. Eu sed solum exerci feugait.'
-      },
       values: {
         title: 'Our Values',
         text: 'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is a paramount to a happy and successful lifestyle. We love working with our partners who share similar belifs; and hope to collaborate on impactful projects worldwide!',
