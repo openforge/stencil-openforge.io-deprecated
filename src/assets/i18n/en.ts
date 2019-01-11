@@ -5,7 +5,7 @@ export const translations = {
         title: 'Creating Digital Experiences',
         subTitle: 'Every Day*',
         subtext: '*Monday-Friday',
-        subtextMobile: `Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.`
+        subtextMobile: `Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.`,
       },
       process: {
         title: 'Our Process',
@@ -15,7 +15,8 @@ export const translations = {
         },
         design: {
           title: 'Design',
-          text: 'At OpenForge, logic and user psychology is the foundation of everything we design. Our team of experts works with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
+          text:
+            'At OpenForge, logic and user psychology is the foundation of everything we design. Our team of experts works with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
         },
         development: {
           title: 'Development',
@@ -23,30 +24,35 @@ export const translations = {
         },
         deployment: {
           title: 'Deployment',
-          text: 'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
+          text:
+            'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
         },
         userfeedback: {
           title: 'User Feedback',
-          text: 'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.'
-        }
+          text:
+            'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
+        },
       },
       services: {
         mobileTechnology: {
           title: 'Mobile Technology',
-          text: 'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
-          example: 'LoudCloud'
+          text:
+            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          example: 'LoudCloud',
         },
         digitalExperience: {
           title: 'Digital Experience',
-          text: 'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
-          example: 'The Voyage by New Ocean'
+          text:
+            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+          example: 'The Voyage by New Ocean',
         },
         brandingDesign: {
           title: 'Digital Branding & Web Design',
-          text: 'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
-          example: 'JuntoScope'
-        }
-      }
+          text:
+            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
+          example: 'JuntoScope',
+        },
+      },
     },
 
     about: {
@@ -54,14 +60,15 @@ export const translations = {
         title: 'We Are Passionate About Technology and Design',
         text:
           "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-        action: "LEARN MORE"
+        action: 'LEARN MORE',
       },
       values: {
         title: 'Our Values',
-        text: 'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is paramount to a happy and successful lifestyle. We love working with our partners who share similar beliefs; and hope to collaborate on impactful projects worldwide!',
+        text:
+          'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is paramount to a happy and successful lifestyle. We love working with our partners who share similar beliefs, and hope to collaborate on impactful projects worldwide!',
         value1: 'Honesty',
         value2: 'Integrity',
-        value3: 'Transparency'
+        value3: 'Transparency',
       },
       team: {
         title: 'Get to Know Us',
@@ -160,11 +167,12 @@ export const translations = {
         },
         example: {
           title: 'Mobile Technology',
-          text: 'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          text:
+            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
           name: 'LoudCloud',
           googleUrl: '',
-          appleUrl: ''
-        }
+          appleUrl: '',
+        },
       },
       'app-designer': {
         hero: {
@@ -175,12 +183,12 @@ export const translations = {
         first: {
           title: 'Design Consulting',
           text:
-            'If you bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.',
+            "If you're bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.",
         },
         second: {
           title: 'UI/UX Design',
           text:
-            'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good”. Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
+            'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good.” Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
         },
         third: {
           title: 'Clickable Prototype',
@@ -189,27 +197,28 @@ export const translations = {
         },
         example: {
           title: 'Digital Experience',
-          text: 'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+          text:
+            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
           name: 'The Voyage by New Ocean',
           googleUrl: '',
-          appleUrl: ''
-        }
+          appleUrl: '',
+        },
       },
       'startup-consulting': {
         hero: {
           title: 'Consulting for all Industries',
           text:
-            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Companies today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
         first: {
           title: 'Startup Consulting',
           text:
-            "We work with startup founders as an integrated team to help build and grow successful and innovative products.  Whether you’re starting out at the ideation phase or already have a product and are seeking guidance on user acquisition and revenue strategies; we are here to help.   Remember, “a startup is a company working to solve a problem” - and the best way to solve problems is by working together.",
+            'We work with startup founders as an integrated team to help build and grow successful and innovative products.  Whether you’re starting out at the ideation phase or already have a product and are seeking guidance on user acquisition and revenue strategies; we are here to help.   Remember, “a startup is a company working to solve a problem” - and the best way to solve problems is by working together.',
         },
         second: {
           title: 'Strategic Consulting',
           text:
-            'Businesses require strategic knowledge and an acute sense of the current technological climate in order to succeed, and that’s where our team comes in.   Through our work with hundreds of companies and millions of consumers, our team of industry experts is able to provide strategic consulting to our clients on a wide range of topics relating to user acquisition, design, user experience, and software architecture.',
+            'Businesses require strategic knowledge and an acute sense of the current technological climate to succeed, and that’s where our team comes in.   Through our work with hundreds of companies and millions of consumers, our team of industry experts can provide strategic consulting to our clients on a wide range of topics relating to user acquisition, design, user experience, and software architecture.',
         },
         third: {
           title: 'Product Discovery',
@@ -218,14 +227,15 @@ export const translations = {
         },
         example: {
           title: 'Digital Branding & Web Design',
-          text: 'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
+          text:
+            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
           name: 'JuntoScope',
           googleUrl: '',
-          appleUrl: ''
-        }
+          appleUrl: '',
+        },
       },
     },
-    
+
     opportunities: {
       hero: {
         title: "Great News! We're Hiring.",
@@ -367,7 +377,7 @@ export const translations = {
       work: {
         header: 'Work At OpenForge',
         developer: `I'M A DEVELOPER`,
-        designer: `I'M A DESIGNER`
+        designer: `I'M A DESIGNER`,
       },
       social: {
         followUs: 'Follow Us',
@@ -375,7 +385,7 @@ export const translations = {
         facebook: 'OpenForge_US',
         linkedin: 'OpenForge_US',
         instagram: '@OpenForgeTeam',
-        sla: 'Ready our SLA'
+        sla: 'Read our SLA',
       },
       webinar: {
         signup: 'Startup Junto',
