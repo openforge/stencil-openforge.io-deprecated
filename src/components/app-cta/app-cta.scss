@@ -60,7 +60,7 @@
   .btn {
     margin-top: 4rem;
     @include media-breakpoint-down(sm) {
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
   }
 }
