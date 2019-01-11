@@ -24,7 +24,7 @@ export class AppDetailedService {
       },
     },
     'app-designer': {
-      header: '/assets/svg/process-design.svg',
+      header: '/assets/svg/home-graphic-process-design.svg',
       services: {
         first: '/assets/svg/services-graphic-design1.svg',
         second: '/assets/svg/services-graphic-design2.svg',
@@ -32,7 +32,7 @@ export class AppDetailedService {
       },
     },
     'startup-consulting': {
-      header: '/assets/svg/discovery.svg',
+      header: '/assets/svg/home-graphic-process-discovery.svg',
       services: {
         first: '/assets/svg/services-graphic-consulting1.svg',
         second: '/assets/svg/services-graphic-consulting2.svg',
@@ -277,7 +277,7 @@ export class AppDetailedService {
                 </p>
               </div>
               <div class="col-sm-12 col-md-6 align-self-center">
-                <img src={this.imgs[this.match.params.service].header} />
+                <app-img src={this.imgs[this.match.params.service].header} alt="Animated Header Graphic"/>
               </div>
             </div>
             <div class="line-break" />
@@ -296,7 +296,7 @@ export class AppDetailedService {
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
                   <div class="line-break" />
-                  <div class="card-body text-left">
+                  <div class="card-body">
                     <h3>
                       <app-translate key={`services.${this.match.params.service}.first.title`} />
                     </h3>
@@ -310,7 +310,7 @@ export class AppDetailedService {
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
                   <div class="line-break" />
-                  <div class="card-body text-left">
+                  <div class="card-body">
                     <h3>
                       <app-translate key={`services.${this.match.params.service}.second.title`} />
                     </h3>
@@ -324,7 +324,7 @@ export class AppDetailedService {
                 <div class="card flex-fill">
                   <object class="card-img-top" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
                   <div class="line-break" />
-                  <div class="card-body text-left">
+                  <div class="card-body">
                     <h3>
                       <app-translate key={`services.${this.match.params.service}.third.title`} />
                     </h3>
@@ -349,25 +349,25 @@ export class AppDetailedService {
 
             <div class="row">
               <div class="col-md-3 col-sm-12">
-                <img class="img-fluid" src="/assets/services-logo-newocean.png" />
-                <img class="img-fluid" src="/assets/services-logo-bb.png" />
+                <app-img class="img-fluid" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
+                <app-img class="img-fluid" src="/assets/services-logo-bb.png" alt="BB logo" />
               </div>
               
               <div class="col-md-3 col-sm-12">
-                <img class="img-fluid" src="/assets/services-logo-kemin.png" />
-                <img class="img-fluid" src="/assets/services-logo-livegistics.png" />
-                <img class="img-fluid" src="/assets/services-logo-loudcloud.png" />
+                <app-img class="img-fluid" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
+                <app-img class="img-fluid" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
+                <app-img class="img-fluid" src="/assets/services-logo-livegistics.png" alt="Livegistics logo" />
               </div>
 
               <div class="col-md-3 col-sm-12">
-                <img class="img-fluid" src="/assets/services-logo-yellowdig.png" />
-                <img class="img-fluid" src="/assets/services-logo-redqueen.jpg" />
-                <img class="img-fluid" src="/assets/services-logo-aeris.png" />
+                <app-img class="img-fluid" src="/assets/services-logo-yellowdig.png" alt="YellowDig logo"/>
+                <app-img class="img-fluid" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
+                <app-img class="img-fluid" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
               </div>
 
               <div class="col-md-3 col-sm-12">
-                <img class="img-fluid" src="/assets/services-logo-wharton.png" />
-                <img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" />
+                <app-img class="img-fluid" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
+                <app-img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
               </div>
             </div>
 
