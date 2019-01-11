@@ -1,5 +1,6 @@
 .about {
   font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
 
   .hero {
     background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
@@ -39,9 +40,8 @@
     height: 100%;
     min-height: 540px;
 
-    @include media-breakpoint-down(xs) {
-      background-image: none;
-      min-height: 100px;
+    @include media-breakpoint-down(sm) {
+      min-height: 240px;
     }
 
     app-img {
@@ -50,13 +50,24 @@
       transform: translate(-50%, -50%);
       width: 100%;
 
-      @include media-breakpoint-down(xs) {
-        align-content: center;
-        display: flex;
-        position: relative;
-        top: 0;
-        transform: none;
+      @include media-breakpoint-down(sm) {
+        display: none;
       }
+    }
+  }
+
+  .mission-statement {
+    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
+    display: none;
+    height: 100px;
+
+    p {
+      line-height: 24px;
+      margin: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: block;
     }
   }
 
@@ -69,7 +80,9 @@
     }
   }
 
+
   .value-text {
     font-size: 24px;
   }
+
 }

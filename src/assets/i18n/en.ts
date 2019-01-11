@@ -83,6 +83,9 @@ export const translations = {
           },
         },
       },
+      mission: {
+        statement: 'Our mission is to forge a bond between people and technology through digital experiences.'
+      }
     },
 
     contact: {
