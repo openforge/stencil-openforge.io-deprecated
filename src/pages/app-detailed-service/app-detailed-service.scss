@@ -65,11 +65,11 @@
   .worked-with {
     img {
       padding: 2rem;
-    }
-  }
 
-  .line-break {
-    border-bottom: 1px solid $gray-800;
+      @include media-breakpoint-down(sm) {
+        padding: 2rem 6.5rem;
+      }
+    }
   }
   
   .work {
@@ -177,6 +177,10 @@
         display: flex;
       }
     }
+  }
+
+  .line-break {
+    border-bottom: 1px solid $gray-800;
   }
 
 }
