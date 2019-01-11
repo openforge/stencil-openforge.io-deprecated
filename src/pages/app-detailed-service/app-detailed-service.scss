@@ -1,203 +1,188 @@
 // section - services
-section.services {
-  // hero
+
+.services {
+  font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
+
   .hero {
-    &.development {
-      background-image: url('/assets/team-landing-header-development-team.jpg');
-    }
-    &.design {
-      background-image: url('/assets/team-landing-header-design-team.jpg');
-    }
-    &.consulting {
-      background-image: url('/assets/team-landing-header-management-team.jpeg');
+    padding-top: 150px;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-    }
-
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
-
-    .container,
     .row {
-      height: 100%;
+      height: auto;
+      padding-bottom: 2rem;
+    }
+  }
+
+  .our-services, .worked-with {
+    padding: 5rem 0;
+
+    .header {
+      margin: 0 auto 3rem;
+      max-width: 768px;
+    }
+  }
+
+  .our-services {
+    .container {
+      max-width: 960px;
     }
 
-    h2 {
-      color: $white;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      @include media-breakpoint-down(lg) {
-        font-size: 3rem;
-      }
+    .card {
+      background: rgba($gray-100, 0.5);
+      border-radius: 22px;
+      max-width: 290px;
+
       @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
+        margin-bottom: 2rem;
       }
-    }
 
-    p {
-      color: $white;
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
-      max-width: 500px;
-      @include media-breakpoint-down(lg) {
-        font-size: 1rem;
+      h3 {
+        color: $orange-dark;
       }
-    }
 
-    &.development,
-    &.design,
-    &.consulting {
-      h2 {
-        text-align: initial;
+      .card-img-top {
+        margin: 2rem 0;
+        padding: 1rem;
       }
-      p {
-        max-width: initial;
-        padding: 0;
+
+      .card-body {
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
+      }
+
+      .line-break {
+        margin: 0 2rem;
       }
     }
   }
 
-  .text-img-container {
-    margin-top: 4rem;
-    &:first-child {
-      margin-top: 0;
-      padding-top: 6rem;
-    }
-    h2 {
-      text-align: center;
-    }
-    p {
+  .worked-with {
+    img {
       padding: 2rem;
-    }
-  }
 
-  .text-img-container {
-    display: grid;
-
-    app-img {
-      justify-self: center;
-      img {
-        object-fit: cover;
-      }
-    }
-
-    &.right-side {
-      grid-template-columns: 0.5fr 1fr;
-      grid-column-gap: 30px;
-      .text-img-container-text {
-        h2 {
-          color: $orange;
-          text-align: left;
-        }
-        p {
-          margin-bottom: 1rem;
-          padding: 0;
-          text-align: left;
-          &.check-link {
-            color: $orange;
-            font-size: 26px;
-            margin-bottom: 0;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-    &.left-side {
-      grid-template-columns: 1fr 0.5fr;
-      grid-column-gap: 30px;
-      .text-img-container-text {
-        h2 {
-          color: $orange;
-          text-align: right;
-        }
-        p {
-          margin-bottom: 1rem;
-          padding: 0;
-          text-align: right;
-          &.check-link {
-            color: $orange;
-            font-size: 26px;
-            margin-bottom: 0;
-            text-decoration: underline;
-          }
-        }
+      @include media-breakpoint-down(sm) {
+        padding: 2rem 6.5rem;
       }
     }
   }
+  
+  .work {
+    height: auto;
 
-  .our-toolbox {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
-    background: linear-gradient(
-      to right,
-      #020001 10%,
-      #666666 50%,
-      #000000 90%
-    );
-    h2,
-    h3,
-    p {
-      color: white;
-      padding-top: 1rem;
-      text-align: center;
-    }
-
-    h2,
-    h3 {
-      text-transform: uppercase;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    .image-column {
+    .main-content {
+      background-color: $gray-100;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      img {
-        max-width: 250px;
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .sidebar {
+      width: 50%;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    .content {
+      width: 50%;
+
+      @include media-breakpoint-down(sm) {
         width: 100%;
       }
-    }
-  }
 
-  .work-examples {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    h2 {
-      text-align: center;
-    }
-    .single-example {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      .content-panel {
+        align-items: flex-end;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        text-align: center;
 
-      .single-example-text {
-        h2 {
-          color: $orange;
-          text-align: left;
+        @include media-breakpoint-down(sm) {
+          display: table;
         }
       }
-      app-img {
-        justify-self: center;
+
+      .last-panel {
+        height: 0;
+      }
+    }
+
+    .content-panel-inner {
+      align-items: center;
+      background-color: $gray-100;
+      display: flex;
+      height: 655px;
+      justify-content: center;
+
+      .panel-inner-text {
+        margin: 0 4rem;
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          margin: 0 1rem;
+          text-align: center;
+        }
+
+        h2 {
+          color: $orange-dark;
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.19;
+        }
+
+        p {
+          color: $gray-dark;
+          font-size: 18px;
+          line-height: 1.78;
+        }
+      }
+    }
+
+    .content-panel-image {
+      
+      h2 {
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 16px;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .store-buttons {
+        padding: 0 0 60px 0;
+        @include media-breakpoint-down(sm) {
+          padding: 0 0 40px 0;
+        }
+      }
+
+      .phone-image {
+        img {
+          max-height: 440px;
+        }
+      }
+    }
+
+    .description {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: flex;
       }
     }
   }
 
-  .no-examples {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    h2 {
-      font-size: 46px;
-      text-align: center;
-    }
+  .line-break {
+    border-bottom: 1px solid $gray-800;
   }
+
 }

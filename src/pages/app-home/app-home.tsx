@@ -324,7 +324,7 @@ export class AppHome {
                         href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8"
                         target="_blank"
                       >
-                        <img src="assets/graphic-apple-appstore.png" />
+                        <img src="/assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
@@ -332,12 +332,12 @@ export class AppHome {
                         href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en"
                         target="_blank"
                       >
-                        <img src="assets/graphic-google-googleplaystore.png" />
+                        <img src="/assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
                   </div>
                   <img
-                    src="assets/home-graphic-loudcloud.png"
+                    src="/assets/shared-graphic-loudcloud.png"
                     class="phone-image"
                   />
                 </div>
@@ -363,7 +363,7 @@ export class AppHome {
                         href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
                         target="_blank"
                       >
-                        <img src="assets/graphic-apple-appstore.png" />
+                        <img src="/assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
@@ -371,12 +371,12 @@ export class AppHome {
                         href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
                         target="_blank"
                       >
-                        <img src="assets/graphic-google-googleplaystore.png" />
+                        <img src="/assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
                   </div>
                   <img
-                    src="assets/home-graphic-voyage.png"
+                    src="/assets/shared-graphic-voyage.png"
                     class="phone-image"
                   />
                 </div>
@@ -402,7 +402,7 @@ export class AppHome {
                         href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8"
                         target="_blank"
                       >
-                        <img src="assets/graphic-apple-appstore.png" />
+                        <img src="/assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
@@ -410,12 +410,12 @@ export class AppHome {
                         href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp"
                         target="_blank"
                       >
-                        <img src="assets/graphic-google-googleplaystore.png" />
+                        <img src="/assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
                   </div>
                   <img
-                    src="assets/home-graphic-juntoscope.png"
+                    src="/assets/shared-graphic-juntoscope.png"
                     class="phone-image"
                   />
                 </div>

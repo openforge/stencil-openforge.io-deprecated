@@ -271,6 +271,15 @@ export class AppAbout {
           </div>
         </section>
 
+        {/* section - mission statement */ }
+        <section id="mission-statement" class="mission-statement">
+          <div class="mission-statement d-flex text-center">
+            <p class="text-white align-self-center">
+              <app-translate key="about.mission.statement" />
+            </p>
+          </div>
+        </section>
+
         {/* section - values */}
         <section id="values" class="values">
           <div class="container text-center">

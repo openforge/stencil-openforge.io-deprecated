@@ -77,7 +77,6 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
-              {this.isMobile === null ? (
                 <li
                   class="nav-item dropdown"
                   data-target="#navbarSupportedContent"
@@ -116,7 +115,6 @@ export class AppNavHeader {
                     </stencil-route-link>
                   </div>
                 </li>
-              ) : null}
               <li
                 class="nav-item dropdown"
                 data-target="#navbarSupportedContent"

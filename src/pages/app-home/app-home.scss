@@ -208,7 +208,7 @@
     height: auto;
 
     .main-content {
-      background-color: $gray-light;
+      background-color: $gray-100;
       display: flex;
 
       @include media-breakpoint-down(sm) {
@@ -249,7 +249,7 @@
 
     .content-panel-inner {
       align-items: center;
-      background-color: $gray-light;
+      background-color: $gray-100;
       display: flex;
       height: calc(100vh - 75.45px);
       justify-content: center;
@@ -309,15 +309,15 @@
     }
 
     .loudcloud {
-      background-image: url('/assets/home-graphic-loudcloud-pattern.png');
+      background-image: url('/assets/shared-graphic-loudcloud-pattern.png');
     }
 
     .voyage {
-      background-image: url('/assets/home-graphic-voyage-pattern.png');
+      background-image: url('/assets/shared-graphic-voyage-pattern.png');
     }
 
     .juntoscope {
-      background-image: url('/assets/home-graphic-juntoscope-pattern.png');
+      background-image: url('/assets/shared-graphic-juntoscope-pattern.png');
     }
   }
 }
