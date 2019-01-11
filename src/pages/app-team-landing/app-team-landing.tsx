@@ -465,22 +465,43 @@ export class AppTeamLanding {
                 <section class="text-img-container right-side">
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src={`/assets/team-landing-${
+                    src={`/assets/team-landing-graphic-${
                       this.data[this.match.params.member].team
-                    }.png`}
-                    alt=""
+                    }-badge.png`}
+                    alt="Job Title Badge - Design, Development, Management"
                   />
                   <div class="text-img-container-text">
                     <h2>
-                      What {this.data[this.match.params.member].firstname} Does
+                      <app-translate key="about.landing.container.title1" /> 
+                      &nbsp;{this.data[this.match.params.member].firstname}&nbsp; 
+                      <app-translate key="about.landing.container.title2" /> 
                     </h2>
                     <p>{this.data[this.match.params.member].bodyText}</p>
-                    <h4>Skills</h4>
+                    <h4>
+                      <app-translate key="about.landing.container.skills" /> 
+                    </h4>
                     {this.chips}
                   </div>
                 </section>
               </div>,
-              <app-cta />,
+              
+              <aside class="cta text-white">
+                <div class="cta-container d-flex flex-row justify-content-center">
+                  <h3 class="align-self-center">
+                    <app-translate key="about.landing.cta.title" /> 
+                  </h3>
+
+                  <stencil-route-link url="/about" class="align-self-center">
+                    <button class="btn btn-primary">
+                      <app-translate key="about.landing.cta.button" /> 
+                    </button>
+                  </stencil-route-link>
+                </div>
+              </aside>,
+
+
+
+
               <app-footer />,
             ]
           : null}
