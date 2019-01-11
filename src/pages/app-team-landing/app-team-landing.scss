@@ -66,7 +66,7 @@ section.team-landing {
     display: grid;
 
     app-img {
-      justify-self: center;
+      align-self: center;
       img {
         object-fit: cover;
       }
@@ -76,7 +76,7 @@ section.team-landing {
       grid-template-columns: 0.5fr 1fr;
 
       .text-img-container-text {
-        margin-left: 10px;
+        margin-left: 35px;
         h2,
         h4 {
           color: $orange;

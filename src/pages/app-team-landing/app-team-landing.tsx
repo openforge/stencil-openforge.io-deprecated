@@ -465,10 +465,10 @@ export class AppTeamLanding {
                 <section class="text-img-container right-side">
                   <app-img
                     class="img-fluid d-none d-md-inline"
-                    src={`/assets/team-landing-${
+                    src={`/assets/team-landing-graphic-${
                       this.data[this.match.params.member].team
-                    }.png`}
-                    alt=""
+                    }-badge.png`}
+                    alt="Job Title Badge - Design, Development, Management"
                   />
                   <div class="text-img-container-text">
                     <h2>
