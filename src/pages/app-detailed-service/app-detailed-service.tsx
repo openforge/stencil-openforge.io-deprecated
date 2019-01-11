@@ -1,6 +1,8 @@
 import { Component, Prop, State, Listen, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
+import { translate } from '../../services/translation.service';
+
 declare var fbq;
 
 @Component({
@@ -22,6 +24,8 @@ export class AppDetailedService {
         second: '/assets/svg/services-graphic-development2.svg',
         third: '/assets/svg/services-graphic-development3.svg',
       },
+      exampleGraphic: '/assets/shared-graphic-loudcloud.png',
+      exampleBackground: '/assets/shared-graphic-loudcloud-pattern.png'
     },
     'app-designer': {
       header: '/assets/svg/home-graphic-process-design.svg',
@@ -30,6 +34,8 @@ export class AppDetailedService {
         second: '/assets/svg/services-graphic-design2.svg',
         third: '/assets/svg/services-graphic-design3.svg',
       },
+      exampleGraphic: '/assets/shared-graphic-voyage.png',
+      exampleBackground: '/assets/shared-graphic-voyage-pattern.png'
     },
     'startup-consulting': {
       header: '/assets/svg/home-graphic-process-discovery.svg',
@@ -38,7 +44,9 @@ export class AppDetailedService {
         second: '/assets/svg/services-graphic-consulting2.svg',
         third: '/assets/svg/services-graphic-consulting3.svg',
       },
-    },
+      exampleGraphic: '/assets/shared-graphic-juntoscope.png',
+      exampleBackground: '/assets/shared-graphic-juntoscope-pattern.png'
+    }
   };
 
   @State() formSubmitted = false;
@@ -322,7 +330,7 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
-                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
+                  <object class="card-img-top left-adjust" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
                   <div class="line-break" />
                   <div class="card-body">
                     <h3>
@@ -384,20 +392,20 @@ export class AppDetailedService {
               />
             </div>
             <div class="content">
-              <div class="content-panel">
+              <div class="content-panel" style={{ 'background-image': `url(${this.imgs[this.match.params.service].exampleBackground})` }} >
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
                     <h2>
-                     User-Centered Design
+                      {translate(`services.${this.match.params.service}.example.title`)}
                     </h2>
                     <p>
-                      Our team leads the industry in digital experiences for mobile-centric design principles. We believe it is of the utmost importance for all of our designers to be trained in digital technologies so that our team can advise on the best practices in user experience in mobile and web technologies.  Whether you’re looking for a complete solution or consulting for your existing project, consider our team an extension of your own.
+                      {translate(`services.${this.match.params.service}.example.text`)}
                     </p>
                   </div>
                 </div>
                 <div class="content-panel-image">
                   <h2>
-                    JuntoScope
+                    {translate(`services.${this.match.params.service}.example.name`)}
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
@@ -405,7 +413,7 @@ export class AppDetailedService {
                         href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
                         target="_blank"
                       >
-                        <img src="/assets/graphic-apple-appstore.png" />
+                        <app-img src="/assets/graphic-apple-appstore.png" alt="Apple AppStore Logo" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
@@ -413,12 +421,12 @@ export class AppDetailedService {
                         href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
                         target="_blank"
                       >
-                        <img src="/assets/graphic-google-googleplaystore.png" />
+                        <app-img src="/assets/graphic-google-googleplaystore.png" alt="Google Play Store logo" />
                       </a>
                     </div>
                   </div>
-                  <img
-                    src="/assets/home-graphic-juntoscope.png"
+                  <app-img
+                    src={this.imgs[this.match.params.service].exampleGraphic}
                     class="phone-image"
                   />
                 </div>

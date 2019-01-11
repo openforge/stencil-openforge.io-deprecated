@@ -43,17 +43,17 @@
         color: $orange-dark;
       }
 
+      .card-img-top {
+        margin: 2rem 0;
+        padding: 1rem;
+      }
+
       .card-body {
         text-align: left;
 
         @include media-breakpoint-down(sm) {
           text-align: center;
         }
-      }
-
-      .card-img-top {
-        margin: 2rem 0;
-        padding: 1rem;
       }
 
       .line-break {
@@ -100,7 +100,6 @@
 
       .content-panel {
         align-items: flex-end;
-        background-image: url('/assets/home-graphic-juntoscope-pattern.png');
         display: flex;
         height: auto;
         justify-content: center;
@@ -166,7 +165,9 @@
       }
 
       .phone-image {
-        height: 440px;
+        img {
+          max-height: 440px;
+        }
       }
     }
 

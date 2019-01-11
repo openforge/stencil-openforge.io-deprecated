@@ -158,18 +158,13 @@ export const translations = {
           text:
             'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
         },
-        examples: {
-          first: {
-            name: 'JuntoScope',
-            desc:
-              'JuntoScope was a project that OpenForge created in response to the need for a tool that would allow developers to scope tasks more accurately and efficiently. Our team came together and designed and developed this tool to function as an integration with Teamwork Projects that would allow users to scope tasks with their team and plug those times directly into Teamwork through the API.',
-          },
-          second: {
-            name: 'The Voyage Admin Portal',
-            desc:
-              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. New Ocean wanted a platform where users could manage their own company accounts and easily invite users and add challenges for their Voyage users. We developed the admin portal using Angular and the framework Bootstrap. We also hooked it up with their existing backend.',
-          },
-        },
+        example: {
+          title: 'Mobile Technology',
+          text: 'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          name: 'LoudCloud',
+          googleUrl: '',
+          appleUrl: ''
+        }
       },
       'app-designer': {
         hero: {
@@ -192,18 +187,13 @@ export const translations = {
           text:
             'Does your company or startup need an app prototype before moving forward with development? Our design to will use Marvel to bring your ideas to life with a clickable prototype. Interact with your prototype and provide feedback directly on specific elements to refine the feel to your liking.',
         },
-        examples: {
-          first: {
-            name: 'The Voyage',
-            desc:
-              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. They came to us with an existing mobile application, which lacked consistency and a user experience that matched their target user base. We updated the flow of the application to be consistent across operating systems and to create a more intuitive experience.',
-          },
-          second: {
-            name: 'LoudCloud',
-            desc:
-              'LoudCloud is a mobile application that lets users call and text with temporary numbers from around the world. Loudcloud came to Webjunto with an iOS app looking for a hybrid update and redesign. In our UX audit, we found a need for flatter UX that focuses on conversions rather than numbers as well as a clean and light look and feel.',
-          },
-        },
+        example: {
+          title: 'Digital Experience',
+          text: 'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+          name: 'The Voyage by New Ocean',
+          googleUrl: '',
+          appleUrl: ''
+        }
       },
       'startup-consulting': {
         hero: {
@@ -226,10 +216,13 @@ export const translations = {
           text:
             'We’ll help you truly understand the best ways to utilize technology to reach your audience, and the best and most effective methods to engage them.  During this hands-on engagement, our team evaluates everything about your organization to provide a complete analysis and recommendations on how to keep your business at the forefront of innovation.',
         },
-      },
-      aside: {
-        title: 'Want to learn more?',
-        link: 'Get in touch',
+        example: {
+          title: 'Digital Branding & Web Design',
+          text: 'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
+          name: 'JuntoScope',
+          googleUrl: '',
+          appleUrl: ''
+        }
       },
     },
     

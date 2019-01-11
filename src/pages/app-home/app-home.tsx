@@ -337,7 +337,7 @@ export class AppHome {
                     </div>
                   </div>
                   <img
-                    src="/assets/home-graphic-loudcloud.png"
+                    src="/assets/shared-graphic-loudcloud.png"
                     class="phone-image"
                   />
                 </div>
@@ -376,7 +376,7 @@ export class AppHome {
                     </div>
                   </div>
                   <img
-                    src="/assets/home-graphic-voyage.png"
+                    src="/assets/shared-graphic-voyage.png"
                     class="phone-image"
                   />
                 </div>
@@ -415,7 +415,7 @@ export class AppHome {
                     </div>
                   </div>
                   <img
-                    src="/assets/home-graphic-juntoscope.png"
+                    src="/assets/shared-graphic-juntoscope.png"
                     class="phone-image"
                   />
                 </div>
