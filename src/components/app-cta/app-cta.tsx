@@ -1,4 +1,4 @@
-import { Component, Listen } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-cta',
@@ -6,28 +6,11 @@ import { Component, Listen } from '@stencil/core';
 })
 export class AppCta {
 
-  @Listen('window:resize')
-  handleMobile() {
-    if (window.innerWidth < 768) {
-      /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision-mobile.svg');
-    } else {
-      /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/cta-graphic-vision.svg');
-    }
-  }
-
-  componentDidLoad() {
-    this.handleMobile();
-  }
-
   render() {
     return (
       <section id="cta" class="cta">
         <div class="row">
-          <div class="col-md-6 col-sm-12 text-center cta-image">
-            {/* <object data="/assets/svg/cta-graphic-vision.svg" id="vision-svg" /> */}
-          </div>
+          <div class="col-md-6 col-sm-12 text-center cta-image" />
 
           <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
             <h2>
