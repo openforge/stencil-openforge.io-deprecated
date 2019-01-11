@@ -461,29 +461,27 @@ export class AppTeamLanding {
                   </div>
                 </div>
               </header>,
-              <div class="container">
-                <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={`/assets/team-landing-graphic-${
-                      this.data[this.match.params.member].team
-                    }-badge.png`}
-                    alt="Job Title Badge - Design, Development, Management"
-                  />
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate key="about.landing.container.title1" /> 
-                      &nbsp;{this.data[this.match.params.member].firstname}&nbsp; 
-                      <app-translate key="about.landing.container.title2" /> 
-                    </h2>
-                    <p>{this.data[this.match.params.member].bodyText}</p>
-                    <h4>
-                      <app-translate key="about.landing.container.skills" /> 
-                    </h4>
-                    {this.chips}
-                  </div>
-                </section>
-              </div>,
+              <section class="bio">
+                <app-img
+                  class="img-fluid d-none d-md-inline"
+                  src={`/assets/team-landing-graphic-${
+                    this.data[this.match.params.member].team
+                  }-badge.png`}
+                  alt="Job Title Badge - Design, Development, Management"
+                />
+                <div class="text">
+                  <h2>
+                    <app-translate key="about.landing.container.title1" /> 
+                    &nbsp;{this.data[this.match.params.member].firstname}&nbsp; 
+                    <app-translate key="about.landing.container.title2" /> 
+                  </h2>
+                  <p>{this.data[this.match.params.member].bodyText}</p>
+                  <h4>
+                    <app-translate key="about.landing.container.skills" /> 
+                  </h4>
+                  {this.chips}
+                </div>
+              </section>,
               
               <aside class="cta text-white">
                 <div class="cta-container d-flex flex-row justify-content-center">
