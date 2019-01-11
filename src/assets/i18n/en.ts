@@ -137,23 +137,6 @@ export const translations = {
     },
 
     services: {
-      general: {
-        development: {
-          title: 'App Development',
-          text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
-        },
-        design: {
-          title: 'UI/UX Design',
-          text:
-            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
-        },
-        consulting: {
-          title: 'Consulting',
-          text:
-            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
-        },
-      },
       'app-developer': {
         hero: {
           title: 'Your Go-To App Developer',
@@ -231,17 +214,17 @@ export const translations = {
         first: {
           title: 'Startup Consulting',
           text:
-            "Is an app right for your company? Do the tools you're paying for give you the results you need? Are you paying for the correct level of service through your providers?",
+            "We work with startup founders as an integrated team to help build and grow successful and innovative products.  Whether you’re starting out at the ideation phase or already have a product and are seeking guidance on user acquisition and revenue strategies; we are here to help.   Remember, “a startup is a company working to solve a problem” - and the best way to solve problems is by working together.",
         },
         second: {
-          title: 'Process Consulting',
+          title: 'Strategic Consulting',
           text:
-            'Our team has developed an efficient internal process that can be molded to fit your business needs and requirements. Do you know the efficiency of each of your employees? Do you know the output of each of your developers and how much they are producing towards your applications or websites?',
+            'Businesses require strategic knowledge and an acute sense of the current technological climate in order to succeed, and that’s where our team comes in.   Through our work with hundreds of companies and millions of consumers, our team of industry experts is able to provide strategic consulting to our clients on a wide range of topics relating to user acquisition, design, user experience, and software architecture.',
         },
         third: {
-          title: 'Marketing Consulting',
+          title: 'Product Discovery',
           text:
-            'We will help you understand your current ROI on your marketing initiatives. Our marketing audit will help you see the results from your marketing campaigns, what channels are most profitable, and what you aren’t doing that you’re losing out on! We will perform an in-depth analysis of your strengths and weaknesses and provide advice on options you can do yourself or take back to your marketing agency to improve your reach and boost your ROI',
+            'We’ll help you truly understand the best ways to utilize technology to reach your audience, and the best and most effective methods to engage them.  During this hands-on engagement, our team evaluates everything about your organization to provide a complete analysis and recommendations on how to keep your business at the forefront of innovation.',
         },
       },
       aside: {
