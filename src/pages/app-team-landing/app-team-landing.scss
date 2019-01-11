@@ -1,5 +1,6 @@
 // section - team-landing
 section.team-landing {
+  font-family: 'Muli', sans-serif;
   // hero
   .hero {
     background-position: top center;
@@ -141,5 +142,28 @@ section.team-landing {
     border-radius: 21px;
     color: $white;
     font-size: 12px;
+  }
+
+  .cta {
+    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
+    height: 114px;
+
+    @include media-breakpoint-down(sm) {
+      height: 140px;
+    }
+
+    .cta-container {
+      height: inherit;
+      line-height: 2.5rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 0 4rem;
+      @include media-breakpoint-down(sm) {
+        margin-left: 0;
+        margin-right: 2rem;
+      }
+    }
   }
 }
