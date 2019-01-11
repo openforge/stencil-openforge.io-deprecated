@@ -6,6 +6,10 @@
   .hero {
     padding-top: 150px;
 
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
     .row {
       height: auto;
       padding-bottom: 2rem;
@@ -37,6 +41,14 @@
 
       h3 {
         color: $orange-dark;
+      }
+
+      .card-body {
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
       }
 
       .card-img-top {
