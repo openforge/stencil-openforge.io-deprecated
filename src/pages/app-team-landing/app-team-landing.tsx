@@ -483,7 +483,7 @@ export class AppTeamLanding {
                 </div>
               </section>,
               
-              <aside class="cta text-white">
+              <aside class="cta-about text-white">
                 <div class="cta-container d-flex flex-row justify-content-center">
                   <h3 class="align-self-center">
                     <app-translate key="about.landing.cta.title" /> 

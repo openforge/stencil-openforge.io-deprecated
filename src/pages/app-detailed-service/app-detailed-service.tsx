@@ -383,7 +383,7 @@ export class AppDetailedService {
         </section>
 
 
-        <section id="work" class="work">
+        <section id="example" class="example">
           <div class="main-content">
             <div class="sidebar">
               <div
