@@ -20,6 +20,7 @@ export class AppHome {
   private isServer: boolean;
 
   private sticky;
+  jQuery = $;
 
   componentDidLoad() {
     // isServer is false when running in the browser
@@ -147,7 +148,7 @@ export class AppHome {
             </h2>
           </div>
 
-          <div id="processCarousel" class="carousel slide" data-ride="carousel">
+          <div id="processCarousel" class="carousel slide">
             <app-carousel-indicators
               class="carousel-main-indicators"
               activeIndex="0"
