@@ -21,7 +21,6 @@ export class AppHome {
 
   private sticky;
 
-
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
@@ -82,7 +81,9 @@ export class AppHome {
         self.sticky.updateSticky();
       }, 0);
 
-      $('[data-slide-to=0]').trigger('click');
+      setTimeout(() => {
+        (jQuery('#processCarousel') as any).carousel({}).trigger('slide');
+      }, 3000);
 
       $(window).trigger('scroll'); // init the value
 
@@ -235,7 +236,7 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                      < app-translate key="home.process.deployment.title" />
+                        <app-translate key="home.process.deployment.title" />
                       </h2>
                       <app-carousel-indicators
                         class="carousel-mobile-indicators"
@@ -306,12 +307,8 @@ export class AppHome {
               <div class="content-panel loudcloud">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h2>
-                      {translate('home.services.mobileTechnology.title')}
-                    </h2>
-                    <p>
-                      {translate('home.services.mobileTechnology.text')}
-                    </p>
+                    <h2>{translate('home.services.mobileTechnology.title')}</h2>
+                    <p>{translate('home.services.mobileTechnology.text')}</p>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -348,9 +345,7 @@ export class AppHome {
                     <h2>
                       {translate('home.services.digitalExperience.title')}
                     </h2>
-                    <p>
-                      {translate('home.services.digitalExperience.text')}
-                    </p>
+                    <p>{translate('home.services.digitalExperience.text')}</p>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -384,12 +379,8 @@ export class AppHome {
               <div class="content-panel juntoscope">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h2>
-                      {translate('home.services.brandingDesign.title')}
-                    </h2>
-                    <p>
-                      {translate('home.services.brandingDesign.text')}
-                    </p>
+                    <h2>{translate('home.services.brandingDesign.title')}</h2>
+                    <p>{translate('home.services.brandingDesign.text')}</p>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -427,9 +418,8 @@ export class AppHome {
 
         {/* aside - cta */}
         <app-cta />
-        
-        <app-footer />
 
+        <app-footer />
       </div>
     );
   }
