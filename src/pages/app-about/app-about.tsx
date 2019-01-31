@@ -18,119 +18,145 @@ export class AppAbout {
     {
       name: 'Jedi Weller',
       image: './../../assets/headshot-jedi.jpg',
-      title: translate('about.meet.member.title.founder'),
+      title: translate('about.team.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
     },
     {
-      name: 'Rachel Bennett',
-      image: './../../assets/headshot-rachel.jpg',
-      title: translate('about.meet.member.title.designer'),
-      mail: 'rachel@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/about/rachel-bennett',
-    },
-    {
-      name: 'Geoffrey Melle',
-      image: './../../assets/headshot-geoff.jpg',
-      title: translate('about.meet.member.title.accountManager'),
-      mail: 'geoff@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/about/geoffrey-melle',
-    },
-    {
-      name: 'Joni Lehto',
-      image: './../../assets/headshot-joni.jpg',
-      title: translate('about.meet.member.title.developer'),
-      mail: 'joni@openforge.io',
-      twitter: 'https://twitter.com/lehto_joni',
-      github: '',
-    },
-    {
-      name: 'Auvo Severinkangas',
-      image: './../../assets/headshot-auvo.jpg',
-      title: translate('about.meet.member.title.developer'),
-      mail: 'auvo@openforge.io',
-      twitter: '',
-      github: '',
-    },
-    {
       name: 'Paulina Gallo',
       image: './../../assets/headshot-paulina.png',
-      title: translate('about.meet.member.title.developer'),
+      title: translate('about.team.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
       github: 'https://github.com/paulpauldevelops',
       url: '/about/paulina-gallo',
     },
     {
-      name: 'Meredith Alcorn',
-      image: './../../assets/headshot-meredith.jpg',
-      title: translate('about.meet.member.title.developer'),
-      mail: 'meredith@openforge.io',
+      name: 'Geoffrey Melle',
+      image: './../../assets/headshot-geoff.jpg',
+      title: translate('about.team.member.title.accountManager'),
+      mail: 'geoff@openforge.io',
       twitter: '',
-      github: 'https://github.com/mmalcorn',
+      github: '',
+      url: '/about/geoffrey-melle',
     },
     {
-      name: 'Fernando Del Olmo',
-      image: './../../assets/headshot-fernando.jpg',
-      title: translate('about.meet.member.title.developer'),
-      mail: 'fernando@openforge.io',
-      twitter: 'https://twitter.com/fdom92',
-      github: 'https://github.com/Fdom92',
-      url: '/about/fernando-del-olmo',
+      name: 'Rachel Bennett',
+      image: './../../assets/headshot-rachel.jpg',
+      title: translate('about.team.member.title.designer'),
+      mail: 'rachel@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/about/rachel-bennett',
     },
     {
       name: 'Billy Holloran',
       image: './../../assets/headshot-billy.png',
-      title: translate('about.meet.member.title.projectManager'),
+      title: translate('about.team.member.title.qualityManager'),
       mail: 'billy@openforge.io',
       url: '/about/billy-holloran',
     },
     {
-      name: 'Luis Chacon',
-      image: './../../assets/headshot-luis.jpg',
-      title: translate('about.meet.member.title.developer'),
-      mail: 'luis@openforge.io',
-      twitter: 'https://twitter.com/luiskcs89',
-      github: 'https://github.com/luiskcs89',
-      url: '/about/luis-chacon',
-    },
-    {
-      name: 'Claudio Del Valle',
-      image: './../../assets/headshot-claudio.jpg',
-      title: translate('about.meet.member.title.developer'),
-      mail: 'claudio@openforge.io',
-      titter: '',
-      github: 'https://github.com/daftclaud',
-    },
-    {
       name: 'Ethan Bohan',
       image: './../../assets/headshot-ethan.jpg',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       mail: 'ethan@openforge.io',
       twitter: '',
       github: '',
       url: '/about/ethan-bohan',
     },
     {
+      name: 'Fernando Del Olmo',
+      image: './../../assets/headshot-fernando.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'fernando@openforge.io',
+      twitter: 'https://twitter.com/fdom92',
+      github: 'https://github.com/Fdom92',
+      url: '/about/fernando-del-olmo',
+    },
+    {
+      name: 'Luis Chacon',
+      image: './../../assets/headshot-luis.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'luis@openforge.io',
+      twitter: 'https://twitter.com/luiskcs89',
+      github: 'https://github.com/luiskcs89',
+      url: '/about/luis-chacon',
+    },
+    {
+      name: 'Kevon Chambers',
+      image: '/assets/headshot-kevon.png',
+      title: translate('about.team.member.title.marketing'),
+      mail: 'kevon@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
+      name: 'Sam Hudgens',
+      image: './../../assets/headshot-sam.jpg',
+      title: translate('about.team.member.title.softwareIntern'),
+      mail: 'sam@openforge.io',
+      twitter: '',
+      github: 'https://github.com/samhudgens',
+      url: '/about/sam-hudgens',
+    },
+    {
+      name: 'Young Song',
+      image: './../../assets/headshot-young.jpg',
+      title: translate('about.team.member.title.softwareIntern'),
+      mail: '',
+      twitter: 'https://twitter.com/YoungSongJS',
+      github: 'https://github.com/Hogusong',
+      url: '/about/young-song',
+    },
+    {
       name: 'Ted Grant',
       image: '/assets/headshot-ted.png',
-      title: translate('about.meet.member.title.designer'),
+      title: translate('about.team.member.title.designer'),
       mail: 'ted@openforge.io',
       twitter: '',
       github: '',
       url: '/about/ted-grant',
     },
     {
-      name: 'Kevon Chambers',
-      image: '/assets/headshot-kevon.png',
-      title: translate('about.meet.member.title.marketing'),
-      mail: 'kevon@openforge.io',
+      name: 'Joni Lehto',
+      image: './../../assets/headshot-joni.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'joni@openforge.io',
+      twitter: 'https://twitter.com/lehto_joni',
+      github: '',
+    },
+    {
+      name: 'Meredith Alcorn',
+      image: './../../assets/headshot-meredith.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'meredith@openforge.io',
       twitter: '',
+      github: 'https://github.com/mmalcorn',
+    },
+    {
+      name: 'Claudio Del Valle',
+      image: './../../assets/headshot-claudio.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'claudio@openforge.io',
+      titter: '',
+      github: 'https://github.com/daftclaud',
+    },
+    {
+      name: 'Auvo Severinkangas',
+      image: './../../assets/headshot-auvo.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'auvo@openforge.io',
+      twitter: '',
+      github: '',
+    },
+    {
+      name: 'Dhairya Pujara',
+      image: './../../assets/headshot-dhairya.jpg',
+      title: translate('about.team.member.title.consultant'),
+      mail: '',
+      twitter: 'https://twitter.com/dhairyapujara',
       github: '',
     },
     {
@@ -154,35 +180,9 @@ export class AppAbout {
       external: true,
     },
     {
-      name: 'Dhairya Pujara',
-      image: './../../assets/headshot-dhairya.jpg',
-      title: translate('about.meet.member.title.consultant'),
-      mail: '',
-      twitter: 'https://twitter.com/dhairyapujara',
-      github: '',
-    },
-    {
-      name: 'Young Song',
-      image: './../../assets/headshot-young.jpg',
-      title: translate('about.meet.member.title.softwareIntern'),
-      mail: '',
-      twitter: 'https://twitter.com/YoungSongJS',
-      github: 'https://github.com/Hogusong',
-      url: '/about/young-song',
-    },
-    {
-      name: 'Sam Hudgens',
-      image: './../../assets/headshot-sam.jpg',
-      title: translate('about.meet.member.title.softwareIntern'),
-      mail: 'sam@openforge.io',
-      twitter: '',
-      github: 'https://github.com/samhudgens',
-      url: '/about/sam-hudgens',
-    },
-    {
       name: 'Casey',
       image: './../../assets/headshot-casey.jpg',
-      title: translate('about.meet.member.title.officer'),
+      title: translate('about.team.member.title.officer'),
       mail: '',
       twitter: '',
       github: '',
@@ -215,7 +215,7 @@ export class AppAbout {
   }
 
   scrollToForm() {
-    const form = document.getElementById('about-section');
+    const form = document.getElementById('team-photo');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -226,30 +226,80 @@ export class AppAbout {
         <header class={this.className}>
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-9 col-md-8 col-lg-9">
-                <h2>
-                  <app-translate key="about.title" />
-                </h2>
+              <div class="col-md-8 col-sm-10 text-container">
+                <h1>
+                  <app-translate key="about.header.title" />
+                </h1>
                 <p>
-                  <app-translate key="about.text" />
+                  <app-translate key="about.header.text" />
                 </p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  Learn More
+                  <app-translate key="about.header.action" />
                 </button>
               </div>
             </div>
           </div>
         </header>
 
-        {/* section - about */}
-        <section id="about-section" class="about bg-gray">
+        {/* section - team */}
+        <section id="team-photo" class="team-photo">
           <div class="container">
-            <div class="about--header">
+            <div class="row align-items-end text-center">
+              <div class="col-12">
+                <app-img src="/assets/svg/about-graphic-ribbon.svg" alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences." />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* section - mission statement */}
+        <section id="mission-statement" class="mission-statement">
+          <div class="mission-statement d-flex text-center">
+            <p class="text-white align-self-center">
+              <app-translate key="about.mission.statement" />
+            </p>
+          </div>
+        </section>
+
+        {/* section - values */}
+        <section id="values" class="values">
+          <div class="container text-center">
+            <div class="row header">
+              <div class="col-12">
+                <h2>
+                  <app-translate key="about.values.title" />
+                </h2>
+                <p>
+                  <app-translate key="about.values.text" />
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
+                <object data="assets/svg/about-graphic-integrity.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value2" />
+              </div>
+              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
+                <object data="assets/svg/about-graphic-honesty.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value1" />
+              </div>
+              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
+                <object data="assets/svg/about-graphic-transparency.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value3" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* section - members */}
+        <section id="members" class="members">
+          <div class="container text-center">
+            <div class="header">
               <h2>
-                <app-translate key="about.meet.header" />
+                <app-translate key="about.team.title" />
               </h2>
               <p>
-                <app-translate key="about.meet.text" />
+                <app-translate key="about.team.text" />
               </p>
             </div>
 
@@ -258,10 +308,8 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="/contact">
-          <span slot="header">Want to work with us?</span>
-          <span slot="link">Get in touch</span>
-        </app-cta>
+        <app-cta />
+
         <app-footer />
       </div>
     );

@@ -1,4 +1,4 @@
-import { Component, Prop, Listen } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 import stickySidebar from 'sticky-sidebar';
 
@@ -21,21 +21,7 @@ export class AppHome {
 
   private sticky;
 
-  @Listen('window:resize')
-  handleMobile() {
-    if (window.innerWidth < 768) {
-      console.log('innerWidth');
-      /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/mobile-vision.svg');
-    } else {
-      /* tslint:disable-next-line */
-      $('#vision-svg').attr('data', '/assets/svg/vision.svg');
-    }
-  }
-
   componentDidLoad() {
-    this.handleMobile();
-
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {
@@ -141,7 +127,7 @@ export class AppHome {
               </div>
             </div>
           </div>
-          <object data="/assets/svg/graphic-home-header.svg" class="svg-header-desktop" />
+          <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" />
         </header>
 
         <section id="process" class="process">
@@ -157,7 +143,7 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img class="carousel-image-h" src="/assets/svg/discovery.svg" />
+                    <img class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -175,7 +161,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img class="carousel-image-h" src="/assets/svg/process-design.svg" />
+                    <img class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -193,7 +179,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img class="carousel-image" src="/assets/svg/process-development.svg" />
+                    <img class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -211,7 +197,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img class="carousel-image" src="/assets/svg/process-deployment.svg" />
+                    <img class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -229,7 +215,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <img class="carousel-image-userfeedback" src="/assets/svg/process-userfeedback.svg" />
+                    <img class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -276,16 +262,16 @@ export class AppHome {
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank">
-                        <img src="assets/graphic-apple-appstore.png" />
+                        <img src="/assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
                       <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank">
-                        <img src="assets/graphic-google-googleplaystore.png" />
+                        <img src="/assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
                   </div>
-                  <img src="assets/home-graphic-loudcloud.png" class="phone-image" />
+                  <img src="/assets/shared-graphic-loudcloud.png" class="phone-image" />
                 </div>
               </div>
               <div class="content-panel voyage">
@@ -302,16 +288,16 @@ export class AppHome {
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank">
-                        <img src="assets/graphic-apple-appstore.png" />
+                        <img src="/assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
                       <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank">
-                        <img src="assets/graphic-google-googleplaystore.png" />
+                        <img src="/assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
                   </div>
-                  <img src="assets/home-graphic-voyage.png" class="phone-image" />
+                  <img src="/assets/shared-graphic-voyage.png" class="phone-image" />
                 </div>
               </div>
               <div class="content-panel juntoscope">
@@ -328,16 +314,16 @@ export class AppHome {
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank">
-                        <img src="assets/graphic-apple-appstore.png" />
+                        <img src="/assets/graphic-apple-appstore.png" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
                       <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank">
-                        <img src="assets/graphic-google-googleplaystore.png" />
+                        <img src="/assets/graphic-google-googleplaystore.png" />
                       </a>
                     </div>
                   </div>
-                  <img src="assets/home-graphic-juntoscope.png" class="phone-image" />
+                  <img src="/assets/shared-graphic-juntoscope.png" class="phone-image" />
                 </div>
               </div>
               <div class="content-panel last-panel" />
@@ -345,32 +331,8 @@ export class AppHome {
           </div>
         </section>
 
-        {/* section - contact us */}
-        <section id="contat-us" class="contact-us">
-          <div class="row">
-            <div class="col-md-6 col-sm-12 text-center cta-image">
-              <object data="/assets/svg/vision.svg" id="vision-svg" />
-            </div>
-
-            <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
-              <h2>
-                <app-translate key="home.contact.title" />
-              </h2>
-              <p>
-                <app-translate key="home.contact.subTitle" />
-              </p>
-              <h2>
-                <app-translate key="home.contact.subText" />
-              </h2>
-
-              <stencil-route-link url="/contact">
-                <button class="btn btn-primary">
-                  <app-translate key="home.contact.link" />
-                </button>
-              </stencil-route-link>
-            </div>
-          </div>
-        </section>
+        {/* aside - cta */}
+        <app-cta />
 
         <app-footer />
       </div>

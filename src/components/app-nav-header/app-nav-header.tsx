@@ -53,24 +53,22 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
-              {this.isMobile === null ? (
-                <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Services
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
-                      Development
-                    </stencil-route-link>
-                    <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
-                      UX/UI Design
-                    </stencil-route-link>
-                    <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
-                      Consulting
-                    </stencil-route-link>
-                  </div>
-                </li>
-              ) : null}
+              <li class="nav-item dropdown" data-target="#navbarSupportedContent">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Development
+                  </stencil-route-link>
+                  <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
+                    UX/UI Design
+                  </stencil-route-link>
+                  <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Consulting
+                  </stencil-route-link>
+                </div>
+              </li>
               <li class="nav-item dropdown" data-target="#navbarSupportedContent">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {translate('nav.links.about')}
