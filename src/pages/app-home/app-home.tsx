@@ -66,6 +66,7 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(document).ready(function() {
+      jQuery.noConflict();
       /* tslint:disable-next-line */
       const self = this;
       /* tslint:disable-next-line */
