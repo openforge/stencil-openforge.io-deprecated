@@ -81,11 +81,19 @@ export class AppHome {
         self.sticky.updateSticky();
       }, 0);
 
+      // setTimeout(() => {
+      //   (jQuery('#processCarousel') as any).carousel({}).trigger('slide');
+      // }, 3000);
+
       setTimeout(() => {
-        (function($) {
-          ($('.carousel') as any).carousel();
-        })(jQuery);
+        jQuery('#processCarousel').carousel();
       }, 3000);
+
+      // setTimeout(() => {
+      //   (function ($) {
+      //     ($('.carousel') as any).carousel();
+      //   })(jQuery);
+      // }, 3000);
 
       $(window).trigger('scroll'); // init the value
 
