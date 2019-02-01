@@ -20,7 +20,6 @@ export class AppHome {
   private isServer: boolean;
 
   private sticky;
-  jQuery = $;
 
   componentDidLoad() {
     // isServer is false when running in the browser
@@ -83,7 +82,9 @@ export class AppHome {
       }, 0);
 
       setTimeout(() => {
-        (jQuery('#processCarousel') as any).carousel({}).trigger('slide');
+        (function($) {
+          ($('.carousel') as any).carousel();
+        })(jQuery);
       }, 3000);
 
       $(window).trigger('scroll'); // init the value
