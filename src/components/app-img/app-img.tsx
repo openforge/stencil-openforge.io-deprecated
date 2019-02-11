@@ -59,20 +59,17 @@ export class Img {
   private changeImageFormat() {
     if (this.loadSrc && localStorage.getItem('allowWebp') === 'true') {
       const idx = this.loadSrc.lastIndexOf('.');
-      this.loadSrc = `${this.loadSrc.substring(0, idx)}.webp`;
+      console.log(idx);
+      const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
+      if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        this.loadSrc = `${this.loadSrc.substring(0, idx)}.webp`;
+      }
     }
   }
 
   render() {
     this.changeImageFormat();
     console.log(this.loadSrc);
-    return (
-      <img
-        class={{ fit: this.fit }}
-        src={this.loadSrc}
-        alt={this.alt}
-        decoding="async"
-      />
-    );
+    return <img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} decoding="async" />;
   }
 }

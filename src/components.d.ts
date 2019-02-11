@@ -36,8 +36,7 @@ declare global {
     }
 
     interface AppCta {
-      'hideButton': boolean;
-      'linkUrl': string;
+
     }
 
     interface AppFooter {
@@ -400,8 +399,7 @@ declare global {
     }
 
     export interface AppCtaAttributes extends HTMLAttributes {
-      'hideButton'?: boolean;
-      'linkUrl'?: string;
+
     }
 
     export interface AppFooterAttributes extends HTMLAttributes {
