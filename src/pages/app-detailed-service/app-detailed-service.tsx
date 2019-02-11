@@ -532,6 +532,7 @@ export class AppDetailedService {
                       <a
                         href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
                         target="_blank"
+                        rel="noopener"
                       >
                         <app-img
                           src="/assets/graphic-apple-appstore.png"
@@ -543,6 +544,7 @@ export class AppDetailedService {
                       <a
                         href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
                         target="_blank"
+                        rel="noopener"
                       >
                         <app-img
                           src="/assets/graphic-google-googleplaystore.png"

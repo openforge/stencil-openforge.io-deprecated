@@ -324,6 +324,7 @@ export class AppHome {
                       <a
                         href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           src="/assets/graphic-apple-appstore.png"
@@ -335,6 +336,7 @@ export class AppHome {
                       <a
                         href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           src="/assets/graphic-google-googleplaystore.png"
@@ -368,6 +370,7 @@ export class AppHome {
                       <a
                         href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           src="/assets/graphic-apple-appstore.png"
@@ -379,6 +382,7 @@ export class AppHome {
                       <a
                         href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           src="/assets/graphic-google-googleplaystore.png"
@@ -410,6 +414,7 @@ export class AppHome {
                       <a
                         href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           src="/assets/graphic-apple-appstore.png"
@@ -421,6 +426,7 @@ export class AppHome {
                       <a
                         href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp"
                         target="_blank"
+                        rel="noopener"
                       >
                         <img
                           src="/assets/graphic-google-googleplaystore.png"
