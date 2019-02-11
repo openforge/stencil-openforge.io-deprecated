@@ -36,16 +36,11 @@ declare global {
     }
 
     interface AppCta {
-      'hideButton': boolean;
-      'linkUrl': string;
+
     }
 
     interface AppFooter {
 
-    }
-
-    interface AppHeroHome {
-      'textNoWrap': boolean;
     }
 
     interface AppImg {
@@ -187,14 +182,6 @@ declare global {
     var HTMLAppFooterElement: {
       prototype: HTMLAppFooterElement;
       new (): HTMLAppFooterElement;
-    };
-    
-
-    interface HTMLAppHeroHomeElement extends StencilComponents.AppHeroHome, HTMLStencilElement {}
-
-    var HTMLAppHeroHomeElement: {
-      prototype: HTMLAppHeroHomeElement;
-      new (): HTMLAppHeroHomeElement;
     };
     
 
@@ -380,7 +367,6 @@ declare global {
     'app-carousel-indicators': JSXElements.AppCarouselIndicatorsAttributes;
     'app-cta': JSXElements.AppCtaAttributes;
     'app-footer': JSXElements.AppFooterAttributes;
-    'app-hero-home': JSXElements.AppHeroHomeAttributes;
     'app-img': JSXElements.AppImgAttributes;
     'app-input': JSXElements.AppInputAttributes;
     'app-members': JSXElements.AppMembersAttributes;
@@ -413,16 +399,11 @@ declare global {
     }
 
     export interface AppCtaAttributes extends HTMLAttributes {
-      'hideButton'?: boolean;
-      'linkUrl'?: string;
+
     }
 
     export interface AppFooterAttributes extends HTMLAttributes {
 
-    }
-
-    export interface AppHeroHomeAttributes extends HTMLAttributes {
-      'textNoWrap'?: boolean;
     }
 
     export interface AppImgAttributes extends HTMLAttributes {
@@ -550,7 +531,6 @@ declare global {
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement
     'app-cta': HTMLAppCtaElement
     'app-footer': HTMLAppFooterElement
-    'app-hero-home': HTMLAppHeroHomeElement
     'app-img': HTMLAppImgElement
     'app-input': HTMLAppInputElement
     'app-members': HTMLAppMembersElement
@@ -579,7 +559,6 @@ declare global {
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
     'app-cta': HTMLAppCtaElement;
     'app-footer': HTMLAppFooterElement;
-    'app-hero-home': HTMLAppHeroHomeElement;
     'app-img': HTMLAppImgElement;
     'app-input': HTMLAppInputElement;
     'app-members': HTMLAppMembersElement;
