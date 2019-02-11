@@ -3,6 +3,9 @@ import { MatchResults, RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
 
+/* tslint:disable-next-line */
+import $ from 'jquery';
+
 declare var fbq;
 
 @Component({
