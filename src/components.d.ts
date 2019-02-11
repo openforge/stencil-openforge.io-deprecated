@@ -11,6 +11,9 @@ import '@stencil/state-tunnel';
 
 
 import {
+  EventEmitter,
+} from '@stencil/core';
+import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
@@ -36,16 +39,11 @@ declare global {
     }
 
     interface AppCta {
-      'hideButton': boolean;
-      'linkUrl': string;
+
     }
 
     interface AppFooter {
 
-    }
-
-    interface AppHeroHome {
-      'textNoWrap': boolean;
     }
 
     interface AppImg {
@@ -53,6 +51,12 @@ declare global {
       'fit': boolean;
       'preLoad': boolean;
       'src': string;
+    }
+
+    interface LazyImg {
+      'alt': string;
+      'src': string;
+      'width': number;
     }
 
     interface AppInput {
@@ -172,7 +176,7 @@ declare global {
       prototype: HTMLAppCarouselIndicatorsElement;
       new (): HTMLAppCarouselIndicatorsElement;
     };
-
+    
 
     interface HTMLAppCtaElement extends StencilComponents.AppCta, HTMLStencilElement {}
 
@@ -180,7 +184,7 @@ declare global {
       prototype: HTMLAppCtaElement;
       new (): HTMLAppCtaElement;
     };
-
+    
 
     interface HTMLAppFooterElement extends StencilComponents.AppFooter, HTMLStencilElement {}
 
@@ -188,15 +192,7 @@ declare global {
       prototype: HTMLAppFooterElement;
       new (): HTMLAppFooterElement;
     };
-
-
-    interface HTMLAppHeroHomeElement extends StencilComponents.AppHeroHome, HTMLStencilElement {}
-
-    var HTMLAppHeroHomeElement: {
-      prototype: HTMLAppHeroHomeElement;
-      new (): HTMLAppHeroHomeElement;
-    };
-
+    
 
     interface HTMLAppImgElement extends StencilComponents.AppImg, HTMLStencilElement {}
 
@@ -204,7 +200,15 @@ declare global {
       prototype: HTMLAppImgElement;
       new (): HTMLAppImgElement;
     };
+    
 
+    interface HTMLLazyImgElement extends StencilComponents.LazyImg, HTMLStencilElement {}
+
+    var HTMLLazyImgElement: {
+      prototype: HTMLLazyImgElement;
+      new (): HTMLLazyImgElement;
+    };
+    
 
     interface HTMLAppInputElement extends StencilComponents.AppInput, HTMLStencilElement {}
 
@@ -212,7 +216,7 @@ declare global {
       prototype: HTMLAppInputElement;
       new (): HTMLAppInputElement;
     };
-
+    
 
     interface HTMLAppMembersElement extends StencilComponents.AppMembers, HTMLStencilElement {}
 
@@ -220,7 +224,7 @@ declare global {
       prototype: HTMLAppMembersElement;
       new (): HTMLAppMembersElement;
     };
-
+    
 
     interface HTMLAppNavHeaderElement extends StencilComponents.AppNavHeader, HTMLStencilElement {}
 
@@ -228,7 +232,7 @@ declare global {
       prototype: HTMLAppNavHeaderElement;
       new (): HTMLAppNavHeaderElement;
     };
-
+    
 
     interface HTMLAppRadioElement extends StencilComponents.AppRadio, HTMLStencilElement {}
 
@@ -236,7 +240,7 @@ declare global {
       prototype: HTMLAppRadioElement;
       new (): HTMLAppRadioElement;
     };
-
+    
 
     interface HTMLAppSliderElement extends StencilComponents.AppSlider, HTMLStencilElement {}
 
@@ -244,7 +248,7 @@ declare global {
       prototype: HTMLAppSliderElement;
       new (): HTMLAppSliderElement;
     };
-
+    
 
     interface HTMLAppTextareaElement extends StencilComponents.AppTextarea, HTMLStencilElement {}
 
@@ -252,7 +256,7 @@ declare global {
       prototype: HTMLAppTextareaElement;
       new (): HTMLAppTextareaElement;
     };
-
+    
 
     interface HTMLAppTranslateElement extends StencilComponents.AppTranslate, HTMLStencilElement {}
 
@@ -260,7 +264,7 @@ declare global {
       prototype: HTMLAppTranslateElement;
       new (): HTMLAppTranslateElement;
     };
-
+    
 
     interface HTMLContentGraphicElement extends StencilComponents.ContentGraphic, HTMLStencilElement {}
 
@@ -268,7 +272,7 @@ declare global {
       prototype: HTMLContentGraphicElement;
       new (): HTMLContentGraphicElement;
     };
-
+    
 
     interface HTMLApp404Element extends StencilComponents.App404, HTMLStencilElement {}
 
@@ -276,7 +280,7 @@ declare global {
       prototype: HTMLApp404Element;
       new (): HTMLApp404Element;
     };
-
+    
 
     interface HTMLAppAboutElement extends StencilComponents.AppAbout, HTMLStencilElement {}
 
@@ -284,7 +288,7 @@ declare global {
       prototype: HTMLAppAboutElement;
       new (): HTMLAppAboutElement;
     };
-
+    
 
     interface HTMLAppCaseStudyElement extends StencilComponents.AppCaseStudy, HTMLStencilElement {}
 
@@ -292,7 +296,7 @@ declare global {
       prototype: HTMLAppCaseStudyElement;
       new (): HTMLAppCaseStudyElement;
     };
-
+    
 
     interface HTMLAppContactElement extends StencilComponents.AppContact, HTMLStencilElement {}
 
@@ -300,7 +304,7 @@ declare global {
       prototype: HTMLAppContactElement;
       new (): HTMLAppContactElement;
     };
-
+    
 
     interface HTMLAppDetailedServiceElement extends StencilComponents.AppDetailedService, HTMLStencilElement {}
 
@@ -308,7 +312,7 @@ declare global {
       prototype: HTMLAppDetailedServiceElement;
       new (): HTMLAppDetailedServiceElement;
     };
-
+    
 
     interface HTMLAppHomeElement extends StencilComponents.AppHome, HTMLStencilElement {}
 
@@ -316,7 +320,7 @@ declare global {
       prototype: HTMLAppHomeElement;
       new (): HTMLAppHomeElement;
     };
-
+    
 
     interface HTMLAppOpportunitiesElement extends StencilComponents.AppOpportunities, HTMLStencilElement {}
 
@@ -324,7 +328,7 @@ declare global {
       prototype: HTMLAppOpportunitiesElement;
       new (): HTMLAppOpportunitiesElement;
     };
-
+    
 
     interface HTMLAppResourcesElement extends StencilComponents.AppResources, HTMLStencilElement {}
 
@@ -332,7 +336,7 @@ declare global {
       prototype: HTMLAppResourcesElement;
       new (): HTMLAppResourcesElement;
     };
-
+    
 
     interface HTMLAppServiceLevelAgreementElement extends StencilComponents.AppServiceLevelAgreement, HTMLStencilElement {}
 
@@ -340,7 +344,7 @@ declare global {
       prototype: HTMLAppServiceLevelAgreementElement;
       new (): HTMLAppServiceLevelAgreementElement;
     };
-
+    
 
     interface HTMLAppTeamLandingElement extends StencilComponents.AppTeamLanding, HTMLStencilElement {}
 
@@ -348,7 +352,7 @@ declare global {
       prototype: HTMLAppTeamLandingElement;
       new (): HTMLAppTeamLandingElement;
     };
-
+    
 
     interface HTMLAppToolboxElement extends StencilComponents.AppToolbox, HTMLStencilElement {}
 
@@ -356,7 +360,7 @@ declare global {
       prototype: HTMLAppToolboxElement;
       new (): HTMLAppToolboxElement;
     };
-
+    
 
     interface HTMLAppTosElement extends StencilComponents.AppTos, HTMLStencilElement {}
 
@@ -364,7 +368,7 @@ declare global {
       prototype: HTMLAppTosElement;
       new (): HTMLAppTosElement;
     };
-
+    
 
     interface HTMLOpenForgeAppElement extends StencilComponents.OpenForgeApp, HTMLStencilElement {}
 
@@ -372,7 +376,7 @@ declare global {
       prototype: HTMLOpenForgeAppElement;
       new (): HTMLOpenForgeAppElement;
     };
-
+    
 
   namespace JSX {
     interface Element {}
@@ -380,8 +384,8 @@ declare global {
     'app-carousel-indicators': JSXElements.AppCarouselIndicatorsAttributes;
     'app-cta': JSXElements.AppCtaAttributes;
     'app-footer': JSXElements.AppFooterAttributes;
-    'app-hero-home': JSXElements.AppHeroHomeAttributes;
     'app-img': JSXElements.AppImgAttributes;
+    'lazy-img': JSXElements.LazyImgAttributes;
     'app-input': JSXElements.AppInputAttributes;
     'app-members': JSXElements.AppMembersAttributes;
     'app-nav-header': JSXElements.AppNavHeaderAttributes;
@@ -413,16 +417,11 @@ declare global {
     }
 
     export interface AppCtaAttributes extends HTMLAttributes {
-      'hideButton'?: boolean;
-      'linkUrl'?: string;
+
     }
 
     export interface AppFooterAttributes extends HTMLAttributes {
 
-    }
-
-    export interface AppHeroHomeAttributes extends HTMLAttributes {
-      'textNoWrap'?: boolean;
     }
 
     export interface AppImgAttributes extends HTMLAttributes {
@@ -430,6 +429,13 @@ declare global {
       'fit'?: boolean;
       'preLoad'?: boolean;
       'src'?: string;
+    }
+
+    export interface LazyImgAttributes extends HTMLAttributes {
+      'alt'?: string;
+      'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
+      'src'?: string;
+      'width'?: number;
     }
 
     export interface AppInputAttributes extends HTMLAttributes {
@@ -550,8 +556,8 @@ declare global {
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement
     'app-cta': HTMLAppCtaElement
     'app-footer': HTMLAppFooterElement
-    'app-hero-home': HTMLAppHeroHomeElement
     'app-img': HTMLAppImgElement
+    'lazy-img': HTMLLazyImgElement
     'app-input': HTMLAppInputElement
     'app-members': HTMLAppMembersElement
     'app-nav-header': HTMLAppNavHeaderElement
@@ -579,8 +585,8 @@ declare global {
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
     'app-cta': HTMLAppCtaElement;
     'app-footer': HTMLAppFooterElement;
-    'app-hero-home': HTMLAppHeroHomeElement;
     'app-img': HTMLAppImgElement;
+    'lazy-img': HTMLLazyImgElement;
     'app-input': HTMLAppInputElement;
     'app-members': HTMLAppMembersElement;
     'app-nav-header': HTMLAppNavHeaderElement;

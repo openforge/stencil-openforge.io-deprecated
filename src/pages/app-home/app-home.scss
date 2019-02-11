@@ -22,8 +22,10 @@
       }
     }
 
-    img {
-      width: 100%;
+    app-img {
+      img {
+        width: 100%;
+      }
     }
 
     object {
@@ -296,7 +298,13 @@
       }
 
       .phone-image {
-        height: 440px;
+        img {
+          height: 440px;
+
+          @include media-breakpoint-down(sm) {
+            height: auto;
+          }
+        }
       }
     }
 

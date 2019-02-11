@@ -65,11 +65,13 @@
   }
 
   .worked-with {
-    img {
-      padding: 2rem;
+    app-img {
+      img {
+        padding: 2rem;
 
-      @include media-breakpoint-down(sm) {
-        padding: 2rem 6.5rem;
+        @include media-breakpoint-down(sm) {
+          padding: 2rem 6.5rem;
+        }
       }
     }
   }
@@ -167,7 +169,11 @@
 
       .phone-image {
         img {
-          max-height: 440px;
+          height: 440px;
+
+          @include media-breakpoint-down(sm) {
+            height: auto;
+          }
         }
       }
     }
