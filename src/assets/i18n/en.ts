@@ -2,86 +2,80 @@ export const translations = {
   translation: {
     home: {
       hero: {
-        header: 'We are Thinkers. Makers. Doers.',
-        body:
-          'Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.',
-        link: "Let's Get Started",
-      },
-      services: {
-        what: {
-          title: 'What do we provide?',
-          text:
-            'Whether you are a start up, an enterprise, or somewhere in between, we will work with you every step of the way. Choose your path below to learm more about our custom services.',
-          fromStartupToEnterprise:
-            'From Startups to Enterprise companies, our specialized team will work with you every step of the way to meet your business goals and add to your success. Welcome to the OpenForge family - scroll down to learn more!',
-          ourWork: 'Check Out Our Work',
-        },
-        'app-developer': {
-          meta:
-            'At OpenForge our app developer team will create an application that fits your needs.',
-          headline: 'App Development',
-          text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
-        },
-        'app-designer': {
-          meta:
-            'At OpenForge our app designers will design a beautiful and intuitive app that will engage users and produce results.',
-          headline: 'UI/UX Design',
-          text:
-            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
-        },
-        'startup-consulting': {
-          meta:
-            'With OpenForge as your tech consultant, we will determine what technologies and processes will help your business succeed in the digital world.',
-          headline: 'Consulting',
-          text:
-            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
-        },
-      },
-      learnAbout: {
-        header: 'Want to learn more about us?',
-        link: 'Get to know us',
+        title: 'Creating Digital Experiences',
+        subTitle: 'Every Day*',
+        subtext: '*Monday-Friday',
+        subtextMobile: `Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.`,
       },
       process: {
         title: 'Our Process',
-        discovery: 'Discovery',
-        discoveryBody:
-          "We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.",
-        devConsulting: 'Development Consulting',
-        development: 'Development',
-        developmentBody:
-          "Throw away the development practices of the 1990's and 2000's. In order to utilize modern technologies we must use modern approaches to software development, including Design & Dev integration, Continuous Integration strategies, and sophisticated Automated Testing strategies to assure your business is always operational.",
-        deployment: 'Deployment',
-        deploymentBody:
-          'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
-        userFeedback: 'User Feedback',
-        userFeedbackBody:
-          'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
-        designUserExperience: 'Design & User Experience',
-        designUserExperienceBody:
-          'There is psychology and thought behind every effective design. Our team of experts sits with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
+        discovery: {
+          title: 'Discovery',
+          text: `We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.`,
+        },
+        design: {
+          title: 'Design',
+          text:
+            'At OpenForge, logic and user psychology is the foundation of everything we design. Our team of experts works with you and matches our knowledge of Design & User Experience principles with your subject-matter knowledge to jointly create the most effective representation of your business.',
+        },
+        development: {
+          title: 'Development',
+          text: `Throw away the development practices of the 1990's and 2000's. In order to utilize modern technologies we must use modern approaches to software development, including Design & Dev integration, Continuous Integration strategies, and sophisticated Automated Testing strategies to assure your business is always operational.`,
+        },
+        deployment: {
+          title: 'Deployment',
+          text:
+            'Do you have a dashboard to monitor the state of your application? Do you have Continuous Integration and Automated Testing strategies to decrease your development and QA testing costs? Does releasing an update take more than 1 (one) day? If so, let us help you improve your deployment strategy so you can get to market quicker, on time, and on budget.',
+        },
+        userfeedback: {
+          title: 'User Feedback',
+          text:
+            'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
+        },
       },
-      perspectives: {
-        title: 'We Are Powered by Multiple Perspectives',
-        text:
-          'Our individual skills, backgrounds, and life experiences have shaped us into the company that we are today. Maintaining a diverse team helps us to perform better, attract top talent, and make smarter decisions.',
-      },
-      partners: {
-        title: 'Our Industry Partners',
-        text:
-          "Here are some of our trusted partners. We frequently work with these companies to ensure the highest quality to our products and to use the program that best fits your app's needs.",
-      },
-      contact: {
-        title: 'Ready to work with us?',
-        link: 'Get in touch',
+      services: {
+        mobileTechnology: {
+          title: 'Mobile Technology',
+          text:
+            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          example: 'LoudCloud',
+        },
+        digitalExperience: {
+          title: 'Digital Experience',
+          text:
+            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+          example: 'The Voyage by New Ocean',
+        },
+        brandingDesign: {
+          title: 'Digital Branding & Web Design',
+          text:
+            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
+          example: 'JuntoScope',
+        },
       },
     },
+
     about: {
-      title: 'We Are Passionate About Technology and Design',
-      text:
-        "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-      meet: {
-        header: 'Meet the Team',
+      header: {
+        title: 'We Are Passionate About Technology and Design',
+        text:
+          "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
+        action: 'LEARN MORE',
+      },
+      mission: {
+        statement:
+          'Our mission is to forge a bond between people and technology through digital experiences.',
+      },
+      values: {
+        title: 'Our Values',
+        text:
+          'While we specialize in user experience design and application development, our true strength lies in our team values. We believe that transparency, honesty, and integrity, and a desire to help others is paramount to a happy and successful lifestyle. We love working with our partners who share similar beliefs, and hope to collaborate on impactful projects worldwide!',
+        value1: 'Honesty',
+        value2: 'Integrity',
+        value3: 'Transparency',
+      },
+      team: {
+        title: 'Get to Know Us',
         text:
           "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
         member: {
@@ -91,7 +85,8 @@ export const translations = {
             designer: 'Designer',
             developer: 'Software Engineer',
             frontEndDeveloper: 'Front End Developer',
-            projectManager: 'Project Manager / QA Engineer',
+            projectManager: 'Project Manager',
+            qualityManager: 'Quality Manager',
             consultant: 'Consultant',
             officer: 'Chief Happiness Officer',
             softwareIntern: 'Software Intern',
@@ -99,7 +94,19 @@ export const translations = {
           },
         },
       },
+      landing: {
+        container: {
+          title1: 'What',
+          title2: 'Does',
+          skills: 'Skills',
+        },
+        cta: {
+          title: 'Meet The Team',
+          button: `Let's Go`,
+        },
+      },
     },
+
     contact: {
       hero: {
         title: "Let's Work Together",
@@ -150,29 +157,13 @@ export const translations = {
         unsure: 'Unsure',
       },
     },
+
     services: {
-      general: {
-        development: {
-          title: 'App Development',
-          text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from your investment. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
-        },
-        design: {
-          title: 'UI/UX Design',
-          text:
-            'Usability of apps is reliant on a design team that understands what users find to be not only visual appealing but intuitive.  Our design team help you create an app with beautiful graphics and color schemes and ensure that the user flow is easily understandable to improve your user engagement and satisfaction. Communication directly with our design team will allow your vision to shine through in the app that we deliver to you. Our design team will create clickable prototype of your app that you can use and test before the first line of code is written.',
-        },
-        consulting: {
-          title: 'Consulting',
-          text:
-            'Do you know what the output of your individual team members are? Do you have multiple teams within your business that struggle to effectively communicate? Have you looked through your operations to identify weakness and inefficiencies that could be eating into your profits? The combined experience of our team members coupled with the streamlined internal processes of communication and delivery will help your business succeed. Our consultation services will dive deep into your business and provide you with proven recommendations.',
-        },
-      },
       'app-developer': {
         hero: {
           title: 'Your Go-To App Developer',
           text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
+            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
         },
         first: {
           title: 'Progressive Web App Development',
@@ -182,24 +173,20 @@ export const translations = {
         second: {
           title: 'Mobile App Development',
           text:
-            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and everyone one of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
+            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and every one  of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
         },
         third: {
           title: 'Web App Development',
           text:
             'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
         },
-        examples: {
-          first: {
-            name: 'JuntoScope',
-            desc:
-              'JuntoScope was a project that OpenForge created in response to the need for a tool that would allow developers to scope tasks more accurately and efficiently. Our team came together and designed and developed this tool to function as an integration with Teamwork Projects that would allow users to scope tasks with their team and plug those times directly into Teamwork through the API.',
-          },
-          second: {
-            name: 'The Voyage Admin Portal',
-            desc:
-              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. New Ocean wanted a platform where users could manage their own company accounts and easily invite users and add challenges for their Voyage users. We developed the admin portal using Angular and the framework Bootstrap. We also hooked it up with their existing backend.',
-          },
+        example: {
+          title: 'Mobile Technology',
+          text:
+            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          name: 'LoudCloud',
+          googleUrl: '',
+          appleUrl: '',
         },
       },
       'app-designer': {
@@ -211,58 +198,59 @@ export const translations = {
         first: {
           title: 'Design Consulting',
           text:
-            'If you bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.',
+            "If you're bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.",
         },
         second: {
           title: 'UI/UX Design',
           text:
-            'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good”. Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
+            'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good.” Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
         },
         third: {
           title: 'Clickable Prototype',
           text:
             'Does your company or startup need an app prototype before moving forward with development? Our design to will use Marvel to bring your ideas to life with a clickable prototype. Interact with your prototype and provide feedback directly on specific elements to refine the feel to your liking.',
         },
-        examples: {
-          first: {
-            name: 'The Voyage',
-            desc:
-              'The Voyage by New Ocean is a mobile application that provides employees with a tool to help them achieve their health goals. They came to us with an existing mobile application, which lacked consistency and a user experience that matched their target user base. We updated the flow of the application to be consistent across operating systems and to create a more intuitive experience.',
-          },
-          second: {
-            name: 'LoudCloud',
-            desc:
-              'LoudCloud is a mobile application that lets users call and text with temporary numbers from around the world. Loudcloud came to Webjunto with an iOS app looking for a hybrid update and redesign. In our UX audit, we found a need for flatter UX that focuses on conversions rather than numbers as well as a clean and light look and feel.',
-          },
+        example: {
+          title: 'Digital Experience',
+          text:
+            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+          name: 'The Voyage by New Ocean',
+          googleUrl: '',
+          appleUrl: '',
         },
       },
       'startup-consulting': {
         hero: {
-          title: 'Startup Consulting for all Industries',
+          title: 'Consulting for all Industries',
           text:
-            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Businesses today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Companies today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
         },
         first: {
           title: 'Startup Consulting',
           text:
-            "Is an app right for your company? Do the tools you're paying for give you the results you need? Are you paying for the correct level of service through your providers?",
+            'We work with startup founders as an integrated team to help build and grow successful and innovative products.  Whether you’re starting out at the ideation phase or already have a product and are seeking guidance on user acquisition and revenue strategies; we are here to help.   Remember, “a startup is a company working to solve a problem” - and the best way to solve problems is by working together.',
         },
         second: {
-          title: 'Process Consulting',
+          title: 'Strategic Consulting',
           text:
-            'Our team has developed an efficient internal process that can be molded to fit your business needs and requirements. Do you know the efficiency of each of your employees? Do you know the output of each of your developers and how much they are producing towards your applications or websites?',
+            'Businesses require strategic knowledge and an acute sense of the current technological climate to succeed, and that’s where our team comes in.   Through our work with hundreds of companies and millions of consumers, our team of industry experts can provide strategic consulting to our clients on a wide range of topics relating to user acquisition, design, user experience, and software architecture.',
         },
         third: {
-          title: 'Marketing Consulting',
+          title: 'Product Discovery',
           text:
-            'We will help you understand your current ROI on your marketing initiatives. Our marketing audit will help you see the results from your marketing campaigns, what channels are most profitable, and what you aren’t doing that you’re losing out on! We will perform an in-depth analysis of your strengths and weaknesses and provide advice on options you can do yourself or take back to your marketing agency to improve your reach and boost your ROI',
+            'We’ll help you truly understand the best ways to utilize technology to reach your audience, and the best and most effective methods to engage them.  During this hands-on engagement, our team evaluates everything about your organization to provide a complete analysis and recommendations on how to keep your business at the forefront of innovation.',
+        },
+        example: {
+          title: 'Digital Branding & Web Design',
+          text:
+            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
+          name: 'JuntoScope',
+          googleUrl: '',
+          appleUrl: '',
         },
       },
-      aside: {
-        title: 'Want to learn more?',
-        link: 'Get in touch',
-      },
     },
+
     opportunities: {
       hero: {
         title: "Great News! We're Hiring.",
@@ -381,6 +369,13 @@ export const translations = {
         'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
+    cta: {
+      title: 'Got a vision?',
+      subTitle: `We've got your back.`,
+      text: 'Contact us today to get started!',
+      link: 'GET IN TOUCH',
+    },
+
     header: {
       scrollText: 'Scroll to content',
     },
@@ -389,47 +384,30 @@ export const translations = {
       address: {
         header: 'Our Headquarters',
         name: 'OpenForge',
-        line1: '1010 N Hancock St',
-        line2: 'Philadelphia, PA 19123',
+        line1: '1608 Walnut Street',
+        line2: 'Philadelphia, PA 19103',
         email: 'hello@openforge.io',
-        phoneNumber: '(215)-821-8673'
+        phoneNumber: '(215)-821-8673',
       },
-
-      partners: {
-        header: 'Our Partners',
-
-        ionic: {
-          title: 'Ionic framework website',
-          alt: 'Ionic',
-        },
-        marketing215: {
-          title: '215 marketing website',
-          alt: '215 Marketing',
-        },
-
-        goEmerchant: {
-          title: 'go emerchant website',
-          alt: 'goEmerchant Payment Processing',
-        },
+      work: {
+        header: 'Work At OpenForge',
+        developer: `I'M A DEVELOPER`,
+        designer: `I'M A DESIGNER`,
       },
-
       social: {
         followUs: 'Follow Us',
+        twitter: '@OpenForge_US',
+        facebook: 'OpenForge_US',
+        linkedin: 'OpenForge_US',
+        instagram: '@OpenForgeTeam',
+        sla: 'Read our SLA',
       },
-
       webinar: {
         signup: 'Startup Junto',
         webinarText:
           'Startup Junto is a curated community for startup founders and entrepreneurs.',
-        register: 'Register Today!',
+        register: 'JOIN US',
       },
-
-      blog: {
-        header: 'Subscribe to Blog via Email',
-        content: 'Coming soon!',
-      },
-
-      copyright: '&copy; OpenForge. All rights reserved.',
     },
 
     nav: {
@@ -445,12 +423,6 @@ export const translations = {
         opportunities: 'Opportunities',
         github: 'Openforge Github account',
       },
-    },
-
-    members: {
-      mailAccount: 'mail account',
-      twitterAccount: 'twitter account',
-      githubAccount: 'github account',
     },
   },
 };

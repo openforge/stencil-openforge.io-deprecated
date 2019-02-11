@@ -105,6 +105,9 @@ export class AppOpportunities {
         description:
           'From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) Ionic or React App!',
         keywords: 'Software Developer Job Application',
+        url: 'https://openforge.io/opportunities/develop/',
+        image:
+          'https://openforge.io/assets/graphic-opportunities-dev-header.png',
       },
     },
     design: {
@@ -153,6 +156,9 @@ export class AppOpportunities {
         description:
           'At OpenForge, we believe that sometimes actions speak louder than words, so as part of your interview assignment, we’d like to challenge you to design 3 pages of an app of your choosing.',
         keywords: 'Graphic Designer Job Application',
+        url: 'https://openforge.io/opportunities/design/',
+        image:
+          'https://openforge.io/assets/graphic-opportunities-design-header.png',
       },
     },
   };
@@ -175,7 +181,7 @@ export class AppOpportunities {
   }
 
   componentWillLoad() {
-    if(!this.texts[this.match.params.type]) {
+    if (!this.texts[this.match.params.type]) {
       this.history.push(`/`, {});
     }
   }
@@ -376,420 +382,485 @@ export class AppOpportunities {
   }
 
   changeMetadata() {
-    if(this.texts[this.match.params.type]) {
+    if (this.texts[this.match.params.type]) {
       // Change meta tags dynamically d
       document
-        .querySelector("meta[name='title']")
+        .querySelector("meta[property='og:title']")
         .setAttribute(
           'content',
           this.texts[this.match.params.type].metatags.title
         );
       document
-        .querySelector("meta[name='description']")
+        .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           this.texts[this.match.params.type].metatags.description
+        );
+      document
+        .querySelector("meta[property='og:url']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.url
+        );
+      document
+        .querySelector("meta[property='og:image']")
+        .setAttribute(
+          'content',
+          this.texts[this.match.params.type].metatags.image
         );
       document
         .querySelector("meta[name='keywords']")
         .setAttribute(
           'content',
           this.texts[this.match.params.type].metatags.keywords
-      );
+        );
     }
-
   }
 
   render() {
     return (
       <div class="opportunities">
         {/* header - hero */}
-      {this.texts[this.match.params.type]
-      ? [
-        <header
-          class="hero"
-          style={{
-            'background-image': `url(${
-              this.texts[this.match.params.type].backgroundPhoto
-            })`,
-          }}
-        >
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>
-                  <app-translate key="opportunities.hero.title" />
-                </h2>
-                <p>
-                  <app-translate key="opportunities.hero.text" />
-                </p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
-                  <app-translate key="opportunities.hero.text2" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>,
-        
-        /* section -  interviews */
-        <section id="interviews" class="interviews">
-          <div class="container">
-            <content-graphic
-              img-url="/assets/graphic-opportunities-suck.jpg"
-              reverse={true}
-            >
-              <h3 slot="header">
-                <app-translate key="opportunities.intro.title" />
-              </h3>
-              <p slot="body">
-                <app-translate
-                  key={`opportunities.intro.${this.match.params.type}.text`}
-                />
-              </p>
-            </content-graphic>
-
-            <content-graphic
-              img-url={`/assets/graphic-opportunities-master-${
-                this.match.params.type
-              }.jpg`}
-            >
-              <h3 slot="header">
-                <app-translate key="opportunities.intro.title" />
-              </h3>
-              <p slot="body">
-                <app-translate
-                  key={`opportunities.test.${this.match.params.type}.text`}
-                />
-              </p>
-            </content-graphic>
-          </div>
-
-          <div class="challenge">
-            <div class="container">
-              <div class="intro text-center">
-                <h2>
-                  <app-translate key="opportunities.challenge.title" />
-                </h2>
-                <p>
-                  <app-translate key="opportunities.challenge.showUs" />
-                </p>
-              </div>
-              <div class="row">
-                <div class="image-column col-sm-12 col-md-4">
-                  <h3>{this.texts[this.match.params.type].firstSkill.name}</h3>
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.texts[this.match.params.type].firstSkill.img}
-                    alt=""
-                  />
-                </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <h3>{this.texts[this.match.params.type].secondSkill.name}</h3>
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.texts[this.match.params.type].secondSkill.img}
-                    alt=""
-                  />
-                </div>
-                <div class="image-column col-sm-12 col-md-4">
-                  <h3>{this.texts[this.match.params.type].thirdSkill.name}</h3>
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.texts[this.match.params.type].thirdSkill.img}
-                    alt=""
-                  />
-                  <app-img
-                    class="img-fluid d-xs-inline d-md-none"
-                    src={this.texts[this.match.params.type].mobile.img}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="container">
-            <content-graphic
-              img-url="/assets/graphic-opportunities-ionic.jpg"
-              reverse={true}
-            >
-              <h3 slot="header">
-                <app-translate key="opportunities.reputation.title" />
-              </h3>
-              <p slot="body">
-                <app-translate key="opportunities.reputation.text" />
-              </p>
-            </content-graphic>
-
-            <content-graphic img-url="/assets/graphic-opportunities-sword.png">
-              <h3 slot="header">
-                <app-translate key="opportunities.prepared.title" />
-              </h3>
-              <p slot="body">
-                <app-translate key="opportunities.prepared.body" />
-              </p>
-            </content-graphic>
-          </div>
-        </section>,
-
-        /* section - apply */
-        <section id="apply" class="apply">
-          {!this.formSubmitted ? (
-            <div class="container">
-              {!this.canRequestInterview ? (
-                <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
-                  <h2>
-                    <app-translate key="opportunities.skills.title" />
-                  </h2>
-                  <p>
-                    <app-translate key="opportunities.skills.text" />
-                  </p>
-
-                  <div class="slider-labels">
-                    <p>
-                      <app-translate key="opportunities.skills.noob" />
-                    </p>
-                    <p>
-                      <app-translate key="opportunities.skills.expert" />
-                    </p>
+        {this.texts[this.match.params.type]
+          ? [
+              <header
+                class="hero"
+                style={{
+                  'background-image': `url(${
+                    this.texts[this.match.params.type].backgroundPhoto
+                  })`,
+                }}
+              >
+                <div class="container">
+                  <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-8 col-lg-6">
+                      <h2>
+                        <app-translate key="opportunities.hero.title" />
+                      </h2>
+                      <p>
+                        <app-translate key="opportunities.hero.text" />
+                      </p>
+                      <button
+                        onClick={this.scrollToForm.bind(this)}
+                        class="btn btn-primary"
+                      >
+                        <app-translate key="opportunities.hero.text2" />
+                      </button>
+                    </div>
                   </div>
+                </div>
+              </header>,
 
-                  <app-slider
-                    name={this.texts[this.match.params.type].sliders.first.name}
-                    label={
-                      this.texts[this.match.params.type].sliders.first.label
-                    }
-                  />
-                  <app-slider
-                    name={
-                      this.texts[this.match.params.type].sliders.second.name
-                    }
-                    label={
-                      this.texts[this.match.params.type].sliders.second.label
-                    }
-                  />
-                  <app-slider
-                    name={this.texts[this.match.params.type].sliders.third.name}
-                    label={
-                      this.texts[this.match.params.type].sliders.third.label
-                    }
-                  />
-                  <app-slider
-                    name={
-                      this.texts[this.match.params.type].sliders.fourth.name
-                    }
-                    label={
-                      this.texts[this.match.params.type].sliders.fourth.label
-                    }
-                  />
-                  <app-slider
-                    name={this.texts[this.match.params.type].sliders.fifth.name}
-                    label={
-                      this.texts[this.match.params.type].sliders.fifth.label
-                    }
-                  />
-
-                  {!this.interviewButtonDisabled ? (
-                    <p>
-                      <app-translate key="opportunities.form.allset" />
-                    </p>
-                  ) : (
-                    <p>
-                      <app-translate key="opportunities.form.almost" />
-                    </p>
-                  )}
-
-                  <button
-                    class="btn btn-primary"
-                    type="submit"
-                    disabled={this.interviewButtonDisabled}
+              /* section -  interviews */
+              <section id="interviews" class="interviews">
+                <div class="container">
+                  <content-graphic
+                    img-url="/assets/graphic-opportunities-suck.jpg"
+                    reverse={true}
                   >
-                    <app-translate key="opportunities.form.request" />
-                  </button>
-                </form>
-              ) : (
-                <form
-                  class="apply-2"
-                  id="myLittleAnchor"
-                  onSubmit={this.handleSubmit.bind(this)}
-                >
-                  <p>
-                    Want to know exactly what you're getting yourself into?
-                    Check out our
-                    <a
-                      class="doc-link"
-                      target="_blank"
-                      href={this.texts[this.match.params.type].googleDoc}
-                    >
-                      Google Document
-                    </a>
-                    to see the ins and outs of what this epic adventure will
-                    include!
-                  </p>
-                  <h3>
-                    <app-translate key="opportunities.form.submitTitle" />
-                  </h3>
+                    <h3 slot="header">
+                      <app-translate key="opportunities.intro.title" />
+                    </h3>
+                    <p slot="body">
+                      <app-translate
+                        key={`opportunities.intro.${
+                          this.match.params.type
+                        }.text`}
+                      />
+                    </p>
+                  </content-graphic>
 
-                  <div class="form-group">
-                    <label>
-                      <app-translate key="opportunities.form.resume" />
-                    </label>
-                    <input
-                      class="input-file"
-                      type="file"
-                      name="file"
-                      onChange={this.handleFile.bind(this)}
-                      // onBlur={this.validateField.bind(this)}
-                      required={!this.fileSizeErrorShown}
-                    />
-                  </div>
-                  <p class="error">
-                    <span
-                      style={
-                        !this.fileError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.fileError}
-                  </p>
-
-                  <app-input
-                    label={translate('contact.form.fullName')}
-                    name="name"
-                    type="text"
-                    required={true}
-                  />
-                  <p class="error">
-                    <span
-                      style={
-                        !this.nameError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.nameError}
-                  </p>
-                  <app-input
-                    label={translate('contact.form.email')}
-                    name="email"
-                    type="email"
-                    required={true}
-                  />
-                  <p class="error">
-                    <span
-                      style={
-                        !this.emailError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.emailError}
-                  </p>
-                  <app-input
-                    label={translate('contact.form.phone')}
-                    name="phone"
-                    type="number"
-                    required={true}
-                  />
-                  <p class="error">
-                    <span
-                      style={
-                        !this.phoneError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.phoneError}
-                  </p>
-                  <app-input
-                    label={translate('contact.form.github')}
-                    name="github"
-                    type="text"
-                    required={true}
-                  />
-                  <p class="error">
-                    <span
-                      style={
-                        !this.githubError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.githubError}
-                  </p>
-
-                  <h3>
-                    <app-translate key="opportunities.form.unique.title" />
-                  </h3>
-
-                  <div class="form-group input-textarea">
-                    <label>
-                      <app-translate key="opportunities.form.unique.text" />
-                    </label>
-                    <textarea
-                      class="form-control"
-                      name="message"
-                      maxLength={150}
-                      required={true}
-                      onChange={this.validateField.bind(this)}
-                    />
-                  </div>
-                  <p class="error">
-                    <span
-                      style={
-                        !this.messageError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.messageError}
-                  </p>
-
-                  <button
-                    class="btn btn-primary"
-                    type="submit"
-                    disabled={this.submitButtonDisabled}
+                  <content-graphic
+                    img-url={`/assets/graphic-opportunities-master-${
+                      this.match.params.type
+                    }.jpg`}
                   >
-                    <app-translate key="opportunities.form.submit" />
-                  </button>
-                </form>
-              )}
-            </div>
-          ) : (
-            <div class="container apply-3">
-              <h2>
-                <app-translate key="opportunities.form.submitted" />
-              </h2>
+                    <h3 slot="header">
+                      <app-translate key="opportunities.intro.title" />
+                    </h3>
+                    <p slot="body">
+                      <app-translate
+                        key={`opportunities.test.${
+                          this.match.params.type
+                        }.text`}
+                      />
+                    </p>
+                  </content-graphic>
+                </div>
 
-              <content-graphic img-url="/assets/graphic-opportunities-robot.png">
-                <h3 slot="header">
-                  <app-translate key="opportunities.form.thanks.title" />
-                </h3>
-                <p slot="body">
-                  <app-translate key="opportunities.form.thanks.text" />
-                </p>
-              </content-graphic>
-            </div>
-          )}
-        </section>,
-        <app-footer />,
-      ]: null }
+                <div class="challenge">
+                  <div class="container">
+                    <div class="intro text-center">
+                      <h2>
+                        <app-translate key="opportunities.challenge.title" />
+                      </h2>
+                      <p>
+                        <app-translate key="opportunities.challenge.showUs" />
+                      </p>
+                    </div>
+                    <div class="row">
+                      <div class="image-column col-sm-12 col-md-4">
+                        <h3>
+                          {this.texts[this.match.params.type].firstSkill.name}
+                        </h3>
+                        <app-img
+                          class="img-fluid d-none d-md-inline"
+                          src={
+                            this.texts[this.match.params.type].firstSkill.img
+                          }
+                          alt=""
+                        />
+                      </div>
+                      <div class="image-column col-sm-12 col-md-4">
+                        <h3>
+                          {this.texts[this.match.params.type].secondSkill.name}
+                        </h3>
+                        <app-img
+                          class="img-fluid d-none d-md-inline"
+                          src={
+                            this.texts[this.match.params.type].secondSkill.img
+                          }
+                          alt=""
+                        />
+                      </div>
+                      <div class="image-column col-sm-12 col-md-4">
+                        <h3>
+                          {this.texts[this.match.params.type].thirdSkill.name}
+                        </h3>
+                        <app-img
+                          class="img-fluid d-none d-md-inline"
+                          src={
+                            this.texts[this.match.params.type].thirdSkill.img
+                          }
+                          alt=""
+                        />
+                        <app-img
+                          class="img-fluid d-xs-inline d-md-none"
+                          src={this.texts[this.match.params.type].mobile.img}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container">
+                  <content-graphic
+                    img-url="/assets/graphic-opportunities-ionic.jpg"
+                    reverse={true}
+                  >
+                    <h3 slot="header">
+                      <app-translate key="opportunities.reputation.title" />
+                    </h3>
+                    <p slot="body">
+                      <app-translate key="opportunities.reputation.text" />
+                    </p>
+                  </content-graphic>
+
+                  <content-graphic img-url="/assets/graphic-opportunities-sword.png">
+                    <h3 slot="header">
+                      <app-translate key="opportunities.prepared.title" />
+                    </h3>
+                    <p slot="body">
+                      <app-translate key="opportunities.prepared.body" />
+                    </p>
+                  </content-graphic>
+                </div>
+              </section>,
+
+              /* section - apply */
+              <section id="apply" class="apply">
+                {!this.formSubmitted ? (
+                  <div class="container">
+                    {!this.canRequestInterview ? (
+                      <form
+                        class="apply-1"
+                        onSubmit={this.handleSliders.bind(this)}
+                      >
+                        <h2>
+                          <app-translate key="opportunities.skills.title" />
+                        </h2>
+                        <p>
+                          <app-translate key="opportunities.skills.text" />
+                        </p>
+
+                        <div class="slider-labels">
+                          <p>
+                            <app-translate key="opportunities.skills.noob" />
+                          </p>
+                          <p>
+                            <app-translate key="opportunities.skills.expert" />
+                          </p>
+                        </div>
+
+                        <app-slider
+                          name={
+                            this.texts[this.match.params.type].sliders.first
+                              .name
+                          }
+                          label={
+                            this.texts[this.match.params.type].sliders.first
+                              .label
+                          }
+                        />
+                        <app-slider
+                          name={
+                            this.texts[this.match.params.type].sliders.second
+                              .name
+                          }
+                          label={
+                            this.texts[this.match.params.type].sliders.second
+                              .label
+                          }
+                        />
+                        <app-slider
+                          name={
+                            this.texts[this.match.params.type].sliders.third
+                              .name
+                          }
+                          label={
+                            this.texts[this.match.params.type].sliders.third
+                              .label
+                          }
+                        />
+                        <app-slider
+                          name={
+                            this.texts[this.match.params.type].sliders.fourth
+                              .name
+                          }
+                          label={
+                            this.texts[this.match.params.type].sliders.fourth
+                              .label
+                          }
+                        />
+                        <app-slider
+                          name={
+                            this.texts[this.match.params.type].sliders.fifth
+                              .name
+                          }
+                          label={
+                            this.texts[this.match.params.type].sliders.fifth
+                              .label
+                          }
+                        />
+
+                        {!this.interviewButtonDisabled ? (
+                          <p>
+                            <app-translate key="opportunities.form.allset" />
+                          </p>
+                        ) : (
+                          <p>
+                            <app-translate key="opportunities.form.almost" />
+                          </p>
+                        )}
+
+                        <button
+                          class="btn btn-primary"
+                          type="submit"
+                          disabled={this.interviewButtonDisabled}
+                        >
+                          <app-translate key="opportunities.form.request" />
+                        </button>
+                      </form>
+                    ) : (
+                      <form
+                        class="apply-2"
+                        id="myLittleAnchor"
+                        onSubmit={this.handleSubmit.bind(this)}
+                      >
+                        <p>
+                          Want to know exactly what you're getting yourself
+                          into? Check out our
+                          <a
+                            class="doc-link"
+                            target="_blank"
+                            href={this.texts[this.match.params.type].googleDoc}
+                          >
+                            Google Document
+                          </a>
+                          to see the ins and outs of what this epic adventure
+                          will include!
+                        </p>
+                        <h3>
+                          <app-translate key="opportunities.form.submitTitle" />
+                        </h3>
+
+                        <div class="form-group">
+                          <label>
+                            <app-translate key="opportunities.form.resume" />
+                          </label>
+                          <input
+                            class="input-file"
+                            type="file"
+                            name="file"
+                            onChange={this.handleFile.bind(this)}
+                            // onBlur={this.validateField.bind(this)}
+                            required={!this.fileSizeErrorShown}
+                          />
+                        </div>
+                        <p class="error">
+                          <span
+                            style={
+                              !this.fileError
+                                ? { display: 'none' }
+                                : this.errorIconStyles
+                            }
+                          >
+                            <i
+                              class="fa fa-exclamation-circle"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          {this.fileError}
+                        </p>
+
+                        <app-input
+                          label={translate('contact.form.fullName')}
+                          name="name"
+                          type="text"
+                          required={true}
+                        />
+                        <p class="error">
+                          <span
+                            style={
+                              !this.nameError
+                                ? { display: 'none' }
+                                : this.errorIconStyles
+                            }
+                          >
+                            <i
+                              class="fa fa-exclamation-circle"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          {this.nameError}
+                        </p>
+                        <app-input
+                          label={translate('contact.form.email')}
+                          name="email"
+                          type="email"
+                          required={true}
+                        />
+                        <p class="error">
+                          <span
+                            style={
+                              !this.emailError
+                                ? { display: 'none' }
+                                : this.errorIconStyles
+                            }
+                          >
+                            <i
+                              class="fa fa-exclamation-circle"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          {this.emailError}
+                        </p>
+                        <app-input
+                          label={translate('contact.form.phone')}
+                          name="phone"
+                          type="number"
+                          required={true}
+                        />
+                        <p class="error">
+                          <span
+                            style={
+                              !this.phoneError
+                                ? { display: 'none' }
+                                : this.errorIconStyles
+                            }
+                          >
+                            <i
+                              class="fa fa-exclamation-circle"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          {this.phoneError}
+                        </p>
+                        <app-input
+                          label={translate('contact.form.github')}
+                          name="github"
+                          type="text"
+                          required={true}
+                        />
+                        <p class="error">
+                          <span
+                            style={
+                              !this.githubError
+                                ? { display: 'none' }
+                                : this.errorIconStyles
+                            }
+                          >
+                            <i
+                              class="fa fa-exclamation-circle"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          {this.githubError}
+                        </p>
+
+                        <h3>
+                          <app-translate key="opportunities.form.unique.title" />
+                        </h3>
+
+                        <div class="form-group input-textarea">
+                          <label>
+                            <app-translate key="opportunities.form.unique.text" />
+                          </label>
+                          <textarea
+                            class="form-control"
+                            name="message"
+                            maxLength={150}
+                            required={true}
+                            onChange={this.validateField.bind(this)}
+                          />
+                        </div>
+                        <p class="error">
+                          <span
+                            style={
+                              !this.messageError
+                                ? { display: 'none' }
+                                : this.errorIconStyles
+                            }
+                          >
+                            <i
+                              class="fa fa-exclamation-circle"
+                              aria-hidden="true"
+                            />
+                          </span>
+                          {this.messageError}
+                        </p>
+
+                        <button
+                          class="btn btn-primary"
+                          type="submit"
+                          disabled={this.submitButtonDisabled}
+                        >
+                          <app-translate key="opportunities.form.submit" />
+                        </button>
+                      </form>
+                    )}
+                  </div>
+                ) : (
+                  <div class="container apply-3">
+                    <h2>
+                      <app-translate key="opportunities.form.submitted" />
+                    </h2>
+
+                    <content-graphic img-url="/assets/graphic-opportunities-robot.png">
+                      <h3 slot="header">
+                        <app-translate key="opportunities.form.thanks.title" />
+                      </h3>
+                      <p slot="body">
+                        <app-translate key="opportunities.form.thanks.text" />
+                      </p>
+                    </content-graphic>
+                  </div>
+                )}
+              </section>,
+              <app-footer />,
+            ]
+          : null}
       </div>
     );
   }

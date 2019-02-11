@@ -10,7 +10,7 @@ export class AppMembers {
 
   render() {
     return (
-      <div class="team">
+      <div class="team justify-content-center">
         {this.members.map(member => {
           if (!member.external) {
             if (member.url === '/opportunities') {

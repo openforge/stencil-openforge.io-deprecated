@@ -12,13 +12,22 @@ export class AppCaseStudy {
 
   componentDidLoad() {
     document
-      .querySelector("meta[name='title']")
+      .querySelector("meta[property='og:title']")
       .setAttribute('content', 'JuntoScope - Scoping Software | OpenForge');
     document
-      .querySelector("meta[name='description']")
+      .querySelector("meta[property='og:description']")
       .setAttribute(
         'content',
         'Juntoscope will help your team determine scopes for tasks in Teamwork.com© Projects more accurately, quickly, and efficiently to keep your projects within budget. Integrating with Teamwork Projects API, your team will be able to scope, populate, and assign times to tasks automatically.'
+      );
+    document
+      .querySelector("meta[property='og:url']")
+      .setAttribute('content', 'https://openforge.io/juntoscope/');
+    document
+      .querySelector("meta[property='og:image']")
+      .setAttribute(
+        'content',
+        'https://openforge.io/assets/case-study-background-header.png'
       );
     document
       .querySelector("meta[name='keywords']")
@@ -62,9 +71,9 @@ export class AppCaseStudy {
         </section>
         <section class="container product-section">
           <app-img
-              class=""
-              src="/assets/work-example-juntoscope-mobile.png"
-              alt="juntoscope mobile view"
+            class=""
+            src="/assets/work-example-juntoscope-mobile.png"
+            alt="juntoscope mobile view"
           />
           <div class="text-container">
             <h2>The Product</h2>
@@ -201,21 +210,15 @@ export class AppCaseStudy {
           <h3>Design</h3>
           <p>
             We began the{' '}
-            <stencil-route-link
-              url="/services/app-designer"
-            >
+            <stencil-route-link url="/services/app-designer">
               design process
             </stencil-route-link>{' '}
             by researching similar apps on the marketplace and identifying
             features we liked and did not like about them. We then set up user
             flows and wireframing each identified screen. This process, along
             with the design and styling phase, occurs in{' '}
-            <stencil-route-link
-            url="/toolbox"
-            >
-              Sketch
-            </stencil-route-link>
-            . After completing the full skeleton, we reviewed each user flow and
+            <stencil-route-link url="/toolbox">Sketch</stencil-route-link>.
+            After completing the full skeleton, we reviewed each user flow and
             tried to identify any gaps or weaknesses in the user flow. From
             there, we made modifications and began identifying styles and colors
             for the app. We created a logo and a splash screen and applied the
@@ -226,9 +229,7 @@ export class AppCaseStudy {
           <h3>Development</h3>
           <p>
             We began the{' '}
-            <stencil-route-link
-              url="/services/app-developer"
-            >
+            <stencil-route-link url="/services/app-developer">
               development process
             </stencil-route-link>{' '}
             with a full design review. Our team worked closely with the
@@ -250,9 +251,7 @@ export class AppCaseStudy {
           <h3>What we learned</h3>
           <p>
             Throughout the process of developing JuntoScope,{' '}
-            <stencil-route-link url="/about">
-              our team
-            </stencil-route-link>{' '}
+            <stencil-route-link url="/about">our team</stencil-route-link>{' '}
             learned the importance of establishing a process that is fully
             understood by each and every member. Our company was going through a
             transitional phase early on in the development of JuntoScope

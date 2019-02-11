@@ -12,24 +12,37 @@ export class AppFooter {
         <div class="container">
           <div class="row">
             <div class="footer--column col-12 col-sm-4">
-              <h2>{translate('footer.address.header')}</h2>
-              <p>
-                {translate('footer.address.name')}
-                <br />
-                {translate('footer.address.line1')}
-                <br />
-                {translate('footer.address.line2')}
-                <br />
-                {translate('footer.address.phoneNumber')}
-                <br />
-                <a href="mailto:hello@openforge.io">
-                  {translate('footer.address.email')}
+              <div>
+                <h2>{translate('footer.address.header')}</h2>
+                <p>
+                  {translate('footer.address.name')}
+                  <br />
+                  {translate('footer.address.line1')}
+                  <br />
+                  {translate('footer.address.line2')}
+                  <br />
+                  {translate('footer.address.phoneNumber')}
+                  <br />
+                  <a href="mailto:hello@openforge.io">
+                    {translate('footer.address.email')}
+                  </a>
+                </p>
+              </div>
+              <div class="mt-4">
+                <h3>{translate('footer.work.header')}</h3>
+                <a
+                  href="/opportunities/develop"
+                  class="btn-primary opportunities-button-link"
+                >
+                  {translate('footer.work.developer')}
                 </a>
-              </p>
-
-              {/* <a href="https://www.openforge.io" target="_blank">
-                Work at OpenForge
-              </a> */}
+                <a
+                  href="/opportunities/design"
+                  class="btn-primary opportunities-button-link"
+                >
+                  {translate('footer.work.designer')}
+                </a>
+              </div>
             </div>
 
             <div class="footer--column col-12 col-sm-4">
@@ -42,7 +55,7 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-twitter-square" aria-hidden="true" />{' '}
-                    @OpenForge_US
+                    {translate('footer.social.twitter')}
                   </a>
                 </li>
                 <li>
@@ -52,7 +65,7 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-facebook-square" aria-hidden="true" />{' '}
-                    OpenForge_US
+                    {translate('footer.social.facebook')}
                   </a>
                 </li>
                 <li>
@@ -62,7 +75,7 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-linkedin" aria-hidden="true" />{' '}
-                    OpenForge_US
+                    {translate('footer.social.linkedin')}
                   </a>
                 </li>
                 <li>
@@ -72,8 +85,13 @@ export class AppFooter {
                     rel="noopener"
                   >
                     <i class="fab fa-instagram" aria-hidden="true" />{' '}
-                    @OpenForgeTeam
+                    {translate('footer.social.instagram')}
                   </a>
+                </li>
+                <li>
+                  <stencil-route-link url="/service-level-agreement">
+                    {translate('footer.social.sla')}
+                  </stencil-route-link>
                 </li>
               </ul>
             </div>
