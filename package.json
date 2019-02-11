@@ -20,10 +20,7 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "build-linux-webp": "sudo apt install webp",
     "st:generate": "node scripts/st-generate.js",
-    "jpg-webp": "for file in src/assets/*.jpg; do cwebp -q 75 \"$file\" -o \"${file%.jpg}.webp\"; done",
-    "png-webp": "for file in src/assets/*.png; do cwebp -q 75 \"$file\" -o \"${file%.png}.webp\"; done",
-    "jpeg-webp": "for file in src/assets/*.jpeg; do cwebp -q 75 \"$file\" -o \"${file%.jpeg}.webp\"; done",
-    "prepublish": "npm run build2 && npm run jpg-webp && npm run png-webp && npm run jpeg-webp && stencil build --prod",
+    "prepublish": "stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
