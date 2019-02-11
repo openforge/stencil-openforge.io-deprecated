@@ -9,7 +9,7 @@ export class App404 {
     return (
       <div class="no-page">
         <section class="container">
-          <img src="/assets/forge.png" />
+          <app-img src="/assets/forge.png" />
 
           <p>
             {' '}
