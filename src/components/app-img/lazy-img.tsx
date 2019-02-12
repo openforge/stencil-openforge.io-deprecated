@@ -50,8 +50,9 @@ export class LazyImg {
   }
 
   handleImage() {
+    console.log('a');
     const image = this.image;
-    image.setAttribute('src', image.getAttribute('data-src') || '');
+    image.setAttribute('src', this.src || '');
     image.onload = () => {
       image.removeAttribute('data-src');
       this.lazyImgloaded.emit(image);
