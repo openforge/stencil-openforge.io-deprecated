@@ -11,7 +11,7 @@ declare var fbq;
 export class AppOpportunities {
   maxFileSize = 10485760; // 10MB
   formData = new FormData();
-  private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
+  // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   formValues: {
     angular: number;
@@ -361,7 +361,6 @@ export class AppOpportunities {
   }
 
   render() {
-    const backgroundPhoto = this.changeImageFormat(this.texts[this.match.params.type].backgroundPhoto);
     return (
       <div class="opportunities">
         {/* header - hero */}
