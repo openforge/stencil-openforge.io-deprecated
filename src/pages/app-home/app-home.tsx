@@ -155,7 +155,7 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
+                    <app-img
                       class="carousel-image-h"
                       src="/assets/svg/home-graphic-process-discovery.svg"
                       alt="discovery"
@@ -180,7 +180,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
+                    <app-img
                       class="carousel-image-h"
                       src="/assets/svg/home-graphic-process-design.svg"
                       alt="design"
@@ -205,7 +205,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
+                    <app-img
                       class="carousel-image"
                       src="/assets/svg/home-graphic-process-development.svg"
                       alt="development"
@@ -230,7 +230,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <img
+                    <app-img
                       class="carousel-image"
                       src="/assets/svg/home-graphic-process-deployment.svg"
                       alt="deployment"
@@ -255,7 +255,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <img
+                    <app-img
                       class="carousel-image-userfeedback"
                       src="/assets/svg/home-graphic-process-userfeedback.svg"
                       alt="user feedback"
@@ -326,7 +326,7 @@ export class AppHome {
                         target="_blank"
                         rel="noopener"
                       >
-                        <img
+                        <app-img
                           src="/assets/graphic-apple-appstore.png"
                           alt="download on app store"
                         />
@@ -338,14 +338,14 @@ export class AppHome {
                         target="_blank"
                         rel="noopener"
                       >
-                        <img
+                        <app-img
                           src="/assets/graphic-google-googleplaystore.png"
                           alt="download on play store"
                         />
                       </a>
                     </div>
                   </div>
-                  <img
+                  <app-img
                     src="/assets/shared-graphic-loudcloud.png"
                     class="phone-image"
                     alt="loudcloud"
@@ -372,7 +372,7 @@ export class AppHome {
                         target="_blank"
                         rel="noopener"
                       >
-                        <img
+                        <app-img
                           src="/assets/graphic-apple-appstore.png"
                           alt="download on app store"
                         />
@@ -384,14 +384,14 @@ export class AppHome {
                         target="_blank"
                         rel="noopener"
                       >
-                        <img
+                        <app-img
                           src="/assets/graphic-google-googleplaystore.png"
                           alt="download on play store"
                         />
                       </a>
                     </div>
                   </div>
-                  <img
+                  <app-img
                     src="/assets/shared-graphic-voyage.png"
                     class="phone-image"
                     alt="voyage"
@@ -416,7 +416,7 @@ export class AppHome {
                         target="_blank"
                         rel="noopener"
                       >
-                        <img
+                        <app-img
                           src="/assets/graphic-apple-appstore.png"
                           alt="download on app store"
                         />
@@ -428,14 +428,14 @@ export class AppHome {
                         target="_blank"
                         rel="noopener"
                       >
-                        <img
+                        <app-img
                           src="/assets/graphic-google-googleplaystore.png"
                           alt="download on play store"
                         />
                       </a>
                     </div>
                   </div>
-                  <img
+                  <app-img
                     src="/assets/shared-graphic-juntoscope.png"
                     class="phone-image"
                     alt="juntoscope"

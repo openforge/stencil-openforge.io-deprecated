@@ -63,8 +63,9 @@ export const translations = {
         action: 'LEARN MORE',
       },
       mission: {
-        statement: 'Our mission is to forge a bond between people and technology through digital experiences.'
-      }, 
+        statement:
+          'Our mission is to forge a bond between people and technology through digital experiences.',
+      },
       values: {
         title: 'Our Values',
         text:
@@ -97,13 +98,13 @@ export const translations = {
         container: {
           title1: 'What',
           title2: 'Does',
-          skills: 'Skills'
+          skills: 'Skills',
         },
         cta: {
           title: 'Meet The Team',
-          button: `Let's Go`
-        }
-      }
+          button: `Let's Go`,
+        },
+      },
     },
 
     contact: {

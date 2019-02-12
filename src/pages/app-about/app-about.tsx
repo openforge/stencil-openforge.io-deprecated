@@ -265,13 +265,16 @@ export class AppAbout {
           <div class="container">
             <div class="row align-items-end text-center">
               <div class="col-12">
-                <app-img src="/assets/svg/about-graphic-ribbon.svg" alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences."/>
+                <app-img
+                  src="/assets/svg/about-graphic-ribbon.svg"
+                  alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences."
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* section - mission statement */ }
+        {/* section - mission statement */}
         <section id="mission-statement" class="mission-statement">
           <div class="mission-statement d-flex text-center">
             <p class="text-white align-self-center">
@@ -295,15 +298,27 @@ export class AppAbout {
             </div>
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object data="assets/svg/about-graphic-integrity.svg" height="164px" width="220px" />
+                <object
+                  data="assets/svg/about-graphic-integrity.svg"
+                  height="164px"
+                  width="220px"
+                />
                 <app-translate class="value-text" key="about.values.value2" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object data="assets/svg/about-graphic-honesty.svg" height="164px" width="220px" />
+                <object
+                  data="assets/svg/about-graphic-honesty.svg"
+                  height="164px"
+                  width="220px"
+                />
                 <app-translate class="value-text" key="about.values.value1" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object data="assets/svg/about-graphic-transparency.svg" height="164px" width="220px" />
+                <object
+                  data="assets/svg/about-graphic-transparency.svg"
+                  height="164px"
+                  width="220px"
+                />
                 <app-translate class="value-text" key="about.values.value3" />
               </div>
             </div>
@@ -328,7 +343,6 @@ export class AppAbout {
 
         {/* aside - cta */}
         <app-cta />
-
 
         <app-footer />
       </div>

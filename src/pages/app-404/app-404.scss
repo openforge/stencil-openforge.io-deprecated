@@ -12,10 +12,12 @@
       text-align: center;
     }
 
-    img {
-      height: auto;
-      margin: 7rem 0 2rem;
-      width: 35%;
+    app-img {
+      img {
+        height: auto;
+        margin: 7rem 0 2rem;
+        width: 35%;
+      }
     }
   }
 }

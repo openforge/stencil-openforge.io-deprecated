@@ -4,7 +4,7 @@
 
   .hero {
     background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
-    
+
     @include media-breakpoint-down(md) {
       background-position: right bottom;
     }
@@ -21,7 +21,7 @@
         font-weight: bolder;
       }
 
-      h1 { 
+      h1 {
         font-size: 2rem;
       }
 
@@ -71,7 +71,8 @@
     }
   }
 
-  .values, .members {
+  .values,
+  .members {
     padding: 5rem 0;
 
     .header {
@@ -80,9 +81,7 @@
     }
   }
 
-
   .value-text {
     font-size: 24px;
   }
-
 }

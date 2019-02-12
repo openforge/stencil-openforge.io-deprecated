@@ -5,7 +5,6 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-cta.scss',
 })
 export class AppCta {
-
   render() {
     return (
       <section id="cta" class="cta">

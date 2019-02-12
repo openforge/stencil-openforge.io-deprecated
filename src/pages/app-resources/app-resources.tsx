@@ -61,10 +61,7 @@ export class AppResources {
     // Change meta tags dynamically
     document
       .querySelector("meta[property='og:title']")
-      .setAttribute(
-        'content', 
-        'Business Owner’s Guide to PWAs | OpenForge'
-      );
+      .setAttribute('content', 'Business Owner’s Guide to PWAs | OpenForge');
     document
       .querySelector("meta[property='og:description']")
       .setAttribute(
@@ -82,7 +79,7 @@ export class AppResources {
       .setAttribute(
         'content',
         'https://openforge.io/assets/resources-header.jpg'
-      )
+      );
     document
       .querySelector("meta[name='keywords']")
       .setAttribute('content', 'Progressive Web App, PWA, White Paper');

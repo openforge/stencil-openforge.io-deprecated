@@ -90,7 +90,7 @@ export class AppFooter {
                 </li>
                 <li>
                   <stencil-route-link url="/service-level-agreement">
-                  {translate('footer.social.sla')}
+                    {translate('footer.social.sla')}
                   </stencil-route-link>
                 </li>
               </ul>
