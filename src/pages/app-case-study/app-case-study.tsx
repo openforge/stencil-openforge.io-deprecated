@@ -64,7 +64,7 @@ export class AppCaseStudy {
                 JuntoScope
               </a>{' '}
               is to help teams determine scopes for tasks in{' '}
-              <a href="https://www.teamwork.com/partner/gqfq4mb55o" target="_blank">
+              <a href="https://www.teamwork.com/partner/gqfq4mb55o" target="_blank" rel="noopener">
                 Teamwork.com
               </a>
               © Projects more accurately, quickly, and efficiently to keep projects within budget and on time. Integrating with Teamwork Projects API, teams will be able to:
@@ -181,7 +181,7 @@ export class AppCaseStudy {
             <br />
             <br />
             As our team came close to launching{' '}
-            <a href="http://try.juntoscope.com" target="_blank">
+            <a href="http://try.juntoscope.com" target="_blank" rel="noopener">
               JuntoScope
             </a>
             , we learned from Teamwork.com that they were changing the way their API worked and this forced us to go back to our design and development teams to work in the new authentication flows.

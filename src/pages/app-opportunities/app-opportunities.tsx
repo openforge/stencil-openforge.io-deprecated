@@ -360,14 +360,6 @@ export class AppOpportunities {
     }
   }
 
-  changeImageFormat(img: string) {
-    if (img && this.allowWebp) {
-      const idx = img.lastIndexOf('.');
-      return `${img.substring(0, idx)}.webp`;
-    }
-    return img;
-  }
-
   render() {
     const backgroundPhoto = this.changeImageFormat(this.texts[this.match.params.type].backgroundPhoto);
     return (
@@ -378,7 +370,7 @@ export class AppOpportunities {
               <header
                 class="hero"
                 style={{
-                  'background-image': `url(${backgroundPhoto})`,
+                  'background-image': `url(${this.texts[this.match.params.type].backgroundPhoto})`,
                 }}
               >
                 <div class="container">
@@ -515,7 +507,7 @@ export class AppOpportunities {
                       <form class="apply-2" id="myLittleAnchor" onSubmit={this.handleSubmit.bind(this)}>
                         <p>
                           Want to know exactly what you're getting yourself into? Check out our
-                          <a class="doc-link" target="_blank" href={this.texts[this.match.params.type].googleDoc}>
+                          <a class="doc-link" target="_blank" rel="noopener" href={this.texts[this.match.params.type].googleDoc}>
                             Google Document
                           </a>
                           to see the ins and outs of what this epic adventure will include!

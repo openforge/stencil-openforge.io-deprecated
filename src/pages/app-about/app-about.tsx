@@ -10,7 +10,7 @@ declare var fbq;
 export class AppAbout {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   public images: any;
 
@@ -223,7 +223,7 @@ export class AppAbout {
     return (
       <div class="about">
         {/* header - hero */}
-        <header class={this.className}>
+        <header>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-8 col-sm-10 text-container">
@@ -242,7 +242,7 @@ export class AppAbout {
         </header>
 
         {/* section - team */}
-        <section id="team-photo" class="team-photo">
+        <section id="team-photo" class="team-photo {this.className}">
           <div class="container">
             <div class="row align-items-end text-center">
               <div class="col-12">

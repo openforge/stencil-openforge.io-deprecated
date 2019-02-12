@@ -70,10 +70,10 @@ export class AppNavHeader {
                 </div>
               </li>
               <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {translate('nav.links.about')}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                   <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
                     Meet the team
                   </stencil-route-link>

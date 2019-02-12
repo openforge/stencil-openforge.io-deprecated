@@ -127,7 +127,7 @@ export class AppHome {
               </div>
             </div>
           </div>
-          <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" />
+          <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
         </header>
 
         <section id="process" class="process">
@@ -143,7 +143,7 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" />
+                    <img class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" alt="discovery" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -161,7 +161,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" />
+                    <img class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" alt="design" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -179,7 +179,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" />
+                    <img class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" alt="development" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -197,7 +197,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" />
+                    <img class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" alt="deployment" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -215,7 +215,7 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <app-img class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" />
+                    <img class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" alt="user feedback" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -261,17 +261,17 @@ export class AppHome {
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank">
-                        <app-img src="/assets/graphic-apple-appstore.png" />
+                      <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank">
-                        <app-img src="/assets/graphic-google-googleplaystore.png" />
+                      <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                       </a>
                     </div>
                   </div>
-                  <app-img src="/assets/shared-graphic-loudcloud.png" class="phone-image" />
+                  <img src="/assets/shared-graphic-loudcloud.png" class="phone-image" alt="loudcloud" />
                 </div>
               </div>
               <div class="content-panel voyage">
@@ -287,17 +287,17 @@ export class AppHome {
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank">
-                        <app-img src="/assets/graphic-apple-appstore.png" />
+                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank">
-                        <app-img src="/assets/graphic-google-googleplaystore.png" />
+                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                       </a>
                     </div>
                   </div>
-                  <app-img src="/assets/shared-graphic-voyage.png" class="phone-image" />
+                  <img src="/assets/shared-graphic-voyage.png" class="phone-image" alt="voyage" />
                 </div>
               </div>
               <div class="content-panel juntoscope">
@@ -313,17 +313,17 @@ export class AppHome {
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank">
-                        <app-img src="/assets/graphic-apple-appstore.png" />
+                      <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank">
-                        <app-img src="/assets/graphic-google-googleplaystore.png" />
+                      <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                       </a>
                     </div>
                   </div>
-                  <app-img src="/assets/shared-graphic-juntoscope.png" class="phone-image" />
+                  <img src="/assets/shared-graphic-juntoscope.png" class="phone-image" alt="juntoscope" />
                 </div>
               </div>
               <div class="content-panel last-panel" />

@@ -3,6 +3,9 @@ import { MatchResults, RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
 
+/* tslint:disable-next-line */
+import $ from 'jquery';
+
 declare var fbq;
 
 @Component({
@@ -95,6 +98,39 @@ export class AppDetailedService {
     this.resetFormValues();
 
     this.changeMetadata();
+
+    /* tslint:disable-next-line */
+    $(window).on('scroll resize', function() {
+      if ($('#content-panel-inner-detail') && $('#content-panel-inner-detail').offset()) {
+        const pos = $('#content-panel-inner-detail').offset().top + $('#content-panel-inner-detail').height();
+        let done = false;
+        $('.content-panel').each(function() {
+          if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
+            const newDescr = $(this)
+              .find('.description')
+              .html();
+
+            $('#content-panel-inner-detail').html(newDescr);
+
+            done = true;
+          }
+        });
+
+        if (
+          $('#content-panel-inner-detail').offset().top ===
+          $('.content-panel')
+            .first()
+            .offset().top
+        ) {
+          const newDescr = $('.content-panel')
+            .first()
+            .find('.description')
+            .html();
+
+          $('#content-panel-inner-detail').html(newDescr);
+        }
+      }
+    });
   }
 
   validateField(e) {
@@ -300,10 +336,15 @@ export class AppDetailedService {
         <section id="example" class="example">
           <div class="main-content">
             <div class="sidebar">
-              <div class="sidebar__inner content-panel-inner" id="content-panel-inner" />
+              <div class="sidebar__inner content-panel-inner" id="content-panel-inner-detail" />
             </div>
             <div class="content">
-              <div class="content-panel" style={{ 'background-image': `url(${this.imgs[this.match.params.service].exampleBackground})` }}>
+              <div
+                class="content-panel"
+                style={{
+                  'background-image': `url(${this.imgs[this.match.params.service].exampleBackground})`,
+                }}
+              >
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
                     <h2>{translate(`services.${this.match.params.service}.example.title`)}</h2>
@@ -314,12 +355,12 @@ export class AppDetailedService {
                   <h2>{translate(`services.${this.match.params.service}.example.name`)}</h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank">
+                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
                         <app-img src="/assets/graphic-apple-appstore.png" alt="Apple AppStore Logo" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank">
+                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
                         <app-img src="/assets/graphic-google-googleplaystore.png" alt="Google Play Store logo" />
                       </a>
                     </div>
