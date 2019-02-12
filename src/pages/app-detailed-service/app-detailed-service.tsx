@@ -3,6 +3,9 @@ import { MatchResults, RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
 
+/* tslint:disable-next-line */
+import $ from 'jquery';
+
 declare var fbq;
 
 @Component({
@@ -95,6 +98,47 @@ export class AppDetailedService {
     this.resetFormValues();
 
     this.changeMetadata();
+
+    /* tslint:disable-next-line */
+    $(window).on('scroll resize', function() {
+      if (
+        $('#content-panel-inner-detail') &&
+        $('#content-panel-inner-detail').offset()
+      ) {
+        const pos =
+          $('#content-panel-inner-detail').offset().top +
+          $('#content-panel-inner-detail').height();
+        let done = false;
+        $('.content-panel').each(function() {
+          if (
+            !done &&
+            pos <= Math.floor($(this).offset().top + $(this).height())
+          ) {
+            const newDescr = $(this)
+              .find('.description')
+              .html();
+
+            $('#content-panel-inner-detail').html(newDescr);
+
+            done = true;
+          }
+        });
+
+        if (
+          $('#content-panel-inner-detail').offset().top ===
+          $('.content-panel')
+            .first()
+            .offset().top
+        ) {
+          const newDescr = $('.content-panel')
+            .first()
+            .find('.description')
+            .html();
+
+          $('#content-panel-inner-detail').html(newDescr);
+        }
+      }
+    });
   }
 
   validateField(e) {
@@ -454,7 +498,7 @@ export class AppDetailedService {
             <div class="sidebar">
               <div
                 class="sidebar__inner content-panel-inner"
-                id="content-panel-inner"
+                id="content-panel-inner-detail"
               />
             </div>
             <div class="content">
@@ -491,6 +535,7 @@ export class AppDetailedService {
                       <a
                         href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
                         target="_blank"
+                        rel="noopener"
                       >
                         <app-img
                           src="/assets/graphic-apple-appstore.png"
@@ -502,6 +547,7 @@ export class AppDetailedService {
                       <a
                         href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
                         target="_blank"
+                        rel="noopener"
                       >
                         <app-img
                           src="/assets/graphic-google-googleplaystore.png"

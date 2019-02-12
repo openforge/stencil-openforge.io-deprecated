@@ -674,6 +674,7 @@ export class AppOpportunities {
                           <a
                             class="doc-link"
                             target="_blank"
+                            rel="noopener"
                             href={this.texts[this.match.params.type].googleDoc}
                           >
                             Google Document

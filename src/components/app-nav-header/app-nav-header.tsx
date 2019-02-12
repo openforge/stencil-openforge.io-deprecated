@@ -121,7 +121,7 @@ export class AppNavHeader {
               >
                 <a
                   class="nav-link dropdown-toggle"
-                  id="navbarDropdown"
+                  id="navbarDropdown1"
                   role="button"
                   data-toggle="dropdown"
                   aria-haspopup="true"
@@ -129,7 +129,7 @@ export class AppNavHeader {
                 >
                   {translate('nav.links.about')}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                   <stencil-route-link
                     url="/about"
                     anchorClass="nav-link dropdown-item"

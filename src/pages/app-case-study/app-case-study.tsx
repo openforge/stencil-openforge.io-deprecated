@@ -86,6 +86,7 @@ export class AppCaseStudy {
               <a
                 href="https://www.teamwork.com/partner/gqfq4mb55o"
                 target="_blank"
+                rel="noopener"
               >
                 Teamwork.com
               </a>
@@ -270,7 +271,7 @@ export class AppCaseStudy {
             <br />
             <br />
             As our team came close to launching{' '}
-            <a href="http://try.juntoscope.com" target="_blank">
+            <a href="http://try.juntoscope.com" target="_blank" rel="noopener">
               JuntoScope
             </a>
             , we learned from Teamwork.com that they were changing the way their

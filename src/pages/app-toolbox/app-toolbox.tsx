@@ -71,7 +71,11 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://www.goabstract.com/">
+                <a
+                  target="_blank"
+                  href="https://www.goabstract.com/"
+                  rel="noopener"
+                >
                   Abstract
                 </a>
               </h2>
@@ -86,7 +90,7 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://marvelapp.com/">
+                <a target="_blank" href="https://marvelapp.com/" rel="noopener">
                   Marvel
                 </a>
               </h2>
@@ -111,7 +115,11 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://www.sketchapp.com/">
+                <a
+                  target="_blank"
+                  href="https://www.sketchapp.com/"
+                  rel="noopener"
+                >
                   Sketch
                 </a>
               </h2>
@@ -135,7 +143,11 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://ionicframework.com/">
+                <a
+                  target="_blank"
+                  href="https://ionicframework.com/"
+                  rel="noopener"
+                >
                   Ionic Framework
                 </a>
               </h2>
@@ -150,7 +162,7 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://angular.io/">
+                <a target="_blank" href="https://angular.io/" rel="noopener">
                   Angular
                 </a>
               </h2>
@@ -173,7 +185,7 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://github.com/">
+                <a target="_blank" href="https://github.com/" rel="noopener">
                   GitHub
                 </a>
               </h2>
@@ -196,7 +208,7 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://marvelapp.com/">
+                <a target="_blank" href="https://marvelapp.com/" rel="noopener">
                   Marvel
                 </a>
               </h2>
@@ -211,7 +223,7 @@ export class AppToolbox {
           <section class="text-img-container left-side">
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://bitbucket.org/">
+                <a target="_blank" href="https://bitbucket.org/" rel="noopener">
                   BitBucket
                 </a>
               </h2>
@@ -236,7 +248,11 @@ export class AppToolbox {
             />
             <div class="text-img-container-text">
               <h2>
-                <a target="_blank" href="https://www.teamwork.com/">
+                <a
+                  target="_blank"
+                  href="https://www.teamwork.com/"
+                  rel="noopener"
+                >
                   Teamwork
                 </a>
               </h2>
