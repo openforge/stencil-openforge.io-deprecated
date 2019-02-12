@@ -8,7 +8,6 @@
   ],
   "scripts": {
     "build": "stencil build --prerender",
-    "build2": "node build.js",
     "cz": "git-cz",
     "dev": "sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
@@ -18,7 +17,6 @@
     "test.watch": "jest --watch --no-cache",
     "cypress": "cypress open",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "build-linux-webp": "sudo apt install webp",
     "st:generate": "node scripts/st-generate.js",
     "prepublish": "stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
