@@ -11,6 +11,9 @@ import '@stencil/state-tunnel';
 
 
 import {
+  EventEmitter,
+} from '@stencil/core';
+import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
@@ -48,6 +51,12 @@ declare global {
       'fit': boolean;
       'preLoad': boolean;
       'src': string;
+    }
+
+    interface LazyImg {
+      'alt': string;
+      'src': string;
+      'width': number;
     }
 
     interface AppInput {
@@ -190,6 +199,14 @@ declare global {
     var HTMLAppImgElement: {
       prototype: HTMLAppImgElement;
       new (): HTMLAppImgElement;
+    };
+
+
+    interface HTMLLazyImgElement extends StencilComponents.LazyImg, HTMLStencilElement {}
+
+    var HTMLLazyImgElement: {
+      prototype: HTMLLazyImgElement;
+      new (): HTMLLazyImgElement;
     };
 
 
@@ -368,6 +385,7 @@ declare global {
     'app-cta': JSXElements.AppCtaAttributes;
     'app-footer': JSXElements.AppFooterAttributes;
     'app-img': JSXElements.AppImgAttributes;
+    'lazy-img': JSXElements.LazyImgAttributes;
     'app-input': JSXElements.AppInputAttributes;
     'app-members': JSXElements.AppMembersAttributes;
     'app-nav-header': JSXElements.AppNavHeaderAttributes;
@@ -411,6 +429,13 @@ declare global {
       'fit'?: boolean;
       'preLoad'?: boolean;
       'src'?: string;
+    }
+
+    export interface LazyImgAttributes extends HTMLAttributes {
+      'alt'?: string;
+      'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
+      'src'?: string;
+      'width'?: number;
     }
 
     export interface AppInputAttributes extends HTMLAttributes {
@@ -532,6 +557,7 @@ declare global {
     'app-cta': HTMLAppCtaElement
     'app-footer': HTMLAppFooterElement
     'app-img': HTMLAppImgElement
+    'lazy-img': HTMLLazyImgElement
     'app-input': HTMLAppInputElement
     'app-members': HTMLAppMembersElement
     'app-nav-header': HTMLAppNavHeaderElement
@@ -560,6 +586,7 @@ declare global {
     'app-cta': HTMLAppCtaElement;
     'app-footer': HTMLAppFooterElement;
     'app-img': HTMLAppImgElement;
+    'lazy-img': HTMLLazyImgElement;
     'app-input': HTMLAppInputElement;
     'app-members': HTMLAppMembersElement;
     'app-nav-header': HTMLAppNavHeaderElement;
