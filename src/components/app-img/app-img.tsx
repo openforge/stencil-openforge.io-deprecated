@@ -57,7 +57,7 @@ export class Img {
   }
 
   private changeImageFormat() {
-    if (this.loadSrc && localStorage.getItem('allowWebp') === 'true') {
+    if (this.loadSrc && localStorage && localStorage.getItem('allowWebp') === 'true') {
       const idx = this.loadSrc.lastIndexOf('.');
       const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
       if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
