@@ -3,6 +3,9 @@ import { MatchResults, RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
 
+/* tslint:disable-next-line */
+import $ from 'jquery';
+
 declare var fbq;
 
 @Component({
@@ -25,7 +28,7 @@ export class AppDetailedService {
         third: '/assets/svg/services-graphic-development3.svg',
       },
       exampleGraphic: '/assets/shared-graphic-loudcloud.png',
-      exampleBackground: '/assets/shared-graphic-loudcloud-pattern.png'
+      exampleBackground: '/assets/shared-graphic-loudcloud-pattern.png',
     },
     'app-designer': {
       header: '/assets/svg/home-graphic-process-design.svg',
@@ -35,7 +38,7 @@ export class AppDetailedService {
         third: '/assets/svg/services-graphic-design3.svg',
       },
       exampleGraphic: '/assets/shared-graphic-voyage.png',
-      exampleBackground: '/assets/shared-graphic-voyage-pattern.png'
+      exampleBackground: '/assets/shared-graphic-voyage-pattern.png',
     },
     'startup-consulting': {
       header: '/assets/svg/home-graphic-process-discovery.svg',
@@ -45,8 +48,8 @@ export class AppDetailedService {
         third: '/assets/svg/services-graphic-consulting3.svg',
       },
       exampleGraphic: '/assets/shared-graphic-juntoscope.png',
-      exampleBackground: '/assets/shared-graphic-juntoscope-pattern.png'
-    }
+      exampleBackground: '/assets/shared-graphic-juntoscope-pattern.png',
+    },
   };
 
   @State() formSubmitted = false;
@@ -95,6 +98,47 @@ export class AppDetailedService {
     this.resetFormValues();
 
     this.changeMetadata();
+
+    /* tslint:disable-next-line */
+    $(window).on('scroll resize', function() {
+      if (
+        $('#content-panel-inner-detail') &&
+        $('#content-panel-inner-detail').offset()
+      ) {
+        const pos =
+          $('#content-panel-inner-detail').offset().top +
+          $('#content-panel-inner-detail').height();
+        let done = false;
+        $('.content-panel').each(function() {
+          if (
+            !done &&
+            pos <= Math.floor($(this).offset().top + $(this).height())
+          ) {
+            const newDescr = $(this)
+              .find('.description')
+              .html();
+
+            $('#content-panel-inner-detail').html(newDescr);
+
+            done = true;
+          }
+        });
+
+        if (
+          $('#content-panel-inner-detail').offset().top ===
+          $('.content-panel')
+            .first()
+            .offset().top
+        ) {
+          const newDescr = $('.content-panel')
+            .first()
+            .find('.description')
+            .html();
+
+          $('#content-panel-inner-detail').html(newDescr);
+        }
+      }
+    });
   }
 
   validateField(e) {
@@ -172,10 +216,7 @@ export class AppDetailedService {
     if (this.match.params.service === 'app-developer') {
       document
         .querySelector("meta[property='og:title']")
-        .setAttribute(
-          'content', 
-          'Mobile App Developer Experts | OpenForge'
-        );
+        .setAttribute('content', 'Mobile App Developer Experts | OpenForge');
       document
         .querySelector("meta[property='og:description']")
         .setAttribute(
@@ -203,10 +244,7 @@ export class AppDetailedService {
     } else if (this.match.params.service === 'app-designer') {
       document
         .querySelector("meta[property='og:title']")
-        .setAttribute(
-          'content', 
-          'Mobile App Design Experts | OpenForge'
-        );
+        .setAttribute('content', 'Mobile App Design Experts | OpenForge');
       document
         .querySelector("meta[property='og:description']")
         .setAttribute(
@@ -215,10 +253,7 @@ export class AppDetailedService {
         );
       document
         .querySelector("meta[property='og:url']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/services/app-designer/'
-        );
+        .setAttribute('content', 'https://openforge.io/services/app-designer/');
       document
         .querySelector("meta[property='og:image']")
         .setAttribute(
@@ -285,7 +320,10 @@ export class AppDetailedService {
                 </p>
               </div>
               <div class="col-sm-12 col-md-6 align-self-center">
-                <app-img src={this.imgs[this.match.params.service].header} alt="Animated Header Graphic"/>
+                <app-img
+                  src={this.imgs[this.match.params.service].header}
+                  alt="Animated Header Graphic"
+                />
               </div>
             </div>
             <div class="line-break" />
@@ -302,48 +340,82 @@ export class AppDetailedService {
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
-                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
+                  <object
+                    class="card-img-top"
+                    data={this.imgs[this.match.params.service].services.first}
+                    height="200"
+                    width="200"
+                  />
                   <div class="line-break" />
                   <div class="card-body">
                     <h3>
-                      <app-translate key={`services.${this.match.params.service}.first.title`} />
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.first.title`}
+                      />
                     </h3>
                     <p class="card-text">
-                      <app-translate key={`services.${this.match.params.service}.first.text`} />
+                      <app-translate
+                        key={`services.${this.match.params.service}.first.text`}
+                      />
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
-                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
+                  <object
+                    class="card-img-top"
+                    data={this.imgs[this.match.params.service].services.second}
+                    height="200"
+                    width="200"
+                  />
                   <div class="line-break" />
                   <div class="card-body">
                     <h3>
-                      <app-translate key={`services.${this.match.params.service}.second.title`} />
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.second.title`}
+                      />
                     </h3>
                     <p class="card-text">
-                      <app-translate key={`services.${this.match.params.service}.second.text`} />
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.second.text`}
+                      />
                     </p>
                   </div>
                 </div>
               </div>
               <div class="col-md-4 col-sm-12 d-flex justify-content-center">
                 <div class="card flex-fill">
-                  <object class="card-img-top left-adjust" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
+                  <object
+                    class="card-img-top left-adjust"
+                    data={this.imgs[this.match.params.service].services.third}
+                    height="200"
+                    width="200"
+                  />
                   <div class="line-break" />
                   <div class="card-body">
                     <h3>
-                      <app-translate key={`services.${this.match.params.service}.third.title`} />
+                      <app-translate
+                        key={`services.${
+                          this.match.params.service
+                        }.third.title`}
+                      />
                     </h3>
                     <p class="card-text">
-                      <app-translate key={`services.${this.match.params.service}.third.text`} />
+                      <app-translate
+                        key={`services.${this.match.params.service}.third.text`}
+                      />
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-  
           </div>
         </section>
 
@@ -357,71 +429,130 @@ export class AppDetailedService {
 
             <div class="row">
               <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-bb.png" alt="BB logo" />
-              </div>
-              
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-livegistics.png" alt="Livegistics logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-yellowdig.png" alt="YellowDig logo"/>
-                <app-img class="img-fluid" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-newocean.png"
+                  alt="New Ocean Health logo"
+                />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-bb.png"
+                  alt="BB logo"
+                />
               </div>
 
               <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-kemin.png"
+                  alt="Kemin logo"
+                />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-loudcloud.png"
+                  alt="LoudCloud logo"
+                />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-livegistics.png"
+                  alt="Livegistics logo"
+                />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-yellowdig.png"
+                  alt="YellowDig logo"
+                />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-redqueen.jpg"
+                  alt="RedQueen logo"
+                />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-aeris.png"
+                  alt="Aeris logo"
+                />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-wharton.png"
+                  alt="Wharton logo"
+                />
+                <app-img
+                  class="img-fluid"
+                  src="/assets/services-logo-mobilemeasures.png"
+                  alt="Mobile Measures logo"
+                />
               </div>
             </div>
-
           </div>
         </section>
-
 
         <section id="example" class="example">
           <div class="main-content">
             <div class="sidebar">
               <div
                 class="sidebar__inner content-panel-inner"
-                id="content-panel-inner"
+                id="content-panel-inner-detail"
               />
             </div>
             <div class="content">
-              <div class="content-panel" style={{ 'background-image': `url(${this.imgs[this.match.params.service].exampleBackground})` }} >
+              <div
+                class="content-panel"
+                style={{
+                  'background-image': `url(${
+                    this.imgs[this.match.params.service].exampleBackground
+                  })`,
+                }}
+              >
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
                     <h2>
-                      {translate(`services.${this.match.params.service}.example.title`)}
+                      {translate(
+                        `services.${this.match.params.service}.example.title`
+                      )}
                     </h2>
                     <p>
-                      {translate(`services.${this.match.params.service}.example.text`)}
+                      {translate(
+                        `services.${this.match.params.service}.example.text`
+                      )}
                     </p>
                   </div>
                 </div>
                 <div class="content-panel-image">
                   <h2>
-                    {translate(`services.${this.match.params.service}.example.name`)}
+                    {translate(
+                      `services.${this.match.params.service}.example.name`
+                    )}
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
                       <a
                         href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
                         target="_blank"
+                        rel="noopener"
                       >
-                        <app-img src="/assets/graphic-apple-appstore.png" alt="Apple AppStore Logo" />
+                        <app-img
+                          src="/assets/graphic-apple-appstore.png"
+                          alt="Apple AppStore Logo"
+                        />
                       </a>
                     </div>
                     <div class="col-6 text-left">
                       <a
                         href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
                         target="_blank"
+                        rel="noopener"
                       >
-                        <app-img src="/assets/graphic-google-googleplaystore.png" alt="Google Play Store logo" />
+                        <app-img
+                          src="/assets/graphic-google-googleplaystore.png"
+                          alt="Google Play Store logo"
+                        />
                       </a>
                     </div>
                   </div>
