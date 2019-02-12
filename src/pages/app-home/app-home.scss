@@ -22,10 +22,8 @@
       }
     }
 
-    app-img {
-      img {
-        width: 100%;
-      }
+    img {
+      width: 100%;
     }
 
     object {
@@ -159,9 +157,11 @@
     }
 
     .carousel-image {
-      height: 448px;
-      @include media-breakpoint-down(sm) {
-        height: 200px;
+      img {
+        height: 448px;
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
       }
     }
 
@@ -170,9 +170,11 @@
     }
 
     .carousel-image-userfeedback {
-      height: 306px;
-      @include media-breakpoint-down(sm) {
-        height: 200px;
+      img {
+        height: 306px;
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
       }
     }
 
