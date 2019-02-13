@@ -60,6 +60,10 @@
       }
     }
 
+    .svg-header-desktop {
+      margin-top: -200px;
+    }
+
     .hero-content {
       @include media-breakpoint-down(sm) {
         margin-bottom: 14rem;
