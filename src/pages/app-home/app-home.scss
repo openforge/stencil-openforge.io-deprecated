@@ -154,9 +154,11 @@
     }
 
     .carousel-image {
-      height: 448px;
-      @include media-breakpoint-down(sm) {
-        height: 200px;
+      img {
+        height: 448px;
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
       }
     }
 
@@ -165,9 +167,11 @@
     }
 
     .carousel-image-userfeedback {
-      height: 306px;
-      @include media-breakpoint-down(sm) {
-        height: 200px;
+      img {
+        height: 306px;
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
       }
     }
 
@@ -293,9 +297,11 @@
       }
 
       .phone-image {
-        height: 440px;
-        @include media-breakpoint-down(sm) {
-          height: auto;
+        img {
+          height: 440px;
+          @include media-breakpoint-down(sm) {
+            height: auto;
+          }
         }
       }
     }

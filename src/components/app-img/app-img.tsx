@@ -68,6 +68,6 @@ export class Img {
 
   render() {
     this.changeImageFormat();
-    return <img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} decoding="async" />;
+    return <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />;
   }
 }

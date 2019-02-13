@@ -12,15 +12,13 @@
     }
   }
 
-  .webp {
-    &.development {
-      background-image: url('/assets/team-landing-header-development-team.webp');
-    }
-    &.design {
-      background-image: url('/assets/team-landing-header-design-team.webp');
-    }
-    &.consulting {
-      background-image: url('/assets/team-landing-header-management-team.webp');
+  .our-services,
+  .worked-with {
+    padding: 5rem 0;
+
+    .header {
+      margin: 0 auto 3rem;
+      max-width: 768px;
     }
   }
 
@@ -63,137 +61,133 @@
       padding: 1rem;
     }
 
-    .card-body {
-      text-align: left;
+    .worked-with {
+      app-img {
+        img {
+          padding: 2rem;
 
-      @include media-breakpoint-down(sm) {
-        text-align: center;
+          @include media-breakpoint-down(sm) {
+            padding: 2rem 6.5rem;
+          }
+        }
+      }
+
+      .line-break {
+        margin: 0 2rem;
       }
     }
 
-    .line-break {
-      margin: 0 2rem;
-    }
-  }
-}
-
-.worked-with {
-  img {
-    padding: 2rem;
-
-    @include media-breakpoint-down(sm) {
-      padding: 2rem 6.5rem;
-    }
-  }
-}
-
-.example {
-  height: auto;
-
-  .main-content {
-    background-color: $gray-100;
-    display: flex;
-
-    @include media-breakpoint-down(sm) {
-      display: block;
-    }
-  }
-
-  .sidebar {
-    width: 50%;
-    @include media-breakpoint-down(sm) {
-      display: none;
-    }
-  }
-
-  .content {
-    width: 50%;
-
-    @include media-breakpoint-down(sm) {
-      width: 100%;
-    }
-
-    .content-panel {
-      align-items: flex-end;
-      display: flex;
+    .example {
       height: auto;
-      justify-content: center;
-      text-align: center;
 
-      @include media-breakpoint-down(sm) {
-        display: table;
+      .worked-with {
+        img {
+          padding: 2rem;
+
+          @include media-breakpoint-down(sm) {
+            padding: 2rem 6.5rem;
+          }
+        }
       }
-    }
 
-    .last-panel {
-      height: 0;
+      .example {
+        height: auto;
+
+        .main-content {
+          background-color: $gray-100;
+          display: flex;
+
+          @include media-breakpoint-down(sm) {
+            display: block;
+          }
+        }
+
+        .sidebar {
+          width: 50%;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
+        }
+
+        .content {
+          width: 50%;
+
+          @include media-breakpoint-down(sm) {
+            width: 100%;
+          }
+
+          .content-panel {
+            align-items: flex-end;
+            display: flex;
+            height: auto;
+            justify-content: center;
+            text-align: center;
+
+            @include media-breakpoint-down(sm) {
+              display: table;
+            }
+          }
+
+          .content-panel-image {
+            h2 {
+              color: white;
+              font-size: 40px;
+              font-weight: bold;
+              padding: 16px;
+              text-align: center;
+            }
+
+            h2 {
+              color: $orange-dark;
+              font-size: 42px;
+              font-weight: bold;
+              line-height: 1.19;
+            }
+
+            .phone-image {
+              img {
+                height: 440px;
+
+                @include media-breakpoint-down(sm) {
+                  height: auto;
+                }
+              }
+            }
+          }
+        }
+
+        .content-panel-image {
+          h2 {
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 16px;
+            text-align: center;
+            margin-top: 2rem;
+          }
+
+          .store-buttons {
+            padding: 0 0 60px 0;
+            @include media-breakpoint-down(sm) {
+              padding: 0 0 40px 0;
+            }
+          }
+
+          .phone-image {
+            img {
+              max-height: 440px;
+            }
+          }
+        }
+
+        .description {
+          display: none;
+
+          @include media-breakpoint-down(sm) {
+            display: flex;
+          }
+        }
+      }
     }
   }
-
-  .content-panel-inner {
-    align-items: center;
-    background-color: $gray-100;
-    display: flex;
-    height: 655px;
-    justify-content: center;
-
-    .panel-inner-text {
-      margin: 0 4rem;
-      text-align: left;
-
-      @include media-breakpoint-down(sm) {
-        margin: 0 1rem;
-        text-align: center;
-      }
-
-      h2 {
-        color: $orange-dark;
-        font-size: 42px;
-        font-weight: bold;
-        line-height: 1.19;
-      }
-
-      p {
-        color: $gray-dark;
-        font-size: 18px;
-        line-height: 1.78;
-      }
-    }
-  }
-
-  .content-panel-image {
-    h2 {
-      color: white;
-      font-size: 40px;
-      font-weight: bold;
-      padding: 16px;
-      text-align: center;
-      margin-top: 2rem;
-    }
-
-    .store-buttons {
-      padding: 0 0 60px 0;
-      @include media-breakpoint-down(sm) {
-        padding: 0 0 40px 0;
-      }
-    }
-
-    .phone-image {
-      img {
-        max-height: 440px;
-      }
-    }
-  }
-
-  .description {
-    display: none;
-
-    @include media-breakpoint-down(sm) {
-      display: flex;
-    }
-  }
-}
-
-.line-break {
-  border-bottom: 1px solid $gray-800;
 }
