@@ -33,6 +33,27 @@ The OpenForge.io website is built using a combination of [Stencil.js](https://st
 npm install
 ```
 
+#### Install the Google WebP utility from the following link:
+https://developers.google.com/speed/webp/docs/precompiled
+
+#### Or install from the command line (Mac OS X):
+```
+brew install webp
+```
+
+#### Make Sure .webp Images are available by running the following commands:
+```
+for file in src/assets/*.jpg; do cwebp -q 75 "$file" -o "${file%.jpg}.webp"; done
+```
+
+```
+for file in src/assets/*.png; do cwebp -q 75 "$file" -o "${file%.png}.webp"; done
+```
+
+```
+for file in src/assets/*.jpeg; do cwebp -q 75 "$file" -o "${file%.jpeg}.webp"; done
+```
+
 ### Running This Application
 ```
 npm run dev

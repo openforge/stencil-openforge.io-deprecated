@@ -30,15 +30,10 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
-      const pos =
-        $('#content-panel-inner').offset().top +
-        $('#content-panel-inner').height();
+      const pos = $('#content-panel-inner').offset().top + $('#content-panel-inner').height();
       let done = false;
       $('.content-panel').each(function() {
-        if (
-          !done &&
-          pos <= Math.floor($(this).offset().top + $(this).height())
-        ) {
+        if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
           const newDescr = $(this)
             .find('.description')
             .html();
@@ -132,11 +127,7 @@ export class AppHome {
               </div>
             </div>
           </div>
-          <object
-            data="/assets/svg/home-graphic-header.svg"
-            class="svg-header-desktop"
-            aria-label="header"
-          />
+          <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
         </header>
 
         <section id="process" class="process">
@@ -147,29 +138,19 @@ export class AppHome {
           </div>
 
           <div id="processCarousel" class="carousel slide" data-ride="carousel">
-            <app-carousel-indicators
-              class="carousel-main-indicators"
-              activeIndex="0"
-            />
+            <app-carousel-indicators class="carousel-main-indicators" activeIndex="0" />
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img
-                      class="carousel-image-h"
-                      src="/assets/svg/home-graphic-process-discovery.svg"
-                      alt="discovery"
-                    />
+                    <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" alt="discovery" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
                         <app-translate key="home.process.discovery.title" />
                       </h2>
-                      <app-carousel-indicators
-                        class="carousel-mobile-indicators"
-                        activeIndex="0"
-                      />
+                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="0" />
                       <p>
                         <app-translate key="home.process.discovery.text" />
                       </p>
@@ -180,21 +161,14 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img
-                      class="carousel-image-h"
-                      src="/assets/svg/home-graphic-process-design.svg"
-                      alt="design"
-                    />
+                    <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" alt="design" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
                         <app-translate key="home.process.design.title" />
                       </h2>
-                      <app-carousel-indicators
-                        class="carousel-mobile-indicators"
-                        activeIndex="1"
-                      />
+                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="1" />
                       <p>
                         <app-translate key="home.process.design.text" />
                       </p>
@@ -205,21 +179,14 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img
-                      class="carousel-image"
-                      src="/assets/svg/home-graphic-process-development.svg"
-                      alt="development"
-                    />
+                    <app-img class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" alt="development" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
                         <app-translate key="home.process.development.title" />
                       </h2>
-                      <app-carousel-indicators
-                        class="carousel-mobile-indicators"
-                        activeIndex="2"
-                      />
+                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="2" />
                       <p>
                         <app-translate key="home.process.development.text" />
                       </p>
@@ -230,21 +197,14 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img
-                      class="carousel-image"
-                      src="/assets/svg/home-graphic-process-deployment.svg"
-                      alt="deployment"
-                    />
+                    <app-img class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" alt="deployment" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
                         <app-translate key="home.process.deployment.title" />
                       </h2>
-                      <app-carousel-indicators
-                        class="carousel-mobile-indicators"
-                        activeIndex="3"
-                      />
+                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="3" />
                       <p>
                         <app-translate key="home.process.deployment.text" />
                       </p>
@@ -255,21 +215,14 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <app-img
-                      class="carousel-image-userfeedback"
-                      src="/assets/svg/home-graphic-process-userfeedback.svg"
-                      alt="user feedback"
-                    />
+                    <app-img class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" alt="user feedback" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
                         <app-translate key="home.process.userfeedback.title" />
                       </h2>
-                      <app-carousel-indicators
-                        class="carousel-mobile-indicators"
-                        activeIndex="4"
-                      />
+                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="4" />
                       <p>
                         <app-translate key="home.process.userfeedback.text" />
                       </p>
@@ -278,21 +231,11 @@ export class AppHome {
                 </div>
               </div>
             </div>
-            <a
-              class="carousel-control-prev"
-              href="#processCarousel"
-              role="button"
-              data-slide="prev"
-            >
+            <a class="carousel-control-prev" href="#processCarousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true" />
               <span class="sr-only">Previous</span>
             </a>
-            <a
-              class="carousel-control-next"
-              href="#processCarousel"
-              role="button"
-              data-slide="next"
-            >
+            <a class="carousel-control-next" href="#processCarousel" role="button" data-slide="next">
               <span class="carousel-control-next-icon" aria-hidden="true" />
               <span class="sr-only">Next</span>
             </a>
@@ -302,10 +245,7 @@ export class AppHome {
         <section id="work" class="work">
           <div class="main-content">
             <div class="sidebar">
-              <div
-                class="sidebar__inner content-panel-inner"
-                id="content-panel-inner"
-              />
+              <div class="sidebar__inner content-panel-inner" id="content-panel-inner" />
             </div>
             <div class="content">
               <div class="content-panel loudcloud">
@@ -321,43 +261,23 @@ export class AppHome {
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a
-                        href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <app-img
-                          src="/assets/graphic-apple-appstore.png"
-                          alt="download on app store"
-                        />
+                      <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a
-                        href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <app-img
-                          src="/assets/graphic-google-googleplaystore.png"
-                          alt="download on play store"
-                        />
+                      <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                       </a>
                     </div>
                   </div>
-                  <app-img
-                    src="/assets/shared-graphic-loudcloud.png"
-                    class="phone-image"
-                    alt="loudcloud"
-                  />
+                  <img src="/assets/shared-graphic-loudcloud.png" class="phone-image" alt="loudcloud" />
                 </div>
               </div>
               <div class="content-panel voyage">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h2>
-                      {translate('home.services.digitalExperience.title')}
-                    </h2>
+                    <h2>{translate('home.services.digitalExperience.title')}</h2>
                     <p>{translate('home.services.digitalExperience.text')}</p>
                   </div>
                 </div>
@@ -367,35 +287,17 @@ export class AppHome {
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a
-                        href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <app-img
-                          src="/assets/graphic-apple-appstore.png"
-                          alt="download on app store"
-                        />
+                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a
-                        href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <app-img
-                          src="/assets/graphic-google-googleplaystore.png"
-                          alt="download on play store"
-                        />
+                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                       </a>
                     </div>
                   </div>
-                  <app-img
-                    src="/assets/shared-graphic-voyage.png"
-                    class="phone-image"
-                    alt="voyage"
-                  />
+                  <img src="/assets/shared-graphic-voyage.png" class="phone-image" alt="voyage" />
                 </div>
               </div>
               <div class="content-panel juntoscope">
@@ -411,35 +313,17 @@ export class AppHome {
                   </h2>
                   <div class="row store-buttons">
                     <div class="col-6 text-right">
-                      <a
-                        href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <app-img
-                          src="/assets/graphic-apple-appstore.png"
-                          alt="download on app store"
-                        />
+                      <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                       </a>
                     </div>
                     <div class="col-6 text-left">
-                      <a
-                        href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        <app-img
-                          src="/assets/graphic-google-googleplaystore.png"
-                          alt="download on play store"
-                        />
+                      <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
+                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                       </a>
                     </div>
                   </div>
-                  <app-img
-                    src="/assets/shared-graphic-juntoscope.png"
-                    class="phone-image"
-                    alt="juntoscope"
-                  />
+                  <img src="/assets/shared-graphic-juntoscope.png" class="phone-image" alt="juntoscope" />
                 </div>
               </div>
               <div class="content-panel last-panel" />

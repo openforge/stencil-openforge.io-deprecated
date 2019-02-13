@@ -1,4 +1,5 @@
 import { Component, Element, Prop, State, Watch } from '@stencil/core';
+// import { LazyImg } from './lazy-img';
 
 @Component({
   tag: 'app-img',
@@ -55,9 +56,18 @@ export class Img {
     }
   }
 
+  private changeImageFormat() {
+    if (this.loadSrc && localStorage && localStorage.getItem('allowWebp') === 'true') {
+      const idx = this.loadSrc.lastIndexOf('.');
+      const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
+      if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        this.loadSrc = `${this.loadSrc.substring(0, idx)}.webp`;
+      }
+    }
+  }
+
   render() {
-    return (
-      <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />
-    );
+    this.changeImageFormat();
+    return <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />;
   }
 }

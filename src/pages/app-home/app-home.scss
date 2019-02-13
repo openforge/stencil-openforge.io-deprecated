@@ -10,10 +10,7 @@
     height: auto;
 
     @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/home-graphic-header-mobile.svg') top
-          no-repeat,
-        url('/assets/svg/home-graphic-header-background-mobile.svg') center top
-          no-repeat;
+      background: url('/assets/svg/home-graphic-header-mobile.svg') top no-repeat, url('/assets/svg/home-graphic-header-background-mobile.svg') center top no-repeat;
       background-size: 600px 720px, cover;
       margin-top: 75px;
 

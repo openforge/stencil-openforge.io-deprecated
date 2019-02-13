@@ -1,11 +1,4 @@
-import {
-  Component,
-  Element,
-  Event,
-  EventEmitter,
-  Prop,
-  State,
-} from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/core';
 
 /*
   You can use this component to lazy load below the fold images to improve load time.
@@ -88,13 +81,6 @@ export class LazyImg {
   }
 
   render() {
-    return (
-      <img
-        ref={el => (this.image = el as HTMLImageElement)}
-        data-src={this.src}
-        alt={this.alt}
-        width={this.width}
-      />
-    );
+    return <img ref={el => (this.image = el as HTMLImageElement)} data-src={this.src} alt={this.alt} width={this.width} />;
   }
 }

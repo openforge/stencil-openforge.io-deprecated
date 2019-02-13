@@ -58,13 +58,11 @@ export const translations = {
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
-        text:
-          "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
+        text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
         action: 'LEARN MORE',
       },
       mission: {
-        statement:
-          'Our mission is to forge a bond between people and technology through digital experiences.',
+        statement: 'Our mission is to forge a bond between people and technology through digital experiences.',
       },
       values: {
         title: 'Our Values',
@@ -76,8 +74,7 @@ export const translations = {
       },
       team: {
         title: 'Get to Know Us',
-        text:
-          "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
         member: {
           title: {
             founder: 'Founder and Head of Technology',
@@ -116,8 +113,7 @@ export const translations = {
       },
       form: {
         title: 'Get in Touch',
-        text:
-          "Tell us a little bit about what you're working on. We'll be in touch to tell you about the next steps toward accomplishing your goals!",
+        text: "Tell us a little bit about what you're working on. We'll be in touch to tell you about the next steps toward accomplishing your goals!",
         legend: {
           help: 'How can we help you?',
           budget: 'Do you have a budget?',
@@ -126,8 +122,7 @@ export const translations = {
           send: 'Send',
         },
         alert: {
-          text:
-            "Thank you for reaching out! we'll get back to you within 24 hours!",
+          text: "Thank you for reaching out! we'll get back to you within 24 hours!",
         },
         fullName: 'Full Name',
         company: 'Company',
@@ -152,8 +147,7 @@ export const translations = {
           seven: '200K',
         },
         thanx: 'Thank you!',
-        thanxText:
-          'Your message has been delivered. Someone will be in touch with you soon!',
+        thanxText: 'Your message has been delivered. Someone will be in touch with you soon!',
         unsure: 'Unsure',
       },
     },
@@ -254,8 +248,7 @@ export const translations = {
     opportunities: {
       hero: {
         title: "Great News! We're Hiring.",
-        text:
-          "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+        text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
         text2: 'Learn More',
       },
       intro: {
@@ -296,8 +289,7 @@ export const translations = {
       },
       skills: {
         title: 'Show us your skills',
-        text:
-          "So if you're really awesome - prove it and position the sliders to reflect your skills! Hint; only the best shall pass the first test!",
+        text: "So if you're really awesome - prove it and position the sliders to reflect your skills! Hint; only the best shall pass the first test!",
         noob: 'N00b',
         expert: 'Expert',
       },
@@ -312,15 +304,13 @@ export const translations = {
         resume: 'Resume/CV',
         unique: {
           title: 'What makes you unique?',
-          text:
-            'In 150 characters or fewer, tell us what makes you unique. Try to be creative and say something that will catch our eye!',
+          text: 'In 150 characters or fewer, tell us what makes you unique. Try to be creative and say something that will catch our eye!',
         },
         submit: 'Submit Application',
         submitted: 'Application Submitted',
         thanks: {
           title: 'Thank you!',
-          text:
-            'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
+          text: 'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
         },
       },
     },
@@ -328,11 +318,9 @@ export const translations = {
     resources: {
       hero: {
         title: 'What is a PWA and is it right for you?',
-        text:
-          'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.',
+        text: 'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.',
         title1: 'Check Out the Awesome stuff we made with PWAs',
-        text1:
-          "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
+        text1: "We believe that your success is your success. We're here to challenge your assumptions and help you discover your web and mobile applications full potencial.",
       },
       form: {
         fullName: 'Full Name',
@@ -352,21 +340,18 @@ export const translations = {
       },
       downloadinfo: {
         title: "HERE'S WHAT IS INSIDE",
-        subtitle:
-          "A business owner's perspective on the benefits of PWAs (Progressive Web Apps)",
+        subtitle: "A business owner's perspective on the benefits of PWAs (Progressive Web Apps)",
         list: {
           first: 'What a PWA is and what companies are using them',
           second: 'Learn how a PWA can decrease several costs',
           third: 'Discover how a PWA increases user engagement',
           fourth: 'Understand the features and benefits of a PWA',
         },
-        footer:
-          "Switching to a PWA can take your business to the next level and improve the performance of your business's digital engagement",
+        footer: "Switching to a PWA can take your business to the next level and improve the performance of your business's digital engagement",
       },
       enjoy: 'Enjoy!',
       enjoysub: 'Expand Your PWA Knowledge',
-      thanks:
-        'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
+      thanks: 'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
     cta: {
@@ -404,8 +389,7 @@ export const translations = {
       },
       webinar: {
         signup: 'Startup Junto',
-        webinarText:
-          'Startup Junto is a curated community for startup founders and entrepreneurs.',
+        webinarText: 'Startup Junto is a curated community for startup founders and entrepreneurs.',
         register: 'JOIN US',
       },
     },

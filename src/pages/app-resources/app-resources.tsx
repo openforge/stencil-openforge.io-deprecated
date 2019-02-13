@@ -7,6 +7,8 @@ import { MatchResults, RouterHistory } from '@stencil/router';
   styleUrl: 'app-resources.scss',
 })
 export class AppResources {
+  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+
   @State() formSubmitted = false;
   @State() formSubmitting = false;
 
@@ -59,68 +61,38 @@ export class AppResources {
     this.resetFormValues();
 
     // Change meta tags dynamically
-    document
-      .querySelector("meta[property='og:title']")
-      .setAttribute('content', 'Business Owner’s Guide to PWAs | OpenForge');
+    document.querySelector("meta[property='og:title']").setAttribute('content', 'Business Owner’s Guide to PWAs | OpenForge');
     document
       .querySelector("meta[property='og:description']")
-      .setAttribute(
-        'content',
-        'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.'
-      );
-    document
-      .querySelector("meta[property='og:url']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/resources/pwa-white-paper/'
-      );
-    document
-      .querySelector("meta[property='og:image']")
-      .setAttribute(
-        'content',
-        'https://openforge.io/assets/resources-header.jpg'
-      );
-    document
-      .querySelector("meta[name='keywords']")
-      .setAttribute('content', 'Progressive Web App, PWA, White Paper');
+      .setAttribute('content', 'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.');
+    document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/resources/pwa-white-paper/');
+    document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/resources-header.jpg');
+    document.querySelector("meta[name='keywords']").setAttribute('content', 'Progressive Web App, PWA, White Paper');
   }
   validateField(e) {
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
-        this.nameError = this.formValues.nameValid
-          ? ''
-          : (this.nameError = e.validationMessage);
+        this.nameError = this.formValues.nameValid ? '' : (this.nameError = e.validationMessage);
         break;
 
       case 'industry':
         this.formValues.industryValid = e.checkValidity();
-        this.industryError = this.formValues.industryValid
-          ? ''
-          : (this.industryError = e.validationMessage);
+        this.industryError = this.formValues.industryValid ? '' : (this.industryError = e.validationMessage);
         break;
 
       case 'email':
         this.formValues.emailValid = e.checkValidity();
-        this.emailError = this.formValues.emailValid
-          ? ''
-          : (this.emailError = e.validationMessage);
+        this.emailError = this.formValues.emailValid ? '' : (this.emailError = e.validationMessage);
         break;
 
       case 'organization':
         this.formValues.organizationValid = e.checkValidity();
-        this.organizationError = this.formValues.organizationValid
-          ? ''
-          : (this.organizationError = e.validationMessage);
+        this.organizationError = this.formValues.organizationValid ? '' : (this.organizationError = e.validationMessage);
         break;
     }
 
-    this.formValues.nameValid &&
-    this.formValues.industryValid &&
-    this.formValues.emailValid &&
-    this.formValues.organizationValid
-      ? (this.isDisabled = false)
-      : (this.isDisabled = true);
+    this.formValues.nameValid && this.formValues.industryValid && this.formValues.emailValid && this.formValues.organizationValid ? (this.isDisabled = false) : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
@@ -130,17 +102,14 @@ export class AppResources {
       this.formSubmitting = true;
       this.isDisabled = true;
 
-      await fetch(
-        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
-        {
-          method: 'post',
-          mode: 'no-cors',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          },
-          body: JSON.stringify(this.formValues),
-        }
-      );
+      await fetch('https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs', {
+        method: 'post',
+        mode: 'no-cors',
+        headers: {
+          'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        },
+        body: JSON.stringify(this.formValues),
+      });
 
       event.target.reset();
       this.resetFormValues();
@@ -172,7 +141,7 @@ export class AppResources {
       <div id="top" class="resources">
         {/* header - hero */}
         {!this.formSubmitted ? (
-          <header class="hero">
+          <header class={this.className}>
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">
@@ -183,10 +152,7 @@ export class AppResources {
                     <p>
                       <app-translate key="resources.hero.text" />
                     </p>
-                    <button
-                      onClick={this.scrollToForm.bind(this)}
-                      class="btn btn-primary"
-                    >
+                    <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                       Download Now
                     </button>
                   </div>
@@ -218,10 +184,7 @@ export class AppResources {
           </header>
         ) : null}
 
-        {this.nameError ||
-        this.emailError ||
-        this.industryError ||
-        this.organizationError ? (
+        {this.nameError || this.emailError || this.industryError || this.organizationError ? (
           <div class="container-error">
             <section id="error-section" class="error-robot">
               <div class="row align-items-center">
@@ -250,118 +213,47 @@ export class AppResources {
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="colunm">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src="/assets/pwa-white-paper-front-page.jpg"
-                    alt=""
-                  />
+                  <app-img class="img-fluid d-none d-md-inline" src="/assets/pwa-white-paper-front-page.jpg" alt="" />
                 </div>
               </div>
               <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="container">
                   <div class="">
-                    <form
-                      id="pwa-form"
-                      onSubmit={this.handleSubmit.bind(this)}
-                      novalidate={true}
-                    >
-                      <app-input
-                        name="name"
-                        label={translate('resources.form.fullName')}
-                        type="text"
-                        id="name"
-                        required={true}
-                      />
+                    <form id="pwa-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
+                      <app-input name="name" label={translate('resources.form.fullName')} type="text" id="name" required={true} />
                       <p class="error">
-                        <span
-                          style={
-                            !this.nameError
-                              ? { display: 'none' }
-                              : this.errorIconStyles
-                          }
-                        >
-                          <i
-                            class="fa fa-exclamation-circle"
-                            aria-hidden="true"
-                          />
+                        <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
                         {this.nameError}
                       </p>
 
-                      <app-input
-                        name="email"
-                        label={translate('resources.form.email')}
-                        type="email"
-                        id="email"
-                        required={true}
-                      />
+                      <app-input name="email" label={translate('resources.form.email')} type="email" id="email" required={true} />
                       <p class="error">
-                        <span
-                          style={
-                            !this.emailError
-                              ? { display: 'none' }
-                              : this.errorIconStyles
-                          }
-                        >
-                          <i
-                            class="fa fa-exclamation-circle"
-                            aria-hidden="true"
-                          />
+                        <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
                         {this.emailError}
                       </p>
 
-                      <app-input
-                        name="industry"
-                        label={translate('resources.form.industry')}
-                        type="text"
-                        required={true}
-                      />
+                      <app-input name="industry" label={translate('resources.form.industry')} type="text" required={true} />
                       <p class="error">
-                        <span
-                          style={
-                            !this.industryError
-                              ? { display: 'none' }
-                              : this.errorIconStyles
-                          }
-                        >
-                          <i
-                            class="fa fa-exclamation-circle"
-                            aria-hidden="true"
-                          />
+                        <span style={!this.industryError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
                         {this.industryError}
                       </p>
 
-                      <app-input
-                        name="organization"
-                        label={translate('resources.form.organization')}
-                        type="text"
-                        required={true}
-                      />
+                      <app-input name="organization" label={translate('resources.form.organization')} type="text" required={true} />
                       <p class="error">
-                        <span
-                          style={
-                            !this.organizationError
-                              ? { display: 'none' }
-                              : this.errorIconStyles
-                          }
-                        >
-                          <i
-                            class="fa fa-exclamation-circle"
-                            aria-hidden="true"
-                          />
+                        <span style={!this.organizationError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
                         {this.organizationError}
                       </p>
 
                       <div class="center">
-                        <button
-                          name="submit"
-                          type="submit"
-                          class="btn btn-primary"
-                          disabled={this.isDisabled}
-                        >
+                        <button name="submit" type="submit" class="btn btn-primary" disabled={this.isDisabled}>
                           <app-translate key="resources.form.button.send" />
                         </button>
                       </div>
@@ -387,11 +279,7 @@ export class AppResources {
               </div>
             </section>
             <section class="text-img-container left-side">
-              <app-img
-                class="img-fluid d-none d-md-inline"
-                src="/assets/resources-whitepaper.png"
-                alt=""
-              />
+              <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-whitepaper.png" alt="" />
               <div class="text-img-container-text">
                 <ul>
                   <li>
@@ -426,11 +314,7 @@ export class AppResources {
         {this.formSubmitted ? (
           <div class="container">
             <section id="thankyou" class="text-img-container left-side">
-              <app-img
-                class="img-fluid d-none d-md-inline"
-                src="/assets/resources-robot.gif"
-                alt=""
-              />
+              <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-robot.gif" alt="" />
               <div class="text-img-container-text">
                 <h2>
                   <app-translate key="resources.enjoy" />
@@ -441,13 +325,7 @@ export class AppResources {
                 <p>
                   <app-translate key="resources.thanks" />
                 </p>
-                <a
-                  class="btn btn-primary"
-                  href="https://github.com/openforge"
-                  title={translate('nav.links.github')}
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a class="btn btn-primary" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
                   <div class="fab fa-github" />
                   &nbsp;GitHub
                 </a>

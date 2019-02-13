@@ -204,30 +204,11 @@ export class AppAbout {
     }
 
     // Change meta tags dynamically
-    document
-      .querySelector("meta[property='og:title']")
-      .setAttribute(
-        'content',
-        'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge'
-      );
-    document
-      .querySelector("meta[property='og:description']")
-      .setAttribute(
-        'content',
-        'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia'
-      );
-    document
-      .querySelector("meta[property='og:url']")
-      .setAttribute('content', 'https://openforge.io/about/');
-    document
-      .querySelector("meta[property='og:image']")
-      .setAttribute('content', 'https://openforge.io/assets/bg-hero-icons.jpg');
-    document
-      .querySelector("meta[name='keywords']")
-      .setAttribute(
-        'content',
-        'Technology, Design, Philadelphia, Mobile App, Development, Jedidiah Weller'
-      );
+    document.querySelector("meta[property='og:title']").setAttribute('content', 'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge');
+    document.querySelector("meta[property='og:description']").setAttribute('content', 'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia');
+    document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/about/');
+    document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/bg-hero-icons.jpg');
+    document.querySelector("meta[name='keywords']").setAttribute('content', 'Technology, Design, Philadelphia, Mobile App, Development, Jedidiah Weller');
   }
 
   scrollToForm() {
@@ -249,10 +230,7 @@ export class AppAbout {
                 <p>
                   <app-translate key="about.header.text" />
                 </p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
+                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                   <app-translate key="about.header.action" />
                 </button>
               </div>
@@ -261,14 +239,11 @@ export class AppAbout {
         </header>
 
         {/* section - team */}
-        <section id="team-photo" class="team-photo">
+        <section id="team-photo" class="team-photo {this.className}">
           <div class="container">
             <div class="row align-items-end text-center">
               <div class="col-12">
-                <app-img
-                  src="/assets/svg/about-graphic-ribbon.svg"
-                  alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences."
-                />
+                <app-img src="/assets/svg/about-graphic-ribbon.svg" alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences." />
               </div>
             </div>
           </div>
@@ -298,27 +273,15 @@ export class AppAbout {
             </div>
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object
-                  data="assets/svg/about-graphic-integrity.svg"
-                  height="164px"
-                  width="220px"
-                />
+                <object data="assets/svg/about-graphic-integrity.svg" height="164px" width="220px" />
                 <app-translate class="value-text" key="about.values.value2" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object
-                  data="assets/svg/about-graphic-honesty.svg"
-                  height="164px"
-                  width="220px"
-                />
+                <object data="assets/svg/about-graphic-honesty.svg" height="164px" width="220px" />
                 <app-translate class="value-text" key="about.values.value1" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object
-                  data="assets/svg/about-graphic-transparency.svg"
-                  height="164px"
-                  width="220px"
-                />
+                <object data="assets/svg/about-graphic-transparency.svg" height="164px" width="220px" />
                 <app-translate class="value-text" key="about.values.value3" />
               </div>
             </div>
