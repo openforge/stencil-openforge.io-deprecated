@@ -9,16 +9,7 @@ export class AppMembers {
 
   public images: any;
 
-  // buildImageArray() {
-  //   // this.images = document.querySelectorAll('img[src$=".jpg"], img[src$=".png"]');
-  //   this.images = document.querySelectorAll('img');
-  //   console.log(this.images);
-  //   console.log("build image array executed");
-  // }
-
   render() {
-    // this.buildImageArray();
-
     return (
       <div class="team justify-content-center">
         {this.members.map(member => {

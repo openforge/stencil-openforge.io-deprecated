@@ -11,7 +11,7 @@ export class App404 {
         <section class="container">
           <app-img src="/assets/forge.png" />
 
-          <p> Utoh, we've detected that this page does not exist, or something else has gone wrong! </p>
+          <p> Uh-oh, we've detected that this page does not exist, or something else has gone wrong! </p>
 
           <p>
             It must be something to do with our awesomeness, the coolness of our apps, or some other equally awesome thing. Don't worry, we'll fix it soon but in the mean time feel free to email us at{' '}
