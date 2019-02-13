@@ -10,6 +10,11 @@
     @include media-breakpoint-down(sm) {
       text-align: center;
     }
+
+    .row {
+      height: auto;
+      padding-bottom: 2rem;
+    }
   }
 
   .our-services,
@@ -22,53 +27,34 @@
     }
   }
 
-  .row {
-    height: auto;
-    padding-bottom: 2rem;
-  }
-}
-
-.our-services,
-.worked-with {
-  padding: 5rem 0;
-
-  .header {
-    margin: 0 auto 3rem;
-    max-width: 768px;
-  }
-}
-
-.our-services {
-  .container {
-    max-width: 960px;
-  }
-
-  .card {
-    background: rgba($gray-100, 0.5);
-    border-radius: 22px;
-    max-width: 290px;
-
-    @include media-breakpoint-down(sm) {
-      margin-bottom: 2rem;
+  .our-services {
+    .container {
+      max-width: 960px;
     }
 
-    h3 {
-      color: $orange-dark;
-    }
+    .card {
+      background: rgba($gray-100, 0.5);
+      border-radius: 22px;
+      max-width: 290px;
 
-    .card-img-top {
-      margin: 2rem 0;
-      padding: 1rem;
-    }
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+      }
 
-    .worked-with {
-      app-img {
-        img {
-          padding: 2rem;
+      h3 {
+        color: $orange-dark;
+      }
 
-          @include media-breakpoint-down(sm) {
-            padding: 2rem 6.5rem;
-          }
+      .card-img-top {
+        margin: 2rem 0;
+        padding: 1rem;
+      }
+
+      .card-body {
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
         }
       }
 
@@ -76,118 +62,132 @@
         margin: 0 2rem;
       }
     }
+  }
 
-    .example {
-      height: auto;
+  .worked-with {
+    app-img {
+      img {
+        padding: 2rem;
 
-      .worked-with {
-        img {
-          padding: 2rem;
+        @include media-breakpoint-down(sm) {
+          padding: 2rem 6.5rem;
+        }
+      }
+    }
+  }
 
-          @include media-breakpoint-down(sm) {
-            padding: 2rem 6.5rem;
-          }
+  .example {
+    height: auto;
+
+    .main-content {
+      background-color: $gray-100;
+      display: flex;
+
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+
+    .sidebar {
+      width: 50%;
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    .content {
+      width: 50%;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
+
+      .content-panel {
+        align-items: flex-end;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+
+        @include media-breakpoint-down(sm) {
+          display: table;
         }
       }
 
-      .example {
-        height: auto;
+      .last-panel {
+        height: 0;
+      }
+    }
 
-        .main-content {
-          background-color: $gray-100;
-          display: flex;
+    .content-panel-inner {
+      align-items: center;
+      background-color: $gray-100;
+      display: flex;
+      height: 655px;
+      justify-content: center;
 
-          @include media-breakpoint-down(sm) {
-            display: block;
-          }
+      .panel-inner-text {
+        margin: 0 4rem;
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          margin: 0 1rem;
+          text-align: center;
         }
 
-        .sidebar {
-          width: 50%;
-          @include media-breakpoint-down(sm) {
-            display: none;
-          }
+        h2 {
+          color: $orange-dark;
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.19;
         }
 
-        .content {
-          width: 50%;
+        p {
+          color: $gray-dark;
+          font-size: 18px;
+          line-height: 1.78;
+        }
+      }
+    }
+
+    .content-panel-image {
+      h2 {
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 16px;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .store-buttons {
+        padding: 0 0 60px 0;
+        @include media-breakpoint-down(sm) {
+          padding: 0 0 40px 0;
+        }
+      }
+
+      .phone-image {
+        img {
+          height: 440px;
 
           @include media-breakpoint-down(sm) {
-            width: 100%;
-          }
-
-          .content-panel {
-            align-items: flex-end;
-            display: flex;
             height: auto;
-            justify-content: center;
-            text-align: center;
-
-            @include media-breakpoint-down(sm) {
-              display: table;
-            }
-          }
-
-          .content-panel-image {
-            h2 {
-              color: white;
-              font-size: 40px;
-              font-weight: bold;
-              padding: 16px;
-              text-align: center;
-            }
-
-            h2 {
-              color: $orange-dark;
-              font-size: 42px;
-              font-weight: bold;
-              line-height: 1.19;
-            }
-
-            .phone-image {
-              img {
-                height: 440px;
-
-                @include media-breakpoint-down(sm) {
-                  height: auto;
-                }
-              }
-            }
-          }
-        }
-
-        .content-panel-image {
-          h2 {
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            padding: 16px;
-            text-align: center;
-            margin-top: 2rem;
-          }
-
-          .store-buttons {
-            padding: 0 0 60px 0;
-            @include media-breakpoint-down(sm) {
-              padding: 0 0 40px 0;
-            }
-          }
-
-          .phone-image {
-            img {
-              max-height: 440px;
-            }
-          }
-        }
-
-        .description {
-          display: none;
-
-          @include media-breakpoint-down(sm) {
-            display: flex;
           }
         }
       }
     }
+
+    .description {
+      display: none;
+
+      @include media-breakpoint-down(sm) {
+        display: flex;
+      }
+    }
+  }
+
+  .line-break {
+    border-bottom: 1px solid $gray-800;
   }
 }
