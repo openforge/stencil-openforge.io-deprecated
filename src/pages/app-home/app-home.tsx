@@ -60,9 +60,9 @@ export class AppHome {
     });
 
     /* tslint:disable-next-line */
+    const self = this;
+    /* tslint:disable-next-line */
     $(document).ready(function() {
-      /* tslint:disable-next-line */
-      const self = this;
       /* tslint:disable-next-line */
       window.setTimeout(function() {
         console.log('init sticky');
