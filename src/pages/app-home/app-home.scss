@@ -1,6 +1,6 @@
 .home {
   font-family: 'Muli', sans-serif;
-  overflow-x: hidden;
+  width: auto;
 
   .hero {
     background-color: white;
@@ -207,6 +207,7 @@
 
   .work {
     height: auto;
+    width: 100%;
 
     .main-content {
       background-color: $gray-100;
@@ -218,9 +219,16 @@
     }
 
     .sidebar {
+      min-height: 100%;
       width: 50%;
       @include media-breakpoint-down(sm) {
         display: none;
+      }
+
+      #sticky-sidebar-inner {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
       }
     }
 
