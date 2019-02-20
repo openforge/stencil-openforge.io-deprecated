@@ -1,6 +1,5 @@
 import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
-import stickySidebar from 'sticky-sidebar';
 
 import { translate } from '../../services/translation.service';
 
@@ -19,7 +18,7 @@ export class AppHome {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
-  private sticky;
+  //  private sticky;
 
   componentDidLoad() {
     // isServer is false when running in the browser
@@ -30,14 +29,13 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(window).on('scroll resize', function() {
-      const pos = $('#content-panel-inner').offset().top + $('#content-panel-inner').height();
+      const pos = $('#content-panel-inner').offset().top + $('#content-panel-inner').height() / 2;
       let done = false;
       $('.content-panel').each(function() {
         if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
           const newDescr = $(this)
             .find('.description')
             .html();
-
           $('#content-panel-inner').html(newDescr);
 
           done = true;
@@ -61,40 +59,9 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(document).ready(function() {
-      /* tslint:disable-next-line */
-      const self = this;
-      /* tslint:disable-next-line */
-      window.setTimeout(function() {
-        console.log('init sticky');
-        self.sticky = new stickySidebar('.sidebar', {
-          topSpacing: 75.45,
-          bottomSpacing: 0,
-          containerSelector: '.main-content',
-          innerWrapperSelector: '.content-panel-inner',
-          minWidth: 767,
-        });
-        self.sticky.updateSticky();
-      }, 0);
-
       $('[data-slide-to=0]').trigger('click');
-
       $(window).trigger('scroll'); // init the value
-
-      if (
-        $('.sidebar')
-          .first()
-          .hasClass('is-affixed')
-      ) {
-        $('.sidebar')
-          .first()
-          .removeClass('is-affixed');
-        $('#content-panel-inner').css({ width: 'initial' });
-      }
     });
-  }
-
-  componentDidUnload() {
-    this.sticky.destroy();
   }
 
   scrollToForm() {
@@ -244,8 +211,10 @@ export class AppHome {
 
         <section id="work" class="work">
           <div class="main-content">
-            <div class="sidebar">
-              <div class="sidebar__inner content-panel-inner" id="content-panel-inner" />
+            <div id="sticky-sidebar" class="sidebar">
+              <div id="sticky-sidebar-inner">
+                <div id="content-panel-inner" class="content-panel-inner" />
+              </div>
             </div>
             <div class="content">
               <div class="content-panel loudcloud">
@@ -259,16 +228,18 @@ export class AppHome {
                   <h2>
                     <app-translate key="home.services.mobileTechnology.example" />
                   </h2>
-                  <div class="row store-buttons">
-                    <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
-                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                      </a>
-                    </div>
-                    <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
-                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                      </a>
+                  <div class="container">
+                    <div class="row store-buttons">
+                      <div class="col-6 text-right">
+                        <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
+                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                        </a>
+                      </div>
+                      <div class="col-6 text-left">
+                        <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
+                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <img src="/assets/shared-graphic-loudcloud.png" class="phone-image" alt="loudcloud" />
@@ -285,16 +256,18 @@ export class AppHome {
                   <h2>
                     <app-translate key="home.services.digitalExperience.example" />
                   </h2>
-                  <div class="row store-buttons">
-                    <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
-                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                      </a>
-                    </div>
-                    <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
-                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                      </a>
+                  <div class="container">
+                    <div class="row store-buttons">
+                      <div class="col-6 text-right">
+                        <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                        </a>
+                      </div>
+                      <div class="col-6 text-left">
+                        <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <img src="/assets/shared-graphic-voyage.png" class="phone-image" alt="voyage" />
@@ -311,16 +284,18 @@ export class AppHome {
                   <h2>
                     <app-translate key="home.services.brandingDesign.example" />
                   </h2>
-                  <div class="row store-buttons">
-                    <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank" rel="noopener">
-                        <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                      </a>
-                    </div>
-                    <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
-                        <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                      </a>
+                  <div class="container">
+                    <div class="row store-buttons">
+                      <div class="col-6 text-right">
+                        <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank" rel="noopener">
+                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                        </a>
+                      </div>
+                      <div class="col-6 text-left">
+                        <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
+                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                        </a>
+                      </div>
                     </div>
                   </div>
                   <img src="/assets/shared-graphic-juntoscope.png" class="phone-image" alt="juntoscope" />
