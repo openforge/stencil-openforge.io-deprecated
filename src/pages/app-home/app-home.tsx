@@ -59,7 +59,10 @@ export class AppHome {
 
     /* tslint:disable-next-line */
     $(document).ready(function() {
-      $('[data-slide-to=0]').trigger('click');
+      // Force bootstrap to initialize carousel
+      const processCarousel = $('#processCarousel');
+      setTimeout(() => window['bootstrap'].Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
+
       $(window).trigger('scroll'); // init the value
     });
   }
@@ -104,7 +107,7 @@ export class AppHome {
             </h2>
           </div>
 
-          <div id="processCarousel" class="carousel slide" data-ride="carousel">
+          <div id="processCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
             <app-carousel-indicators class="carousel-main-indicators" activeIndex="0" />
             <div class="carousel-inner">
               <div class="carousel-item active">
