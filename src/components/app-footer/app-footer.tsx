@@ -1,5 +1,6 @@
 import { Component } from '@stencil/core';
 import { translate } from '../../services/translation.service';
+import { VERSION } from '../../shared/version.const';
 
 @Component({
   tag: 'app-footer',
@@ -74,7 +75,7 @@ export class AppFooter {
             </div>
           </div>
 
-          <p class="copyright">&copy; OpenForge 2018</p>
+          <p class="copyright">&copy; OpenForge 2018 &nbsp; Version {VERSION}</p>
         </div>
       </footer>
     );
