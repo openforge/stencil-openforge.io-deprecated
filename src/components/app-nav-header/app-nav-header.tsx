@@ -53,6 +53,11 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link url="/blog" exact={true} anchorClass="nav-link" activeClass="active">
+                  {translate('nav.links.blog')}
+                </stencil-route-link>
+              </li>
               <li class="nav-item dropdown" data-target="#navbarSupportedContent">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Services

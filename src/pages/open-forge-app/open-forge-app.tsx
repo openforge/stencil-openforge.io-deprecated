@@ -107,6 +107,7 @@ export class OpenForgeApp {
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route url="/service-level-agreement" component="app-service-level-agreement" />
+          <stencil-route url="/blog" component="app-blog" />
           <stencil-route component="app-home" />
         </stencil-route-switch>
       </stencil-router>

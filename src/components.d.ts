@@ -34,6 +34,10 @@ declare global {
 
   namespace StencilComponents {
 
+    interface AppBlogPosts {
+      'blogData': any[];
+    }
+
     interface AppCarouselIndicators {
       'activeIndex': string;
     }
@@ -118,6 +122,10 @@ declare global {
 
     }
 
+    interface AppBlog {
+
+    }
+
     interface AppCaseStudy {
 
     }
@@ -169,6 +177,14 @@ declare global {
     }
   }
 
+
+    interface HTMLAppBlogPostsElement extends StencilComponents.AppBlogPosts, HTMLStencilElement {}
+
+    var HTMLAppBlogPostsElement: {
+      prototype: HTMLAppBlogPostsElement;
+      new (): HTMLAppBlogPostsElement;
+    };
+    
 
     interface HTMLAppCarouselIndicatorsElement extends StencilComponents.AppCarouselIndicators, HTMLStencilElement {}
 
@@ -290,6 +306,14 @@ declare global {
     };
     
 
+    interface HTMLAppBlogElement extends StencilComponents.AppBlog, HTMLStencilElement {}
+
+    var HTMLAppBlogElement: {
+      prototype: HTMLAppBlogElement;
+      new (): HTMLAppBlogElement;
+    };
+    
+
     interface HTMLAppCaseStudyElement extends StencilComponents.AppCaseStudy, HTMLStencilElement {}
 
     var HTMLAppCaseStudyElement: {
@@ -381,6 +405,7 @@ declare global {
   namespace JSX {
     interface Element {}
     export interface IntrinsicElements {
+    'app-blog-posts': JSXElements.AppBlogPostsAttributes;
     'app-carousel-indicators': JSXElements.AppCarouselIndicatorsAttributes;
     'app-cta': JSXElements.AppCtaAttributes;
     'app-footer': JSXElements.AppFooterAttributes;
@@ -396,6 +421,7 @@ declare global {
     'content-graphic': JSXElements.ContentGraphicAttributes;
     'app-404': JSXElements.App404Attributes;
     'app-about': JSXElements.AppAboutAttributes;
+    'app-blog': JSXElements.AppBlogAttributes;
     'app-case-study': JSXElements.AppCaseStudyAttributes;
     'app-contact': JSXElements.AppContactAttributes;
     'app-detailed-service': JSXElements.AppDetailedServiceAttributes;
@@ -411,6 +437,10 @@ declare global {
   }
 
   namespace JSXElements {
+
+    export interface AppBlogPostsAttributes extends HTMLAttributes {
+      'blogData'?: any[];
+    }
 
     export interface AppCarouselIndicatorsAttributes extends HTMLAttributes {
       'activeIndex'?: string;
@@ -501,6 +531,10 @@ declare global {
 
     }
 
+    export interface AppBlogAttributes extends HTMLAttributes {
+
+    }
+
     export interface AppCaseStudyAttributes extends HTMLAttributes {
 
     }
@@ -553,6 +587,7 @@ declare global {
   }
 
   interface HTMLElementTagNameMap {
+    'app-blog-posts': HTMLAppBlogPostsElement
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement
     'app-cta': HTMLAppCtaElement
     'app-footer': HTMLAppFooterElement
@@ -568,6 +603,7 @@ declare global {
     'content-graphic': HTMLContentGraphicElement
     'app-404': HTMLApp404Element
     'app-about': HTMLAppAboutElement
+    'app-blog': HTMLAppBlogElement
     'app-case-study': HTMLAppCaseStudyElement
     'app-contact': HTMLAppContactElement
     'app-detailed-service': HTMLAppDetailedServiceElement
@@ -582,6 +618,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'app-blog-posts': HTMLAppBlogPostsElement;
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
     'app-cta': HTMLAppCtaElement;
     'app-footer': HTMLAppFooterElement;
@@ -597,6 +634,7 @@ declare global {
     'content-graphic': HTMLContentGraphicElement;
     'app-404': HTMLApp404Element;
     'app-about': HTMLAppAboutElement;
+    'app-blog': HTMLAppBlogElement;
     'app-case-study': HTMLAppCaseStudyElement;
     'app-contact': HTMLAppContactElement;
     'app-detailed-service': HTMLAppDetailedServiceElement;
