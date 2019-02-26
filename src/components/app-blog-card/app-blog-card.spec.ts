@@ -1,17 +1,17 @@
 import { render } from '@stencil/core/testing';
 
-import { AppBlogPosts } from './app-blog-posts';
+import { AppBlogCard } from './app-blog-card';
 
 describe('app', () => {
   it('should build', () => {
-    expect(new AppBlogPosts()).toBeTruthy();
+    expect(new AppBlogCard()).toBeTruthy();
   });
 
   describe('rendering', () => {
     beforeEach(async () => {
       await render({
-        components: [AppBlogPosts],
-        html: '<app-blog-posts></app-blog-posts>',
+        components: [AppBlogCard],
+        html: '<app-blog-card></app-blog-card>',
       });
     });
   });

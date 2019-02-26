@@ -1,4 +1,4 @@
-# app-blog-posts
+# app-blog-card
 
 <!-- Auto Generated Below -->
 

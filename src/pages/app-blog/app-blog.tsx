@@ -15,7 +15,7 @@ export class AppBlog {
 
   componentWillLoad() {
     butter.post
-      .list({ page: 1, page_size: 10 })
+      .list({ page: 1, page_size: 10, exclude_body: true })
       .then(resp => {
         this.blogData = [...resp.data.data];
         this.blogMeta = resp.data.meta;
@@ -37,15 +37,18 @@ export class AppBlog {
   }
 
   render() {
-    return this.blogData.map(post => {
-      <div>
-        <h1>test</h1>
-        <div>{post.title}</div>
-        <div>{post.summary}</div>
-        <div>{post.author.first_name + post.author.last_name}</div>
-        <div>{post.author.email}</div>
-        <div>{post.body}</div>
-      </div>;
-    });
+    let postData = <div>Loading</div>;
+    if (this.blogData) {
+      postData = (
+        <div class="blog-container">
+          {this.blogData.map(post => (
+            <div class="card blog-card">
+              <app-blog-card blogPost={post} />
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return postData;
   }
 }
