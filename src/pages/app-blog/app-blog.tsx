@@ -1,7 +1,7 @@
 import { Component, Prop, State } from '@stencil/core';
+// import * as Butter from 'buttercms';
 
 declare var fbq;
-declare var butter;
 
 @Component({
   tag: 'app-blog',
@@ -11,37 +11,41 @@ export class AppBlog {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
+  private butter;
   @State() blogData = [];
   @State() numberOfPages: number = 0;
   @State() currentPage: 1;
   @State() blogMeta;
 
   componentWillLoad() {
+    //   this.butter = Butter('fca1bc914c05371263f98c9d3480eaa215fd63d6')
     this.getPosts(1);
   }
 
   getPosts(page: number, searchQuery?: string) {
     const pageSize = 2;
-    if (searchQuery) {
-      console.log(searchQuery);
-      butter.post
-        .search(searchQuery)
-        .then(resp => {
-          console.log(resp);
-          this.updateBlogData(resp, page);
-        })
-        .catch(resp => {
-          console.log(resp);
-        });
-    } else {
-      butter.post
-        .list({ page, page_size: pageSize, exclude_body: true })
-        .then(resp => {
-          this.updateBlogData(resp, page);
-        })
-        .catch(resp => {
-          console.log(resp);
-        });
+    if (!this.isServer) {
+      if (searchQuery) {
+        console.log(searchQuery);
+        this.butter.post
+          .search(searchQuery)
+          .then(resp => {
+            console.log(resp);
+            this.updateBlogData(resp, page);
+          })
+          .catch(resp => {
+            console.log(resp);
+          });
+      } else {
+        this.butter.post
+          .list({ page, page_size: pageSize, exclude_body: true })
+          .then(resp => {
+            this.updateBlogData(resp, page);
+          })
+          .catch(resp => {
+            console.log(resp);
+          });
+      }
     }
   }
 

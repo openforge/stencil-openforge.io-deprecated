@@ -122,6 +122,10 @@ declare global {
 
     }
 
+    interface AppBlogIndex {
+
+    }
+
     interface AppBlogPost {
       'history': RouterHistory;
       'match': MatchResults;
@@ -311,6 +315,14 @@ declare global {
     };
     
 
+    interface HTMLAppBlogIndexElement extends StencilComponents.AppBlogIndex, HTMLStencilElement {}
+
+    var HTMLAppBlogIndexElement: {
+      prototype: HTMLAppBlogIndexElement;
+      new (): HTMLAppBlogIndexElement;
+    };
+    
+
     interface HTMLAppBlogPostElement extends StencilComponents.AppBlogPost, HTMLStencilElement {}
 
     var HTMLAppBlogPostElement: {
@@ -434,6 +446,7 @@ declare global {
     'content-graphic': JSXElements.ContentGraphicAttributes;
     'app-404': JSXElements.App404Attributes;
     'app-about': JSXElements.AppAboutAttributes;
+    'app-blog-index': JSXElements.AppBlogIndexAttributes;
     'app-blog-post': JSXElements.AppBlogPostAttributes;
     'app-blog': JSXElements.AppBlogAttributes;
     'app-case-study': JSXElements.AppCaseStudyAttributes;
@@ -545,6 +558,10 @@ declare global {
 
     }
 
+    export interface AppBlogIndexAttributes extends HTMLAttributes {
+
+    }
+
     export interface AppBlogPostAttributes extends HTMLAttributes {
       'history'?: RouterHistory;
       'match'?: MatchResults;
@@ -622,6 +639,7 @@ declare global {
     'content-graphic': HTMLContentGraphicElement
     'app-404': HTMLApp404Element
     'app-about': HTMLAppAboutElement
+    'app-blog-index': HTMLAppBlogIndexElement
     'app-blog-post': HTMLAppBlogPostElement
     'app-blog': HTMLAppBlogElement
     'app-case-study': HTMLAppCaseStudyElement
@@ -654,6 +672,7 @@ declare global {
     'content-graphic': HTMLContentGraphicElement;
     'app-404': HTMLApp404Element;
     'app-about': HTMLAppAboutElement;
+    'app-blog-index': HTMLAppBlogIndexElement;
     'app-blog-post': HTMLAppBlogPostElement;
     'app-blog': HTMLAppBlogElement;
     'app-case-study': HTMLAppCaseStudyElement;

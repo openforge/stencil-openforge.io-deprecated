@@ -1,5 +1,6 @@
 var sass = require('@stencil/sass');
 exports.config = {
+  nodeResolve: { browser: true, preferBuiltins: true },
   enableCache: false,
   plugins: [
     sass({

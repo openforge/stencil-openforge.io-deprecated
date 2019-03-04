@@ -24,6 +24,15 @@ export class AppBlogPost {
       .catch(() => {
         this.postNotFound = true;
       });
+
+    // Change meta tags dynamically
+    document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.titles);
+    // document
+    //   .querySelector("meta[property='og:description']")
+    //   .setAttribute('content', 'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.');
+    // document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/resources/pwa-white-paper/');
+    // document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/resources-header.jpg');
+    // document.querySelector("meta[name='keywords']").setAttribute('content', 'Progressive Web App, PWA, White Paper');
   }
 
   render() {

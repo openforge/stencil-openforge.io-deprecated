@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "node scripts/pre-build.js && stencil build --prerender",
     "cz": "git-cz",
     "dev": "sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
@@ -26,6 +26,7 @@
   "dependencies": {
     "@stencil/sass": "0.0.3",
     "@types/i18next": "^8.4.3",
+    "buttercms": "^1.1.4",
     "i18next": "^11.3.2",
     "jquery": "^3.3.1",
     "sticky-sidebar": "^3.3.1"

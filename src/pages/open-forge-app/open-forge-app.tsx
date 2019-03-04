@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 import { BrowserService } from '../../services/browser.services';
 
@@ -10,12 +10,15 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
 
   constructor() {
     const browserService = new BrowserService();
-    browserService.check_webp();
+    browserService.check_webp(this.isServer);
   }
 
   componentDidLoad() {
@@ -108,6 +111,7 @@ export class OpenForgeApp {
           <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route url="/service-level-agreement" component="app-service-level-agreement" />
           <stencil-route url="/blog" component="app-blog" exact={true} />
+          <stencil-route url="/blog-index" component="app-blog-index" exact={true} />
           <stencil-route url="/blog/:slug" component="app-blog-post" />
           <stencil-route component="app-home" />
         </stencil-route-switch>
