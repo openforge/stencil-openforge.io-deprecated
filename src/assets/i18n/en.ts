@@ -88,6 +88,7 @@ export const translations = {
             officer: 'Chief Happiness Officer',
             softwareIntern: 'Software Intern',
             marketing: 'Marketing',
+            assistant: 'Office Assistant',
           },
         },
       },

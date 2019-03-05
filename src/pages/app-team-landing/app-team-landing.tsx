@@ -277,6 +277,44 @@ export class AppTeamLanding {
         image: 'https://openforge.io/assets/bios-background-casey.jpg',
       },
     },
+    'mariela-mora': {
+      firstname: 'Mariela',
+      surname: 'Mora',
+      title: translate('about.team.member.title.assistant'),
+      headerText:
+        'Mariela grew up in a small town called Coronado, a suburb area from San Jose, Costa Rica. She graduated as a physical therapist but lately she´s been interested in technology and design, that´s why she decided to join our company and learn more about our world by assisting our needs.',
+      bodyText: 'As an assistant, Mariela is in charged of time reports, search for contacts, and make our work a little bit easier with certain tasks.',
+      skills: ['Communication', 'Organization', 'Customer Service'],
+      team: 'management',
+      backgroundPhoto: '/assets/bios-background-sam.jpg',
+      metatags: {
+        title: 'Mariela Mora - Office Assistant | OpenForge',
+        description: 'As an assistant, Mariela is in charged of time reports, search for contacts, and make our work a little bit easier with certain tasks.',
+        keywords: 'Mariela Mora',
+        url: 'https://openforge.io/about/mariela-mora/',
+        image: 'https://openforge.io/assets/bios-background-sam.jpg',
+      },
+    },
+    'matthew-moran': {
+      firstname: 'Matthew',
+      surname: 'Moran',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Matthew Moran is a web developer living and working in South Philly. Originally from New Jersey, Matt was a computer science teacher prior to jumping into programming full time. Throughout 5 years in public and private schools throughout Pennsylvania, Matt has taught coding to over a thousand students, and has worked on a variety of projects in web, database, and desktop development.',
+      bodyText:
+        'As a developer, Matt works to implement app designs and bring them to life. He brings experience from a wide variety of programming languages, frameworks, techniques, and ecosystems to solve problems and create great products.',
+      skills: ['Node', 'SQL', '.NET', 'Python', 'Angular', 'Ionic', 'Firebase', 'Azure', 'Database Design'],
+      team: 'development',
+      backgroundPhoto: '/assets/bios-background-sam.jpg',
+      metatags: {
+        title: 'Matthew Moran - Software Engineer | OpenForge',
+        description:
+          'As a developer, Matt works to implement app designs and bring them to life. He brings experience from a wide variety of programming languages, frameworks, techniques, and ecosystems to solve problems and create great products.',
+        keywords: 'Matthew Moran',
+        url: 'https://openforge.io/about/matthew-moran/',
+        image: 'https://openforge.io/assets/bios-background-sam.jpg',
+      },
+    },
   };
 
   @Watch('match')
