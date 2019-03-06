@@ -1,27 +1,36 @@
-import { Component } from '@stencil/core';
-import { BLOG_DATA } from './prerender-blog-data';
+import { Component, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'app-blog-index',
   styleUrl: 'app-blog-index.scss',
 })
 export class AppBlogIndex {
-  private blogLinks;
+  @State() blogData = [];
+  @Prop() butter: any;
 
   componentWillLoad() {
-    this.blogLinks = BLOG_DATA.data.data.map(e => {
-      const url = `/blog/${e.slug}`;
-      return (
-        <div>
-          <stencil-route-link url={url}>{e.seo_title}</stencil-route-link>
-        </div>
-      );
-    });
+    this.butter.post
+      .list({ page: 1, page_size: 100000, exclude_body: true })
+      .then(resp => {
+        this.blogData = resp.data.data;
+      })
+      .catch(resp => {
+        console.error('Could not load blog data   ', resp);
+      });
   }
 
-  componentDidLoad() {}
-
   render() {
-    return <div class="pt-5">{this.blogLinks}</div>;
+    return (
+      <div class="mt-5 pt-5">
+        {this.blogData.map(e => {
+          const url = `/blog/${e.slug}`;
+          return (
+            <div>
+              <stencil-route-link url={url}>{e.seo_title}</stencil-route-link>
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }

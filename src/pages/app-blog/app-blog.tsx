@@ -1,5 +1,4 @@
 import { Component, Prop, State } from '@stencil/core';
-// import * as Butter from 'buttercms';
 
 declare var fbq;
 
@@ -10,27 +9,24 @@ declare var fbq;
 export class AppBlog {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
+  @Prop() butter: any;
 
-  private butter;
   @State() blogData = [];
   @State() numberOfPages: number = 0;
   @State() currentPage: 1;
   @State() blogMeta;
 
   componentWillLoad() {
-    //   this.butter = Butter('fca1bc914c05371263f98c9d3480eaa215fd63d6')
     this.getPosts(1);
   }
 
   getPosts(page: number, searchQuery?: string) {
-    const pageSize = 2;
+    const pageSize = 3;
     if (!this.isServer) {
       if (searchQuery) {
-        console.log(searchQuery);
         this.butter.post
           .search(searchQuery)
           .then(resp => {
-            console.log(resp);
             this.updateBlogData(resp, page);
           })
           .catch(resp => {
@@ -136,6 +132,7 @@ export class AppBlog {
         </div>
         {postData}
         {pagination}
+        <stencil-route-link url="/blog-index" />
       </div>
     );
   }
