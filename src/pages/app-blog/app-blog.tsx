@@ -190,7 +190,7 @@ export class AppBlog {
     if (isLoading) {
       return <div>Loading...</div>;
     }
-    return <div>{JSON.stringify(featuredPost)}</div>;
+    return <app-blog-featured blogPost={featuredPost} />;
   }
 
   renderFilters(selectedFilter: string, isLoading: boolean) {

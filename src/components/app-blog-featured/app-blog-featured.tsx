@@ -2,10 +2,10 @@ import { Component, Prop } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 
 @Component({
-  tag: 'app-blog-card',
-  styleUrl: 'app-blog-card.scss',
+  tag: 'app-blog-featured',
+  styleUrl: 'app-blog-featured.scss',
 })
-export class AppBlogCard {
+export class AppBlogFeatured {
   @Prop() blogPost: BlogPost;
 
   componentDidLoad() {
@@ -15,6 +15,7 @@ export class AppBlogCard {
   render() {
     return (
       <div>
+        <h2>Featured Post</h2>
         <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
           <div>{this.blogPost.title}</div>
         </stencil-route-link>

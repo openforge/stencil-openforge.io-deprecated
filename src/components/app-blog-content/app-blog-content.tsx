@@ -2,22 +2,20 @@ import { Component, Prop } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 
 @Component({
-  tag: 'app-blog-card',
-  styleUrl: 'app-blog-card.scss',
+  tag: 'app-blog-content',
+  styleUrl: 'app-blog-content.scss',
 })
-export class AppBlogCard {
+export class AppBlogContent {
   @Prop() blogPost: BlogPost;
 
   componentDidLoad() {
-    console.log('blog data', this.blogPost);
+    console.log('blog content', this.blogPost);
   }
 
   render() {
     return (
       <div>
-        <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-          <div>{this.blogPost.title}</div>
-        </stencil-route-link>
+        <h1>{this.blogPost.title}</h1>
         <div>{this.blogPost.summary}</div>
         <div>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</div>
         <div>{this.blogPost.author.email}</div>

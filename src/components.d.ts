@@ -10,6 +10,9 @@ import '@stencil/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
+  BlogPost,
+} from './model/blog-post.model';
+import {
   EventEmitter,
 } from '@stencil/core';
 import {
@@ -21,10 +24,24 @@ import {
 export namespace Components {
 
   interface AppBlogCard {
-    'blogPost': any;
+    'blogPost': BlogPost;
   }
   interface AppBlogCardAttributes extends StencilHTMLAttributes {
-    'blogPost'?: any;
+    'blogPost'?: BlogPost;
+  }
+
+  interface AppBlogContent {
+    'blogPost': BlogPost;
+  }
+  interface AppBlogContentAttributes extends StencilHTMLAttributes {
+    'blogPost'?: BlogPost;
+  }
+
+  interface AppBlogFeatured {
+    'blogPost': BlogPost;
+  }
+  interface AppBlogFeaturedAttributes extends StencilHTMLAttributes {
+    'blogPost'?: BlogPost;
   }
 
   interface AppCarouselIndicators {
@@ -263,6 +280,8 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'AppBlogCard': Components.AppBlogCard;
+    'AppBlogContent': Components.AppBlogContent;
+    'AppBlogFeatured': Components.AppBlogFeatured;
     'AppCarouselIndicators': Components.AppCarouselIndicators;
     'AppCta': Components.AppCta;
     'AppFooter': Components.AppFooter;
@@ -296,6 +315,8 @@ declare global {
 
   interface StencilIntrinsicElements {
     'app-blog-card': Components.AppBlogCardAttributes;
+    'app-blog-content': Components.AppBlogContentAttributes;
+    'app-blog-featured': Components.AppBlogFeaturedAttributes;
     'app-carousel-indicators': Components.AppCarouselIndicatorsAttributes;
     'app-cta': Components.AppCtaAttributes;
     'app-footer': Components.AppFooterAttributes;
@@ -332,6 +353,18 @@ declare global {
   var HTMLAppBlogCardElement: {
     prototype: HTMLAppBlogCardElement;
     new (): HTMLAppBlogCardElement;
+  };
+
+  interface HTMLAppBlogContentElement extends Components.AppBlogContent, HTMLStencilElement {}
+  var HTMLAppBlogContentElement: {
+    prototype: HTMLAppBlogContentElement;
+    new (): HTMLAppBlogContentElement;
+  };
+
+  interface HTMLAppBlogFeaturedElement extends Components.AppBlogFeatured, HTMLStencilElement {}
+  var HTMLAppBlogFeaturedElement: {
+    prototype: HTMLAppBlogFeaturedElement;
+    new (): HTMLAppBlogFeaturedElement;
   };
 
   interface HTMLAppCarouselIndicatorsElement extends Components.AppCarouselIndicators, HTMLStencilElement {}
@@ -510,6 +543,8 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'app-blog-card': HTMLAppBlogCardElement
+    'app-blog-content': HTMLAppBlogContentElement
+    'app-blog-featured': HTMLAppBlogFeaturedElement
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement
     'app-cta': HTMLAppCtaElement
     'app-footer': HTMLAppFooterElement
@@ -543,6 +578,8 @@ declare global {
 
   interface ElementTagNameMap {
     'app-blog-card': HTMLAppBlogCardElement;
+    'app-blog-content': HTMLAppBlogContentElement;
+    'app-blog-featured': HTMLAppBlogFeaturedElement;
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
     'app-cta': HTMLAppCtaElement;
     'app-footer': HTMLAppFooterElement;
