@@ -1,3 +1,40 @@
-.blog-post {
-  margin: 100px;
+.blog-post-page {
+  margin-top: 70px;
+
+  .blog-post-content {
+    padding: 2%;
+  }
+
+  .blog-next-posts-header {
+    display: flex;
+    flex-direction: row;
+
+    .blog-next-posts-title {
+      text-align: center;
+      width: 26%;
+    }
+    .blog-next-posts-divider {
+      width: 37%;
+      .line-break {
+        height: 50%;
+        border-bottom: 1px solid $gray-800;
+      }
+      .spacer {
+        height: 50%;
+      }
+    }
+  }
+
+  .next-posts {
+    padding: 5% 10% 0 10%;
+
+    .blog-posts-message {
+      min-height: 80vh;
+    }
+
+    .blog-card-wrapper {
+      min-height: 300px;
+      margin-bottom: 20px;
+    }
+  }
 }

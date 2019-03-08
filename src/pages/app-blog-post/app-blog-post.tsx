@@ -30,6 +30,7 @@ export class AppBlogPost {
   }
 
   componentWillLoad() {
+    // const promise =
     this.getPostContent();
     // get a bunch of blog posts and pick 3 to display in read next
     // it's kind of a hack but Butter doesn't support getting random posts
@@ -47,22 +48,25 @@ export class AppBlogPost {
         this.nextPostsIsLoading = false;
         console.log(resp);
       });
+
+    if (this.isServer) {
+      // If this is a pre-render, we can return the promise. This will force stencil to wait
+      // until the data is loaded before rendering the page. We don't want to return the promise
+      // in the browser though, this would cause the page to not load until the data comes back
+      // return promise;
+    }
   }
 
   getPostContent() {
     this.blogPostIsLoading = true;
-    this.butter.post
+    return this.butter.post
       .retrieve(this.match.params.slug)
       .then(resp => {
         this.blogPost = resp.data.data;
         this.blogPostIsLoading = false;
         // set scroll to top for when navigating to a new blog post
         if (!this.isServer) {
-          window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-          });
+          window.scrollTo(0, 0);
         }
         document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
       })
@@ -123,11 +127,17 @@ export class AppBlogPost {
     } else if (isLoading) {
       postData = <div>Loading...</div>;
     } else if (blogData.length > 0) {
-      postData = blogData.map(post => (
-        <div class="card blog-card">
-          <app-blog-card blogPost={post} />
-        </div>
-      ));
+      postData = blogData.map(post => {
+        const cardClass = 'blog-card-wrapper';
+        if (post === null) {
+          return <div class={cardClass} />;
+        }
+        return (
+          <div class={cardClass}>
+            <app-blog-card blogPost={post} />
+          </div>
+        );
+      });
     } else if (blogData === []) {
       postData = <div>No posts found.</div>;
     }
@@ -138,17 +148,26 @@ export class AppBlogPost {
     const post = this.renderPostContent(this.blogPost, this.blogPostIsLoading, this.blogPostIsError);
     const nextPosts = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
     return (
-      <div class="blog-post">
-        <stencil-route-link url={'/blog'}>
-          <button type="button" class="btn btn-primary">
-            Back to all blog posts
-          </button>
-        </stencil-route-link>
-        <div>{post}</div>
-        <div>
-          <h1>Read Next</h1>
-          {nextPosts}
+      <div class="blog-post-page">
+        <div class="blog-post-content">
+          <stencil-route-link url={'/blog'}>
+            <h3>Back to Blog</h3>
+          </stencil-route-link>
+          <div>{post}</div>
         </div>
+        <div class="blog-next-posts-header">
+          <div class="blog-next-posts-divider">
+            <div class="line-break" />
+            <div class="spacer" />
+          </div>
+          <div class="blog-next-posts-title">Read Next</div>
+          <div class="blog-next-posts-divider">
+            <div class="line-break" />
+            <div class="spacer" />
+          </div>
+        </div>
+        <div class="next-posts">{nextPosts}</div>
+        <app-footer />
       </div>
     );
   }

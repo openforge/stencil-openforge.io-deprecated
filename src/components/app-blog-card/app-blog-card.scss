@@ -1,0 +1,30 @@
+.blog-card {
+  min-height: 300px;
+  margin: 0;
+
+  .blog-card-image {
+    min-height: 300px;
+
+    img {
+      height: 300px;
+    }
+  }
+
+  .blog-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    .blog-card-author {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .profile-image {
+        height: 75px;
+        width: 75px;
+        margin-right: 15px;
+      }
+    }
+  }
+}

@@ -66,6 +66,16 @@ export class AppBlog {
     }
   }
 
+  componentDidLoad() {
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
+    const input = document.getElementById('blog-search');
+    input.addEventListener('search', () => this.handleSearch(input.innerText));
+  }
+
   getFeaturedPost() {
     this.featuredIsLoading = true;
     const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
@@ -126,8 +136,9 @@ export class AppBlog {
       });
   }
 
-  handleSearch(event) {
-    this.searchQuery = event.target.value;
+  handleSearch(query) {
+    console.log(query);
+    this.searchQuery = query;
     if (this.searchQuery) {
       this.getSearchPosts(1);
     } else {
@@ -151,6 +162,8 @@ export class AppBlog {
   }
 
   handlePaging(event) {
+    const filters = document.getElementById('blog-filters');
+    filters.scrollIntoView(true);
     let newPage;
     switch (event.target.id) {
       case 'nav-to-next':
@@ -175,14 +188,6 @@ export class AppBlog {
     }
   }
 
-  componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-  }
-
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
     if (isError) {
       return <div>Error loading featured post</div>;
@@ -193,11 +198,11 @@ export class AppBlog {
     return <app-blog-featured blogPost={featuredPost} />;
   }
 
-  renderFilters(selectedFilter: string, isLoading: boolean) {
+  renderFilters(selectedFilter: string, isLoading: boolean, searchQuery: string) {
     return this.filters.map(filter => {
-      let filterClass = selectedFilter === filter.slug ? 'nav-item active' : 'nav-item';
-      let filterLinkClass = selectedFilter === filter.slug ? 'nav-link active' : 'nav-link';
-      if (isLoading) {
+      let filterClass = selectedFilter === filter.slug ? 'blog-filter-item active' : 'blog-filter-item';
+      let filterLinkClass = selectedFilter === filter.slug ? 'blog-filter-link active' : 'blog-filter-item';
+      if (isLoading || searchQuery) {
         filterClass += ' disabled';
         filterLinkClass += ' disabled';
       }
@@ -214,22 +219,28 @@ export class AppBlog {
   renderPosts(blogData: BlogPost[], isLoading: boolean, isError: boolean, searchString: string, filterString: string) {
     let postData;
     if (isError) {
-      postData = <div>Error loading posts</div>;
+      postData = <div class="blog-posts-message">Error loading posts</div>;
     } else if (isLoading) {
-      postData = <div>Loading...</div>;
+      postData = <div class="blog-posts-message">Loading...</div>;
     } else if (blogData.length > 0) {
-      postData = blogData.map(post => (
-        <div class="card blog-card">
-          <app-blog-card blogPost={post} />
-        </div>
-      ));
-    } else if (blogData === []) {
+      postData = blogData.map((post, i, arr) => {
+        const cardClass = i !== arr.length - 1 ? 'blog-card-wrapper' : 'blog-card-wrapper-last';
+        if (post === null) {
+          return <div class={cardClass} />;
+        }
+        return (
+          <div class={cardClass}>
+            <app-blog-card blogPost={post} />
+          </div>
+        );
+      });
+    } else {
       if (searchString) {
-        postData = <div>No posts found for search {searchString}.</div>;
+        postData = <div class="blog-posts-message">No posts found for search {searchString}.</div>;
       } else if (filterString) {
-        postData = <div>No posts found for filter {filterString}.</div>;
+        postData = <div class="blog-posts-message">No posts found for filter {filterString}.</div>;
       } else {
-        postData = <div>No posts found.</div>;
+        postData = <div class="blog-posts-message">No posts found.</div>;
       }
     }
     return postData;
@@ -237,14 +248,10 @@ export class AppBlog {
 
   renderPagination(numberOfPages: number, currentPage: number, isLoading: boolean, isError: boolean) {
     let pagination = <div />;
-    if (!isError && numberOfPages > 1) {
+    if (!isError && !isLoading && numberOfPages > 1) {
       const pageNumbers = [...Array(numberOfPages)].map((_, i) => {
-        let pageItemClass = currentPage === i + 1 ? 'page-item active' : 'page-item';
-        let pageLinkClass = currentPage === i + 1 ? 'page-link active' : 'page-link';
-        if (isLoading) {
-          pageItemClass += ' disabled';
-          pageLinkClass += ' disabled';
-        }
+        const pageItemClass = currentPage === i + 1 ? 'blog-page-item active' : 'blog-page-item';
+        const pageLinkClass = currentPage === i + 1 ? 'blog-page-item active' : 'blog-page-item';
         return (
           <li class={pageItemClass}>
             <a id={`nav-to-page-${i + 1}`} onClick={e => this.handlePaging(e)} class={pageLinkClass}>
@@ -254,9 +261,9 @@ export class AppBlog {
         );
       });
       pagination = (
-        <nav>
-          <ul class="pagination">{pageNumbers}</ul>
-        </nav>
+        <div>
+          <ul class="blog-page-list">{pageNumbers}</ul>
+        </div>
       );
     }
     return pagination;
@@ -264,7 +271,7 @@ export class AppBlog {
 
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
-    const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading);
+    const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
     let postData = <div />;
     let pagination = <div />;
     if (this.searchQuery) {
@@ -278,20 +285,38 @@ export class AppBlog {
     return (
       <div class="blog-container">
         <div class="featured-post">{featuredPost}</div>
-        <div class="blog filters">
-          <nav>
-            <ul class="nav">{filters}</ul>
-          </nav>
-        </div>
-        <div class="blog-posts">{postData}</div>
-        <div class="blog-pagination">{pagination}</div>
-        <div class="blog-search">
-          <div>
-            <label>Search </label>
-            <input type="text" onKeyUp={e => this.handleSearch(e)} />
+        <div id="blog-filters" class="blog-filters">
+          <div class="blog-filters-header">
+            <div class="blog-filters-divider">
+              <div class="line-break" />
+              <div class="spacer" />
+            </div>
+            <div class="blog-filters-title">Categories</div>
+            <div class="blog-filters-divider">
+              <div class="line-break" />
+              <div class="spacer" />
+            </div>
+          </div>
+          <div class="blog-filters-nav">
+            <ul class="blog-filters-list">{filters}</ul>
           </div>
         </div>
+
+        <div class="blog-search">
+          <div class="blog-search-group">
+            <span class="blog-search-icon">
+              <span class="fa fa-search" />
+            </span>
+            <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+          </div>
+        </div>
+        <div class="blog-posts">
+          {postData}
+          <div class="blog-pagination">{pagination}</div>
+        </div>
+
         <stencil-route-link url="/blog-index" />
+        <app-footer />
       </div>
     );
   }

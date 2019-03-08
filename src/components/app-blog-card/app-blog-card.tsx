@@ -13,14 +13,28 @@ export class AppBlogCard {
   }
 
   render() {
+    const publishDate = new Date(this.blogPost.published);
     return (
-      <div>
-        <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-          <div>{this.blogPost.title}</div>
-        </stencil-route-link>
-        <div>{this.blogPost.summary}</div>
-        <div>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</div>
-        <div>{this.blogPost.author.email}</div>
+      <div class="blog-card">
+        <div class="row">
+          <div class="col-md-4">
+            <img class="blog-card-image" src={this.blogPost.featured_image} />
+          </div>
+          <div class="blog-card-content col-md-8">
+            <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
+              <h3 class="blog-card-title">{this.blogPost.title}</h3>
+            </stencil-route-link>
+            <div>{this.blogPost.summary}</div>
+            <div class="blog-card-author">
+              <img class="profile-image" src={this.blogPost.author.profile_image} />
+              <div>
+                Published by &nbsp;
+                <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                &nbsp; on {publishDate.toLocaleDateString()}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
