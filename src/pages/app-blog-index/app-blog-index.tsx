@@ -7,11 +7,8 @@ import { Component, Prop, State } from '@stencil/core';
 export class AppBlogIndex {
   @State() blogData = [];
   @Prop() butter: any;
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   componentWillLoad() {
-    // const promise =
     this.butter.post
       .list({ page: 1, page_size: 100000, exclude_body: true })
       .then(resp => {
@@ -20,13 +17,6 @@ export class AppBlogIndex {
       .catch(resp => {
         console.error('Could not load blog data   ', resp);
       });
-
-    if (this.isServer) {
-      // If this is a pre-render, we can return the promise. This will force stencil to wait
-      // until the data is loaded before rendering the page. We don't want to return the promise
-      // in the browser though, this would cause the page to not load until the data comes back
-      //  return promise;
-    }
   }
 
   render() {

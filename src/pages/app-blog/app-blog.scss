@@ -41,12 +41,20 @@
       .blog-filter-item {
         padding: 20px;
         font-size: 20px;
+        cursor: pointer;
       }
 
       .blog-filter-item .active {
         padding: 20px;
         color: orange;
         text-decoration: underline;
+        cursor: auto;
+      }
+
+      .blog-filter-item .disabled {
+        padding: 7px;
+        color: grey;
+        cursor: not-allowed;
       }
     }
   }

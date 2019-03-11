@@ -31,4 +31,11 @@
       object-fit: cover;
     }
   }
+
+  .blog-featured-image {
+    border-collapse: separate;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
 }
