@@ -83,6 +83,7 @@ export class AppBlogContent {
           <hr />
           <div class="row">
             <div class="col-md-2 offset-md-2 blog-content-author-image">
+              <h5>About the Author</h5>
               <img src={this.blogPost.author.profile_image} />
             </div>
             <div class="col-md-6 blog-content-author-text">
