@@ -216,6 +216,10 @@ export class AppBlog {
     });
   }
 
+  renderFilter(selectedFilter: string) {
+    return this.filters.find(filter => filter.slug === selectedFilter).name;
+  }
+
   renderPosts(blogData: BlogPost[], isLoading: boolean, isError: boolean, searchString: string, filterString: string) {
     let postData;
     if (isError) {
@@ -291,7 +295,13 @@ export class AppBlog {
               <div class="line-break" />
               <div class="spacer" />
             </div>
-            <div class="blog-filters-title">Categories</div>
+            <div class="blog-filters-title lg">Categories</div>
+            <div class="blog-filters-title sm dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.renderFilter(this.blogFilter)}
+            </div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {filters}
+            </div>
             <div class="blog-filters-divider">
               <div class="line-break" />
               <div class="spacer" />

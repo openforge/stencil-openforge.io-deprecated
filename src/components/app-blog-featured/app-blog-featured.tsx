@@ -20,6 +20,7 @@ export class AppBlogFeatured {
         <div class="container">
           <div class="row">
             <div class="blog-featured-image-wrapper col-md-6 order-md-2">
+              <h4>Featured Post</h4>
               <div class="blog-featured-image">
                 <img src={this.blogPost.featured_image} />
               </div>

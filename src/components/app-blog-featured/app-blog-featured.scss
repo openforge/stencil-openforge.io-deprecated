@@ -13,6 +13,11 @@
       margin-right: 15px;
       border-radius: 50%;
     }
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 20px;
+      justify-content: center;
+    }
   }
 
   .blog-featured-summary {
@@ -24,11 +29,21 @@
     font-size: 12px;
   }
 
+  .blog-featured-image-wrapper {
+    h4 {
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
+  }
+
   .blog-featured-image {
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      @include media-breakpoint-up(sm) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 
@@ -37,5 +52,17 @@
     display: inline-block;
     width: 100%;
     height: 100%;
+  }
+
+  .blog-info {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
+    h4 {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
   }
 }
