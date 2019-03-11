@@ -9,7 +9,7 @@ export class AppBlogIndex {
   @Prop() butter: any;
 
   componentWillLoad() {
-    this.butter.post
+    return this.butter.post
       .list({ page: 1, page_size: 100000, exclude_body: true })
       .then(resp => {
         this.blogData = resp.data.data;
