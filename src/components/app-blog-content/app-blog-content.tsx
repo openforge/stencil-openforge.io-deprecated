@@ -1,5 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
+import { formatDate } from '../../shared/date-format';
 
 @Component({
   tag: 'app-blog-content',
@@ -11,6 +12,7 @@ export class AppBlogContent {
 
   componentDidLoad() {
     console.log('blog content', this.blogPost);
+    console.log(this.blogPost.author);
 
     if (!this.isServer) {
       this.handleIcons();
@@ -53,7 +55,7 @@ export class AppBlogContent {
           <h1>{this.blogPost.title}</h1>
           <div>{this.blogPost.summary}</div>
           <div class="blog-content-date-author row">
-            <div class="blog-content-date col-md-6">{publishDate.toLocaleDateString()}</div>
+            <div class="blog-content-date col-md-6">{formatDate(publishDate)}</div>
             <div class="blog-content-author col-md-6">
               <img class="profile-image " src={this.blogPost.author.profile_image} />
               <div>
@@ -72,6 +74,21 @@ export class AppBlogContent {
             </div>
             <div class="col-md-8">
               <div innerHTML={this.blogPost.body} class="blog-content-body" />
+            </div>
+            <div class="col-md-2" />
+          </div>
+        </div>
+
+        <div class="blog-content-author">
+          <hr />
+          <div class="row">
+            <div class="col-md-2 offset-md-2 blog-content-author-image">
+              <img src={this.blogPost.author.profile_image} />
+            </div>
+            <div class="col-md-6 blog-content-author-text">
+              <h5>About the Author</h5>
+              <h2>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</h2>
+              <p>{this.blogPost.author.bio}</p>
             </div>
             <div class="col-md-2" />
           </div>

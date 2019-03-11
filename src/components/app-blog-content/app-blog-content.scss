@@ -7,10 +7,12 @@
   .blog-content-date-author {
     align-content: center;
     justify-content: center;
+
     .blog-content-date {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      font-size: 12px;
     }
 
     .blog-content-author {
@@ -23,7 +25,8 @@
         height: 75px;
         width: 75px;
         margin-right: 15px;
-        border-radius: 40px;
+        object-fit: cover;
+        border-radius: 50%;
       }
     }
   }
@@ -38,6 +41,31 @@
   .blog-content-image {
     padding: 2%;
     width: 100%;
+    border-radius: 35px;
+  }
+}
+
+.blog-content-author {
+  hr {
+    border-color: $black;
+  }
+
+  .blog-content-author-image {
+    text-align: center;
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  .blog-content-author-text {
+    h5 {
+      font-size: 16px;
+      color: $orange;
+    }
   }
 }
 

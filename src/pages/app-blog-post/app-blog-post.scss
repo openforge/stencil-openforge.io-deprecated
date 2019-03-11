@@ -1,8 +1,9 @@
 .blog-post-page {
   margin-top: 70px;
+  font-family: 'Muli';
 
   .blog-post-content {
-    padding: 2%;
+    padding: 4%;
   }
 
   .blog-next-posts-header {
@@ -12,6 +13,7 @@
     .blog-next-posts-title {
       text-align: center;
       width: 26%;
+      font-size: 25px;
     }
     .blog-next-posts-divider {
       width: 37%;
