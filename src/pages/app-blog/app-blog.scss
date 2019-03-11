@@ -34,12 +34,20 @@
 
       .blog-filter-item {
         padding: 7px;
+        cursor: pointer;
       }
 
       .blog-filter-item .active {
         padding: 7px;
         color: orange;
         text-decoration: underline;
+        cursor: auto;
+      }
+
+      .blog-filter-item .disabled {
+        padding: 7px;
+        color: grey;
+        cursor: not-allowed;
       }
     }
   }

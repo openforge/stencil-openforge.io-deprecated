@@ -155,7 +155,7 @@ export class AppBlog {
   }
 
   handleFilter(filterName: string) {
-    if (this.blogFilter !== filterName) {
+    if (!this.searchQuery && this.blogFilter !== filterName) {
       this.blogFilter = filterName;
       this.getBlogPosts(1);
     }

@@ -10,10 +10,17 @@
       height: 75px;
       width: 75px;
       margin-right: 15px;
+      border-radius: 40px;
     }
   }
 
-  .blog-featured-image {
+  .blog-featured-image-wrapper {
     align-self: center;
+  }
+
+  .blog-featured-image {
+    border-radius: 300px;
+    border-collapse: separate;
+    display: inline-block;
   }
 }
