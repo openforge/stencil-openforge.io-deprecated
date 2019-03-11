@@ -2,8 +2,16 @@
   min-height: 300px;
   margin: 0;
 
+  h3 {
+    color: $black;
+    font-weight: 600;
+  }
+
   .blog-card-image {
     min-height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 
     img {
       height: 300px;
@@ -24,6 +32,8 @@
         height: 75px;
         width: 75px;
         margin-right: 15px;
+        object-fit: cover;
+        border-radius: 50%;
       }
     }
   }

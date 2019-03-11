@@ -1,5 +1,10 @@
 .blog-container {
   margin-top: 70px;
+  font-family: 'Muli';
+
+  h4 {
+    color: $orange;
+  }
 }
 
 .blog-filters {
@@ -10,6 +15,7 @@
     .blog-filters-title {
       text-align: center;
       width: 26%;
+      font-size: 25px;
     }
     .blog-filters-divider {
       width: 37%;
@@ -33,11 +39,12 @@
       padding: 0;
 
       .blog-filter-item {
-        padding: 7px;
+        padding: 20px;
+        font-size: 20px;
       }
 
       .blog-filter-item .active {
-        padding: 7px;
+        padding: 20px;
         color: orange;
         text-decoration: underline;
       }
@@ -56,6 +63,8 @@
   .blog-search-input {
     width: 100%;
     padding: 4px 4px 4px calc(2.4rem + 2px);
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
   }
 
   .blog-search-icon {

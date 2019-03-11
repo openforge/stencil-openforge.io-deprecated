@@ -9,11 +9,25 @@
     .profile-image {
       height: 75px;
       width: 75px;
+      object-fit: cover;
       margin-right: 15px;
+      border-radius: 50%;
     }
   }
 
+  .blog-featured-summary {
+    margin-top: 25px;
+  }
+
+  .blog-featured-date {
+    margin-bottom: 25px;
+  }
+
   .blog-featured-image {
-    align-self: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }

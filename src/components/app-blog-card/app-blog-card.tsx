@@ -1,5 +1,6 @@
 import { Component, Prop } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
+import { formatDate } from '../../shared/date-format';
 
 @Component({
   tag: 'app-blog-card',
@@ -30,7 +31,7 @@ export class AppBlogCard {
               <div>
                 Published by &nbsp;
                 <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                &nbsp; on {publishDate.toLocaleDateString()}
+                &nbsp; on {formatDate(publishDate)}
               </div>
             </div>
           </div>
