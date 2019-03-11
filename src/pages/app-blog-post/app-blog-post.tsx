@@ -1,6 +1,7 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
+import { BLOG_DATA } from './prerender-blog-data';
 
 @Component({
   tag: 'app-blog-post',
@@ -12,8 +13,6 @@ export class AppBlogPost {
   @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() butter: any;
   @Prop() preRenderBlogPost: BlogPost;
-
-  private promise;
 
   @State() blogPost: BlogPost;
   @State() blogPostIsError = false;
@@ -33,7 +32,7 @@ export class AppBlogPost {
   }
 
   componentWillLoad() {
-    this.promise = this.getPostContent();
+    this.getPostContent();
 
     // get a bunch of blog posts and pick 3 to display in read next
     // it's kind of a hack but Butter doesn't support getting random posts
@@ -54,29 +53,31 @@ export class AppBlogPost {
           console.log(resp);
         });
     }
-
-    return this.promise;
   }
 
   getPostContent() {
-    this.blogPostIsLoading = true;
-    return this.butter.post
-      .retrieve(this.match.params.slug)
-      .then(resp => {
-        this.blogPost = resp.data.data;
-        this.blogPostIsLoading = false;
-        // set scroll to top for when navigating to a new blog post
-        if (!this.isServer) {
-          window.scrollTo(0, 0);
-        }
-        // document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
-      })
-      .catch(resp => {
-        this.blogPostIsLoading = false;
-        this.promise = this.getPostContent();
-        // this.blogPostIsError = true;
-        console.error(resp);
+    if (this.isServer) {
+      this.blogPost = BLOG_DATA.data.find(post => {
+        return post.slug === this.match.params.slug;
       });
+    } else {
+      this.blogPostIsLoading = true;
+      return this.butter.post
+        .retrieve(this.match.params.slug)
+        .then(resp => {
+          this.blogPost = resp.data.data;
+          this.blogPostIsLoading = false;
+          // set scroll to top for when navigating to a new blog post
+          if (!this.isServer) {
+            window.scrollTo(0, 0);
+          }
+          // document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
+        })
+        .catch(_ => {
+          this.blogPostIsLoading = false;
+          this.blogPostIsError = true;
+        });
+    }
 
     // Change meta tags dynamically
     // document

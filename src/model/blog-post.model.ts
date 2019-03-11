@@ -4,15 +4,15 @@ import { BlogTag } from './blog-tag.model';
 
 export interface BlogPost {
   url: string;
-  created: Date;
-  published: Date;
+  created: string;
+  published: string;
   author: BlogAuthor;
   categories: BlogCategory[];
   tags: BlogTag[];
   featured_image: string;
   slug: string;
   title: string;
-  body: string;
+  body?: string;
   summary: string;
   seo_title: string;
   meta_description: string;

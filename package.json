@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "node scripts/get-butter.js && stencil build --prerender",
     "cz": "git-cz",
     "dev": "sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
@@ -56,6 +56,7 @@
     "rxjs-compat": "^6.1.0",
     "sass-lint": "^1.12.1",
     "smoothscroll-polyfill": "^0.4.3",
+    "sync-request": "^6.0.0",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.8.0",
     "tslint-config-prettier": "^1.12.0",
