@@ -251,7 +251,7 @@ export class AppBlog {
   }
 
   renderPagination(numberOfPages: number, currentPage: number, isLoading: boolean, isError: boolean) {
-    let pagination = <div />;
+    let pagination = <div class="spacer" />;
     if (!isError && !isLoading && numberOfPages > 1) {
       const pageNumbers = [...Array(numberOfPages)].map((_, i) => {
         const pageItemClass = currentPage === i + 1 ? 'blog-page-item active' : 'blog-page-item';
@@ -277,7 +277,7 @@ export class AppBlog {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
     let postData = <div />;
-    let pagination = <div />;
+    let pagination = <div class="spacer" />;
     if (this.searchQuery) {
       pagination = this.renderPagination(this.searchNumberOfPages, this.searchCurrentPage, this.searchIsLoading, this.searchIsError);
       postData = this.renderPosts(this.searchPostsData, this.searchIsLoading, this.searchIsError, this.searchQuery, '');

@@ -31,6 +31,7 @@
 
   .blog-featured-image-wrapper {
     h4 {
+      display: none;
       @include media-breakpoint-down(sm) {
         display: block;
       }
