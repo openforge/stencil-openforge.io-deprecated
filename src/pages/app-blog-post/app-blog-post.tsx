@@ -60,6 +60,7 @@ export class AppBlogPost {
       this.blogPost = BLOG_DATA.data.find(post => {
         return post.slug === this.match.params.slug;
       });
+      this.setMetaTags();
     } else {
       this.blogPostIsLoading = true;
       return this.butter.post
@@ -71,21 +72,29 @@ export class AppBlogPost {
           if (!this.isServer) {
             window.scrollTo(0, 0);
           }
-          // document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
+          this.setMetaTags();
         })
         .catch(_ => {
           this.blogPostIsLoading = false;
           this.blogPostIsError = true;
         });
     }
+  }
 
-    // Change meta tags dynamically
-    // document
-    //   .querySelector("meta[property='og:description']")
-    //   .setAttribute('content', 'Skip the technical jargon! This is a report written for business owners on what PWAs (Progressive Web Apps) are and how they can benefit your company.');
-    // document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/resources/pwa-white-paper/');
-    // document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/resources-header.jpg');
-    // document.querySelector("meta[name='keywords']").setAttribute('content', 'Progressive Web App, PWA, White Paper');
+  setMetaTags() {
+    let tagList = '';
+    this.blogPost.tags.forEach((tag, i) => {
+      if (i !== 0) {
+        tagList = `${tagList} + , `;
+      }
+      tagList = tag.name;
+    });
+
+    document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
+    document.querySelector("meta[property='og:description']").setAttribute('content', this.blogPost.meta_description);
+    document.querySelector("meta[property='og:url']").setAttribute('content', `https://openforge.io/blog/${this.blogPost.slug}`);
+    document.querySelector("meta[property='og:image']").setAttribute('content', this.blogPost.featured_image);
+    document.querySelector("meta[name='keywords']").setAttribute('content', tagList);
   }
 
   filterNextPosts(slug: string) {

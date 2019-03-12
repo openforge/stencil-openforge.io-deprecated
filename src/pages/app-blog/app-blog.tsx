@@ -74,6 +74,14 @@ export class AppBlog {
     }
     const input = document.getElementById('blog-search');
     input.addEventListener('search', () => this.handleSearch(input.innerText));
+
+    document.querySelector("meta[property='og:title']").setAttribute('content', "Mobile Apps: News, Technology, Strategies, and How-To's");
+    document
+      .querySelector("meta[property='og:description']")
+      .setAttribute('content', "The latest on mobile app technologies, strategies, and how-to's. Learn more about updates from OpenForge and projects from our team.");
+    document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/blog/');
+    document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/blog-header.png');
+    document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile apps, mobile app news, mobile applications, mobile app technology, mobile app strategies, mvp apps');
   }
 
   getFeaturedPost() {
