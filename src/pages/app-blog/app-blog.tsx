@@ -193,7 +193,11 @@ export class AppBlog {
       return <div>Error loading featured post</div>;
     }
     if (isLoading) {
-      return <div>Loading...</div>;
+      return (
+        <div class="loading">
+          <i class="fa fa-spinner fa-spin" />
+        </div>
+      );
     }
     return <app-blog-featured blogPost={featuredPost} />;
   }
@@ -225,7 +229,13 @@ export class AppBlog {
     if (isError) {
       postData = <div class="blog-posts-message">Error loading posts</div>;
     } else if (isLoading) {
-      postData = <div class="blog-posts-message">Loading...</div>;
+      postData = (
+        <div class="blog-posts-message">
+          <div class="loading">
+            <i class="fa fa-spinner fa-spin" />
+          </div>
+        </div>
+      );
     } else if (blogData.length > 0) {
       postData = blogData.map((post, i, arr) => {
         const cardClass = i !== arr.length - 1 ? 'blog-card-wrapper' : 'blog-card-wrapper-last';

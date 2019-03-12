@@ -148,7 +148,7 @@
 
     .blog-page-item .active {
       padding: 7px;
-      color: orange;
+      color: $orange;
     }
   }
 }
@@ -159,6 +159,16 @@
     height: 0;
   }
 }
+
+.loading {
+  text-align: center;
+  svg {
+    height: 75px;
+    font-size: 40px;
+    color: $orange;
+  }
+}
+
 .dropdown-menu.show {
   cursor: pointer;
   border-top-left-radius: 0;
