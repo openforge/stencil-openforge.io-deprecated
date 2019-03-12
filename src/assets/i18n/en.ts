@@ -315,6 +315,15 @@ export const translations = {
       },
     },
 
+    resourcesLanding: {
+      header: {
+        title: 'The best tools create the best products.',
+        text:
+          'As a digital agency, utilizing best web and mobile practices is among our foremost concerns. Check out some of the tools we use to keep our products looking great and running smoothly across all devices.',
+        action: "SEE WHAT'S INSIDE",
+      },
+    },
+
     resources: {
       hero: {
         title: 'What is a PWA and is it right for you?',

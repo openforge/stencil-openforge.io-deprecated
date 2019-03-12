@@ -77,14 +77,8 @@ export class AppNavHeader {
                   <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
                     Meet the team
                   </stencil-route-link>
-                  <stencil-route-link url="/juntoscope" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Juntoscope Case Study
-                  </stencil-route-link>
-                  <stencil-route-link url="/toolbox" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Toolbox
-                  </stencil-route-link>
-                  <stencil-route-link url="/resources/pwa-white-paper" anchorClass="nav-link dropdown-item" activeClass="active">
-                    PWA White Paper
+                  <stencil-route-link url="/resources" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Resources
                   </stencil-route-link>
                 </div>
               </li>
