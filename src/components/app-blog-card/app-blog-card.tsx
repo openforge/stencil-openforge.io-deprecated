@@ -29,7 +29,7 @@ export class AppBlogCard {
               <img class="profile-image" src={this.blogPost.author.profile_image} />
               <div>
                 Published by &nbsp;
-                <stencil-route-link url={`/about/sam-hudgens`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
                 &nbsp; on {publishDate.toLocaleDateString()}
               </div>
             </div>
