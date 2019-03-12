@@ -1,6 +1,7 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
+import { BLOG_DATA } from './prerender-blog-data';
 
 @Component({
   tag: 'app-blog-post',
@@ -11,6 +12,7 @@ export class AppBlogPost {
   @Prop() match: MatchResults;
   @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() butter: any;
+  @Prop() preRenderBlogPost: BlogPost;
 
   @State() blogPost: BlogPost;
   @State() blogPostIsError = false;
@@ -30,50 +32,52 @@ export class AppBlogPost {
   }
 
   componentWillLoad() {
-    // const promise =
     this.getPostContent();
+
     // get a bunch of blog posts and pick 3 to display in read next
     // it's kind of a hack but Butter doesn't support getting random posts
     const pageSize = 12;
     const listOptions = { page: 1, page_size: pageSize, exclude_body: true };
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        this.otherPosts = resp.data.data;
-        this.filterNextPosts(this.match.params.slug);
-        this.nextPostsIsLoading = false;
-      })
-      .catch(resp => {
-        this.nextPostsIsError = true;
-        this.nextPostsIsLoading = false;
-        console.log(resp);
-      });
+    if (!this.isServer) {
+      this.butter.post
+        .list(listOptions)
+        .then(resp => {
+          this.otherPosts = resp.data.data;
+          this.filterNextPosts(this.match.params.slug);
+          this.nextPostsIsLoading = false;
+        })
 
-    if (this.isServer) {
-      // If this is a pre-render, we can return the promise. This will force stencil to wait
-      // until the data is loaded before rendering the page. We don't want to return the promise
-      // in the browser though, this would cause the page to not load until the data comes back
-      // return promise;
+        .catch(resp => {
+          this.nextPostsIsError = true;
+          this.nextPostsIsLoading = false;
+          console.log(resp);
+        });
     }
   }
 
   getPostContent() {
-    this.blogPostIsLoading = true;
-    return this.butter.post
-      .retrieve(this.match.params.slug)
-      .then(resp => {
-        this.blogPost = resp.data.data;
-        this.blogPostIsLoading = false;
-        // set scroll to top for when navigating to a new blog post
-        if (!this.isServer) {
-          window.scrollTo(0, 0);
-        }
-        document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
-      })
-      .catch(() => {
-        this.blogPostIsLoading = false;
-        this.blogPostIsError = true;
+    if (this.isServer) {
+      this.blogPost = BLOG_DATA.data.find(post => {
+        return post.slug === this.match.params.slug;
       });
+    } else {
+      this.blogPostIsLoading = true;
+      return this.butter.post
+        .retrieve(this.match.params.slug)
+        .then(resp => {
+          this.blogPost = resp.data.data;
+          this.blogPostIsLoading = false;
+          // set scroll to top for when navigating to a new blog post
+          if (!this.isServer) {
+            window.scrollTo(0, 0);
+          }
+          // document.querySelector("meta[property='og:title']").setAttribute('content', this.blogPost.title);
+        })
+        .catch(_ => {
+          this.blogPostIsLoading = false;
+          this.blogPostIsError = true;
+        });
+    }
 
     // Change meta tags dynamically
     // document

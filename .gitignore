@@ -24,3 +24,4 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 linters/sass-lint.html
+src/pages/app-blog-post/prerender-blog-data.ts

@@ -193,11 +193,13 @@ export namespace Components {
     'butter': any;
     'history': RouterHistory;
     'match': MatchResults;
+    'preRenderBlogPost': BlogPost;
   }
   interface AppBlogPostAttributes extends StencilHTMLAttributes {
     'butter'?: any;
     'history'?: RouterHistory;
     'match'?: MatchResults;
+    'preRenderBlogPost'?: BlogPost;
   }
 
   interface AppBlog {

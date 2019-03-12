@@ -1,4 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
+import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 
 @Component({
   tag: 'app-blog-index',
@@ -7,16 +8,21 @@ import { Component, Prop, State } from '@stencil/core';
 export class AppBlogIndex {
   @State() blogData = [];
   @Prop() butter: any;
+  @Prop({ context: 'isServer' }) private isServer;
 
   componentWillLoad() {
-    this.butter.post
-      .list({ page: 1, page_size: 100000, exclude_body: true })
-      .then(resp => {
-        this.blogData = resp.data.data;
-      })
-      .catch(resp => {
-        console.error('Could not load blog data   ', resp);
-      });
+    if (this.isServer) {
+      this.blogData = BLOG_DATA.data;
+    } else {
+      this.butter.post
+        .list({ page: 1, page_size: 100000, exclude_body: true })
+        .then(resp => {
+          this.blogData = resp.data.data;
+        })
+        .catch(resp => {
+          console.error('Could not load blog data   ', resp);
+        });
+    }
   }
 
   render() {
