@@ -32,20 +32,41 @@ export class AppBlogContent {
     }
   }
 
+  shareOnTwitter() {
+    const twitterWindow = window.open(`https://twitter.com/share?url=${document.URL}`, 'twitter-popup', 'height=350,width=600');
+    if (twitterWindow.focus) {
+      twitterWindow.focus();
+    }
+  }
+
+  shareOnFacebook() {
+    const facebookWindow = window.open(`https://www.facebook.com/sharer/sharer.php?u=${document.URL}`, 'facebook-popup', 'height=350,width=600');
+    if (facebookWindow.focus) {
+      facebookWindow.focus();
+    }
+  }
+
+  shareOnLinkedin() {
+    const linkedinWindow = window.open(`http://www.linkedin.com/shareArticle?mini=true&url=${document.URL}`, 'sharer', 'toolbar=0, status=0, width=600, height=350');
+    if (linkedinWindow.focus) {
+      linkedinWindow.focus();
+    }
+  }
+
   render() {
     const publishDate = new Date(this.blogPost.published);
     const contactIconsTop = (
       <div class="contact-icons-top">
-        <span class="fa fa-check contact-icon" />
-        <span class="fa fa-check contact-icon" />
-        <span class="fa fa-check contact-icon" />
+        <app-img onClick={this.shareOnTwitter.bind(this)} class="contact-icon" src="/assets/blog/twitter.png" alt="share on twitter" />
+        <app-img onClick={this.shareOnFacebook.bind(this)} class="contact-icon" src="/assets/blog/facebook.png" alt="share on facebook" />
+        <app-img onClick={this.shareOnLinkedin.bind(this)} class="contact-icon" src="/assets/blog/linkedin.png" alt="share on linkedin" />
       </div>
     );
     const contactIconsSide = (
       <div class="contact-icons-side">
-        <span class="fa fa-check contact-icon" />
-        <span class="fa fa-check contact-icon" />
-        <span class="fa fa-check contact-icon" />
+        <app-img onClick={this.shareOnTwitter.bind(this)} class="contact-icon" src="/assets/blog/twitter.png" alt="share on twitter" />
+        <app-img onClick={this.shareOnFacebook.bind(this)} class="contact-icon" src="/assets/blog/facebook.png" alt="share on facebook" />
+        <app-img onClick={this.shareOnLinkedin.bind(this)} class="contact-icon" src="/assets/blog/linkedin.png" alt="share on linkedin" />
       </div>
     );
 
