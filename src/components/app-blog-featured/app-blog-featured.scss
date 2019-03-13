@@ -9,18 +9,66 @@
     .profile-image {
       height: 75px;
       width: 75px;
+      object-fit: cover;
       margin-right: 15px;
-      border-radius: 40px;
+      border-radius: 50%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 20px;
+      justify-content: center;
     }
   }
 
+  .blog-featured-summary {
+    margin-top: 25px;
+  }
+
+  .blog-featured-date {
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+
   .blog-featured-image-wrapper {
-    align-self: center;
+    h4 {
+      display: none;
+      @include media-breakpoint-down(sm) {
+        display: block;
+      }
+    }
   }
 
   .blog-featured-image {
-    border-radius: 300px;
+    img {
+      @include media-breakpoint-up(sm) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .blog-featured-image {
     border-collapse: separate;
     display: inline-block;
+    width: 100%;
+    height: 100%;
+
+    img {
+      border-radius: 15px;
+    }
+  }
+
+  .blog-info {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
+    h4 {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
   }
 }

@@ -2,8 +2,21 @@
   min-height: 300px;
   margin: 0;
 
+  h3 {
+    color: $black;
+    font-weight: 600;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      padding: 15px;
+    }
+  }
+
   .blog-card-image {
     min-height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 15px;
 
     img {
@@ -15,16 +28,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
 
     .blog-card-author {
       display: flex;
       flex-direction: row;
       align-items: center;
+      @include media-breakpoint-down(sm) {
+        text-align: left;
+        padding: 14px 0 26px;
+      }
 
       .profile-image {
         height: 75px;
         width: 75px;
         margin-right: 15px;
+        object-fit: cover;
+        border-radius: 50%;
       }
     }
   }
