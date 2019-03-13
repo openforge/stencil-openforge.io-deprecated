@@ -5,7 +5,7 @@ var branch = process.env.TRAVIS_BRANCH,
     pr_branch = process.env.TRAVIS_PULL_REQUEST_BRANCH;
 
 if (
-    (branch == 'develop' && (!pr || pr == 'false') )
+    (branch == 'develop' ) // && (!pr || pr == 'false') )
 ) {
     deployToFirebase('dev');
 } else if (branch == 'master' && (!pr || pr == 'false')) {
