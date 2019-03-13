@@ -201,7 +201,11 @@ export class AppBlog {
       return <div>Error loading featured post</div>;
     }
     if (isLoading) {
-      return <div>Loading...</div>;
+      return (
+        <div class="loading">
+          <i class="fa fa-spinner fa-spin" />
+        </div>
+      );
     }
     return <app-blog-featured blogPost={featuredPost} />;
   }
@@ -224,12 +228,22 @@ export class AppBlog {
     });
   }
 
+  renderFilter(selectedFilter: string) {
+    return this.filters.find(filter => filter.slug === selectedFilter).name;
+  }
+
   renderPosts(blogData: BlogPost[], isLoading: boolean, isError: boolean, searchString: string, filterString: string) {
     let postData;
     if (isError) {
       postData = <div class="blog-posts-message">Error loading posts</div>;
     } else if (isLoading) {
-      postData = <div class="blog-posts-message">Loading...</div>;
+      postData = (
+        <div class="blog-posts-message">
+          <div class="loading">
+            <i class="fa fa-spinner fa-spin" />
+          </div>
+        </div>
+      );
     } else if (blogData.length > 0) {
       postData = blogData.map((post, i, arr) => {
         const cardClass = i !== arr.length - 1 ? 'blog-card-wrapper' : 'blog-card-wrapper-last';
@@ -255,7 +269,7 @@ export class AppBlog {
   }
 
   renderPagination(numberOfPages: number, currentPage: number, isLoading: boolean, isError: boolean) {
-    let pagination = <div />;
+    let pagination = <div class="spacer" />;
     if (!isError && !isLoading && numberOfPages > 1) {
       const pageNumbers = [...Array(numberOfPages)].map((_, i) => {
         const pageItemClass = currentPage === i + 1 ? 'blog-page-item active' : 'blog-page-item';
@@ -281,7 +295,7 @@ export class AppBlog {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
     let postData = <div />;
-    let pagination = <div />;
+    let pagination = <div class="spacer" />;
     if (this.searchQuery) {
       pagination = this.renderPagination(this.searchNumberOfPages, this.searchCurrentPage, this.searchIsLoading, this.searchIsError);
       postData = this.renderPosts(this.searchPostsData, this.searchIsLoading, this.searchIsError, this.searchQuery, '');
@@ -299,7 +313,13 @@ export class AppBlog {
               <div class="line-break" />
               <div class="spacer" />
             </div>
-            <div class="blog-filters-title">Categories</div>
+            <div class="blog-filters-title lg">Categories</div>
+            <div class="blog-filters-title sm dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {this.renderFilter(this.blogFilter)}
+            </div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {filters}
+            </div>
             <div class="blog-filters-divider">
               <div class="line-break" />
               <div class="spacer" />

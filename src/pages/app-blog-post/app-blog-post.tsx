@@ -126,7 +126,11 @@ export class AppBlogPost {
     if (isError) {
       post = <div>This post could not be found</div>;
     } else if (isLoading) {
-      post = <div>Loading content</div>;
+      post = (
+        <div class="loading">
+          <i class="fa fa-spinner fa-spin" />
+        </div>
+      );
     } else if (blogPost) {
       post = <app-blog-content blogPost={blogPost} />;
     }
@@ -138,7 +142,11 @@ export class AppBlogPost {
     if (isError) {
       postData = <div>Error loading posts</div>;
     } else if (isLoading) {
-      postData = <div>Loading...</div>;
+      postData = (
+        <div class="loading">
+          <i class="fa fa-spinner fa-spin" />
+        </div>
+      );
     } else if (blogData.length > 0) {
       postData = blogData.map(post => {
         const cardClass = 'blog-card-wrapper';

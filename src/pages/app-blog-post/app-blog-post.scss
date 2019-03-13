@@ -1,8 +1,9 @@
 .blog-post-page {
   margin-top: 70px;
+  font-family: 'Muli';
 
   .blog-post-content {
-    padding: 2%;
+    padding: 4%;
   }
 
   .blog-next-posts-header {
@@ -12,6 +13,11 @@
     .blog-next-posts-title {
       text-align: center;
       width: 26%;
+      font-size: 25px;
+
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
     }
     .blog-next-posts-divider {
       width: 37%;
@@ -35,6 +41,15 @@
     .blog-card-wrapper {
       min-height: 300px;
       margin-bottom: 20px;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    svg {
+      height: 75px;
+      font-size: 40px;
+      color: #9baaab;
     }
   }
 }
