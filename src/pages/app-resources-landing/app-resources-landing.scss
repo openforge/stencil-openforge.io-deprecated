@@ -3,7 +3,7 @@
   overflow-x: hidden;
 
   .hero {
-    background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
+    background: url('/assets/svg/resources-graphic-header.svg') right top no-repeat;
 
     @include media-breakpoint-down(md) {
       background-position: right bottom;

@@ -1,14 +1,10 @@
-import { Component, State, Prop, Listen } from '@stencil/core';
-import { translate } from '../../services/translation.service';
-import { MatchResults, RouterHistory } from '@stencil/router';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-resources-landing',
   styleUrl: 'app-resources-landing.scss',
 })
 export class AppResourcesLanding {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
-
   componentWillLoad() {}
 
   componentDidLoad() {
@@ -52,7 +48,7 @@ export class AppResourcesLanding {
           <hr />
           <h1>Our Resources</h1>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-first.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/svg/resources-graphic-juntoscope.svg" alt="" />
             <div class="text-img-container-text">
               <h2>JuntoScope Case Study</h2>
               <p>
@@ -75,10 +71,10 @@ export class AppResourcesLanding {
                 <button class="btn btn-primary">LEARN MORE</button>
               </stencil-route-link>
             </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-first.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/svg/resources-graphic-pwa.svg" alt="" />
           </section>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-first.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/svg/resources-graphic-toolbox.svg" alt="" />
             <div class="text-img-container-text">
               <h2>ToolBox Page</h2>
               <p>
