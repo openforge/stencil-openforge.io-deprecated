@@ -4,14 +4,6 @@ var branch = process.env.TRAVIS_BRANCH,
     pr = process.env.TRAVIS_PULL_REQUEST,
     pr_branch = process.env.TRAVIS_PULL_REQUEST_BRANCH;
 
-if (
-    (branch == 'develop' ) // && (!pr || pr == 'false') )
-) {
-    deployToFirebase('dev');
-} else if (branch == 'master' && (!pr || pr == 'false')) {
-    deployToFirebase('prod');
-}
-
 function deployToFirebase(project) {
     return new Promise(function (resolve, reject) {
         console.log('Deploying to firebase project openforge-'+project);
@@ -30,4 +22,12 @@ function deployToFirebase(project) {
             resolve('Firebase deployed successfully');
         });
     });
+}
+
+if (
+    (branch == 'develop' ) // && (!pr || pr == 'false') )
+) {
+    deployToFirebase('dev');
+} else if (branch == 'master' && (!pr || pr == 'false')) {
+    deployToFirebase('prod');
 }
