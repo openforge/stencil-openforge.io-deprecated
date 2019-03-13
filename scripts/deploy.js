@@ -7,6 +7,7 @@ var branch = process.env.TRAVIS_BRANCH,
 var token = process.env.FIREBASE_TOKEN
 
 function deployToFirebase(project) {
+    console.log(process.env);
     exec("firebase use default && firebase deploy --token " + token, function(error, stdout, stderr) {
         console.log(error);
         console.log(stdout);
