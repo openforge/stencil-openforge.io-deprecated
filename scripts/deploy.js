@@ -4,10 +4,19 @@ var branch = process.env.TRAVIS_BRANCH,
     pr = process.env.TRAVIS_PULL_REQUEST,
     pr_branch = process.env.TRAVIS_PULL_REQUEST_BRANCH;
 
+var token = process.env.FIREBASE_TOKEN
+
 function deployToFirebase(project) {
     return new Promise(function (resolve, reject) {
         console.log('Deploying to firebase project openforge-'+project);
-        var child = exec('npm run firebase:deploy:'+project);
+
+        var child;
+        if(project === "dev"){
+            child = exec("firebase use default && firebase deploy --token " + token);
+        } else {
+            child = exec("firebase use production && firebase deploy --token " + token);
+        }
+        child = exec('npm run firebase:deploy:'+project);
 
         child.stdout.on('data', function (data) {
             process.stdout.write(data);
