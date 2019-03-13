@@ -33,7 +33,7 @@ export class AppBlogFeatured {
                 <img class="profile-image" src={this.blogPost.author.profile_image} />
                 <div>
                   By &nbsp;
-                  <stencil-route-link url={`/about/sam-hudgens`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                  <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
                 </div>
               </div>
               <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
