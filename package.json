@@ -21,6 +21,8 @@
     "prepublish": "stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
+    "firebase:deploy:qa": "firebase use qa && firebase deploy --token \"$FIREBASE_TOKEN\"",
+    "firebase:deploy:staging": "firebase use staging && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
   },
   "dependencies": {
