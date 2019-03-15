@@ -116,12 +116,17 @@ For every commit, it will ensure files are linted and that the code is formatted
 
 If a developer went through providing all the information during a `npm run cz` only to find that there were issues with their commit. They may fix them and instruct commitizen to try the commit again with `npm run cz -- --retry`
 
+## Blog Integration
+
+This project uses [ButterCMS](https://buttercms.com/) as a headless content management system. When a user accesses the deployed site, the blog data will be loaded from the ButterCMS API via AJAX. However, the blog data is also utilized in prerendering the site, to improve SEO. Before any build (dev, prod, prerender), the get-butter.js script is run to retrieve the blog data and stored in pages/blog-post/prerender-blog-data.ts. This file is git-ignored so that the repo is not cluttered with blog content.
+
+The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy of the master branch.
 
 ## Deployment
-
 ```
 npm run prepublish
 ```
+Note that this will synchronously retrieve the blog post data from Butter CMS before building, so that it can be included in the prerender.
 
 _Note:  You may have to install firebase-tools via ```npm install -g firebase-tools``` and then authenticate via command line on your local machine to firebase_
 
