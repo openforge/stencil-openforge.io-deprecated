@@ -60,7 +60,7 @@ export class Img {
   }
 
   private changeImageFormat() {
-    if (this.loadSrc && 1 > 2 && (this.isServer || localStorage.getItem('allowWebp') === 'true')) {
+    if (this.loadSrc && (this.isServer || localStorage.getItem('allowWebp') === 'true')) {
       const idx = this.loadSrc.lastIndexOf('.');
       const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
       if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
