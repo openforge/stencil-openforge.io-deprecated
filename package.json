@@ -9,7 +9,7 @@
   "scripts": {
     "build": "node scripts/get-butter.js && stencil build --prerender",
     "cz": "git-cz",
-    "dev": "sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
+    "dev": "node scripts/get-butter.js && sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "sass-lint": "node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q",
     "serve": "stencil-dev-server",
