@@ -117,6 +117,9 @@ For every commit, it will ensure files are linted and that the code is formatted
 If a developer went through providing all the information during a `npm run cz` only to find that there were issues with their commit. They may fix them and instruct commitizen to try the commit again with `npm run cz -- --retry`
 
 
+## Sitemap
+This project uses [sitemap-static](https://github.com/tmcw/sitemap-static) to generate a sitemap based on the prerendered site. This is needed because the content and routes associated with blog posts will change frequently. This is acheived with the `scripts/build-sitemap.js` script, which runs after each build.
+
 ## Deployment
 
 ```
