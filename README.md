@@ -120,7 +120,12 @@ If a developer went through providing all the information during a `npm run cz` 
 
 This project uses [ButterCMS](https://buttercms.com/) as a headless content management system. When a user accesses the deployed site, the blog data will be loaded from the ButterCMS API via AJAX. However, the blog data is also utilized in prerendering the site, to improve SEO. Before any build (dev, prod, prerender), the get-butter.js script is run to retrieve the blog data and stored in pages/blog-post/prerender-blog-data.ts. This file is git-ignored so that the repo is not cluttered with blog content.
 
-The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy of the master branch.
+The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy of the master branch. Butter's webhooks are managed in the ButterCMS portal.
+
+### Featured Post
+
+The featured post is managed in the ButterCMS portal. To make a post featured, it must be given a tag of 'featured'. The actual featured post will be the most recently published post with the featured tag. Currently, this post will also appear in the regular list of posts.
+
 
 ## Deployment
 ```
