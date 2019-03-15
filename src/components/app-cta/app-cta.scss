@@ -7,7 +7,6 @@
 
   .row {
     height: 100%;
-    width: 100vw;
     background: linear-gradient(to bottom, rgba(108, 144, 152, 0.99), #3f5a60);
   }
 
@@ -35,7 +34,7 @@
   h2 {
     color: white;
     font-size: 22px;
-    margin: 0;
+    margin: 0 0 20px 0;
 
     @include media-breakpoint-down(sm) {
       font-size: 20px;
