@@ -119,6 +119,10 @@ If a developer went through providing all the information during a `npm run cz` 
 
 ## Deployment
 
+The branches develop, qa, staging, and master are all set up for continuous integration and deployment with Travis CI and Firebase. To deploy, create a PR for the appropriate branch, or commit and push directly (avoid this if possible).
+
+If manual deployment is needed, use the following. Only do this on the develop branch, follow the PR request flow for all other branches.
+
 ```
 npm run prepublish
 ```
