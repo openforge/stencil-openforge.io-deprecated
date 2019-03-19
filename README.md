@@ -62,9 +62,9 @@ If you have an API key for another ButterCMS blog that you would like to add to 
 src/butter-api/butter-api-key.ts 
 ```
 
-and change the line:
+and enter your Butter API key between the single quotes '':
 ```
-export const BUTTER_API_KEY = butterApiKeySource;
+export const BUTTER_API_KEY = '';
 ```
 to
 ```
