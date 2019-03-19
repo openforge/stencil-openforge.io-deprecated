@@ -36,6 +36,7 @@ export class AppBlogCard {
             </div>
           </div>
         </div>
+        <hr />
       </div>
     );
   }
