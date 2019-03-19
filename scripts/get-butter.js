@@ -9,7 +9,7 @@ console.log(BUTTER_API_KEY);
 
 if(BUTTER_API_KEY == '') {
   console.error('Butter API key is blank');
-  // throw new Error('BUTTER_API_KEY is blank');
+  throw new Error(`BUTTER_API_KEY is blank. Please add a ButterCMS API Key to src/butter-api/butter-api-key.ts`);
 }
 
 const res = request('GET',

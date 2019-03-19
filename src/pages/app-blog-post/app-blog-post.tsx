@@ -1,7 +1,7 @@
 import { Component, Prop, State, Watch } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
-// import { BLOG_DATA } from './prerender-blog-data';
+import { BLOG_DATA } from './prerender-blog-data';
 
 @Component({
   tag: 'app-blog-post',
@@ -57,10 +57,10 @@ export class AppBlogPost {
 
   getPostContent() {
     if (this.isServer) {
-      // this.blogPost = BLOG_DATA.data.find(post => {
-      //   return post.slug === this.match.params.slug;
-      // });
-      // this.setMetaTags();
+      this.blogPost = BLOG_DATA.data.find(post => {
+        return post.slug === this.match.params.slug;
+      });
+      this.setMetaTags();
     } else {
       this.blogPostIsLoading = true;
       return this.butter.post
