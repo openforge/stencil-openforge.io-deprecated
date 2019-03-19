@@ -55,7 +55,7 @@ for file in src/assets/*.jpeg; do cwebp -q 75 "$file" -o "${file%.jpeg}.webp"; d
 ```
 
 ### Blog Setup
-By default, the public version of this project does not contain an API key for the [ButterCMS](https://buttercms.com/) blog content management system. No blog posts will be displayed on the blog page if running locally. 
+By default, the public version of this project does not contain an API key for the [ButterCMS](https://buttercms.com/) blog content management system. No blog posts will be displayed on the blog page if running locally, unless you insert your own API key. 
 
 If you have an API key for another ButterCMS blog that you would like to add to this project, use your text editor and open the file:
 ```
