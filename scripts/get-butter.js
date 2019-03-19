@@ -9,7 +9,7 @@ console.log(BUTTER_API_KEY);
 
 if(BUTTER_API_KEY == '') {
   console.error('Butter API key is blank');
-  throw new Error('BUTTER_API_KEY is blank');
+  // throw new Error('BUTTER_API_KEY is blank');
 }
 
 const res = request('GET',
