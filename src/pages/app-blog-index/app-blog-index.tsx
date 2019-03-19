@@ -1,5 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
-import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
+// import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 
 @Component({
   tag: 'app-blog-index',
@@ -12,7 +12,7 @@ export class AppBlogIndex {
 
   componentWillLoad() {
     if (this.isServer) {
-      this.blogData = BLOG_DATA.data;
+      // this.blogData = BLOG_DATA.data;
     } else {
       this.butter.post
         .list({ page: 1, page_size: 100000, exclude_body: true })

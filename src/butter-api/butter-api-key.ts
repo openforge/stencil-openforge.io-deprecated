@@ -1,5 +1,3 @@
-import butterApiKeySource from './butter-api-key-source';
+// Use an API Token from ButterCMS in order to access the blog
 
-export const BUTTER_API_KEY = butterApiKeySource;
-
-// export const BUTTER_API_KEY = '';
+export const BUTTER_API_KEY = '';

@@ -25,4 +25,3 @@ UserInterfaceState.xcuserstate
 .env
 linters/sass-lint.html
 src/pages/app-blog-post/prerender-blog-data.ts
-src/butter-api/butter-api-key-source.ts

@@ -23,6 +23,7 @@ export class OpenForgeApp {
   constructor() {
     const browserService = new BrowserService();
     browserService.check_webp(this.isServer);
+    console.log(BUTTER_API_KEY);
   }
 
   componentWillLoad() {
