@@ -1,8 +1,12 @@
 const fs = require('fs');
+require('typescript-require');
 
 const request = require('sync-request');
-const res = request('GET', 
-    'https://api.buttercms.com/v2/posts/?page=1&page_size=1000000&auth_token=fca1bc914c05371263f98c9d3480eaa215fd63d6', 
+// const BUTTER_API_KEY = require('../src/butter-api/butter-api-key.ts');
+const BUTTER_API_KEY = require('../src/butter-api/butter-api-key.ts');
+
+const res = request('GET',
+    `https://api.buttercms.com/v2/posts/?page=1&page_size=1000000&auth_token=${BUTTER_API_KEY}`,
     {}
 );
 

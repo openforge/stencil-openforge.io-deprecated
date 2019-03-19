@@ -4,6 +4,7 @@ import { polyfill } from 'smoothscroll-polyfill';
 import { BrowserService } from '../../services/browser.services';
 /* tslint:disable-next-line */
 import Butter from 'buttercms';
+import { BUTTER_API_KEY } from '../../butter-api/butter-api-key';
 
 polyfill();
 
@@ -25,7 +26,7 @@ export class OpenForgeApp {
   }
 
   componentWillLoad() {
-    this.butterService = Butter('fca1bc914c05371263f98c9d3480eaa215fd63d6');
+    this.butterService = Butter(BUTTER_API_KEY);
   }
 
   componentDidLoad() {
