@@ -25,7 +25,7 @@ export class OpenForgeApp {
   }
 
   componentWillLoad() {
-    this.butterService = Butter('fca1bc914c05371263f98c9d3480eaa215fd63d6');
+    this.butterService = Butter('150aed013009daf59b81dd9ad8d7aac75777ee79');
   }
 
   componentDidLoad() {

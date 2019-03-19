@@ -22,12 +22,16 @@ export class AppBlogFeatured {
             <div class="blog-featured-image-wrapper col-md-6 order-md-2">
               <h4>Featured Post</h4>
               <div class="blog-featured-image">
-                <img src={this.blogPost.featured_image} />
+                <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
+                  <img src={this.blogPost.featured_image} />
+                </stencil-route-link>
               </div>
             </div>
             <div class="blog-info col-md-6 order-md-1">
               <h4>Featured Post</h4>
-              <h1>{this.blogPost.title}</h1>
+              <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
+                <h1>{this.blogPost.title}</h1>
+              </stencil-route-link>
 
               <div class="blog-featured-summary">{this.blogPost.summary}</div>
               <div class="blog-featured-date">{formatDate(publishDate)}</div>

@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const request = require('sync-request');
 const res = request('GET', 
-    'https://api.buttercms.com/v2/posts/?page=1&page_size=1000000&auth_token=fca1bc914c05371263f98c9d3480eaa215fd63d6', 
+    'https://api.buttercms.com/v2/posts/?page=1&page_size=1000000&auth_token=150aed013009daf59b81dd9ad8d7aac75777ee79', 
     {}
 );
 
