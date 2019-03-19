@@ -54,6 +54,23 @@ for file in src/assets/*.png; do cwebp -q 75 "$file" -o "${file%.png}.webp"; don
 for file in src/assets/*.jpeg; do cwebp -q 75 "$file" -o "${file%.jpeg}.webp"; done
 ```
 
+### Blog Setup
+By default, the public version of this project does not contain an API key for the [ButterCMS](https://buttercms.com/) blog content management system. No blog posts will be displayed on the blog page if running locally. 
+
+If you have an API key for another ButterCMS blog that you would like to add to this project, use your text editor and open 
+```
+'src/butter-api/butter-api-key.ts' 
+```
+
+and change the following expression from:
+```
+export const BUTTER_API_KEY = butterApiKeySource;
+```
+to
+```
+export const BUTTER_API_KEY = 'your API token goes here';
+```
+
 ### Running This Application
 ```
 npm run dev

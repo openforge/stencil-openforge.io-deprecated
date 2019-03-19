@@ -1,4 +1,4 @@
-// import BUTTER_API_KEY_SOURCE from './butter-api-key-source';
 "use strict";
-// const BUTTER_API_KEY = BUTTER_API_KEY_SOURCE;
-exports.BUTTER_API_KEY = '';
+var butter_api_key_source_1 = require('./butter-api-key-source');
+exports.BUTTER_API_KEY = butter_api_key_source_1.default;
+// export const BUTTER_API_KEY = '';
