@@ -61,6 +61,13 @@
   }
 
   .blog-info {
+    h1 {
+      color: black;
+      &:hover {
+        text-decoration: underline black;
+      }
+    }
+
     @include media-breakpoint-down(sm) {
       text-align: center;
     }

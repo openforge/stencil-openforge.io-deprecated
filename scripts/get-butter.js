@@ -2,7 +2,7 @@ const fs = require('fs');
 require('typescript-require');
 
 const request = require('sync-request');
-// const BUTTER_API_KEY = require('../src/butter-api/butter-api-key.ts');
+
 const BUTTER_API_KEY = require('../src/butter-api/butter-api-key.ts').BUTTER_API_KEY;
 
 console.log(BUTTER_API_KEY);

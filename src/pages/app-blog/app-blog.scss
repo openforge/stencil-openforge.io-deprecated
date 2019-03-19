@@ -125,12 +125,12 @@
 
   .blog-card-wrapper {
     min-height: 300px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
   }
 
   .blog-card-wrapper-last {
     min-height: 300px;
-    margin-bottom: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -149,6 +149,7 @@
     .blog-page-item .active {
       padding: 7px;
       color: $orange;
+      text-decoration: underline $orange;
     }
   }
 }
