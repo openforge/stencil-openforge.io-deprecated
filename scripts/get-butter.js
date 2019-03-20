@@ -9,11 +9,15 @@ let BUTTER_API_KEY;
 if(process.env.BUTTER_API_KEY){
   // if this is a travis build, get the API Key from environment variable
   BUTTER_API_KEY = process.env.BUTTER_API_KEY;
+  const newAPIString = `
+      // Use an API Token from ButterCMS in order to access the blog
+      export const BUTTER_API_KEY = '${BUTTER_API_KEY}';`
+      fs.writeFileSync(API_KEY_PATH, blankAPIString);
 } else {
   
   // else if this is a local build, get the key from the gitignored file
 
-  blankAPIString = `
+  const blankAPIString = `
       // Use an API Token from ButterCMS in order to access the blog
       export const BUTTER_API_KEY = '';`
 
