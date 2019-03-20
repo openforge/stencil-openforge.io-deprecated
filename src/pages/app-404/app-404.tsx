@@ -9,7 +9,7 @@ export class App404 {
     return (
       <div class="no-page">
         <section class="container">
-          <app-img src="/assets/forge.png" />
+          <app-img src="/assets/forge.png" alt="Openforge Logo" />
 
           <p> Uh-oh, we've detected that this page does not exist, or something else has gone wrong! </p>
 

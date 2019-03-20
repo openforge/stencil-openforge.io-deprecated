@@ -365,7 +365,7 @@ export class AppDetailedService {
                       </a>
                     </div>
                   </div>
-                  <app-img src={this.imgs[this.match.params.service].exampleGraphic} class="phone-image" />
+                  <app-img src={this.imgs[this.match.params.service].exampleGraphic} class="phone-image" alt="Example Graphic Image" />
                 </div>
               </div>
               <div class="content-panel last-panel" />
