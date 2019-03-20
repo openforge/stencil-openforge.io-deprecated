@@ -15,7 +15,11 @@ if(process.env.BUTTER_API_KEY){
       export const BUTTER_API_KEY = '${BUTTER_API_KEY}';`
       fs.writeFileSync(API_KEY_PATH, newAPIString);
 } else {
-  
+
+  if (!fs.existsSync('src/butter-api')){
+    fs.mkdirSync('src/butter-api/');
+  }
+
   // else if this is a local build, get the key from the gitignored file
 
   const blankAPIString = `
@@ -38,10 +42,10 @@ if(process.env.BUTTER_API_KEY){
       fs.writeFileSync(API_KEY_PATH, blankAPIString);
       keyString = ['']
     }
-  
+
     BUTTER_API_KEY = keyString[0].substring(1, keyString[0].length - 1);
-  
-  }  
+
+  }
 }
 
 if(BUTTER_API_KEY == '') {
