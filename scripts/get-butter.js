@@ -12,7 +12,7 @@ if(process.env.BUTTER_API_KEY){
   const newAPIString = `
       // Use an API Token from ButterCMS in order to access the blog
       export const BUTTER_API_KEY = '${BUTTER_API_KEY}';`
-      fs.writeFileSync(API_KEY_PATH, blankAPIString);
+      fs.writeFileSync(API_KEY_PATH, newAPIString);
 } else {
   
   // else if this is a local build, get the key from the gitignored file
