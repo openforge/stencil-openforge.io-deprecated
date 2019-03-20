@@ -1,6 +1,4 @@
 const fs = require('fs');
-// require('typescript-require');
-
 const request = require('sync-request');
 
 const API_KEY_PATH = 'src/butter-api/butter-api-key.js';
