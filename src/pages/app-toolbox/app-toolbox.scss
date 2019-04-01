@@ -1,203 +1,120 @@
 .toolbox {
-  background: #f4f5f9;
+  
+  font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
 
-  // hero
-  .hero {
-    background-image: url('/assets/toolbox-hero-img.png');
-  }
+  .header {
+    padding-top: 150px;
 
-  .webp {
-    background-image: url('/assets/toolbox-hero-img.webp');
-  }
-
-  .hero,
-  .webp {
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
-
-    .container,
-    .row {
-      height: 100%;
-    }
+    // @include media-breakpoint-down(sm) {
+    //   text-align: center;
+    // }
 
     .row {
-      padding-top: 56px;
+      height: auto;
+      padding-bottom: 2rem;
     }
-
-    h2 {
-      color: $white;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-
-      @include media-breakpoint-down(lg) {
-        font-size: 2.5rem;
-      }
-
-      @include media-breakpoint-down(sm) {
-        font-size: 2rem;
-      }
+    
+    h1 {
+      color: $orange;
+      font-size: 48px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 1.6px;
     }
-
+  
     p {
-      color: $white;
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
-      max-width: 500px;
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.88;
+      letter-spacing: normal;
+    }
+  
+    button {
+      font-size: 9px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2.22;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .content {
+
+    margin-top: 3rem;
+
+    .container {
+      max-width: 960px;
+    }
+
+    h3 {
+      color: $orange-dark;
+      font-size: 42px;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.19;
+      letter-spacing: normal;
+    }
+    
+    p {
+      font-size: 18px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.78;
+      letter-spacing: normal;
+    }
+
+    .nav {
+      background: white;
+      color: $orange;
+      border: 2px solid $orange;
+      border-radius: 8px;
+      height: 40px;
+      width: 570px; 
+
+      a {
+        border-radius: 0;
+        height: 36px;
+        padding: 0;
+      }
 
       @include media-breakpoint-down(sm) {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+        display: none;
       }
     }
   }
 
-  h1 {
-    text-align: center;
+  .carousel {
+    background: url('https://via.placeholder.com/300') center no-repeat;
   }
 
-  .design {
-    padding-top: 56px;
+
+  .carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e88212' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
   }
 
-  .design,
-  .development,
-  .consulting {
-    margin-bottom: 60px;
+  .carousel-control-next-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23e88212' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+  }
 
-    a {
-      text-decoration: underline;
+  .carousel-item {
+    height: 300px;
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      height: inherit;
+      justify-content: flex-end;
     }
+  }
 
-    @include media-breakpoint-down(sm) {
-      margin-bottom: 40px;
-    }
-
-    .text-img-container {
-      display: grid;
-      grid-template-columns: 0.5fr 0.5fr;
-      margin-top: 4rem;
-
-      &:first-child {
-        margin-top: 0;
-        padding-top: 6rem;
-      }
-
-      h2 {
-        text-align: center;
-      }
-
-      p {
-        padding: 2rem;
-      }
-
-      @include media-breakpoint-down(sm) {
-        grid-template-columns: 1fr;
-        grid-row-gap: 20px;
-        margin-top: 2rem;
-      }
-
-      &.right-side {
-        app-img {
-          justify-self: right;
-
-          @include media-breakpoint-down(sm) {
-            justify-self: center;
-          }
-
-          img {
-            width: 200px;
-            object-fit: cover;
-          }
-        }
-
-        .text-img-container-text {
-          margin-left: 50px;
-
-          @include media-breakpoint-down(sm) {
-            margin-left: 0;
-          }
-
-          h2 {
-            color: $orange;
-            text-align: left;
-
-            @include media-breakpoint-down(sm) {
-              text-align: center;
-            }
-
-            a:hover {
-              color: $orange;
-            }
-          }
-
-          p {
-            text-align: left;
-            padding: 0;
-            margin-bottom: 1rem;
-
-            @include media-breakpoint-down(sm) {
-              text-align: center;
-            }
-
-            &.check-link {
-              font-size: 26px;
-              color: $orange;
-              margin-bottom: 0;
-            }
-          }
-        }
-      }
-
-      &.left-side {
-        app-img {
-          margin-left: 50px;
-          justify-self: left;
-
-          @include media-breakpoint-down(sm) {
-            margin-left: 0;
-            justify-self: center;
-            grid-row: 1;
-          }
-
-          img {
-            width: 200px;
-            object-fit: cover;
-          }
-        }
-
-        .text-img-container-text {
-          h2 {
-            color: $orange;
-            text-align: right;
-
-            @include media-breakpoint-down(sm) {
-              text-align: center;
-            }
-
-            a:hover {
-              color: $orange;
-            }
-          }
-
-          p {
-            text-align: right;
-            padding: 0;
-            margin-bottom: 1rem;
-
-            @include media-breakpoint-down(sm) {
-              text-align: center;
-            }
-
-            &.check-link {
-              font-size: 26px;
-              color: $orange;
-              margin-bottom: 0;
-            }
-          }
-        }
-      }
-    }
+  .line-break {
+    border-bottom: 1px solid $gray-800;
   }
 }

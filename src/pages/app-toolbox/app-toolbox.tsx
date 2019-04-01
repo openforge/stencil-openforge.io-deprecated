@@ -5,10 +5,10 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-toolbox.scss',
 })
 export class AppToolbox {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToForm() {
-    const form = document.getElementById('second-content');
+    const form = document.getElementById('content');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -29,151 +29,131 @@ export class AppToolbox {
     return (
       <div class="toolbox">
         {/* header - hero */}
-        <header class={this.className}>
+        <header class="header">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-9 col-md-8 col-lg-9">
-                <h2>Here are some of the tools we use</h2>
-                <p>We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.</p>
+              <div class="col-sm-12 col-md-6">
+                <h1>The best tools create the best products.</h1>
+                <p>As a digital agency, utilizing the best mobile and web practices is among our foremost concerns. Check out some of the tools we use to keep our products looking great and runnig smoothly across all devices.</p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  Scroll to Learn More
+                  SEE WHAT'S INSIDE
                 </button>
+              </div>
+              <div class="col-sm-12 col-md-6">
+                <app-img src="/assets/svg/toolbox-graphic-header.svg" alt="Toolbox Header Graphic" />
+              </div>
+            </div>
+            <div class="line-break" />
+          </div>
+        </header>
+
+        <section class="content" id="content">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 d-flex flex-column align-items-center">
+
+                <ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-design-tab" data-toggle="pill" href="#pills-design" role="tab" aria-controls="pills-design" aria-selected="true">Design</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-development-tab" data-toggle="pill" href="#pills-development" role="tab" aria-controls="pills-development" aria-selected="false">Development</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-qa-tab" data-toggle="pill" href="#pills-qa" role="tab" aria-controls="pills-qa" aria-selected="false">Quality Assurance</a>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-design" role="tabpanel" aria-labelledby="pills-design-tab">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        <img src="/assets/toolbox-graphic-chest-top.png" />
+                        <img src="/assets/toolbox-graphic-chest-bottom.png" />
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <h3>Tools of the Trade</h3>
+                        <p>The tools we use create a bridge between design and development, allowing us to bring our designs to life through beautifully crafted code. Click any bubble to see how they work.</p>
+                      </div>
+                    </div>             
+                  </div>
+                  <div class="tab-pane fade" id="pills-development" role="tabpanel" aria-labelledby="pills-development-tab">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        chest
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <h3>Tools of the Trade</h3>
+                        <p>The tools we use create a bridge between design and development, allowing us to bring our designs to life through beautifully crafted code. Click any bubble to see how they work.</p>
+                      </div>
+                    </div>  
+                  </div>
+                  <div class="tab-pane fade" id="pills-qa" role="tabpanel" aria-labelledby="pills-qa-tab">
+                    <div class="row">
+                      <div class="col-md-6 col-sm-12">
+                        chest
+                      </div>
+                      <div class="col-md-6 col-sm-12">
+                        <h3>Tools of the Trade</h3>
+                        <p>The tools we use create a bridge between design and development, allowing us to bring our designs to life through beautifully crafted code. Click any bubble to see how they work.</p>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </header>
-        <div id="second-content" class="design container">
-          <h1>UI/UX Design</h1>
-          <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-first.png" alt="" />
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://www.goabstract.com/" rel="noopener">
-                  Abstract
-                </a>
-              </h2>
-              <p>
-                Abstract allows our team to track our projects across versions and collaborate among team members. Having full transparency on projects ensures that we maintain the consistency and
-                integrity of our designs.
-              </p>
+        </section>
+
+
+
+        <section>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Section Title</h3>
+                <div id="toolboxCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
+                  <app-carousel-indicators class="carousel-main-indicators" activeIndex="0" />
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <div class="text-container">
+                        <h4>Title</h4>
+                        <p>jfdlaskjfklsajkflsjaklfjklsajkldfjskalfklsajkfdfkljsaklfjklsjfkljas</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="text-container">
+                        <h4>Title</h4>
+                        <p>jfdlaskjfklsajkflsjaklfjklsajkldfjskalfklsajkfdfkljsaklfjklsjfkljas</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="text-container">
+                        <h4>Title</h4>
+                        <p>jfdlaskjfklsajkflsjaklfjklsajkldfjskalfklsajkfdfkljsaklfjklsjfkljas</p>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#toolboxCarousel" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true" />
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#toolboxCarousel" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true" />
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-          </section>
-          <section class="text-img-container left-side">
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://marvelapp.com/" rel="noopener">
-                  Marvel
-                </a>
-              </h2>
-              <p>
-                Marvel allows our design team to produce a working prototype of a product before it reaches the marketplace. This prototype is then updated in conjunction with each new version and
-                allows for our team to maintain the highest standard of quality assurance.
-              </p>
-            </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-second.png" alt="" />
-          </section>
-          <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-third.png" alt="" />
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://www.sketchapp.com/" rel="noopener">
-                  Sketch
-                </a>
-              </h2>
-              <p>
-                Sketch is a powerful tool that allows our designers to seamlessly turn wireframes into beautifully designed products. Specifically created for user interface and user experience
-                design, it is optimized for efficiency and consistency across projects large and small.
-              </p>
-            </div>
-          </section>
-        </div>
-        <div class="development container">
-          <h1>App Development</h1>
-          <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-development-toolbox-second.png" alt="" />
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://ionicframework.com/" rel="noopener">
-                  Ionic Framework
-                </a>
-              </h2>
-              <p>
-                Ionic Framework gives our team of developers an array of reliable tools and proven UI components. Hybrid Progressive Web Apps come together with reliability and performance using Ionic
-                Framework.
-              </p>
-            </div>
-          </section>
-          <section class="text-img-container left-side">
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://angular.io/" rel="noopener">
-                  Angular
-                </a>
-              </h2>
-              <p>Angular lays the foundations for our developer team to produce and deploy cross platform mobile and web apps.</p>
-            </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-development-toolbox-first.png" alt="" />
-          </section>
-          <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/github-logo-black.png" alt="" />
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://github.com/" rel="noopener">
-                  GitHub
-                </a>
-              </h2>
-              <p>
-                GitHub is an industry standard for hosting code, managing projects, and collaboration between developers. Github gives our development team a channel to effectively produce, manage and
-                refine code.
-              </p>
-            </div>
-          </section>
-        </div>
-        <div class="consulting container">
-          <h1>Consulting</h1>
-          <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-second.png" alt="" />
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://marvelapp.com/" rel="noopener">
-                  Marvel
-                </a>
-              </h2>
-              <p>
-                Marvel puts our team and your team on the same page with a prototype that can be easily navigated and refined. Collaboration between our team and yours is seamless with direct
-                commenting and requests within prototypes.
-              </p>
-            </div>
-          </section>
-          <section class="text-img-container left-side">
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://bitbucket.org/" rel="noopener">
-                  BitBucket
-                </a>
-              </h2>
-              <p>
-                Bitbucket shows a detailed breakdown of developer productivity by visualizing commit history and the efficiency in which work is performed. Bitbucket gives us the tools to analyze your
-                Git repository and improve your bottom line.
-              </p>
-            </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-third.png" alt="" />
-          </section>
-          <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-first.png" alt="" />
-            <div class="text-img-container-text">
-              <h2>
-                <a target="_blank" href="https://www.teamwork.com/" rel="noopener">
-                  Teamwork
-                </a>
-              </h2>
-              <p>
-                Teamwork Projects is a powerful project management software that incorporates communication, file storage, progress tracking and time management that is proven for not only our team
-                but yours as well.
-              </p>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
+    
+
+
+
+
+
+
+        <app-cta />
         <app-footer />
       </div>
     );
