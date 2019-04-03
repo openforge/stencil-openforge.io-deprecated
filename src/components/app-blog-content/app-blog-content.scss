@@ -1,57 +1,61 @@
-.blog-content-header {
+.header {
   text-align: left;
-  @include media-breakpoint-down(sm) {
-    text-align: center;
-  }
 
+  padding: 0 6rem;
+  
   h1 {
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       padding: 20px 0;
     }
   }
 
-  .blog-content-date-author {
-    align-content: center;
-    justify-content: center;
-
-    .blog-content-date {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      font-size: 12px;
-    }
-
-    .blog-content-author {
-      @include media-breakpoint-down(sm) {
-        padding: 20px 0;
-      }
-
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-
-      .profile-image {
-        height: 75px;
-        width: 75px;
-        margin-right: 15px;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-    }
+  p {
+    margin-bottom: 10px;
   }
 
-  .blog-content-post {
-    text-align: left;
+  .--date {
+    color: #6d6e71;
+    font-size: 12px;
+  }
+
+  .--author {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+
+    img {
+      border-radius: 50%;
+      height: 75px;
+      margin-right: 15px;
+      object-fit: cover;
+      width: 75px;
+    }
+
     @include media-breakpoint-down(sm) {
-      text-align: center;
+      justify-content: center;
     }
   }
 
-  .blog-content-image {
+  .--main-image {
+    border-radius: 35px;
     padding: 2%;
     width: 100%;
-    border-radius: 35px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+}
+
+.content {
+  text-align: left;
+  margin-top: 1rem;
+
+  @include media-breakpoint-down(sm) {
+    text-align: center;
   }
 }
 
@@ -101,23 +105,16 @@
   }
 }
 
-#blog-content-contact-icons-top {
-  @include media-breakpoint-down(sm) {
-    display: block !important;
-    text-align: center;
-  }
-}
-
 .contact-icons-top {
   display: flex;
-  @include media-breakpoint-down(sm) {
-    display: block;
-  }
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .contact-icons-side {
   display: flex;
   flex-direction: column;
+  float: right;
   padding: 15px;
 }
 
@@ -125,12 +122,5 @@
   margin: 10px;
   img {
     width: 20px;
-  }
-}
-
-.blog-content-body {
-  @include media-breakpoint-down(sm) {
-    text-align: center;
-    padding: 20px 0;
   }
 }

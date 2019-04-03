@@ -21,14 +21,15 @@ export class AppBlogContent {
   }
 
   handleIcons() {
-    const topIcons = document.getElementById('blog-content-contact-icons-top');
-    const sideIcons = document.getElementById('blog-content-contact-icons-side');
+    const topIcons = document.getElementById('contact-icons-top');
+    const sideIcons = document.getElementById('contact-icons-side');
     if (window.innerWidth < 768) {
       topIcons.style.setProperty('display', 'flex');
       sideIcons.style.setProperty('display', 'none');
     } else {
       topIcons.style.setProperty('display', 'none');
       sideIcons.style.setProperty('display', 'flex');
+      sideIcons.style.setProperty('float', 'right');
     }
   }
 
@@ -72,26 +73,26 @@ export class AppBlogContent {
 
     return (
       <div class="blog-content">
-        <div class="blog-content-header">
+        <div class="header">
           <h1>{this.blogPost.title}</h1>
-          <div>{this.blogPost.summary}</div>
-          <div class="blog-content-date-author row">
-            <div class="blog-content-date col-md-6">{formatDate(publishDate)}</div>
-            <div class="blog-content-author col-md-6">
-              <img class="profile-image " src={this.blogPost.author.profile_image} />
+          <p>{this.blogPost.summary}</p>
+          <div>
+            <div class="--date">{formatDate(publishDate)}</div>
+            <div class="--author">
+              <img src={this.blogPost.author.profile_image} />
               <div>
                 By &nbsp;
                 <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
               </div>
             </div>
           </div>
-          <div id="blog-content-contact-icons-top">{contactIconsTop}</div>
-          <img class="blog-content-image" src={this.blogPost.featured_image} />
+          <div class="contact-icons-top" id="contact-icons-top">{contactIconsTop}</div>
+          <img class="--main-image" src={this.blogPost.featured_image} />
         </div>
-        <div class="blog-content-post">
+        <div class="content">
           <div class="row">
             <div class="col-md-2">
-              <div id="blog-content-contact-icons-side">{contactIconsSide}</div>
+              <div id="contact-icons-side">{contactIconsSide}</div>
             </div>
             <div class="col-md-8">
               <div innerHTML={this.blogPost.body} class="blog-content-body" />
@@ -99,7 +100,6 @@ export class AppBlogContent {
             <div class="col-md-2" />
           </div>
         </div>
-
         <div class="blog-content-author">
           <hr />
           <div class="row">

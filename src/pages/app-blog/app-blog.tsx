@@ -258,11 +258,11 @@ export class AppBlog {
       });
     } else {
       if (searchString) {
-        postData = <div class="blog-posts-message">No posts found for search {searchString}.</div>;
+        postData = <div class="blog-posts-message">We do not currently have any blogs for this category. Check back soon!</div>;
       } else if (filterString) {
-        postData = <div class="blog-posts-message">No posts found for filter {filterString}.</div>;
+        postData = <div class="blog-posts-message">We do not currently have any blogs for this filter. Check back soon!</div>;
       } else {
-        postData = <div class="blog-posts-message">No posts found.</div>;
+        postData = <div class="blog-posts-message">We do not currently have any blogs. Check back soon!</div>;
       }
     }
     return postData;
@@ -308,19 +308,19 @@ export class AppBlog {
       <div class="blog-container">
         <div class="featured-post">{featuredPost}</div>
         <div id="blog-filters" class="blog-filters">
-          <div class="blog-filters-header">
-            <div class="blog-filters-divider">
+          <div class="header">
+            <div class="divider">
               <div class="line-break" />
               <div class="spacer" />
             </div>
-            <div class="blog-filters-title lg">Categories</div>
-            <div class="blog-filters-title sm dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="title">Categories</div>
+            <div class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {this.renderFilter(this.blogFilter)}
             </div>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               {filters}
             </div>
-            <div class="blog-filters-divider">
+            <div class="divider">
               <div class="line-break" />
               <div class="spacer" />
             </div>
@@ -331,6 +331,7 @@ export class AppBlog {
         </div>
 
         <div class="blog-search">
+          <h3 class="mb-4">Looking for something?</h3>
           <div class="blog-search-group">
             <span class="blog-search-icon">
               <span class="fa fa-search" />

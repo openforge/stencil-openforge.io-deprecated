@@ -20,22 +20,21 @@ export class AppBlogFeatured {
         <div class="container">
           <div class="row">
             <div class="blog-featured-image-wrapper col-md-6 order-md-2">
-              <h4>Featured Post</h4>
-              <div class="blog-featured-image">
+              <div class="featured-image">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                   <img src={this.blogPost.featured_image} />
                 </stencil-route-link>
               </div>
             </div>
-            <div class="blog-info col-md-6 order-md-1">
+            <div class="info col-md-6 order-md-1">
               <h4>Featured Post</h4>
               <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-                <h1>{this.blogPost.title}</h1>
+                <h2>{this.blogPost.title}</h2>
               </stencil-route-link>
 
-              <div class="blog-featured-summary">{this.blogPost.summary}</div>
-              <div class="blog-featured-date">{formatDate(publishDate)}</div>
-              <div class="blog-featured-author">
+              <div class="summary">{this.blogPost.summary}</div>
+              <p class="date">{formatDate(publishDate)}</p>
+              <div class="author">
                 <img class="profile-image" src={this.blogPost.author.profile_image} />
                 <div>
                   By &nbsp;
@@ -43,7 +42,7 @@ export class AppBlogFeatured {
                 </div>
               </div>
               <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-                <button class="btn btn-primary mt-md-4 mt-sm-1">Read More</button>
+                <button class="btn btn-primary mt-5"></button>
               </stencil-route-link>
             </div>
           </div>

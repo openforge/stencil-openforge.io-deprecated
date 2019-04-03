@@ -4,6 +4,16 @@
 
   .blog-post-content {
     padding: 4%;
+
+    h3 {
+      font-size: 15px;
+      text-decoration: underline;
+      padding: 0 6rem;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+    }
   }
 
   .blog-next-posts-header {

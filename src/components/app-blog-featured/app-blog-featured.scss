@@ -1,7 +1,55 @@
 .blog-featured {
-  padding: 5%;
 
-  .blog-featured-author {
+  .container {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  .featured-image {
+    border-collapse: separate;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+
+    img {
+      @include media-breakpoint-up(sm) {
+        border-radius: 15px;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .info {
+    h2 {
+      color: black;
+      &:hover {
+        text-decoration: underline black;
+      }
+    }
+
+    h4 {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+
+  .summary {
+    margin-top: 25px;
+  }
+
+  p {
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+
+  .author {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,61 +68,16 @@
     }
   }
 
-  .blog-featured-summary {
-    margin-top: 25px;
-  }
-
-  .blog-featured-date {
-    margin-bottom: 25px;
-    font-size: 12px;
-  }
-
-  .blog-featured-image-wrapper {
-    h4 {
-      display: none;
-      @include media-breakpoint-down(sm) {
-        display: block;
-      }
-    }
-  }
-
-  .blog-featured-image {
-    img {
-      @include media-breakpoint-up(sm) {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 15px;
-      }
-    }
-  }
-
-  .blog-featured-image {
-    border-collapse: separate;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-
-    img {
-      border-radius: 15px;
-    }
-  }
-
-  .blog-info {
-    h1 {
-      color: black;
-      &:hover {
-        text-decoration: underline black;
-      }
-    }
-
+  .btn {
+    &:after {
+      content: "Read More";
+    }    
+    
     @include media-breakpoint-down(sm) {
-      text-align: center;
-    }
+      position: relative;
 
-    h4 {
-      @include media-breakpoint-down(sm) {
-        display: none;
+      &:after {
+        content: "See What's Inside";
       }
     }
   }
