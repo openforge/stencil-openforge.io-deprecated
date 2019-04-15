@@ -1,17 +1,11 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-toolbox',
   styleUrl: 'app-toolbox.scss',
 })
 export class AppToolbox {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  private className;
-  componentWillLoad() {
-    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
-  }
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToForm() {
     const form = document.getElementById('second-content');
@@ -35,7 +29,7 @@ export class AppToolbox {
     return (
       <div class="toolbox">
         {/* header - hero */}
-        <header class={this.className}>
+        <header class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-9 col-md-8 col-lg-9">
