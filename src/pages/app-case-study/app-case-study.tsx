@@ -1,17 +1,11 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-case-study',
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  private className;
-  componentWillLoad() {
-    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
-  }
+  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToTop() {
     const form = document.getElementsByTagName('header')[0];

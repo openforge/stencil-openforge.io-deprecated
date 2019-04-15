@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, State, Prop, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
 
@@ -7,10 +7,7 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  private allowWebp;
+  private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
@@ -288,8 +285,6 @@ export class AppTeamLanding {
   }
 
   componentWillLoad() {
-    this.allowWebp = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
-
     if (!this.data[this.match.params.member]) {
       this.history.push(`/`, {});
     } else {
