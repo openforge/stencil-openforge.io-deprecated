@@ -402,6 +402,7 @@ export const translations = {
       },
       links: {
         home: 'Home',
+        blog: 'Blog',
         about: 'About',
         contact: 'Contact',
         opportunities: 'Opportunities',

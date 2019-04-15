@@ -7,8 +7,6 @@ import { MatchResults, RouterHistory } from '@stencil/router';
   styleUrl: 'app-resources.scss',
 })
 export class AppResources {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
-
   @State() formSubmitted = false;
   @State() formSubmitting = false;
 
@@ -40,6 +38,10 @@ export class AppResources {
   };
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
+  private className;
 
   @Listen('check')
   @Listen('valueChange')
@@ -52,6 +54,8 @@ export class AppResources {
   }
 
   componentWillLoad() {
+    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+
     if (this.match.params.source !== 'pwa-white-paper') {
       this.history.push(`/`, {});
     }

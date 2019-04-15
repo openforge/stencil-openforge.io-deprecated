@@ -7,7 +7,10 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
+  private allowWebp;
 
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
@@ -285,6 +288,8 @@ export class AppTeamLanding {
   }
 
   componentWillLoad() {
+    this.allowWebp = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+
     if (!this.data[this.match.params.member]) {
       this.history.push(`/`, {});
     } else {

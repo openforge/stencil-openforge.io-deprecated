@@ -7,6 +7,7 @@ import { translate } from '../../services/translation.service';
 import $ from 'jquery';
 
 declare var fbq;
+declare var bootstrap;
 
 @Component({
   tag: 'app-home',
@@ -59,14 +60,16 @@ export class AppHome {
       }
     });
 
-    /* tslint:disable-next-line */
-    $(document).ready(function() {
-      // Force bootstrap to initialize carousel
-      const processCarousel = $('#processCarousel');
-      setTimeout(() => window['bootstrap'].Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
+    if (!this.isServer) {
+      /* tslint:disable-next-line */
+      $(document).ready(function() {
+        // Force bootstrap to initialize carousel
+        const processCarousel = $('#processCarousel');
+        setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
 
-      $(window).trigger('scroll'); // init the value
-    });
+        $(window).trigger('scroll'); // init the value
+      });
+    }
   }
 
   scrollToForm() {

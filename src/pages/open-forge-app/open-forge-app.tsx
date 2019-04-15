@@ -1,7 +1,10 @@
 import '@stencil/router';
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 import { BrowserService } from '../../services/browser.services';
+/* tslint:disable-next-line */
+import Butter from 'buttercms';
+import { BUTTER_API_KEY } from '../../butter-api/butter-api-key';
 
 polyfill();
 
@@ -10,12 +13,21 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
+  public butterService;
 
   constructor() {
     const browserService = new BrowserService();
-    browserService.check_webp();
+    browserService.check_webp(this.isServer);
+    console.log(BUTTER_API_KEY);
+  }
+
+  componentWillLoad() {
+    this.butterService = Butter(BUTTER_API_KEY);
   }
 
   componentDidLoad() {
@@ -107,6 +119,9 @@ export class OpenForgeApp {
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route url="/service-level-agreement" component="app-service-level-agreement" />
+          <stencil-route url="/blog" component="app-blog" exact={true} componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/blog-index" component="app-blog-index" exact={true} componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/blog/:slug" component="app-blog-post" componentProps={{ butter: this.butterService }} />
         </stencil-route-switch>
       </stencil-router>
     );
