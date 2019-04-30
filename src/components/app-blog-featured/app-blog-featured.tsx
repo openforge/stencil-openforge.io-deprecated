@@ -27,7 +27,7 @@ export class AppBlogFeatured {
               </div>
             </div>
             <div class="info col-md-6 order-md-1">
-              <h4>Featured Post</h4>
+              <h4>What's New in Our Blog</h4>
               <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                 <h2>{this.blogPost.title}</h2>
               </stencil-route-link>
