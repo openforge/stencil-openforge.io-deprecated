@@ -95,6 +95,7 @@ export class AppHome {
       }
     })
     .catch(resp => {
+      console.log('resp - ', resp);
       this.featuredIsError = true;
       this.featuredIsLoading = false;
     });
