@@ -9,9 +9,22 @@
     }
   }
 
+  .featured-title {
+    h2 {
+      color: $gray-dark;
+      margin-bottom: 2rem;
+    }
+
+    h4 {
+      @include media-breakpoint-down(sm) {
+        margin-top: 4rem;
+      }
+    }
+  }
+
   .featured-image {
     border-collapse: separate;
-    display: inline-block;
+    display: flex;
     height: 100%;
     width: 100%;
 
@@ -22,25 +35,6 @@
         margin-top: 2rem;
         object-fit: cover;
         width: 100%;
-      }
-    }
-  }
-
-  .info {
-    h2 {
-      color: black;
-      &:hover {
-        text-decoration: underline black;
-      }
-
-      @include media-breakpoint-down(sm) {
-        margin-top: 2rem;
-      }
-    }
-
-    h4 {
-      @include media-breakpoint-down(sm) {
-        display: none;
       }
     }
   }
