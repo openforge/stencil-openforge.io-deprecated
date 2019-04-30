@@ -2,10 +2,8 @@ export const translations = {
   translation: {
     home: {
       hero: {
-        title: 'Creating Digital Experiences',
-        subTitle: 'Every Day*',
-        subtext: '*Monday-Friday',
-        subtextMobile: `Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.`,
+        title: 'Mobile Solutions',
+        subTitle: 'For A Digital World'
       },
       process: {
         title: 'Our Process',
@@ -33,24 +31,25 @@ export const translations = {
             'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
         },
       },
-      services: {
-        mobileTechnology: {
-          title: 'Mobile Technology',
+      work: {
+        experts: 'Experts in',
+        mobileWebApplications: {
+          title: 'Mobile & Web Applications',
           text:
-            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
-          example: 'LoudCloud',
+            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP. As experts in mobile application development, we can interface with any existing API or standard to deliver a secure, integrated product no matter what your product needs.',
+          example: 'The Vanlife App',
         },
         digitalExperience: {
           title: 'Digital Experience',
           text:
-            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We will go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back.',
           example: 'The Voyage by New Ocean',
         },
-        brandingDesign: {
-          title: 'Digital Branding & Web Design',
+        mobileTechnology: {
+          title: 'Mobile Technology',
           text:
-            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
-          example: 'JuntoScope',
+            'We utilize technologies to bring the richest features to your app such as VoIP, Bluetooth LE, and other IOT tech to bring a whole new level of connectivity to your application providing your users with a rich and interactive experience that will boost engagement and retention. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          example: 'LoudCloud',
         },
       },
     },
