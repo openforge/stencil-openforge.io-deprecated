@@ -1,3 +1,7 @@
+nav {
+  background: rgba(23, 23, 25, 1);
+}
+
 nav.navbar .navbar-nav .nav-item {
   text-align: right;
 
@@ -6,18 +10,18 @@ nav.navbar .navbar-nav .nav-item {
 
     .dropdown-menu {
       border: none;
-      background: rgba(23, 23, 25, 0.75);
+      background: rgba(23, 23, 25, 1);
       top: 54px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
 
     .dropdown-item {
-      color: rgba(244, 245, 249, 0.75);
+      color: rgba(244, 245, 249, 1);
       text-align: right;
 
       &:hover {
-        background: rgba(23, 23, 25, 0.75);
+        background: rgba(23, 23, 25, 1);
       }
 
       &.active {
