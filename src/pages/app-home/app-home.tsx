@@ -1,7 +1,8 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
+import { BlogPost } from '../../model/blog-post.model';
 
 /* tslint:disable-next-line */
 import $ from 'jquery';
@@ -19,7 +20,17 @@ export class AppHome {
   @Prop({ context: 'isServer' })
   private isServer: boolean;
 
-  //  private sticky;
+  @Prop() butter: any;
+
+  @State() featuredPost: BlogPost = null;
+  @State() featuredIsError: boolean = false;
+  @State() featuredIsLoading: boolean = true;
+
+  componentWillLoad() {
+    if (!this.isServer) {
+      this.getFeaturedPost();
+    }
+  }
 
   componentDidLoad() {
     // isServer is false when running in the browser
@@ -72,12 +83,39 @@ export class AppHome {
     }
   }
 
-  scrollToForm() {
-    const form = document.getElementById('services');
-    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  getFeaturedPost() {
+    this.featuredIsLoading = true;
+    const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
+    this.butter.post
+    .list(listOptions)
+    .then(resp => {
+      if (resp.data.data.length > 0) {
+        this.featuredPost = resp.data.data[0];
+        this.featuredIsLoading = false;
+      }
+    })
+    .catch(resp => {
+      this.featuredIsError = true;
+      this.featuredIsLoading = false;
+    });
+  }
+
+  renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
+    if (isError) {
+      return <div>Error loading featured post</div>;
+    }
+    if (isLoading) {
+      return (
+        <div class="loading">
+          <i class="fa fa-spinner fa-spin" />
+        </div>
+      );
+    }
+    return <app-blog-featured blogPost={featuredPost} />;
   }
 
   render() {
+    const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     return (
       <div class="home">
         {/* header - hero */}
@@ -85,25 +123,114 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="hero-content col-12">
-                <h1>
-                  <app-translate key="home.hero.title" />
-                </h1>
-                <h2>
-                  <app-translate key="home.hero.subTitle" />
-                </h2>
-                <p class="subtext">
-                  <i>
-                    <app-translate key="home.hero.subtext" />
-                  </i>
-                </p>
-                <p class="subtext-mobile">
-                  <app-translate key="home.hero.subtextMobile" />
-                </p>
+              <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
+              <object data="/assets/svg/home-graphic-header-mobile.svg" class="svg-header-mobile" aria-label="header" />
+              <h1>
+                <app-translate key="home.hero.title" />
+              </h1>
+              <h2>
+                <app-translate key="home.hero.subTitle" />
+              </h2>
               </div>
             </div>
           </div>
-          <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
         </header>
+
+        <div class="featured-blog">{featuredPost}</div>
+
+        <section id="work" class="work">
+          <div class="main-content">
+            <div id="sticky-sidebar" class="sidebar">
+              <div id="sticky-sidebar-inner">
+                <div id="content-panel-inner" class="content-panel-inner" />
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-panel vanlife">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h3>{translate('home.work.experts')}</h3>
+                    <h2>{translate('home.work.mobileWebApplications.title')}</h2>
+                    <p>{translate('home.work.mobileWebApplications.text')}</p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    <app-translate key="home.work.mobileWebApplications.example" />
+                  </h2>
+                  <div class="row">
+                    <img src="/assets/home-graphic-work-vanlife-1.png" class="behind-left" alt="vanlife screenshot" />
+                    <img src="/assets/home-graphic-work-vanlife-2.png" class="front-center" alt="vanlife screenshot" />
+                    <img src="/assets/home-graphic-work-vanlife-3.png" class="behind-right" alt="vanlife screenshot" />
+                  </div>
+                  <div class="store-buttons">
+                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
+                      <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener">
+                      <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="content-panel loudcloud">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h3>{translate('home.work.experts')}</h3>
+                    <h2>{translate('home.work.mobileTechnology.title')}</h2>
+                    <p>{translate('home.work.mobileTechnology.text')}</p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    <app-translate key="home.work.mobileTechnology.example" />
+                  </h2>
+                  <div class="row">
+                    <img src="/assets/home-graphic-work-loudcloud-1.png" class="behind-left" alt="loudcloud screenshot" />
+                    <img src="/assets/home-graphic-work-loudcloud-2.png" class="front-center" alt="loudcloud screenshot" />
+                    <img src="/assets/home-graphic-work-loudcloud-3.png" class="behind-right" alt="loudcloud screenshot" />
+                  </div>
+                  <div class="store-buttons">
+                    <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
+                      <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
+                      <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="content-panel voyage">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h3>{translate('home.work.experts')}</h3>
+                    <h2>{translate('home.work.digitalExperience.title')}</h2>
+                    <p>{translate('home.work.digitalExperience.text')}</p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    <app-translate key="home.work.digitalExperience.example" />
+                  </h2>
+                  <div class="row">
+                    <img src="/assets/home-graphic-work-voyage-1.png" class="behind-left" alt="voyage screenshot" />
+                    <img src="/assets/home-graphic-work-voyage-2.png" class="front-center" alt="voyage screenshot" />
+                    <img src="/assets/home-graphic-work-voyage-3.png" class="behind-right" alt="voyage screenshot" />
+                  </div>
+                  <div class="store-buttons">
+                    <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                      <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                      <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="content-panel last-panel" />
+            </div>
+          </div>
+        </section>
 
         <section id="process" class="process">
           <div class="text-center header">
@@ -214,103 +341,6 @@ export class AppHome {
               <span class="carousel-control-next-icon" aria-hidden="true" />
               <span class="sr-only">Next</span>
             </a>
-          </div>
-        </section>
-
-        <section id="work" class="work">
-          <div class="main-content">
-            <div id="sticky-sidebar" class="sidebar">
-              <div id="sticky-sidebar-inner">
-                <div id="content-panel-inner" class="content-panel-inner" />
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-panel loudcloud">
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate('home.services.mobileTechnology.title')}</h2>
-                    <p>{translate('home.services.mobileTechnology.text')}</p>
-                  </div>
-                </div>
-                <div class="content-panel-image">
-                  <h2>
-                    <app-translate key="home.services.mobileTechnology.example" />
-                  </h2>
-                  <div class="container">
-                    <div class="row store-buttons">
-                      <div class="col-6 text-right">
-                        <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                        </a>
-                      </div>
-                      <div class="col-6 text-left">
-                        <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/assets/shared-graphic-loudcloud.png" class="phone-image" alt="loudcloud" />
-                </div>
-              </div>
-              <div class="content-panel voyage">
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate('home.services.digitalExperience.title')}</h2>
-                    <p>{translate('home.services.digitalExperience.text')}</p>
-                  </div>
-                </div>
-                <div class="content-panel-image">
-                  <h2>
-                    <app-translate key="home.services.digitalExperience.example" />
-                  </h2>
-                  <div class="container">
-                    <div class="row store-buttons">
-                      <div class="col-6 text-right">
-                        <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                        </a>
-                      </div>
-                      <div class="col-6 text-left">
-                        <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/assets/shared-graphic-voyage.png" class="phone-image" alt="voyage" />
-                </div>
-              </div>
-              <div class="content-panel juntoscope">
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate('home.services.brandingDesign.title')}</h2>
-                    <p>{translate('home.services.brandingDesign.text')}</p>
-                  </div>
-                </div>
-                <div class="content-panel-image">
-                  <h2>
-                    <app-translate key="home.services.brandingDesign.example" />
-                  </h2>
-                  <div class="container">
-                    <div class="row store-buttons">
-                      <div class="col-6 text-right">
-                        <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                        </a>
-                      </div>
-                      <div class="col-6 text-left">
-                        <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/assets/shared-graphic-juntoscope.png" class="phone-image" alt="juntoscope" />
-                </div>
-              </div>
-              <div class="content-panel last-panel" />
-            </div>
           </div>
         </section>
 
