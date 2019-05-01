@@ -1,15 +1,15 @@
 {
   "name": "@openforge/main-website",
   "private": true,
-  "version": "2.0.5",
+  "version": "2.2.0",
   "description": "The official website for OpenForge",
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "node scripts/get-butter.js && stencil build --prerender",
     "cz": "git-cz",
-    "dev": "sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
+    "dev": "node scripts/get-butter.js && sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "sass-lint": "node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q",
     "serve": "stencil-dev-server",
@@ -18,7 +18,7 @@
     "cypress": "cypress open",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "st:generate": "node scripts/st-generate.js",
-    "prepublish": "stencil build --prod",
+    "prepublish": "node scripts/get-butter.js && stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
@@ -27,6 +27,7 @@
     "@stencil/sass": "0.0.3",
     "@types/i18next": "^8.4.3",
     "@types/jquery": "^3.3.29",
+    "buttercms": "^1.1.4",
     "i18next": "^11.3.2",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
@@ -51,15 +52,18 @@
     "jest": "^21.2.1",
     "lint-staged": "^7.0.4",
     "prettier": "^1.12.1",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
     "rxjs-compat": "^6.1.0",
     "sass-lint": "^1.12.1",
     "smoothscroll-polyfill": "^0.4.3",
+    "sync-request": "^6.0.0",
     "tslint": "^5.9.1",
     "tslint-config-airbnb": "^5.8.0",
     "tslint-config-prettier": "^1.12.0",
     "tslint-react": "^3.5.1",
     "typescript": "^2.8.3",
-    "workbox-build": "3.4.1",
+    "workbox-build": "^4.3.0",
     "xvfb": "^0.2.3"
   },
   "repository": {

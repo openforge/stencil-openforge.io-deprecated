@@ -94,6 +94,11 @@ export class AppNavHeader {
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link url="/blog" exact={true} anchorClass="nav-link" activeClass="active">
+                  {translate('nav.links.blog')}
+                </stencil-route-link>
+              </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
                 <a class="nav-link" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
                   <div class="fab fa-github" />
                 </a>
