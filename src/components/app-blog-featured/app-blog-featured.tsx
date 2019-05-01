@@ -19,14 +19,19 @@ export class AppBlogFeatured {
       <div class="blog-featured">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 order-md-2 featured-image">
+            <div class="col-md-6 order-md-2 flex-column featured-image">
+              <div class="d-block d-sm-block d-md-none">
+                <h4>What's New in Our Blog</h4>
+              </div>
               <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                 <img src={this.blogPost.featured_image} />
               </stencil-route-link>
             </div>
             <div class="col-md-6 order-md-1">
               <div class="featured-title">
-                <h4>What's New in Our Blog</h4>
+                <div class="d-none d-md-block">
+                  <h4>What's New in Our Blog</h4>
+                </div>
                   <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                     <h2>{this.blogPost.title}</h2>
                   </stencil-route-link>
