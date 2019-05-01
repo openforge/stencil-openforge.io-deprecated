@@ -229,9 +229,11 @@ export namespace Components {
   }
 
   interface AppHome {
+    'butter': any;
     'history': RouterHistory;
   }
   interface AppHomeAttributes extends StencilHTMLAttributes {
+    'butter'?: any;
     'history'?: RouterHistory;
   }
 
