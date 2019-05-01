@@ -1,7 +1,7 @@
 .blog-featured {
 
   .container {
-    padding: 2.5rem;
+    min-width: 90%;
     margin-bottom: 2rem;
 
     @include media-breakpoint-down(sm) {
@@ -25,16 +25,17 @@
   .featured-image {
     border-collapse: separate;
     display: flex;
-    height: 100%;
-    width: 100%;
+    justify-content: center;
+    text-align: center;
 
     img {
+      height: 75%;
+      width: 75%;
+
       @include media-breakpoint-up(sm) {
         border-radius: 15px;
-        height: 100%;
         margin-top: 2rem;
         object-fit: cover;
-        width: 100%;
       }
     }
   }
