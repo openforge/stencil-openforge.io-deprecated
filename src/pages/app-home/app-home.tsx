@@ -123,16 +123,16 @@ export class AppHome {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="hero-content col-12">
-              <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
-              <object data="/assets/svg/home-graphic-header-mobile.svg" class="svg-header-mobile" aria-label="header" />
-              <h1>
-                <app-translate key="home.hero.title" />
-              </h1>
-              <h2>
-                <app-translate key="home.hero.subTitle" />
-              </h2>
-              </div>
+              <div class="col-12 flex-column">
+                <h1>
+                  <app-translate key="home.hero.title" />
+                </h1>
+                <h2>
+                  <app-translate key="home.hero.subTitle" />
+                </h2>
+                <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
+                <object data="/assets/svg/home-graphic-header-mobile.svg" class="svg-header-mobile" aria-label="header" />
+                </div>
             </div>
           </div>
         </header>

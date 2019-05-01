@@ -2,10 +2,14 @@
   font-family: 'Muli', sans-serif;
   width: auto;
 
+  @include media-breakpoint-down(sm) {
+    overflow-x: hidden;
+  }
+
   .hero {
     background-color: white;
     height: auto;
-    margin-top: 75px;
+    margin-top: 115px;
 
     .svg-header-desktop {
       display: initial;
@@ -60,7 +64,6 @@
       font-weight: 600;
       font-style: normal;
       font-stretch: normal;
-      height: 60px;
       line-height: normal;
       letter-spacing: 1.5px;
       text-align: center;
@@ -68,7 +71,7 @@
 
       @include media-breakpoint-down(sm) {
         height: 0;
-        margin-top: 20px;
+        margin-bottom: 50px;
       }
     }
   }
@@ -134,7 +137,7 @@
       align-items: center;
       background-color: $gray-100;
       display: flex;
-      height: 65vh;
+      height: 75vh;
       justify-content: center;
 
       .panel-inner-text {
@@ -151,6 +154,10 @@
           font-size: 42px;
           font-weight: bold;
           line-height: 1.19;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 30px;
+          }
         }
 
         h3 {
@@ -164,6 +171,10 @@
           font-size: 16px;
           line-height: 1.78;
         }
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 95vh;
       }
     }
 
@@ -190,6 +201,10 @@
           margin-left: auto;
           margin-right: auto;
         }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
       }
 
       .behind-right {
@@ -203,6 +218,10 @@
           margin-left: auto;
           margin-right: auto;
         }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
       }
 
       .front-center {
@@ -213,6 +232,10 @@
         margin-left: auto;
         margin-right: auto;
         z-index: 1;
+
+        @include media-breakpoint-down(xs) {
+          position: relative;
+        }
       }
 
       .store-buttons {
