@@ -1,7 +1,7 @@
 import { Component, Prop, State, Listen, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
-import { translate } from '../../services/translation.service';
+// import { translate } from '../../services/translation.service';
 
 /* tslint:disable-next-line */
 import $ from 'jquery';
@@ -26,9 +26,7 @@ export class AppDetailedService {
         first: '/assets/svg/services-graphic-development1.svg',
         second: '/assets/svg/services-graphic-development2.svg',
         third: '/assets/svg/services-graphic-development3.svg',
-      },
-      exampleGraphic: '/assets/shared-graphic-loudcloud.png',
-      exampleBackground: '/assets/shared-graphic-loudcloud-pattern.png',
+      }
     },
     'app-designer': {
       header: '/assets/svg/home-graphic-process-design.svg',
@@ -36,9 +34,7 @@ export class AppDetailedService {
         first: '/assets/svg/services-graphic-design1.svg',
         second: '/assets/svg/services-graphic-design2.svg',
         third: '/assets/svg/services-graphic-design3.svg',
-      },
-      exampleGraphic: '/assets/shared-graphic-voyage.png',
-      exampleBackground: '/assets/shared-graphic-voyage-pattern.png',
+      }
     },
     'startup-consulting': {
       header: '/assets/svg/home-graphic-process-discovery.svg',
@@ -46,10 +42,16 @@ export class AppDetailedService {
         first: '/assets/svg/services-graphic-consulting1.svg',
         second: '/assets/svg/services-graphic-consulting2.svg',
         third: '/assets/svg/services-graphic-consulting3.svg',
-      },
-      exampleGraphic: '/assets/shared-graphic-juntoscope.png',
-      exampleBackground: '/assets/shared-graphic-juntoscope-pattern.png',
+      }
     },
+    'training': {
+      header: '/assets/svg/home-graphic-process-discovery.svg',
+      services: {
+        first: '/assets/svg/services-graphic-consulting1.svg',
+        second: '/assets/svg/services-graphic-consulting2.svg',
+        third: '/assets/svg/services-graphic-consulting3.svg',
+      }
+    }
   };
 
   @State() formSubmitted = false;
@@ -246,129 +248,132 @@ export class AppDetailedService {
         </header>
 
         <section id="our-services" class="our-services">
-          <div class="container text-center">
+          <div class="container">
             <div class="row header">
               <div class="col-12">
                 <h2>Our Services</h2>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-                <div class="card flex-fill">
-                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
-                  <div class="line-break" />
-                  <div class="card-body">
-                    <h3>
-                      <app-translate key={`services.${this.match.params.service}.first.title`} />
-                    </h3>
-                    <p class="card-text">
-                      <app-translate key={`services.${this.match.params.service}.first.text`} />
-                    </p>
-                  </div>
-                </div>
+            <div class="row text-sm-center text-md-left">
+              <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+                <object data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
               </div>
-              <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-                <div class="card flex-fill">
-                  <object class="card-img-top" data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
-                  <div class="line-break" />
-                  <div class="card-body">
-                    <h3>
-                      <app-translate key={`services.${this.match.params.service}.second.title`} />
-                    </h3>
-                    <p class="card-text">
-                      <app-translate key={`services.${this.match.params.service}.second.text`} />
-                    </p>
-                  </div>
-                </div>
+              <div class="col-md-9 col-sm-12">
+                <h3>
+                  <app-translate key={`services.${this.match.params.service}.first.title`} />
+                </h3>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.first.text`} />
+                </p>
               </div>
-              <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-                <div class="card flex-fill">
-                  <object class="card-img-top left-adjust" data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
-                  <div class="line-break" />
-                  <div class="card-body">
-                    <h3>
-                      <app-translate key={`services.${this.match.params.service}.third.title`} />
-                    </h3>
-                    <p class="card-text">
-                      <app-translate key={`services.${this.match.params.service}.third.text`} />
-                    </p>
-                  </div>
-                </div>
+            </div>
+            <div class="row text-sm-center text-md-right">
+              <div class="col-md-3 col-sm-12 d-flex order-md-2 justify-content-center align-items-center">
+                <object data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
+              </div>
+              <div class="col-md-9 col-sm-12 order-md-1">
+                <h3>
+                  <app-translate key={`services.${this.match.params.service}.second.title`} />
+                </h3>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.second.text`} />
+                </p>
+              </div>
+            </div>
+            <div class="row text-sm-center text-md-left">
+              <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+                <object data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
+              </div>
+              <div class="col-md-9 col-sm-12">
+                <h3>
+                  <app-translate key={`services.${this.match.params.service}.third.title`} />
+                </h3>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.third.text`} />
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="worked-with" class="worked-with">
-          <div class="container text-center">
+        <section id="our-work" class="our-work">
+          <div class="container">
             <div class="row header">
               <div class="col-12">
-                <h2>Who We've Worked With</h2>
+                <h2 class="line-title">Our Work</h2>
               </div>
             </div>
-
+          {/* Work Example */}
             <div class="row">
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-bb.png" alt="BB logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-livegistics.png" alt="Livegistics logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-yellowdig.png" alt="YellowDig logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="example" class="example">
-          <div class="main-content">
-            <div class="sidebar">
-              <div class="sidebar__inner content-panel-inner" id="content-panel-inner-detail" />
-            </div>
-            <div class="content">
-              <div
-                class="content-panel"
-                style={{
-                  'background-image': `url(${this.imgs[this.match.params.service].exampleBackground})`,
-                }}
-              >
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate(`services.${this.match.params.service}.example.title`)}</h2>
-                    <p>{translate(`services.${this.match.params.service}.example.text`)}</p>
-                  </div>
+              <div class="col-md-4 col-sm-12 example">
+                <div class="row screenshots">
+                  <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                  <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
                 </div>
-                <div class="content-panel-image">
-                  <h2>{translate(`services.${this.match.params.service}.example.name`)}</h2>
-                  <div class="row store-buttons">
-                    <div class="col-6 text-right">
-                      <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
-                        <app-img src="/assets/graphic-apple-appstore.png" alt="Apple AppStore Logo" />
-                      </a>
-                    </div>
-                    <div class="col-6 text-left">
-                      <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
-                        <app-img src="/assets/graphic-google-googleplaystore.png" alt="Google Play Store logo" />
-                      </a>
-                    </div>
-                  </div>
-                  <app-img src={this.imgs[this.match.params.service].exampleGraphic} class="phone-image" />
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>The Voyage</h3>
+                  <ul>
+                    <li>Example 1</li>
+                    <li>Example 2</li>
+                    <li>Example 3</li>
+                  </ul>
+                  <a class="active">View Case Study</a>
                 </div>
               </div>
-              <div class="content-panel last-panel" />
+              <div class="col-md-4 col-sm-12 example">
+                <div class="row screenshots">
+                  <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
+                  <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>The Vanlife App</h3>
+                  <ul>
+                    <li>Example 1</li>
+                    <li>Example 2</li>
+                    <li>Example 3</li>
+                  </ul>
+                  <a>Case Study Coming Soon!</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 example">
+                <div class="row screenshots">
+                  <img src="/assets/apps/startupwars/graphic-example-1.png" class="behind-left" alt="startup wars app screenshot" />
+                  <img src="/assets/apps/startupwars/graphic-example-2.png" class="front-center" alt="startup wars app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>Startup Wars</h3>
+                  <ul>
+                    <li>Example 1</li>
+                    <li>Example 2</li>
+                    <li>Example 3</li>
+                  </ul>
+                  <a>Case Study Coming Soon!</a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
