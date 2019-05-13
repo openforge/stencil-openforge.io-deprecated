@@ -9,6 +9,7 @@ import $ from 'jquery';
 
 declare var fbq;
 declare var bootstrap;
+declare var gtag;
 
 @Component({
   tag: 'app-home',
@@ -27,6 +28,11 @@ export class AppHome {
   @State() featuredIsLoading: boolean = true;
 
   componentWillLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+
     if (!this.isServer) {
       this.getFeaturedPost();
     }
@@ -87,18 +93,18 @@ export class AppHome {
     this.featuredIsLoading = true;
     const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
     this.butter.post
-    .list(listOptions)
-    .then(resp => {
-      if (resp.data.data.length > 0) {
-        this.featuredPost = resp.data.data[0];
+      .list(listOptions)
+      .then(resp => {
+        if (resp.data.data.length > 0) {
+          this.featuredPost = resp.data.data[0];
+          this.featuredIsLoading = false;
+        }
+      })
+      .catch(resp => {
+        console.log('resp - ', resp);
+        this.featuredIsError = true;
         this.featuredIsLoading = false;
-      }
-    })
-    .catch(resp => {
-      console.log('resp - ', resp);
-      this.featuredIsError = true;
-      this.featuredIsLoading = false;
-    });
+      });
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
@@ -132,7 +138,7 @@ export class AppHome {
                 </h2>
                 <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
                 <object data="/assets/svg/home-graphic-header-mobile.svg" class="svg-header-mobile" aria-label="header" />
-                </div>
+              </div>
             </div>
           </div>
         </header>

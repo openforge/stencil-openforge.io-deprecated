@@ -1,10 +1,18 @@
 import { Component } from '@stencil/core';
+declare var gtag;
 
 @Component({
   tag: 'app-404',
   styleUrl: 'app-404.scss',
 })
 export class App404 {
+  componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+  }
+
   render() {
     return (
       <div class="no-page">
