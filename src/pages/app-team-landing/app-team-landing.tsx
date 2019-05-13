@@ -14,6 +14,26 @@ export class AppTeamLanding {
 
   @State() chips;
   data = {
+    'jedi-weller': {
+      firstname: 'Jedidiah',
+      surname: 'Weller',
+      title: translate('about.team.member.title.founder'),
+      headerText:
+        'Jedi (Jedidiah) Weller is a speaker, community leader, and developer who advocates for the for the empowerment of businesses through technology. Jedi has been pioneering new ways of designing digital solutions and integrating cross-disciplinary teams.',
+      bodyText:
+        'As Ceo, Jedi provides his team with the energy and means to come in everyday and produce industry leading service. His vision powers OpenForge to push to be leaders in mobile experience.',
+      skills: ['Leadership', 'Consulting', 'Networking', 'Sales', 'Email Marketing'],
+      team: 'management',
+      backgroundPhoto: '/assets/bios-background-jedi.jpg',
+      metatags: {
+        title: 'Jedidiah Weller - Founder and Head of Technology | OpenForge',
+        description:
+          'As Ceo, Jedi provides his team with the energy and means to come in everyday and produce industry leading service. His vision powers OpenForge to push to be leaders in mobile experience.',
+        keywords: 'Jedidiah Weller, founder',
+        url: 'https://openforge.io/about/jedi-weller/',
+        image: 'https://openforge.io/assets/bios-background-jedi.jpg',
+      },
+    },
     'rachel-bennett': {
       firstname: 'Rachel',
       surname: 'Bennett',
@@ -42,7 +62,7 @@ export class AppTeamLanding {
         'Geoffrey grew up in the suburbs of Philadelphia and started his college career pursuing engineering at Drexel University. He formed a new found love for the marketing field though graduating Summa Cum Laude with a Marketing and Business Management degree from West Chester University.',
       bodyText:
         'As Project Manager, Geoffrey ensures that our team and your team have the resources and requirements needed to launch your product successfully.  Additionally, Geoffrey takes part in tackles marketing and sales objectives for OpenForge with his experience in digital marketing.',
-      skills: ['Email Marketing', 'SEO', 'Networking', 'Digital Markting Analysis', 'Dog Whispering'],
+      skills: ['Email Marketing', 'SEO', 'Networking', 'Digital Marketing Analysis', 'Professional Scrum Master 1', 'Dog Whispering'],
       team: 'management',
       backgroundPhoto: '/assets/bios-background-geoff.jpg',
       metatags: {
