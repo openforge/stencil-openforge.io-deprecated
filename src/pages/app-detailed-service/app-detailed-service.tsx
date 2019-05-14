@@ -1,10 +1,7 @@
-import { Component, Prop, State, Listen, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
 // import { translate } from '../../services/translation.service';
-
-/* tslint:disable-next-line */
-import $ from 'jquery';
 
 declare var fbq;
 
@@ -21,68 +18,46 @@ export class AppDetailedService {
   @State()
   imgs = {
     'app-developer': {
-      header: '/assets/svg/services-graphic-development-header.svg',
+      header: '/assets/services/app-developer/header.png',
       services: {
-        first: '/assets/svg/services-graphic-development1.svg',
-        second: '/assets/svg/services-graphic-development2.svg',
-        third: '/assets/svg/services-graphic-development3.svg',
+        first: '/assets/services/app-developer/graphic-1.png',
+        second: '/assets/services/app-developer/graphic-2.png',
+        third: '/assets/services/app-developer/graphic-3.png',
       }
     },
     'app-designer': {
-      header: '/assets/svg/home-graphic-process-design.svg',
+      header: '/assets/services/app-designer/header.png',
       services: {
-        first: '/assets/svg/services-graphic-design1.svg',
-        second: '/assets/svg/services-graphic-design2.svg',
-        third: '/assets/svg/services-graphic-design3.svg',
+        first: '/assets/services/app-designer/graphic-1.png',
+        second: '/assets/services/app-designer/graphic-2.png',
+        third: '/assets/services/app-designer/graphic-3.png',
       }
     },
     'startup-consulting': {
-      header: '/assets/svg/home-graphic-process-discovery.svg',
+      header: '/assets/services/startup-consulting/header.png',
       services: {
-        first: '/assets/svg/services-graphic-consulting1.svg',
-        second: '/assets/svg/services-graphic-consulting2.svg',
-        third: '/assets/svg/services-graphic-consulting3.svg',
+        first: '/assets/services/startup-consulting/graphic-1.png',
+        second: '/assets/services/startup-consulting/graphic-2.png',
+        third: '/assets/services/startup-consulting/graphic-3.png',
       }
     },
     'training': {
-      header: '/assets/svg/home-graphic-process-discovery.svg',
+      header: '/assets/services/training/header.png',
       services: {
-        first: '/assets/svg/services-graphic-consulting1.svg',
-        second: '/assets/svg/services-graphic-consulting2.svg',
-        third: '/assets/svg/services-graphic-consulting3.svg',
+        first: '/assets/services/training/graphic-1.png',
+        second: '/assets/services/training/graphic-2.png',
+        third: '/assets/services/training/graphic-3.png',
+      },
+      work: {
+        ourwork: '/assets/services/training/work-photo.png'
       }
     }
   };
 
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
-  @State()
-  formValues: {
-    name: '';
-    email: '';
-    message: '';
-
-    nameValid: false;
-    emailValid: false;
-    messageValid: false;
-  };
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() messageError: string;
-  @State() isDisabled = true;
-
-  @Listen('valueChange')
-  valueChangeHandler(event) {
-    const { field, value, target } = event.detail;
-
-    this.formValues[field] = value;
-
-    this.validateField(target);
-  }
-
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
+    this.loadSections();
   }
 
   componentWillLoad() {
@@ -97,99 +72,25 @@ export class AppDetailedService {
     if (!this.isServer) {
       fbq('track', 'ViewContent');
     }
-    this.resetFormValues();
 
     this.changeMetadata();
-
-    /* tslint:disable-next-line */
-    $(window).on('scroll resize', function() {
-      if ($('#content-panel-inner-detail') && $('#content-panel-inner-detail').offset()) {
-        const pos = $('#content-panel-inner-detail').offset().top + $('#content-panel-inner-detail').height();
-        let done = false;
-        $('.content-panel').each(function() {
-          if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
-            const newDescr = $(this)
-              .find('.description')
-              .html();
-
-            $('#content-panel-inner-detail').html(newDescr);
-
-            done = true;
-          }
-        });
-
-        if (
-          $('#content-panel-inner-detail').offset().top ===
-          $('.content-panel')
-            .first()
-            .offset().top
-        ) {
-          const newDescr = $('.content-panel')
-            .first()
-            .find('.description')
-            .html();
-
-          $('#content-panel-inner-detail').html(newDescr);
-        }
-      }
-    });
+    this.loadSections();
   }
 
-  validateField(e) {
-    switch (e.name) {
-      case 'name':
-        this.formValues.nameValid = e.checkValidity();
-        this.nameError = this.formValues.nameValid ? '' : (this.nameError = e.validationMessage);
-        break;
+  loadSections() {
+    const work = document.getElementById('our-work');
+    const seminars = document.getElementById('our-seminars');
 
-      case 'email':
-        this.formValues.emailValid = e.checkValidity();
-        this.emailError = this.formValues.emailValid ? '' : (this.emailError = e.validationMessage);
-        break;
+    if(this.match.params.service != 'training') {
+      console.log('this is it!');
 
-      case 'message':
-        this.formValues.messageValid = e.checkValidity();
-        this.messageError = this.formValues.messageValid ? '' : (this.messageError = e.validationMessage);
-        break;
+      work.style.setProperty('display', 'initial');
+      seminars.style.setProperty('display', 'none');
+    } else {
+      console.log('this is else')
+      work.style.setProperty('display', 'none');
+      seminars.style.setProperty('display', 'initial');
     }
-
-    this.formValues.nameValid && this.formValues.emailValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
-  }
-
-  async handleSubmit(event) {
-    event.preventDefault();
-
-    try {
-      this.formSubmitting = true;
-      this.isDisabled = true;
-
-      await fetch('https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs', {
-        method: 'post',
-        mode: 'no-cors',
-        headers: {
-          'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-        },
-        body: JSON.stringify(this.formValues),
-      });
-
-      event.target.reset();
-      this.resetFormValues();
-
-      this.isDisabled = false;
-      this.formSubmitting = false;
-      this.formSubmitted = true;
-
-      const form = document.getElementById('second-content');
-      form.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    } catch (error) {
-      console.log('Error', error);
-    }
-  }
-
-  scrollToForm() {
-    const form = document.getElementById('second-content');
-
-    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   changeMetadata() {
@@ -240,7 +141,7 @@ export class AppDetailedService {
                 </p>
               </div>
               <div class="col-sm-12 col-md-6 align-self-center">
-                <app-img src={this.imgs[this.match.params.service].header} alt="Animated Header Graphic" />
+                <img src={this.imgs[this.match.params.service].header} alt="Header Graphic" />
               </div>
             </div>
             <div class="line-break" />
@@ -256,9 +157,9 @@ export class AppDetailedService {
             </div>
             <div class="row text-sm-center text-md-left">
               <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
-                <object data={this.imgs[this.match.params.service].services.first} height="200" width="200" />
+                <object data={this.imgs[this.match.params.service].services.first} height="250" width="250" />
               </div>
-              <div class="col-md-9 col-sm-12">
+              <div class="col-md-9 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
                   <app-translate key={`services.${this.match.params.service}.first.title`} />
                 </h3>
@@ -269,9 +170,9 @@ export class AppDetailedService {
             </div>
             <div class="row text-sm-center text-md-right">
               <div class="col-md-3 col-sm-12 d-flex order-md-2 justify-content-center align-items-center">
-                <object data={this.imgs[this.match.params.service].services.second} height="200" width="200" />
+                <object data={this.imgs[this.match.params.service].services.second} height="250" width="250" />
               </div>
-              <div class="col-md-9 col-sm-12 order-md-1">
+              <div class="col-md-9 col-sm-12 order-md-1 d-flex flex-column align-self-center">
                 <h3>
                   <app-translate key={`services.${this.match.params.service}.second.title`} />
                 </h3>
@@ -282,9 +183,9 @@ export class AppDetailedService {
             </div>
             <div class="row text-sm-center text-md-left">
               <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
-                <object data={this.imgs[this.match.params.service].services.third} height="200" width="200" />
+                <object data={this.imgs[this.match.params.service].services.third} height="250" width="250" />
               </div>
-              <div class="col-md-9 col-sm-12">
+              <div class="col-md-9 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
                   <app-translate key={`services.${this.match.params.service}.third.title`} />
                 </h3>
@@ -296,7 +197,7 @@ export class AppDetailedService {
           </div>
         </section>
 
-        <section id="our-work" class="our-work">
+        <section class="our-work" id="our-work">
           <div class="container">
             <div class="row header">
               <div class="col-12">
@@ -378,20 +279,38 @@ export class AppDetailedService {
           </div>
         </section>
 
+        <section class="our-seminars" id="our-seminars">
+          <div class="container">
+            <div class="row header">
+              <div class="col-12">
+                <h2 class="line-title">Learn About Our Seminars</h2>
+              </div>
+            </div>
+            <div class="row text-xs-center text-sm-center text-md-left">
+              <div class="col-md-6 col-sm-12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut est quis nibh fermentum venenatis. 
+                  Ut rutrum ante quis felis accumsan sollicitudin. Integer posuere congue eros, eu rutrum elit rhoncus sit amet. 
+                  Donec varius faucibus urna, a cursus dui mattis ut. Ut iaculis dictum odio, id pretium mauris cursus eget. 
+                  Quisque ut mi eros. Mauris sit amet lectus id urna elementum feugiat sit amet eu lacus. 
+                  Vivamus sodales hendrerit placerat. Mauris tincidunt, urna lacinia vulputate dictum, nulla eros lacinia purus, 
+                  at faucibus justo nibh sed erat. Nulla tristique semper magna ac malesuada. Pellentesque habitant morbi tristique senectus 
+                  et netus et malesuada fames ac turpis egestas. Mauris ac faucibus leo. Aenean congue odio vehicula, molestie ligula tincidunt, 
+                  efficitur est.
+                </p>
+                <button>
+                  Join Our Mailing List
+                </button>
+              </div>
+              <div class="col-md-6 col-sm-12 d-flex align-self-center">
+                <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo"/>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <app-cta />
         <app-footer />
       </div>
     );
-  }
-
-  private resetFormValues() {
-    this.formValues = {
-      name: '',
-      email: '',
-      message: '',
-      nameValid: false,
-      emailValid: false,
-      messageValid: false,
-    };
   }
 }
