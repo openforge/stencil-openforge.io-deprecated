@@ -3,7 +3,7 @@ export const translations = {
     home: {
       hero: {
         title: 'Mobile Solutions',
-        subTitle: 'For A Digital World'
+        subTitle: 'For A Digital World',
       },
       process: {
         title: 'Our Process',
@@ -152,6 +152,33 @@ export const translations = {
     },
 
     services: {
+      landing: {
+        hero: {
+          title: 'Our Services',
+          text:
+            'From concept to launch, we provide services to support you every step of the way. Whether you have an existing product or just an idea, we’re here to help you achieve your goals and then some. As experts in mobile technology, we will guide you through our proven process to deliver your vision.',
+        },
+        'technology-consulting': {
+          title: 'Technology Consulting',
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        'webapp-development': {
+          title: 'Web App Development',
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        'digital-experience-design': {
+          title: 'Digital Experience Design',
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        'process-training-support': {
+          title: 'Process Training & Support',
+          text:
+            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. We’ll help you understand what you’re paying for and how to use it. From your operations to your bottom line, we can work with you to ensure that each of your team members produce results that match your projections.',
+        },
+      },
       'app-developer': {
         hero: {
           title: 'Your Go-To App Developer',
