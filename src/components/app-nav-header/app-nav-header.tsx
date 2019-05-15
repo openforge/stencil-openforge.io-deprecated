@@ -62,7 +62,7 @@ export class AppNavHeader {
                     Development
                   </stencil-route-link>
                   <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
-                    UX/UI Design
+                    Design
                   </stencil-route-link>
                   <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
                     Consulting
