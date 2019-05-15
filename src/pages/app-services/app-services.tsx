@@ -38,6 +38,7 @@ export class AppServices {
         {/* header - hero */}
         <header class="hero">
           <div class="container desktop">
+            <object data="/assets/svg/services-graphic-background.svg" class="services-graphic-background" aria-label="header" />
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <h1>
