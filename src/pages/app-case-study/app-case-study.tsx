@@ -5,7 +5,7 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToTop() {
     const form = document.getElementsByTagName('header')[0];
@@ -28,7 +28,7 @@ export class AppCaseStudy {
   render() {
     return (
       <div class="case-study">
-        <header class={this.className}>
+        <header class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div style={{ margin: 'auto' }}>

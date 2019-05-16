@@ -5,7 +5,7 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-toolbox.scss',
 })
 export class AppToolbox {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToForm() {
     const form = document.getElementById('second-content');
@@ -29,7 +29,7 @@ export class AppToolbox {
     return (
       <div class="toolbox">
         {/* header - hero */}
-        <header class={this.className}>
+        <header class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-9 col-md-8 col-lg-9">

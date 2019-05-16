@@ -7,7 +7,7 @@ import { MatchResults, RouterHistory } from '@stencil/router';
   styleUrl: 'app-resources.scss',
 })
 export class AppResources {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   @State() formSubmitted = false;
   @State() formSubmitting = false;
@@ -141,7 +141,7 @@ export class AppResources {
       <div id="top" class="resources">
         {/* header - hero */}
         {!this.formSubmitted ? (
-          <header class={this.className}>
+          <header class="hero">
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">

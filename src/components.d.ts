@@ -10,6 +10,9 @@ import '@stencil/core';
 import '@stencil/router';
 import '@stencil/state-tunnel';
 import {
+  BlogPost,
+} from './model/blog-post.model';
+import {
   EventEmitter,
 } from '@stencil/core';
 import {
@@ -19,6 +22,27 @@ import {
 
 
 export namespace Components {
+
+  interface AppBlogCard {
+    'blogPost': BlogPost;
+  }
+  interface AppBlogCardAttributes extends StencilHTMLAttributes {
+    'blogPost'?: BlogPost;
+  }
+
+  interface AppBlogContent {
+    'blogPost': BlogPost;
+  }
+  interface AppBlogContentAttributes extends StencilHTMLAttributes {
+    'blogPost'?: BlogPost;
+  }
+
+  interface AppBlogFeatured {
+    'blogPost': BlogPost;
+  }
+  interface AppBlogFeaturedAttributes extends StencilHTMLAttributes {
+    'blogPost'?: BlogPost;
+  }
 
   interface AppCarouselIndicators {
     'activeIndex': string;
@@ -158,6 +182,33 @@ export namespace Components {
   interface AppAbout {}
   interface AppAboutAttributes extends StencilHTMLAttributes {}
 
+  interface AppBlogIndex {
+    'butter': any;
+  }
+  interface AppBlogIndexAttributes extends StencilHTMLAttributes {
+    'butter'?: any;
+  }
+
+  interface AppBlogPost {
+    'butter': any;
+    'history': RouterHistory;
+    'match': MatchResults;
+    'preRenderBlogPost': BlogPost;
+  }
+  interface AppBlogPostAttributes extends StencilHTMLAttributes {
+    'butter'?: any;
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+    'preRenderBlogPost'?: BlogPost;
+  }
+
+  interface AppBlog {
+    'butter': any;
+  }
+  interface AppBlogAttributes extends StencilHTMLAttributes {
+    'butter'?: any;
+  }
+
   interface AppCaseStudy {}
   interface AppCaseStudyAttributes extends StencilHTMLAttributes {}
 
@@ -178,9 +229,11 @@ export namespace Components {
   }
 
   interface AppHome {
+    'butter': any;
     'history': RouterHistory;
   }
   interface AppHomeAttributes extends StencilHTMLAttributes {
+    'butter'?: any;
     'history'?: RouterHistory;
   }
 
@@ -200,6 +253,7 @@ export namespace Components {
     'history': RouterHistory;
     'match': MatchResults;
   }
+  
   interface AppResourcesAttributes extends StencilHTMLAttributes {
     'errorIconStyles'?: any;
     'history'?: RouterHistory;
@@ -208,6 +262,9 @@ export namespace Components {
 
   interface AppServiceLevelAgreement {}
   interface AppServiceLevelAgreementAttributes extends StencilHTMLAttributes {}
+
+  interface AppServices {}
+  interface AppServicesAttributes extends StencilHTMLAttributes {}
 
   interface AppTeamLanding {
     'history': RouterHistory;
@@ -230,6 +287,9 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'AppBlogCard': Components.AppBlogCard;
+    'AppBlogContent': Components.AppBlogContent;
+    'AppBlogFeatured': Components.AppBlogFeatured;
     'AppCarouselIndicators': Components.AppCarouselIndicators;
     'AppCta': Components.AppCta;
     'AppFooter': Components.AppFooter;
@@ -245,6 +305,9 @@ declare global {
     'ContentGraphic': Components.ContentGraphic;
     'App404': Components.App404;
     'AppAbout': Components.AppAbout;
+    'AppBlogIndex': Components.AppBlogIndex;
+    'AppBlogPost': Components.AppBlogPost;
+    'AppBlog': Components.AppBlog;
     'AppCaseStudy': Components.AppCaseStudy;
     'AppContact': Components.AppContact;
     'AppDetailedService': Components.AppDetailedService;
@@ -252,6 +315,7 @@ declare global {
     'AppOpportunities': Components.AppOpportunities;
     'AppResources': Components.AppResources;
     'AppServiceLevelAgreement': Components.AppServiceLevelAgreement;
+    'AppServices': Components.AppServices;
     'AppTeamLanding': Components.AppTeamLanding;
     'AppToolbox': Components.AppToolbox;
     'AppTos': Components.AppTos;
@@ -259,6 +323,9 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'app-blog-card': Components.AppBlogCardAttributes;
+    'app-blog-content': Components.AppBlogContentAttributes;
+    'app-blog-featured': Components.AppBlogFeaturedAttributes;
     'app-carousel-indicators': Components.AppCarouselIndicatorsAttributes;
     'app-cta': Components.AppCtaAttributes;
     'app-footer': Components.AppFooterAttributes;
@@ -274,6 +341,10 @@ declare global {
     'content-graphic': Components.ContentGraphicAttributes;
     'app-404': Components.App404Attributes;
     'app-about': Components.AppAboutAttributes;
+
+    'app-blog-index': Components.AppBlogIndexAttributes;
+    'app-blog-post': Components.AppBlogPostAttributes;
+    'app-blog': Components.AppBlogAttributes;
     'app-case-study': Components.AppCaseStudyAttributes;
     'app-contact': Components.AppContactAttributes;
     'app-detailed-service': Components.AppDetailedServiceAttributes;
@@ -281,12 +352,33 @@ declare global {
     'app-opportunities': Components.AppOpportunitiesAttributes;
     'app-resources': Components.AppResourcesAttributes;
     'app-service-level-agreement': Components.AppServiceLevelAgreementAttributes;
+
+    'app-services': Components.AppServicesAttributes;
     'app-team-landing': Components.AppTeamLandingAttributes;
     'app-toolbox': Components.AppToolboxAttributes;
     'app-tos': Components.AppTosAttributes;
     'open-forge-app': Components.OpenForgeAppAttributes;
   }
 
+
+
+  interface HTMLAppBlogCardElement extends Components.AppBlogCard, HTMLStencilElement {}
+  var HTMLAppBlogCardElement: {
+    prototype: HTMLAppBlogCardElement;
+    new (): HTMLAppBlogCardElement;
+  };
+
+  interface HTMLAppBlogContentElement extends Components.AppBlogContent, HTMLStencilElement {}
+  var HTMLAppBlogContentElement: {
+    prototype: HTMLAppBlogContentElement;
+    new (): HTMLAppBlogContentElement;
+  };
+
+  interface HTMLAppBlogFeaturedElement extends Components.AppBlogFeatured, HTMLStencilElement {}
+  var HTMLAppBlogFeaturedElement: {
+    prototype: HTMLAppBlogFeaturedElement;
+    new (): HTMLAppBlogFeaturedElement;
+  };
 
   interface HTMLAppCarouselIndicatorsElement extends Components.AppCarouselIndicators, HTMLStencilElement {}
   var HTMLAppCarouselIndicatorsElement: {
@@ -378,6 +470,24 @@ declare global {
     new (): HTMLAppAboutElement;
   };
 
+  interface HTMLAppBlogIndexElement extends Components.AppBlogIndex, HTMLStencilElement {}
+  var HTMLAppBlogIndexElement: {
+    prototype: HTMLAppBlogIndexElement;
+    new (): HTMLAppBlogIndexElement;
+  };
+
+  interface HTMLAppBlogPostElement extends Components.AppBlogPost, HTMLStencilElement {}
+  var HTMLAppBlogPostElement: {
+    prototype: HTMLAppBlogPostElement;
+    new (): HTMLAppBlogPostElement;
+  };
+
+  interface HTMLAppBlogElement extends Components.AppBlog, HTMLStencilElement {}
+  var HTMLAppBlogElement: {
+    prototype: HTMLAppBlogElement;
+    new (): HTMLAppBlogElement;
+  };
+
   interface HTMLAppCaseStudyElement extends Components.AppCaseStudy, HTMLStencilElement {}
   var HTMLAppCaseStudyElement: {
     prototype: HTMLAppCaseStudyElement;
@@ -420,6 +530,13 @@ declare global {
     new (): HTMLAppServiceLevelAgreementElement;
   };
 
+
+  interface HTMLAppServicesElement extends Components.AppServices, HTMLStencilElement {}
+  var HTMLAppServicesElement: {
+    prototype: HTMLAppServicesElement;
+    new (): HTMLAppServicesElement;
+  };
+
   interface HTMLAppTeamLandingElement extends Components.AppTeamLanding, HTMLStencilElement {}
   var HTMLAppTeamLandingElement: {
     prototype: HTMLAppTeamLandingElement;
@@ -445,6 +562,9 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'app-blog-card': HTMLAppBlogCardElement
+    'app-blog-content': HTMLAppBlogContentElement
+    'app-blog-featured': HTMLAppBlogFeaturedElement
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement
     'app-cta': HTMLAppCtaElement
     'app-footer': HTMLAppFooterElement
@@ -460,6 +580,9 @@ declare global {
     'content-graphic': HTMLContentGraphicElement
     'app-404': HTMLApp404Element
     'app-about': HTMLAppAboutElement
+    'app-blog-index': HTMLAppBlogIndexElement
+    'app-blog-post': HTMLAppBlogPostElement
+    'app-blog': HTMLAppBlogElement
     'app-case-study': HTMLAppCaseStudyElement
     'app-contact': HTMLAppContactElement
     'app-detailed-service': HTMLAppDetailedServiceElement
@@ -467,6 +590,7 @@ declare global {
     'app-opportunities': HTMLAppOpportunitiesElement
     'app-resources': HTMLAppResourcesElement
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement
+    'app-services': HTMLAppServicesElement
     'app-team-landing': HTMLAppTeamLandingElement
     'app-toolbox': HTMLAppToolboxElement
     'app-tos': HTMLAppTosElement
@@ -474,6 +598,9 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'app-blog-card': HTMLAppBlogCardElement;
+    'app-blog-content': HTMLAppBlogContentElement;
+    'app-blog-featured': HTMLAppBlogFeaturedElement;
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
     'app-cta': HTMLAppCtaElement;
     'app-footer': HTMLAppFooterElement;
@@ -489,6 +616,9 @@ declare global {
     'content-graphic': HTMLContentGraphicElement;
     'app-404': HTMLApp404Element;
     'app-about': HTMLAppAboutElement;
+    'app-blog-index': HTMLAppBlogIndexElement;
+    'app-blog-post': HTMLAppBlogPostElement;
+    'app-blog': HTMLAppBlogElement;
     'app-case-study': HTMLAppCaseStudyElement;
     'app-contact': HTMLAppContactElement;
     'app-detailed-service': HTMLAppDetailedServiceElement;
@@ -496,6 +626,7 @@ declare global {
     'app-opportunities': HTMLAppOpportunitiesElement;
     'app-resources': HTMLAppResourcesElement;
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+    'app-services': HTMLAppServicesElement;
     'app-team-landing': HTMLAppTeamLandingElement;
     'app-toolbox': HTMLAppToolboxElement;
     'app-tos': HTMLAppTosElement;

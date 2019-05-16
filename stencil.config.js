@@ -1,7 +1,12 @@
 var sass = require('@stencil/sass');
+var builtins = require('rollup-plugin-node-builtins');
+var globals = require('rollup-plugin-node-globals');
 exports.config = {
+  nodeResolve: { browser: true, preferBuiltins: false },
   enableCache: false,
   plugins: [
+    builtins(),
+    globals(),
     sass({
       injectGlobalPaths: [
         'src/styles/_variables.scss',
