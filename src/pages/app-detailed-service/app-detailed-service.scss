@@ -15,179 +15,138 @@
       height: auto;
       padding-bottom: 2rem;
     }
+
+    .line-break {
+      border-bottom: 1px solid $gray-800;
+    }
+  
   }
 
   .our-services,
-  .worked-with {
-    padding: 5rem 0;
+  .our-work,
+  .our-seminars {
 
     .header {
-      margin: 0 auto 3rem;
+      margin: 4rem auto 4rem;
       max-width: 768px;
+      text-align: center;
+    }
+
+    .line-title {
+      display: block;
+      position: relative;
+      
+      &:before, &:after {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        background: gray;
+        width: 50%;        
+        position: relative; 
+        vertical-align: middle;
+      }  
+      &:before {
+        left: -0.5em; 
+        margin-left: -50%;    
+      }
+      &:after {      
+        right: -0.5em;  
+        margin-right: -50%;
+      }
     }
   }
 
   .our-services {
+    h3 {
+      color: $orange-dark;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  .our-work {
     .container {
       max-width: 960px;
     }
 
-    .card {
-      background: rgba($gray-100, 0.5);
-      border-radius: 22px;
-      max-width: 290px;
+    .example {
+      position: relative;
+      margin-bottom: 5rem;
 
-      @include media-breakpoint-down(sm) {
-        margin-bottom: 2rem;
-      }
-
-      h3 {
-        color: $orange-dark;
-      }
-
-      .card-img-top {
-        margin: 2rem 0;
-        padding: 1rem;
-      }
-
-      .card-body {
-        text-align: left;
-
-        @include media-breakpoint-down(sm) {
-          text-align: center;
-        }
-      }
-
-      .line-break {
-        margin: 0 2rem;
-      }
-    }
-  }
-
-  .worked-with {
-    app-img {
-      img {
-        padding: 2rem;
-
-        @include media-breakpoint-down(sm) {
-          padding: 2rem 6.5rem;
-        }
-      }
-    }
-  }
-
-  .example {
-    height: auto;
-
-    .main-content {
-      background-color: $gray-100;
-      display: flex;
-
-      @include media-breakpoint-down(sm) {
-        display: block;
-      }
-    }
-
-    .sidebar {
-      width: 50%;
-      @include media-breakpoint-down(sm) {
-        display: none;
-      }
-    }
-
-    .content {
-      width: 50%;
-
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-      }
-
-      .content-panel {
-        align-items: flex-end;
-        display: flex;
-        height: auto;
+      .screenshots {
         justify-content: center;
-        text-align: center;
-
-        @include media-breakpoint-down(sm) {
-          display: table;
-        }
       }
 
-      .last-panel {
-        height: 0;
+      .behind-left {
+        position: relative;
+        height: 350px;
+        right: 50px;
+        top: -30px;
       }
-    }
 
-    .content-panel-inner {
-      align-items: center;
-      background-color: $gray-100;
-      display: flex;
-      height: 655px;
-      justify-content: center;
-
-      .panel-inner-text {
-        margin: 0 4rem;
-        text-align: left;
-
-        @include media-breakpoint-down(sm) {
-          margin: 0 1rem;
-          text-align: center;
-        }
-
-        h2 {
-          color: $orange-dark;
-          font-size: 42px;
-          font-weight: bold;
-          line-height: 1.19;
-        }
-
-        p {
-          color: $gray-dark;
-          font-size: 18px;
-          line-height: 1.78;
-        }
-      }
-    }
-
-    .content-panel-image {
-      h2 {
-        color: white;
-        font-size: 40px;
-        font-weight: bold;
-        padding: 16px;
-        text-align: center;
-        margin-top: 2rem;
+      .front-center {
+        position: absolute;
+        height: 350px;
+        left: 45px;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
       }
 
       .store-buttons {
-        padding: 0 0 60px 0;
-        @include media-breakpoint-down(sm) {
-          padding: 0 0 40px 0;
-        }
-      }
-
-      .phone-image {
-        img {
-          height: 440px;
-
-          @include media-breakpoint-down(sm) {
-            height: auto;
-          }
-        }
-      }
-    }
-
-    .description {
-      display: none;
-
-      @include media-breakpoint-down(sm) {
         display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+
+        a {
+          margin: 0 10px;
+        }
+      }
+
+      .information {
+        display: flex;
+        flex-direction: column;
+
+        h3, a {
+          text-align: center;
+        }
+
+        .active {
+          color: #0095aa;
+          text-decoration: underline;
+        }
       }
     }
+
   }
 
-  .line-break {
-    border-bottom: 1px solid $gray-800;
+  .our-seminars {
+    .container {
+      margin-bottom: 5rem;
+    }
+
+    button {
+      background-color: #ec9b41;
+      border: solid 0.8px white;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      color: $gray-dark;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: 1.3px;
+      height: auto;
+      line-height: 1.82;
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      width: auto;
+    }
   }
 }

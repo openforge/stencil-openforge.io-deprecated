@@ -53,19 +53,25 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
-              <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item dropdown split" data-target="#navbarSupportedContent">
+                <stencil-route-link anchorClass="nav-link main" url="/services" role="button" activeClass="active">
                   Services
+                </stencil-route-link>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
                     Development
                   </stencil-route-link>
                   <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
-                    UX/UI Design
+                    Design
                   </stencil-route-link>
                   <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
                     Consulting
+                  </stencil-route-link>
+                  <stencil-route-link url="/services/training" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Training
                   </stencil-route-link>
                 </div>
               </li>
