@@ -1,0 +1,84 @@
+.blog-featured {
+
+  .container {
+    min-width: 90%;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  .featured-title {
+    h2 {
+      color: $gray-dark;
+      margin-bottom: 2rem;
+    }
+
+    h4 {
+      @include media-breakpoint-down(sm) {
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  .featured-image {
+    border-collapse: separate;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    img {
+      height: 75%;
+      width: 75%;
+
+      @include media-breakpoint-up(sm) {
+        border-radius: 15px;
+        margin-top: 2rem;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .summary {
+    margin-top: 25px;
+  }
+
+  p {
+    margin: 25px 0;
+    font-size: 12px;
+  }
+
+  .author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .profile-image {
+      height: 75px;
+      width: 75px;
+      object-fit: cover;
+      margin-right: 15px;
+      border-radius: 50%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 20px;
+      justify-content: center;
+    }
+  }
+
+  .btn {
+    &:after {
+      content: "Read More";
+    }    
+    
+    @include media-breakpoint-down(sm) {
+      position: relative;
+
+      &:after {
+        content: "See What's Inside";
+      }
+    }
+  }
+}

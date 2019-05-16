@@ -43,7 +43,6 @@ export class LazyImg {
   }
 
   handleImage() {
-    console.log('a');
     const image = this.image;
     image.setAttribute('src', this.src || '');
     image.onload = () => {

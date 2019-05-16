@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, State, Prop, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
 
@@ -7,7 +7,7 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
+  // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
@@ -310,10 +310,10 @@ export class AppTeamLanding {
   }
 
   changeImageFormat(img: string) {
-    if (img && this.allowWebp) {
-      const idx = img.lastIndexOf('.');
-      return `${img.substring(0, idx)}.webp`;
-    }
+    // if (img && this.allowWebp) {
+    //   const idx = img.lastIndexOf('.');
+    //   return `${img.substring(0, idx)}.webp`;
+    // }
     return img;
   }
 
