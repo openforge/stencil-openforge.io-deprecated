@@ -13,6 +13,10 @@
     height: auto;
     margin-top: 115px;
 
+    @include media-breakpoint-down(sm) {
+      margin-top: 83px;
+    }
+
     .desktop {
       display: initial;
 
@@ -64,7 +68,7 @@
 
       h1 {
         font-size: 32px;
-        font-weight: 600;
+        font-weight: bold;
         font-style: normal;
         font-stretch: normal;
         line-height: normal;
@@ -114,19 +118,34 @@
 
       .img-col {
         text-align: center;
+
+        @include media-breakpoint-down(sm) {
+          padding: 41px 41px 0 41px;
+        }
+
+        app-img {
+          height: 100%;
+          lazy-img {
+            height: 100%;
+            display: inline-block;
+          }
+        }
         img {
           max-height: 360px;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
         }
       }
 
       .desktop {
         display: initial;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
           display: initial;
         }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(lg) {
           display: none;
         }
       }
@@ -134,11 +153,11 @@
       .mobile {
         display: none;
 
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
           display: none;
         }
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(lg) {
           display: initial;
         }
       }
@@ -158,6 +177,7 @@
         font-weight: bold;
         letter-spacing: 2px;
         color: #0095aa;
+        text-decoration: underline;
       }
 
       p {
@@ -193,9 +213,45 @@
   }
 
   .worked-with {
+    .align-right {
+      text-align: right;
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+    }
+
+    .align-left {
+      text-align: left;
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+    }
+
     app-img {
+      height: 100%;
+      lazy-img {
+        height: 100%;
+        display: inline-block;
+      }
+
+      &.no-pad {
+        img {
+          padding: 2rem 0;
+        }
+      }
+
+      &.pad {
+        img {
+          padding: 2rem 2rem;
+        }
+      }
+
       img {
         padding: 2rem;
+        max-height: 360px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
 
         @include media-breakpoint-down(sm) {
           padding: 2rem 6.5rem;

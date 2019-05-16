@@ -76,67 +76,67 @@ export class AppServices {
 
         <section id="our-services" class="our-services">
           <div class="row card flex-fill">
-            <div class="col-md-6 col-sm-12 img-col">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col">
               <app-img class="img-fluid" src="/assets/services/startup-consulting/header.png" alt="Startup Consulting" />
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
                 <app-translate key="services.landing.technology-consulting.title" />
               </h3>
               <p>
                 <app-translate key="services.landing.technology-consulting.text" />
               </p>
-              <stencil-route-link url="/services/startup-consulting">See All</stencil-route-link>
+              <stencil-route-link url="/services/startup-consulting">See More</stencil-route-link>
             </div>
           </div>
 
           <div class="row card flex-fill">
-            <div class="col-md-6 col-sm-12 img-col mobile">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col mobile">
               <app-img class="img-fluid" src="/assets/services/app-developer/header.png" alt="Web App Development" />
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
                 <app-translate key="services.landing.webapp-development.title" />
               </h3>
               <p>
                 <app-translate key="services.landing.webapp-development.text" />
               </p>
-              <stencil-route-link url="/services/app-developer">See All</stencil-route-link>
+              <stencil-route-link url="/services/app-developer">See More</stencil-route-link>
             </div>
-            <div class="col-md-6 col-sm-12 img-col desktop">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col desktop">
               <app-img class="img-fluid" src="/assets/services/app-developer/header.png" alt="Web App Development" />
             </div>
           </div>
 
           <div class="row card flex-fill">
-            <div class="col-md-6 col-sm-12 img-col">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col">
               <app-img class="img-fluid" src="/assets/services/app-designer/header.png" alt="Digital Experience Design" />
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
                 <app-translate key="services.landing.digital-experience-design.title" />
               </h3>
               <p>
                 <app-translate key="services.landing.digital-experience-design.text" />
               </p>
-              <stencil-route-link url="/services/app-designer">See All</stencil-route-link>
+              <stencil-route-link url="/services/app-designer">See More</stencil-route-link>
             </div>
           </div>
 
           <div class="row card flex-fill">
-            <div class="col-md-6 col-sm-12 img-col mobile">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col mobile">
               <app-img class="img-fluid" src="/assets/services/training/header.png" alt="Process Training Support" />
             </div>
-            <div class="col-md-6 col-sm-12">
+            <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
                 <app-translate key="services.landing.process-training-support.title" />
               </h3>
               <p>
                 <app-translate key="services.landing.process-training-support.text" />
               </p>
-              <stencil-route-link url="/services/training">See All</stencil-route-link>
+              <stencil-route-link url="/services/training">See More</stencil-route-link>
             </div>
-            <div class="col-md-6 col-sm-12 img-col desktop">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col desktop">
               <app-img class="img-fluid" src="/assets/services/training/header.png" alt="Process Training Support" />
             </div>
           </div>
@@ -152,25 +152,39 @@ export class AppServices {
 
             <div class="row">
               <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-bb.png" alt="BB logo" />
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
               </div>
 
               <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-livegistics.png" alt="Livegistics logo" />
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
               </div>
 
               <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-yellowdig.png" alt="YellowDig logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
               </div>
 
               <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
-                <app-img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <app-img class="img-fluid pad" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                <app-img class="img-fluid pad" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-12 align-right">
+                <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
+              </div>
+
+              <div class="col-md-6 col-sm-12 align-left">
+                <app-img class="img-fluid pad" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
               </div>
             </div>
           </div>
