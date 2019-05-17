@@ -265,7 +265,8 @@ export const translations = {
           title: 'Tools & Best Practices',
           text:
             `There are thousands of productivity tools on the market that your team could integrate into your internal processes but do you know which ones will be best for you and how to smoothly transition over to them? We will determine your team's needs and show you the best tools and practices to improve your organizational success.`,
-        }
+        },
+        seminars: 'Our team has curated workshops for entrepreneurs and startups for 4 years, helping growing the entrepreneurial community in Philadelphia. Whether you are looking for general business advice, tools and tips to help maximize your team’s efficiency, or how to bring your MVP to the market, we have workshops and seminars for everyone. If you are interested in joining us at our next event, sign up for our mailing and you’ll be the first to know when it’s happening!'
       }
     },
 

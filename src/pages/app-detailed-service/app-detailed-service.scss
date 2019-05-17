@@ -50,6 +50,11 @@
         width: 50%;        
         position: relative; 
         vertical-align: middle;
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+        
       }  
       &:before {
         left: -0.5em; 
@@ -139,6 +144,20 @@
   .our-seminars {
     .container {
       margin-bottom: 5rem;
+    }
+
+    .text-container {
+      text-align: left;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+    }
+
+    img {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
     }
 
     button {

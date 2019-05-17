@@ -367,16 +367,10 @@ export class AppDetailedService {
                 <h2 class="line-title">Learn About Our Seminars</h2>
               </div>
             </div>
-            <div class="row text-xs-center text-sm-center text-md-left">
-              <div class="col-md-6 col-sm-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut est quis nibh fermentum venenatis. 
-                  Ut rutrum ante quis felis accumsan sollicitudin. Integer posuere congue eros, eu rutrum elit rhoncus sit amet. 
-                  Donec varius faucibus urna, a cursus dui mattis ut. Ut iaculis dictum odio, id pretium mauris cursus eget. 
-                  Quisque ut mi eros. Mauris sit amet lectus id urna elementum feugiat sit amet eu lacus. 
-                  Vivamus sodales hendrerit placerat. Mauris tincidunt, urna lacinia vulputate dictum, nulla eros lacinia purus, 
-                  at faucibus justo nibh sed erat. Nulla tristique semper magna ac malesuada. Pellentesque habitant morbi tristique senectus 
-                  et netus et malesuada fames ac turpis egestas. Mauris ac faucibus leo. Aenean congue odio vehicula, molestie ligula tincidunt, 
-                  efficitur est.
+            <div class="row">
+              <div class="col-md-6 col-sm-12 text-container">
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.seminars`} />
                 </p>
                 <button>
                   Join Our Mailing List
