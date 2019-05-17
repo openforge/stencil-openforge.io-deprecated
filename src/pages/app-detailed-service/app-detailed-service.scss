@@ -12,6 +12,10 @@
     .row {
       height: auto;
       padding-bottom: 2rem;
+
+      img {
+        max-height: 360px;
+      }
     }
 
     .line-break {
@@ -69,9 +73,6 @@
   }
 
   .our-work {
-    .container {
-      max-width: 960px;
-    }
 
     .example {
       position: relative;
@@ -83,14 +84,14 @@
 
       .behind-left {
         position: relative;
-        height: 350px;
+        height: 300px;
         right: 50px;
         top: -30px;
       }
 
       .front-center {
         position: absolute;
-        height: 350px;
+        height: 300px;
         left: 45px;
         right: 0;
         margin-left: auto;
