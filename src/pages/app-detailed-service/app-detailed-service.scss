@@ -1,8 +1,6 @@
 // section - services
 
 .services {
-  font-family: 'Muli', sans-serif;
-  overflow-x: hidden;
 
   .hero {
     padding-top: 150px;
@@ -30,6 +28,10 @@
       margin: 4rem auto 4rem;
       max-width: 768px;
       text-align: center;
+
+      h2 {
+        font-weight: bold;
+      }
     }
 
     .line-title {
