@@ -132,16 +132,16 @@ export class AppDetailedService {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-6">
+              <div class="col-sm-12 col-md-6 order-md-2 d-flex justify-content-center">
+                <img src={this.imgs[this.match.params.service].header} alt="Header Graphic" />
+              </div>
+              <div class="col-sm-12 col-md-6 order-md-1">
                 <h1>
                   <app-translate key={`services.${this.match.params.service}.hero.title`} />
                 </h1>
                 <p>
                   <app-translate key={`services.${this.match.params.service}.hero.text`} />
                 </p>
-              </div>
-              <div class="col-sm-12 col-md-6 align-self-center">
-                <img src={this.imgs[this.match.params.service].header} alt="Header Graphic" />
               </div>
             </div>
             <div class="line-break" />
