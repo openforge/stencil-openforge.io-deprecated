@@ -253,6 +253,7 @@ export namespace Components {
     'history': RouterHistory;
     'match': MatchResults;
   }
+  
   interface AppResourcesAttributes extends StencilHTMLAttributes {
     'errorIconStyles'?: any;
     'history'?: RouterHistory;
@@ -340,6 +341,7 @@ declare global {
     'content-graphic': Components.ContentGraphicAttributes;
     'app-404': Components.App404Attributes;
     'app-about': Components.AppAboutAttributes;
+
     'app-blog-index': Components.AppBlogIndexAttributes;
     'app-blog-post': Components.AppBlogPostAttributes;
     'app-blog': Components.AppBlogAttributes;
@@ -350,12 +352,14 @@ declare global {
     'app-opportunities': Components.AppOpportunitiesAttributes;
     'app-resources': Components.AppResourcesAttributes;
     'app-service-level-agreement': Components.AppServiceLevelAgreementAttributes;
+
     'app-services': Components.AppServicesAttributes;
     'app-team-landing': Components.AppTeamLandingAttributes;
     'app-toolbox': Components.AppToolboxAttributes;
     'app-tos': Components.AppTosAttributes;
     'open-forge-app': Components.OpenForgeAppAttributes;
   }
+
 
 
   interface HTMLAppBlogCardElement extends Components.AppBlogCard, HTMLStencilElement {}
@@ -525,6 +529,7 @@ declare global {
     prototype: HTMLAppServiceLevelAgreementElement;
     new (): HTMLAppServiceLevelAgreementElement;
   };
+
 
   interface HTMLAppServicesElement extends Components.AppServices, HTMLStencilElement {}
   var HTMLAppServicesElement: {
