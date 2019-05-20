@@ -119,17 +119,15 @@
         display: flex;
         flex-direction: column;
 
-        ul {
-          display: flex;
-          flex-direction: column;
-
-          @include media-breakpoint-down(sm) {
-            align-items: center;
-          }
+        h3, a, p {
+          text-align: center;
         }
 
-        h3, a {
-          text-align: center;
+        a { 
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
         }
 
         .active {

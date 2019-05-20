@@ -267,6 +267,28 @@ export const translations = {
             `There are thousands of productivity tools on the market that your team could integrate into your internal processes but do you know which ones will be best for you and how to smoothly transition over to them? We will determine your team's needs and show you the best tools and practices to improve your organizational success.`,
         },
         seminars: 'Our team has curated workshops for entrepreneurs and startups for 4 years, helping growing the entrepreneurial community in Philadelphia. Whether you are looking for general business advice, tools and tips to help maximize your team’s efficiency, or how to bring your MVP to the market, we have workshops and seminars for everyone. If you are interested in joining us at our next event, sign up for our mailing and you’ll be the first to know when it’s happening!'
+      },
+      ourwork: {
+        'juntoscope': {
+          'title': 'JuntoScope',
+          'description': 'Juntoscope helps teams determine scopes for tasks in Teamwork.com:copyright: Projects with a seamless integration providing fast, efficient, and accurate scoping to keep projects within budget and on-time.'
+        },
+        'voyage': {
+          'title': 'The Voyage',
+          'description': 'The Voyage by New Ocean puts users in charge of their health and well-being, making it simple and fun to achieve their goals and earn great rewards along the way with programs to fit their every need.'
+        },
+        'vanlife': {
+          'title': 'The Vanlife App',
+          'description': 'The Vanlife App is a community-oriented, one-stop-shop for all things vanlife, dedicated to helping the community thrive by providing all the resources needed to fulfill your life’s desires while on the road or planning to get on the road.'
+        },
+        'suw': {
+          'title': 'Startup Wars',
+          'description': 'Startup Wars is a startup simulator that teaches players principles of entrepreneurship and team management, where players compete to be the top startup in their city, taking on the real journey of a startup founder.'
+        },
+        'digithermo': {
+          'title': 'DigiThermo',
+          'description': 'Digi thermo is a new generation high quality, accurate, and easy-­to-­use Bluetooth sensor, able to record airflow parameters, time and date of each individual measurement allowing for monitoring right from your mobile device.'
+        }
       }
     },
 

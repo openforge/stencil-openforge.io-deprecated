@@ -86,18 +86,11 @@ export class AppDetailedService {
     const voyage = document.getElementById('voyage');
     const suw = document.getElementById('suw');
 
-    // digithermo
-    // juntoscope
-    // voyage
-    // suw
-
     if(this.match.params.service == 'training') {
-      console.log('training');
       work.style.setProperty('display', 'none');
       seminars.style.setProperty('display', 'initial');
 
     } else if(this.match.params.service == 'app-designer') {
-      console.log('designer');
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
@@ -107,7 +100,6 @@ export class AppDetailedService {
       juntoscope.style.setProperty('display', 'initial');
 
     } else if(this.match.params.service == 'app-developer') {
-      console.log('developer');
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
@@ -117,7 +109,6 @@ export class AppDetailedService {
       juntoscope.style.setProperty('display', 'none');
 
     } else if(this.match.params.service == 'startup-consulting') {
-      console.log('consulting');
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
@@ -161,6 +152,9 @@ export class AppDetailedService {
   }
 
   render() {
+    <head>
+      <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    </head>
     return (
       <div class="services">
         {/* header - hero */}
@@ -241,7 +235,7 @@ export class AppDetailedService {
             </div>
           {/* Work Example */}
             <div class="row">
-              <div class="col-md-4 col-sm-12 example" id="juntoscope">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="juntoscope">
                 <div class="row screenshots">
                   <img src="/assets/apps/juntoscope/graphic-example-1.png" class="behind-left" alt="juntoscope app screenshot" />
                   <img src="/assets/apps/juntoscope/graphic-example-2.png" class="front-center" alt="juntoscope app screenshot" />
@@ -255,16 +249,16 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>JuntoScope</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.juntoscope.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.juntoscope.description" />
+                  </p>
                   <a href="openforge.io/juntoscope" class="active">View Case Study</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 example" id="voyage">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="voyage">
                 <div class="row screenshots">
                   <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
                   <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
@@ -278,16 +272,16 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>The Voyage</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.voyage.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.voyage.description" />
+                  </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 example" id="vanlife">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="vanlife">
                 <div class="row screenshots">
                   <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
                   <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
@@ -301,16 +295,16 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>The Vanlife App</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.vanlife.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.vanlife.description" />
+                  </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 example" id="suw">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="suw">
                 <div class="row screenshots">
                   <img src="/assets/apps/startupwars/graphic-example-1.png" class="behind-left" alt="startup wars app screenshot" />
                   <img src="/assets/apps/startupwars/graphic-example-2.png" class="front-center" alt="startup wars app screenshot" />
@@ -324,16 +318,16 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>Startup Wars</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.suw.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.suw.description" />
+                  </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 example" id="digithermo">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="digithermo">
                 <div class="row screenshots">
                   <img src="/assets/apps/digithermo/graphic-example-1.png" class="behind-left" alt="digithermo app screenshot" />
                   <img src="/assets/apps/digithermo/graphic-example-2.png" class="front-center" alt="digithermo wars app screenshot" />
@@ -347,12 +341,12 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>DigiThermo</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.digithermo.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.digithermo.description" />
+                  </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
               </div>
@@ -375,6 +369,7 @@ export class AppDetailedService {
                 <button>
                   Join Our Mailing List
                 </button>
+
               </div>
               <div class="col-md-6 col-sm-12 d-flex align-self-center">
                 <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo"/>
