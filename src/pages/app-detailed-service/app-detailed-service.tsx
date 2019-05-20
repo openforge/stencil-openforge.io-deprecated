@@ -152,9 +152,6 @@ export class AppDetailedService {
   }
 
   render() {
-    <head>
-      <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-    </head>
     return (
       <div class="services">
         {/* header - hero */}
