@@ -160,30 +160,26 @@ export const translations = {
         },
         'technology-consulting': {
           title: 'Technology Consulting',
-          text:
-            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+          text: 'With an ever-growing digital marketplace across the globe, it is important that your business is utilizing the best technologies that will increase your productivity and cut costs.',
         },
-        'webapp-development': {
+        'App Development': {
           title: 'Web App Development',
-          text:
-            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+          text: 'There are several ways to get your app in front of users and we are here to help bring your mobile app, progressive web app, or traditional web app to the market.',
         },
         'digital-experience-design': {
-          title: 'Digital Experience Design',
-          text:
-            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+          title: 'Mobile Design and User Experience',
+          text: 'Digital designs go beyond fonts and colors and our team is here to help you create beautiful interfaces, logo/branding, and user centered-designs.',
         },
         'process-training-support': {
           title: 'Process Training & Support',
-          text:
-            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. We’ll help you understand what you’re paying for and how to use it. From your operations to your bottom line, we can work with you to ensure that each of your team members produce results that match your projections.',
+          text: "We will help you grow your business by improving your team's standard operating procedures and tool utilization, to boost their performance and increase their level of output.",
         },
       },
       'app-developer': {
         hero: {
           title: 'App Development',
           text:
-            'Our app developer team uses the latest technologies and techniques to bring your mobile app or web app to the market and maximize the experiences of user. With over 30 years of combined app development experience, we specialize in web tools and technologies such as Ionic, Angular, Firebase, Strapi, and Javascript.',
+            'Our app development team uses the latest technologies and techniques to bring your mobile app or web app to the market and maximize the experiences of the users. With over 30 years of combined app development experience, we specialize in web tools and technologies such as Ionic, Angular, Firebase, Strapi, and Javascript.',
         },
         first: {
           title: 'Progressive Web App Development',
@@ -198,8 +194,8 @@ export const translations = {
         third: {
           title: 'Responsive Solutions for Web & Mobile',
           text:
-            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
-        }
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app development team has extensive experience in producing powerful and reliable web apps.',
+        },
       },
       'app-designer': {
         hero: {
@@ -210,24 +206,23 @@ export const translations = {
         first: {
           title: 'User-Centered Mobile Designs',
           text:
-            "Understanding your end-user is vital to constructing a mobile experience that will engage users and drive up retention rates.  We will work with your team to discover your customer segments and their personalities in order to optimize the design of your mobile app. ",
+            'Understanding your end-user is vital to constructing a mobile experience that will engage users and drive up retention rates.  We will work with your team to discover your customer segments and their personalities in order to optimize the design of your mobile app. ',
         },
         second: {
           title: 'Brand Discovery and Color Theory',
-          text:
-            `Whether you are a hot new company lacking a refined brand identity or an existing company looking to revamp your existing branding we will help your team discover your company's "true colors". Sit down with our design team to refine your logo, colors, and overall image that will resonate with your mobile users.`,
+          text: `Whether you are a hot new company lacking a refined brand identity or an existing company looking to revamp your existing branding we will help your team discover your company's "true colors". Sit down with our design team to refine your logo, colors, and the overall image that will resonate with your mobile users.`,
         },
         third: {
           title: 'Engaging Digital Experiences',
           text:
             'The design of your mobile app should center around getting your users to take action, ultimately increasing user engagement. As markets flood with mobile applications, it is important to provide your mobile users with a unique and memorable experience that can effortlessly integrate into their lives.',
-        }
+        },
       },
       'startup-consulting': {
         hero: {
           title: 'User Growth & Retention Consulting',
           text:
-            'Recent reports indicate there are over 5 million mobile apps available to the public. It is increasingly important to stand out and reach your audience in new and meaningful ways, and we are here to help. Reaching your customers is paramount to success; and have developed custom solutions to maximize your place in the world market.',
+            'Recent reports indicate there are over 5 million mobile apps available to the public. It is increasingly important to stand out and reach your audience in new and meaningful ways, and we are here to help. Reaching your customers is paramount to success and we have developed custom solutions to maximize your place in the world market.',
         },
         first: {
           title: 'User Growth & Retention Consulting',
@@ -242,10 +237,10 @@ export const translations = {
         third: {
           title: 'Product Accessibility & Scalability',
           text:
-            'The digital world is now catching up to the physical world in terms of accessibility for individuals with disabilities and your app or website should follow suite.  Ensure that your digital presence is compliant with the latest ADA web standards and WCAG guidelines to satisfy your users and limit your liability.',
-        }
+            'The digital world is now catching up to the physical world in terms of accessibility for individuals with disabilities and your app or website should follow suit.  Ensure that your digital presence is compliant with the latest ADA web standards and WCAG guidelines to satisfy your users and limit your liability.',
+        },
       },
-      'training': {
+      training: {
         hero: {
           title: 'Process Training & Support ',
           text:
@@ -254,42 +249,47 @@ export const translations = {
         first: {
           title: 'Team Training & Integrations',
           text:
-            'Managing cross-functional teams who come from diverse backgrounds and skills training can require a collaboration process that does not come easy out of the box. We will share the successful processes our team has refined that will increase your efficiency and improve overall team morale. ',
+            'Managing cross-functional teams who come from diverse backgrounds and skills training can require a collaboration process that does not come easily out of the box. We will share the successful processes our team has refined that will increase your efficiency and improve overall team morale. ',
         },
         second: {
           title: 'Milestone and Task Scheduling',
           text:
-            'Using one of the industries leading project management software, Teamwork Projects, we will hep your team organize internally and develop a fine-tuned plan of attack to help your organization work towards milestones that will increase revenues and decrease hurdles faced during internal communication.',
+            'Using one of the industries leading project management software, Teamwork Projects, we will help your team organize internally and develop a fine-tuned plan of attack to help your organization work towards milestones that will increase revenues and decrease hurdles faced during internal communication.',
         },
         third: {
           title: 'Tools & Best Practices',
-          text:
-            `There are thousands of productivity tools on the market that your team could integrate into your internal processes but do you know which ones will be best for you and how to smoothly transition over to them? We will determine your team's needs and show you the best tools and practices to improve your organizational success.`,
+          text: `There are thousands of productivity tools on the market that your team could integrate into your internal processes but do you know which ones will be best for you and how to smoothly transition over to them? We will determine your team's needs and show you the best tools and practices to improve your organizational success.`,
         },
-        seminars: 'Our team has curated workshops for entrepreneurs and startups for 4 years, helping growing the entrepreneurial community in Philadelphia. Whether you are looking for general business advice, tools and tips to help maximize your team’s efficiency, or how to bring your MVP to the market, we have workshops and seminars for everyone. If you are interested in joining us at our next event, sign up for our mailing and you’ll be the first to know when it’s happening!'
+        seminars:
+          'Our team has curated workshops for entrepreneurs and startups for 4 years, helping to grow the entrepreneurial community in Philadelphia. Whether you are looking for general business advice, tools and tips to help maximize your team’s efficiency, or how to bring your MVP to the market, we have workshops and seminars for everyone. If you are interested in joining us at our next event, sign up for our mailing and you’ll be the first to know when it’s happening!',
       },
       ourwork: {
-        'juntoscope': {
-          'title': 'JuntoScope',
-          'description': 'Juntoscope helps teams determine scopes for tasks in Teamwork.com:copyright: Projects with a seamless integration providing fast, efficient, and accurate scoping to keep projects within budget and on-time.'
+        juntoscope: {
+          title: 'JuntoScope',
+          description:
+            'Juntoscope helps teams determine scopes for tasks in Teamwork.com:copyright: Projects with a seamless integration providing fast, efficient, and accurate scoping to keep projects within budget and on-time.',
         },
-        'voyage': {
-          'title': 'The Voyage',
-          'description': 'The Voyage by New Ocean puts users in charge of their health and well-being, making it simple and fun to achieve their goals and earn great rewards along the way with programs to fit their every need.'
+        voyage: {
+          title: 'The Voyage',
+          description:
+            'The Voyage by New Ocean puts users in charge of their health and well-being, making it simple and fun to achieve their goals and earn great rewards along the way with programs to fit their every need.',
         },
-        'vanlife': {
-          'title': 'The Vanlife App',
-          'description': 'The Vanlife App is a community-oriented, one-stop-shop for all things vanlife, dedicated to helping the community thrive by providing all the resources needed to fulfill your life’s desires while on the road or planning to get on the road.'
+        vanlife: {
+          title: 'The Vanlife App',
+          description:
+            'The Vanlife App is a community-oriented, one-stop-shop for all things Vanlife, dedicated to helping the community thrive by providing all the resources needed to fulfill your life’s desires while on the road or planning to get on the road.',
         },
-        'suw': {
-          'title': 'Startup Wars',
-          'description': 'Startup Wars is a startup simulator that teaches players principles of entrepreneurship and team management, where players compete to be the top startup in their city, taking on the real journey of a startup founder.'
+        suw: {
+          title: 'Startup Wars',
+          description:
+            'Startup Wars is a startup simulator that teaches players principles of entrepreneurship and team management, where players compete to be the top startup in their city, taking on the real journey of a startup founder.',
         },
-        'digithermo': {
-          'title': 'DigiThermo',
-          'description': 'Digi thermo is a new generation high quality, accurate, and easy-­to-­use Bluetooth sensor, able to record airflow parameters, time and date of each individual measurement allowing for monitoring right from your mobile device.'
-        }
-      }
+        digithermo: {
+          title: 'DigiThermo',
+          description:
+            'DigiThermo is a new generation high quality, accurate, and easy-­to-­use Bluetooth sensor, able to record airflow parameters, time and date of each individual measurement allowing for monitoring right from your mobile device.',
+        },
+      },
     },
 
     opportunities: {
