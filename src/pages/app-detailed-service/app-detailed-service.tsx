@@ -94,19 +94,19 @@ export class AppDetailedService {
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
-      voyage.style.setProperty('display', 'none');
-      suw.style.setProperty('display', 'none');
-      digiThermo.style.setProperty('display', 'initial');
-      juntoscope.style.setProperty('display', 'initial');
+      voyage.style.setProperty('display', 'initial');
+      suw.style.setProperty('display', 'initial');
+      digiThermo.style.setProperty('display', 'none');
+      juntoscope.style.setProperty('display', 'none');
 
     } else if(this.match.params.service == 'app-developer') {
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
-      voyage.style.setProperty('display', 'initial');
-      suw.style.setProperty('display', 'initial');
-      digiThermo.style.setProperty('display', 'none');
-      juntoscope.style.setProperty('display', 'none');
+      voyage.style.setProperty('display', 'none');
+      suw.style.setProperty('display', 'none');
+      digiThermo.style.setProperty('display', 'initial');
+      juntoscope.style.setProperty('display', 'initial');
 
     } else if(this.match.params.service == 'startup-consulting') {
       work.style.setProperty('display', 'initial');
@@ -252,7 +252,9 @@ export class AppDetailedService {
                   <p>
                     <app-translate key="services.ourwork.juntoscope.description" />
                   </p>
-                  <a href="openforge.io/juntoscope" class="active">View Case Study</a>
+                  <stencil-route-link url="/juntoscope">
+                    <a href="openforge.io/juntoscope" class="active">View Case Study</a>
+                  </stencil-route-link>
                 </div>
               </div>
               <div class="col-md-4 col-sm-12 flex-fill example" id="voyage">
