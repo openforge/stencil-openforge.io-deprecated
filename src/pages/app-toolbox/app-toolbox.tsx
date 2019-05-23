@@ -47,7 +47,7 @@ export class AppToolbox {
           </div>
         </header>
 
-        <section class="content" id="content">
+        <section class="md-content d-md-block" id="md-content">
           <div class="container">
             <div class="row">
               <div class="col-12 d-flex flex-column align-items-center">
@@ -67,8 +67,8 @@ export class AppToolbox {
                   <div class="tab-pane fade show active" id="pills-design" role="tabpanel" aria-labelledby="pills-design-tab">
                     <div class="row">
                       <div class="col-md-6 col-sm-12">
-                        <img src="/assets/toolbox-graphic-chest-top.png" />
-                        <img src="/assets/toolbox-graphic-chest-bottom.png" />
+                        <img src="/assets/toolbox/toolbox-graphic-chest-top.png" />
+                        <img src="/assets/toolbox/toolbox-graphic-chest-bottom.png" />
                       </div>
                       <div class="col-md-6 col-sm-12">
                         <h3>Tools of the Trade</h3>
@@ -106,37 +106,130 @@ export class AppToolbox {
 
 
 
-        <section>
+        <section class="sm-content d-xs-block d-md-none" id="sm-content">
           <div class="container text-center">
             <div class="row">
               <div class="col-sm-12">
-                <h3>Section Title</h3>
-                <div id="toolboxCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
-                  <app-carousel-indicators class="carousel-main-indicators" activeIndex="0" />
+                <h3>Design</h3>
+                <div id="toolboxCarousel-design" class="carousel slide" data-ride="carousel" data-pause="false">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
+                      <img class="chest-icon" src="/assets/toolbox/icon-abstract.svg" />
                       <div class="text-container">
-                        <h4>Title</h4>
-                        <p>jfdlaskjfklsajkflsjaklfjklsajkldfjskalfklsajkfdfkljsaklfjklsjfkljas</p>
+                        <h4>Abstract</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
                       </div>
                     </div>
                     <div class="carousel-item">
+                      <img class="chest-icon" src="/assets/toolbox/icon-marvel.svg" />
                       <div class="text-container">
-                        <h4>Title</h4>
-                        <p>jfdlaskjfklsajkflsjaklfjklsajkldfjskalfklsajkfdfkljsaklfjklsjfkljas</p>
+                        <h4>Marvel</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
                       </div>
                     </div>
                     <div class="carousel-item">
+                      <img class="chest-icon" src="/assets/toolbox/icon-sketch.svg" />
                       <div class="text-container">
-                        <h4>Title</h4>
-                        <p>jfdlaskjfklsajkflsjaklfjklsajkldfjskalfklsajkfdfkljsaklfjklsjfkljas</p>
+                        <h4>Sketch</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
                       </div>
                     </div>
-                    <a class="carousel-control-prev" href="#toolboxCarousel" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#toolboxCarousel-design" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true" />
                       <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#toolboxCarousel" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#toolboxCarousel-design" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true" />
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Development</h3>
+                <div id="toolboxCarousel-development" class="carousel slide" data-ride="carousel" data-pause="false">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="chest-icon" src="/assets/toolbox/icon-ionic.svg" />
+                      <div class="text-container">
+                        <h4>Ionic</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="chest-icon" src="/assets/toolbox/icon-angular.svg" />
+                      <div class="text-container">
+                        <h4>Angular</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="chest-icon" src="/assets/toolbox/icon-strapi.svg" />
+                      <div class="text-container">
+                        <h4>Strapi</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#toolboxCarousel-development" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true" />
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#toolboxCarousel-development" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true" />
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <h3>Quality Assurance</h3>
+                <div id="toolboxCarousel-quality" class="carousel slide" data-ride="carousel" data-pause="false">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="chest-icon" src="/assets/toolbox/icon-instabug.svg" />
+                      <div class="text-container">
+                        <h4>Instabug</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="chest-icon" src="/assets/toolbox/icon-cypress.svg" />
+                      <div class="text-container">
+                        <h4>Cypress</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <img class="chest-icon" src="/assets/toolbox/icon-teamwork.svg" />
+                      <div class="text-container">
+                        <h4>Teamwork</h4>
+                        <p>Lorem ipsum dodor sit omet, constreur elist set do tempor induincit et dore manga aliquea labore ut elsmod</p>
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#toolboxCarousel-quality" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true" />
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#toolboxCarousel-quality" role="button" data-slide="next">
                       <span class="carousel-control-next-icon" aria-hidden="true" />
                       <span class="sr-only">Next</span>
                     </a>
