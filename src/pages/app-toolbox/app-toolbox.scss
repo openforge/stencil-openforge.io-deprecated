@@ -6,42 +6,45 @@
   .header {
     padding-top: 150px;
 
-    // @include media-breakpoint-down(sm) {
-    //   text-align: center;
-    // }
-
     .row {
       height: auto;
       padding-bottom: 2rem;
     }
+
+    .text {
+      h1 {
+        color: $orange;
+        font-size: 48px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 1.6px;
+      }
     
-    h1 {
-      color: $orange;
-      font-size: 48px;
-      font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: 1.6px;
+      p {
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.88;
+        letter-spacing: normal;
+      }
+    
+      button {
+        font-size: 9px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.22;
+        letter-spacing: 0.5px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
     }
-  
-    p {
-      font-size: 16px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.88;
-      letter-spacing: normal;
-    }
-  
-    button {
-      font-size: 9px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 2.22;
-      letter-spacing: 0.5px;
-    }
+    
   }
 
   .md-content {

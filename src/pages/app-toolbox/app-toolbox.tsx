@@ -8,7 +8,7 @@ export class AppToolbox {
   // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToForm() {
-    const form = document.getElementById('content');
+    const form = document.getElementById('md-content');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -32,15 +32,15 @@ export class AppToolbox {
         <header class="header">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-6">
+              <div class="col-sm-12 col-md-6 order-md-2">
+                <app-img src="/assets/svg/toolbox-graphic-header.svg" alt="Toolbox Header Graphic" />
+              </div>
+              <div class="col-sm-12 col-md-6 order-md-1 text">
                 <h1>The best tools create the best products.</h1>
                 <p>As a digital agency, utilizing the best mobile and web practices is among our foremost concerns. Check out some of the tools we use to keep our products looking great and runnig smoothly across all devices.</p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                   SEE WHAT'S INSIDE
                 </button>
-              </div>
-              <div class="col-sm-12 col-md-6">
-                <app-img src="/assets/svg/toolbox-graphic-header.svg" alt="Toolbox Header Graphic" />
               </div>
             </div>
             <div class="line-break" />
@@ -103,8 +103,6 @@ export class AppToolbox {
             </div>
           </div>
         </section>
-
-
 
         <section class="sm-content d-xs-block d-md-none" id="sm-content">
           <div class="container text-center">
@@ -239,12 +237,6 @@ export class AppToolbox {
             </div>
           </div>
         </section>
-    
-
-
-
-
-
 
         <app-cta />
         <app-footer />
