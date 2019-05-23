@@ -54,9 +54,26 @@
 
       button {
         background: #e88212;
-        padding: 4px 15px;
+        padding: 12px 15px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.27);
         color: #fff;
+
+        @include media-breakpoint-down(sm) {
+          background: #fff;
+          border: solid 1px #e88212;
+          padding: 4px 15px;
+        }
+
+        span {
+          font-size: 14px;
+          text-transform: uppercase;
+          color: $gray-dark;
+          font-weight: bold;
+
+          i {
+            color: #000;
+          }
+        }
       }
 
       .contact-icons-label {

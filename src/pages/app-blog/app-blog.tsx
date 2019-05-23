@@ -340,15 +340,16 @@ export class AppBlog {
                 target="_blank"
                 novalidate="true"
               >
-                <label>Sign Up for News &amp; Updates</label>
+                <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
                 <div class="form-group">
-                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required="true" />
+                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required="true" />
                   <div class="hidden" aria-hidden="true">
                     <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
                   </div>
                   <div class="clear">
                     <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
-                      <i class="fa fa-arrow-right" />
+                      <span class="d-block d-sm-block d-md-none">Get the Newsletter  &nbsp; <i class="fa fa-arrow-right" /></span>
+                      <i class="d-none d-md-block fa fa-arrow-right" />
                     </button>
                   </div>
                 </div>
