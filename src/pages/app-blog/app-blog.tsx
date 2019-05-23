@@ -310,7 +310,7 @@ export class AppBlog {
           <div class="blog-filters-nav">
             <ul class="blog-filters-list">
               {filters}
-              <li class="blog-filter-item">
+              <li class="blog-filter-item d-none d-md-block">
                 <div class="blog-search-group">
                   <span class="blog-search-icon">
                     <span class="fa fa-search" />
@@ -329,7 +329,7 @@ export class AppBlog {
               <div class="blog-pagination">{pagination}</div>
             </div>
           </div>
-          <div class="col-md-3 form-row">
+          <div class="col-md-3 col-sm-12 form-row">
             <div class="form-row-content">
               <form
                 action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
@@ -338,11 +338,11 @@ export class AppBlog {
                 name="mc-embedded-subscribe-form"
                 class="validate"
                 target="_blank"
-                novalidate
+                novalidate="true"
               >
                 <label>Sign Up for News &amp; Updates</label>
                 <div class="form-group">
-                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required />
+                  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required="true" />
                   <div class="hidden" aria-hidden="true">
                     <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
                   </div>
@@ -354,8 +354,8 @@ export class AppBlog {
                 </div>
               </form>
 
-              <p>Follow Us:</p>
-              <div class="contact-icons-side">
+              <p class="contact-icons-label">Follow Us:</p>
+              <div class="contact-icons">
                 <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>

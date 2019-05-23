@@ -16,8 +16,14 @@
     display: block;
 
     .form-row-content {
-      position: fixed;
-      z-index: -1;
+      @include media-breakpoint-up(sm) {
+        position: fixed;
+        z-index: -1;
+      }
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
 
       .hidden {
         display: none;
@@ -25,6 +31,7 @@
 
       .form-group {
         display: inline-flex;
+        margin-bottom: 50px;
       }
 
       label {
@@ -52,12 +59,18 @@
         color: #fff;
       }
 
-      p {
-        margin: 50px 0 0 0;
+      .contact-icons-label {
+        margin: 0;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
       }
 
-      .contact-icons-side {
+      .contact-icons {
         width: 100%;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
       }
 
       .contact-icon {
@@ -82,12 +95,24 @@
       padding: 0;
       margin-bottom: 5rem;
 
+      @include media-breakpoint-down(sm) {
+        overflow: auto;
+        white-space: nowrap;
+        margin-bottom: 1rem;
+        justify-content: normal;
+      }
+
       .blog-filter-item {
         padding: 40px 10px;
         font-size: 18px;
         color: #6b635f;
         cursor: pointer;
         text-transform: uppercase;
+
+        @include media-breakpoint-down(sm) {
+          padding: 26px 10px;
+          font-size: 12px;
+        }
 
         .blog-search-group {
           width: 40%;
@@ -118,9 +143,14 @@
 
       .blog-filter-item .active {
         padding: 20px;
-        color: orange;
+        color: #e88212;
         text-decoration: underline;
         cursor: auto;
+
+        @include media-breakpoint-down(sm) {
+          text-decoration: none;
+          border-bottom: 3px solid
+        }
       }
 
       .blog-filter-item .disabled {
