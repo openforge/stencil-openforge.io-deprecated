@@ -4,6 +4,14 @@
   // hero
   .hero {
     background-image: url('/assets/toolbox-hero-img.png');
+  }
+
+  .webp {
+    background-image: url('/assets/toolbox-hero-img.webp');
+  }
+
+  .hero,
+  .webp {
     background-position: top center;
     background-size: cover;
     height: 100vh;

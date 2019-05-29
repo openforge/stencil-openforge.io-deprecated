@@ -1,5 +1,7 @@
-import { Component, Prop, State, Listen, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
+
+// import { translate } from '../../services/translation.service';
 
 declare var fbq;
 
@@ -16,74 +18,46 @@ export class AppDetailedService {
   @State()
   imgs = {
     'app-developer': {
-      first: '/assets/services-development-box.png',
-      second: '/assets/services-development-robot.png',
-      third: '/assets/services-development-phone.png',
-      toolbox: {
-        first: '/assets/services-development-toolbox-first.png',
-        second: '/assets/services-development-toolbox-second.png',
-        third: '/assets/github-logo-white.png',
-      },
-      examples: {
-        first: '/assets/work-example-juntoscope-mobile.png',
-        second: '/assets/work-example-cap.png',
-      },
+      header: '/assets/services/app-developer/header.png',
+      services: {
+        first: '/assets/services/app-developer/graphic-1.png',
+        second: '/assets/services/app-developer/graphic-2.png',
+        third: '/assets/services/app-developer/graphic-3.png',
+      }
     },
     'app-designer': {
-      first: '/assets/services-design-bulb.png',
-      second: '/assets/services-design-notebook.png',
-      third: '/assets/services-design-pencil.png',
-      toolbox: {
-        first: '/assets/services-design-toolbox-first.png',
-        second: '/assets/services-design-toolbox-second.png',
-        third: '/assets/services-design-toolbox-third.png',
-      },
-      examples: {
-        first: '/assets/work-example-voyage.png',
-        second: '/assets/work-example-loudcloud-mobile.png',
-      },
+      header: '/assets/services/app-designer/header.png',
+      services: {
+        first: '/assets/services/app-designer/graphic-1.png',
+        second: '/assets/services/app-designer/graphic-2.png',
+        third: '/assets/services/app-designer/graphic-3.png',
+      }
     },
     'startup-consulting': {
-      first: '/assets/services-consulting-pc.png',
-      second: '/assets/services-consulting-notepad.png',
-      third: '/assets/services-consulting-arrow.png',
-      toolbox: {
-        first: '/assets/services-consulting-toolbox-first.png',
-        second: '/assets/services-consulting-toolbox-second.png',
-        third: '/assets/services-consulting-toolbox-third.png',
-      },
+      header: '/assets/services/startup-consulting/header.png',
+      services: {
+        first: '/assets/services/startup-consulting/graphic-1.png',
+        second: '/assets/services/startup-consulting/graphic-2.png',
+        third: '/assets/services/startup-consulting/graphic-3.png',
+      }
     },
+    'training': {
+      header: '/assets/services/training/header.png',
+      services: {
+        first: '/assets/services/training/graphic-1.png',
+        second: '/assets/services/training/graphic-2.png',
+        third: '/assets/services/training/graphic-3.png',
+      },
+      work: {
+        ourwork: '/assets/services/training/work-photo.png'
+      }
+    }
   };
-
-  @State() formSubmitted = false;
-  @State() formSubmitting = false;
-  @State()
-  formValues: {
-    name: '';
-    email: '';
-    message: '';
-
-    nameValid: false;
-    emailValid: false;
-    messageValid: false;
-  };
-  @State() nameError: string;
-  @State() emailError: string;
-  @State() messageError: string;
-  @State() isDisabled = true;
-
-  @Listen('valueChange')
-  valueChangeHandler(event) {
-    const { field, value, target } = event.detail;
-
-    this.formValues[field] = value;
-
-    this.validateField(target);
-  }
 
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
+    this.loadSections();
   }
 
   componentWillLoad() {
@@ -98,466 +72,245 @@ export class AppDetailedService {
     if (!this.isServer) {
       fbq('track', 'ViewContent');
     }
-    this.resetFormValues();
 
     this.changeMetadata();
+    this.loadSections();
   }
 
-  validateField(e) {
-    switch (e.name) {
-      case 'name':
-        this.formValues.nameValid = e.checkValidity();
-        this.nameError = this.formValues.nameValid
-          ? ''
-          : (this.nameError = e.validationMessage);
-        break;
+  loadSections() {
+    const work = document.getElementById('our-work');
+    const seminars = document.getElementById('our-seminars');
 
-      case 'email':
-        this.formValues.emailValid = e.checkValidity();
-        this.emailError = this.formValues.emailValid
-          ? ''
-          : (this.emailError = e.validationMessage);
-        break;
+    if(this.match.params.service != 'training') {
+      console.log('this is it!');
 
-      case 'message':
-        this.formValues.messageValid = e.checkValidity();
-        this.messageError = this.formValues.messageValid
-          ? ''
-          : (this.messageError = e.validationMessage);
-        break;
+      work.style.setProperty('display', 'initial');
+      seminars.style.setProperty('display', 'none');
+    } else {
+      console.log('this is else')
+      work.style.setProperty('display', 'none');
+      seminars.style.setProperty('display', 'initial');
     }
-
-    this.formValues.nameValid &&
-    this.formValues.emailValid &&
-    this.formValues.messageValid
-      ? (this.isDisabled = false)
-      : (this.isDisabled = true);
-  }
-
-  async handleSubmit(event) {
-    event.preventDefault();
-
-    try {
-      this.formSubmitting = true;
-      this.isDisabled = true;
-
-      await fetch(
-        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
-        {
-          method: 'post',
-          mode: 'no-cors',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          },
-          body: JSON.stringify(this.formValues),
-        }
-      );
-
-      event.target.reset();
-      this.resetFormValues();
-
-      this.isDisabled = false;
-      this.formSubmitting = false;
-      this.formSubmitted = true;
-
-      const form = document.getElementById('second-content');
-      form.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    } catch (error) {
-      console.log('Error', error);
-    }
-  }
-
-  scrollToForm() {
-    const form = document.getElementById('second-content');
-
-    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   changeMetadata() {
     // Change meta tags dynamically
     if (this.match.params.service === 'app-developer') {
-      document
-        .querySelector("meta[property='og:title']")
-        .setAttribute(
-          'content', 
-          'Mobile App Developer Experts | OpenForge'
-        );
+      document.querySelector("meta[property='og:title']").setAttribute('content', 'Mobile App Developer Experts | OpenForge');
       document
         .querySelector("meta[property='og:description']")
-        .setAttribute(
-          'content',
-          'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency'
-        );
-      document
-        .querySelector("meta[property='og:url']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/services/app-developer/'
-        );
-      document
-        .querySelector("meta[property='og:image']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/assets/team-landing-header-development-team.jpg'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'Mobile App Developer, Mobile App Development, Progressive Web App'
-        );
+        .setAttribute('content', 'Trust Our Experts in Mobile Application Development and Design.  We are Philadelphia’s top Mobile Application Development Agency');
+      document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/app-developer/');
+      document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-development-team.jpg');
+      document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile App Developer, Mobile App Development, Progressive Web App');
     } else if (this.match.params.service === 'app-designer') {
-      document
-        .querySelector("meta[property='og:title']")
-        .setAttribute(
-          'content', 
-          'Mobile App Design Experts | OpenForge'
-        );
+      document.querySelector("meta[property='og:title']").setAttribute('content', 'Mobile App Design Experts | OpenForge');
       document
         .querySelector("meta[property='og:description']")
-        .setAttribute(
-          'content',
-          'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting'
-        );
-      document
-        .querySelector("meta[property='og:url']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/services/app-designer/'
-        );
-      document
-        .querySelector("meta[property='og:image']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/assets/team-landing-header-design-team.jpg'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'UI, UX, Design, Mobile App Design, User Experience Expert'
-        );
+        .setAttribute('content', 'Trust Our Experts in UI/UX and Mobile Application Design and Development.  Our Designers are Philadelphia’s top Mobile App Design Team for Design Consulting');
+      document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/app-designer/');
+      document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-design-team.jpg');
+      document.querySelector("meta[name='keywords']").setAttribute('content', 'UI, UX, Design, Mobile App Design, User Experience Expert');
     } else if (this.match.params.service === 'startup-consulting') {
-      document
-        .querySelector("meta[property='og:title']")
-        .setAttribute(
-          'content',
-          'Startup Consulting Services in Philadelphia | OpenForge'
-        );
+      document.querySelector("meta[property='og:title']").setAttribute('content', 'Startup Consulting Services in Philadelphia | OpenForge');
       document
         .querySelector("meta[property='og:description']")
         .setAttribute(
           'content',
           'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies.   Let Us Help You With Marketing and CTO As a Service.'
         );
-      document
-        .querySelector("meta[property='og:url']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/services/startup-consulting/'
-        );
-      document
-        .querySelector("meta[property='og:image']")
-        .setAttribute(
-          'content',
-          'https://openforge.io/assets/team-landing-header-management-team.jpeg'
-        );
-      document
-        .querySelector("meta[name='keywords']")
-        .setAttribute(
-          'content',
-          'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting'
-        );
+      document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/startup-consulting/');
+      document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-management-team.jpeg');
+      document.querySelector("meta[name='keywords']").setAttribute('content', 'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting');
     }
   }
 
   render() {
     return (
-      <section class="services">
-        {this.imgs[this.match.params.service] ? '' : ''}
+      <div class="services">
         {/* header - hero */}
-        {this.match.params.service === 'app-developer' ? (
-          <header class="hero development">
-            <div class="overlay" />
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
-                  </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    <app-translate key="opportunities.hero.text2" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </header>
-        ) : this.match.params.service === 'app-designer' ? (
-          <header class="hero design">
-            <div class="overlay" />
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
-                  </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    <app-translate key="opportunities.hero.text2" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </header>
-        ) : (
-          <header class="hero consulting">
-            <div class="overlay" />
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-sm-12 col-md-8 col-lg-8">
-                  <h2>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.title`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${this.match.params.service}.hero.text`}
-                    />
-                  </p>
-                  <button
-                    onClick={this.scrollToForm.bind(this)}
-                    class="btn btn-primary"
-                  >
-                    <app-translate key="opportunities.hero.text2" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </header>
-        )}
-        {this.imgs[this.match.params.service]
-          ? [
-              <div id="second-content" class="container">
-                <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].first}
-                    alt=""
-                  />
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.first.title`}
-                      />
-                    </h2>
-                    <p>
-                      <app-translate
-                        key={`services.${this.match.params.service}.first.text`}
-                      />
-                    </p>
-                  </div>
-                </section>
-                <section class="text-img-container left-side">
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.second.title`}
-                      />
-                    </h2>
-                    <p>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.second.text`}
-                      />
-                    </p>
-                  </div>
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].second}
-                    alt=""
-                  />
-                </section>
-                <section class="text-img-container right-side">
-                  <app-img
-                    class="img-fluid d-none d-md-inline"
-                    src={this.imgs[this.match.params.service].third}
-                    alt=""
-                  />
-                  <div class="text-img-container-text">
-                    <h2>
-                      <app-translate
-                        key={`services.${
-                          this.match.params.service
-                        }.third.title`}
-                      />
-                    </h2>
-                    <p>
-                      <app-translate
-                        key={`services.${this.match.params.service}.third.text`}
-                      />
-                    </p>
-                  </div>
-                </section>
-              </div>,
-              <section>
-                <div class="our-toolbox">
-                  <h2>Our Toolbox</h2>
-                  <p>let us show you our skills in:</p>
-                  <div class="container">
-                    <div class="row">
-                      <div class="image-column col-sm-12 col-md-4">
-                        <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox.first
-                            }
-                            alt=""
-                          />
-                        </stencil-route-link>
-                      </div>
-                      <div class="image-column col-sm-12 col-md-4">
-                        <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox
-                                .second
-                            }
-                            alt=""
-                          />
-                        </stencil-route-link>
-                      </div>
-                      <div class="image-column col-sm-12 col-md-4">
-                        <stencil-route-link url="/toolbox" exact={true}>
-                          <app-img
-                            class="img-fluid d-none d-md-inline"
-                            src={
-                              this.imgs[this.match.params.service].toolbox.third
-                            }
-                            alt=""
-                          />
-                        </stencil-route-link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>,
-            ]
-          : null}
-        {this.imgs[this.match.params.service] &&
-        this.imgs[this.match.params.service].examples ? (
+        <header class="hero">
           <div class="container">
-            <section class="work-examples">
-              <h2>Work Examples</h2>
-              <div class="text-img-container right-side">
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.first}
-                  alt="voyage-app-image"
-                />
-                <div class="text-img-container-text">
-                  <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.name`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.first.desc`}
-                    />
-                  </p>
-                  <p class="check-link">
-                    <a href="https://try.juntoscope.com" target="_blank">
-                      Check it out
-                    </a>
-                  </p>
-                </div>
+            <div class="row align-items-center">
+              <div class="col-sm-12 col-md-6">
+                <h1>
+                  <app-translate key={`services.${this.match.params.service}.hero.title`} />
+                </h1>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.hero.text`} />
+                </p>
               </div>
-              <div class="text-img-container left-side">
-                <div class="text-img-container-text">
-                  <h2>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.name`}
-                    />
-                  </h2>
-                  <p>
-                    <app-translate
-                      key={`services.${
-                        this.match.params.service
-                      }.examples.second.desc`}
-                    />
-                  </p>
-                  <p class="check-link">
-                    <a
-                      href="https://www.newoceanhealthsolutions.com/product-and-programs/"
-                      target="_blank"
-                    >
-                      Check it out
-                    </a>
-                  </p>
-                </div>
-                <app-img
-                  class=""
-                  src={this.imgs[this.match.params.service].examples.second}
-                  alt="voyage-app-image"
-                />
+              <div class="col-sm-12 col-md-6 align-self-center">
+                <img src={this.imgs[this.match.params.service].header} alt="Header Graphic" />
               </div>
-            </section>
+            </div>
+            <div class="line-break" />
           </div>
-        ) : null}
-        <app-cta link-url="/contact">
-          <span slot="header">
-            <app-translate key="services.aside.title" />
-          </span>
-          <span slot="link">
-            <app-translate key="services.aside.link" />
-          </span>
-        </app-cta>
-        <app-footer />
-      </section>
-    );
-  }
+        </header>
 
-  private resetFormValues() {
-    this.formValues = {
-      name: '',
-      email: '',
-      message: '',
-      nameValid: false,
-      emailValid: false,
-      messageValid: false,
-    };
+        <section id="our-services" class="our-services">
+          <div class="container">
+            <div class="row header">
+              <div class="col-12">
+                <h2>Our Services</h2>
+              </div>
+            </div>
+            <div class="row text-sm-center text-md-left">
+              <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+                <object data={this.imgs[this.match.params.service].services.first} height="250" width="250" />
+              </div>
+              <div class="col-md-9 col-sm-12 d-flex flex-column align-self-center">
+                <h3>
+                  <app-translate key={`services.${this.match.params.service}.first.title`} />
+                </h3>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.first.text`} />
+                </p>
+              </div>
+            </div>
+            <div class="row text-sm-center text-md-right">
+              <div class="col-md-3 col-sm-12 d-flex order-md-2 justify-content-center align-items-center">
+                <object data={this.imgs[this.match.params.service].services.second} height="250" width="250" />
+              </div>
+              <div class="col-md-9 col-sm-12 order-md-1 d-flex flex-column align-self-center">
+                <h3>
+                  <app-translate key={`services.${this.match.params.service}.second.title`} />
+                </h3>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.second.text`} />
+                </p>
+              </div>
+            </div>
+            <div class="row text-sm-center text-md-left">
+              <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+                <object data={this.imgs[this.match.params.service].services.third} height="250" width="250" />
+              </div>
+              <div class="col-md-9 col-sm-12 d-flex flex-column align-self-center">
+                <h3>
+                  <app-translate key={`services.${this.match.params.service}.third.title`} />
+                </h3>
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.third.text`} />
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="our-work" id="our-work">
+          <div class="container">
+            <div class="row header">
+              <div class="col-12">
+                <h2 class="line-title">Our Work</h2>
+              </div>
+            </div>
+          {/* Work Example */}
+            <div class="row">
+              <div class="col-md-4 col-sm-12 example">
+                <div class="row screenshots">
+                  <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                  <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>The Voyage</h3>
+                  <ul>
+                    <li>Example 1</li>
+                    <li>Example 2</li>
+                    <li>Example 3</li>
+                  </ul>
+                  <a class="active">View Case Study</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 example">
+                <div class="row screenshots">
+                  <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
+                  <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>The Vanlife App</h3>
+                  <ul>
+                    <li>Example 1</li>
+                    <li>Example 2</li>
+                    <li>Example 3</li>
+                  </ul>
+                  <a>Case Study Coming Soon!</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 example">
+                <div class="row screenshots">
+                  <img src="/assets/apps/startupwars/graphic-example-1.png" class="behind-left" alt="startup wars app screenshot" />
+                  <img src="/assets/apps/startupwars/graphic-example-2.png" class="front-center" alt="startup wars app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>Startup Wars</h3>
+                  <ul>
+                    <li>Example 1</li>
+                    <li>Example 2</li>
+                    <li>Example 3</li>
+                  </ul>
+                  <a>Case Study Coming Soon!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="our-seminars" id="our-seminars">
+          <div class="container">
+            <div class="row header">
+              <div class="col-12">
+                <h2 class="line-title">Learn About Our Seminars</h2>
+              </div>
+            </div>
+            <div class="row text-xs-center text-sm-center text-md-left">
+              <div class="col-md-6 col-sm-12">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut est quis nibh fermentum venenatis. 
+                  Ut rutrum ante quis felis accumsan sollicitudin. Integer posuere congue eros, eu rutrum elit rhoncus sit amet. 
+                  Donec varius faucibus urna, a cursus dui mattis ut. Ut iaculis dictum odio, id pretium mauris cursus eget. 
+                  Quisque ut mi eros. Mauris sit amet lectus id urna elementum feugiat sit amet eu lacus. 
+                  Vivamus sodales hendrerit placerat. Mauris tincidunt, urna lacinia vulputate dictum, nulla eros lacinia purus, 
+                  at faucibus justo nibh sed erat. Nulla tristique semper magna ac malesuada. Pellentesque habitant morbi tristique senectus 
+                  et netus et malesuada fames ac turpis egestas. Mauris ac faucibus leo. Aenean congue odio vehicula, molestie ligula tincidunt, 
+                  efficitur est.
+                </p>
+                <button>
+                  Join Our Mailing List
+                </button>
+              </div>
+              <div class="col-md-6 col-sm-12 d-flex align-self-center">
+                <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo"/>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <app-cta />
+        <app-footer />
+      </div>
+    );
   }
 }

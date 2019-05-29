@@ -87,9 +87,12 @@
         flex-direction: column;
         justify-content: flex-end;
         text-align: center;
-        img {
-          max-width: 300px;
-          width: 100%;
+
+        app-img {
+          img {
+            max-width: 300px;
+            width: 100%;
+          }
         }
       }
     }

@@ -1,29 +1,38 @@
 .home {
-  overflow-x: hidden;
   font-family: 'Muli', sans-serif;
+  width: auto;
+
+  @include media-breakpoint-down(sm) {
+    overflow-x: hidden;
+  }
 
   .hero {
     background-color: white;
-    background: url('/assets/svg/graphic-home-header-background.svg') center top;
-    background-size: 100%;
-    background-repeat: no-repeat;
     height: auto;
+    margin-top: 115px;
 
-    @include media-breakpoint-down(sm) {
-      background: url('/assets/svg/mobile-graphic-home-header.svg') top
-          no-repeat,
-        url('/assets/svg/mobile-graphic-home-header-background.svg') center top
-          no-repeat;
-      background-size: 600px 720px, cover;
-      margin-top: 75px;
+    .svg-header-desktop {
+      display: initial;
 
-      .svg-header-desktop {
+      @include media-breakpoint-up(md) {
+        display: initial;
+      }
+
+      @include media-breakpoint-down(sm) {
         display: none;
       }
     }
 
-    img {
-      width: 100%;
+    .svg-header-mobile {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+      
+      @include media-breakpoint-down(sm) {
+        display: initial;
+      }
     }
 
     object {
@@ -33,63 +42,235 @@
     h1 {
       color: $gray-dark;
       font-size: 48px;
-      font-weight: 600;
-      margin-top: 130px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      height: 60px;
+      line-height: 0.79;
+      letter-spacing: 2.4px;
       text-align: center;
       text-transform: uppercase;
 
       @include media-breakpoint-down(sm) {
-        font-size: 42px;
-        margin-top: 180px;
-        text-transform: none;
-        text-align: left;
+        height: auto;
+        line-height: 1;
       }
     }
 
     h2 {
       color: $orange-dark;
-      font-size: 36px;
-      font-weight: bold;
+      font-family: Muli;
+      font-size: 24px;
+      font-weight: 600;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 1.5px;
       text-align: center;
       text-transform: uppercase;
 
       @include media-breakpoint-down(sm) {
-        font-size: 25px;
-        text-transform: none;
+        height: 0;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .featured-blog {
+    h4 {
+      color: $orange-dark;
+    }
+  }
+
+  .work {
+    height: auto;
+    width: 100%;
+
+    .main-content {
+      background-color: $gray-100;
+      display: flex;
+
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+    }
+
+    .sidebar {
+      min-height: 100%;
+      width: 50%;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      #sticky-sidebar-inner {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    .content {
+      width: 50%;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      .content-panel {
+        align-items: flex-end;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          display: table;
+        }
+      }
+
+      .last-panel {
+        height: 0;
+      }
+    }
+
+    .content-panel-inner {
+      align-items: center;
+      background-color: $gray-100;
+      display: flex;
+      height: 75vh;
+      justify-content: center;
+
+      .panel-inner-text {
+        margin: 0 4rem;
         text-align: left;
-      }
-    }
 
-    .hero-content {
+        @include media-breakpoint-down(md) {
+          margin: 0 1rem;
+          text-align: center;
+        }
+
+        h2 {
+          color: $gray-dark;
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.19;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 30px;
+          }
+        }
+
+        h3 {
+          color: $orange-dark;
+          font-size: 24px;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: $gray-dark;
+          font-size: 16px;
+          line-height: 1.78;
+        }
+      }
+
       @include media-breakpoint-down(sm) {
-        margin-bottom: 14rem;
-      }
-
-      @include media-breakpoint-down(xs) {
-        margin-bottom: 5rem;
+        height: 95vh;
       }
     }
 
-    .subtext {
-      color: $gray-dark;
-      font-size: 16px;
-      text-align: center;
+    .content-panel-image {
+      position: relative;
 
-      @include media-breakpoint-down(sm) {
-        text-align: left;
+      h2 {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 16px;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .behind-left {
+        position: relative;
+        height: 350px;
+        left: -60px;
+        top: 30px;
+
+        @include media-breakpoint-down(md) {
+          left: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+
+      .behind-right {
+        position: relative;
+        height: 350px;
+        right: -60px;
+        top: 30px;
+
+        @include media-breakpoint-down(md) {
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+
+      .front-center {
+        position: absolute;
+        height: 400px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+
+        @include media-breakpoint-down(xs) {
+          position: relative;
+        }
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+
+        a {
+          margin: 0 10px;
+        }
       }
     }
 
-    .subtext-mobile {
+    .description {
       display: none;
 
-      @include media-breakpoint-down(sm) {
-        color: #6b635f;
-        display: block;
-        font-size: 16px;
-        padding-right: 12rem;
-        text-align: left;
+      @include media-breakpoint-down(md) {
+        display: flex;
       }
+    }
+
+    .loudcloud {
+      background-image: url('/assets/home-graphic-loudcloud-pattern.png');
+      background-size: cover;
+    }
+
+    .voyage {
+      background-image: url('/assets/home-graphic-voyage-pattern.png');
+      background-size: cover;
+    }
+
+    .vanlife {
+      background-image: url('/assets/home-graphic-vanlife-pattern.png');
+      background-size: cover;
     }
   }
 
@@ -103,6 +284,8 @@
     .header > h2 {
       font-size: 48px;
       font-weight: 600;
+      margin-top: 3rem;
+
       @include media-breakpoint-down(sm) {
         margin: 5rem 0;
       }
@@ -157,9 +340,11 @@
     }
 
     .carousel-image {
-      height: 448px;
-      @include media-breakpoint-down(sm) {
-        height: 200px;
+      img {
+        height: 448px;
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
       }
     }
 
@@ -168,9 +353,11 @@
     }
 
     .carousel-image-userfeedback {
-      height: 306px;
-      @include media-breakpoint-down(sm) {
-        height: 200px;
+      img {
+        height: 306px;
+        @include media-breakpoint-down(sm) {
+          height: 200px;
+        }
       }
     }
 
@@ -201,184 +388,6 @@
           text-align: center;
         }
       }
-    }
-  }
-
-  .work {
-    height: auto;
-
-    .main-content {
-      background-color: $gray-light;
-      display: flex;
-
-      @include media-breakpoint-down(sm) {
-        display: block;
-      }
-    }
-
-    .sidebar {
-      width: 50%;
-      @include media-breakpoint-down(sm) {
-        display: none;
-      }
-    }
-
-    .content {
-      width: 50%;
-
-      @include media-breakpoint-down(sm) {
-        width: 100%;
-      }
-
-      .content-panel {
-        align-items: flex-end;
-        display: flex;
-        height: auto;
-        justify-content: center;
-        text-align: center;
-
-        @include media-breakpoint-down(sm) {
-          display: table;
-        }
-      }
-
-      .last-panel {
-        height: 0;
-      }
-    }
-
-    .content-panel-inner {
-      align-items: center;
-      background-color: $gray-light;
-      display: flex;
-      height: calc(100vh - 75.45px);
-      justify-content: center;
-
-      .panel-inner-text {
-        margin: 0 4rem;
-        text-align: left;
-
-        @include media-breakpoint-down(sm) {
-          margin: 0 1rem;
-          text-align: center;
-        }
-
-        h2 {
-          color: $orange-dark;
-          font-size: 42px;
-          font-weight: bold;
-          line-height: 1.19;
-        }
-
-        p {
-          color: $gray-dark;
-          font-size: 18px;
-          line-height: 1.78;
-        }
-      }
-    }
-
-    .content-panel-image {
-      h2 {
-        color: white;
-        font-size: 40px;
-        font-weight: bold;
-        padding: 16px;
-        text-align: center;
-        margin-top: 2rem;
-      }
-
-      .store-buttons {
-        padding: 0 0 60px 0;
-        @include media-breakpoint-down(sm) {
-          padding: 0 0 40px 0;
-        }
-      }
-
-      .phone-image {
-        height: 440px;
-      }
-    }
-
-    .description {
-      display: none;
-
-      @include media-breakpoint-down(sm) {
-        display: flex;
-      }
-    }
-
-    .loudcloud {
-      background-image: url('/assets/home-graphic-loudcloud-pattern.png');
-    }
-
-    .voyage {
-      background-image: url('/assets/home-graphic-voyage-pattern.png');
-    }
-
-    .juntoscope {
-      background-image: url('/assets/home-graphic-juntoscope-pattern.png');
-    }
-  }
-
-  .contact-us {
-    height: 344px;
-
-    @include media-breakpoint-down(sm) {
-      height: 780px;
-    }
-
-    .row {
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(108, 144, 152, 0.99),
-        #3f5a60
-      );
-    }
-
-    .cta-image {
-      object {
-        height: 280px;
-        width: 380px;
-
-        @include media-breakpoint-down(sm) {
-          height: 480px;
-          margin-top: 0;
-        }
-      }
-    }
-
-    .cta-text {
-      @include media-breakpoint-down(sm) {
-        margin-top: -10rem; // remove this when SVG is fixed
-      }
-    }
-
-    h2 {
-      color: white;
-      font-size: 22px;
-      margin: 0;
-
-      @include media-breakpoint-down(sm) {
-        font-size: 20px;
-      }
-    }
-
-    p {
-      color: $white;
-      font-size: 40px;
-      margin: 1rem 0;
-
-      @include media-breakpoint-down(sm) {
-        font-size: 55px;
-        line-height: 60px;
-        margin: 2rem 0;
-      }
-    }
-
-    .btn {
-      margin-top: 4rem;
     }
   }
 }

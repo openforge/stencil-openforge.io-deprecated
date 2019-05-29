@@ -1,203 +1,152 @@
 // section - services
-section.services {
-  // hero
+
+.services {
+  font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
+
   .hero {
-    &.development {
-      background-image: url('/assets/team-landing-header-development-team.jpg');
-    }
-    &.design {
-      background-image: url('/assets/team-landing-header-design-team.jpg');
-    }
-    &.consulting {
-      background-image: url('/assets/team-landing-header-management-team.jpeg');
+    padding-top: 150px;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
     }
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-    }
-
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
-
-    .container,
     .row {
-      height: 100%;
+      height: auto;
+      padding-bottom: 2rem;
     }
 
-    h2 {
-      color: $white;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      @include media-breakpoint-down(lg) {
-        font-size: 3rem;
-      }
-      @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
-      }
+    .line-break {
+      border-bottom: 1px solid $gray-800;
     }
-
-    p {
-      color: $white;
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
-      max-width: 500px;
-      @include media-breakpoint-down(lg) {
-        font-size: 1rem;
-      }
-    }
-
-    &.development,
-    &.design,
-    &.consulting {
-      h2 {
-        text-align: initial;
-      }
-      p {
-        max-width: initial;
-        padding: 0;
-      }
-    }
+  
   }
 
-  .text-img-container {
-    margin-top: 4rem;
-    &:first-child {
-      margin-top: 0;
-      padding-top: 6rem;
-    }
-    h2 {
-      text-align: center;
-    }
-    p {
-      padding: 2rem;
-    }
-  }
+  .our-services,
+  .our-work,
+  .our-seminars {
 
-  .text-img-container {
-    display: grid;
-
-    app-img {
-      justify-self: center;
-      img {
-        object-fit: cover;
-      }
-    }
-
-    &.right-side {
-      grid-template-columns: 0.5fr 1fr;
-      grid-column-gap: 30px;
-      .text-img-container-text {
-        h2 {
-          color: $orange;
-          text-align: left;
-        }
-        p {
-          margin-bottom: 1rem;
-          padding: 0;
-          text-align: left;
-          &.check-link {
-            color: $orange;
-            font-size: 26px;
-            margin-bottom: 0;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-    &.left-side {
-      grid-template-columns: 1fr 0.5fr;
-      grid-column-gap: 30px;
-      .text-img-container-text {
-        h2 {
-          color: $orange;
-          text-align: right;
-        }
-        p {
-          margin-bottom: 1rem;
-          padding: 0;
-          text-align: right;
-          &.check-link {
-            color: $orange;
-            font-size: 26px;
-            margin-bottom: 0;
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-
-  .our-toolbox {
-    margin-top: 4rem;
-    padding-bottom: 4rem;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#020001+10,666666+50,000000+90 */
-    background: linear-gradient(
-      to right,
-      #020001 10%,
-      #666666 50%,
-      #000000 90%
-    );
-    h2,
-    h3,
-    p {
-      color: white;
-      padding-top: 1rem;
+    .header {
+      margin: 4rem auto 4rem;
+      max-width: 768px;
       text-align: center;
     }
 
-    h2,
+    .line-title {
+      display: block;
+      position: relative;
+      
+      &:before, &:after {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        background: gray;
+        width: 50%;        
+        position: relative; 
+        vertical-align: middle;
+      }  
+      &:before {
+        left: -0.5em; 
+        margin-left: -50%;    
+      }
+      &:after {      
+        right: -0.5em;  
+        margin-right: -50%;
+      }
+    }
+  }
+
+  .our-services {
     h3 {
-      text-transform: uppercase;
+      color: $orange-dark;
     }
 
-    p {
-      margin-bottom: 0;
-    }
-
-    .image-column {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      img {
-        max-width: 250px;
-        width: 100%;
-      }
+    @include media-breakpoint-down(sm) {
+      text-align: center;
     }
   }
 
-  .work-examples {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    h2 {
-      text-align: center;
+  .our-work {
+    .container {
+      max-width: 960px;
     }
-    .single-example {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
 
-      .single-example-text {
-        h2 {
-          color: $orange;
-          text-align: left;
+    .example {
+      position: relative;
+      margin-bottom: 5rem;
+
+      .screenshots {
+        justify-content: center;
+      }
+
+      .behind-left {
+        position: relative;
+        height: 350px;
+        right: 50px;
+        top: -30px;
+      }
+
+      .front-center {
+        position: absolute;
+        height: 350px;
+        left: 45px;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+
+        a {
+          margin: 0 10px;
         }
       }
-      app-img {
-        justify-self: center;
+
+      .information {
+        display: flex;
+        flex-direction: column;
+
+        h3, a {
+          text-align: center;
+        }
+
+        .active {
+          color: #0095aa;
+          text-decoration: underline;
+        }
       }
     }
+
   }
 
-  .no-examples {
-    margin-top: 4rem;
-    margin-bottom: 4rem;
-    h2 {
-      font-size: 46px;
+  .our-seminars {
+    .container {
+      margin-bottom: 5rem;
+    }
+
+    button {
+      background-color: #ec9b41;
+      border: solid 0.8px white;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      color: $gray-dark;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: 1.3px;
+      height: auto;
+      line-height: 1.82;
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
       text-align: center;
+      width: auto;
     }
   }
 }

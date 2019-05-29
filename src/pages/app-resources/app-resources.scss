@@ -9,7 +9,21 @@
     @include media-breakpoint-down(sm) {
       background-image: url('/assets/resources-header.jpg');
     }
+  }
 
+  .webp {
+    background-image: url('/assets/resources-header.webp');
+
+    @include media-breakpoint-down(md) {
+      background-image: url('/assets/resources-header.webp');
+    }
+    @include media-breakpoint-down(sm) {
+      background-image: url('/assets/resources-header.webp');
+    }
+  }
+
+  .hero,
+  .webp {
     .overlay {
       background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
