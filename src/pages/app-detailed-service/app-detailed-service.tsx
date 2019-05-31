@@ -253,7 +253,7 @@ export class AppDetailedService {
                     <app-translate key="services.ourwork.juntoscope.description" />
                   </p>
                   <stencil-route-link url="/juntoscope">
-                    <a href="openforge.io/juntoscope" class="active">View Case Study</a>
+                    <a class="active">View Case Study</a>
                   </stencil-route-link>
                 </div>
               </div>
