@@ -50,7 +50,7 @@ export class AppToolbox {
         <div id="second-content" class="design container">
           <h1>UI/UX Design</h1>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-first.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-first.png" alt="Abstract Logo Image" />
             <div class="text-img-container-text">
               <h2>
                 <a target="_blank" href="https://www.goabstract.com/" rel="noopener">
@@ -75,10 +75,10 @@ export class AppToolbox {
                 allows for our team to maintain the highest standard of quality assurance.
               </p>
             </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-second.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-second.png" alt="Marvel Logo Image" />
           </section>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-third.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-design-toolbox-third.png" alt="Sketch Logo Image" />
             <div class="text-img-container-text">
               <h2>
                 <a target="_blank" href="https://www.sketchapp.com/" rel="noopener">
@@ -95,7 +95,7 @@ export class AppToolbox {
         <div class="development container">
           <h1>App Development</h1>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-development-toolbox-second.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-development-toolbox-second.png" alt="Ionic Framework Logo Image" />
             <div class="text-img-container-text">
               <h2>
                 <a target="_blank" href="https://ionicframework.com/" rel="noopener">
@@ -117,10 +117,10 @@ export class AppToolbox {
               </h2>
               <p>Angular lays the foundations for our developer team to produce and deploy cross platform mobile and web apps.</p>
             </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-development-toolbox-first.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-development-toolbox-first.png" alt="Angular Logo Image" />
           </section>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/github-logo-black.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/github-logo-black.png" alt="Github Logo Image" />
             <div class="text-img-container-text">
               <h2>
                 <a target="_blank" href="https://github.com/" rel="noopener">
@@ -137,7 +137,7 @@ export class AppToolbox {
         <div class="consulting container">
           <h1>Consulting</h1>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-second.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-second.png" alt="Marvel Logo Image" />
             <div class="text-img-container-text">
               <h2>
                 <a target="_blank" href="https://marvelapp.com/" rel="noopener">
@@ -162,10 +162,10 @@ export class AppToolbox {
                 Git repository and improve your bottom line.
               </p>
             </div>
-            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-third.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-third.png" alt="Bitbucket Logo Image" />
           </section>
           <section class="text-img-container right-side">
-            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-first.png" alt="" />
+            <app-img class="img-fluid d-md-inline" src="/assets/services-consulting-toolbox-first.png" alt="Teamwork Logo Image" />
             <div class="text-img-container-text">
               <h2>
                 <a target="_blank" href="https://www.teamwork.com/" rel="noopener">

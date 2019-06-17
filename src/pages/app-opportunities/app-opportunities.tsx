@@ -429,16 +429,16 @@ export class AppOpportunities {
                     <div class="row">
                       <div class="image-column col-sm-12 col-md-4">
                         <h3>{this.texts[this.match.params.type].firstSkill.name}</h3>
-                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].firstSkill.img} alt="" />
+                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].firstSkill.img} alt={this.texts[this.match.params.type].firstSkill.name} />
                       </div>
                       <div class="image-column col-sm-12 col-md-4">
                         <h3>{this.texts[this.match.params.type].secondSkill.name}</h3>
-                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].secondSkill.img} alt="" />
+                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].secondSkill.img} alt={this.texts[this.match.params.type].secondSkill.name} />
                       </div>
                       <div class="image-column col-sm-12 col-md-4">
                         <h3>{this.texts[this.match.params.type].thirdSkill.name}</h3>
-                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].thirdSkill.img} alt="" />
-                        <app-img class="img-fluid d-xs-inline d-md-none" src={this.texts[this.match.params.type].mobile.img} alt="" />
+                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].thirdSkill.img} alt={this.texts[this.match.params.type].thirdSkill.name} />
+                        <app-img class="img-fluid d-xs-inline d-md-none" src={this.texts[this.match.params.type].mobile.img} alt="Mobile Image" />
                       </div>
                     </div>
                   </div>

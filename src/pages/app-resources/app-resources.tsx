@@ -219,7 +219,7 @@ export class AppResources {
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="colunm">
-                  <app-img class="img-fluid d-none d-md-inline" src="/assets/pwa-white-paper-front-page.jpg" alt="" />
+                  <app-img class="img-fluid d-none d-md-inline" src="/assets/pwa-white-paper-front-page.jpg" alt="PWA White Paper front page image" />
                 </div>
               </div>
               <div class="col-sm-12 col-md-12 col-lg-6">
@@ -285,7 +285,7 @@ export class AppResources {
               </div>
             </section>
             <section class="text-img-container left-side">
-              <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-whitepaper.png" alt="" />
+              <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-whitepaper.png" alt="Resources White paper image" />
               <div class="text-img-container-text">
                 <ul>
                   <li>
@@ -320,7 +320,7 @@ export class AppResources {
         {this.formSubmitted ? (
           <div class="container">
             <section id="thankyou" class="text-img-container left-side">
-              <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-robot.gif" alt="" />
+              <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-robot.gif" alt="Robot Gif" />
               <div class="text-img-container-text">
                 <h2>
                   <app-translate key="resources.enjoy" />

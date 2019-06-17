@@ -166,9 +166,9 @@ export class AppHome {
                     <app-translate key="home.work.mobileWebApplications.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/home-graphic-work-vanlife-1.png" class="behind-left" alt="vanlife screenshot" />
-                    <img src="/assets/home-graphic-work-vanlife-2.png" class="front-center" alt="vanlife screenshot" />
-                    <img src="/assets/home-graphic-work-vanlife-3.png" class="behind-right" alt="vanlife screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-3.png" class="behind-right" alt="vanlife app screenshot" />
                   </div>
                   <div class="store-buttons">
                     <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
@@ -193,9 +193,9 @@ export class AppHome {
                     <app-translate key="home.work.mobileTechnology.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/home-graphic-work-loudcloud-1.png" class="behind-left" alt="loudcloud screenshot" />
-                    <img src="/assets/home-graphic-work-loudcloud-2.png" class="front-center" alt="loudcloud screenshot" />
-                    <img src="/assets/home-graphic-work-loudcloud-3.png" class="behind-right" alt="loudcloud screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
                   </div>
                   <div class="store-buttons">
                     <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
@@ -220,9 +220,9 @@ export class AppHome {
                     <app-translate key="home.work.digitalExperience.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/home-graphic-work-voyage-1.png" class="behind-left" alt="voyage screenshot" />
-                    <img src="/assets/home-graphic-work-voyage-2.png" class="front-center" alt="voyage screenshot" />
-                    <img src="/assets/home-graphic-work-voyage-3.png" class="behind-right" alt="voyage screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
                   </div>
                   <div class="store-buttons">
                     <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">

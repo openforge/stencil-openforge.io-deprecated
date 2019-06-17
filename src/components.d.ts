@@ -176,9 +176,6 @@ export namespace Components {
     'reverse'?: boolean;
   }
 
-  interface App404 {}
-  interface App404Attributes extends StencilHTMLAttributes {}
-
   interface AppAbout {}
   interface AppAboutAttributes extends StencilHTMLAttributes {}
 
@@ -299,7 +296,6 @@ declare global {
     'AppTextarea': Components.AppTextarea;
     'AppTranslate': Components.AppTranslate;
     'ContentGraphic': Components.ContentGraphic;
-    'App404': Components.App404;
     'AppAbout': Components.AppAbout;
     'AppBlogIndex': Components.AppBlogIndex;
     'AppBlogPost': Components.AppBlogPost;
@@ -334,7 +330,6 @@ declare global {
     'app-textarea': Components.AppTextareaAttributes;
     'app-translate': Components.AppTranslateAttributes;
     'content-graphic': Components.ContentGraphicAttributes;
-    'app-404': Components.App404Attributes;
     'app-about': Components.AppAboutAttributes;
     'app-blog-index': Components.AppBlogIndexAttributes;
     'app-blog-post': Components.AppBlogPostAttributes;
@@ -449,12 +444,6 @@ declare global {
     new (): HTMLContentGraphicElement;
   };
 
-  interface HTMLApp404Element extends Components.App404, HTMLStencilElement {}
-  var HTMLApp404Element: {
-    prototype: HTMLApp404Element;
-    new (): HTMLApp404Element;
-  };
-
   interface HTMLAppAboutElement extends Components.AppAbout, HTMLStencilElement {}
   var HTMLAppAboutElement: {
     prototype: HTMLAppAboutElement;
@@ -562,7 +551,6 @@ declare global {
     'app-textarea': HTMLAppTextareaElement
     'app-translate': HTMLAppTranslateElement
     'content-graphic': HTMLContentGraphicElement
-    'app-404': HTMLApp404Element
     'app-about': HTMLAppAboutElement
     'app-blog-index': HTMLAppBlogIndexElement
     'app-blog-post': HTMLAppBlogPostElement
@@ -597,7 +585,6 @@ declare global {
     'app-textarea': HTMLAppTextareaElement;
     'app-translate': HTMLAppTranslateElement;
     'content-graphic': HTMLContentGraphicElement;
-    'app-404': HTMLApp404Element;
     'app-about': HTMLAppAboutElement;
     'app-blog-index': HTMLAppBlogIndexElement;
     'app-blog-post': HTMLAppBlogPostElement;
