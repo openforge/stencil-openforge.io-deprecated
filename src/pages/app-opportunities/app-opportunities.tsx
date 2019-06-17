@@ -3,6 +3,7 @@ import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
 declare var fbq;
+declare var gtag;
 
 @Component({
   tag: 'app-opportunities',
@@ -184,6 +185,10 @@ export class AppOpportunities {
   }
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {
@@ -424,16 +429,16 @@ export class AppOpportunities {
                     <div class="row">
                       <div class="image-column col-sm-12 col-md-4">
                         <h3>{this.texts[this.match.params.type].firstSkill.name}</h3>
-                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].firstSkill.img} alt="" />
+                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].firstSkill.img} alt={this.texts[this.match.params.type].firstSkill.name} />
                       </div>
                       <div class="image-column col-sm-12 col-md-4">
                         <h3>{this.texts[this.match.params.type].secondSkill.name}</h3>
-                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].secondSkill.img} alt="" />
+                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].secondSkill.img} alt={this.texts[this.match.params.type].secondSkill.name} />
                       </div>
                       <div class="image-column col-sm-12 col-md-4">
                         <h3>{this.texts[this.match.params.type].thirdSkill.name}</h3>
-                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].thirdSkill.img} alt="" />
-                        <app-img class="img-fluid d-xs-inline d-md-none" src={this.texts[this.match.params.type].mobile.img} alt="" />
+                        <app-img class="img-fluid d-none d-md-inline" src={this.texts[this.match.params.type].thirdSkill.img} alt={this.texts[this.match.params.type].thirdSkill.name} />
+                        <app-img class="img-fluid d-xs-inline d-md-none" src={this.texts[this.match.params.type].mobile.img} alt="Mobile Image" />
                       </div>
                     </div>
                   </div>

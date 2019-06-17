@@ -1,13 +1,14 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, State, Prop, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
+declare var gtag;
 
 @Component({
   tag: 'app-team-landing',
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
+  // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
@@ -295,6 +296,10 @@ export class AppTeamLanding {
   }
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
     this.changeMetadata();
   }
 
@@ -310,10 +315,10 @@ export class AppTeamLanding {
   }
 
   changeImageFormat(img: string) {
-    if (img && this.allowWebp) {
-      const idx = img.lastIndexOf('.');
-      return `${img.substring(0, idx)}.webp`;
-    }
+    // if (img && this.allowWebp) {
+    //   const idx = img.lastIndexOf('.');
+    //   return `${img.substring(0, idx)}.webp`;
+    // }
     return img;
   }
 

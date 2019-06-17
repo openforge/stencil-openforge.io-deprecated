@@ -2,6 +2,7 @@ import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
+declare var gtag;
 
 @Component({
   tag: 'app-contact',
@@ -54,7 +55,16 @@ export class AppContact {
     this.validateField(target);
   }
 
+  private className;
+  componentWillLoad() {
+    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+  }
+
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {
@@ -131,8 +141,6 @@ export class AppContact {
 
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
-
-  private className = localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero';
 
   render() {
     return (

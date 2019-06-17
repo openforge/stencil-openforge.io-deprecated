@@ -1,11 +1,12 @@
 import { Component } from '@stencil/core';
+declare var gtag;
 
 @Component({
   tag: 'app-case-study',
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToTop() {
     const form = document.getElementsByTagName('header')[0];
@@ -13,6 +14,11 @@ export class AppCaseStudy {
   }
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+
     document.querySelector("meta[property='og:title']").setAttribute('content', 'JuntoScope - Scoping Software | OpenForge');
     document
       .querySelector("meta[property='og:description']")
@@ -28,7 +34,7 @@ export class AppCaseStudy {
   render() {
     return (
       <div class="case-study">
-        <header class={this.className}>
+        <header class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div style={{ margin: 'auto' }}>
