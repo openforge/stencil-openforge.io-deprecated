@@ -81,15 +81,41 @@ export class AppDetailedService {
     const work = document.getElementById('our-work');
     const seminars = document.getElementById('our-seminars');
 
-    if(this.match.params.service != 'training') {
-      console.log('this is it!');
+    const digiThermo = document.getElementById('digithermo');
+    const juntoscope = document.getElementById('juntoscope');
+    const voyage = document.getElementById('voyage');
+    const suw = document.getElementById('suw');
 
-      work.style.setProperty('display', 'initial');
-      seminars.style.setProperty('display', 'none');
-    } else {
-      console.log('this is else')
+    if(this.match.params.service == 'training') {
       work.style.setProperty('display', 'none');
       seminars.style.setProperty('display', 'initial');
+
+    } else if(this.match.params.service == 'app-designer') {
+      work.style.setProperty('display', 'initial');
+      seminars.style.setProperty('display', 'none');
+
+      voyage.style.setProperty('display', 'initial');
+      suw.style.setProperty('display', 'initial');
+      digiThermo.style.setProperty('display', 'none');
+      juntoscope.style.setProperty('display', 'none');
+
+    } else if(this.match.params.service == 'app-developer') {
+      work.style.setProperty('display', 'initial');
+      seminars.style.setProperty('display', 'none');
+
+      voyage.style.setProperty('display', 'none');
+      suw.style.setProperty('display', 'none');
+      digiThermo.style.setProperty('display', 'initial');
+      juntoscope.style.setProperty('display', 'initial');
+
+    } else if(this.match.params.service == 'startup-consulting') {
+      work.style.setProperty('display', 'initial');
+      seminars.style.setProperty('display', 'none');
+
+      voyage.style.setProperty('display', 'none');
+      suw.style.setProperty('display', 'none');
+      digiThermo.style.setProperty('display', 'initial');
+      juntoscope.style.setProperty('display', 'initial');
     }
   }
 
@@ -132,16 +158,16 @@ export class AppDetailedService {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-sm-12 col-md-6">
+              <div class="col-sm-12 col-md-5 order-md-2 d-flex justify-content-center">
+                <img src={this.imgs[this.match.params.service].header} alt="Header Graphic" />
+              </div>
+              <div class="col-sm-12 col-md-7 order-md-1">
                 <h1>
                   <app-translate key={`services.${this.match.params.service}.hero.title`} />
                 </h1>
                 <p>
                   <app-translate key={`services.${this.match.params.service}.hero.text`} />
                 </p>
-              </div>
-              <div class="col-sm-12 col-md-6 align-self-center">
-                <img src={this.imgs[this.match.params.service].header} alt="Header Graphic" />
               </div>
             </div>
             <div class="line-break" />
@@ -156,10 +182,10 @@ export class AppDetailedService {
               </div>
             </div>
             <div class="row text-sm-center text-md-left">
-              <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+              <div class="col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
                 <object data={this.imgs[this.match.params.service].services.first} height="250" width="250" />
               </div>
-              <div class="col-md-9 col-sm-12 d-flex flex-column align-self-center">
+              <div class="col-md-8 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
                   <app-translate key={`services.${this.match.params.service}.first.title`} />
                 </h3>
@@ -169,10 +195,10 @@ export class AppDetailedService {
               </div>
             </div>
             <div class="row text-sm-center text-md-right">
-              <div class="col-md-3 col-sm-12 d-flex order-md-2 justify-content-center align-items-center">
+              <div class="col-md-4 col-sm-12 d-flex order-md-2 justify-content-center align-items-center">
                 <object data={this.imgs[this.match.params.service].services.second} height="250" width="250" />
               </div>
-              <div class="col-md-9 col-sm-12 order-md-1 d-flex flex-column align-self-center">
+              <div class="col-md-8 col-sm-12 order-md-1 d-flex flex-column align-self-center">
                 <h3>
                   <app-translate key={`services.${this.match.params.service}.second.title`} />
                 </h3>
@@ -182,10 +208,10 @@ export class AppDetailedService {
               </div>
             </div>
             <div class="row text-sm-center text-md-left">
-              <div class="col-md-3 col-sm-12 d-flex justify-content-center align-items-center">
+              <div class="col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
                 <object data={this.imgs[this.match.params.service].services.third} height="250" width="250" />
               </div>
-              <div class="col-md-9 col-sm-12 d-flex flex-column align-self-center">
+              <div class="col-md-8 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
                   <app-translate key={`services.${this.match.params.service}.third.title`} />
                 </h3>
@@ -206,7 +232,32 @@ export class AppDetailedService {
             </div>
           {/* Work Example */}
             <div class="row">
-              <div class="col-md-4 col-sm-12 example">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="juntoscope">
+                <div class="row screenshots">
+                  <img src="/assets/apps/juntoscope/graphic-example-1.png" class="behind-left" alt="juntoscope app screenshot" />
+                  <img src="/assets/apps/juntoscope/graphic-example-2.png" class="front-center" alt="juntoscope app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>
+                    <app-translate key="services.ourwork.juntoscope.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.juntoscope.description" />
+                  </p>
+                  <stencil-route-link url="/juntoscope">
+                    <a class="active">View Case Study</a>
+                  </stencil-route-link>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 flex-fill example" id="voyage">
                 <div class="row screenshots">
                   <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
                   <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
@@ -220,16 +271,16 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>The Voyage</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
-                  <a class="active">View Case Study</a>
+                  <h3>
+                    <app-translate key="services.ourwork.voyage.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.voyage.description" />
+                  </p>
+                  <a>Case Study Coming Soon!</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 example">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="vanlife">
                 <div class="row screenshots">
                   <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
                   <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
@@ -243,35 +294,58 @@ export class AppDetailedService {
                   </a>
                 </div>
                 <div class="information">
-                  <h3>The Vanlife App</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.vanlife.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.vanlife.description" />
+                  </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
               </div>
-              <div class="col-md-4 col-sm-12 example">
+              <div class="col-md-4 col-sm-12 flex-fill example" id="suw">
                 <div class="row screenshots">
                   <img src="/assets/apps/startupwars/graphic-example-1.png" class="behind-left" alt="startup wars app screenshot" />
                   <img src="/assets/apps/startupwars/graphic-example-2.png" class="front-center" alt="startup wars app screenshot" />
                 </div>
                 <div class="store-buttons">
-                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                  <a>
                     <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                   </a>
-                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                  <a>
                     <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                   </a>
                 </div>
                 <div class="information">
-                  <h3>Startup Wars</h3>
-                  <ul>
-                    <li>Example 1</li>
-                    <li>Example 2</li>
-                    <li>Example 3</li>
-                  </ul>
+                  <h3>
+                    <app-translate key="services.ourwork.suw.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.suw.description" />
+                  </p>
+                  <a>Case Study Coming Soon!</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 flex-fill example" id="digithermo">
+                <div class="row screenshots">
+                  <img src="/assets/apps/digithermo/graphic-example-1.png" class="behind-left" alt="digithermo app screenshot" />
+                  <img src="/assets/apps/digithermo/graphic-example-2.png" class="front-center" alt="digithermo wars app screenshot" />
+                </div>
+                <div class="store-buttons">
+                  <a>
+                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  </a>
+                  <a>
+                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  </a>
+                </div>
+                <div class="information">
+                  <h3>
+                    <app-translate key="services.ourwork.digithermo.title" />
+                  </h3>
+                  <p>
+                    <app-translate key="services.ourwork.digithermo.description" />
+                  </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
               </div>
@@ -286,20 +360,15 @@ export class AppDetailedService {
                 <h2 class="line-title">Learn About Our Seminars</h2>
               </div>
             </div>
-            <div class="row text-xs-center text-sm-center text-md-left">
-              <div class="col-md-6 col-sm-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ut est quis nibh fermentum venenatis. 
-                  Ut rutrum ante quis felis accumsan sollicitudin. Integer posuere congue eros, eu rutrum elit rhoncus sit amet. 
-                  Donec varius faucibus urna, a cursus dui mattis ut. Ut iaculis dictum odio, id pretium mauris cursus eget. 
-                  Quisque ut mi eros. Mauris sit amet lectus id urna elementum feugiat sit amet eu lacus. 
-                  Vivamus sodales hendrerit placerat. Mauris tincidunt, urna lacinia vulputate dictum, nulla eros lacinia purus, 
-                  at faucibus justo nibh sed erat. Nulla tristique semper magna ac malesuada. Pellentesque habitant morbi tristique senectus 
-                  et netus et malesuada fames ac turpis egestas. Mauris ac faucibus leo. Aenean congue odio vehicula, molestie ligula tincidunt, 
-                  efficitur est.
+            <div class="row">
+              <div class="col-md-6 col-sm-12 text-container">
+                <p>
+                  <app-translate key={`services.${this.match.params.service}.seminars`} />
                 </p>
                 <button>
                   Join Our Mailing List
                 </button>
+
               </div>
               <div class="col-md-6 col-sm-12 d-flex align-self-center">
                 <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo"/>

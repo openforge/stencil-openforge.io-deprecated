@@ -1,8 +1,6 @@
 // section - services
 
 .services {
-  font-family: 'Muli', sans-serif;
-  overflow-x: hidden;
 
   .hero {
     padding-top: 150px;
@@ -14,6 +12,10 @@
     .row {
       height: auto;
       padding-bottom: 2rem;
+
+      img {
+        max-height: 360px;
+      }
     }
 
     .line-break {
@@ -30,6 +32,10 @@
       margin: 4rem auto 4rem;
       max-width: 768px;
       text-align: center;
+
+      h2 {
+        font-weight: bold;
+      }
     }
 
     .line-title {
@@ -44,6 +50,11 @@
         width: 50%;        
         position: relative; 
         vertical-align: middle;
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+        
       }  
       &:before {
         left: -0.5em; 
@@ -67,9 +78,6 @@
   }
 
   .our-work {
-    .container {
-      max-width: 960px;
-    }
 
     .example {
       position: relative;
@@ -81,14 +89,14 @@
 
       .behind-left {
         position: relative;
-        height: 350px;
+        height: 300px;
         right: 50px;
         top: -30px;
       }
 
       .front-center {
         position: absolute;
-        height: 350px;
+        height: 300px;
         left: 45px;
         right: 0;
         margin-left: auto;
@@ -111,8 +119,15 @@
         display: flex;
         flex-direction: column;
 
-        h3, a {
+        h3, a, p {
           text-align: center;
+        }
+
+        a { 
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
         }
 
         .active {
@@ -129,12 +144,27 @@
       margin-bottom: 5rem;
     }
 
+    .text-container {
+      text-align: left;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+    }
+
+    img {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
     button {
       background-color: #ec9b41;
       border: solid 0.8px white;
       border-radius: 2px;
       box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       color: $gray-dark;
+      cursor: pointer;
       font-family: Roboto;
       font-size: 11px;
       font-weight: bold;
