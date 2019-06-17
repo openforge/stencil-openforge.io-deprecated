@@ -1,5 +1,9 @@
 import { Component, State, Listen, Prop } from '@stencil/core';
 import { gaPage, gaEvent } from '../../shared/google-analytics';
+import { translate } from '../../services/translation.service';
+
+declare var fbq;
+declare var gtag;
 
 @Component({
   tag: 'app-contact',
@@ -13,31 +17,24 @@ export class AppContact {
   formValues: {
     name: '';
     email: '';
-    company: '';
     phone: '';
     message: '';
-    desiredService: '';
-    budget: '';
 
     nameValid: false;
-    companyValid: false;
     emailValid: false;
     phoneValid: false;
     messageValid: false;
-    serviceValid: false;
-    budgetValid: false;
   };
 
   @State() nameError: string;
-  @State() companyError: string;
   @State() emailError: string;
   @State() phoneError: string;
   @State() messageError: string;
-  @State() serviceError: string;
-  @State() budgetError: string;
 
   @State() isDisabled = true;
 
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -46,12 +43,27 @@ export class AppContact {
   };
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+      fbq('track', 'Lead');
+    }
+    this.resetFormValues();
+
     gaPage('Contact');
     this.resetFormValues();
     let element;
     element = document.querySelector('.contact .hero');
     element.style.backgroundImage = `url('assets/bg-hero-handshake-desk.jpg')`;
   }
+  radioChoices: any;
+
+  constructor() {}
 
   @Listen('check')
   @Listen('valueChange')
@@ -63,68 +75,35 @@ export class AppContact {
     this.validateField(target);
   }
 
+  private className;
+  componentWillLoad() {
+    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+  }
+
   validateField(e) {
-    console.log('validating e? ', e);
     switch (e.name) {
       case 'name':
         this.formValues.nameValid = e.checkValidity();
-        this.nameError = this.formValues.nameValid
-          ? ''
-          : (this.nameError = e.validationMessage);
-        break;
-
-      case 'company':
-        this.formValues.companyValid = e.checkValidity();
-        this.companyError = this.formValues.companyValid
-          ? ''
-          : (this.companyError = e.validationMessage);
+        this.nameError = this.formValues.nameValid ? '' : (this.nameError = e.validationMessage);
         break;
 
       case 'email':
         this.formValues.emailValid = e.checkValidity();
-        this.emailError = this.formValues.emailValid
-          ? ''
-          : (this.emailError = e.validationMessage);
+        this.emailError = this.formValues.emailValid ? '' : (this.emailError = e.validationMessage);
         break;
 
       case 'phone':
-        this.formValues.phoneValid = e.checkValidity();
-        this.phoneError = this.formValues.phoneValid
-          ? ''
-          : (this.phoneError = e.validationMessage);
+        this.formValues.phoneValid = e.value.match(/^[\+]?[(]?\d{1,3}[)]?([-\s\.]?\d{3}){1,2}[-\s\.]?\d{4,6}$/);
+        this.phoneError = this.formValues.phoneValid ? '' : (this.phoneError = e.validationMessage || 'Phone number invalid. Please try a valid format.');
         break;
 
       case 'message':
         this.formValues.messageValid = e.checkValidity();
-        this.messageError = this.formValues.messageValid
-          ? ''
-          : (this.messageError = e.validationMessage);
-        break;
-
-      case 'desiredService':
-        this.formValues.serviceValid = e.checked;
-        this.serviceError = this.formValues.serviceValid
-          ? ''
-          : e.validationMessage;
-        break;
-
-      case 'budget':
-        this.formValues.budgetValid = e.checked;
-        this.budgetError = this.formValues.budgetValid
-          ? ''
-          : (this.budgetError = e.validationMessage);
+        this.messageError = this.formValues.messageValid ? '' : (this.messageError = e.validationMessage);
         break;
     }
 
-    this.formValues.nameValid &&
-    this.formValues.companyValid &&
-    this.formValues.emailValid &&
-    this.formValues.phoneValid &&
-    this.formValues.messageValid &&
-    this.formValues.serviceValid &&
-    this.formValues.budgetValid
-      ? (this.isDisabled = false)
-      : (this.isDisabled = true);
+    this.formValues.nameValid && this.formValues.emailValid && this.formValues.phoneValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
@@ -135,17 +114,20 @@ export class AppContact {
       this.formSubmitting = true;
       this.isDisabled = true;
 
-      await fetch(
-        'https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs',
-        {
-          method: 'post',
-          mode: 'no-cors',
-          headers: {
-            'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          },
-          body: JSON.stringify(this.formValues),
-        }
-      );
+      await fetch('https://5fq97p31pc.execute-api.us-east-1.amazonaws.com/prod/openforgeContactUs', {
+        method: 'post',
+        mode: 'no-cors',
+        headers: {
+          'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        },
+        body: JSON.stringify(this.formValues),
+      });
+
+      // isServer is false when running in the browser
+      // and true when being prerendered
+      if (!this.isServer) {
+        fbq('track', 'CompleteRegistration');
+      }
 
       event.target.reset();
       this.resetFormValues();
@@ -162,31 +144,6 @@ export class AppContact {
     }
   }
 
-  renderRadioColumns(name: string, choices: string[]) {
-    const columns = [];
-    let columnItems = [];
-
-    choices.forEach(choice => {
-      const item = (
-        <app-radio name={name} value={choice} label={choice} required={true} />
-      );
-
-      columnItems.push(item);
-
-      if (columnItems.length >= 4) {
-        const column = <div class="col-sm-6">{columnItems}</div>;
-        columns.push(column);
-
-        columnItems = [];
-      }
-    });
-
-    const column = <div class="col-sm-6">{columnItems}</div>;
-    columns.push(column);
-
-    return columns;
-  }
-
   scrollToForm() {
     gaEvent('Contact', 'Scroll to form', 'Scroll to form');
     const form = document.getElementById('second-content');
@@ -197,17 +154,18 @@ export class AppContact {
     return (
       <div class="contact">
         {/* header - hero */}
-        <header class="hero">
+        <header class={this.className}>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>Let's Work Together</h2>
-                <p>Request a Discovery Session Today!</p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
-                  Request Now
+                <h2>
+                  <app-translate key="contact.hero.title" />
+                </h2>
+                <p>
+                  <app-translate key="contact.hero.request" />
+                </p>
+                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
+                  <app-translate key="contact.hero.requestNow" />
                 </button>
               </div>
             </div>
@@ -218,139 +176,47 @@ export class AppContact {
           <div class="container">
             {!this.formSubmitted ? (
               <div class="jumbotron">
-                <h2 class="display-5 font-weight-bold">Get in Touch</h2>
+                <h2 class="display-5 font-weight-bold">
+                  <app-translate key="contact.form.title" />
+                </h2>
                 <p class="lead">
-                  Tell us a little bit about what you're working on. We'll be in
-                  touch to tell you about the next steps toward accomplishing
-                  your goals!
+                  <app-translate key="contact.form.text" />
                 </p>
-                <form
-                  id="contact-form"
-                  onSubmit={this.handleSubmit.bind(this)}
-                  novalidate={true}
-                >
-                  <app-input
-                    name="name"
-                    label="Full Name"
-                    type="text"
-                    id="name"
-                    required={true}
-                  />
+                <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
+                  <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder="" required={true} />
                   <p class="error">
-                    <span
-                      style={
-                        !this.nameError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
+                    <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
                       <i class="fa fa-exclamation-circle" aria-hidden="true" />
                     </span>
                     {this.nameError}
                   </p>
 
-                  <app-input
-                    name="company"
-                    label="Company"
-                    type="text"
-                    required={true}
-                  />
+                  <app-input name="email" label={translate('contact.form.email')} type="email" id="email" placeholder="" required={true} />
                   <p class="error">
-                    <span
-                      style={
-                        !this.companyError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.companyError}
-                  </p>
-
-                  <app-input
-                    name="email"
-                    label="E-mail"
-                    type="email"
-                    id="email"
-                    required={true}
-                  />
-                  <p class="error">
-                    <span
-                      style={
-                        !this.emailError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
+                    <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
                       <i class="fa fa-exclamation-circle" aria-hidden="true" />
                     </span>
                     {this.emailError}
                   </p>
 
-                  <app-input
-                    name="phone"
-                    label="Phone"
-                    id="phone"
-                    type="number"
-                    required={true}
-                  />
+                  <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder="" required={true} />
                   <p class="error">
-                    <span
-                      style={
-                        !this.phoneError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
+                    <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
                       <i class="fa fa-exclamation-circle" aria-hidden="true" />
                     </span>
                     {this.phoneError}
                   </p>
 
-                  <app-input
-                    name="message"
-                    label="How did you hear about OpenForge?"
-                    type="text"
-                    required={true}
-                  />
+                  <app-input name="message" label={translate('contact.form.whereDidYouHear')} type="text" placeholder="" required={true} />
                   <p class="error">
-                    <span
-                      style={
-                        !this.messageError
-                          ? { display: 'none' }
-                          : this.errorIconStyles
-                      }
-                    >
+                    <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
                       <i class="fa fa-exclamation-circle" aria-hidden="true" />
                     </span>
                     {this.messageError}
                   </p>
 
-                  <fieldset>
-                    <legend class="lead">How can we help you?</legend>
-                    <div class="row ml-2">
-                      {this.renderRadioColumns(
-                        'desiredService',
-                        radioChoices.desiredService
-                      )}
-                    </div>
-                  </fieldset>
-                  <p class="font-weight-bold">{this.serviceError}</p>
-
-                  <fieldset>
-                    <legend class="lead">Do you have a budget?</legend>
-                    <div class="row ml-2">
-                      {this.renderRadioColumns('budget', radioChoices.budget)}
-                    </div>
-                  </fieldset>
-                  <button
-                    name="submit"
-                    type="submit"
-                    class="btn btn-primary"
-                    disabled={this.isDisabled}
-                  >
-                    Send
+                  <button name="submit" type="submit" class="btn btn-primary" disabled={this.isDisabled}>
+                    <app-translate key="contact.form.button.send" />
                   </button>
                 </form>
               </div>
@@ -358,13 +224,14 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container">
-                <content-graphic-lg img-url="assets/rocket.png">
-                  <h3 slot="header">Thank you!</h3>
+                <content-graphic img-url="/assets/rocket.png">
+                  <h3 slot="header">
+                    <app-translate key="contact.form.thanx" />
+                  </h3>
                   <p slot="body">
-                    Your message has been delivered. Someone will be in touch
-                    with you soon!
+                    <app-translate key="contact.form.thanxText" />
                   </p>
-                </content-graphic-lg>
+                </content-graphic>
               </div>
             ) : null}
           </div>
@@ -377,41 +244,13 @@ export class AppContact {
   private resetFormValues() {
     this.formValues = {
       name: '',
-      company: '',
       email: '',
       phone: '',
       message: '',
-      desiredService: '',
-      budget: '',
       nameValid: false,
-      companyValid: false,
       emailValid: false,
       phoneValid: false,
       messageValid: false,
-      serviceValid: false,
-      budgetValid: false,
     };
   }
 }
-
-const radioChoices = {
-  desiredService: [
-    'App Development',
-    'Web Development',
-    'UI/UX Design',
-    'Graphic Design',
-    'Consulting',
-    'CTO as a service',
-    'Unsure',
-  ],
-  budget: [
-    '5K-10K',
-    '10K-25K',
-    '25K-50K',
-    '50K-75K',
-    '75K-100K',
-    '100K-200K',
-    '200K',
-    'Unsure',
-  ],
-};

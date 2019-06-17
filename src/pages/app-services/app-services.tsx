@@ -1,254 +1,200 @@
-import { Component } from '@stencil/core';
 import { gaPage } from '../../shared/google-analytics';
+import { Component, Prop } from '@stencil/core';
+
+declare var fbq;
 
 @Component({
   tag: 'app-services',
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   componentDidLoad() {
     gaPage('Services');
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
+    }
+  }
+
+  changeMetadata() {
+    // Change meta tags dynamically
+    document.querySelector("meta[property='og:title']").setAttribute('content', 'Startup Consulting Services in Philadelphia | OpenForge');
+    document
+      .querySelector("meta[property='og:description']")
+      .setAttribute(
+        'content',
+        'OpenForge is Philadelphia’s Top Startup Consulting Firm.  We Specialize in Startup Consulting, Application Development, and LEAN Canvas Methodologies.   Let Us Help You With Marketing and CTO As a Service.'
+      );
+    document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/services/startup-consulting/');
+    document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/team-landing-header-management-team.jpeg');
+    document.querySelector("meta[name='keywords']").setAttribute('content', 'Philadelphia, Startup Consulting, App Development, CTO As a Service, Tech Consulting');
   }
 
   render() {
     return (
-      <section class="services">
-        <div class="">
-          <div class="services--header">
-            <h2>What do we provide?</h2>
-            <p>
-              Whether you are a start up, an enterprise, or somewhere in
-              between, we will work with you every step of the way. Choose your
-              path below to learm more about our custom services.
-            </p>
-          </div>
-
-          <div class="services--tab-panel">
-            <nav class="nav" role="navigation">
-              <div class="nav nav-tabs nav-fill" id="nav-tab">
-                <a
-                  class="nav-item nav-link active"
-                  id="nav-startup-tab"
-                  data-toggle="tab"
-                  href="#nav-startup"
-                  role="tab"
-                  aria-controls="nav-startup"
-                  aria-selected="true"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="assets/graphic-services-startup.png"
-                      alt=""
-                    />
-                    <figcaption>Start Up</figcaption>
-                  </figure>
-                </a>
-
-                <a
-                  class="nav-item nav-link"
-                  id="nav-smallteam-tab"
-                  data-toggle="tab"
-                  href="#nav-smallteam"
-                  role="tab"
-                  aria-controls="nav-smallteam"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="assets/graphic-services-small.png"
-                      alt=""
-                    />
-                    <figcaption>Small Team</figcaption>
-                  </figure>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-midteam-tab"
-                  data-toggle="tab"
-                  href="#nav-midteam"
-                  role="tab"
-                  aria-controls="nav-midteam"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="assets/graphic-services-midsize.png"
-                      alt=""
-                    />
-                    <figcaption>Mid-Size Team</figcaption>
-                  </figure>
-                </a>
-                <a
-                  class="nav-item nav-link"
-                  id="nav-enterprise-tab"
-                  data-toggle="tab"
-                  href="#nav-enterprise"
-                  role="tab"
-                  aria-controls="nav-enterprise"
-                  aria-selected="false"
-                >
-                  <figure>
-                    <img
-                      class="img-fluid"
-                      src="assets/graphic-services-enterprise.png"
-                      alt=""
-                    />
-                    <figcaption>Enterprise</figcaption>
-                  </figure>
-                </a>
+      <div class="services">
+        {/* header - hero */}
+        <header class="hero">
+          <div class="container desktop">
+            <object data="/assets/svg/services-graphic-background.svg" class="services-graphic-background" aria-label="header" />
+            <div class="row align-items-center">
+              <div class="col-12 flex-column">
+                <h1>
+                  <app-translate key="services.landing.hero.title" />
+                </h1>
+                <object data="/assets/svg/services-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
               </div>
-            </nav>
-
-            <div class="tab-content services--panel" id="nav-tabContent">
-              <div
-                class="tab-pane fade show active"
-                id="nav-startup"
-                role="tabpanel"
-                aria-labelledby="nav-startup-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5 mb-5">
-                    <h3> What you need: </h3>
-                    Bring your idea to life with our team of experts in Design,
-                    UI/UX, Web, and Mobile Application Development. We don't
-                    just 'build it', we sit with you to answer the question of
-                    how the technology and psychology behind the design will
-                    match your business model. Our experience with 100+ Startups
-                    becomes your experience as we take you through the next
-                    level of Startup Consulting.
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>What we provide:</h3>
-                    <ul>
-                      <li>Startup Consulting</li>
-                      <li>Enhanced Mobile &amp; Web Designs</li>
-                      <li>UI/UX Audits &amp; Recommendations </li>
-                      <li>Mobile Application Development</li>
-                      <li>Web Application Development</li>
-                      <li>Customer Engagement Consulting</li>
-                      <li>Guerilla Marketing Strategy</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-smallteam"
-                role="tabpanel"
-                aria-labelledby="nav-smallteam-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5">
-                    <h3> What you need: </h3>
-                    You have a small team and successful company, you've proven
-                    your business model and have enough revenue to sustain;
-                    however, you are struggling with accelerating growth and
-                    would like to utilize technology to skyrocket your business.
-                    You're nervous (and rightly so!), because you've never built
-                    a technology product before. Fear not! We are here to help.
-                    Let us guide you on ins-and-outs of Product Development and
-                    help you determine <b>HOW and IF</b> you should be building
-                    an app. Sometimes, it's much better to use an existing
-                    service!
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>What we provide:</h3>
-                    <ul>
-                      <li>Business Consulting</li>
-                      <li>Technical Consulting</li>
-                      <li>Business Elligibility Audit</li>
-                      <li>Mobile &amp; Web Designs</li>
-                      <li>UI/UX Audits </li>
-                      <li>Mobile & Web Application Development</li>
-                      <li>Customer Engagement Strategy</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-midteam"
-                role="tabpanel"
-                aria-labelledby="nav-midteam-tab"
-              >
-                <div class="services-content">
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6 mb-5">
-                      <h3> What you need: </h3>
-                      You have an established business and risks cost money.
-                      You're looking for a team you can trust to get the job
-                      done right the first time. That's us. We work with your
-                      team to evaluate your business goals, develop a plan of
-                      attack, and execute in order to deliver your results on
-                      budget, but mostly importantly, on time. We can provide
-                      support to your existing infrastructure, provide CTO
-                      services to guide your existing teams, or build your
-                      product start-finish without unneccessary supervision.
-                      Whatever you need, we're here.
-                    </div>
-                    <div class="col-sm-12 offset-md-1 col-md-5">
-                      <h3>What we provide:</h3>
-                      <ul>
-                        <li>Business Strategy &amp; Consulting</li>
-                        <li>Professional Mobile &amp; Web Designs</li>
-                        <li>UI/UX Audits &amp; Recommendations </li>
-                        <li>Mobile Application Development</li>
-                        <li>Web Application Development</li>
-                        <li>Strategic Customer Engagement Consulting</li>
-                        <li>Team Trainings &amp; Workshops</li>
-                        <li>Process Improvement Training</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                class="tab-pane fade"
-                id="nav-enterprise"
-                role="tabpanel"
-                aria-labelledby="nav-enterprise-tab"
-              >
-                <div class="row">
-                  <div class="col-sm-12 col-md-6 mb-5">
-                    <h3> What you need: </h3>
-                    Our Enterprise clients have world-wide goals; but often need
-                    the agility and flexibility of a small team in order to
-                    accomplish those goals and bypass the corporate red-tape.
-                    For these clients, we offer tailored solutions to fit your
-                    needs. If you have an existing team of Designers and
-                    Developers, but they have difficulty communicating and often
-                    miss deadlines and go over budget; we provide training and
-                    workshops to increase cross-disciplinary communication. For
-                    products that have spiraled out of control; we come in and
-                    fix the physical (design &amp; dev), but also the systematic
-                    problems such as team communication and design to
-                    development process improvement.
-                  </div>
-                  <div class="col-sm-12 offset-md-1 col-md-5">
-                    <h3>What we provide:</h3>
-                    <ul>
-                      <li>Enterprise Design Workshops</li>
-                      <li>Cross-Disciplinary Team Training</li>
-                      <li>External Consulting &amp; Process Improvement</li>
-                      <li>User Experience (UI/UX) Audits</li>
-                      <li>Web Accessability Audits</li>
-                      <li>Mobile &amp; Web Application Services</li>
-                      <li>Customer Engagement Strategy</li>
-                    </ul>
-                  </div>
-                </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-12 flex-column">
+                <p>
+                  <app-translate key="services.landing.hero.text" />
+                </p>
               </div>
             </div>
           </div>
-        </div>
+          <div class="container mobile">
+            <div class="row align-items-center">
+              <div class="col-12 flex-column">
+                <app-img src="/assets/services-graphic-header.png" alt="Header" />
+                <h1>
+                  <app-translate key="services.landing.hero.title" />
+                </h1>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-12 flex-column">
+                <p>
+                  <app-translate key="services.landing.hero.text" />
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section id="our-services" class="our-services">
+          <div class="row card flex-fill">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col">
+              <app-img class="img-fluid" src="/assets/services/startup-consulting/header.png" alt="Startup Consulting" />
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <h3>
+                <app-translate key="services.landing.technology-consulting.title" />
+              </h3>
+              <p>
+                <app-translate key="services.landing.technology-consulting.text" />
+              </p>
+              <stencil-route-link url="/services/startup-consulting">See More</stencil-route-link>
+            </div>
+          </div>
+
+          <div class="row card flex-fill">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col mobile">
+              <app-img class="img-fluid" src="/assets/services/app-developer/header.png" alt="Web App Development" />
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <h3>
+                <app-translate key="services.landing.webapp-development.title" />
+              </h3>
+              <p>
+                <app-translate key="services.landing.webapp-development.text" />
+              </p>
+              <stencil-route-link url="/services/app-developer">See More</stencil-route-link>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col desktop">
+              <app-img class="img-fluid" src="/assets/services/app-developer/header.png" alt="Web App Development" />
+            </div>
+          </div>
+
+          <div class="row card flex-fill">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col">
+              <app-img class="img-fluid" src="/assets/services/app-designer/header.png" alt="Digital Experience Design" />
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <h3>
+                <app-translate key="services.landing.digital-experience-design.title" />
+              </h3>
+              <p>
+                <app-translate key="services.landing.digital-experience-design.text" />
+              </p>
+              <stencil-route-link url="/services/app-designer">See More</stencil-route-link>
+            </div>
+          </div>
+
+          <div class="row card flex-fill">
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col mobile">
+              <app-img class="img-fluid" src="/assets/services/training/header.png" alt="Process Training Support" />
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12">
+              <h3>
+                <app-translate key="services.landing.process-training-support.title" />
+              </h3>
+              <p>
+                <app-translate key="services.landing.process-training-support.text" />
+              </p>
+              <stencil-route-link url="/services/training">See More</stencil-route-link>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 img-col desktop">
+              <app-img class="img-fluid" src="/assets/services/training/header.png" alt="Process Training Support" />
+            </div>
+          </div>
+        </section>
+
+        <section id="worked-with" class="worked-with">
+          <div class="container text-center">
+            <div class="row header">
+              <div class="col-12">
+                <h2>Who We've Worked With</h2>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
+              </div>
+
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <app-img class="img-fluid pad" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                <app-img class="img-fluid pad" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 col-sm-12 align-right">
+                <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
+              </div>
+
+              <div class="col-md-6 col-sm-12 align-left">
+                <app-img class="img-fluid pad" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <app-cta />
         <app-footer />
-      </section>
+      </div>
     );
   }
 }

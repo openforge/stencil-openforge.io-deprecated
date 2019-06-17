@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
+  <title> Mobile Design - App Development - Startup Consulting | OpenForge </title>
   <meta charset="utf-8">
-  <title>OpenForge</title>
-  <meta name="Description" content="Our Software Development Experts Are The Best In The Industry, Boasting World Class App Development in Ionic, Stencil.js, Angular, and PWA's!">
-  <meta name="title" content="Best Software Development Agency In Town!">
-  <meta name="keywords" content="Application Developer, Software Agency, Software Development, App Development Near Me, Ionic Developer, Ionic Application, Stencil, Startup Developer">
+  <meta name="title" content="Mobile Design - App Development - Startup Consulting | OpenForge">
+  <meta name="description" content="OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular">
+  <meta name="keywords" content="Mobile, Application, Development, Design, User Experience, Ionic">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#16161d">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Mobile Design - App Development - Startup Consulting | OpenForge" />
+  <meta property="og:description" content="OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular" />
+  <meta property="og:url" content="https://openforge.io/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Home of OpenForge.io" />
-  <meta property="og:url" content="http://openforge.io/" />
+  <meta property="og:image" content="https://openforge.io/assets/about-photo-team.jpg" />
   <meta property="og:site_name" content="OpenForge" />
-  <meta http-equiv="x-ua-compatible" content="IE=Edge"/>
+  <meta property="og:locale" content="en_US" />
+  <meta http-equiv="x-ua-compatible" content="IE=Edge" />
+
+  <!-- Preload to increase Time to Interactive -->
+
 
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
-  <script src="/build/app.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Muli:300,400,600,700' rel='stylesheet'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet'>
+
+  <script src="/build/app.js" rel="script"></script>
+  <link href='/assets/fonts/Roboto.css' rel='stylesheet'>
+  <link href="/assets/fonts/Muli.css" rel="stylesheet">
   <!-- <link rel='stylesheet' href="/build/app.css"> Should have this; but it breaks smooth scroll -->
 
   <!-- In case JavaScript is not available -->
@@ -35,7 +42,7 @@
       "@type": "Organization",
       "url": "http://www.openforge.io/",
       "name": "OpenForge",
-      "address": "1040 N 2nd St. Philadelphia, PA 19123"
+      "address": "1040 N 2nd St, Suite #301, Philadelphia, PA 19123"
     };
   </script> -->
 
@@ -45,28 +52,87 @@
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118169306-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-118169306-1');
 
   </script>
-  <!-- End Google Analytics -->
-
-</head>
-<body>
-  <app-nav-header />
-  <open-forge-app></open-forge-app>
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!-- Fontawesome -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
-  <!-- Google Global Site Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118169306-1"></script>
 
   <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', '118169306-1', 'auto');
-    ga('send', 'pageview');
+    console.log("Verifying user is on latest browser");
+    const ua = window.navigator.userAgent;
+    const msie = ua.indexOf('MSIE ');
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      console.log(msie, ua, 'msie');
+      // If Internet Explorer, return version number
+      window.location.href = 'http://404.openforge.io/404-page-ie';
+    }
+
   </script>
-  <script async defer src='https://www.google-analytics.com/analytics.js'></script>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-4667540274312808",
+      enable_page_level_ads: true
+    });
+
+  </script>
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1961656674133312');
+    fbq('track', 'PageView');
+
+  </script>
+  <noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=1961656674133312&ev=PageView
+    &noscript=1" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
+</head>
+
+<body>
+  <app-nav-header />
+
+  <open-forge-app></open-forge-app>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- Fontawesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"></script>
 </body>
+
 </html>

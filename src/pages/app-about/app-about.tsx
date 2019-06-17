@@ -1,159 +1,223 @@
-import { Component, Listen } from '@stencil/core';
-import { gaPage, gaEvent } from '../../shared/google-analytics';
+import { Component, Prop } from '@stencil/core';
+import { translate } from '../../services/translation.service';
+
+declare var fbq;
+declare var gtag;
 
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   members = [
     {
       name: 'Jedi Weller',
       image: './../../assets/headshot-jedi.jpg',
-      title: 'Founder and Head of Technology',
+      title: translate('about.team.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
     },
     {
-      name: 'Geoffery Melle',
+      name: 'Paulina Gallo',
+      image: './../../assets/headshot-paulina.png',
+      title: translate('about.team.member.title.developer'),
+      mail: 'paulina@openforge.io',
+      twitter: 'https://twitter.com/paulpaultweets',
+      github: 'https://github.com/paulpauldevelops',
+      url: '/about/paulina-gallo',
+    },
+    {
+      name: 'Geoffrey Melle',
       image: './../../assets/headshot-geoff.jpg',
-      title: 'Account Manager',
+      title: translate('about.team.member.title.accountManager'),
       mail: 'geoff@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/geoffrey-melle',
     },
     {
       name: 'Rachel Bennett',
       image: './../../assets/headshot-rachel.jpg',
-      title: 'Designer',
+      title: translate('about.team.member.title.designer'),
       mail: 'rachel@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/about/rachel-bennett',
+    },
+    {
+      name: 'Billy Holloran',
+      image: './../../assets/headshot-billy.png',
+      title: translate('about.team.member.title.qualityManager'),
+      mail: 'billy@openforge.io',
+      url: '/about/billy-holloran',
+    },
+    {
+      name: 'Ethan Bohan',
+      image: './../../assets/headshot-ethan.jpg',
+      title: translate('about.team.member.title.designer'),
+      mail: 'ethan@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/about/ethan-bohan',
+    },
+    {
+      name: 'Fernando Del Olmo',
+      image: './../../assets/headshot-fernando.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'fernando@openforge.io',
+      twitter: 'https://twitter.com/fdom92',
+      github: 'https://github.com/Fdom92',
+      url: '/about/fernando-del-olmo',
+    },
+    {
+      name: 'Luis Chacon',
+      image: './../../assets/headshot-luis.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'luis@openforge.io',
+      twitter: 'https://twitter.com/luiskcs89',
+      github: 'https://github.com/luiskcs89',
+      url: '/about/luis-chacon',
+    },
+    {
+      name: 'Kevon Chambers',
+      image: '/assets/headshot-kevon.png',
+      title: translate('about.team.member.title.marketing'),
+      mail: 'kevon@openforge.io',
       twitter: '',
       github: '',
     },
     {
-      name: 'Joni Leho',
+      name: 'Sam Hudgens',
+      image: './../../assets/headshot-sam.jpg',
+      title: translate('about.team.member.title.softwareIntern'),
+      mail: 'sam@openforge.io',
+      twitter: '',
+      github: 'https://github.com/samhudgens',
+      url: '/about/sam-hudgens',
+    },
+    {
+      name: 'Young Song',
+      image: './../../assets/headshot-young.jpg',
+      title: translate('about.team.member.title.softwareIntern'),
+      mail: '',
+      twitter: 'https://twitter.com/YoungSongJS',
+      github: 'https://github.com/Hogusong',
+      url: '/about/young-song',
+    },
+    {
+      name: 'Ted Grant',
+      image: '/assets/headshot-ted.png',
+      title: translate('about.team.member.title.designer'),
+      mail: 'ted@openforge.io',
+      twitter: '',
+      github: '',
+      url: '/about/ted-grant',
+    },
+    {
+      name: 'Joni Lehto',
       image: './../../assets/headshot-joni.jpg',
-      title: 'Software Engineer',
+      title: translate('about.team.member.title.developer'),
       mail: 'joni@openforge.io',
       twitter: 'https://twitter.com/lehto_joni',
+      github: '',
+    },
+    {
+      name: 'Meredith Alcorn',
+      image: './../../assets/headshot-meredith.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'meredith@openforge.io',
+      twitter: '',
+      github: 'https://github.com/mmalcorn',
+    },
+    {
+      name: 'Claudio Del Valle',
+      image: './../../assets/headshot-claudio.jpg',
+      title: translate('about.team.member.title.developer'),
+      mail: 'claudio@openforge.io',
+      titter: '',
+      github: 'https://github.com/daftclaud',
     },
     {
       name: 'Auvo Severinkangas',
       image: './../../assets/headshot-auvo.jpg',
-      title: 'Software Engineer',
+      title: translate('about.team.member.title.developer'),
       mail: 'auvo@openforge.io',
       twitter: '',
       github: '',
     },
     {
-      name: 'Paulina Gallo',
-      image: './../../assets/headshot-paulina.jpg',
-      title: 'Software Engineer',
-      mail: 'paulina@openforge.io',
-      twitter: 'https://twitter.com/paulpaultweets',
-      github: 'https://github.com/paulpauldevelops',
-    },
-    {
-      name: 'Mohammad Alfatih',
-      image: './../../assets/headshot-mohammad.jpg',
-      title: 'Software Engineer',
-      mail: 'mo@jawami.com',
-      twitter: 'https://twitter.com/webdevffw',
-      github: 'https://github.com/Mohammad-alfatih',
-    },
-    {
-      name: 'Meredith Alcorn',
-      image: './../../assets/headshot-meredith.jpg',
-      title: 'Software Engineer',
-      mail: 'meredith@openforge.io',
-      github: 'https://github.com/mmalcorn',
-    },
-    {
-      name: 'Fernando Del Olmo',
-      image: './../../assets/headshot-fernando.jpg',
-      title: 'Software Engineer',
-      mail: 'fernando@openforge.io',
-      twitter: 'https://twitter.com/fdom92',
-      github: 'https://github.com/Fdom92',
-    },
-    {
-      name: 'William Holloran',
-      image: './../../assets/headshot-billy.jpg',
-      title: 'Project Manager / QA Engineer',
-      mail: 'william@openforge.io',
-    },
-    {
-      name: 'Luis Chacon',
-      image: './../../assets/headshot-luis.jpg',
-      title: 'Software Engineer',
-      mail: 'luis@openforge.io',
-      github: 'https://github.com/luiskcs89',
-    },
-    {
-      name: 'Claudio Del Valle',
-      image: './../../assets/headshot-claudio.jpg',
-      title: 'Software Engineer',
-      mail: 'claudio@openforge.io',
-      github: 'https://github.com/daftclaud',
-    },
-    {
-      name: 'Elizabeth Cottrell',
-      image: './../../assets/headshot-eliza.jpg',
-      title: 'Front End Developer',
-      mail: 'elizabeth@openforge.io',
-      twitter: 'https://twitter.com/_elizacottrell',
-      github: 'https://github.com/LizCottrell',
-    },
-    {
-      name: 'Yanying Zhu',
-      image: './../../assets/headshot-yanying.jpg',
-      title: 'Designer',
-      mail: 'yanying@openforge.io',
-      twitter: '',
+      name: 'Dhairya Pujara',
+      image: './../../assets/headshot-dhairya.jpg',
+      title: translate('about.team.member.title.consultant'),
+      mail: '',
+      twitter: 'https://twitter.com/dhairyapujara',
       github: '',
     },
     {
-      name: 'YOU?',
-      image: './../../assets/headshot-placeholder.jpg',
-      title: '',
-      mail: 'geoff@openforge.io',
+      name: 'Eli',
+      image: '/assets/headshot-eli.jpg',
+      title: 'Entertainment',
+      mail: '',
       twitter: '',
       github: '',
-      href: '/opportunities',
+      url: 'http://eliluproductions.com/',
+      external: true,
     },
+    {
+      name: 'Lu',
+      image: '/assets/headshot-lu.jpg',
+      title: 'Entertainment',
+      mail: '',
+      twitter: '',
+      github: '',
+      url: 'http://eliluproductions.com/',
+      external: true,
+    },
+    {
+      name: 'Casey',
+      image: './../../assets/headshot-casey.jpg',
+      title: translate('about.team.member.title.officer'),
+      mail: '',
+      twitter: '',
+      github: '',
+      url: '/about/casey',
+    },
+    // {
+    //   name: 'YOU?',
+    //   image: '/assets/headshot-placeholder.jpg',
+    //   title: '',
+    //   mail: 'geoff@openforge.io',
+    //   twitter: '',
+    //   github: '',
+    //   url: '/opportunities/develop',
+    // },
   ];
 
   componentDidLoad() {
-    gaPage('About');
-    this.handleImage();
-  }
-
-  @Listen('window:resize')
-  handleImage() {
-    let element;
-    try {
-      element = document.querySelector('.about .hero');
-      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-    } catch (e) {
-      console.log('app-about-header undefined', e);
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+    // isServer is false when running in the browser
+    // and true when being prerendered
+    if (!this.isServer) {
+      fbq('track', 'ViewContent');
     }
 
-    if (window.innerWidth < 576) {
-      // small
-      element.style.backgroundImage = `url('assets/bg-hero-icons-sm.jpg')`;
-    } else if (window.innerWidth < 992) {
-      // medium
-      element.style.backgroundImage = `url('assets/bg-hero-icons-md.jpg')`;
-    } else {
-      // large
-      element.style.backgroundImage = `url('assets/bg-hero-icons.jpg')`;
-    }
+    // Change meta tags dynamically
+    document.querySelector("meta[property='og:title']").setAttribute('content', 'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge');
+    document.querySelector("meta[property='og:description']").setAttribute('content', 'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia');
+    document.querySelector("meta[property='og:url']").setAttribute('content', 'https://openforge.io/about/');
+    document.querySelector("meta[property='og:image']").setAttribute('content', 'https://openforge.io/assets/bg-hero-icons.jpg');
+    document.querySelector("meta[name='keywords']").setAttribute('content', 'Technology, Design, Philadelphia, Mobile App, Development, Jedidiah Weller');
   }
 
   scrollToForm() {
-    gaEvent('About', 'Scroll to form', 'Scroll to form');
-    const form = document.getElementById('about');
+    const form = document.getElementById('team-photo');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -164,33 +228,80 @@ export class AppAbout {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-9 col-md-8 col-lg-9">
-                <h2>We Are Passionate About Technology and Design</h2>
+              <div class="col-md-8 col-sm-10 text-container">
+                <h1>
+                  <app-translate key="about.header.title" />
+                </h1>
                 <p>
-                  We believe that your success is our success. We're here to
-                  challenge your assumptions and help you discover your web or
-                  mobile applications full potential.
+                  <app-translate key="about.header.text" />
                 </p>
-                <button
-                  onClick={this.scrollToForm.bind(this)}
-                  class="btn btn-primary"
-                >
-                  Learn More
+                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
+                  <app-translate key="about.header.action" />
                 </button>
               </div>
             </div>
           </div>
         </header>
 
-        {/* section - about */}
-        <section id="about" class="about bg-gray">
+        {/* section - team */}
+        <section id="team-photo" class="team-photo {this.className}">
           <div class="container">
-            <div class="about--header">
-              <h2>Meet the Team</h2>
+            <div class="row align-items-end text-center">
+              <div class="col-12">
+                <app-img src="/assets/svg/about-graphic-ribbon.svg" alt="Our Mission - Our mission is to forge a bond between people and technology through digital experiences." />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* section - mission statement */}
+        <section id="mission-statement" class="mission-statement">
+          <div class="mission-statement d-flex text-center">
+            <p class="text-white align-self-center">
+              <app-translate key="about.mission.statement" />
+            </p>
+          </div>
+        </section>
+
+        {/* section - values */}
+        <section id="values" class="values">
+          <div class="container text-center">
+            <div class="row header">
+              <div class="col-12">
+                <h2>
+                  <app-translate key="about.values.title" />
+                </h2>
+                <p>
+                  <app-translate key="about.values.text" />
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
+                <object data="assets/svg/about-graphic-integrity.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value2" />
+              </div>
+              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
+                <object data="assets/svg/about-graphic-honesty.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value1" />
+              </div>
+              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
+                <object data="assets/svg/about-graphic-transparency.svg" height="164px" width="220px" />
+                <app-translate class="value-text" key="about.values.value3" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* section - members */}
+        <section id="members" class="members">
+          <div class="container text-center">
+            <div class="header">
+              <h2>
+                <app-translate key="about.team.title" />
+              </h2>
               <p>
-                There's no doubt that our team is made up of brilliant and
-                talented individuals who are passionate about technology and
-                design thinking. Together we design, code, grow, and evolve.
+                <app-translate key="about.team.text" />
               </p>
             </div>
 
@@ -199,10 +310,8 @@ export class AppAbout {
         </section>
 
         {/* aside - cta */}
-        <app-cta link-url="/contact">
-          <span slot="header">Want to work with us?</span>
-          <span slot="link">Get in touch</span>
-        </app-cta>
+        <app-cta />
+
         <app-footer />
       </div>
     );

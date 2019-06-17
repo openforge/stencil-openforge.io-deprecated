@@ -1,0 +1,182 @@
+// section - services
+
+.services {
+
+  .hero {
+    padding-top: 150px;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
+    .row {
+      height: auto;
+      padding-bottom: 2rem;
+
+      img {
+        max-height: 360px;
+      }
+    }
+
+    .line-break {
+      border-bottom: 1px solid $gray-800;
+    }
+  
+  }
+
+  .our-services,
+  .our-work,
+  .our-seminars {
+
+    .header {
+      margin: 4rem auto 4rem;
+      max-width: 768px;
+      text-align: center;
+
+      h2 {
+        font-weight: bold;
+      }
+    }
+
+    .line-title {
+      display: block;
+      position: relative;
+      
+      &:before, &:after {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        background: gray;
+        width: 50%;        
+        position: relative; 
+        vertical-align: middle;
+
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+        
+      }  
+      &:before {
+        left: -0.5em; 
+        margin-left: -50%;    
+      }
+      &:after {      
+        right: -0.5em;  
+        margin-right: -50%;
+      }
+    }
+  }
+
+  .our-services {
+    h3 {
+      color: $orange-dark;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  .our-work {
+
+    .example {
+      position: relative;
+      margin-bottom: 5rem;
+
+      .screenshots {
+        justify-content: center;
+      }
+
+      .behind-left {
+        position: relative;
+        height: 300px;
+        right: 50px;
+        top: -30px;
+      }
+
+      .front-center {
+        position: absolute;
+        height: 300px;
+        left: 45px;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+
+        a {
+          margin: 0 10px;
+        }
+      }
+
+      .information {
+        display: flex;
+        flex-direction: column;
+
+        h3, a, p {
+          text-align: center;
+        }
+
+        a { 
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          left: 0;
+        }
+
+        .active {
+          color: #0095aa;
+          text-decoration: underline;
+        }
+      }
+    }
+
+  }
+
+  .our-seminars {
+    .container {
+      margin-bottom: 5rem;
+    }
+
+    .text-container {
+      text-align: left;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
+    }
+
+    img {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    button {
+      background-color: #ec9b41;
+      border: solid 0.8px white;
+      border-radius: 2px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      color: $gray-dark;
+      cursor: pointer;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      letter-spacing: 1.3px;
+      height: auto;
+      line-height: 1.82;
+      padding: 0.5rem 1rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      width: auto;
+    }
+  }
+}

@@ -1,7 +1,14 @@
 .contact {
   // hero
   .hero {
-    // background-image: url('assets/bg-hero-handshake-desk.jpg');
+    background-image: url('/assets/bg-hero-handshake-desk.jpg');
+  }
+  .webp {
+    background-image: url('/assets/bg-hero-handshake-desk.jpg');
+  }
+
+  .hero,
+  .webp {
     background-position: top center;
     background-size: cover;
     height: 100vh;
@@ -40,6 +47,12 @@
 
     @include media-breakpoint-down(sm) {
       padding: 3rem 0;
+    }
+
+    @include media-breakpoint-down(xs) {
+      button {
+        width: 100%;
+      }
     }
   }
   .error {

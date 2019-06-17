@@ -1,7 +1,6 @@
 .opportunities {
   // hero
   .hero {
-    // background-image: url('assets/bg-hero-mountain.jpg');
     background-position: top center;
     background-size: cover;
     height: 100vh;
@@ -35,8 +34,12 @@
     }
   }
 
-  .intro {
+  .interviews {
     padding: 3rem 0;
+
+    a {
+      text-decoration: underline;
+    }
 
     .challenge {
       background: linear-gradient(to bottom, $orange 0%, $orange-dark 100%);
@@ -84,9 +87,12 @@
         flex-direction: column;
         justify-content: flex-end;
         text-align: center;
-        img {
-          max-width: 300px;
-          width: 100%;
+
+        app-img {
+          img {
+            max-width: 300px;
+            width: 100%;
+          }
         }
       }
     }
@@ -208,5 +214,10 @@
         }
       }
     }
+  }
+
+  .doc-link {
+    margin-left: 5px;
+    margin-right: 5px;
   }
 }

@@ -1,9 +1,9 @@
 import { Component, Element, Prop, State, Watch } from '@stencil/core';
+// import { LazyImg } from './lazy-img';
 
 @Component({
   tag: 'app-img',
   styleUrl: 'app-img.scss',
-  shadow: true,
 })
 export class Img {
   private io: IntersectionObserver | null = null;
@@ -16,6 +16,9 @@ export class Img {
   @Prop() alt: string;
   @Prop() preLoad: boolean = false;
   @Prop() src: string;
+  @Prop({ context: 'isServer' })
+  private isServer: boolean;
+
   @Watch('src')
   srcChanged() {
     this.addIntersectionObserver();
@@ -56,14 +59,18 @@ export class Img {
     }
   }
 
+  private changeImageFormat() {
+    if (this.loadSrc && (this.isServer || localStorage.getItem('allowWebp') === 'true')) {
+      const idx = this.loadSrc.lastIndexOf('.');
+      const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
+      if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        this.loadSrc = `${this.loadSrc.substring(0, idx)}.webp`;
+      }
+    }
+  }
+
   render() {
-    return (
-      <img
-        class={{ fit: this.fit }}
-        src={this.loadSrc}
-        alt={this.alt}
-        decoding="async"
-      />
-    );
+    this.changeImageFormat();
+    return <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />;
   }
 }

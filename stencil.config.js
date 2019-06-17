@@ -1,7 +1,12 @@
-const sass = require('@stencil/sass');
+var sass = require('@stencil/sass');
+var builtins = require('rollup-plugin-node-builtins');
+var globals = require('rollup-plugin-node-globals');
 exports.config = {
+  nodeResolve: { browser: true, preferBuiltins: false },
   enableCache: false,
   plugins: [
+    builtins(),
+    globals(),
     sass({
       injectGlobalPaths: [
         'src/styles/_variables.scss',
@@ -16,7 +21,7 @@ exports.config = {
       serviceWorker: {
         swSrc: 'sw.js',
         globPatterns: [
-          '**/*.{html,js,css,json,ico,png,es5}'
+          '**/*.{html,js,css,json,ico,png,jpg,es5}'
         ]
       }
     }

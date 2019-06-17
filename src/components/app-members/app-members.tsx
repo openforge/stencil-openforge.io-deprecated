@@ -7,26 +7,56 @@ import { Component, Prop } from '@stencil/core';
 export class AppMembers {
   @Prop() members: any[];
 
+  public images: any;
+
   render() {
     return (
-      <div class="team">
-        {this.members.map(member => (
-          <figure class="member">
-            <stencil-route-link url="/opportunities" exact={true}>
-              <app-img
-                class="member--image"
-                src={member.image}
-                alt={member.name}
-              />
-              <div class="member--overlay">
-                <figcaption class="member--text">
-                  <span class="">{member.name}</span>
-                  <span class="">{member.title}</span>
-                </figcaption>
-              </div>
-            </stencil-route-link>
-          </figure>
-        ))}
+      <div class="team justify-content-center">
+        {this.members.map(member => {
+          if (!member.external) {
+            if (member.url === '/opportunities') {
+              return (
+                <figure class="member">
+                  <stencil-route-link url={member.url} exact={true}>
+                    <app-img class="member--image" src={member.image} alt={member.name} />
+                    <div class="member--overlay">
+                      <figcaption class="member--text">
+                        <span class="">{member.name}</span>
+                        <span class="">{member.title}</span>
+                      </figcaption>
+                    </div>
+                  </stencil-route-link>
+                </figure>
+              );
+            }
+            return (
+              <figure class="member">
+                <stencil-route-link url={member.url} exact={true}>
+                  <app-img class="member--image" src={member.image} alt={member.name} />
+                  <div class="member--overlay">
+                    <figcaption class="member--text">
+                      <span class="">{member.name}</span>
+                      <span class="">{member.title}</span>
+                    </figcaption>
+                  </div>
+                </stencil-route-link>
+              </figure>
+            );
+          }
+          return (
+            <figure class="member">
+              <a href={member.url} target="_blank" rel="noopener">
+                <app-img class="member--image" src={member.image} alt={member.name} />
+                <div class="member--overlay">
+                  <figcaption class="member--text">
+                    <span class="">{member.name}</span>
+                    <span class="">{member.title}</span>
+                  </figcaption>
+                </div>
+              </a>
+            </figure>
+          );
+        })}
       </div>
     );
   }

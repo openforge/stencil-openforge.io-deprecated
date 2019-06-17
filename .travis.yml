@@ -4,6 +4,8 @@ node_js:
 branches:
   only:
   - develop
+  - qa
+  - staging
   - master
 before_script:
 - npm install -g firebase-tools
@@ -11,4 +13,4 @@ script:
 - npm run build
 
 after_success:
-- node scripts/deploy.js
+- npm run firebase:deploy

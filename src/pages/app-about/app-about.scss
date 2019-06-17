@@ -1,62 +1,87 @@
 .about {
-  // hero
+  font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
+
   .hero {
-    background-image: url('assets/bg-hero-icons.jpg');
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
-    // @include media-breakpoint-down(md) {
-    //   background-image: url('assets/bg-hero-icons-md.jpg');
-    // }
-    // @include media-breakpoint-down(sm) {
-    //   background-image: url('assets/bg-hero-icons-sm.jpg');
-    // }
+    background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
 
-    .container,
-    .row {
-      height: 100%;
+    @include media-breakpoint-down(md) {
+      background-position: right bottom;
     }
 
     .row {
-      padding-top: 56px;
-    }
+      height: 700px;
 
-    h2 {
-      color: $white;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      @include media-breakpoint-down(lg) {
-        font-size: 2.5rem;
+      @include media-breakpoint-down(md) {
+        height: 780px;
       }
-      @include media-breakpoint-down(sm) {
+
+      p {
+        color: black;
+        font-weight: bolder;
+      }
+
+      h1 {
         font-size: 2rem;
       }
-    }
 
-    p {
-      color: $white;
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
-      max-width: 500px;
-      @include media-breakpoint-down(sm) {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+      .text-container {
+        @include media-breakpoint-down(md) {
+          margin-bottom: 10rem;
+        }
       }
     }
   }
 
-  // section - about
-  .about {
-    padding: 5rem 0;
+  .team-photo {
+    background-image: url('/assets/about-photo-team.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    min-height: 540px;
 
-    &--header {
-      margin: 0 auto 3rem;
-      max-width: 768px;
-      text-align: center;
+    @include media-breakpoint-down(sm) {
+      min-height: 240px;
+    }
+
+    app-img {
+      position: absolute;
+      top: 480px;
+      transform: translate(-50%, -50%);
+      width: 100%;
+
       @include media-breakpoint-down(sm) {
-        text-align: left;
+        display: none;
       }
     }
+  }
+
+  .mission-statement {
+    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
+    display: none;
+    height: 100px;
+
+    p {
+      line-height: 24px;
+      margin: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+    }
+  }
+
+  .values,
+  .members {
+    padding: 5rem 0;
+
+    .header {
+      margin: 0 auto 3rem;
+      max-width: 768px;
+    }
+  }
+
+  .value-text {
+    font-size: 24px;
   }
 }

@@ -5,14 +5,22 @@ import { Component, Prop, Event, EventEmitter } from '@stencil/core';
   styleUrl: 'app-input.scss',
 })
 export class AppInput {
-  @Prop() name: string;
-  @Prop() type: string;
-  @Prop() label: string;
-  @Prop() placeholder: string;
-  @Prop() id: string;
-  @Prop() maxlength: string;
-  @Prop() required = false;
-  @Event() valueChange: EventEmitter;
+  @Prop()
+  name: string;
+  @Prop()
+  type: string;
+  @Prop()
+  label: string;
+  @Prop()
+  placeholder: string;
+  @Prop()
+  id: string;
+  @Prop()
+  maxlength: string;
+  @Prop()
+  required = false;
+  @Event()
+  valueChange: EventEmitter;
 
   inputHandler(event) {
     this.valueChange.emit({
@@ -33,6 +41,7 @@ export class AppInput {
           id={this.id}
           maxlength={this.maxlength}
           required={this.required}
+          placeholder={this.placeholder}
           onInput={this.inputHandler.bind(this)}
         />
       </div>
