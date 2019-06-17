@@ -7,7 +7,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "stencil build --prerender && node scripts/build-sitemap.js",
+    "build": "node scripts/get-butter.js && stencil build --prerender",
     "cz": "git-cz",
     "dev": "node scripts/get-butter.js && sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
@@ -18,7 +18,7 @@
     "cypress": "cypress open",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "st:generate": "node scripts/st-generate.js",
-    "prepublish": "stencil build --prod && node scripts/build-sitemap.js",
+    "prepublish": "node scripts/get-butter.js && stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:qa": "firebase use qa && firebase deploy --token \"$FIREBASE_TOKEN\"",
@@ -58,7 +58,6 @@
     "rollup-plugin-node-globals": "^1.4.0",
     "rxjs-compat": "^6.1.0",
     "sass-lint": "^1.12.1",
-    "sitemap-static": "^0.4.4",
     "smoothscroll-polyfill": "^0.4.3",
     "sync-request": "^6.0.0",
     "tslint": "^5.9.1",
