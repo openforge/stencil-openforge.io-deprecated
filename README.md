@@ -140,10 +140,6 @@ If a developer went through providing all the information during a `npm run cz` 
 
 ## Blog Integration
 
-## Sitemap
-This project uses [sitemap-static](https://github.com/tmcw/sitemap-static) to generate a sitemap based on the prerendered site. This is needed because the content and routes associated with blog posts will change frequently. This is acheived with the `scripts/build-sitemap.js` script, which runs after each build.
-
-## Deployment
 This project uses [ButterCMS](https://buttercms.com/) as a headless content management system. When a user accesses the deployed site, the blog data will be loaded from the ButterCMS API via AJAX. However, the blog data is also utilized in prerendering the site, to improve SEO. Before any build (dev, prod, prerender), the get-butter.js script is run to retrieve the blog data and stored in pages/blog-post/prerender-blog-data.ts. This file is git-ignored so that the repo is not cluttered with blog content.
 
 The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy of the master branch. Butter's webhooks are managed in the ButterCMS portal.
