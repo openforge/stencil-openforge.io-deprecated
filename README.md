@@ -26,7 +26,7 @@ If you are a community member who would like to take part of our paid (yes, we s
 
 # Website Development 
 
-The OpenForge.io website is built using a combination of [Stencil.js](https://stenciljs.com/) by our friends at [Ionic Framework](https://ionicframework.com/) anbd Bootstrap for styling.
+The OpenForge.io website is built using a combination of [Stencil.js](https://stenciljs.com/) by our friends at [Ionic Framework](https://ionicframework.com/) and Bootstrap for styling.
 
 ### Setup
 ```
