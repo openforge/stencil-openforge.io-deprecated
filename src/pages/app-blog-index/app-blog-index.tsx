@@ -1,5 +1,6 @@
 import { Component, Prop, State } from '@stencil/core';
 import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
+declare var gtag;
 
 @Component({
   tag: 'app-blog-index',
@@ -11,6 +12,11 @@ export class AppBlogIndex {
   @Prop({ context: 'isServer' }) private isServer;
 
   componentWillLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+
     if (this.isServer) {
       this.blogData = BLOG_DATA.data;
     } else {

@@ -259,9 +259,6 @@ export namespace Components {
   interface AppServiceLevelAgreement {}
   interface AppServiceLevelAgreementAttributes extends StencilHTMLAttributes {}
 
-  interface AppServices {}
-  interface AppServicesAttributes extends StencilHTMLAttributes {}
-
   interface AppTeamLanding {
     'history': RouterHistory;
     'match': MatchResults;
@@ -310,7 +307,6 @@ declare global {
     'AppOpportunities': Components.AppOpportunities;
     'AppResources': Components.AppResources;
     'AppServiceLevelAgreement': Components.AppServiceLevelAgreement;
-    'AppServices': Components.AppServices;
     'AppTeamLanding': Components.AppTeamLanding;
     'AppToolbox': Components.AppToolbox;
     'AppTos': Components.AppTos;
@@ -345,7 +341,6 @@ declare global {
     'app-opportunities': Components.AppOpportunitiesAttributes;
     'app-resources': Components.AppResourcesAttributes;
     'app-service-level-agreement': Components.AppServiceLevelAgreementAttributes;
-    'app-services': Components.AppServicesAttributes;
     'app-team-landing': Components.AppTeamLandingAttributes;
     'app-toolbox': Components.AppToolboxAttributes;
     'app-tos': Components.AppTosAttributes;
@@ -515,12 +510,6 @@ declare global {
     new (): HTMLAppServiceLevelAgreementElement;
   };
 
-  interface HTMLAppServicesElement extends Components.AppServices, HTMLStencilElement {}
-  var HTMLAppServicesElement: {
-    prototype: HTMLAppServicesElement;
-    new (): HTMLAppServicesElement;
-  };
-
   interface HTMLAppTeamLandingElement extends Components.AppTeamLanding, HTMLStencilElement {}
   var HTMLAppTeamLandingElement: {
     prototype: HTMLAppTeamLandingElement;
@@ -573,7 +562,6 @@ declare global {
     'app-opportunities': HTMLAppOpportunitiesElement
     'app-resources': HTMLAppResourcesElement
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement
-    'app-services': HTMLAppServicesElement
     'app-team-landing': HTMLAppTeamLandingElement
     'app-toolbox': HTMLAppToolboxElement
     'app-tos': HTMLAppTosElement
@@ -608,7 +596,6 @@ declare global {
     'app-opportunities': HTMLAppOpportunitiesElement;
     'app-resources': HTMLAppResourcesElement;
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
-    'app-services': HTMLAppServicesElement;
     'app-team-landing': HTMLAppTeamLandingElement;
     'app-toolbox': HTMLAppToolboxElement;
     'app-tos': HTMLAppTosElement;

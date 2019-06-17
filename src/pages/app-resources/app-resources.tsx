@@ -1,6 +1,7 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
+declare var gtag;
 
 @Component({
   tag: 'app-resources',
@@ -58,6 +59,11 @@ export class AppResources {
   }
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+
     this.resetFormValues();
 
     // Change meta tags dynamically

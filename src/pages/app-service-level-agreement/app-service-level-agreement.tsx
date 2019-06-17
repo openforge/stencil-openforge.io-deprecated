@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+declare var gtag;
 
 @Component({
   tag: 'app-service-level-agreement',
@@ -11,6 +12,13 @@ export class AppServiceLevelAgreement {
   private className;
   componentWillLoad() {
     this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+  }
+
+  componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
   }
 
   scrollTo() {

@@ -1,6 +1,7 @@
 import { Component, State, Prop, Watch } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
+declare var gtag;
 
 @Component({
   tag: 'app-team-landing',
@@ -295,6 +296,10 @@ export class AppTeamLanding {
   }
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
     this.changeMetadata();
   }
 
