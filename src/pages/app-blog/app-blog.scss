@@ -17,7 +17,7 @@
 
     .form-row-content {
       @include media-breakpoint-up(sm) {
-        position: fixed;
+        // position: fixed; this caused the input field to become unclickable
         z-index: -1;
       }
 
@@ -166,7 +166,7 @@
 
         @include media-breakpoint-down(sm) {
           text-decoration: none;
-          border-bottom: 3px solid
+          border-bottom: 3px solid;
         }
       }
 
