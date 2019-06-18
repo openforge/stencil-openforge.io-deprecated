@@ -101,6 +101,11 @@
 }
 
 .blog-filters {
+  position: sticky;
+  top: 70px;
+  background: #fff !important;
+  z-index: 1;
+
   .blog-filters-nav {
     background-color: unset;
 
@@ -121,6 +126,7 @@
 
       .blog-filter-item {
         padding: 40px 10px;
+        padding-bottom: 4px;
         font-size: 18px;
         color: #6b635f;
         cursor: pointer;
