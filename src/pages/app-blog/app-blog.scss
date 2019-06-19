@@ -7,7 +7,7 @@
   }
 
   .posts-row {
-    @include media-breakpoint-up(sm) {
+    @include media-breakpoint-up(lg) {
       margin: 0 130px;
     }
   }
@@ -16,11 +16,6 @@
     display: block;
 
     .form-row-content {
-      @include media-breakpoint-up(sm) {
-        // position: fixed; this caused the input field to become unclickable
-        z-index: -1;
-      }
-
       @include media-breakpoint-down(sm) {
         text-align: center;
       }
@@ -78,16 +73,10 @@
 
       .contact-icons-label {
         margin: 0;
-        @include media-breakpoint-down(sm) {
-          display: none;
-        }
       }
 
       .contact-icons {
         width: 100%;
-        @include media-breakpoint-down(sm) {
-          display: none;
-        }
       }
 
       .contact-icon {
