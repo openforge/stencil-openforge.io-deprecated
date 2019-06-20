@@ -1,6 +1,7 @@
 .blog-container {
   font-family: 'Muli';
   margin-top: 70px;
+  max-width: 95%;
 
   h4 {
     color: $orange;
@@ -9,6 +10,9 @@
   .posts-row {
     @include media-breakpoint-up(lg) {
       margin: 0 130px;
+    }
+    @include media-breakpoint-down(lg) {
+      margin: 0;
     }
   }
 
@@ -94,6 +98,9 @@
   top: 70px;
   background: #fff !important;
   z-index: 1;
+  @include media-breakpoint-down(lg) {
+    margin-right: -5%;
+  }
 
   .blog-filters-nav {
     background-color: unset;
@@ -106,7 +113,7 @@
       padding: 0;
       margin-bottom: 5rem;
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         overflow: auto;
         white-space: nowrap;
         margin-bottom: 1rem;
@@ -121,17 +128,19 @@
         cursor: pointer;
         text-transform: uppercase;
 
-        @include media-breakpoint-down(sm) {
+        @include media-breakpoint-down(md) {
           padding: 26px 10px;
           font-size: 12px;
         }
 
         .blog-search-group {
-          padding-left: 25%;
-          width: 40%;
-          @include media-breakpoint-down(sm) {
+          @include media-breakpoint-up(xl) {
+            padding-left: 66.6px; // The number of the beast
+          }
+          @include media-breakpoint-down(lg) {
             width: 90%;
           }
+          width: 40%;
         }
 
         .blog-search-input {
@@ -142,6 +151,9 @@
 
         .blog-search-icon {
           position: absolute;
+          @include media-breakpoint-down(md) {
+            top: 25%;
+          }
           z-index: 2;
           display: block;
           margin-top: 3px;

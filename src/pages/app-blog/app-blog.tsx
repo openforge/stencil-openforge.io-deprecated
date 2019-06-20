@@ -322,7 +322,7 @@ export class AppBlog {
           </div>
         </div>
         <div class="row posts-row">
-          <div class="col-md-9 col-sm-12">
+          <div class="col-md-8 col-sm-12">
             <div class="featured-post">{featuredPost}</div>
             <div class="blog-posts">
               {postData}
@@ -348,7 +348,9 @@ export class AppBlog {
                   </div>
                   <div class="clear">
                     <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
-                      <span class="d-block d-sm-block d-md-none">Get the Newsletter  &nbsp; <i class="fa fa-arrow-right" /></span>
+                      <span class="d-block d-sm-block d-md-none">
+                        Get the Newsletter &nbsp; <i class="fa fa-arrow-right" />
+                      </span>
                       <i class="d-none d-md-block fa fa-arrow-right" />
                     </button>
                   </div>
