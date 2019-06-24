@@ -4,6 +4,7 @@ import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
 
 declare var fbq;
+declare var gtag;
 
 @Component({
   tag: 'app-blog',
@@ -67,6 +68,10 @@ export class AppBlog {
   }
 
   componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {

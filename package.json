@@ -21,8 +21,10 @@
     "prepublish": "node scripts/get-butter.js && stencil build --prod",
     "firebase:deploy": "node scripts/deploy.js",
     "firebase:deploy:dev": "firebase use default && firebase deploy --token \"$FIREBASE_TOKEN\"",
-    "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\"",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "firebase:deploy:qa": "firebase use qa && firebase deploy --token \"$FIREBASE_TOKEN\"",
+    "firebase:deploy:staging": "firebase use staging && firebase deploy --token \"$FIREBASE_TOKEN\"",
+    "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
   },
   "dependencies": {
     "@stencil/sass": "0.0.3",

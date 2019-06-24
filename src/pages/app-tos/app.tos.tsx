@@ -1,10 +1,18 @@
 import { Component } from '@stencil/core';
+declare var gtag;
 
 @Component({
   tag: 'app-tos',
   styleUrl: 'app-tos.scss',
 })
 export class AppTOS {
+  componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+  }
+
   render() {
     return (
       <div class="terms-of-service">

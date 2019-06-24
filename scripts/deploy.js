@@ -14,8 +14,20 @@ function deployToFirebase(project) {
             console.log(stdout);
             console.log(stderr);
         });
-    } else {
-        exec("firebase use default && firebase deploy --token " + token, function(error, stdout, stderr) {
+    } else if(project === 'qa') {
+        exec("firebase use qa && firebase deploy --token " + token, function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+    } else if(project === 'staging') {
+        exec("firebase use staging && firebase deploy --token " + token, function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+    } else if(project === 'prod') {
+        exec("firebase use production && firebase deploy --token " + token, function(error, stdout, stderr) {
             console.log(error);
             console.log(stdout);
             console.log(stderr);
@@ -27,6 +39,10 @@ if (
     (branch == 'develop' && (!pr || pr == 'false') )
 ) {
     deployToFirebase('dev');
+} else if (branch == 'qa' && (!pr || pr == 'false')) {
+    deployToFirebase('qa');
+} else if (branch == 'staging' && (!pr || pr == 'false')) {
+    deployToFirebase('staging');
 } else if (branch == 'master' && (!pr || pr == 'false')) {
     deployToFirebase('prod');
 }

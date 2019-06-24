@@ -1,6 +1,8 @@
 {
   "projects": {
     "default": "openforge-dev",
-    "production": "openforge-prod"
+    "production": "openforge-prod",
+    "qa": "openforge-qa",
+    "staging": "openforge-staging"
   }
 }

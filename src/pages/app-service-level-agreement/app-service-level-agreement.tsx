@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+declare var gtag;
 
 @Component({
   tag: 'app-service-level-agreement',
@@ -11,6 +12,13 @@ export class AppServiceLevelAgreement {
   private className;
   componentWillLoad() {
     this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+  }
+
+  componentDidLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
   }
 
   scrollTo() {
@@ -90,7 +98,7 @@ export class AppServiceLevelAgreement {
                 </li>
                 <li>
                   <p>
-                  A creative review of each client will take place on a <strong>quarterly basis</strong>
+                    A creative review of each client will take place on a <strong>quarterly basis</strong>
                   </p>
                 </li>
               </ul>
@@ -148,12 +156,13 @@ export class AppServiceLevelAgreement {
                 </li>
                 <li>
                   <p>
-                  A concept will be delivered on budget. In the event of a concept being over budget, or at risk of going over budget, an alternative on-budget alternative solution will be provided
+                    A concept will be delivered on budget. In the event of a concept being over budget, or at risk of going over budget, an alternative on-budget alternative solution will be provided
                   </p>
                 </li>
                 <li>
                   <p>
-                  If a concept is delivered over budget due to a change in requirements or a dependency on a 3rd party provider, regular pricing applies. If a concept is delivered over budget for any other reason, threshold pricing will apply
+                    If a concept is delivered over budget due to a change in requirements or a dependency on a 3rd party provider, regular pricing applies. If a concept is delivered over budget for
+                    any other reason, threshold pricing will apply
                   </p>
                 </li>
               </ul>
@@ -173,7 +182,8 @@ export class AppServiceLevelAgreement {
                 </li>
                 <li>
                   <p>
-                  Only after payment of hours will client work be scheduled, with the exception of high priority tickets and client questions / communications. These will be addressed immediately, up to 10hrs, and billed afterwords
+                    Only after payment of hours will client work be scheduled, with the exception of high priority tickets and client questions / communications. These will be addressed immediately,
+                    up to 10hrs, and billed afterwords
                   </p>
                 </li>
                 <li>

@@ -2,6 +2,7 @@ import { Component, Prop, State, Watch } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
 import { BLOG_DATA } from './prerender-blog-data';
+declare var gtag;
 
 @Component({
   tag: 'app-blog-post',
@@ -32,6 +33,11 @@ export class AppBlogPost {
   }
 
   componentWillLoad() {
+    gtag('config', 'UA-118169306-1', {
+      page_title: document.title,
+      page_path: window.location.pathname,
+    });
+
     this.getPostContent();
 
     // get a bunch of blog posts and pick 3 to display in read next
