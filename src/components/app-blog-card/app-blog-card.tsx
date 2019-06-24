@@ -17,26 +17,34 @@ export class AppBlogCard {
     const publishDate = new Date(this.blogPost.published);
     return (
       <div class="blog-card">
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <img class="blog-card-image" src={this.blogPost.featured_image} />
-          </div>
-          <div class="blog-card-content col-md-8">
-            <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-              <h3 class="blog-card-title">{this.blogPost.title}</h3>
-            </stencil-route-link>
-            <div class="blog-card-summary">{this.blogPost.summary}</div>
-            <div class="blog-card-author mt-3">
-              <img class="profile-image" src={this.blogPost.author.profile_image} />
-              <div class="profile-text">
-                Published by &nbsp;
-                <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                &nbsp; on {formatDate(publishDate)}
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="blog-card-image">
+                <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
+                  <img src={this.blogPost.featured_image} />
+                </stencil-route-link>
               </div>
+              <div class="blog-title">
+                <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
+                  <h2>{this.blogPost.title}</h2>
+                </stencil-route-link>
+              </div>
+              <div class="author">
+                <img class="profile-image d-none d-md-block" src={this.blogPost.author.profile_image} />
+                <div>
+                  By &nbsp;
+                  <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                  &nbsp; on {formatDate(publishDate)}
+                </div>
+              </div>
+              <div class="summary">{this.blogPost.summary}</div>
+              <stencil-route-link class="read-more" url={`/blog/${this.blogPost.slug}`}>
+                Read More
+              </stencil-route-link>
             </div>
           </div>
         </div>
-        <hr />
       </div>
     );
   }

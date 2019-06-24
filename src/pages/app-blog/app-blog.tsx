@@ -311,42 +311,71 @@ export class AppBlog {
 
     return (
       <div class="blog-container">
-        <div class="featured-post">{featuredPost}</div>
         <div id="blog-filters" class="blog-filters">
-          <div class="header">
-            <div class="divider">
-              <div class="line-break" />
-              <div class="spacer" />
-            </div>
-            <div class="title">Categories</div>
-            <div class="dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {this.renderFilter(this.blogFilter)}
-            </div>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {filters}
-            </div>
-            <div class="divider">
-              <div class="line-break" />
-              <div class="spacer" />
-            </div>
-          </div>
           <div class="blog-filters-nav">
-            <ul class="blog-filters-list">{filters}</ul>
+            <ul class="blog-filters-list">
+              {filters}
+              <li class="blog-filter-item d-none d-md-block">
+                <div class="blog-search-group">
+                  <span class="blog-search-icon">
+                    <span class="fa fa-search" />
+                  </span>
+                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
+        <div class="row posts-row">
+          <div class="col-md-8 col-sm-12">
+            <div class="featured-post">{featuredPost}</div>
+            <div class="blog-posts">
+              {postData}
+              <div class="blog-pagination">{pagination}</div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 form-row">
+            <div class="form-row-content">
+              <form
+                action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
+                method="post"
+                id="mc-embedded-subscribe-form"
+                name="mc-embedded-subscribe-form"
+                class="validate"
+                target="_blank"
+                novalidate="true"
+              >
+                <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
+                <div class="form-group">
+                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required={true} />
+                  <div class="hidden" aria-hidden="true">
+                    <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
+                  </div>
+                  <div class="clear">
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                      <span class="d-block d-sm-block d-md-none">
+                        Get the Newsletter &nbsp; <i class="fa fa-arrow-right" />
+                      </span>
+                      <i class="d-none d-md-block fa fa-arrow-right" />
+                    </button>
+                  </div>
+                </div>
+              </form>
 
-        <div class="blog-search">
-          <h3 class="mb-4">Looking for something?</h3>
-          <div class="blog-search-group">
-            <span class="blog-search-icon">
-              <span class="fa fa-search" />
-            </span>
-            <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+              <p class="contact-icons-label">Follow Us:</p>
+              <div class="contact-icons">
+                <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
+                  <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
+                </a>
+                <a href="https://www.facebook.com/OpenForgeUS/" target="_blank" rel="noopener">
+                  <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
+                </a>
+                <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                  <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="blog-posts">
-          {postData}
-          <div class="blog-pagination">{pagination}</div>
         </div>
 
         <stencil-route-link url="/blog-index" />
