@@ -24,7 +24,7 @@ export class AppDetailedService {
         first: '/assets/services/app-developer/graphic-1.png',
         second: '/assets/services/app-developer/graphic-2.png',
         third: '/assets/services/app-developer/graphic-3.png',
-      }
+      },
     },
     'app-designer': {
       header: '/assets/services/app-designer/header.png',
@@ -32,7 +32,7 @@ export class AppDetailedService {
         first: '/assets/services/app-designer/graphic-1.png',
         second: '/assets/services/app-designer/graphic-2.png',
         third: '/assets/services/app-designer/graphic-3.png',
-      }
+      },
     },
     'startup-consulting': {
       header: '/assets/services/startup-consulting/header.png',
@@ -40,9 +40,9 @@ export class AppDetailedService {
         first: '/assets/services/startup-consulting/graphic-1.png',
         second: '/assets/services/startup-consulting/graphic-2.png',
         third: '/assets/services/startup-consulting/graphic-3.png',
-      }
+      },
     },
-    'training': {
+    training: {
       header: '/assets/services/training/header.png',
       services: {
         first: '/assets/services/training/graphic-1.png',
@@ -50,9 +50,9 @@ export class AppDetailedService {
         third: '/assets/services/training/graphic-3.png',
       },
       work: {
-        ourwork: '/assets/services/training/work-photo.png'
-      }
-    }
+        ourwork: '/assets/services/training/work-photo.png',
+      },
+    },
   };
 
   @Watch('match')
@@ -91,11 +91,10 @@ export class AppDetailedService {
     const voyage = document.getElementById('voyage');
     const suw = document.getElementById('suw');
 
-    if(this.match.params.service == 'training') {
+    if (this.match.params.service === 'training') {
       work.style.setProperty('display', 'none');
       seminars.style.setProperty('display', 'initial');
-
-    } else if(this.match.params.service == 'app-designer') {
+    } else if (this.match.params.service === 'app-designer') {
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
@@ -103,8 +102,7 @@ export class AppDetailedService {
       suw.style.setProperty('display', 'initial');
       digiThermo.style.setProperty('display', 'none');
       juntoscope.style.setProperty('display', 'none');
-
-    } else if(this.match.params.service == 'app-developer') {
+    } else if (this.match.params.service === 'app-developer') {
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
@@ -112,8 +110,7 @@ export class AppDetailedService {
       suw.style.setProperty('display', 'none');
       digiThermo.style.setProperty('display', 'initial');
       juntoscope.style.setProperty('display', 'initial');
-
-    } else if(this.match.params.service == 'startup-consulting') {
+    } else if (this.match.params.service === 'startup-consulting') {
       work.style.setProperty('display', 'initial');
       seminars.style.setProperty('display', 'none');
 
@@ -235,7 +232,7 @@ export class AppDetailedService {
                 <h2 class="line-title">Our Work</h2>
               </div>
             </div>
-          {/* Work Example */}
+            {/* Work Example */}
             <div class="row">
               <div class="col-md-4 col-sm-12 flex-fill example" id="juntoscope">
                 <div class="row screenshots">
@@ -370,13 +367,10 @@ export class AppDetailedService {
                 <p>
                   <app-translate key={`services.${this.match.params.service}.seminars`} />
                 </p>
-                <button>
-                  Join Our Mailing List
-                </button>
-
+                <button>Join Our Mailing List</button>
               </div>
               <div class="col-md-6 col-sm-12 d-flex align-self-center">
-                <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo"/>
+                <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo" />
               </div>
             </div>
           </div>

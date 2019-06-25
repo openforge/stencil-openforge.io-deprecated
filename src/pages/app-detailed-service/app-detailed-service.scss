@@ -1,7 +1,6 @@
 // section - services
 
 .services {
-
   .hero {
     padding-top: 150px;
 
@@ -21,13 +20,11 @@
     .line-break {
       border-bottom: 1px solid $gray-800;
     }
-  
   }
 
   .our-services,
   .our-work,
   .our-seminars {
-
     .header {
       margin: 4rem auto 4rem;
       max-width: 768px;
@@ -41,27 +38,27 @@
     .line-title {
       display: block;
       position: relative;
-      
-      &:before, &:after {
+
+      &:before,
+      &:after {
         content: '';
         display: inline-block;
         height: 1px;
         background: gray;
-        width: 50%;        
-        position: relative; 
+        width: 50%;
+        position: relative;
         vertical-align: middle;
 
         @include media-breakpoint-down(sm) {
           display: none;
         }
-        
-      }  
-      &:before {
-        left: -0.5em; 
-        margin-left: -50%;    
       }
-      &:after {      
-        right: -0.5em;  
+      &:before {
+        left: -0.5em;
+        margin-left: -50%;
+      }
+      &:after {
+        right: -0.5em;
         margin-right: -50%;
       }
     }
@@ -78,7 +75,6 @@
   }
 
   .our-work {
-
     .example {
       position: relative;
       margin-bottom: 5rem;
@@ -119,11 +115,13 @@
         display: flex;
         flex-direction: column;
 
-        h3, a, p {
+        h3,
+        a,
+        p {
           text-align: center;
         }
 
-        a { 
+        a {
           position: absolute;
           bottom: 0;
           right: 0;
@@ -136,7 +134,6 @@
         }
       }
     }
-
   }
 
   .our-seminars {

@@ -36,6 +36,7 @@ export class AppNavHeader {
           </div>
           <button
             class="navbar-toggler"
+            data-cy="burgerMenu"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"

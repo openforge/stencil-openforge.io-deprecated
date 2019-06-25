@@ -171,10 +171,10 @@ export class AppHome {
                     <img src="/assets/apps/vanlife/graphic-example-3.png" class="behind-right" alt="vanlife app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
+                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener" data-cy="vanlife-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener">
+                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener" data-cy="vanlife-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
@@ -198,10 +198,10 @@ export class AppHome {
                     <img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
+                    <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener" data-cy="loudcloud-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
+                    <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener" data-cy="loudcloud-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
@@ -225,10 +225,10 @@ export class AppHome {
                     <img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener" data-cy="voyage-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener" data-cy="voyage-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
