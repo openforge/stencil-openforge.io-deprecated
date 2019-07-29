@@ -162,7 +162,7 @@ export const translations = {
           title: 'Technology Consulting',
           text: 'With an ever-growing digital marketplace across the globe, it is important that your business is utilizing the best technologies that will increase your productivity and cut costs.',
         },
-        'App Development': {
+        'webapp-development': {
           title: 'Web App Development',
           text: 'There are several ways to get your app in front of users and we are here to help bring your mobile app, progressive web app, or traditional web app to the market.',
         },
