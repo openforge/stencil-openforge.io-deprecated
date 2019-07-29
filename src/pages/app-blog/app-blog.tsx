@@ -218,7 +218,7 @@ export class AppBlog {
   renderFilters(selectedFilter: string, isLoading: boolean, searchQuery: string) {
     return this.filters.map(filter => {
       let filterClass = selectedFilter === filter.slug ? 'blog-filter-item active' : 'blog-filter-item';
-      let filterLinkClass = selectedFilter === filter.slug ? 'blog-filter-link active' : 'blog-filter-item';
+      let filterLinkClass = selectedFilter === filter.slug ? 'blog-filter-item active' : 'blog-filter-item';
       if (isLoading || searchQuery) {
         filterClass += ' disabled';
         filterLinkClass += ' disabled';
