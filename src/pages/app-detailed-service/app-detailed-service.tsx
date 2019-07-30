@@ -236,8 +236,8 @@ export class AppDetailedService {
             <div class="row">
               <div class="col-md-4 col-sm-12 flex-fill example" id="juntoscope">
                 <div class="row screenshots">
-                  <img src="/assets/apps/juntoscope/graphic-example-1.webp" class="behind-left" alt="juntoscope app screenshot" />
-                  <img src="/assets/apps/juntoscope/graphic-example-2.webp" class="front-center" alt="juntoscope app screenshot" />
+                  <img src="/assets/apps/juntoscope/graphic-example-1.png" class="behind-left" alt="juntoscope app screenshot" />
+                  <img src="/assets/apps/juntoscope/graphic-example-2.png" class="front-center" alt="juntoscope app screenshot" />
                 </div>
                 <div class="store-buttons">
                   <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
@@ -261,8 +261,8 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 flex-fill example" id="voyage">
                 <div class="row screenshots">
-                  <img src="/assets/apps/voyage/graphic-example-1.webp" class="behind-left" alt="voyage app screenshot" />
-                  <img src="/assets/apps/voyage/graphic-example-2.webp" class="front-center" alt="voyage app screenshot" />
+                  <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                  <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
                 </div>
                 <div class="store-buttons">
                   <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
@@ -284,8 +284,8 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 flex-fill example" id="vanlife">
                 <div class="row screenshots">
-                  <img src="/assets/apps/vanlife/graphic-example-1.webp" class="behind-left" alt="vanlife app screenshot" />
-                  <img src="/assets/apps/vanlife/graphic-example-2.webp" class="front-center" alt="vanlife app screenshot" />
+                  <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
+                  <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
                 </div>
                 <div class="store-buttons">
                   <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
@@ -307,8 +307,8 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 flex-fill example" id="suw">
                 <div class="row screenshots">
-                  <img src="/assets/apps/startupwars/graphic-example-1.webp" class="behind-left" alt="startup wars app screenshot" />
-                  <img src="/assets/apps/startupwars/graphic-example-2.webp" class="front-center" alt="startup wars app screenshot" />
+                  <img src="/assets/apps/startupwars/graphic-example-1.png" class="behind-left" alt="startup wars app screenshot" />
+                  <img src="/assets/apps/startupwars/graphic-example-2.png" class="front-center" alt="startup wars app screenshot" />
                 </div>
                 <div class="store-buttons">
                   <a>
@@ -330,8 +330,8 @@ export class AppDetailedService {
               </div>
               <div class="col-md-4 col-sm-12 flex-fill example" id="digithermo">
                 <div class="row screenshots">
-                  <img src="/assets/apps/digithermo/graphic-example-1.webp" class="behind-left" alt="digithermo app screenshot" />
-                  <img src="/assets/apps/digithermo/graphic-example-2.webp" class="front-center" alt="digithermo wars app screenshot" />
+                  <img src="/assets/apps/digithermo/graphic-example-1.png" class="behind-left" alt="digithermo app screenshot" />
+                  <img src="/assets/apps/digithermo/graphic-example-2.png" class="front-center" alt="digithermo wars app screenshot" />
                 </div>
                 <div class="store-buttons">
                   <a>
