@@ -153,10 +153,6 @@ export class AppDetailedService {
     }
   }
 
-  joinMailList() {
-    console.log('TODO:: Join Mail List');
-  }
-
   render() {
     return (
       <div class="services">
@@ -371,7 +367,7 @@ export class AppDetailedService {
                 <p>
                   <app-translate key={`services.${this.match.params.service}.seminars`} />
                 </p>
-                <button onClick={() => this.joinMailList()}>Join Our Mailing List</button>
+                <button onClick={() => window.open('https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4', '_blank')}>Join Our Mailing List</button>
               </div>
               <div class="col-md-6 col-sm-12 d-flex align-self-center">
                 <img src="/assets/services/training/work-photo.png" alt="Group Training Workshop Photo" />
