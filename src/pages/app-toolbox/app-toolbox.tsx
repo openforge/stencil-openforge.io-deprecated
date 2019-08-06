@@ -1,5 +1,4 @@
 import { Component } from '@stencil/core';
-declare var gtag;
 
 @Component({
   tag: 'app-toolbox',
@@ -14,10 +13,6 @@ export class AppToolbox {
   }
 
   componentDidLoad() {
-    gtag('config', 'UA-118169306-1', {
-      page_title: document.title,
-      page_path: window.location.pathname,
-    });
     document.querySelector("meta[property='og:title']").setAttribute('content', 'Toolbox - Development & Design Tools | OpenForge');
     document
       .querySelector("meta[property='og:description']")

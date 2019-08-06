@@ -68,7 +68,7 @@ export class AppFooter {
             <div class="footer--column col-12 col-sm-4">
               <h2>{translate('footer.webinar.signup')}</h2>
               <p>{translate('footer.webinar.webinarText')}</p>
-              <a href="http://startupjunto.org/" target="_blank" rel="noopener" class="footer--btn btn btn-primary">
+              <a href="http://startupjunto.org/" target="_blank" id="startup-junto" rel="noopener" class="footer--btn btn btn-primary">
                 {translate('footer.webinar.register')}
               </a>
             </div>
