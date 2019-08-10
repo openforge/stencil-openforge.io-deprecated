@@ -41,22 +41,22 @@ export class AppFooter {
               <h2>{translate('footer.social.followUs')}</h2>
               <ul class="footer--social-links">
                 <li>
-                  <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
+                  <a href="https://twitter.com/OpenForge_US" id="twitter" target="_blank" rel="noopener">
                     <i class="fab fa-twitter-square" aria-hidden="true" /> {translate('footer.social.twitter')}
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/OpenForgeUS/" target="_blank" rel="noopener">
+                  <a href="https://www.facebook.com/OpenForgeUS/" id="facebook" target="_blank" rel="noopener">
                     <i class="fab fa-facebook-square" aria-hidden="true" /> {translate('footer.social.facebook')}
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                  <a href="https://www.linkedin.com/company/openforge/" id="linkedin" target="_blank" rel="noopener">
                     <i class="fab fa-linkedin" aria-hidden="true" /> {translate('footer.social.linkedin')}
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/openforgeteam/" target="_blank" rel="noopener">
+                  <a href="https://www.instagram.com/openforgeteam/" id="instagram" target="_blank" rel="noopener">
                     <i class="fab fa-instagram" aria-hidden="true" /> {translate('footer.social.instagram')}
                   </a>
                 </li>
@@ -68,7 +68,7 @@ export class AppFooter {
             <div class="footer--column col-12 col-sm-4">
               <h2>{translate('footer.webinar.signup')}</h2>
               <p>{translate('footer.webinar.webinarText')}</p>
-              <a href="http://startupjunto.org/" target="_blank" id="startup-junto" rel="noopener" class="footer--btn btn btn-primary">
+              <a href="http://startupjunto.org/" target="_blank" id="startup-junto meetup" rel="noopener" class="footer--btn btn btn-primary">
                 {translate('footer.webinar.register')}
               </a>
             </div>

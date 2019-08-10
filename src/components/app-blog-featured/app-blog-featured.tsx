@@ -35,7 +35,7 @@ export class AppBlogFeatured {
               </div>
               <div class="featured-post-title">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-                  <h2>{this.blogPost.title}</h2>
+                  <h2 id="featured-blog-title">{this.blogPost.title}</h2>
                 </stencil-route-link>
               </div>
               <div class="author">

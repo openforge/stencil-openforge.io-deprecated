@@ -27,7 +27,7 @@ export class AppBlogCard {
               </div>
               <div class="blog-title">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-                  <h2>{this.blogPost.title}</h2>
+                  <h2 id="blog-title">{this.blogPost.title}</h2>
                 </stencil-route-link>
               </div>
               <div class="author">
