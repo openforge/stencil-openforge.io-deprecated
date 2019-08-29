@@ -22,7 +22,6 @@
 
   <!-- Preload to increase Time to Interactive -->
 
-
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
@@ -35,30 +34,13 @@
   <!-- In case JavaScript is not available -->
   <noscript>Your browser does not support JavaScript!</noscript>
 
-  <!-- Structured Data -->
-  <!-- <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "http://www.openforge.io/",
-      "name": "OpenForge",
-      "address": "1040 N 2nd St, Suite #301, Philadelphia, PA 19123"
-    };
-  </script> -->
-
-  <!-- Global Site Tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118169306-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-118169306-1');
-
-  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KFPQ95V');</script>
+  <!-- End Google Tag Manager -->
 
   <script>
     console.log("Verifying user is on latest browser");
@@ -114,6 +96,11 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFPQ95V"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <app-nav-header />
   
   <open-forge-app></open-forge-app>

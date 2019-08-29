@@ -9,7 +9,6 @@ import $ from 'jquery';
 
 declare var fbq;
 declare var bootstrap;
-declare var gtag;
 
 @Component({
   tag: 'app-home',
@@ -28,11 +27,6 @@ export class AppHome {
   @State() featuredIsLoading: boolean = true;
 
   componentWillLoad() {
-    gtag('config', 'UA-118169306-1', {
-      page_title: document.title,
-      page_path: window.location.pathname,
-    });
-
     if (!this.isServer) {
       this.getFeaturedPost();
     }

@@ -2,7 +2,6 @@ import { Component, State, Listen, Prop } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
-declare var gtag;
 
 @Component({
   tag: 'app-contact',
@@ -61,10 +60,6 @@ export class AppContact {
   }
 
   componentDidLoad() {
-    gtag('config', 'UA-118169306-1', {
-      page_title: document.title,
-      page_path: window.location.pathname,
-    });
     // isServer is false when running in the browser
     // and true when being prerendered
     if (!this.isServer) {

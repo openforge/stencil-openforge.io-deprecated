@@ -1,5 +1,4 @@
 import { Component } from '@stencil/core';
-declare var gtag;
 
 @Component({
   tag: 'app-case-study',
@@ -14,11 +13,6 @@ export class AppCaseStudy {
   }
 
   componentDidLoad() {
-    gtag('config', 'UA-118169306-1', {
-      page_title: document.title,
-      page_path: window.location.pathname,
-    });
-
     document.querySelector("meta[property='og:title']").setAttribute('content', 'JuntoScope - Scoping Software | OpenForge');
     document
       .querySelector("meta[property='og:description']")
