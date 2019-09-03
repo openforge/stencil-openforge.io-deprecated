@@ -54,6 +54,11 @@ export class AppContact {
     this.validateField(target);
   }
 
+  private className;
+  componentWillLoad() {
+    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+  }
+
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
@@ -131,8 +136,6 @@ export class AppContact {
 
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
-
-  private className = localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero';
 
   render() {
     return (

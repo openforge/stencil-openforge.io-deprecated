@@ -2,10 +2,8 @@ export const translations = {
   translation: {
     home: {
       hero: {
-        title: 'Creating Digital Experiences',
-        subTitle: 'Every Day*',
-        subtext: '*Monday-Friday',
-        subtextMobile: `Work with our team of highly skilled designers, developers, and consultants to develop solutions and processes that fit your business requirements.`,
+        title: 'Mobile Solutions',
+        subTitle: 'For A Digital World',
       },
       process: {
         title: 'Our Process',
@@ -33,24 +31,25 @@ export const translations = {
             'The biggest mistake businesses make is to launch a product and then stop there. That initial data from the first 3 months is crucial for engaging your consumer and enhancing your experience. Expand your business by capturing this crucial moment; we will help you monitor and improve the entire way.',
         },
       },
-      services: {
-        mobileTechnology: {
-          title: 'Mobile Technology',
+      work: {
+        experts: 'Experts in',
+        mobileWebApplications: {
+          title: 'Mobile & Web Applications',
           text:
-            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
-          example: 'LoudCloud',
+            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP. As experts in mobile application development, we can interface with any existing API or standard to deliver a secure, integrated product no matter what your product needs.',
+          example: 'The Vanlife App',
         },
         digitalExperience: {
           title: 'Digital Experience',
           text:
-            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
+            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We will go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back.',
           example: 'The Voyage by New Ocean',
         },
-        brandingDesign: {
-          title: 'Digital Branding & Web Design',
+        mobileTechnology: {
+          title: 'Mobile Technology',
           text:
-            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
-          example: 'JuntoScope',
+            'We utilize technologies to bring the richest features to your app such as VoIP, Bluetooth LE, and other IOT tech to bring a whole new level of connectivity to your application providing your users with a rich and interactive experience that will boost engagement and retention. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+          example: 'LoudCloud',
         },
       },
     },
@@ -153,94 +152,142 @@ export const translations = {
     },
 
     services: {
+      landing: {
+        hero: {
+          title: 'Our Services',
+          text:
+            'From concept to launch, we provide services to support you every step of the way. Whether you have an existing product or just an idea, we’re here to help you achieve your goals and then some. As experts in mobile technology, we will guide you through our proven process to deliver your vision.',
+        },
+        'technology-consulting': {
+          title: 'Technology Consulting',
+          text: 'With an ever-growing digital marketplace across the globe, it is important that your business is utilizing the best technologies that will increase your productivity and cut costs.',
+        },
+        'webapp-development': {
+          title: 'Web App Development',
+          text: 'There are several ways to get your app in front of users and we are here to help bring your mobile app, progressive web app, or traditional web app to the market.',
+        },
+        'digital-experience-design': {
+          title: 'Mobile Design and User Experience',
+          text: 'Digital designs go beyond fonts and colors and our team is here to help you create beautiful interfaces, logo/branding, and user centered-designs.',
+        },
+        'process-training-support': {
+          title: 'Process Training & Support',
+          text: "We will help you grow your business by improving your team's standard operating procedures and tool utilization, to boost their performance and increase their level of output.",
+        },
+      },
       'app-developer': {
         hero: {
-          title: 'Your Go-To App Developer',
+          title: 'App Development',
           text:
-            'Our app developer team uses the latest technologies and techniques to bring your app to the market quickly to shorten the time for your ROI. A refined process of collaboration both internally with our design team as well as communication with your team will ensure that you get the functionality and reliability that you expect from our app developer team. Staying up to date with the latest and greatest tools at the disposal of app developers, our team will craft an app that will boost your user engagement across all platforms including Desktop, iOS, and Android.',
+            'Our app development team uses the latest technologies and techniques to bring your mobile app or web app to the market and maximize the experiences of the users. With over 30 years of combined app development experience, we specialize in web tools and technologies such as Ionic, Angular, Firebase, Strapi, and Javascript.',
         },
         first: {
           title: 'Progressive Web App Development',
           text:
-            'The latest web technology that allows your app to come to market quicker and can be installed onto any device that feels and functions like a native app. Users can install PWAs without going through traditional app stores and will allow you to maximize user engagement while minimizing costs.',
+            'TThe latest web technology that allows your app to come to market quicker and can be installed onto any device that feels and functions like a native app. Users can install PWAs without going through traditional app stores and will allow you to maximize user engagement while minimizing costs.',
         },
         second: {
           title: 'Mobile App Development',
           text:
-            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and every one  of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
+            'Our app developers are experts in angular, Ionic, Javascript, Typescript, NodeJS, and more! We specialize in hybrid app development using Cordova creating one code that is used for both Android and iOS applications. Our app developers also work with native mobile app development for Android and iOS devices. Each and every one of the apps we work on undergoes a thorough Quality Assurance process to ensure reliability.',
         },
         third: {
-          title: 'Web App Development',
+          title: 'Responsive Solutions for Web & Mobile',
           text:
-            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
-        },
-        example: {
-          title: 'Mobile Technology',
-          text:
-            'We utilize technologies such as VoIP, Bluetooth LE, and other IOT technologies to bring a whole new level of connectivity to your application. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
-          name: 'LoudCloud',
-          googleUrl: '',
-          appleUrl: '',
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app development team has extensive experience in producing powerful and reliable web apps.',
         },
       },
       'app-designer': {
         hero: {
-          title: 'UI/UX App Designer',
+          title: 'Mobile Design and User Experience',
           text:
-            'Our app designer team has the skills and experience to bring to life your app in a way that will be both visually appealing and intuitive for your users. An effective user interface will be all the difference in making your app effective and successful. Your user experience is vital to keeping your users engaged and returning again and again. Once our design team has determined your user flow and designs, we will create a prototype that is clickable and functioning before the first line of code is even written.',
+            'Our work is informed first and foremost by mobile user experiences. We consider each aspect of the design process as integral to creating mobile apps that create value for your users. With accessibility, responsive design, and user psychology at the helm, we strive to create apps that simplify the way we live.',
         },
         first: {
-          title: 'Design Consulting',
+          title: 'User-Centered Mobile Designs',
           text:
-            "If you're bringing a new product or service to the market, our design team will help you start from scratch with our discovery phase to bring your ideas to life. Already have a website or app? Then we will conduct a design audit to help generate a plan of action to improve the look and feel of your app either with our development team or yours! Additionally, we will help with your brand development including logo designs, brand identity, and marketing assets.",
+            'Understanding your end-user is vital to constructing a mobile experience that will engage users and drive up retention rates.  We will work with your team to discover your customer segments and their personalities in order to optimize the design of your mobile app. ',
         },
         second: {
-          title: 'UI/UX Design',
-          text:
-            'It goes without saying, “a user interface is like a joke, if you have to explain it, it’s no good.” Our design team will ensure that your user interface and user experience are logical and intuitive to improve your user engagement. We will create responsive designs that display across desktop, tablet and mobile devices to reach your audience on their chosen platform.',
+          title: 'Brand Discovery and Color Theory',
+          text: `Whether you are a hot new company lacking a refined brand identity or an existing company looking to revamp your existing branding we will help your team discover your company's "true colors". Sit down with our design team to refine your logo, colors, and the overall image that will resonate with your mobile users.`,
         },
         third: {
-          title: 'Clickable Prototype',
+          title: 'Engaging Digital Experiences',
           text:
-            'Does your company or startup need an app prototype before moving forward with development? Our design to will use Marvel to bring your ideas to life with a clickable prototype. Interact with your prototype and provide feedback directly on specific elements to refine the feel to your liking.',
-        },
-        example: {
-          title: 'Digital Experience',
-          text:
-            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box.',
-          name: 'The Voyage by New Ocean',
-          googleUrl: '',
-          appleUrl: '',
+            'The design of your mobile app should center around getting your users to take action, ultimately increasing user engagement. As markets flood with mobile applications, it is important to provide your mobile users with a unique and memorable experience that can effortlessly integrate into their lives.',
         },
       },
       'startup-consulting': {
         hero: {
-          title: 'Consulting for all Industries',
+          title: 'User Growth & Retention Consulting',
           text:
-            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. Companies today are inundated with digital tools and software promising to improve your bottom line but do you understand what you’re paying for and how to use it? Our tech consulting with dissect your operations and examine your bottom line. Does each of your team members produce the results that you project them to complete? Are you charging enough money for your time and services?',
+            'Recent reports indicate there are over 5 million mobile apps available to the public. It is increasingly important to stand out and reach your audience in new and meaningful ways, and we are here to help. Reaching your customers is paramount to success and we have developed custom solutions to maximize your place in the world market.',
         },
         first: {
-          title: 'Startup Consulting',
+          title: 'User Growth & Retention Consulting',
           text:
-            'We work with startup founders as an integrated team to help build and grow successful and innovative products.  Whether you’re starting out at the ideation phase or already have a product and are seeking guidance on user acquisition and revenue strategies; we are here to help.   Remember, “a startup is a company working to solve a problem” - and the best way to solve problems is by working together.',
+            'Creating your mobile or web app is only the first step and we are here to help you take the next one; growing your user base and retaining existing users. We will guide your team on best practices for taking in user feedback and turning that into actionable steps that will improve their experience and grow your user base.',
         },
         second: {
-          title: 'Strategic Consulting',
+          title: 'App Store Optimization (ASO)',
           text:
-            'Businesses require strategic knowledge and an acute sense of the current technological climate to succeed, and that’s where our team comes in.   Through our work with hundreds of companies and millions of consumers, our team of industry experts can provide strategic consulting to our clients on a wide range of topics relating to user acquisition, design, user experience, and software architecture.',
+            'With a flood of mobile and web apps on the market, the importance of standing out in the crowd so that users can discover your app is paramount to your success. We will optimize the listing of your application in order to maximize your market exposure and funnel the right users into your app.',
         },
         third: {
-          title: 'Product Discovery',
+          title: 'Product Accessibility & Scalability',
           text:
-            'We’ll help you truly understand the best ways to utilize technology to reach your audience, and the best and most effective methods to engage them.  During this hands-on engagement, our team evaluates everything about your organization to provide a complete analysis and recommendations on how to keep your business at the forefront of innovation.',
+            'The digital world is now catching up to the physical world in terms of accessibility for individuals with disabilities and your app or website should follow suit.  Ensure that your digital presence is compliant with the latest ADA web standards and WCAG guidelines to satisfy your users and limit your liability.',
         },
-        example: {
-          title: 'Digital Branding & Web Design',
+      },
+      training: {
+        hero: {
+          title: 'Process Training & Support ',
           text:
-            'Our team of industry leading designers will help bring your vision to market with a complete branding design package. Don’t let your customers feel disconnected. Let our experts use design theory and psychology to help better connect to your business with your customers.',
-          name: 'JuntoScope',
-          googleUrl: '',
-          appleUrl: '',
+            'Our team has spent years refining the process of modern application design & development, and have presented on new ways of integrating cross-disciplinary teams for maximum effect. Let our experts guide your team on the latest industry best practices in design, product development, and team collaboration.',
+        },
+        first: {
+          title: 'Team Training & Integrations',
+          text:
+            'Managing cross-functional teams who come from diverse backgrounds and skills training can require a collaboration process that does not come easily out of the box. We will share the successful processes our team has refined that will increase your efficiency and improve overall team morale. ',
+        },
+        second: {
+          title: 'Milestone and Task Scheduling',
+          text:
+            'Using one of the industries leading project management software, Teamwork Projects, we will help your team organize internally and develop a fine-tuned plan of attack to help your organization work towards milestones that will increase revenues and decrease hurdles faced during internal communication.',
+        },
+        third: {
+          title: 'Tools & Best Practices',
+          text: `There are thousands of productivity tools on the market that your team could integrate into your internal processes but do you know which ones will be best for you and how to smoothly transition over to them? We will determine your team's needs and show you the best tools and practices to improve your organizational success.`,
+        },
+        seminars:
+          'Our team has curated workshops for entrepreneurs and startups for 4 years, helping to grow the entrepreneurial community in Philadelphia. Whether you are looking for general business advice, tools and tips to help maximize your team’s efficiency, or how to bring your MVP to the market, we have workshops and seminars for everyone. If you are interested in joining us at our next event, sign up for our mailing and you’ll be the first to know when it’s happening!',
+      },
+      ourwork: {
+        juntoscope: {
+          title: 'JuntoScope',
+          description:
+            'Juntoscope helps teams determine scopes for tasks in Teamwork.com:copyright: Projects with a seamless integration providing fast, efficient, and accurate scoping to keep projects within budget and on-time.',
+        },
+        voyage: {
+          title: 'The Voyage',
+          description:
+            'The Voyage by New Ocean puts users in charge of their health and well-being, making it simple and fun to achieve their goals and earn great rewards along the way with programs to fit their every need.',
+        },
+        vanlife: {
+          title: 'The Vanlife App',
+          description:
+            'The Vanlife App is a community-oriented, one-stop-shop for all things Vanlife, dedicated to helping the community thrive by providing all the resources needed to fulfill your life’s desires while on the road or planning to get on the road.',
+        },
+        suw: {
+          title: 'Startup Wars',
+          description:
+            'Startup Wars is a startup simulator that teaches players principles of entrepreneurship and team management, where players compete to be the top startup in their city, taking on the real journey of a startup founder.',
+        },
+        digithermo: {
+          title: 'DigiThermo',
+          description:
+            'DigiThermo is a new generation high quality, accurate, and easy-­to-­use Bluetooth sensor, able to record airflow parameters, time and date of each individual measurement allowing for monitoring right from your mobile device.',
         },
       },
     },
@@ -402,6 +449,7 @@ export const translations = {
       },
       links: {
         home: 'Home',
+        blog: 'Blog',
         about: 'About',
         contact: 'Contact',
         opportunities: 'Opportunities',

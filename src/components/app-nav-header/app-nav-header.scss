@@ -1,3 +1,7 @@
+nav.navbar {
+  background: rgba(23, 23, 25, 1);
+}
+
 nav.navbar .navbar-nav .nav-item {
   text-align: right;
 
@@ -29,5 +33,32 @@ nav.navbar .navbar-nav .nav-item {
   a {
     padding-right: 1rem;
     padding-left: 1rem;
+  }
+
+  &.split {
+
+    .dropdown-menu {
+      margin-top: 0;
+      @include media-breakpoint-up(md) {
+        margin-top: -8px;
+      }
+    }
+
+    margin-top: 8px;
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+    }
+
+    stencil-route-link {
+      .main {
+        display: inline;
+        padding-right: 0;
+      }
+    }
+
+    .dropdown-toggle {
+      display: inline;
+      padding-left: 0;
+    }
   }
 }

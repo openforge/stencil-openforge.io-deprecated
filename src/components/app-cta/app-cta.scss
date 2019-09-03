@@ -7,7 +7,7 @@
 
   .row {
     height: 100%;
-    background: linear-gradient(to bottom, rgba(108, 144, 152, 0.99), #3f5a60);
+    background: #008092;
   }
 
   .cta-image {
@@ -51,5 +51,25 @@
       line-height: 60px;
       margin: 2rem 0;
     }
+  }
+
+  button {
+    background-color: #ec9b41;
+    border: solid 0.8px white;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+    color: $gray-dark;
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 11px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 1.3px;
+    height: auto;
+    line-height: 1.82;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    width: auto;
   }
 }
