@@ -176,9 +176,6 @@ export namespace Components {
     'reverse'?: boolean;
   }
 
-  interface App404 {}
-  interface App404Attributes extends StencilHTMLAttributes {}
-
   interface AppAbout {}
   interface AppAboutAttributes extends StencilHTMLAttributes {}
 
@@ -262,6 +259,9 @@ export namespace Components {
   interface AppServiceLevelAgreement {}
   interface AppServiceLevelAgreementAttributes extends StencilHTMLAttributes {}
 
+  interface AppServices {}
+  interface AppServicesAttributes extends StencilHTMLAttributes {}
+
   interface AppTeamLanding {
     'history': RouterHistory;
     'match': MatchResults;
@@ -299,7 +299,6 @@ declare global {
     'AppTextarea': Components.AppTextarea;
     'AppTranslate': Components.AppTranslate;
     'ContentGraphic': Components.ContentGraphic;
-    'App404': Components.App404;
     'AppAbout': Components.AppAbout;
     'AppBlogIndex': Components.AppBlogIndex;
     'AppBlogPost': Components.AppBlogPost;
@@ -311,6 +310,7 @@ declare global {
     'AppOpportunities': Components.AppOpportunities;
     'AppResources': Components.AppResources;
     'AppServiceLevelAgreement': Components.AppServiceLevelAgreement;
+    'AppServices': Components.AppServices;
     'AppTeamLanding': Components.AppTeamLanding;
     'AppToolbox': Components.AppToolbox;
     'AppTos': Components.AppTos;
@@ -334,7 +334,6 @@ declare global {
     'app-textarea': Components.AppTextareaAttributes;
     'app-translate': Components.AppTranslateAttributes;
     'content-graphic': Components.ContentGraphicAttributes;
-    'app-404': Components.App404Attributes;
     'app-about': Components.AppAboutAttributes;
     'app-blog-index': Components.AppBlogIndexAttributes;
     'app-blog-post': Components.AppBlogPostAttributes;
@@ -346,6 +345,7 @@ declare global {
     'app-opportunities': Components.AppOpportunitiesAttributes;
     'app-resources': Components.AppResourcesAttributes;
     'app-service-level-agreement': Components.AppServiceLevelAgreementAttributes;
+    'app-services': Components.AppServicesAttributes;
     'app-team-landing': Components.AppTeamLandingAttributes;
     'app-toolbox': Components.AppToolboxAttributes;
     'app-tos': Components.AppTosAttributes;
@@ -449,12 +449,6 @@ declare global {
     new (): HTMLContentGraphicElement;
   };
 
-  interface HTMLApp404Element extends Components.App404, HTMLStencilElement {}
-  var HTMLApp404Element: {
-    prototype: HTMLApp404Element;
-    new (): HTMLApp404Element;
-  };
-
   interface HTMLAppAboutElement extends Components.AppAbout, HTMLStencilElement {}
   var HTMLAppAboutElement: {
     prototype: HTMLAppAboutElement;
@@ -521,6 +515,12 @@ declare global {
     new (): HTMLAppServiceLevelAgreementElement;
   };
 
+  interface HTMLAppServicesElement extends Components.AppServices, HTMLStencilElement {}
+  var HTMLAppServicesElement: {
+    prototype: HTMLAppServicesElement;
+    new (): HTMLAppServicesElement;
+  };
+
   interface HTMLAppTeamLandingElement extends Components.AppTeamLanding, HTMLStencilElement {}
   var HTMLAppTeamLandingElement: {
     prototype: HTMLAppTeamLandingElement;
@@ -562,7 +562,6 @@ declare global {
     'app-textarea': HTMLAppTextareaElement
     'app-translate': HTMLAppTranslateElement
     'content-graphic': HTMLContentGraphicElement
-    'app-404': HTMLApp404Element
     'app-about': HTMLAppAboutElement
     'app-blog-index': HTMLAppBlogIndexElement
     'app-blog-post': HTMLAppBlogPostElement
@@ -574,6 +573,7 @@ declare global {
     'app-opportunities': HTMLAppOpportunitiesElement
     'app-resources': HTMLAppResourcesElement
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement
+    'app-services': HTMLAppServicesElement
     'app-team-landing': HTMLAppTeamLandingElement
     'app-toolbox': HTMLAppToolboxElement
     'app-tos': HTMLAppTosElement
@@ -597,7 +597,6 @@ declare global {
     'app-textarea': HTMLAppTextareaElement;
     'app-translate': HTMLAppTranslateElement;
     'content-graphic': HTMLContentGraphicElement;
-    'app-404': HTMLApp404Element;
     'app-about': HTMLAppAboutElement;
     'app-blog-index': HTMLAppBlogIndexElement;
     'app-blog-post': HTMLAppBlogPostElement;
@@ -609,6 +608,7 @@ declare global {
     'app-opportunities': HTMLAppOpportunitiesElement;
     'app-resources': HTMLAppResourcesElement;
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
+    'app-services': HTMLAppServicesElement;
     'app-team-landing': HTMLAppTeamLandingElement;
     'app-toolbox': HTMLAppToolboxElement;
     'app-tos': HTMLAppTosElement;

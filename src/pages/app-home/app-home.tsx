@@ -87,18 +87,18 @@ export class AppHome {
     this.featuredIsLoading = true;
     const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
     this.butter.post
-    .list(listOptions)
-    .then(resp => {
-      if (resp.data.data.length > 0) {
-        this.featuredPost = resp.data.data[0];
+      .list(listOptions)
+      .then(resp => {
+        if (resp.data.data.length > 0) {
+          this.featuredPost = resp.data.data[0];
+          this.featuredIsLoading = false;
+        }
+      })
+      .catch(resp => {
+        console.log('resp - ', resp);
+        this.featuredIsError = true;
         this.featuredIsLoading = false;
-      }
-    })
-    .catch(resp => {
-      console.log('resp - ', resp);
-      this.featuredIsError = true;
-      this.featuredIsLoading = false;
-    });
+      });
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
@@ -132,7 +132,7 @@ export class AppHome {
                 </h2>
                 <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
                 <object data="/assets/svg/home-graphic-header-mobile.svg" class="svg-header-mobile" aria-label="header" />
-                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -160,15 +160,15 @@ export class AppHome {
                     <app-translate key="home.work.mobileWebApplications.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/home-graphic-work-vanlife-1.png" class="behind-left" alt="vanlife screenshot" />
-                    <img src="/assets/home-graphic-work-vanlife-2.png" class="front-center" alt="vanlife screenshot" />
-                    <img src="/assets/home-graphic-work-vanlife-3.png" class="behind-right" alt="vanlife screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-3.png" class="behind-right" alt="vanlife app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener">
+                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener" data-cy="vanlife-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener">
+                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener" data-cy="vanlife-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
@@ -187,15 +187,15 @@ export class AppHome {
                     <app-translate key="home.work.mobileTechnology.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/home-graphic-work-loudcloud-1.png" class="behind-left" alt="loudcloud screenshot" />
-                    <img src="/assets/home-graphic-work-loudcloud-2.png" class="front-center" alt="loudcloud screenshot" />
-                    <img src="/assets/home-graphic-work-loudcloud-3.png" class="behind-right" alt="loudcloud screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
+                    <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener" data-cy="loudcloud-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
+                    <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener" data-cy="loudcloud-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
@@ -214,15 +214,15 @@ export class AppHome {
                     <app-translate key="home.work.digitalExperience.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/home-graphic-work-voyage-1.png" class="behind-left" alt="voyage screenshot" />
-                    <img src="/assets/home-graphic-work-voyage-2.png" class="front-center" alt="voyage screenshot" />
-                    <img src="/assets/home-graphic-work-voyage-3.png" class="behind-right" alt="voyage screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                    <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener" data-cy="voyage-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                    <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener" data-cy="voyage-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>

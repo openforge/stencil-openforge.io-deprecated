@@ -34,4 +34,31 @@ nav.navbar .navbar-nav .nav-item {
     padding-right: 1rem;
     padding-left: 1rem;
   }
+
+  &.split {
+
+    .dropdown-menu {
+      margin-top: 0;
+      @include media-breakpoint-up(md) {
+        margin-top: -8px;
+      }
+    }
+
+    margin-top: 8px;
+    @include media-breakpoint-down(md) {
+      margin-top: 0;
+    }
+
+    stencil-route-link {
+      .main {
+        display: inline;
+        padding-right: 0;
+      }
+    }
+
+    .dropdown-toggle {
+      display: inline;
+      padding-left: 0;
+    }
+  }
 }

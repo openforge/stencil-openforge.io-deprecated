@@ -1,17 +1,22 @@
-import { Component, Prop } from '@stencil/core';
+import { Component } from '@stencil/core';
 
 @Component({
   tag: 'app-service-level-agreement',
   styleUrl: 'app-service-level-agreement.scss',
 })
 export class AppServiceLevelAgreement {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
+  // Removing optimized assets for now
+  // @Prop({ context: 'isServer' })
+  // private isServer: boolean;
 
   private className;
   componentWillLoad() {
-    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+    // Removing optimized assets for now
+    // this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+    this.className = 'hero';
   }
+
+  componentDidLoad() {}
 
   scrollTo() {
     const form = document.getElementById('sla');
@@ -56,19 +61,19 @@ export class AppServiceLevelAgreement {
                   <p>Meeting minutes will be used within 24 hours of meeting</p>
                 </li>
                 <li>
-                  <p>A weekly status report will be provided onactively scheduled projects/multiple project accounts</p>
+                  <p>A weekly status report will be provided on actively scheduled projects/multiple project accounts</p>
                 </li>
                 <li>
-                  <p>All Teamwork messages will be responded to within 6 - 24 hors, depending on priority of the message. More options are available upon request</p>
+                  <p>All Teamwork messages will be responded to within 6 - 24 hours, depending on the priority of the message. More options are available upon request</p>
                 </li>
                 <li>
-                  <p>Clients will be kept up to date on relevant informaton of project delirables, inlcuding milestones and risks</p>
+                  <p>Clients will be kept up to date on relevant information of project deliverables, including milestones and risks</p>
                 </li>
                 <li>
                   <p>A quarterly review meeting will be scheduled with Client and Client Management team to review overall project and roadmap</p>
                 </li>
                 <li>
-                  <p>Handover notes and replacement agency contact will be provded in the case of a switch in provider. Please shcedule hand-off documentation at least one week in advance</p>
+                  <p>Handover notes and replacement agency contact will be provided in the case of a switch in provider. Please schedule hand-off documentation at least one week in advance</p>
                 </li>
               </ul>
             </div>
@@ -80,10 +85,10 @@ export class AppServiceLevelAgreement {
             <div class="sla-detail">
               <ul>
                 <li>
-                  <p>Concepts will be presented and supportd eith a strategic and creative rationale</p>
+                  <p>Concepts will be presented and supported with a strategic and creative rationale</p>
                 </li>
                 <li>
-                  <p>Recommendation provided; if requested Creative execution will be adhere to client brand and guidelines where available and appropiate</p>
+                  <p>Recommendation provided; if requested Creative execution will be adhere to client brand and guidelines where available and appropriate</p>
                 </li>
                 <li>
                   <p>Creative team will attend presentation where feasible or necessary</p>
@@ -103,7 +108,7 @@ export class AppServiceLevelAgreement {
             <div class="sla-detail">
               <ul>
                 <li>
-                  <p>A roadmap of major milestone & feature completions will be provided via Teamwork's Milestone functionality Milestones will be updated and reviewd when necessary</p>
+                  <p>A roadmap of major milestone & feature completions will be provided via Teamwork's Milestone functionality Milestones will be updated and reviewed when necessary</p>
                 </li>
                 <li>
                   <p>Project and production timing plans will be adhered to and in the event of milestones being missed, a revised timing plan will be provided</p>
@@ -141,7 +146,7 @@ export class AppServiceLevelAgreement {
                   <p>A cost estimate of Development work will be presented once Creative work (Design) and Architecture Discovery is completed</p>
                 </li>
                 <li>
-                  <p>Any estimtes provided before Opeforge's discovery & design process are complete are only estimates, and can not be guarantedd by threshold pricing policy</p>
+                  <p>Any estimates provided before Opeforge's discovery & design process are complete are only estimates, and can not be guaranteed by threshold pricing policy</p>
                 </li>
                 <li>
                   <p>Openforge will proceed with the relevant action following written approval of costs through Teamwork</p>
@@ -153,8 +158,8 @@ export class AppServiceLevelAgreement {
                 </li>
                 <li>
                   <p>
-                    If a conept is delivered over budget due to a change in requirements or a dependency on a 3rd party provider, regular pricing applies. If a concept is delivered over budget for any
-                    other reason, threshold pricing will apply
+                    If a concept is delivered over budget due to a change in requirements or a dependency on a 3rd party provider, regular pricing applies. If a concept is delivered over budget for
+                    any other reason, threshold pricing will apply
                   </p>
                 </li>
               </ul>
@@ -170,7 +175,7 @@ export class AppServiceLevelAgreement {
                   <p>Any changes to costs will be discussed with the client and documented via Teamwork</p>
                 </li>
                 <li>
-                  <p>All work is scheduled in advance with pre-paid retainers, also known as a "top-p" model</p>
+                  <p>All work is scheduled in advance with prepaid retainers, also known as a "top-up" model</p>
                 </li>
                 <li>
                   <p>

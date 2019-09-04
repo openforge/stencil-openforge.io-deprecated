@@ -144,6 +144,11 @@ This project uses [ButterCMS](https://buttercms.com/) as a headless content mana
 
 The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy of the master branch. Butter's webhooks are managed in the ButterCMS portal.
 
+
+The branches develop, qa, staging, and master are all set up for continuous integration and deployment with Travis CI and Firebase. To deploy, create a PR for the appropriate branch, or commit and push directly (avoid this if possible).
+
+If manual deployment is needed, use the following. Only do this on the develop branch, follow the PR request flow for all other branches.
+
 ### Featured Post
 
 The featured post is managed in the ButterCMS portal. To make a post featured, it must be given a tag of 'featured'. The actual featured post will be the most recently published post with the featured tag. Currently, this post will also appear in the regular list of posts.

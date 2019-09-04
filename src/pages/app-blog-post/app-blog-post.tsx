@@ -23,6 +23,8 @@ export class AppBlogPost {
   @State() nextPostsIsError = false;
   @State() nextPostsIsLoading = true;
 
+  @State() nextPostsHelper: any;
+
   @Watch('match')
   watchHandler(newValue: any, oldValue: any) {
     if (newValue.params.slug !== oldValue.params.slug) {
@@ -45,11 +47,13 @@ export class AppBlogPost {
           this.otherPosts = resp.data.data;
           this.filterNextPosts(this.match.params.slug);
           this.nextPostsIsLoading = false;
+          this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
         })
 
         .catch(resp => {
           this.nextPostsIsError = true;
           this.nextPostsIsLoading = false;
+          this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
           console.log(resp);
         });
     }
@@ -167,7 +171,6 @@ export class AppBlogPost {
 
   render() {
     const post = this.renderPostContent(this.blogPost, this.blogPostIsLoading, this.blogPostIsError);
-    const nextPosts = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
     return (
       <div class="blog-post-page">
         <div class="blog-post-content">
@@ -187,7 +190,7 @@ export class AppBlogPost {
             <div class="spacer" />
           </div>
         </div>
-        <div class="next-posts">{nextPosts}</div>
+        <div class="next-posts">{this.nextPostsHelper}</div>
         <app-footer />
       </div>
     );

@@ -5,6 +5,8 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-tos.scss',
 })
 export class AppTOS {
+  componentDidLoad() {}
+
   render() {
     return (
       <div class="terms-of-service">
