@@ -121,6 +121,10 @@ export class AppResources {
       const form = document.getElementById('top');
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
 
+      //Ensure this downloads on firefox
+      if (navigator.userAgent.indexOf('Firefox') > 0) {
+        window.location.href = '/assets/PWA%20White%20Paper.pdf';
+      }
       // Create an anchor element with the attribute download for the pdf
       const downloadLink: HTMLAnchorElement = document.createElement('a');
       downloadLink.href = '/assets/PWA%20White%20Paper.pdf';
