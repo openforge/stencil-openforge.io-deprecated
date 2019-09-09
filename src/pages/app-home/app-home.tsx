@@ -130,8 +130,8 @@ export class AppHome {
                 <h2>
                   <app-translate key="home.hero.subTitle" />
                 </h2>
-                <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
-                <object data="/assets/svg/home-graphic-header-mobile.svg" class="svg-header-mobile" aria-label="header" />
+                <div class="svg-header-desktop" aria-label="header" />
+                <div class="svg-header-mobile" aria-label="header" />
               </div>
             </div>
           </div>

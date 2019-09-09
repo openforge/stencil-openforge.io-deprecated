@@ -72,6 +72,11 @@
     @include media-breakpoint-down(sm) {
       text-align: center;
     }
+
+    .img-services {
+      width: 250px;
+      height: 250px;
+    }
   }
 
   .our-work {
