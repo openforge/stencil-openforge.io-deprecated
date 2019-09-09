@@ -238,7 +238,7 @@ export class AppDetailedService {
                   <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
                     <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                   </a>
-                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                  <a href="https://play.google.com/store/apps/details?id=com.openforge.juntoscope" target="_blank" rel="noopener">
                     <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                   </a>
                 </div>
