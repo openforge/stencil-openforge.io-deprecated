@@ -2,7 +2,7 @@
   text-align: left;
 
   padding: 0 6rem;
-  
+
   h1 {
     @include media-breakpoint-down(md) {
       padding: 20px 0;
@@ -13,12 +13,12 @@
     margin-bottom: 10px;
   }
 
-  .--date {
+  .date-date {
     color: #6d6e71;
     font-size: 12px;
   }
 
-  .--author {
+  .author {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -37,7 +37,7 @@
     }
   }
 
-  .--main-image {
+  .main-image {
     border-radius: 35px;
     padding: 2%;
     width: 100%;
@@ -47,7 +47,6 @@
     text-align: center;
     padding: 0 1rem;
   }
-
 }
 
 .content {

@@ -77,8 +77,8 @@ export class AppBlogContent {
           <h1>{this.blogPost.title}</h1>
           <p>{this.blogPost.summary}</p>
           <div>
-            <div class="--date">{formatDate(publishDate)}</div>
-            <div class="--author">
+            <div class="date-date">{formatDate(publishDate)}</div>
+            <div class="author">
               <img src={this.blogPost.author.profile_image} />
               <div>
                 By &nbsp;
@@ -86,8 +86,10 @@ export class AppBlogContent {
               </div>
             </div>
           </div>
-          <div class="contact-icons-top" id="contact-icons-top">{contactIconsTop}</div>
-          <img class="--main-image" src={this.blogPost.featured_image} />
+          <div class="contact-icons-top" id="contact-icons-top">
+            {contactIconsTop}
+          </div>
+          <img class="main-image" src={this.blogPost.featured_image} />
         </div>
         <div class="content">
           <div class="row">

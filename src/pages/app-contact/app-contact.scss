@@ -1,11 +1,12 @@
+$dark-gray: #292a2d;
 .contact {
   // hero
-  .hero {
-    background-image: url('/assets/bg-hero-handshake-desk.jpg');
-  }
-  .webp {
-    background-image: url('/assets/bg-hero-handshake-desk.jpg');
-  }
+  // .hero {
+  //   background-image: url('/assets/bg-hero-handshake-desk.jpg');
+  // }
+  // .webp {
+  //   background-image: url('/assets/bg-hero-handshake-desk.jpg');
+  // }
 
   .hero,
   .webp {
@@ -17,9 +18,11 @@
     .row {
       height: 100%;
     }
-
+    .col-sm-12 {
+      padding: 20px;
+    }
     h2 {
-      color: $white;
+      color: $dark-gray;
       font-size: 4rem;
       margin-bottom: 1rem;
       @include media-breakpoint-down(lg) {
@@ -31,10 +34,10 @@
     }
 
     p {
-      color: $white;
+      color: $dark-gray;
       font-size: 1.2rem;
       font-weight: 300;
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
       max-width: 500px;
       @include media-breakpoint-down(lg) {
         font-size: 1rem;
@@ -42,21 +45,201 @@
     }
   }
 
-  .contact-form {
-    padding: 7rem 0;
-
+  .contact-header {
+    width: 50%;
+    margin-top: -370px;
+    z-index: 100;
+    background: white;
+    order: 1;
+    text-align: left;
     @include media-breakpoint-down(sm) {
-      padding: 3rem 0;
+      margin-top: -1000px;
+      order: 2;
+      text-align: center;
     }
+  }
+}
+p.lead {
+  margin-bottom: 15px;
+}
+.form-group {
+  margin-bottom: -35px;
+}
 
-    @include media-breakpoint-down(xs) {
-      button {
-        width: 100%;
-      }
+.contact-header-img {
+  width: 50%;
+  height: 1000px;
+  background-image: url('/assets/contact-header-lg.png');
+  background-size: 60%;
+  background-position-y: -100px;
+  background-position-x: 100px;
+  background-repeat: no-repeat;
+  z-index: -100;
+  order: 2;
+  @include media-breakpoint-down(md) {
+    background-position-y: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    background-image: url('/assets/contact-header-sm.png');
+    margin-top: 20;
+    background-size: 40%;
+    order: 1;
+  }
+}
+.location-section {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding-bottom: 40px;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+.location-info {
+  @include media-breakpoint-down(sm) {
+    margin-top: 100px;
+  }
+  padding: 20px;
+  height: 300px;
+  text-align: center;
+  margin-top: 100px;
+  p {
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+  }
+}
+.location-map {
+  margin-top: 20px;
+  @include media-breakpoint-down(sm) {
+    margin-top: 50px;
+  }
+}
+.mapouter {
+  position: relative;
+  text-align: center;
+  height: 274px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gmap-canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 274px;
+  width: 400;
+}
+
+.contact-philly-bell {
+  width: 140px;
+}
+.contact-form {
+  padding: 7rem 0;
+  .form-group {
+    margin-bottom: 0;
+    margin-top: -20px;
+  }
+  .form-group label {
+    @include media-breakpoint-down(md) {
+      margin-bottom: -10px;
     }
+  }
+  input {
+    @include media-breakpoint-down(md) {
+      height: 30px;
+    }
+  }
+  .lead {
+    @include media-breakpoint-down(md) {
+      line-height: 20px;
+      font-size: 15px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 3rem 0;
+  }
+
+  @include media-breakpoint-down(xs) {
+    button {
+      width: 100%;
+    }
+  }
+}
+.contact-form-content {
+  background-image: url('/assets/contact-letter-bg.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 40px;
+  margin-top: 0;
+  @include media-breakpoint-down(sm) {
+    margin-top: 30px;
+    width: 70%;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   .error {
     font-weight: bold;
     color: #d9534f;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+}
+.mailbox-img {
+  text-align: center;
+  padding-left: 100px;
+  display: block;
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.mailbox-img img {
+  width: 313px;
+}
+
+.send-button {
+  margin-top: 10px;
+}
+.sent-animation {
+  display: block;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -400px;
+  @include media-breakpoint-down(md) {
+    width: 500px;
+    margin-top: -200px;
+  }
+}
+@keyframes fade-in-text {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.thanks-text {
+  opacity: 0;
+  animation-name: fade-in-text;
+  animation-duration: 3s;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  margin-top: 130px;
+  margin-left: 400px;
+  @include media-breakpoint-down(lg) {
+    margin-left: 100px;
+  }
+  @include media-breakpoint-down(md) {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-left: 50px;
+    margin-top: 0;
+  }
+  span {
+    font-weight: bold;
+    color: #77b5c3;
+    font-size: 30px;
   }
 }
