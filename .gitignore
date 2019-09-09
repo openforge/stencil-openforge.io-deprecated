@@ -1,6 +1,10 @@
 dist/
 !www/favicon.ico
-
+www/assets/
+www/build/
+www/index.html
+www/manifest.json
+www/robots.txt
 
 *~
 *.sw[mnpcod]
