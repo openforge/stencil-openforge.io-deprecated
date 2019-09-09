@@ -122,6 +122,9 @@ export class AppResources {
       form.scrollIntoView({ block: 'start', behavior: 'smooth' });
 
       // Create an anchor element with the attribute download for the pdf
+      if (navigator.userAgent.indexOf('Firefox') > 0) {
+        window.location.href = '/assets/PWA%20White%20Paper.pdf';
+      }
       const downloadLink: HTMLAnchorElement = document.createElement('a');
       downloadLink.href = '/assets/PWA%20White%20Paper.pdf';
       downloadLink.download = 'PWA White Paper.pdf';
