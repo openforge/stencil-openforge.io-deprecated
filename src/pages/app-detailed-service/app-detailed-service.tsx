@@ -324,7 +324,7 @@ export class AppDetailedService {
                   <img src="/assets/apps/digithermo/graphic-example-2.png" class="front-center" alt="digithermo wars app screenshot" />
                 </div>
                 <div class="store-buttons">
-                  <a href="https://apps.apple.com/es/app/digi-thermo/id1307130445" target="_blank" rel="noopener">
+                  <a href="https://apps.apple.com/app/digi-thermo/id1307130445" target="_blank" rel="noopener">
                     <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                   </a>
                   <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
