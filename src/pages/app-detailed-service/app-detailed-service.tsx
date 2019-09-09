@@ -235,10 +235,10 @@ export class AppDetailedService {
                   <img src="/assets/apps/juntoscope/graphic-example-2.png" class="front-center" alt="juntoscope app screenshot" />
                 </div>
                 <div class="store-buttons">
-                  <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
+                  <a href="https://apps.apple.com/us/app/juntoscope/id1421846154?mt=8" target="_blank" rel="noopener">
                     <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                   </a>
-                  <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
+                  <a href="https://play.google.com/store/apps/details?id=com.openforge.juntoscope" target="_blank" rel="noopener">
                     <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                   </a>
                 </div>
@@ -306,12 +306,7 @@ export class AppDetailedService {
                   <img src="/assets/apps/startupwars/graphic-example-2.png" class="front-center" alt="startup wars app screenshot" />
                 </div>
                 <div class="store-buttons">
-                  <a>
-                    <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                  </a>
-                  <a>
-                    <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                  </a>
+                  <div class="spacer" />
                 </div>
                 <div class="information">
                   <h3>
@@ -329,10 +324,10 @@ export class AppDetailedService {
                   <img src="/assets/apps/digithermo/graphic-example-2.png" class="front-center" alt="digithermo wars app screenshot" />
                 </div>
                 <div class="store-buttons">
-                  <a>
+                  <a href="https://apps.apple.com/es/app/digi-thermo/id1307130445" target="_blank" rel="noopener">
                     <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                   </a>
-                  <a>
+                  <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
                     <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                   </a>
                 </div>
