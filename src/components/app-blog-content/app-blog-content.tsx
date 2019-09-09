@@ -82,7 +82,11 @@ export class AppBlogContent {
               <img src={this.blogPost.author.profile_image} />
               <div>
                 By &nbsp;
-                <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                {this.blogPost.author.slug === 'jedidiah-weller' ? (
+                  <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
+                ) : (
+                  <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                )}
               </div>
             </div>
           </div>
