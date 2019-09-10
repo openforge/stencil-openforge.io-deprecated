@@ -19,15 +19,13 @@ exports.config = {
     {
       type: 'www',
       serviceWorker: {
-        swSrc: 'sw.js',
-        globPatterns: [
-          '**/*.{html,js,css,json,ico,png,jpg,es5}'
-        ]
+        swSrc: './src/sw.js'
       }
     }
   ],
   copy: [
-    { src: 'robots.txt' }
+    { src: 'robots.txt' },
+    { src: 'sw.js' }
   ]
 };
 
