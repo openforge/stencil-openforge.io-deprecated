@@ -19,7 +19,7 @@ exports.config = {
     {
       type: 'www',
       serviceWorker: {
-        swSrc: 'sw.js'
+        swSrc: './src/sw.js'
       }
     }
   ],
