@@ -267,7 +267,7 @@ export const translations = {
         juntoscope: {
           title: 'JuntoScope',
           description:
-            'Juntoscope helps teams determine scopes for tasks in Teamwork.com:copyright: Projects with a seamless integration providing fast, efficient, and accurate scoping to keep projects within budget and on-time.',
+            'Juntoscope helps teams determine scopes for tasks in Teamwork.com&copy; Projects with a seamless integration providing fast, efficient, and accurate scoping to keep projects within budget and on-time.',
         },
         voyage: {
           title: 'The Voyage',

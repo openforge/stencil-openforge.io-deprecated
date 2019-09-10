@@ -75,7 +75,7 @@ export class OpenForgeApp {
   }
 
   listenForNewServiceWorker = window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
+    navigator.serviceWorker.register('./sw.js').then(registration => {
       // Track updates to the Service Worker
       if (!navigator.serviceWorker.controller) {
         // The window client isn't currently controlled so it's a new service worker that will activate immediately

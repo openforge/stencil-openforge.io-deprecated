@@ -1,7 +1,7 @@
 {
   "name": "@openforge/main-website",
   "private": true,
-  "version": "2.3.1",
+  "version": "2.3.2",
   "description": "The official website for OpenForge",
   "files": [
     "dist/"
