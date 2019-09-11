@@ -12,10 +12,12 @@
     margin-top: 115px;
 
     .svg-header-desktop {
-      display: initial;
+      background: url('assets/svg/home-graphic-header.svg') center center no-repeat;
+      height: 542px;
+      display: block;
 
       @include media-breakpoint-up(md) {
-        display: initial;
+        display: block;
       }
 
       @include media-breakpoint-down(sm) {
@@ -24,6 +26,8 @@
     }
 
     .svg-header-mobile {
+      background: url('assets/svg/home-graphic-header-mobile.svg') center center no-repeat;
+      height: 768px;
       display: none;
 
       @include media-breakpoint-up(md) {
@@ -31,7 +35,7 @@
       }
 
       @include media-breakpoint-down(sm) {
-        display: initial;
+        display: block;
       }
     }
 

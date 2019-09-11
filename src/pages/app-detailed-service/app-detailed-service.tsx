@@ -180,7 +180,7 @@ export class AppDetailedService {
             </div>
             <div class="row text-sm-center text-md-left">
               <div class="col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
-                <object data={this.imgs[this.match.params.service].services.first} height="250" width="250" />
+                <img class="img-services" src={this.imgs[this.match.params.service].services.first} />
               </div>
               <div class="col-md-8 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
@@ -193,7 +193,7 @@ export class AppDetailedService {
             </div>
             <div class="row text-sm-center text-md-right">
               <div class="col-md-4 col-sm-12 d-flex order-md-2 justify-content-center align-items-center">
-                <object data={this.imgs[this.match.params.service].services.second} height="250" width="250" />
+                <img class="img-services" src={this.imgs[this.match.params.service].services.second} />
               </div>
               <div class="col-md-8 col-sm-12 order-md-1 d-flex flex-column align-self-center">
                 <h3>
@@ -206,7 +206,7 @@ export class AppDetailedService {
             </div>
             <div class="row text-sm-center text-md-left">
               <div class="col-md-4 col-sm-12 d-flex justify-content-center align-items-center">
-                <object data={this.imgs[this.match.params.service].services.third} height="250" width="250" />
+                <img class="img-services" src={this.imgs[this.match.params.service].services.third} />
               </div>
               <div class="col-md-8 col-sm-12 d-flex flex-column align-self-center">
                 <h3>

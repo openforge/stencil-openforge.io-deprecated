@@ -221,7 +221,7 @@ export class AppBlog {
       }
       return (
         <li class={filterClass}>
-          <a onClick={() => this.handleFilter(filter.slug)} class={filterLinkClass}>
+          <a onClick={() => this.handleFilter(filter.slug)} href="#" class={filterLinkClass}>
             {filter.name}
           </a>
         </li>
@@ -277,7 +277,7 @@ export class AppBlog {
         const pageLinkClass = currentPage === i + 1 ? 'blog-page-item active' : 'blog-page-item';
         return (
           <li class={pageItemClass}>
-            <a id={`nav-to-page-${i + 1}`} onClick={e => this.handlePaging(e)} class={pageLinkClass}>
+            <a id={`nav-to-page-${i + 1}`} onClick={e => this.handlePaging(e)} href="#" class={pageLinkClass}>
               {i + 1}
             </a>
           </li>
