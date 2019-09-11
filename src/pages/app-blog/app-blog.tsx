@@ -194,6 +194,7 @@ export class AppBlog {
     } else {
       this.getBlogPosts(newPage);
     }
+    window.scrollTo(0,0)
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
