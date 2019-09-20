@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop } from '@stencil/core';
+import { Component, State, Listen, Prop, Build, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
@@ -31,8 +31,6 @@ export class AppContact {
 
   @State() isDisabled = true;
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -56,13 +54,13 @@ export class AppContact {
 
   private className;
   componentWillLoad() {
-    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+    this.className = Build.isBrowser ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
   }
 
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
       fbq('track', 'Lead');
     }
@@ -113,7 +111,7 @@ export class AppContact {
 
       // isServer is false when running in the browser
       // and true when being prerendered
-      if (!this.isServer) {
+      if (Build.isBrowser) {
         fbq('track', 'CompleteRegistration');
       }
 
@@ -140,7 +138,6 @@ export class AppContact {
   render() {
     return (
       <div class="contact">
-        {/* header - hero */}
         <header class={this.className}>
           <div class="container">
             <div class="row align-items-center">

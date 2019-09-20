@@ -1,4 +1,4 @@
-import { Component, State, Prop, Listen } from '@stencil/core';
+import { Component, State, Prop, Listen, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
@@ -139,7 +139,6 @@ export class AppResources {
   render() {
     return (
       <div id="top" class="resources">
-        {/* header - hero */}
         {!this.formSubmitted ? (
           <header class="hero">
             <div class="overlay">
@@ -207,7 +206,6 @@ export class AppResources {
           </div>
         ) : null}
 
-        {/* section - form */}
         {!this.formSubmitted ? (
           <section id="form-section" class="pwa-form">
             <div class="row align-items-center">
@@ -265,7 +263,6 @@ export class AppResources {
           </section>
         ) : null}
 
-        {/* section - downloadinfo */}
         {!this.formSubmitted ? (
           <div class="container">
             <section id="downloadinfo" class="downloadinfo">

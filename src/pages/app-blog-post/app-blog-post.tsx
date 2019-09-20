@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch, Build, h } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
 import { BLOG_DATA } from './prerender-blog-data';
@@ -10,7 +10,6 @@ import { BLOG_DATA } from './prerender-blog-data';
 export class AppBlogPost {
   @Prop() history: RouterHistory;
   @Prop() match: MatchResults;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() butter: any;
   @Prop() preRenderBlogPost: BlogPost;
 
@@ -40,7 +39,7 @@ export class AppBlogPost {
     // it's kind of a hack but Butter doesn't support getting random posts
     const pageSize = 12;
     const listOptions = { page: 1, page_size: pageSize, exclude_body: true };
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.butter.post
         .list(listOptions)
         .then(resp => {
@@ -60,7 +59,7 @@ export class AppBlogPost {
   }
 
   getPostContent() {
-    if (this.isServer) {
+    if (!Build.isBrowser) {
       this.blogPost = BLOG_DATA.data.find(post => {
         return post.slug === this.match.params.slug;
       });
@@ -73,7 +72,7 @@ export class AppBlogPost {
           this.blogPost = resp.data.data;
           this.blogPostIsLoading = false;
           // set scroll to top for when navigating to a new blog post
-          if (!this.isServer) {
+          if (Build.isBrowser) {
             window.scrollTo(0, 0);
           }
           this.setMetaTags();

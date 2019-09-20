@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Build, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
@@ -8,9 +8,6 @@ declare var fbq;
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
   members = [
     {
       name: 'Jedi Weller',
@@ -199,7 +196,7 @@ export class AppAbout {
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
     }
 
@@ -219,7 +216,6 @@ export class AppAbout {
   render() {
     return (
       <div class="about">
-        {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
@@ -238,7 +234,6 @@ export class AppAbout {
           </div>
         </header>
 
-        {/* section - team */}
         <section id="team-photo" class="team-photo {this.className}">
           <div class="container">
             <div class="row align-items-end text-center">
@@ -249,7 +244,6 @@ export class AppAbout {
           </div>
         </section>
 
-        {/* section - mission statement */}
         <section id="mission-statement" class="mission-statement">
           <div class="mission-statement d-flex text-center">
             <p class="text-white align-self-center">
@@ -258,7 +252,6 @@ export class AppAbout {
           </div>
         </section>
 
-        {/* section - values */}
         <section id="values" class="values">
           <div class="container text-center">
             <div class="row header">
@@ -288,7 +281,6 @@ export class AppAbout {
           </div>
         </section>
 
-        {/* section - members */}
         <section id="members" class="members">
           <div class="container text-center">
             <div class="header">
@@ -304,7 +296,6 @@ export class AppAbout {
           </div>
         </section>
 
-        {/* aside - cta */}
         <app-cta />
 
         <app-footer />

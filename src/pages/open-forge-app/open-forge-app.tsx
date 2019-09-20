@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, Prop } from '@stencil/core';
+import { Component, Build, h } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 import { BrowserService } from '../../services/browser.services';
 /* tslint:disable-next-line */
@@ -13,16 +13,13 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  mainEl: HTMLElement;
+  mainEl: HTMLAppNavHeaderElement;
   newServiceWorker: boolean = false;
   public butterService;
 
   constructor() {
     const browserService = new BrowserService();
-    browserService.check_webp(this.isServer);
+    browserService.check_webp(!Build.isBrowser);
     console.log(BUTTER_API_KEY);
   }
 
@@ -31,24 +28,23 @@ export class OpenForgeApp {
   }
 
   componentDidLoad() {
-    try {
-      this.mainEl = document.querySelector('app-nav-header');
-    } catch (e) {
-      console.error('caught error componentDidLoad open-forge-app', e);
-    }
-
-    if (this.mainEl) {
-      this.mainEl.addEventListener('click', ev => {
-        if (ev.srcElement.classList.contains('dropdown-toggle')) {
-          return;
-        }
-        const opened = document.getElementsByClassName('navbar-collapse show');
-        if (opened.length > 0) {
-          const navbarButton: any = document.getElementsByClassName('navbar-toggler')[0];
-          navbarButton.click();
-        }
-      });
-    }
+    // try {
+    //   this.mainEl = document.querySelector('app-nav-header');
+    // } catch (e) {
+    //   console.error('caught error componentDidLoad open-forge-app', e);
+    // }
+    // if (this.mainEl) {
+    //   this.mainEl.addEventListener('click', ev => {
+    //     if (ev.srcElement.classList.contains('dropdown-toggle')) {
+    //       return;
+    //     }
+    //     const opened = document.getElementsByClassName('navbar-collapse show');
+    //     if (opened.length > 0) {
+    //       const navbarButton: any = document.getElementsByClassName('navbar-toggler')[0];
+    //       navbarButton.click();
+    //     }
+    //   });
+    // }
   }
 
   onNewServiceWorker(registration, callback) {

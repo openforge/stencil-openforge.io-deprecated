@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { formatDate } from '../../shared/date-format';
 

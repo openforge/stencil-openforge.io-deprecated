@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Build, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { formatDate } from '../../shared/date-format';
 
@@ -7,14 +7,13 @@ import { formatDate } from '../../shared/date-format';
   styleUrl: 'app-blog-content.scss',
 })
 export class AppBlogContent {
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() blogPost: BlogPost;
 
   componentDidLoad() {
     console.log('blog content', this.blogPost);
     console.log(this.blogPost.author);
 
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.handleIcons();
       window.addEventListener('resize', this.handleIcons);
     }

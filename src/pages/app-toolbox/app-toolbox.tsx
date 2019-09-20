@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-toolbox',
@@ -28,7 +28,6 @@ export class AppToolbox {
   render() {
     return (
       <div class="toolbox">
-        {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">

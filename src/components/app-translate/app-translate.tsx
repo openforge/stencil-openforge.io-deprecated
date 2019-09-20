@@ -6,7 +6,7 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-translate.scss',
 })
 export class AppTranslate {
-  @Prop() private key: string = '';
+  @Prop() key: string = '';
   @Prop() params: {} = {};
   @Element() translatedTextElement: HTMLElement;
 

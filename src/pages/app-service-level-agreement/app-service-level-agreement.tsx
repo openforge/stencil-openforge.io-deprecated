@@ -1,18 +1,12 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-service-level-agreement',
   styleUrl: 'app-service-level-agreement.scss',
 })
 export class AppServiceLevelAgreement {
-  // Removing optimized assets for now
-  // @Prop({ context: 'isServer' })
-  // private isServer: boolean;
-
   private className;
   componentWillLoad() {
-    // Removing optimized assets for now
-    // this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
     this.className = 'hero';
   }
 

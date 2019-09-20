@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Build, h } from '@stencil/core';
 
 declare var fbq;
 
@@ -7,13 +7,10 @@ declare var fbq;
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
     }
   }
@@ -35,7 +32,6 @@ export class AppServices {
   render() {
     return (
       <div class="services">
-        {/* header - hero */}
         <header class="hero">
           <div class="container desktop">
             <div class="services-graphic-background" aria-label="header" />

@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop, Watch } from '@stencil/core';
+import { Component, State, Listen, Prop, Watch, Build, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
@@ -160,9 +160,6 @@ export class AppOpportunities {
     },
   };
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -186,7 +183,7 @@ export class AppOpportunities {
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
       fbq('track', 'Lead');
     }
@@ -325,7 +322,7 @@ export class AppOpportunities {
 
       // isServer is false when running in the browser
       // and true when being prerendered
-      if (!this.isServer) {
+      if (Build.isBrowser) {
         fbq('track', 'CompleteRegistration');
       }
 
@@ -363,7 +360,6 @@ export class AppOpportunities {
   render() {
     return (
       <div class="opportunities">
-        {/* header - hero */}
         {this.texts[this.match.params.type]
           ? [
               <header
@@ -389,7 +385,6 @@ export class AppOpportunities {
                 </div>
               </header>,
 
-              /* section -  interviews */
               <section id="interviews" class="interviews">
                 <div class="container">
                   <content-graphic img-url="/assets/graphic-opportunities-suck.jpg" reverse={true}>
@@ -460,7 +455,6 @@ export class AppOpportunities {
                 </div>
               </section>,
 
-              /* section - apply */
               <section id="apply" class="apply">
                 {!this.formSubmitted ? (
                   <div class="container">
@@ -519,14 +513,7 @@ export class AppOpportunities {
                           <label>
                             <app-translate key="opportunities.form.resume" />
                           </label>
-                          <input
-                            class="input-file"
-                            type="file"
-                            name="file"
-                            onChange={this.handleFile.bind(this)}
-                            // onBlur={this.validateField.bind(this)}
-                            required={!this.fileSizeErrorShown}
-                          />
+                          <input class="input-file" type="file" name="file" onChange={this.handleFile.bind(this)} required={!this.fileSizeErrorShown} />
                         </div>
                         <p class="error">
                           <span style={!this.fileError ? { display: 'none' } : this.errorIconStyles}>

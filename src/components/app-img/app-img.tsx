@@ -1,4 +1,4 @@
-import { Component, Element, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Prop, State, Watch, Build, h } from '@stencil/core';
 // import { LazyImg } from './lazy-img';
 
 @Component({
@@ -16,8 +16,6 @@ export class Img {
   @Prop() alt: string;
   @Prop() preLoad: boolean = false;
   @Prop() src: string;
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   @Watch('src')
   srcChanged() {
@@ -60,7 +58,7 @@ export class Img {
   }
 
   private changeImageFormat() {
-    if (this.loadSrc && (this.isServer || localStorage.getItem('allowWebp') === 'true')) {
+    if (this.loadSrc && (!Build.isBrowser || localStorage.getItem('allowWebp') === 'true')) {
       const idx = this.loadSrc.lastIndexOf('.');
       const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
       if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {

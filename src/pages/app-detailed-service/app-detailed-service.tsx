@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch, Build, h } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
 // import { translate } from '../../services/translation.service';
@@ -12,8 +12,6 @@ declare var fbq;
 export class AppDetailedService {
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   @State()
   imgs = {
@@ -69,7 +67,7 @@ export class AppDetailedService {
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
     }
 
@@ -151,7 +149,6 @@ export class AppDetailedService {
   render() {
     return (
       <div class="services">
-        {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
@@ -227,7 +224,6 @@ export class AppDetailedService {
                 <h2 class="line-title">Our Work</h2>
               </div>
             </div>
-            {/* Work Example */}
             <div class="row">
               <div class="col-md-4 col-sm-12 flex-fill example" id="juntoscope">
                 <div class="row screenshots">

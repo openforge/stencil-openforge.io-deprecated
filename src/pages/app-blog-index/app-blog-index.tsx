@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Build, h } from '@stencil/core';
 import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 
 @Component({
@@ -8,10 +8,9 @@ import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 export class AppBlogIndex {
   @State() blogData = [];
   @Prop() butter: any;
-  @Prop({ context: 'isServer' }) private isServer;
 
   componentWillLoad() {
-    if (this.isServer) {
+    if (!Build.isBrowser) {
       this.blogData = BLOG_DATA.data;
     } else {
       this.butter.post

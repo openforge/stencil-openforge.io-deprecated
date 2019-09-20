@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Build, h } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
@@ -17,9 +17,6 @@ declare var bootstrap;
 export class AppHome {
   @Prop() history: RouterHistory;
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
   @Prop() butter: any;
 
   @State() featuredPost: BlogPost = null;
@@ -27,7 +24,7 @@ export class AppHome {
   @State() featuredIsLoading: boolean = true;
 
   componentWillLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.getFeaturedPost();
     }
   }
@@ -35,7 +32,7 @@ export class AppHome {
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
     }
 
@@ -71,7 +68,7 @@ export class AppHome {
       }
     });
 
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       /* tslint:disable-next-line */
       $(document).ready(function() {
         // Force bootstrap to initialize carousel
@@ -119,7 +116,6 @@ export class AppHome {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     return (
       <div class="home">
-        {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
@@ -345,7 +341,6 @@ export class AppHome {
           </div>
         </section>
 
-        {/* aside - cta */}
         <app-cta />
 
         <app-footer />

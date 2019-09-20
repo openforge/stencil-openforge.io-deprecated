@@ -1,4 +1,4 @@
-import { Component, State, Prop, Watch } from '@stencil/core';
+import { Component, State, Prop, Watch, h } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
 
@@ -321,7 +321,6 @@ export class AppTeamLanding {
     const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto);
     return (
       <section class="team-landing">
-        {/* header - hero */}
         {this.data[this.match.params.member]
           ? [
               <header

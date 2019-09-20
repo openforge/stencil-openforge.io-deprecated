@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Build, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
@@ -10,8 +10,6 @@ declare var fbq;
   styleUrl: 'app-blog.scss',
 })
 export class AppBlog {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
   @Prop() butter: any;
 
   @State() featuredPost: BlogPost = null;
@@ -60,7 +58,7 @@ export class AppBlog {
   ];
 
   componentWillLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.getFeaturedPost();
       this.getBlogPosts(1);
     }
@@ -69,7 +67,7 @@ export class AppBlog {
   componentDidLoad() {
     // isServer is false when running in the browser
     // and true when being prerendered
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       fbq('track', 'ViewContent');
     }
     const input = document.getElementById('blog-search');
@@ -194,7 +192,7 @@ export class AppBlog {
     } else {
       this.getBlogPosts(newPage);
     }
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {

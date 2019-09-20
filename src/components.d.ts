@@ -5,83 +5,61 @@
  */
 
 
-import '@stencil/core';
-
-import '@stencil/router';
-import '@stencil/state-tunnel';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   BlogPost,
 } from './model/blog-post.model';
-import {
-  EventEmitter,
-} from '@stencil/core';
 import {
   MatchResults,
   RouterHistory,
 } from '@stencil/router';
 
-
 export namespace Components {
-
+  interface AppAbout {}
+  interface AppBlog {
+    'butter': any;
+  }
   interface AppBlogCard {
     'blogPost': BlogPost;
   }
-  interface AppBlogCardAttributes extends StencilHTMLAttributes {
-    'blogPost'?: BlogPost;
-  }
-
   interface AppBlogContent {
     'blogPost': BlogPost;
   }
-  interface AppBlogContentAttributes extends StencilHTMLAttributes {
-    'blogPost'?: BlogPost;
-  }
-
   interface AppBlogFeatured {
     'blogPost': BlogPost;
   }
-  interface AppBlogFeaturedAttributes extends StencilHTMLAttributes {
-    'blogPost'?: BlogPost;
+  interface AppBlogIndex {
+    'butter': any;
   }
-
+  interface AppBlogPost {
+    'butter': any;
+    'history': RouterHistory;
+    'match': MatchResults;
+    'preRenderBlogPost': BlogPost;
+  }
   interface AppCarouselIndicators {
     'activeIndex': string;
   }
-  interface AppCarouselIndicatorsAttributes extends StencilHTMLAttributes {
-    'activeIndex'?: string;
+  interface AppCaseStudy {}
+  interface AppContact {
+    'errorIconStyles': { display: string; marginBottom: string; paddingRight: string; };
   }
-
   interface AppCta {}
-  interface AppCtaAttributes extends StencilHTMLAttributes {}
-
+  interface AppDetailedService {
+    'history': RouterHistory;
+    'match': MatchResults;
+  }
   interface AppFooter {}
-  interface AppFooterAttributes extends StencilHTMLAttributes {}
-
+  interface AppHome {
+    'butter': any;
+    'history': RouterHistory;
+  }
   interface AppImg {
     'alt': string;
     'fit': boolean;
     'preLoad': boolean;
     'src': string;
   }
-  interface AppImgAttributes extends StencilHTMLAttributes {
-    'alt'?: string;
-    'fit'?: boolean;
-    'preLoad'?: boolean;
-    'src'?: string;
-  }
-
-  interface LazyImg {
-    'alt': string;
-    'src': string;
-    'width': number;
-  }
-  interface LazyImgAttributes extends StencilHTMLAttributes {
-    'alt'?: string;
-    'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
-    'src'?: string;
-    'width'?: number;
-  }
-
   interface AppInput {
     'id': string;
     'label': string;
@@ -91,51 +69,36 @@ export namespace Components {
     'required': boolean;
     'type': string;
   }
-  interface AppInputAttributes extends StencilHTMLAttributes {
-    'id'?: string;
-    'label'?: string;
-    'maxlength'?: string;
-    'name'?: string;
-    'onValueChange'?: (event: CustomEvent) => void;
-    'placeholder'?: string;
-    'required'?: boolean;
-    'type'?: string;
-  }
-
   interface AppMembers {
     'members': any[];
   }
-  interface AppMembersAttributes extends StencilHTMLAttributes {
-    'members'?: any[];
-  }
-
   interface AppNavHeader {}
-  interface AppNavHeaderAttributes extends StencilHTMLAttributes {}
-
+  interface AppOpportunities {
+    'errorIconStyles': { display: string; marginBottom: string; paddingRight: string; };
+    'history': RouterHistory;
+    'match': MatchResults;
+  }
   interface AppRadio {
     'label': string;
     'name': string;
     'required': boolean;
     'value': string;
   }
-  interface AppRadioAttributes extends StencilHTMLAttributes {
-    'label'?: string;
-    'name'?: string;
-    'onValueChange'?: (event: CustomEvent) => void;
-    'required'?: boolean;
-    'value'?: string;
+  interface AppResources {
+    'errorIconStyles': { display: string; marginBottom: string; paddingRight: string; };
+    'history': RouterHistory;
+    'match': MatchResults;
   }
-
+  interface AppServiceLevelAgreement {}
+  interface AppServices {}
   interface AppSlider {
     'label': string;
     'name': string;
   }
-  interface AppSliderAttributes extends StencilHTMLAttributes {
-    'label'?: string;
-    'name'?: string;
-    'onValueChange'?: (event: CustomEvent) => void;
+  interface AppTeamLanding {
+    'history': RouterHistory;
+    'match': MatchResults;
   }
-
   interface AppTextarea {
     'id': string;
     'label': string;
@@ -145,213 +108,39 @@ export namespace Components {
     'required': boolean;
     'rows': number;
   }
-  interface AppTextareaAttributes extends StencilHTMLAttributes {
-    'id'?: string;
-    'label'?: string;
-    'maxlength'?: string;
-    'name'?: string;
-    'onValueChange'?: (event: CustomEvent) => void;
-    'placeholder'?: string;
-    'required'?: boolean;
-    'rows'?: number;
-  }
-
+  interface AppToolbox {}
+  interface AppTos {}
   interface AppTranslate {
     'key': string;
     'params': {};
   }
-  interface AppTranslateAttributes extends StencilHTMLAttributes {
-    'key'?: string;
-    'params'?: {};
-  }
-
   interface ContentGraphic {
     'imgUrl': string;
     'preLoadImg': boolean;
     'reverse': boolean;
   }
-  interface ContentGraphicAttributes extends StencilHTMLAttributes {
-    'imgUrl'?: string;
-    'preLoadImg'?: boolean;
-    'reverse'?: boolean;
+  interface LazyImg {
+    'alt': string;
+    'src': string;
+    'width': number;
   }
-
-  interface AppAbout {}
-  interface AppAboutAttributes extends StencilHTMLAttributes {}
-
-  interface AppBlogIndex {
-    'butter': any;
-  }
-  interface AppBlogIndexAttributes extends StencilHTMLAttributes {
-    'butter'?: any;
-  }
-
-  interface AppBlogPost {
-    'butter': any;
-    'history': RouterHistory;
-    'match': MatchResults;
-    'preRenderBlogPost': BlogPost;
-  }
-  interface AppBlogPostAttributes extends StencilHTMLAttributes {
-    'butter'?: any;
-    'history'?: RouterHistory;
-    'match'?: MatchResults;
-    'preRenderBlogPost'?: BlogPost;
-  }
-
-  interface AppBlog {
-    'butter': any;
-  }
-  interface AppBlogAttributes extends StencilHTMLAttributes {
-    'butter'?: any;
-  }
-
-  interface AppCaseStudy {}
-  interface AppCaseStudyAttributes extends StencilHTMLAttributes {}
-
-  interface AppContact {
-    'errorIconStyles': any;
-  }
-  interface AppContactAttributes extends StencilHTMLAttributes {
-    'errorIconStyles'?: any;
-  }
-
-  interface AppDetailedService {
-    'history': RouterHistory;
-    'match': MatchResults;
-  }
-  interface AppDetailedServiceAttributes extends StencilHTMLAttributes {
-    'history'?: RouterHistory;
-    'match'?: MatchResults;
-  }
-
-  interface AppHome {
-    'butter': any;
-    'history': RouterHistory;
-  }
-  interface AppHomeAttributes extends StencilHTMLAttributes {
-    'butter'?: any;
-    'history'?: RouterHistory;
-  }
-
-  interface AppOpportunities {
-    'errorIconStyles': any;
-    'history': RouterHistory;
-    'match': MatchResults;
-  }
-  interface AppOpportunitiesAttributes extends StencilHTMLAttributes {
-    'errorIconStyles'?: any;
-    'history'?: RouterHistory;
-    'match'?: MatchResults;
-  }
-
-  interface AppResources {
-    'errorIconStyles': any;
-    'history': RouterHistory;
-    'match': MatchResults;
-  }
-  interface AppResourcesAttributes extends StencilHTMLAttributes {
-    'errorIconStyles'?: any;
-    'history'?: RouterHistory;
-    'match'?: MatchResults;
-  }
-
-  interface AppServiceLevelAgreement {}
-  interface AppServiceLevelAgreementAttributes extends StencilHTMLAttributes {}
-
-  interface AppServices {}
-  interface AppServicesAttributes extends StencilHTMLAttributes {}
-
-  interface AppTeamLanding {
-    'history': RouterHistory;
-    'match': MatchResults;
-  }
-  interface AppTeamLandingAttributes extends StencilHTMLAttributes {
-    'history'?: RouterHistory;
-    'match'?: MatchResults;
-  }
-
-  interface AppToolbox {}
-  interface AppToolboxAttributes extends StencilHTMLAttributes {}
-
-  interface AppTos {}
-  interface AppTosAttributes extends StencilHTMLAttributes {}
-
   interface OpenForgeApp {}
-  interface OpenForgeAppAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
-  interface StencilElementInterfaces {
-    'AppBlogCard': Components.AppBlogCard;
-    'AppBlogContent': Components.AppBlogContent;
-    'AppBlogFeatured': Components.AppBlogFeatured;
-    'AppCarouselIndicators': Components.AppCarouselIndicators;
-    'AppCta': Components.AppCta;
-    'AppFooter': Components.AppFooter;
-    'AppImg': Components.AppImg;
-    'LazyImg': Components.LazyImg;
-    'AppInput': Components.AppInput;
-    'AppMembers': Components.AppMembers;
-    'AppNavHeader': Components.AppNavHeader;
-    'AppRadio': Components.AppRadio;
-    'AppSlider': Components.AppSlider;
-    'AppTextarea': Components.AppTextarea;
-    'AppTranslate': Components.AppTranslate;
-    'ContentGraphic': Components.ContentGraphic;
-    'AppAbout': Components.AppAbout;
-    'AppBlogIndex': Components.AppBlogIndex;
-    'AppBlogPost': Components.AppBlogPost;
-    'AppBlog': Components.AppBlog;
-    'AppCaseStudy': Components.AppCaseStudy;
-    'AppContact': Components.AppContact;
-    'AppDetailedService': Components.AppDetailedService;
-    'AppHome': Components.AppHome;
-    'AppOpportunities': Components.AppOpportunities;
-    'AppResources': Components.AppResources;
-    'AppServiceLevelAgreement': Components.AppServiceLevelAgreement;
-    'AppServices': Components.AppServices;
-    'AppTeamLanding': Components.AppTeamLanding;
-    'AppToolbox': Components.AppToolbox;
-    'AppTos': Components.AppTos;
-    'OpenForgeApp': Components.OpenForgeApp;
-  }
 
-  interface StencilIntrinsicElements {
-    'app-blog-card': Components.AppBlogCardAttributes;
-    'app-blog-content': Components.AppBlogContentAttributes;
-    'app-blog-featured': Components.AppBlogFeaturedAttributes;
-    'app-carousel-indicators': Components.AppCarouselIndicatorsAttributes;
-    'app-cta': Components.AppCtaAttributes;
-    'app-footer': Components.AppFooterAttributes;
-    'app-img': Components.AppImgAttributes;
-    'lazy-img': Components.LazyImgAttributes;
-    'app-input': Components.AppInputAttributes;
-    'app-members': Components.AppMembersAttributes;
-    'app-nav-header': Components.AppNavHeaderAttributes;
-    'app-radio': Components.AppRadioAttributes;
-    'app-slider': Components.AppSliderAttributes;
-    'app-textarea': Components.AppTextareaAttributes;
-    'app-translate': Components.AppTranslateAttributes;
-    'content-graphic': Components.ContentGraphicAttributes;
-    'app-about': Components.AppAboutAttributes;
-    'app-blog-index': Components.AppBlogIndexAttributes;
-    'app-blog-post': Components.AppBlogPostAttributes;
-    'app-blog': Components.AppBlogAttributes;
-    'app-case-study': Components.AppCaseStudyAttributes;
-    'app-contact': Components.AppContactAttributes;
-    'app-detailed-service': Components.AppDetailedServiceAttributes;
-    'app-home': Components.AppHomeAttributes;
-    'app-opportunities': Components.AppOpportunitiesAttributes;
-    'app-resources': Components.AppResourcesAttributes;
-    'app-service-level-agreement': Components.AppServiceLevelAgreementAttributes;
-    'app-services': Components.AppServicesAttributes;
-    'app-team-landing': Components.AppTeamLandingAttributes;
-    'app-toolbox': Components.AppToolboxAttributes;
-    'app-tos': Components.AppTosAttributes;
-    'open-forge-app': Components.OpenForgeAppAttributes;
-  }
 
+  interface HTMLAppAboutElement extends Components.AppAbout, HTMLStencilElement {}
+  var HTMLAppAboutElement: {
+    prototype: HTMLAppAboutElement;
+    new (): HTMLAppAboutElement;
+  };
+
+  interface HTMLAppBlogElement extends Components.AppBlog, HTMLStencilElement {}
+  var HTMLAppBlogElement: {
+    prototype: HTMLAppBlogElement;
+    new (): HTMLAppBlogElement;
+  };
 
   interface HTMLAppBlogCardElement extends Components.AppBlogCard, HTMLStencilElement {}
   var HTMLAppBlogCardElement: {
@@ -371,10 +160,34 @@ declare global {
     new (): HTMLAppBlogFeaturedElement;
   };
 
+  interface HTMLAppBlogIndexElement extends Components.AppBlogIndex, HTMLStencilElement {}
+  var HTMLAppBlogIndexElement: {
+    prototype: HTMLAppBlogIndexElement;
+    new (): HTMLAppBlogIndexElement;
+  };
+
+  interface HTMLAppBlogPostElement extends Components.AppBlogPost, HTMLStencilElement {}
+  var HTMLAppBlogPostElement: {
+    prototype: HTMLAppBlogPostElement;
+    new (): HTMLAppBlogPostElement;
+  };
+
   interface HTMLAppCarouselIndicatorsElement extends Components.AppCarouselIndicators, HTMLStencilElement {}
   var HTMLAppCarouselIndicatorsElement: {
     prototype: HTMLAppCarouselIndicatorsElement;
     new (): HTMLAppCarouselIndicatorsElement;
+  };
+
+  interface HTMLAppCaseStudyElement extends Components.AppCaseStudy, HTMLStencilElement {}
+  var HTMLAppCaseStudyElement: {
+    prototype: HTMLAppCaseStudyElement;
+    new (): HTMLAppCaseStudyElement;
+  };
+
+  interface HTMLAppContactElement extends Components.AppContact, HTMLStencilElement {}
+  var HTMLAppContactElement: {
+    prototype: HTMLAppContactElement;
+    new (): HTMLAppContactElement;
   };
 
   interface HTMLAppCtaElement extends Components.AppCta, HTMLStencilElement {}
@@ -383,22 +196,28 @@ declare global {
     new (): HTMLAppCtaElement;
   };
 
+  interface HTMLAppDetailedServiceElement extends Components.AppDetailedService, HTMLStencilElement {}
+  var HTMLAppDetailedServiceElement: {
+    prototype: HTMLAppDetailedServiceElement;
+    new (): HTMLAppDetailedServiceElement;
+  };
+
   interface HTMLAppFooterElement extends Components.AppFooter, HTMLStencilElement {}
   var HTMLAppFooterElement: {
     prototype: HTMLAppFooterElement;
     new (): HTMLAppFooterElement;
   };
 
+  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
+  var HTMLAppHomeElement: {
+    prototype: HTMLAppHomeElement;
+    new (): HTMLAppHomeElement;
+  };
+
   interface HTMLAppImgElement extends Components.AppImg, HTMLStencilElement {}
   var HTMLAppImgElement: {
     prototype: HTMLAppImgElement;
     new (): HTMLAppImgElement;
-  };
-
-  interface HTMLLazyImgElement extends Components.LazyImg, HTMLStencilElement {}
-  var HTMLLazyImgElement: {
-    prototype: HTMLLazyImgElement;
-    new (): HTMLLazyImgElement;
   };
 
   interface HTMLAppInputElement extends Components.AppInput, HTMLStencilElement {}
@@ -419,88 +238,16 @@ declare global {
     new (): HTMLAppNavHeaderElement;
   };
 
-  interface HTMLAppRadioElement extends Components.AppRadio, HTMLStencilElement {}
-  var HTMLAppRadioElement: {
-    prototype: HTMLAppRadioElement;
-    new (): HTMLAppRadioElement;
-  };
-
-  interface HTMLAppSliderElement extends Components.AppSlider, HTMLStencilElement {}
-  var HTMLAppSliderElement: {
-    prototype: HTMLAppSliderElement;
-    new (): HTMLAppSliderElement;
-  };
-
-  interface HTMLAppTextareaElement extends Components.AppTextarea, HTMLStencilElement {}
-  var HTMLAppTextareaElement: {
-    prototype: HTMLAppTextareaElement;
-    new (): HTMLAppTextareaElement;
-  };
-
-  interface HTMLAppTranslateElement extends Components.AppTranslate, HTMLStencilElement {}
-  var HTMLAppTranslateElement: {
-    prototype: HTMLAppTranslateElement;
-    new (): HTMLAppTranslateElement;
-  };
-
-  interface HTMLContentGraphicElement extends Components.ContentGraphic, HTMLStencilElement {}
-  var HTMLContentGraphicElement: {
-    prototype: HTMLContentGraphicElement;
-    new (): HTMLContentGraphicElement;
-  };
-
-  interface HTMLAppAboutElement extends Components.AppAbout, HTMLStencilElement {}
-  var HTMLAppAboutElement: {
-    prototype: HTMLAppAboutElement;
-    new (): HTMLAppAboutElement;
-  };
-
-  interface HTMLAppBlogIndexElement extends Components.AppBlogIndex, HTMLStencilElement {}
-  var HTMLAppBlogIndexElement: {
-    prototype: HTMLAppBlogIndexElement;
-    new (): HTMLAppBlogIndexElement;
-  };
-
-  interface HTMLAppBlogPostElement extends Components.AppBlogPost, HTMLStencilElement {}
-  var HTMLAppBlogPostElement: {
-    prototype: HTMLAppBlogPostElement;
-    new (): HTMLAppBlogPostElement;
-  };
-
-  interface HTMLAppBlogElement extends Components.AppBlog, HTMLStencilElement {}
-  var HTMLAppBlogElement: {
-    prototype: HTMLAppBlogElement;
-    new (): HTMLAppBlogElement;
-  };
-
-  interface HTMLAppCaseStudyElement extends Components.AppCaseStudy, HTMLStencilElement {}
-  var HTMLAppCaseStudyElement: {
-    prototype: HTMLAppCaseStudyElement;
-    new (): HTMLAppCaseStudyElement;
-  };
-
-  interface HTMLAppContactElement extends Components.AppContact, HTMLStencilElement {}
-  var HTMLAppContactElement: {
-    prototype: HTMLAppContactElement;
-    new (): HTMLAppContactElement;
-  };
-
-  interface HTMLAppDetailedServiceElement extends Components.AppDetailedService, HTMLStencilElement {}
-  var HTMLAppDetailedServiceElement: {
-    prototype: HTMLAppDetailedServiceElement;
-    new (): HTMLAppDetailedServiceElement;
-  };
-
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
-
   interface HTMLAppOpportunitiesElement extends Components.AppOpportunities, HTMLStencilElement {}
   var HTMLAppOpportunitiesElement: {
     prototype: HTMLAppOpportunitiesElement;
     new (): HTMLAppOpportunitiesElement;
+  };
+
+  interface HTMLAppRadioElement extends Components.AppRadio, HTMLStencilElement {}
+  var HTMLAppRadioElement: {
+    prototype: HTMLAppRadioElement;
+    new (): HTMLAppRadioElement;
   };
 
   interface HTMLAppResourcesElement extends Components.AppResources, HTMLStencilElement {}
@@ -521,10 +268,22 @@ declare global {
     new (): HTMLAppServicesElement;
   };
 
+  interface HTMLAppSliderElement extends Components.AppSlider, HTMLStencilElement {}
+  var HTMLAppSliderElement: {
+    prototype: HTMLAppSliderElement;
+    new (): HTMLAppSliderElement;
+  };
+
   interface HTMLAppTeamLandingElement extends Components.AppTeamLanding, HTMLStencilElement {}
   var HTMLAppTeamLandingElement: {
     prototype: HTMLAppTeamLandingElement;
     new (): HTMLAppTeamLandingElement;
+  };
+
+  interface HTMLAppTextareaElement extends Components.AppTextarea, HTMLStencilElement {}
+  var HTMLAppTextareaElement: {
+    prototype: HTMLAppTextareaElement;
+    new (): HTMLAppTextareaElement;
   };
 
   interface HTMLAppToolboxElement extends Components.AppToolbox, HTMLStencilElement {}
@@ -539,89 +298,225 @@ declare global {
     new (): HTMLAppTosElement;
   };
 
+  interface HTMLAppTranslateElement extends Components.AppTranslate, HTMLStencilElement {}
+  var HTMLAppTranslateElement: {
+    prototype: HTMLAppTranslateElement;
+    new (): HTMLAppTranslateElement;
+  };
+
+  interface HTMLContentGraphicElement extends Components.ContentGraphic, HTMLStencilElement {}
+  var HTMLContentGraphicElement: {
+    prototype: HTMLContentGraphicElement;
+    new (): HTMLContentGraphicElement;
+  };
+
+  interface HTMLLazyImgElement extends Components.LazyImg, HTMLStencilElement {}
+  var HTMLLazyImgElement: {
+    prototype: HTMLLazyImgElement;
+    new (): HTMLLazyImgElement;
+  };
+
   interface HTMLOpenForgeAppElement extends Components.OpenForgeApp, HTMLStencilElement {}
   var HTMLOpenForgeAppElement: {
     prototype: HTMLOpenForgeAppElement;
     new (): HTMLOpenForgeAppElement;
   };
-
   interface HTMLElementTagNameMap {
-    'app-blog-card': HTMLAppBlogCardElement
-    'app-blog-content': HTMLAppBlogContentElement
-    'app-blog-featured': HTMLAppBlogFeaturedElement
-    'app-carousel-indicators': HTMLAppCarouselIndicatorsElement
-    'app-cta': HTMLAppCtaElement
-    'app-footer': HTMLAppFooterElement
-    'app-img': HTMLAppImgElement
-    'lazy-img': HTMLLazyImgElement
-    'app-input': HTMLAppInputElement
-    'app-members': HTMLAppMembersElement
-    'app-nav-header': HTMLAppNavHeaderElement
-    'app-radio': HTMLAppRadioElement
-    'app-slider': HTMLAppSliderElement
-    'app-textarea': HTMLAppTextareaElement
-    'app-translate': HTMLAppTranslateElement
-    'content-graphic': HTMLContentGraphicElement
-    'app-about': HTMLAppAboutElement
-    'app-blog-index': HTMLAppBlogIndexElement
-    'app-blog-post': HTMLAppBlogPostElement
-    'app-blog': HTMLAppBlogElement
-    'app-case-study': HTMLAppCaseStudyElement
-    'app-contact': HTMLAppContactElement
-    'app-detailed-service': HTMLAppDetailedServiceElement
-    'app-home': HTMLAppHomeElement
-    'app-opportunities': HTMLAppOpportunitiesElement
-    'app-resources': HTMLAppResourcesElement
-    'app-service-level-agreement': HTMLAppServiceLevelAgreementElement
-    'app-services': HTMLAppServicesElement
-    'app-team-landing': HTMLAppTeamLandingElement
-    'app-toolbox': HTMLAppToolboxElement
-    'app-tos': HTMLAppTosElement
-    'open-forge-app': HTMLOpenForgeAppElement
-  }
-
-  interface ElementTagNameMap {
+    'app-about': HTMLAppAboutElement;
+    'app-blog': HTMLAppBlogElement;
     'app-blog-card': HTMLAppBlogCardElement;
     'app-blog-content': HTMLAppBlogContentElement;
     'app-blog-featured': HTMLAppBlogFeaturedElement;
+    'app-blog-index': HTMLAppBlogIndexElement;
+    'app-blog-post': HTMLAppBlogPostElement;
     'app-carousel-indicators': HTMLAppCarouselIndicatorsElement;
+    'app-case-study': HTMLAppCaseStudyElement;
+    'app-contact': HTMLAppContactElement;
     'app-cta': HTMLAppCtaElement;
+    'app-detailed-service': HTMLAppDetailedServiceElement;
     'app-footer': HTMLAppFooterElement;
+    'app-home': HTMLAppHomeElement;
     'app-img': HTMLAppImgElement;
-    'lazy-img': HTMLLazyImgElement;
     'app-input': HTMLAppInputElement;
     'app-members': HTMLAppMembersElement;
     'app-nav-header': HTMLAppNavHeaderElement;
-    'app-radio': HTMLAppRadioElement;
-    'app-slider': HTMLAppSliderElement;
-    'app-textarea': HTMLAppTextareaElement;
-    'app-translate': HTMLAppTranslateElement;
-    'content-graphic': HTMLContentGraphicElement;
-    'app-about': HTMLAppAboutElement;
-    'app-blog-index': HTMLAppBlogIndexElement;
-    'app-blog-post': HTMLAppBlogPostElement;
-    'app-blog': HTMLAppBlogElement;
-    'app-case-study': HTMLAppCaseStudyElement;
-    'app-contact': HTMLAppContactElement;
-    'app-detailed-service': HTMLAppDetailedServiceElement;
-    'app-home': HTMLAppHomeElement;
     'app-opportunities': HTMLAppOpportunitiesElement;
+    'app-radio': HTMLAppRadioElement;
     'app-resources': HTMLAppResourcesElement;
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
     'app-services': HTMLAppServicesElement;
+    'app-slider': HTMLAppSliderElement;
     'app-team-landing': HTMLAppTeamLandingElement;
+    'app-textarea': HTMLAppTextareaElement;
     'app-toolbox': HTMLAppToolboxElement;
     'app-tos': HTMLAppTosElement;
+    'app-translate': HTMLAppTranslateElement;
+    'content-graphic': HTMLContentGraphicElement;
+    'lazy-img': HTMLLazyImgElement;
     'open-forge-app': HTMLOpenForgeAppElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
+declare namespace LocalJSX {
+  interface AppAbout extends JSXBase.HTMLAttributes<HTMLAppAboutElement> {}
+  interface AppBlog extends JSXBase.HTMLAttributes<HTMLAppBlogElement> {
+    'butter'?: any;
+  }
+  interface AppBlogCard extends JSXBase.HTMLAttributes<HTMLAppBlogCardElement> {
+    'blogPost'?: BlogPost;
+  }
+  interface AppBlogContent extends JSXBase.HTMLAttributes<HTMLAppBlogContentElement> {
+    'blogPost'?: BlogPost;
+  }
+  interface AppBlogFeatured extends JSXBase.HTMLAttributes<HTMLAppBlogFeaturedElement> {
+    'blogPost'?: BlogPost;
+  }
+  interface AppBlogIndex extends JSXBase.HTMLAttributes<HTMLAppBlogIndexElement> {
+    'butter'?: any;
+  }
+  interface AppBlogPost extends JSXBase.HTMLAttributes<HTMLAppBlogPostElement> {
+    'butter'?: any;
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+    'preRenderBlogPost'?: BlogPost;
+  }
+  interface AppCarouselIndicators extends JSXBase.HTMLAttributes<HTMLAppCarouselIndicatorsElement> {
+    'activeIndex'?: string;
+  }
+  interface AppCaseStudy extends JSXBase.HTMLAttributes<HTMLAppCaseStudyElement> {}
+  interface AppContact extends JSXBase.HTMLAttributes<HTMLAppContactElement> {
+    'errorIconStyles'?: { display: string; marginBottom: string; paddingRight: string; };
+  }
+  interface AppCta extends JSXBase.HTMLAttributes<HTMLAppCtaElement> {}
+  interface AppDetailedService extends JSXBase.HTMLAttributes<HTMLAppDetailedServiceElement> {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+  interface AppFooter extends JSXBase.HTMLAttributes<HTMLAppFooterElement> {}
+  interface AppHome extends JSXBase.HTMLAttributes<HTMLAppHomeElement> {
+    'butter'?: any;
+    'history'?: RouterHistory;
+  }
+  interface AppImg extends JSXBase.HTMLAttributes<HTMLAppImgElement> {
+    'alt'?: string;
+    'fit'?: boolean;
+    'preLoad'?: boolean;
+    'src'?: string;
+  }
+  interface AppInput extends JSXBase.HTMLAttributes<HTMLAppInputElement> {
+    'id'?: string;
+    'label'?: string;
+    'maxlength'?: string;
+    'name'?: string;
+    'onValueChange'?: (event: CustomEvent<any>) => void;
+    'placeholder'?: string;
+    'required'?: boolean;
+    'type'?: string;
+  }
+  interface AppMembers extends JSXBase.HTMLAttributes<HTMLAppMembersElement> {
+    'members'?: any[];
+  }
+  interface AppNavHeader extends JSXBase.HTMLAttributes<HTMLAppNavHeaderElement> {}
+  interface AppOpportunities extends JSXBase.HTMLAttributes<HTMLAppOpportunitiesElement> {
+    'errorIconStyles'?: { display: string; marginBottom: string; paddingRight: string; };
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+  interface AppRadio extends JSXBase.HTMLAttributes<HTMLAppRadioElement> {
+    'label'?: string;
+    'name'?: string;
+    'onValueChange'?: (event: CustomEvent<any>) => void;
+    'required'?: boolean;
+    'value'?: string;
+  }
+  interface AppResources extends JSXBase.HTMLAttributes<HTMLAppResourcesElement> {
+    'errorIconStyles'?: { display: string; marginBottom: string; paddingRight: string; };
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+  interface AppServiceLevelAgreement extends JSXBase.HTMLAttributes<HTMLAppServiceLevelAgreementElement> {}
+  interface AppServices extends JSXBase.HTMLAttributes<HTMLAppServicesElement> {}
+  interface AppSlider extends JSXBase.HTMLAttributes<HTMLAppSliderElement> {
+    'label'?: string;
+    'name'?: string;
+    'onValueChange'?: (event: CustomEvent<any>) => void;
+  }
+  interface AppTeamLanding extends JSXBase.HTMLAttributes<HTMLAppTeamLandingElement> {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+  interface AppTextarea extends JSXBase.HTMLAttributes<HTMLAppTextareaElement> {
+    'id'?: string;
+    'label'?: string;
+    'maxlength'?: string;
+    'name'?: string;
+    'onValueChange'?: (event: CustomEvent<any>) => void;
+    'placeholder'?: string;
+    'required'?: boolean;
+    'rows'?: number;
+  }
+  interface AppToolbox extends JSXBase.HTMLAttributes<HTMLAppToolboxElement> {}
+  interface AppTos extends JSXBase.HTMLAttributes<HTMLAppTosElement> {}
+  interface AppTranslate extends JSXBase.HTMLAttributes<HTMLAppTranslateElement> {
+    'key'?: string;
+    'params'?: {};
+  }
+  interface ContentGraphic extends JSXBase.HTMLAttributes<HTMLContentGraphicElement> {
+    'imgUrl'?: string;
+    'preLoadImg'?: boolean;
+    'reverse'?: boolean;
+  }
+  interface LazyImg extends JSXBase.HTMLAttributes<HTMLLazyImgElement> {
+    'alt'?: string;
+    'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
+    'src'?: string;
+    'width'?: number;
+  }
+  interface OpenForgeApp extends JSXBase.HTMLAttributes<HTMLOpenForgeAppElement> {}
+
+  interface IntrinsicElements {
+    'app-about': AppAbout;
+    'app-blog': AppBlog;
+    'app-blog-card': AppBlogCard;
+    'app-blog-content': AppBlogContent;
+    'app-blog-featured': AppBlogFeatured;
+    'app-blog-index': AppBlogIndex;
+    'app-blog-post': AppBlogPost;
+    'app-carousel-indicators': AppCarouselIndicators;
+    'app-case-study': AppCaseStudy;
+    'app-contact': AppContact;
+    'app-cta': AppCta;
+    'app-detailed-service': AppDetailedService;
+    'app-footer': AppFooter;
+    'app-home': AppHome;
+    'app-img': AppImg;
+    'app-input': AppInput;
+    'app-members': AppMembers;
+    'app-nav-header': AppNavHeader;
+    'app-opportunities': AppOpportunities;
+    'app-radio': AppRadio;
+    'app-resources': AppResources;
+    'app-service-level-agreement': AppServiceLevelAgreement;
+    'app-services': AppServices;
+    'app-slider': AppSlider;
+    'app-team-landing': AppTeamLanding;
+    'app-textarea': AppTextarea;
+    'app-toolbox': AppToolbox;
+    'app-tos': AppTos;
+    'app-translate': AppTranslate;
+    'content-graphic': ContentGraphic;
+    'lazy-img': LazyImg;
+    'open-forge-app': OpenForgeApp;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+
