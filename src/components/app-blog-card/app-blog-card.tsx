@@ -11,6 +11,7 @@ export class AppBlogCard {
 
   componentDidLoad() {
     console.log('blog data', this.blogPost);
+    document.querySelectorAll('meta[property="og:image"]')[0].setAttribute('content', this.blogPost.featured_image); //set opengraph metadata to match Butter CMS featured image
   }
 
   render() {
