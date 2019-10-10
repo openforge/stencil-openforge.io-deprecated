@@ -69,7 +69,7 @@ export class AppNavHeader {
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Mobil Design
+                    Mobile Design
                   </stencil-route-link>
                   <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
                     Development

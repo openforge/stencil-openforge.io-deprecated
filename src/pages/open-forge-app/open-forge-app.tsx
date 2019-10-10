@@ -110,20 +110,20 @@ export class OpenForgeApp {
           <stencil-route url="/our-work" component="app-contact" />
           {/* <stencil-route url="/our-work" component="app-our-work" /> */}
           <stencil-route url="/contact" component="app-contact" />
-          {/* <stencil-route url="/opportunities/:type" component="app-opportunities" /> */}
+          <stencil-route url="/opportunities/:type" component="app-opportunities" />
           <stencil-route url="/about" component="app-about" exact={true} />
           <stencil-route url="/about/" component="app-about" exact={true} />
-          {/* <stencil-route url="/toolbox" component="app-toolbox" /> */}
-          {/* <stencil-route url="/services" component="app-services" exact={true} /> */}
+          <stencil-route url="/toolbox" component="app-toolbox" />
+          <stencil-route url="/services" component="app-services" exact={true} />
           <stencil-route url="/services/:service" component="app-detailed-service" />
           <stencil-route url="/resources/:source" component="app-resources" />
-          {/* <stencil-route url="/about/:member" component="app-team-landing" /> */}
-          {/* <stencil-route url="/juntoscope" component="app-case-study" /> */}
-          {/* <stencil-route url="/terms-of-service" component="app-tos" /> */}
-          {/* <stencil-route url="/service-level-agreement" component="app-service-level-agreement" /> */}
+          <stencil-route url="/about/:member" component="app-team-landing" />
+          <stencil-route url="/juntoscope" component="app-case-study" />
+          <stencil-route url="/terms-of-service" component="app-tos" />
+          <stencil-route url="/service-level-agreement" component="app-service-level-agreement" />
           <stencil-route url="/blog" component="app-blog" exact={true} componentProps={{ butter: this.butterService }} />
-          {/* <stencil-route url="/blog-index" component="app-blog-index" exact={true} componentProps={{ butter: this.butterService }} /> */}
-          {/* <stencil-route url="/blog/:slug" component="app-blog-post" componentProps={{ butter: this.butterService }} /> */}
+          <stencil-route url="/blog-index" component="app-blog-index" exact={true} componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/blog/:slug" component="app-blog-post" componentProps={{ butter: this.butterService }} />
           <stencil-route url="/our-process" component="app-contact" />
           <stencil-route url="/partners" component="app-contact" />
           <stencil-route url="/search" component="app-contact" />
