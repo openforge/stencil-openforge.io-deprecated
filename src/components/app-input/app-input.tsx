@@ -1,4 +1,4 @@
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'app-input',
@@ -14,7 +14,7 @@ export class AppInput {
   @Prop()
   placeholder: string;
   @Prop()
-  id: string;
+  inputId: string;
   @Prop()
   maxlength: string;
   @Prop()
@@ -38,7 +38,7 @@ export class AppInput {
           class="form-control"
           type={this.type}
           name={this.name}
-          id={this.id}
+          id={this.inputId}
           maxlength={this.maxlength}
           required={this.required}
           placeholder={this.placeholder}

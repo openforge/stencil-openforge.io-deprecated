@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-cta',
@@ -13,18 +13,18 @@ export class AppCta {
 
           <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
             <h2>
-              <app-translate key="cta.title" />
+              <app-translate tKey="cta.title" />
             </h2>
             <p>
-              <app-translate key="cta.subTitle" />
+              <app-translate tKey="cta.subTitle" />
             </p>
             <h2>
-              <app-translate key="cta.text" />
+              <app-translate tKey="cta.text" />
             </h2>
 
             <stencil-route-link url="/contact">
               <button class="button">
-                <app-translate key="cta.link" />
+                <app-translate tKey="cta.link" />
               </button>
             </stencil-route-link>
           </div>

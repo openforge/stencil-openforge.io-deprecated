@@ -26,6 +26,7 @@ export class TranslationService {
   // }
 }
 
-export function translate(key, params?) {
-  return i18next.t(key, params);
+export function translate(tKey, params?) {
+  console.log('translation: ', tKey);
+  return i18next.t(tKey, params);
 }

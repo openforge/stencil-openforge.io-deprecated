@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop, Watch } from '@stencil/core';
+import { Component, State, Listen, Prop, Watch, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
@@ -376,13 +376,13 @@ export class AppOpportunities {
                   <div class="row align-items-center">
                     <div class="col-sm-12 col-md-8 col-lg-6">
                       <h2>
-                        <app-translate key="opportunities.hero.title" />
+                        <app-translate tKey="opportunities.hero.title" />
                       </h2>
                       <p>
-                        <app-translate key="opportunities.hero.text" />
+                        <app-translate tKey="opportunities.hero.text" />
                       </p>
                       <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                        <app-translate key="opportunities.hero.text2" />
+                        <app-translate tKey="opportunities.hero.text2" />
                       </button>
                     </div>
                   </div>
@@ -394,19 +394,19 @@ export class AppOpportunities {
                 <div class="container">
                   <content-graphic img-url="/assets/graphic-opportunities-suck.jpg" reverse={true}>
                     <h3 slot="header">
-                      <app-translate key="opportunities.intro.title" />
+                      <app-translate tKey="opportunities.intro.title" />
                     </h3>
                     <p slot="body">
-                      <app-translate key={`opportunities.intro.${this.match.params.type}.text`} />
+                      <app-translate tKey={`opportunities.intro.${this.match.params.type}.text`} />
                     </p>
                   </content-graphic>
 
                   <content-graphic img-url={`/assets/graphic-opportunities-master-${this.match.params.type}.jpg`}>
                     <h3 slot="header">
-                      <app-translate key="opportunities.intro.title" />
+                      <app-translate tKey="opportunities.intro.title" />
                     </h3>
                     <p slot="body">
-                      <app-translate key={`opportunities.test.${this.match.params.type}.text`} />
+                      <app-translate tKey={`opportunities.test.${this.match.params.type}.text`} />
                     </p>
                   </content-graphic>
                 </div>
@@ -415,10 +415,10 @@ export class AppOpportunities {
                   <div class="container">
                     <div class="intro text-center">
                       <h2>
-                        <app-translate key="opportunities.challenge.title" />
+                        <app-translate tKey="opportunities.challenge.title" />
                       </h2>
                       <p>
-                        <app-translate key="opportunities.challenge.showUs" />
+                        <app-translate tKey="opportunities.challenge.showUs" />
                       </p>
                     </div>
                     <div class="row">
@@ -442,19 +442,19 @@ export class AppOpportunities {
                 <div class="container">
                   <content-graphic img-url="/assets/graphic-opportunities-ionic.jpg" reverse={true}>
                     <h3 slot="header">
-                      <app-translate key="opportunities.reputation.title" />
+                      <app-translate tKey="opportunities.reputation.title" />
                     </h3>
                     <p slot="body">
-                      <app-translate key="opportunities.reputation.text" />
+                      <app-translate tKey="opportunities.reputation.text" />
                     </p>
                   </content-graphic>
 
                   <content-graphic img-url="/assets/graphic-opportunities-sword.png">
                     <h3 slot="header">
-                      <app-translate key="opportunities.prepared.title" />
+                      <app-translate tKey="opportunities.prepared.title" />
                     </h3>
                     <p slot="body">
-                      <app-translate key="opportunities.prepared.body" />
+                      <app-translate tKey="opportunities.prepared.body" />
                     </p>
                   </content-graphic>
                 </div>
@@ -467,18 +467,18 @@ export class AppOpportunities {
                     {!this.canRequestInterview ? (
                       <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
                         <h2>
-                          <app-translate key="opportunities.skills.title" />
+                          <app-translate tKey="opportunities.skills.title" />
                         </h2>
                         <p>
-                          <app-translate key="opportunities.skills.text" />
+                          <app-translate tKey="opportunities.skills.text" />
                         </p>
 
                         <div class="slider-labels">
                           <p>
-                            <app-translate key="opportunities.skills.noob" />
+                            <app-translate tKey="opportunities.skills.noob" />
                           </p>
                           <p>
-                            <app-translate key="opportunities.skills.expert" />
+                            <app-translate tKey="opportunities.skills.expert" />
                           </p>
                         </div>
 
@@ -490,16 +490,16 @@ export class AppOpportunities {
 
                         {!this.interviewButtonDisabled ? (
                           <p>
-                            <app-translate key="opportunities.form.allset" />
+                            <app-translate tKey="opportunities.form.allset" />
                           </p>
                         ) : (
                           <p>
-                            <app-translate key="opportunities.form.almost" />
+                            <app-translate tKey="opportunities.form.almost" />
                           </p>
                         )}
 
                         <button class="btn btn-primary" type="submit" disabled={this.interviewButtonDisabled}>
-                          <app-translate key="opportunities.form.request" />
+                          <app-translate tKey="opportunities.form.request" />
                         </button>
                       </form>
                     ) : (
@@ -512,12 +512,12 @@ export class AppOpportunities {
                           to see the ins and outs of what this epic adventure will include!
                         </p>
                         <h3>
-                          <app-translate key="opportunities.form.submitTitle" />
+                          <app-translate tKey="opportunities.form.submitTitle" />
                         </h3>
 
                         <div class="form-group">
                           <label>
-                            <app-translate key="opportunities.form.resume" />
+                            <app-translate tKey="opportunities.form.resume" />
                           </label>
                           <input
                             class="input-file"
@@ -565,12 +565,12 @@ export class AppOpportunities {
                         </p>
 
                         <h3>
-                          <app-translate key="opportunities.form.unique.title" />
+                          <app-translate tKey="opportunities.form.unique.title" />
                         </h3>
 
                         <div class="form-group input-textarea">
                           <label>
-                            <app-translate key="opportunities.form.unique.text" />
+                            <app-translate tKey="opportunities.form.unique.text" />
                           </label>
                           <textarea class="form-control" name="message" maxLength={150} required={true} onChange={this.validateField.bind(this)} />
                         </div>
@@ -582,7 +582,7 @@ export class AppOpportunities {
                         </p>
 
                         <button class="btn btn-primary" type="submit" disabled={this.submitButtonDisabled}>
-                          <app-translate key="opportunities.form.submit" />
+                          <app-translate tKey="opportunities.form.submit" />
                         </button>
                       </form>
                     )}
@@ -590,15 +590,15 @@ export class AppOpportunities {
                 ) : (
                   <div class="container apply-3">
                     <h2>
-                      <app-translate key="opportunities.form.submitted" />
+                      <app-translate tKey="opportunities.form.submitted" />
                     </h2>
 
                     <content-graphic img-url="/assets/graphic-opportunities-robot.png">
                       <h3 slot="header">
-                        <app-translate key="opportunities.form.thanks.title" />
+                        <app-translate tKey="opportunities.form.thanks.title" />
                       </h3>
                       <p slot="body">
-                        <app-translate key="opportunities.form.thanks.text" />
+                        <app-translate tKey="opportunities.form.thanks.text" />
                       </p>
                     </content-graphic>
                   </div>

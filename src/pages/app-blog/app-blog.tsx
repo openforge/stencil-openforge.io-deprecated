@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
@@ -194,7 +194,7 @@ export class AppBlog {
     } else {
       this.getBlogPosts(newPage);
     }
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {

@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop } from '@stencil/core';
+import { Component, State, Listen, Prop, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
@@ -146,13 +146,13 @@ export class AppContact {
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
                 <h2>
-                  <app-translate key="contact.hero.title" />
+                  <app-translate tKey="contact.hero.title" />
                 </h2>
                 <p>
-                  <app-translate key="contact.hero.request" />
+                  <app-translate tKey="contact.hero.request" />
                 </p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  <app-translate key="contact.hero.requestNow" />
+                  <app-translate tKey="contact.hero.requestNow" />
                 </button>
               </div>
             </div>
@@ -164,10 +164,10 @@ export class AppContact {
             {!this.formSubmitted ? (
               <div class="jumbotron">
                 <h2 class="display-5 font-weight-bold">
-                  <app-translate key="contact.form.title" />
+                  <app-translate tKey="contact.form.title" />
                 </h2>
                 <p class="lead">
-                  <app-translate key="contact.form.text" />
+                  <app-translate tKey="contact.form.text" />
                 </p>
                 <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
                   <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder="" required={true} />
@@ -203,7 +203,7 @@ export class AppContact {
                   </p>
 
                   <button name="submit" type="submit" class="btn btn-primary" disabled={this.isDisabled}>
-                    <app-translate key="contact.form.button.send" />
+                    <app-translate tKey="contact.form.button.send" />
                   </button>
                 </form>
               </div>
@@ -213,10 +213,10 @@ export class AppContact {
               <div class="container">
                 <content-graphic img-url="/assets/rocket.png">
                   <h3 slot="header">
-                    <app-translate key="contact.form.thanx" />
+                    <app-translate tKey="contact.form.thanx" />
                   </h3>
                   <p slot="body">
-                    <app-translate key="contact.form.thanxText" />
+                    <app-translate tKey="contact.form.thanxText" />
                   </p>
                 </content-graphic>
               </div>

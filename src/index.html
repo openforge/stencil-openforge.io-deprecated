@@ -26,7 +26,10 @@
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
 
-  <script src="/build/app.js" rel="script"></script>
+  <!-- <script src="/build/app.js" rel="script"></script> -->
+  <script type="module" src="/build/app.esm.js"></script>
+  <script nomodule src="/build/app.js"></script>
+
   <link href='/assets/fonts/Roboto.css' rel='stylesheet'>
   <link href="/assets/fonts/Muli.css" rel="stylesheet">
   <!-- <link rel='stylesheet' href="/build/app.css"> Should have this; but it breaks smooth scroll -->

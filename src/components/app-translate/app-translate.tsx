@@ -6,13 +6,14 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-translate.scss',
 })
 export class AppTranslate {
-  @Prop() private key: string = '';
+  @Prop() tKey: string = '';
   @Prop() params: {} = {};
   @Element() translatedTextElement: HTMLElement;
 
   public render() {
+    console.log('in app translate: ', this.tKey);
     // This is only for HTML tags in localized strings to work
-    this.translatedTextElement.innerHTML = translate(this.key, this.params);
+    this.translatedTextElement.innerHTML = translate(this.tKey, this.params);
     return;
   }
 }

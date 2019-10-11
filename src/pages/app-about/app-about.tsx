@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;
@@ -225,13 +225,13 @@ export class AppAbout {
             <div class="row align-items-center">
               <div class="col-md-8 col-sm-10 text-container">
                 <h1>
-                  <app-translate key="about.header.title" />
+                  <app-translate tKey="about.header.title" />
                 </h1>
                 <p>
-                  <app-translate key="about.header.text" />
+                  <app-translate tKey="about.header.text" />
                 </p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  <app-translate key="about.header.action" />
+                  <app-translate tKey="about.header.action" />
                 </button>
               </div>
             </div>
@@ -253,7 +253,7 @@ export class AppAbout {
         <section id="mission-statement" class="mission-statement">
           <div class="mission-statement d-flex text-center">
             <p class="text-white align-self-center">
-              <app-translate key="about.mission.statement" />
+              <app-translate tKey="about.mission.statement" />
             </p>
           </div>
         </section>
@@ -264,10 +264,10 @@ export class AppAbout {
             <div class="row header">
               <div class="col-12">
                 <h2>
-                  <app-translate key="about.values.title" />
+                  <app-translate tKey="about.values.title" />
                 </h2>
                 <p>
-                  <app-translate key="about.values.text" />
+                  <app-translate tKey="about.values.text" />
                 </p>
               </div>
             </div>
@@ -293,10 +293,10 @@ export class AppAbout {
           <div class="container text-center">
             <div class="header">
               <h2>
-                <app-translate key="about.team.title" />
+                <app-translate tKey="about.team.title" />
               </h2>
               <p>
-                <app-translate key="about.team.text" />
+                <app-translate tKey="about.team.text" />
               </p>
             </div>
 
