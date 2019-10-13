@@ -13,18 +13,18 @@ export class AppCta {
 
           <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
             <h2>
-              <app-translate key="cta.title" />
+              <app-translate keyword="cta.title" />
             </h2>
             <p>
-              <app-translate key="cta.subTitle" />
+              <app-translate keyword="cta.subTitle" />
             </p>
             <h2>
-              <app-translate key="cta.text" />
+              <app-translate keyword="cta.text" />
             </h2>
 
             <stencil-route-link url="/contact">
               <button class="button">
-                <app-translate key="cta.link" />
+                <app-translate keyword="cta.link" />
               </button>
             </stencil-route-link>
           </div>

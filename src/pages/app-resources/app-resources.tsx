@@ -147,10 +147,10 @@ export class AppResources {
                 <div class="row align-items-center">
                   <div class="col-sm-12 col-md-8 col-lg-8">
                     <h2>
-                      <app-translate key="resources.hero.title" />
+                      <app-translate keyword="resources.hero.title" />
                     </h2>
                     <p>
-                      <app-translate key="resources.hero.text" />
+                      <app-translate keyword="resources.hero.text" />
                     </p>
                     <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
                       Download Now
@@ -169,10 +169,10 @@ export class AppResources {
                 <div class="row align-items-center">
                   <div class="col-sm-12 col-md-8 col-lg-8">
                     <h2>
-                      <app-translate key="resources.hero.title1" />
+                      <app-translate keyword="resources.hero.title1" />
                     </h2>
                     <p>
-                      <app-translate key="resources.hero.text1" />
+                      <app-translate keyword="resources.hero.text1" />
                     </p>
                     <stencil-route-link url="/services/app-developer">
                       <button class="btn btn-primary">Check it out</button>
@@ -254,7 +254,7 @@ export class AppResources {
 
                       <div class="center">
                         <button name="submit" type="submit" class="btn btn-primary" disabled={this.isDisabled}>
-                          <app-translate key="resources.form.button.send" />
+                          <app-translate keyword="resources.form.button.send" />
                         </button>
                       </div>
                     </form>
@@ -271,10 +271,10 @@ export class AppResources {
             <section id="downloadinfo" class="downloadinfo">
               <div class="downloadinfo--header center">
                 <h2>
-                  <app-translate key="resources.downloadinfo.title" />
+                  <app-translate keyword="resources.downloadinfo.title" />
                 </h2>
                 <p>
-                  <app-translate key="resources.downloadinfo.subtitle" />
+                  <app-translate keyword="resources.downloadinfo.subtitle" />
                 </p>
               </div>
             </section>
@@ -284,27 +284,27 @@ export class AppResources {
                 <ul>
                   <li>
                     <p>
-                      <app-translate key="resources.downloadinfo.list.first" />
+                      <app-translate keyword="resources.downloadinfo.list.first" />
                     </p>
                   </li>
                   <li>
                     <p>
-                      <app-translate key="resources.downloadinfo.list.second" />
+                      <app-translate keyword="resources.downloadinfo.list.second" />
                     </p>
                   </li>
                   <li>
                     <p>
-                      <app-translate key="resources.downloadinfo.list.third" />
+                      <app-translate keyword="resources.downloadinfo.list.third" />
                     </p>
                   </li>
                   <li>
                     <p>
-                      <app-translate key="resources.downloadinfo.list.fourth" />
+                      <app-translate keyword="resources.downloadinfo.list.fourth" />
                     </p>
                   </li>
                 </ul>
                 <p>
-                  <app-translate key="resources.downloadinfo.footer" />
+                  <app-translate keyword="resources.downloadinfo.footer" />
                 </p>
               </div>
             </section>
@@ -317,13 +317,13 @@ export class AppResources {
               <app-img class="img-fluid d-none d-md-inline" src="/assets/resources-robot.gif" alt="Robot Gif" />
               <div class="text-img-container-text">
                 <h2>
-                  <app-translate key="resources.enjoy" />
+                  <app-translate keyword="resources.enjoy" />
                 </h2>
                 <h3>
-                  <app-translate key="resources.enjoysub" />
+                  <app-translate keyword="resources.enjoysub" />
                 </h3>
                 <p>
-                  <app-translate key="resources.thanks" />
+                  <app-translate keyword="resources.thanks" />
                 </p>
                 <a class="btn btn-primary" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
                   <div class="fab fa-github" />
