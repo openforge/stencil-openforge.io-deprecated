@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop } from '@stencil/core';
+import { Component, State, Listen, Prop, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 declare var fbq;

@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 import { BrowserService } from '../../services/browser.services';
 /* tslint:disable-next-line */

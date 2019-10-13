@@ -1,4 +1,4 @@
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'app-slider',

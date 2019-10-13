@@ -1,4 +1,4 @@
-import { Component, State, Prop, Watch } from '@stencil/core';
+import { Component, State, Prop, Watch, h } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
 
