@@ -6,13 +6,13 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-translate.scss',
 })
 export class AppTranslate {
-  @Prop() private key: string = '';
+  @Prop() keyword: string = '';
   @Prop() params: {} = {};
   @Element() translatedTextElement: HTMLElement;
 
   public render() {
     // This is only for HTML tags in localized strings to work
-    this.translatedTextElement.innerHTML = translate(this.key, this.params);
+    this.translatedTextElement.innerHTML = translate(this.keyword, this.params);
     return;
   }
 }

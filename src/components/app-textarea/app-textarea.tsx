@@ -8,7 +8,7 @@ export class AppTextarea {
   @Prop() name: string;
   @Prop() label: string;
   @Prop() placeholder: string;
-  @Prop() id: string;
+  @Prop() inputId: string;
   @Prop() maxlength: string;
   @Prop() rows: number;
   @Prop() required = false;
@@ -29,7 +29,7 @@ export class AppTextarea {
         <textarea
           class="form-control"
           name={this.name}
-          id={this.id}
+          id={this.inputId}
           maxlength={this.maxlength}
           rows={this.rows}
           required={this.required}
