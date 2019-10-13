@@ -107,6 +107,7 @@ export class OpenForgeApp {
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
           <stencil-route url="/" component="app-home" exact={true} componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/our-work" component="app-our-work" />
           <stencil-route url="/contact" component="app-contact" />
           <stencil-route url="/opportunities/:type" component="app-opportunities" />
           <stencil-route url="/about" component="app-about" exact={true} />
@@ -122,6 +123,9 @@ export class OpenForgeApp {
           <stencil-route url="/blog" component="app-blog" exact={true} componentProps={{ butter: this.butterService }} />
           <stencil-route url="/blog-index" component="app-blog-index" exact={true} componentProps={{ butter: this.butterService }} />
           <stencil-route url="/blog/:slug" component="app-blog-post" componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/our-process" component="app-our-process" />
+          <stencil-route url="/partners" component="app-partners" />
+          <stencil-route url="/search" component="app-search" />
         </stencil-route-switch>
       </stencil-router>
     );

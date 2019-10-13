@@ -44,7 +44,8 @@ export class AppNavHeader {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon" />
+            {/* <span class="navbar-toggler-icon" /> */}
+            <i id="bars-icon" class="fa fa-bars" aria-hidden="true" />
           </button>
 
           <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
@@ -54,26 +55,31 @@ export class AppNavHeader {
                   {translate('nav.links.home')}
                 </stencil-route-link>
               </li>
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link url="/our-work" exact={true} anchorClass="nav-link" activeClass="active">
+                  Our Work
+                </stencil-route-link>
+              </li>
               <li class="nav-item dropdown split" data-target="#navbarSupportedContent">
-                <stencil-route-link anchorClass="nav-link main" url="/services" role="button" activeClass="active">
-                  Services
+                <stencil-route-link anchorClass="nav-link main" url="/resources/pwa-white-paper" role="button" activeClass="active">
+                  Resources
                 </stencil-route-link>
                 <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Mobile Design
+                  </stencil-route-link>
                   <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
                     Development
                   </stencil-route-link>
-                  <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Design
+                  <stencil-route-link url="/blog" exact={true} anchorClass="nav-link dropdown-item" activeClass="active">
+                    {translate('nav.links.blog')}
                   </stencil-route-link>
-                  <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Consulting
-                  </stencil-route-link>
-                  <stencil-route-link url="/services/training" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Training
-                  </stencil-route-link>
+                  <a class="nav-link dropdown-item" id="github" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
+                    <div class="fab fa-github" /> &nbsp; Github
+                  </a>
                 </div>
               </li>
               <li class="nav-item dropdown" data-target="#navbarSupportedContent">
@@ -84,14 +90,11 @@ export class AppNavHeader {
                   <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
                     Meet the team
                   </stencil-route-link>
-                  <stencil-route-link url="/juntoscope" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Juntoscope Case Study
+                  <stencil-route-link url="/our-process" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Our Process
                   </stencil-route-link>
-                  <stencil-route-link url="/toolbox" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Toolbox
-                  </stencil-route-link>
-                  <stencil-route-link url="/resources/pwa-white-paper" anchorClass="nav-link dropdown-item" activeClass="active">
-                    PWA White Paper
+                  <stencil-route-link url="/partners" anchorClass="nav-link dropdown-item" activeClass="active">
+                    Partners
                   </stencil-route-link>
                 </div>
               </li>
@@ -101,14 +104,10 @@ export class AppNavHeader {
                 </stencil-route-link>
               </li>
               <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link url="/blog" exact={true} anchorClass="nav-link" activeClass="active">
-                  {translate('nav.links.blog')}
+                <stencil-route-link url="/search" anchorClass="nav-link" activeClass="active">
+                  Search &nbsp;
+                  <div class="fa fa-search" />
                 </stencil-route-link>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <a class="nav-link" id="github" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
-                  <div class="fab fa-github" />
-                </a>
               </li>
             </ul>
           </div>

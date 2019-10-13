@@ -1,5 +1,24 @@
 nav.navbar {
-  background: rgba(23, 23, 25, 1);
+  background: white;
+}
+
+nav.navbar .navbar-nav .nav-item .nav-link {
+  color: rgb(112, 103, 103);
+  font-size: 1.25rem;
+  font-weight: 500;
+
+  &:hover {
+    color: $orange;
+  }
+  &.active {
+    color: $orange;
+  }
+}
+
+#bars-icon {
+  color: rgb(112, 103, 103);
+  font-size: 1.5rem;
+  margin-right: 0.35rem;
 }
 
 nav.navbar .navbar-nav .nav-item {
@@ -10,18 +29,18 @@ nav.navbar .navbar-nav .nav-item {
 
     .dropdown-menu {
       border: none;
-      background: rgba(23, 23, 25, 0.75);
+      background: rgb(242, 237, 237);
       top: 54px;
       border-top-left-radius: 0;
       border-top-right-radius: 0;
     }
 
     .dropdown-item {
-      color: rgba(244, 245, 249, 0.75);
+      color: rgb(112, 103, 103);
       text-align: right;
 
       &:hover {
-        background: rgba(23, 23, 25, 0.75);
+        color: $orange;
       }
 
       &.active {
@@ -36,7 +55,6 @@ nav.navbar .navbar-nav .nav-item {
   }
 
   &.split {
-
     .dropdown-menu {
       margin-top: 0;
       @include media-breakpoint-up(md) {
