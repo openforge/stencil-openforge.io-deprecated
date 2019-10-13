@@ -1,7 +1,10 @@
-var sass = require('@stencil/sass');
-var builtins = require('rollup-plugin-node-builtins');
-var globals = require('rollup-plugin-node-globals');
-exports.config = {
+import { Config } from "@stencil/core";
+import { sass } from "@stencil/sass";
+
+import builtins from 'rollup-plugin-node-builtins';
+import globals from 'rollup-plugin-node-globals';
+
+export const config: Config = {
   nodeResolve: { browser: true, preferBuiltins: false },
   enableCache: false,
   plugins: [
@@ -29,7 +32,7 @@ exports.config = {
   ]
 };
 
-exports.devServer = {
+export const devServer = {
   root: 'www',
   watchGlob: '**/**'
 };
