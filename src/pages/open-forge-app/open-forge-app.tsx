@@ -32,14 +32,15 @@ export class OpenForgeApp {
 
   componentDidLoad() {
     try {
-      this.mainEl = document.querySelector('app-nav-header');
+      this.mainEl = document.querySelector('app-nav-header') as HTMLElement;
     } catch (e) {
       console.error('caught error componentDidLoad open-forge-app', e);
     }
 
     if (this.mainEl) {
       this.mainEl.addEventListener('click', ev => {
-        if (ev.srcElement.classList.contains('dropdown-toggle')) {
+        const srcEl = ev.srcElement as HTMLElement;
+        if (srcEl.classList.contains('dropdown-toggle')) {
           return;
         }
         const opened = document.getElementsByClassName('navbar-collapse show');
