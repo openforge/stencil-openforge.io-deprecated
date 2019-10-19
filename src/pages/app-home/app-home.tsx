@@ -3,6 +3,7 @@ import { RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
 import { BlogPost } from '../../model/blog-post.model';
+import * as Fetch from '../../shared/fetch-handler';
 
 /* tslint:disable-next-line */
 
@@ -77,22 +78,10 @@ export class AppHome {
     clearInterval(this.timer);
   }
 
-  getFeaturedPost() {
+  async getFeaturedPost() {
     this.featuredIsLoading = true;
-    const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        if (resp.data.data.length > 0) {
-          this.featuredPost = resp.data.data[0];
-          this.featuredIsLoading = false;
-        }
-      })
-      .catch(resp => {
-        console.log('resp - ', resp);
-        this.featuredIsError = true;
-        this.featuredIsLoading = false;
-      });
+    this.featuredPost = await Fetch.fetchOneBlogPost();
+    this.featuredIsLoading = false;
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
