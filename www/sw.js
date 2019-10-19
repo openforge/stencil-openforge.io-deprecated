@@ -52,11 +52,11 @@ self.addEventListener('install', (event) => {
 self.workbox.precaching.precacheAndRoute([
   {
     "url": "index-org.html",
-    "revision": "58ee7eb623b640fe38cbb0c7b815e4ce"
+    "revision": "b190ce5dc219c08a7ec40b8b714d3b94"
   },
   {
     "url": "index.html",
-    "revision": "5235998c60992dac78f7fdc47102f262"
+    "revision": "40aa71ecd64585446a501f26fe4434d0"
   },
   {
     "url": "assets/fonts/Muli.css",
@@ -92,9 +92,6 @@ self.workbox.precaching.precacheAndRoute([
     "url": "build/p-70i09rii.entry.js"
   },
   {
-    "url": "build/p-7fu1tgkq.entry.js"
-  },
-  {
     "url": "build/p-7qmwnikw.entry.js"
   },
   {
@@ -110,10 +107,10 @@ self.workbox.precaching.precacheAndRoute([
     "url": "build/p-acx5d4fq.entry.js"
   },
   {
-    "url": "build/p-bkzx4wut.entry.js"
+    "url": "build/p-ayj5qwuy.entry.js"
   },
   {
-    "url": "build/p-cbaf9c4f.js"
+    "url": "build/p-bkzx4wut.entry.js"
   },
   {
     "url": "build/p-cda6b726.js"
@@ -128,13 +125,16 @@ self.workbox.precaching.precacheAndRoute([
     "url": "build/p-d8631f0b.js"
   },
   {
+    "url": "build/p-dyp8gnlk.entry.js"
+  },
+  {
     "url": "build/p-ecizmpcf.entry.js"
   },
   {
     "url": "build/p-ed8f0358.js"
   },
   {
-    "url": "build/p-fh0hi0wi.entry.js"
+    "url": "build/p-eq6qcfnc.entry.js"
   },
   {
     "url": "build/p-fm0wrk8g.entry.js"
@@ -149,16 +149,16 @@ self.workbox.precaching.precacheAndRoute([
     "url": "build/p-irjvpg4d.entry.js"
   },
   {
-    "url": "build/p-kal3tmmv.entry.js"
-  },
-  {
-    "url": "build/p-kt2ebooa.entry.js"
+    "url": "build/p-jt7ecroh.entry.js"
   },
   {
     "url": "build/p-lprmylec.entry.js"
   },
   {
     "url": "build/p-m10jqtuo.entry.js"
+  },
+  {
+    "url": "build/p-n4voekkc.js"
   },
   {
     "url": "build/p-nhs0fvbh.entry.js"
@@ -171,9 +171,6 @@ self.workbox.precaching.precacheAndRoute([
   },
   {
     "url": "build/p-pvuxnkqf.entry.js"
-  },
-  {
-    "url": "build/p-rj09qjrf.js"
   },
   {
     "url": "build/p-snfdjg64.entry.js"

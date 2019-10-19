@@ -10,7 +10,7 @@ declare var fbq;
 })
 export class AppOpportunities {
   maxFileSize = 10485760; // 10MB
-  formData = new FormData();
+  formData: any;
   // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   formValues: {
@@ -643,6 +643,6 @@ export class AppOpportunities {
       },
     };
 
-    this.formData = new FormData();
+    this.formData = null;
   }
 }
