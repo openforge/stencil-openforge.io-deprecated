@@ -5,10 +5,8 @@ import { translate } from '../../services/translation.service';
 import { BlogPost } from '../../model/blog-post.model';
 
 /* tslint:disable-next-line */
-import $ from 'jquery';
 
 declare var fbq;
-declare var bootstrap;
 
 @Component({
   tag: 'app-home',
@@ -25,6 +23,8 @@ export class AppHome {
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
   @State() featuredIsLoading: boolean = true;
+  timer: any;
+  currItem = 0;
 
   componentWillLoad() {
     if (!this.isServer) {
@@ -40,47 +40,41 @@ export class AppHome {
     }
 
     /* tslint:disable-next-line */
-    $(window).on('scroll resize', function() {
-      if ($('#content-panel-inner') && $('#content-panel-inner').offset()) {
-        const pos = $('#content-panel-inner').offset().top + $('#content-panel-inner').height() / 2;
+    window.addEventListener('scroll', () => {
+      const innerPanel = document.getElementById('content-panel-inner');
+      if (innerPanel && innerPanel.offsetHeight) {
+        const rect = innerPanel.getBoundingClientRect();
+        const pos = rect.top + rect.height / 2;
         let done = false;
-        $('.content-panel').each(function() {
-          if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
-            const newDescr = $(this)
-              .find('.description')
-              .html();
-            $('#content-panel-inner').html(newDescr);
-
+        const panels = document.querySelectorAll('.content-panel');
+        panels.forEach((el: HTMLElement) => {
+          const innerRect = el.getBoundingClientRect();
+          if (!done && pos < innerRect.top + innerRect.height) {
+            innerPanel.innerHTML = el.children[0].innerHTML;
             done = true;
           }
         });
 
-        if (
-          $('#content-panel-inner').offset().top ===
-          $('.content-panel')
-            .first()
-            .offset().top
-        ) {
-          const newDescr = $('.content-panel')
-            .first()
-            .find('.description')
-            .html();
-
-          $('#content-panel-inner').html(newDescr);
+        if (innerPanel.offsetTop === (panels[0] as HTMLElement).offsetTop) {
+          innerPanel.innerHTML = panels[0].innerHTML;
         }
       }
     });
 
     if (!this.isServer) {
       /* tslint:disable-next-line */
-      $(document).ready(function() {
-        // Force bootstrap to initialize carousel
-        const processCarousel = $('#processCarousel');
-        setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
-
-        $(window).trigger('scroll'); // init the value
-      });
+      const items = document.querySelectorAll('.carousel-item');
+      let n = items.length;
+      this.timer = setInterval(() => {
+        this.currItem = ++this.currItem % n;
+        items.forEach(el => el.classList.remove('active'));
+        items[this.currItem].classList.add('active');
+      }, 4000);
     }
+  }
+
+  componentDidUnload() {
+    clearInterval(this.timer);
   }
 
   getFeaturedPost() {
