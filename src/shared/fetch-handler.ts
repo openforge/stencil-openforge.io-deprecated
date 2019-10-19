@@ -17,3 +17,15 @@ export async function fetchOneBlogPost() {
       return null;
     });
 } 
+
+export async function fetchBlogPosts() {
+  return await fetch(urlPosts + '?' + auth_token)
+    .then(res => res.json())
+    .then(resp => {
+      return resp;
+    })
+    .catch(resp => {
+      console.log(resp);
+      return null;
+    });
+} 

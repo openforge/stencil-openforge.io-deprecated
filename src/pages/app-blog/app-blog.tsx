@@ -2,6 +2,7 @@ import { Component, Prop, State, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
+import * as Fetch from '../../shared/fetch-handler';
 
 declare var fbq;
 
@@ -29,6 +30,7 @@ export class AppBlog {
 
   // Use searchQuery to keep track of whether or not search is being used
   @State() searchQuery: string = '';
+  @State() allBlogPosts: BlogPost[] = [];
   @State() searchPostsData: BlogPost[] = [];
   @State() searchNumberOfPages: number = 0;
   @State() searchCurrentPage: number = 1;
@@ -36,6 +38,7 @@ export class AppBlog {
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
 
+  pageSize = 3;
   private filters: BlogCategory[] = [
     {
       name: 'All',
@@ -61,8 +64,8 @@ export class AppBlog {
 
   componentWillLoad() {
     if (!this.isServer) {
-      this.getFeaturedPost();
-      this.getBlogPosts(1);
+      this.getAllBlogPosts();
+      // this.getBlogPosts(1);
     }
   }
 
@@ -84,22 +87,25 @@ export class AppBlog {
     document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile apps, mobile app news, mobile applications, mobile app technology, mobile app strategies, mvp apps');
   }
 
+  async getAllBlogPosts() {
+    this.blogIsLoading = true;
+    const resp = await Fetch.fetchBlogPosts();
+    if (resp) {
+      this.allBlogPosts = resp.data;
+      this.blogMeta = resp.meta;
+      this.blogNumberOfPages = Math.ceil(resp.meta.count / this.pageSize);
+      this.getBlogPosts(1);
+      this.getFeaturedPost();
+    }
+    this.blogIsLoading = false;
+  }
+
   getFeaturedPost() {
     this.featuredIsLoading = true;
-    const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        if (resp.data.data.length > 0) {
-          this.featuredPost = resp.data.data[0];
-          this.featuredIsLoading = false;
-        }
-      })
-      .catch(resp => {
-        this.featuredIsError = true;
-        this.featuredIsLoading = false;
-        console.log(resp);
-      });
+    if (this.allBlogPosts.length > 0) {
+      this.featuredPost = this.allBlogPosts[0];
+      this.featuredIsLoading = false;
+    }
   }
 
   getSearchPosts(page) {
