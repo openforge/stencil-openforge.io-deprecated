@@ -21,6 +21,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
+      baseUrl: 'http://localhost:3030',
       serviceWorker: {
         swSrc: './src/sw.js'
       }
