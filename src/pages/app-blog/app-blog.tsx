@@ -127,27 +127,22 @@ export class AppBlog {
       });
   }
 
-  getBlogPosts(page: number) {
+  async getBlogPosts(page: number) {
     this.blogIsLoading = true;
-    const pageSize = 3;
-    const listOptions = { page, page_size: pageSize, exclude_body: true };
     if (this.blogFilter) {
-      listOptions['category_slug'] = this.blogFilter;
+      this.blogPostsData = await Fetch.fetchFilteredPosts(this.blogFilter, 1, this.pageSize, true);
+      this.blogNumberOfPages = Math.ceil(this.blogPostsData.length / this.pageSize);
+      this.blogCurrentPage = 1;
+    } else {
+      this.blogNumberOfPages = Math.ceil(this.allBlogPosts.length / this.pageSize);
+      this.blogPostsData = [];
+      let index = (page - 1) * this.pageSize;
+      const endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+      for (index; index < endPoint; index++) {
+        this.blogPostsData.push(this.allBlogPosts[index]);
+      }
     }
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        this.blogPostsData = resp.data.data;
-        this.blogMeta = resp.data.meta;
-        this.blogNumberOfPages = Math.ceil(resp.data.meta.count / pageSize);
-        this.blogCurrentPage = page;
-        this.blogIsLoading = false;
-      })
-      .catch(resp => {
-        this.blogIsError = true;
-        this.blogIsLoading = false;
-        console.log(resp);
-      });
+    this.blogIsLoading = false;
   }
 
   handleSearch(query) {
@@ -172,6 +167,8 @@ export class AppBlog {
     if (!this.searchQuery && this.blogFilter !== filterName) {
       this.blogFilter = filterName;
       this.getBlogPosts(1);
+      // if (this.blogFilter) this.getBlogPosts(1);
+      // else this.getAllBlogPosts();
     }
   }
 

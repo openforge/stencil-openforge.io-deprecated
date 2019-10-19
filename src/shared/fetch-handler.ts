@@ -29,3 +29,16 @@ export async function fetchBlogPosts() {
       return null;
     });
 } 
+
+export async function fetchFilteredPosts(slug: string, page: number, pageSize: number, excludeBody: boolean) {
+  const slugKey = encodeURIComponent(slug);
+  const query = '?page=' + page + '&page_size=' + pageSize + '&exclude_body=' + excludeBody + '&category_slug=' + slugKey + '&';
+  console.log(urlPosts + query + auth_token)
+  return await fetch(urlPosts + query + auth_token)
+    .then(res => res.json())
+    .then(resp => resp.data)
+    .catch(resp => {
+      console.log(resp);
+      return null;
+    })
+}
