@@ -1,6 +1,7 @@
 import { BUTTER_API_KEY } from '../butter-api/butter-api-key';
 
 const urlPosts = "https://api.buttercms.com/v2/posts/";
+const urlSearch = "https://api.buttercms.com/v2/search/";
 const auth_token = 'auth_token=' + BUTTER_API_KEY;
 
 export async function fetchOneBlogPost() {
@@ -37,6 +38,19 @@ export async function fetchFilteredPosts(slug: string, page: number, pageSize: n
   return await fetch(urlPosts + query + auth_token)
     .then(res => res.json())
     .then(resp => resp.data)
+    .catch(resp => {
+      console.log(resp);
+      return null;
+    })
+}
+
+export async function fetchSearchPosts(search: string, page: number, pageSize: number) {
+  const searchKey = encodeURIComponent(search);
+  console.log(searchKey);
+  const query = '?page=' + page + '&page_size=' + pageSize + '&query=' + searchKey + '&';
+  return await fetch(urlSearch + query + auth_token)
+    .then(res => res.json())
+    .then(resp => resp)
     .catch(resp => {
       console.log(resp);
       return null;

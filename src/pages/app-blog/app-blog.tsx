@@ -111,20 +111,18 @@ export class AppBlog {
   getSearchPosts(page) {
     this.searchIsLoading = true;
     const pageSize = 3;
-    this.butter.post
-      .search(this.searchQuery, { page, page_size: pageSize })
+    Fetch.fetchSearchPosts(this.searchQuery, page, pageSize)
       .then(resp => {
-        this.searchPostsData = resp.data.data;
-        this.searchMeta = resp.data.meta;
-        this.searchNumberOfPages = Math.ceil(resp.data.meta.count / pageSize);
-        this.searchCurrentPage = page;
-        this.searchIsLoading = false;
+        if (resp.data) {
+          this.searchPostsData = resp.data;
+          this.searchMeta = resp.meta;
+          this.searchNumberOfPages = Math.ceil(resp.meta.count / pageSize);
+          this.searchCurrentPage = page;
+        } else {
+          this.searchIsError = true;
+        }
       })
-      .catch(resp => {
-        this.searchIsError = true;
-        this.searchIsLoading = false;
-        console.log(resp);
-      });
+    this.searchIsLoading = false;
   }
 
   async getBlogPosts(page: number) {
@@ -193,8 +191,10 @@ export class AppBlog {
     }
 
     if (this.searchQuery) {
+      this.searchCurrentPage = newPage;
       this.getSearchPosts(newPage);
     } else {
+      this.blogCurrentPage = newPage;
       this.getBlogPosts(newPage);
     }
     window.scrollTo(0,0)
