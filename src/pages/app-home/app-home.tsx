@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, Prop, State, h, Build } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
@@ -7,19 +7,12 @@ import * as Fetch from '../../shared/fetch-handler';
 
 /* tslint:disable-next-line */
 
-declare var fbq;
-
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.scss',
 })
 export class AppHome {
   @Prop() history: RouterHistory;
-
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  @Prop() butter: any;
 
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
@@ -28,18 +21,12 @@ export class AppHome {
   currItem = 0;
 
   componentWillLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.getFeaturedPost();
     }
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-
     /* tslint:disable-next-line */
     window.addEventListener('scroll', () => {
       const innerPanel = document.getElementById('content-panel-inner');
@@ -62,7 +49,7 @@ export class AppHome {
       }
     });
 
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       /* tslint:disable-next-line */
       const items = document.querySelectorAll('.carousel-item');
       let n = items.length;

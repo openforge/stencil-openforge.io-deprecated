@@ -5,9 +5,6 @@ import { Component, h } from '@stencil/core';
   styleUrl: 'app-service-level-agreement.scss',
 })
 export class AppServiceLevelAgreement {
-  // Removing optimized assets for now
-  // @Prop({ context: 'isServer' })
-  // private isServer: boolean;
 
   private className;
   componentWillLoad() {

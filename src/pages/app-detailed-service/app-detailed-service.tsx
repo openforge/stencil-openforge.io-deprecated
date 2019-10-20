@@ -3,8 +3,6 @@ import { MatchResults, RouterHistory } from '@stencil/router';
 
 // import { translate } from '../../services/translation.service';
 
-declare var fbq;
-
 @Component({
   tag: 'app-detailed-service',
   styleUrl: 'app-detailed-service.scss',
@@ -12,8 +10,6 @@ declare var fbq;
 export class AppDetailedService {
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   @State()
   imgs = {
@@ -67,12 +63,6 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-
     this.changeMetadata();
     this.loadSections();
   }

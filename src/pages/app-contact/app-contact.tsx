@@ -1,7 +1,5 @@
-import { Component, State, Listen, Prop, h } from '@stencil/core';
+import { Component, State, Listen, Prop, h, Build } from '@stencil/core';
 import { translate } from '../../services/translation.service';
-
-declare var fbq;
 
 @Component({
   tag: 'app-contact',
@@ -31,8 +29,6 @@ export class AppContact {
 
   @State() isDisabled = true;
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -56,16 +52,10 @@ export class AppContact {
 
   private className;
   componentWillLoad() {
-    this.className = !this.isServer ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+    this.className = Build.isBrowser ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-      fbq('track', 'Lead');
-    }
     this.resetFormValues();
   }
 
@@ -110,12 +100,6 @@ export class AppContact {
         },
         body: JSON.stringify(this.formValues),
       });
-
-      // isServer is false when running in the browser
-      // and true when being prerendered
-      if (!this.isServer) {
-        fbq('track', 'CompleteRegistration');
-      }
 
       event.target.reset();
       this.resetFormValues();

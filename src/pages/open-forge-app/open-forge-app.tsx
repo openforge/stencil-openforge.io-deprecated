@@ -1,8 +1,6 @@
 import '@stencil/router';
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
-import { BrowserService } from '../../services/browser.services';
-/* tslint:disable-next-line */
 
 polyfill();
 
@@ -11,16 +9,9 @@ polyfill();
   styleUrl: 'open-forge-app.scss',
 })
 export class OpenForgeApp {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
-
-  constructor() {
-    const browserService = new BrowserService();
-    browserService.check_webp(this.isServer);
-  }
 
   componentDidLoad() {
     try {

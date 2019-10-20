@@ -1,4 +1,4 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, State, h, Build } from '@stencil/core';
 import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 
 @Component({
@@ -7,21 +7,19 @@ import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 })
 export class AppBlogIndex {
   @State() blogData = [];
-  @Prop() butter: any;
-  @Prop({ context: 'isServer' }) private isServer;
 
   componentWillLoad() {
-    if (this.isServer) {
+    if (!Build.isBrowser) {
       this.blogData = BLOG_DATA.data;
     } else {
-      this.butter.post
-        .list({ page: 1, page_size: 100000, exclude_body: true })
-        .then(resp => {
-          this.blogData = resp.data.data;
-        })
-        .catch(resp => {
-          console.error('Could not load blog data   ', resp);
-        });
+      // this.butter.post
+      //   .list({ page: 1, page_size: 100000, exclude_body: true })
+      //   .then(resp => {
+      //     this.blogData = resp.data.data;
+      //   })
+      //   .catch(resp => {
+      //     console.error('Could not load blog data   ', resp);
+      //   });
     }
   }
 

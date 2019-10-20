@@ -1,19 +1,14 @@
-import { Component, Prop, State, h } from '@stencil/core';
+import { Component, State, h, Build } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
 import * as Fetch from '../../shared/fetch-handler';
-
-declare var fbq;
 
 @Component({
   tag: 'app-blog',
   styleUrl: 'app-blog.scss',
 })
 export class AppBlog {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-  @Prop() butter: any;
 
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
@@ -63,18 +58,12 @@ export class AppBlog {
   ];
 
   componentWillLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.getAllBlogPosts();
-      // this.getBlogPosts(1);
     }
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
     const input = document.getElementById('blog-search');
     input.addEventListener('search', () => this.handleSearch(input.innerText));
 

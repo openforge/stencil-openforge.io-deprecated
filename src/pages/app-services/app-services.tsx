@@ -1,22 +1,10 @@
-import { Component, Prop, h } from '@stencil/core';
-
-declare var fbq;
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-services',
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-  }
 
   changeMetadata() {
     // Change meta tags dynamically

@@ -2,8 +2,6 @@ import { Component, State, Listen, Prop, Watch, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
-declare var fbq;
-
 @Component({
   tag: 'app-opportunities',
   styleUrl: 'app-opportunities.scss',
@@ -160,9 +158,6 @@ export class AppOpportunities {
     },
   };
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -184,14 +179,7 @@ export class AppOpportunities {
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-      fbq('track', 'Lead');
-    }
     this.resetFormValues();
-
     this.changeMetadata();
   }
 
@@ -322,12 +310,6 @@ export class AppOpportunities {
         mode: 'no-cors',
         body: this.formData,
       });
-
-      // isServer is false when running in the browser
-      // and true when being prerendered
-      if (!this.isServer) {
-        fbq('track', 'CompleteRegistration');
-      }
 
       e.target.reset();
       this.resetFormValues();

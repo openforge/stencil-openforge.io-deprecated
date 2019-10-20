@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch, h } from '@stencil/core';
+import { Component, Prop, State, Watch, h, Build } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
 import { BLOG_DATA } from './prerender-blog-data';
@@ -11,8 +11,6 @@ import * as Fetch from '../../shared/fetch-handler';
 export class AppBlogPost {
   @Prop() history: RouterHistory;
   @Prop() match: MatchResults;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
-  @Prop() butter: any;
   @Prop() preRenderBlogPost: BlogPost;
 
   @State() blogPost: BlogPost;
@@ -40,7 +38,7 @@ export class AppBlogPost {
     // get a bunch of blog posts and pick 3 to display in read next
     // it's kind of a hack but Butter doesn't support getting random posts
     const pageSize = 12;
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.nextPostsIsLoading = true;
       Fetch.fetchPostContent(1, pageSize, true)
         .then(resp => {
@@ -59,7 +57,7 @@ export class AppBlogPost {
   }
 
   getPostContent() {
-    if (this.isServer) {
+    if (!Build.isBrowser) {
       this.blogPost = BLOG_DATA.data.find(post => {
         return post.slug === this.match.params.slug;
       });

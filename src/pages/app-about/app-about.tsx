@@ -1,15 +1,11 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
-
-declare var fbq;
 
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   members = [
     {
@@ -197,12 +193,6 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-
     // Change meta tags dynamically
     document.querySelector("meta[property='og:title']").setAttribute('content', 'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge');
     document.querySelector("meta[property='og:description']").setAttribute('content', 'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia');
