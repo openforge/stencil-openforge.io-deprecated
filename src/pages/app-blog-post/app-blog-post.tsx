@@ -2,6 +2,7 @@ import { Component, Prop, State, Watch, h } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
 import { BLOG_DATA } from './prerender-blog-data';
+import * as Fetch from '../../shared/fetch-handler';
 
 @Component({
   tag: 'app-blog-post',
@@ -39,23 +40,21 @@ export class AppBlogPost {
     // get a bunch of blog posts and pick 3 to display in read next
     // it's kind of a hack but Butter doesn't support getting random posts
     const pageSize = 12;
-    const listOptions = { page: 1, page_size: pageSize, exclude_body: true };
     if (!this.isServer) {
-      this.butter.post
-        .list(listOptions)
+      this.nextPostsIsLoading = true;
+      Fetch.fetchPostContent(1, pageSize, true)
         .then(resp => {
-          this.otherPosts = resp.data.data;
-          this.filterNextPosts(this.match.params.slug);
-          this.nextPostsIsLoading = false;
-          this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
-        })
-
-        .catch(resp => {
-          this.nextPostsIsError = true;
-          this.nextPostsIsLoading = false;
-          this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
-          console.log(resp);
+          if (resp.data) {
+            this.otherPosts = resp.data;
+            this.filterNextPosts(this.match.params.slug);
+            this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
+          } else {
+            this.nextPostsIsError = true;
+            this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
+            console.log(resp);
+          }
         });
+      this.nextPostsIsLoading = false;
     }
   }
 
@@ -67,21 +66,18 @@ export class AppBlogPost {
       this.setMetaTags();
     } else {
       this.blogPostIsLoading = true;
-      return this.butter.post
-        .retrieve(this.match.params.slug)
+      Fetch.fetchPostWithSlug(this.match.params.slug)
         .then(resp => {
-          this.blogPost = resp.data.data;
-          this.blogPostIsLoading = false;
-          // set scroll to top for when navigating to a new blog post
-          if (!this.isServer) {
+          if (resp) {
+            this.blogPost = resp.data;
+            // set scroll to top for when navigating to a new blog post
             window.scrollTo(0, 0);
+            this.setMetaTags();
+          } else {
+            this.blogPostIsError = true;
           }
-          this.setMetaTags();
-        })
-        .catch(_ => {
-          this.blogPostIsLoading = false;
-          this.blogPostIsError = true;
-        });
+      });
+      this.blogPostIsLoading = false;
     }
   }
 

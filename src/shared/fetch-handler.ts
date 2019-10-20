@@ -56,3 +56,24 @@ export async function fetchSearchPosts(search: string, page: number, pageSize: n
       return null;
     })
 }
+
+export async function fetchPostContent(page: number, pageSize: number, excludeBody: boolean) {
+  const query = '?page=' + page + '&page_size=' + pageSize + '&exclude_body=' + excludeBody + '&';
+  return await fetch(urlPosts + query + auth_token)
+    .then(res => res.json())
+    .then(resp => resp)
+    .catch(resp => {
+      console.log(resp);
+      return null;
+    })
+}
+
+export async function fetchPostWithSlug(slug: string) {
+  return await fetch(urlPosts + slug + '/?' + auth_token)
+    .then(res => res.json())
+    .then(resp => resp)
+    .catch(resp => {
+      console.log(resp);
+      return null;
+    })
+}
