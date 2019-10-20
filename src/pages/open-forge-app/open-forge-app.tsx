@@ -1,10 +1,8 @@
 import '@stencil/router';
-import { Component, Prop, h } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 import { BrowserService } from '../../services/browser.services';
 /* tslint:disable-next-line */
-import Butter from 'buttercms';
-import { BUTTER_API_KEY } from '../../butter-api/butter-api-key';
 
 polyfill();
 
@@ -18,16 +16,10 @@ export class OpenForgeApp {
 
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
-  public butterService;
 
   constructor() {
     const browserService = new BrowserService();
     browserService.check_webp(this.isServer);
-    console.log(BUTTER_API_KEY);
-  }
-
-  componentWillLoad() {
-    this.butterService = Butter(BUTTER_API_KEY);
   }
 
   componentDidLoad() {
@@ -107,7 +99,7 @@ export class OpenForgeApp {
     return (
       <stencil-router>
         <stencil-route-switch scrollTopOffset={0}>
-          <stencil-route url="/" component="app-home" exact={true} componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/" component="app-home" exact={true} />
           <stencil-route url="/contact" component="app-contact" />
           <stencil-route url="/opportunities/:type" component="app-opportunities" />
           <stencil-route url="/about" component="app-about" exact={true} />
@@ -120,9 +112,9 @@ export class OpenForgeApp {
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
           <stencil-route url="/service-level-agreement" component="app-service-level-agreement" />
-          <stencil-route url="/blog" component="app-blog" exact={true} componentProps={{ butter: this.butterService }} />
-          <stencil-route url="/blog-index" component="app-blog-index" exact={true} componentProps={{ butter: this.butterService }} />
-          <stencil-route url="/blog/:slug" component="app-blog-post" componentProps={{ butter: this.butterService }} />
+          <stencil-route url="/blog" component="app-blog" exact={true} />
+          <stencil-route url="/blog-index" component="app-blog-index" exact={true} />
+          <stencil-route url="/blog/:slug" component="app-blog-post" />
         </stencil-route-switch>
       </stencil-router>
     );
