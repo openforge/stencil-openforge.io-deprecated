@@ -40,10 +40,13 @@ describe('Navigation', function () {
     })
     it('Contact page link', function () {
       cy.get('@navBar').contains('Contact').click()
-    })
-    it('Opportunities page link', function () {
-      cy.get('@navBar').contains('Opportunities').click()
-    })
+     })
+    // it('Opportunities page link', function () {
+    //   cy.get('@navBar').contains('Opportunities').click()
+    // })
+    it('Services page link', function () {
+      cy.get('@navBar').contains('Services').click()
+    })    
     it('Home page link', function () {
       cy.get('@navBar').contains('Home').click()
     })
@@ -56,7 +59,10 @@ describe('Navigation', function () {
     it('Should navigate to openforge.io/contact', function() {
       cy.visit('localhost:3333/contact')
     })
-    it('Should navigate to openforge.io/oppportunities', function() {
+    // it('Should navigate to openforge.io/oppportunities', function() {
+    //   cy.visit('localhost:3333/opportunities')
+    // })
+    it('Should navigate to openforge.io/services', function() {
       cy.visit('localhost:3333/opportunities')
     })
     it('Should navigate to openforge.io/', function() {
