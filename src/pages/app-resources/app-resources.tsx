@@ -42,8 +42,8 @@ export class AppResources {
   @Prop() history: RouterHistory;
 
   @Listen('check')
-  @Listen('valueChange')
-  valueChangeHandler(event) {
+  @Listen('valueChanged')
+  valueChangedHandler(event) {
     const { field, value, target } = event.detail;
 
     this.formValues[field] = value;

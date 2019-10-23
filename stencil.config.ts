@@ -1,15 +1,15 @@
 import { Config } from "@stencil/core";
 import { sass } from "@stencil/sass";
 
-import builtins from 'rollup-plugin-node-builtins';
-import globals from 'rollup-plugin-node-globals';
+import rollupPluginNodeBuiltins from 'rollup-plugin-node-builtins';
+import rollupPluginNodeGlobals from 'rollup-plugin-node-globals';
 
 export const config: Config = {
   nodeResolve: { browser: true, preferBuiltins: false },
   enableCache: false,
   plugins: [
-    builtins(),
-    globals(),
+    rollupPluginNodeBuiltins(),
+    rollupPluginNodeGlobals(),
     sass({
       injectGlobalPaths: [
         'src/styles/_variables.scss',
@@ -21,19 +21,13 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
-      baseUrl: 'http://localhost:3030',
-      serviceWorker: {
-        swSrc: './src/sw.js'
-      }
+      baseUrl: 'https://www.openforge.io',
+      copy: [
+        { src: 'robots.txt' }
+      ]
     }
   ],
-  copy: [
-    { src: 'robots.txt' },
-    { src: 'sw.js' }
-  ]
-};
-
-export const devServer = {
-  root: 'www',
-  watchGlob: '**/**'
+  devServer: {
+    reloadStrategy: 'pageReload'
+  }
 };

@@ -12,10 +12,10 @@ export class AppTextarea {
   @Prop() maxlength: string;
   @Prop() rows: number;
   @Prop() required = false;
-  @Event() valueChange: EventEmitter;
+  @Event() valueChanged: EventEmitter;
 
   inputHandler(event) {
-    this.valueChange.emit({
+    this.valueChanged.emit({
       field: this.name,
       value: event.target.value,
       target: event.target,
@@ -26,15 +26,7 @@ export class AppTextarea {
     return (
       <div class="form-group">
         <label htmlFor={this.name}>{this.label}</label>
-        <textarea
-          class="form-control"
-          name={this.name}
-          id={this.inputId}
-          maxlength={this.maxlength}
-          rows={this.rows}
-          required={this.required}
-          onInput={this.inputHandler.bind(this)}
-        />
+        <textarea class="form-control" name={this.name} id={this.inputId} maxlength={this.maxlength} rows={this.rows} required={this.required} onInput={this.inputHandler.bind(this)} />
       </div>
     );
   }

@@ -20,10 +20,10 @@ export class AppInput {
   @Prop()
   required = false;
   @Event()
-  valueChange: EventEmitter;
+  valueChanged: EventEmitter;
 
   inputHandler(event) {
-    this.valueChange.emit({
+    this.valueChanged.emit({
       field: this.name,
       value: event.target.value,
       target: event.target,

@@ -12,12 +12,12 @@ export class AppRadio {
   @Prop() label: string;
   @Prop() required = false;
 
-  @Event() valueChange: EventEmitter;
+  @Event() valueChanged: EventEmitter;
 
   private inputId = '';
 
   changeHandler(event) {
-    this.valueChange.emit({
+    this.valueChanged.emit({
       field: this.name,
       value: event.target.value,
       target: event.target,
@@ -32,15 +32,7 @@ export class AppRadio {
 
     return (
       <div class="form-check">
-        <input
-          id={this.inputId}
-          class="form-check-input"
-          type="radio"
-          name={this.name}
-          value={this.value}
-          required={this.required}
-          onChange={this.changeHandler.bind(this)}
-        />
+        <input id={this.inputId} class="form-check-input" type="radio" name={this.name} value={this.value} required={this.required} onChange={this.changeHandler.bind(this)} />
         <label class="form-check-label" htmlFor={this.inputId}>
           {this.label}
         </label>
