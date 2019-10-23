@@ -179,8 +179,10 @@ describe('Contact Page', function () {
 
   describe('Footer Navigation', function () {
     it('Navigate to SLA page', function () {
-      cy.contains('Read our SLA').click()
-      cy.url().should('include', '/service-level-agreement')
+      // cy.contains('Read our SLA').click()
+      // cy.url().should('include', '/service-level-agreement')
+      cy.contains('Read our SLA')
+      .and('have.attr', 'href', '/service-level-agreement')
     })
     it('Navigate to Developer page', function () {
       // cy.contains('I\'m a developer').click()
@@ -191,7 +193,7 @@ describe('Contact Page', function () {
       // cy.url().should('include', '/opportunities/design')
     })
     it('Navigates to StartupJunto Registration Page', function () {
-      // cy.contains('Register Today!').click()
+       cy.contains('Join Us').click()
     })
     it('Navigates to OpenForge Twitter', function () {
       cy.contains('@openforgemobile').click()
@@ -200,7 +202,8 @@ describe('Contact Page', function () {
       cy.contains('openforgemobile').click()
     })
     it('Navigates to OpenForge Linkedin', function () {
-      cy.contains('openforge').click()
+      // cy.contains('openforge').click() //#DanC; need to use an ID to specify this element, I think this method is to vague
+      cy.get('a[id=linkedin]').click();
     })
     it('Navigates to OpenForge Instagram', function () {
       cy.contains('@openforgemobile').click()
