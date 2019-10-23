@@ -13,18 +13,24 @@ describe('Navigation', function () {
     })
     it('About link', function() {
       cy.get('@navBar').contains('About')
-      .and('have.attr', 'href')
-      .and('match', /about/)
+      //.and('have.attr', 'href')
+     // .and('match', /about/) // #DanC; it seems the main about menu no longer goes to a different page, you have to click on one of the menu items now
+     .and('have.attr', 'href', '') // #DanC; my version, trying to match href to current page.
     })
     it('Contact link', function() {
       cy.get('@navBar').contains('Contact')
       .and('have.attr', 'href')
       .and('match', /contact/)
     })
-    it('Opportunities link', function() {
-      cy.get('@navBar').contains('Opportunities')
+    // it('Opportunities link', function() {
+    //   cy.get('@navBar').contains('Opportunities')
+    //   .and('have.attr', 'href')
+    //   .and('match', /opportunities/)
+    // })
+    it('Services link', function() {
+      cy.get('@navBar').contains('Services')
       .and('have.attr', 'href')
-      .and('match', /opportunities/)
+      .and('match', /services/)
     })
   })
 
