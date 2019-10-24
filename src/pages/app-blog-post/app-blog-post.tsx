@@ -32,6 +32,12 @@ export class AppBlogPost {
     }
   }
 
+  componentDidLoad() {
+    if(!Build.isBrowser) {
+      this.setMetaTags();
+    }
+  }
+
   componentWillLoad() {
     this.getPostContent();
 
@@ -93,6 +99,7 @@ export class AppBlogPost {
     document.querySelector("meta[property='og:url']").setAttribute('content', `https://openforge.io/blog/${this.blogPost.slug}`);
     document.querySelector("meta[property='og:image']").setAttribute('content', this.blogPost.featured_image);
     document.querySelector("meta[name='keywords']").setAttribute('content', tagList);
+    document.querySelector("meta[property='og:type']").setAttribute('content', 'article');
   }
 
   filterNextPosts(slug: string) {
