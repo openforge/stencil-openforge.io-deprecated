@@ -6,6 +6,7 @@ import { BlogPost } from '../../model/blog-post.model';
 import * as Fetch from '../../shared/fetch-handler';
 
 /* tslint:disable-next-line */
+declare var bootstrap;
 
 @Component({
   tag: 'app-home',
@@ -50,14 +51,13 @@ export class AppHome {
     });
 
     if (Build.isBrowser) {
-      /* tslint:disable-next-line */
-      const items = document.querySelectorAll('.carousel-item');
-      let n = items.length;
-      this.timer = setInterval(() => {
-        this.currItem = ++this.currItem % n;
-        items.forEach(el => el.classList.remove('active'));
-        items[this.currItem].classList.add('active');
-      }, 4000);
+      $(document).ready(function() {
+        // Force bootstrap to initialize carousel
+        const processCarousel = $('#processCarousel');
+        setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
+
+        $(window).trigger('scroll'); // init the value
+      });
     }
   }
 
