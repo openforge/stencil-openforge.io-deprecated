@@ -7,6 +7,7 @@ import rollupPluginNodeGlobals from 'rollup-plugin-node-globals';
 export const config: Config = {
   nodeResolve: { browser: true, preferBuiltins: false },
   enableCache: false,
+  hashFileNames: true,
   plugins: [
     rollupPluginNodeBuiltins(),
     rollupPluginNodeGlobals(),
@@ -22,6 +23,11 @@ export const config: Config = {
     {
       type: 'www',
       baseUrl: 'https://www.openforge.io',
+      serviceWorker: {
+        globPatterns: [
+          '**/*.{js,css,json,html,ico,png,svg}'
+        ]
+      },
       copy: [
         { src: 'robots.txt' }
       ]
