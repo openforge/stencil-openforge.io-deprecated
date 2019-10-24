@@ -1,4 +1,4 @@
-import { Component, State, h, Build } from '@stencil/core';
+import { Component, State, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
@@ -9,7 +9,6 @@ import * as Fetch from '../../shared/fetch-handler';
   styleUrl: 'app-blog.scss',
 })
 export class AppBlog {
-
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
   @State() featuredIsLoading: boolean = true;
@@ -58,9 +57,7 @@ export class AppBlog {
   ];
 
   componentWillLoad() {
-    if (Build.isBrowser) {
-      this.getAllBlogPosts();
-    }
+    this.getAllBlogPosts();
   }
 
   componentDidLoad() {
@@ -100,17 +97,16 @@ export class AppBlog {
   getSearchPosts(page) {
     this.searchIsLoading = true;
     const pageSize = 3;
-    Fetch.fetchSearchPosts(this.searchQuery, page, pageSize)
-      .then(resp => {
-        if (resp.data) {
-          this.searchPostsData = resp.data;
-          this.searchMeta = resp.meta;
-          this.searchNumberOfPages = Math.ceil(resp.meta.count / pageSize);
-          this.searchCurrentPage = page;
-        } else {
-          this.searchIsError = true;
-        }
-      })
+    Fetch.fetchSearchPosts(this.searchQuery, page, pageSize).then(resp => {
+      if (resp.data) {
+        this.searchPostsData = resp.data;
+        this.searchMeta = resp.meta;
+        this.searchNumberOfPages = Math.ceil(resp.meta.count / pageSize);
+        this.searchCurrentPage = page;
+      } else {
+        this.searchIsError = true;
+      }
+    });
     this.searchIsLoading = false;
   }
 
@@ -186,7 +182,7 @@ export class AppBlog {
       this.blogCurrentPage = newPage;
       this.getBlogPosts(newPage);
     }
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
