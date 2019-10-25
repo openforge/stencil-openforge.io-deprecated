@@ -203,7 +203,7 @@ describe('Contact Page', function () {
     })
     it('Navigates to OpenForge Linkedin', function () {
       // cy.contains('openforge').click() //#DanC; need to use an ID to specify this element, I think this method is to vague
-      cy.get('a[id=linkedin]').click();
+      cy.get('a[id=linkedin]').click(); // #DanC; this seems to work. However, I'm not sure if/how these are verifying the actual navigation.
     })
     it('Navigates to OpenForge Instagram', function () {
       cy.contains('@openforgemobile').click()
