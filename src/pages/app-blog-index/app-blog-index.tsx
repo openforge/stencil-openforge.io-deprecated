@@ -1,5 +1,6 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, State, h, Build } from '@stencil/core';
 import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
+import * as Fetch from '../../shared/fetch-handler';
 
 @Component({
   tag: 'app-blog-index',
@@ -7,21 +8,14 @@ import { BLOG_DATA } from '../app-blog-post/prerender-blog-data';
 })
 export class AppBlogIndex {
   @State() blogData = [];
-  @Prop() butter: any;
-  @Prop({ context: 'isServer' }) private isServer;
 
   componentWillLoad() {
-    if (this.isServer) {
+    if (!Build.isBrowser) {
       this.blogData = BLOG_DATA.data;
     } else {
-      this.butter.post
-        .list({ page: 1, page_size: 100000, exclude_body: true })
-        .then(resp => {
-          this.blogData = resp.data.data;
-        })
-        .catch(resp => {
-          console.error('Could not load blog data   ', resp);
-        });
+      Fetch.fetchBlogPosts().then(resp => {
+        this.blogData = resp.data;
+      });
     }
   }
 

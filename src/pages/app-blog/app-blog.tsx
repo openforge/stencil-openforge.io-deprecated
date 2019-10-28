@@ -1,19 +1,14 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, State, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
-
-declare var fbq;
+import * as Fetch from '../../shared/fetch-handler';
 
 @Component({
   tag: 'app-blog',
   styleUrl: 'app-blog.scss',
 })
 export class AppBlog {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-  @Prop() butter: any;
-
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
   @State() featuredIsLoading: boolean = true;
@@ -29,6 +24,7 @@ export class AppBlog {
 
   // Use searchQuery to keep track of whether or not search is being used
   @State() searchQuery: string = '';
+  @State() allBlogPosts: BlogPost[] = [];
   @State() searchPostsData: BlogPost[] = [];
   @State() searchNumberOfPages: number = 0;
   @State() searchCurrentPage: number = 1;
@@ -36,6 +32,7 @@ export class AppBlog {
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
 
+  pageSize = 3;
   private filters: BlogCategory[] = [
     {
       name: 'All',
@@ -60,18 +57,10 @@ export class AppBlog {
   ];
 
   componentWillLoad() {
-    if (!this.isServer) {
-      this.getFeaturedPost();
-      this.getBlogPosts(1);
-    }
+    this.getAllBlogPosts();
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
     const input = document.getElementById('blog-search');
     input.addEventListener('search', () => this.handleSearch(input.innerText));
 
@@ -84,68 +73,62 @@ export class AppBlog {
     document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile apps, mobile app news, mobile applications, mobile app technology, mobile app strategies, mvp apps');
   }
 
+  async getAllBlogPosts() {
+    this.blogIsLoading = true;
+    const resp = await Fetch.fetchBlogPosts();
+    if (resp) {
+      this.allBlogPosts = resp.data;
+      this.blogMeta = resp.meta;
+      this.blogNumberOfPages = Math.ceil(resp.meta.count / this.pageSize);
+      this.getBlogPosts(1);
+      this.getFeaturedPost();
+    }
+    this.blogIsLoading = false;
+  }
+
   getFeaturedPost() {
     this.featuredIsLoading = true;
-    const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        if (resp.data.data.length > 0) {
-          this.featuredPost = resp.data.data[0];
-          this.featuredIsLoading = false;
-        }
-      })
-      .catch(resp => {
-        this.featuredIsError = true;
-        this.featuredIsLoading = false;
-        console.log(resp);
-      });
+    if (this.allBlogPosts.length > 0) {
+      this.featuredPost = this.allBlogPosts[0];
+      this.featuredIsLoading = false;
+    }
   }
 
   getSearchPosts(page) {
     this.searchIsLoading = true;
     const pageSize = 3;
-    this.butter.post
-      .search(this.searchQuery, { page, page_size: pageSize })
-      .then(resp => {
-        this.searchPostsData = resp.data.data;
-        this.searchMeta = resp.data.meta;
-        this.searchNumberOfPages = Math.ceil(resp.data.meta.count / pageSize);
+    Fetch.fetchSearchPosts(this.searchQuery, page, pageSize).then(resp => {
+      if (resp.data) {
+        this.searchPostsData = resp.data;
+        this.searchMeta = resp.meta;
+        this.searchNumberOfPages = Math.ceil(resp.meta.count / pageSize);
         this.searchCurrentPage = page;
-        this.searchIsLoading = false;
-      })
-      .catch(resp => {
+      } else {
         this.searchIsError = true;
-        this.searchIsLoading = false;
-        console.log(resp);
-      });
+      }
+    });
+    this.searchIsLoading = false;
   }
 
-  getBlogPosts(page: number) {
+  async getBlogPosts(page: number) {
     this.blogIsLoading = true;
-    const pageSize = 3;
-    const listOptions = { page, page_size: pageSize, exclude_body: true };
     if (this.blogFilter) {
-      listOptions['category_slug'] = this.blogFilter;
+      this.blogPostsData = await Fetch.fetchFilteredPosts(this.blogFilter, 1, this.pageSize, true);
+      this.blogNumberOfPages = Math.ceil(this.blogPostsData.length / this.pageSize);
+      this.blogCurrentPage = 1;
+    } else {
+      this.blogNumberOfPages = Math.ceil(this.allBlogPosts.length / this.pageSize);
+      this.blogPostsData = [];
+      let index = (page - 1) * this.pageSize;
+      const endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+      for (index; index < endPoint; index++) {
+        this.blogPostsData.push(this.allBlogPosts[index]);
+      }
     }
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        this.blogPostsData = resp.data.data;
-        this.blogMeta = resp.data.meta;
-        this.blogNumberOfPages = Math.ceil(resp.data.meta.count / pageSize);
-        this.blogCurrentPage = page;
-        this.blogIsLoading = false;
-      })
-      .catch(resp => {
-        this.blogIsError = true;
-        this.blogIsLoading = false;
-        console.log(resp);
-      });
+    this.blogIsLoading = false;
   }
 
   handleSearch(query) {
-    console.log(query);
     this.searchQuery = query;
     if (this.searchQuery) {
       this.getSearchPosts(1);
@@ -166,6 +149,8 @@ export class AppBlog {
     if (!this.searchQuery && this.blogFilter !== filterName) {
       this.blogFilter = filterName;
       this.getBlogPosts(1);
+      // if (this.blogFilter) this.getBlogPosts(1);
+      // else this.getAllBlogPosts();
     }
   }
 
@@ -190,11 +175,13 @@ export class AppBlog {
     }
 
     if (this.searchQuery) {
+      this.searchCurrentPage = newPage;
       this.getSearchPosts(newPage);
     } else {
+      this.blogCurrentPage = newPage;
       this.getBlogPosts(newPage);
     }
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {

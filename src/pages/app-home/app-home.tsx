@@ -1,13 +1,11 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, h, Build } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
 import { BlogPost } from '../../model/blog-post.model';
+import * as Fetch from '../../shared/fetch-handler';
 
 /* tslint:disable-next-line */
-import $ from 'jquery';
-
-declare var fbq;
 declare var bootstrap;
 
 @Component({
@@ -17,62 +15,42 @@ declare var bootstrap;
 export class AppHome {
   @Prop() history: RouterHistory;
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  @Prop() butter: any;
-
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
   @State() featuredIsLoading: boolean = true;
+  timer: any;
+  currItem = 0;
 
   componentWillLoad() {
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.getFeaturedPost();
     }
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-
     /* tslint:disable-next-line */
-    $(window).on('scroll resize', function() {
-      if ($('#content-panel-inner') && $('#content-panel-inner').offset()) {
-        const pos = $('#content-panel-inner').offset().top + $('#content-panel-inner').height() / 2;
+    window.addEventListener('scroll', () => {
+      const innerPanel = document.getElementById('content-panel-inner');
+      if (innerPanel && innerPanel.offsetHeight) {
+        const rect = innerPanel.getBoundingClientRect();
+        const pos = rect.top + rect.height / 2;
         let done = false;
-        $('.content-panel').each(function() {
-          if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
-            const newDescr = $(this)
-              .find('.description')
-              .html();
-            $('#content-panel-inner').html(newDescr);
-
+        const panels = document.querySelectorAll('.content-panel');
+        panels.forEach((el: HTMLElement) => {
+          const innerRect = el.getBoundingClientRect();
+          if (!done && pos < innerRect.top + innerRect.height) {
+            innerPanel.innerHTML = el.children[0].innerHTML;
             done = true;
           }
         });
 
-        if (
-          $('#content-panel-inner').offset().top ===
-          $('.content-panel')
-            .first()
-            .offset().top
-        ) {
-          const newDescr = $('.content-panel')
-            .first()
-            .find('.description')
-            .html();
-
-          $('#content-panel-inner').html(newDescr);
+        if (innerPanel.offsetTop === (panels[0] as HTMLElement).offsetTop) {
+          innerPanel.innerHTML = panels[0].innerHTML;
         }
       }
     });
 
-    if (!this.isServer) {
-      /* tslint:disable-next-line */
+    if (Build.isBrowser) {
       $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
@@ -83,22 +61,14 @@ export class AppHome {
     }
   }
 
-  getFeaturedPost() {
+  componentDidUnload() {
+    clearInterval(this.timer);
+  }
+
+  async getFeaturedPost() {
     this.featuredIsLoading = true;
-    const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        if (resp.data.data.length > 0) {
-          this.featuredPost = resp.data.data[0];
-          this.featuredIsLoading = false;
-        }
-      })
-      .catch(resp => {
-        console.log('resp - ', resp);
-        this.featuredIsError = true;
-        this.featuredIsLoading = false;
-      });
+    this.featuredPost = await Fetch.fetchOneBlogPost();
+    this.featuredIsLoading = false;
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
@@ -125,10 +95,10 @@ export class AppHome {
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <h1>
-                  <app-translate key="home.hero.title" />
+                  <app-translate keyword="home.hero.title" />
                 </h1>
                 <h2>
-                  <app-translate key="home.hero.subTitle" />
+                  <app-translate keyword="home.hero.subTitle" />
                 </h2>
                 <div class="svg-header-desktop" aria-label="header" />
                 <div class="svg-header-mobile" aria-label="header" />
@@ -157,7 +127,7 @@ export class AppHome {
                 </div>
                 <div class="content-panel-image">
                   <h2>
-                    <app-translate key="home.work.mobileWebApplications.example" />
+                    <app-translate keyword="home.work.mobileWebApplications.example" />
                   </h2>
                   <div class="row">
                     <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
@@ -184,7 +154,7 @@ export class AppHome {
                 </div>
                 <div class="content-panel-image">
                   <h2>
-                    <app-translate key="home.work.mobileTechnology.example" />
+                    <app-translate keyword="home.work.mobileTechnology.example" />
                   </h2>
                   <div class="row">
                     <img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
@@ -211,7 +181,7 @@ export class AppHome {
                 </div>
                 <div class="content-panel-image">
                   <h2>
-                    <app-translate key="home.work.digitalExperience.example" />
+                    <app-translate keyword="home.work.digitalExperience.example" />
                   </h2>
                   <div class="row">
                     <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
@@ -236,7 +206,7 @@ export class AppHome {
         <section id="process" class="process">
           <div class="text-center header">
             <h2>
-              <app-translate key="home.process.title" />
+              <app-translate keyword="home.process.title" />
             </h2>
           </div>
 
@@ -251,11 +221,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.discovery.title" />
+                        <app-translate keyword="home.process.discovery.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="0" />
                       <p>
-                        <app-translate key="home.process.discovery.text" />
+                        <app-translate keyword="home.process.discovery.text" />
                       </p>
                     </div>
                   </div>
@@ -269,11 +239,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.design.title" />
+                        <app-translate keyword="home.process.design.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="1" />
                       <p>
-                        <app-translate key="home.process.design.text" />
+                        <app-translate keyword="home.process.design.text" />
                       </p>
                     </div>
                   </div>
@@ -287,11 +257,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.development.title" />
+                        <app-translate keyword="home.process.development.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="2" />
                       <p>
-                        <app-translate key="home.process.development.text" />
+                        <app-translate keyword="home.process.development.text" />
                       </p>
                     </div>
                   </div>
@@ -305,11 +275,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.deployment.title" />
+                        <app-translate keyword="home.process.deployment.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="3" />
                       <p>
-                        <app-translate key="home.process.deployment.text" />
+                        <app-translate keyword="home.process.deployment.text" />
                       </p>
                     </div>
                   </div>
@@ -323,11 +293,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.userfeedback.title" />
+                        <app-translate keyword="home.process.userfeedback.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="4" />
                       <p>
-                        <app-translate key="home.process.userfeedback.text" />
+                        <app-translate keyword="home.process.userfeedback.text" />
                       </p>
                     </div>
                   </div>

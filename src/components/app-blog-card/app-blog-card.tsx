@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { formatDate } from '../../shared/date-format';
 
@@ -10,7 +10,6 @@ export class AppBlogCard {
   @Prop() blogPost: BlogPost;
 
   componentDidLoad() {
-    console.log('blog data', this.blogPost);
     document.querySelectorAll('meta[property="og:image"]')[0].setAttribute('content', this.blogPost.featured_image); //set opengraph metadata to match Butter CMS featured image
   }
 

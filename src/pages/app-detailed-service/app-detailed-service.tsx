@@ -1,9 +1,7 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch, h } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
 // import { translate } from '../../services/translation.service';
-
-declare var fbq;
 
 @Component({
   tag: 'app-detailed-service',
@@ -12,8 +10,6 @@ declare var fbq;
 export class AppDetailedService {
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   @State()
   imgs = {
@@ -67,12 +63,6 @@ export class AppDetailedService {
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-
     this.changeMetadata();
     this.loadSections();
   }
@@ -160,10 +150,10 @@ export class AppDetailedService {
               </div>
               <div class="col-sm-12 col-md-7 order-md-1">
                 <h1>
-                  <app-translate key={`services.${this.match.params.service}.hero.title`} />
+                  <app-translate keyword={`services.${this.match.params.service}.hero.title`} />
                 </h1>
                 <p>
-                  <app-translate key={`services.${this.match.params.service}.hero.text`} />
+                  <app-translate keyword={`services.${this.match.params.service}.hero.text`} />
                 </p>
               </div>
             </div>
@@ -184,10 +174,10 @@ export class AppDetailedService {
               </div>
               <div class="col-md-8 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
-                  <app-translate key={`services.${this.match.params.service}.first.title`} />
+                  <app-translate keyword={`services.${this.match.params.service}.first.title`} />
                 </h3>
                 <p>
-                  <app-translate key={`services.${this.match.params.service}.first.text`} />
+                  <app-translate keyword={`services.${this.match.params.service}.first.text`} />
                 </p>
               </div>
             </div>
@@ -197,10 +187,10 @@ export class AppDetailedService {
               </div>
               <div class="col-md-8 col-sm-12 order-md-1 d-flex flex-column align-self-center">
                 <h3>
-                  <app-translate key={`services.${this.match.params.service}.second.title`} />
+                  <app-translate keyword={`services.${this.match.params.service}.second.title`} />
                 </h3>
                 <p>
-                  <app-translate key={`services.${this.match.params.service}.second.text`} />
+                  <app-translate keyword={`services.${this.match.params.service}.second.text`} />
                 </p>
               </div>
             </div>
@@ -210,10 +200,10 @@ export class AppDetailedService {
               </div>
               <div class="col-md-8 col-sm-12 d-flex flex-column align-self-center">
                 <h3>
-                  <app-translate key={`services.${this.match.params.service}.third.title`} />
+                  <app-translate keyword={`services.${this.match.params.service}.third.title`} />
                 </h3>
                 <p>
-                  <app-translate key={`services.${this.match.params.service}.third.text`} />
+                  <app-translate keyword={`services.${this.match.params.service}.third.text`} />
                 </p>
               </div>
             </div>
@@ -244,10 +234,10 @@ export class AppDetailedService {
                 </div>
                 <div class="information">
                   <h3>
-                    <app-translate key="services.ourwork.juntoscope.title" />
+                    <app-translate keyword="services.ourwork.juntoscope.title" />
                   </h3>
                   <p>
-                    <app-translate key="services.ourwork.juntoscope.description" />
+                    <app-translate keyword="services.ourwork.juntoscope.description" />
                   </p>
                   <stencil-route-link url="/juntoscope">
                     <a class="active">View Case Study</a>
@@ -269,10 +259,10 @@ export class AppDetailedService {
                 </div>
                 <div class="information">
                   <h3>
-                    <app-translate key="services.ourwork.voyage.title" />
+                    <app-translate keyword="services.ourwork.voyage.title" />
                   </h3>
                   <p>
-                    <app-translate key="services.ourwork.voyage.description" />
+                    <app-translate keyword="services.ourwork.voyage.description" />
                   </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
@@ -292,10 +282,10 @@ export class AppDetailedService {
                 </div>
                 <div class="information">
                   <h3>
-                    <app-translate key="services.ourwork.vanlife.title" />
+                    <app-translate keyword="services.ourwork.vanlife.title" />
                   </h3>
                   <p>
-                    <app-translate key="services.ourwork.vanlife.description" />
+                    <app-translate keyword="services.ourwork.vanlife.description" />
                   </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
@@ -310,10 +300,10 @@ export class AppDetailedService {
                 </div>
                 <div class="information">
                   <h3>
-                    <app-translate key="services.ourwork.suw.title" />
+                    <app-translate keyword="services.ourwork.suw.title" />
                   </h3>
                   <p>
-                    <app-translate key="services.ourwork.suw.description" />
+                    <app-translate keyword="services.ourwork.suw.description" />
                   </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
@@ -333,10 +323,10 @@ export class AppDetailedService {
                 </div>
                 <div class="information">
                   <h3>
-                    <app-translate key="services.ourwork.digithermo.title" />
+                    <app-translate keyword="services.ourwork.digithermo.title" />
                   </h3>
                   <p>
-                    <app-translate key="services.ourwork.digithermo.description" />
+                    <app-translate keyword="services.ourwork.digithermo.description" />
                   </p>
                   <a>Case Study Coming Soon!</a>
                 </div>
@@ -355,7 +345,7 @@ export class AppDetailedService {
             <div class="row">
               <div class="col-md-6 col-sm-12 text-container">
                 <p>
-                  <app-translate key={`services.${this.match.params.service}.seminars`} />
+                  <app-translate keyword={`services.${this.match.params.service}.seminars`} />
                 </p>
                 <button onClick={() => window.open('https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4', '_blank')}>Join Our Mailing List</button>
               </div>

@@ -1,22 +1,10 @@
-import { Component, Prop } from '@stencil/core';
-
-declare var fbq;
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-services',
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-
-  componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-  }
 
   changeMetadata() {
     // Change meta tags dynamically
@@ -42,7 +30,7 @@ export class AppServices {
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <h1>
-                  <app-translate key="services.landing.hero.title" />
+                  <app-translate keyword="services.landing.hero.title" />
                 </h1>
                 <div class="svg-header-desktop" aria-label="header" />
               </div>
@@ -50,7 +38,7 @@ export class AppServices {
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <p>
-                  <app-translate key="services.landing.hero.text" />
+                  <app-translate keyword="services.landing.hero.text" />
                 </p>
               </div>
             </div>
@@ -60,14 +48,14 @@ export class AppServices {
               <div class="col-12 flex-column">
                 <app-img src="/assets/services-graphic-header.png" alt="Header" />
                 <h1>
-                  <app-translate key="services.landing.hero.title" />
+                  <app-translate keyword="services.landing.hero.title" />
                 </h1>
               </div>
             </div>
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <p>
-                  <app-translate key="services.landing.hero.text" />
+                  <app-translate keyword="services.landing.hero.text" />
                 </p>
               </div>
             </div>
@@ -81,10 +69,10 @@ export class AppServices {
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
-                <app-translate key="services.landing.technology-consulting.title" />
+                <app-translate keyword="services.landing.technology-consulting.title" />
               </h3>
               <p>
-                <app-translate key="services.landing.technology-consulting.text" />
+                <app-translate keyword="services.landing.technology-consulting.text" />
               </p>
               <stencil-route-link url="/services/startup-consulting">See More</stencil-route-link>
             </div>
@@ -96,10 +84,10 @@ export class AppServices {
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
-                <app-translate key="services.landing.webapp-development.title" />
+                <app-translate keyword="services.landing.webapp-development.title" />
               </h3>
               <p>
-                <app-translate key="services.landing.webapp-development.text" />
+                <app-translate keyword="services.landing.webapp-development.text" />
               </p>
               <stencil-route-link url="/services/app-developer">See More</stencil-route-link>
             </div>
@@ -114,10 +102,10 @@ export class AppServices {
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
-                <app-translate key="services.landing.digital-experience-design.title" />
+                <app-translate keyword="services.landing.digital-experience-design.title" />
               </h3>
               <p>
-                <app-translate key="services.landing.digital-experience-design.text" />
+                <app-translate keyword="services.landing.digital-experience-design.text" />
               </p>
               <stencil-route-link url="/services/app-designer">See More</stencil-route-link>
             </div>
@@ -129,10 +117,10 @@ export class AppServices {
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12">
               <h3>
-                <app-translate key="services.landing.process-training-support.title" />
+                <app-translate keyword="services.landing.process-training-support.title" />
               </h3>
               <p>
-                <app-translate key="services.landing.process-training-support.text" />
+                <app-translate keyword="services.landing.process-training-support.text" />
               </p>
               <stencil-route-link url="/services/training">See More</stencil-route-link>
             </div>

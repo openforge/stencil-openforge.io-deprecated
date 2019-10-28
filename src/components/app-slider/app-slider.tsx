@@ -1,4 +1,4 @@
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'app-slider',
@@ -7,11 +7,10 @@ import { Component, Prop, Event, EventEmitter } from '@stencil/core';
 export class AppSlider {
   @Prop() name: string;
   @Prop() label: string;
-  @Event() valueChange: EventEmitter;
+  @Event() valueChanged: EventEmitter;
 
   inputHandler(event) {
-    console.log('app-slider value', event.target.value);
-    this.valueChange.emit({
+    this.valueChanged.emit({
       field: this.name,
       value: event.target.value,
     });
@@ -21,13 +20,7 @@ export class AppSlider {
     return (
       <div class="slider form-group text-center">
         <label>{this.label}</label>
-        <input
-          type="range"
-          class="form-control-range"
-          name={this.name}
-          id={this.name}
-          onInput={this.inputHandler.bind(this)}
-        />
+        <input type="range" class="form-control-range" name={this.name} id={this.name} onInput={this.inputHandler.bind(this)} />
       </div>
     );
   }
