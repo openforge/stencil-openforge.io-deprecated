@@ -129,7 +129,6 @@ export class AppBlog {
   }
 
   handleSearch(query) {
-    console.log(query);
     this.searchQuery = query;
     if (this.searchQuery) {
       this.getSearchPosts(1);

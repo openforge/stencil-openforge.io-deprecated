@@ -26,6 +26,9 @@ export class AppBlogPost {
 
   @Watch('match')
   watchHandler(newValue: any, oldValue: any) {
+    if (!newValue || !oldValue) {
+      return;
+    }
     if (newValue.params.slug !== oldValue.params.slug) {
       this.getPostContent();
       this.filterNextPosts(newValue.params.slug);
@@ -33,7 +36,7 @@ export class AppBlogPost {
   }
 
   componentDidLoad() {
-    if(!Build.isBrowser) {
+    if (!Build.isBrowser) {
       this.setMetaTags();
     }
   }
@@ -46,18 +49,16 @@ export class AppBlogPost {
     const pageSize = 12;
     if (Build.isBrowser) {
       this.nextPostsIsLoading = true;
-      Fetch.fetchPostContent(1, pageSize, true)
-        .then(resp => {
-          if (resp.data) {
-            this.otherPosts = resp.data;
-            this.filterNextPosts(this.match.params.slug);
-            this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
-          } else {
-            this.nextPostsIsError = true;
-            this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
-            console.log(resp);
-          }
-        });
+      Fetch.fetchPostContent(1, pageSize, true).then(resp => {
+        if (resp.data) {
+          this.otherPosts = resp.data;
+          this.filterNextPosts(this.match.params.slug);
+          this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
+        } else {
+          this.nextPostsIsError = true;
+          this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
+        }
+      });
       this.nextPostsIsLoading = false;
     }
   }
@@ -70,16 +71,15 @@ export class AppBlogPost {
       this.setMetaTags();
     } else {
       this.blogPostIsLoading = true;
-      Fetch.fetchPostWithSlug(this.match.params.slug)
-        .then(resp => {
-          if (resp) {
-            this.blogPost = resp.data;
-            // set scroll to top for when navigating to a new blog post
-            window.scrollTo(0, 0);
-            this.setMetaTags();
-          } else {
-            this.blogPostIsError = true;
-          }
+      Fetch.fetchPostWithSlug(this.match.params.slug).then(resp => {
+        if (resp) {
+          this.blogPost = resp.data;
+          // set scroll to top for when navigating to a new blog post
+          window.scrollTo(0, 0);
+          this.setMetaTags();
+        } else {
+          this.blogPostIsError = true;
+        }
       });
       this.blogPostIsLoading = false;
     }

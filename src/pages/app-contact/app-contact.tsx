@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop, h, Build } from '@stencil/core';
+import { Component, State, Listen, Prop, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 @Component({
@@ -52,7 +52,7 @@ export class AppContact {
 
   private className;
   componentWillLoad() {
-    this.className = Build.isBrowser ? (localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero') : 'webp';
+    this.className = 'webp';
   }
 
   componentDidLoad() {

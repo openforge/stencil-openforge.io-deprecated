@@ -10,9 +10,6 @@ export class AppBlogContent {
   @Prop() blogPost: BlogPost;
 
   componentDidLoad() {
-    console.log('blog content', this.blogPost);
-    console.log(this.blogPost.author);
-
     if (Build.isBrowser) {
       this.handleIcons();
       window.addEventListener('resize', this.handleIcons);

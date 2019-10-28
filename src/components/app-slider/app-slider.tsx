@@ -10,7 +10,6 @@ export class AppSlider {
   @Event() valueChanged: EventEmitter;
 
   inputHandler(event) {
-    console.log('app-slider value', event.target.value);
     this.valueChanged.emit({
       field: this.name,
       value: event.target.value,

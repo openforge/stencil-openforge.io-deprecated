@@ -9,9 +9,7 @@ import { formatDate } from '../../shared/date-format';
 export class AppBlogFeatured {
   @Prop() blogPost: BlogPost;
 
-  componentDidLoad() {
-    console.log('blog data', this.blogPost);
-  }
+  componentDidLoad() {}
 
   render() {
     const publishDate = new Date(this.blogPost.published);
