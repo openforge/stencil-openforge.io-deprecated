@@ -12,6 +12,7 @@ log.txt
 *.sublime-project
 *.sublime-workspace
 
+.firebase/
 .idea/
 .vscode/
 .sass-cache/

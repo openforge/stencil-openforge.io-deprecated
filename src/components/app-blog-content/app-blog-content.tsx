@@ -50,6 +50,10 @@ export class AppBlogContent {
     }
   }
 
+  componentDidUnload() {
+    window.removeEventListener('resize', this.handleIcons, false);
+  }
+
   render() {
     const publishDate = new Date(this.blogPost.published);
     const contactIconsTop = (
