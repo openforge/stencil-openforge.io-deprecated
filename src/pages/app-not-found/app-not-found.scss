@@ -1,0 +1,56 @@
+.not-found {
+  font-family: 'Muli', sans-serif;
+  width: auto;
+
+  @include media-breakpoint-down(sm) {
+    overflow-x: hidden;
+  }
+
+  .main {
+    background-color: white;
+    height: auto;
+    margin-top: 115px;
+  }
+
+  .rectangle {
+    border-radius: 39px;
+    box-shadow: 0 2px 17px 7px rgba(0, 0, 0, 0.2);
+    margin: 50px;
+    padding: 50px;
+    text-align: center;
+
+    .title {
+      color: #5d534e;
+      font-family: Muli;
+      font-size: 100px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      line-height: 120px;
+      text-align: center;
+    }
+
+    .text {
+      color: #292a2d;
+      font-family: Muli;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .button {
+      background-color: #0095aa;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      width: 161px;
+      text-align: center;
+      color: #ffffff;
+      font-family: Muli;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.25px;
+      margin: auto;
+    }
+  }
+}
