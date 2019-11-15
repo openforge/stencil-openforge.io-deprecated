@@ -9,8 +9,10 @@ branches:
   - master
 before_script:
 - npm install -g firebase-tools
+- npm install -g @lhci/cli@0.3.x # install LHCI
 script:
 - npm run build
 
 after_success:
 - npm run firebase:deploy
+- lhci autorun --upload.target=temporary-public-storage # run lighthouse CI
