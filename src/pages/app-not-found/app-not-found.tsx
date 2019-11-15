@@ -23,6 +23,8 @@ export class AppNotFound {
     return (
       <div class="not-found">
         <section class="main">
+          <app-img class="robot robot-body" src="/assets/svg/not-found-robot-body.svg" alt="robot body" />
+          <app-img class="robot robot-arms" src="/assets/svg/not-found-robot-arms.svg" alt="robot arms" />
           <div class="rectangle">
             <div class="title">404</div>
             <div class="text">

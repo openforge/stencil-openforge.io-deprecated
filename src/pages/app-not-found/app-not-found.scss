@@ -15,8 +15,8 @@
   .rectangle {
     border-radius: 39px;
     box-shadow: 0 2px 17px 7px rgba(0, 0, 0, 0.2);
-    margin: 50px;
-    padding: 50px;
+    margin: 360px 50px 50px 50px;
+    padding: 30px;
     text-align: center;
 
     .title {
@@ -51,6 +51,23 @@
       font-weight: 700;
       letter-spacing: 1.25px;
       margin: auto;
+    }
+  }
+
+  .robot {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+    &.robot-body {
+      z-index: -1;
+      top: 120px;
+      min-width: 172px;
+    }
+
+    &.robot-arms {
+      top: 315px;
+      min-width: 239px;
     }
   }
 }
