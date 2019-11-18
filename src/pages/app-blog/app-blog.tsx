@@ -121,7 +121,7 @@ export class AppBlog {
       this.blogPostsData = [];
       let index = (page - 1) * this.pageSize;
       const endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
-      for (index; index < endPoint; index++) {
+      for (index; index < endPoint; index += 1) {
         this.blogPostsData.push(this.allBlogPosts[index]);
       }
     }
@@ -347,10 +347,10 @@ export class AppBlog {
 
               <p class="contact-icons-label">Follow Us:</p>
               <div class="contact-icons">
-                <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
+                <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>
-                <a href="https://www.facebook.com/OpenForgeUS/" target="_blank" rel="noopener">
+                <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                 </a>
                 <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
