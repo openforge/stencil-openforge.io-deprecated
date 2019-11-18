@@ -28,6 +28,9 @@ export class AppHome {
   }
 
   componentDidLoad() {
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
+    }
     /* tslint:disable-next-line */
     window.addEventListener('scroll', () => {
       const innerPanel = document.getElementById('content-panel-inner');

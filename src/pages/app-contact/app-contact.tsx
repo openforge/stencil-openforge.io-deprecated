@@ -1,4 +1,4 @@
-import { Component, State, Listen, Prop, h } from '@stencil/core';
+import { Component, State, Listen, Prop, h, Build } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 @Component({
@@ -56,7 +56,10 @@ export class AppContact {
   }
 
   componentDidLoad() {
-    this.resetFormValues();
+    if (Build.isBrowser) {
+      this.resetFormValues();
+      window.scrollTo(0, 0);
+    }
   }
 
   validateField(e) {
