@@ -33,7 +33,7 @@ export class AppBlog {
   @State() searchIsLoading: boolean = false;
 
   pageSize = 3;
-  indexOfFeaturedPost = -1;  
+  indexOfFeaturedPost = -1;
   pageOfFeaturedPost = 0;
   private filters: BlogCategory[] = [
     {
@@ -90,9 +90,9 @@ export class AppBlog {
 
       // Find the index of the featuredPost.
       this.indexOfFeaturedPost = this.allBlogPosts.findIndex(post => {
-        return (post.title == this.featuredPost.title && post.published == this.featuredPost.published);
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
       });
-      // Find the page where the featuredPost is if found the featuredPost 
+      // Find the page where the featuredPost is if found the featuredPost
       if (this.indexOfFeaturedPost > -1) {
         this.pageOfFeaturedPost = Math.floor(this.indexOfFeaturedPost / this.pageSize) + 1;
       }
@@ -119,7 +119,7 @@ export class AppBlog {
 
         // Find the index of the featuredPost from the searhchPostsData
         const index = this.searchPostsData.findIndex(post => {
-          return (post.title == this.featuredPost.title && post.published == this.featuredPost.published);
+          return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
         });
         // If found it, remove it from the searchPostsData to avoid display again.
         if (index >= 0) this.searchPostsData.splice(index, 1);
@@ -140,7 +140,7 @@ export class AppBlog {
 
       // Find the index of the featuredPost from the blogPostsData
       const index = this.blogPostsData.findIndex(post => {
-        return (post.title == this.featuredPost.title && post.published == this.featuredPost.published);
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
       });
       // If found it, remove it from the blogPostsData to avoid display again.
       if (index >= 0) this.blogPostsData.splice(index, 1);
@@ -154,12 +154,16 @@ export class AppBlog {
       let endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
 
       // Adjust the index and the endPoint by the index of the featuredPost
-      if (page > this.pageOfFeaturedPost) index++;
-      if (page == this.pageOfFeaturedPost) endPoint++;
+      if (page > this.pageOfFeaturedPost) {
+        index += 1;
+      }
+      if (page === this.pageOfFeaturedPost) {
+        endPoint += 1;
+      }
 
-      for (index; index < endPoint; index++) {
+      for (index; index < endPoint; index += 1) {
         // Don't push to the blogPostsData if it is the featuredPost.
-        if (index != this.indexOfFeaturedPost) this.blogPostsData.push(this.allBlogPosts[index]);
+        if (index !== this.indexOfFeaturedPost) this.blogPostsData.push(this.allBlogPosts[index]);
       }
     }
     this.blogIsLoading = false;
@@ -382,10 +386,10 @@ export class AppBlog {
 
               <p class="contact-icons-label">Follow Us:</p>
               <div class="contact-icons">
-                <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
+                <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>
-                <a href="https://www.facebook.com/OpenForgeUS/" target="_blank" rel="noopener">
+                <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                 </a>
                 <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">

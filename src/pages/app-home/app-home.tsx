@@ -54,6 +54,7 @@ export class AppHome {
     });
 
     if (Build.isBrowser) {
+      /* tslint:disable-next-line */
       $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
