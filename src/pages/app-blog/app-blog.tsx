@@ -1,4 +1,4 @@
-import { Component, State, h } from '@stencil/core';
+import { Component, State, h, Build } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
@@ -33,6 +33,8 @@ export class AppBlog {
   @State() searchIsLoading: boolean = false;
 
   pageSize = 3;
+  indexOfFeaturedPost = -1;
+  pageOfFeaturedPost = 0;
   private filters: BlogCategory[] = [
     {
       name: 'All',
@@ -61,6 +63,9 @@ export class AppBlog {
   }
 
   componentDidLoad() {
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
+    }
     const input = document.getElementById('blog-search');
     input.addEventListener('search', () => this.handleSearch(input.innerText));
 
@@ -80,8 +85,19 @@ export class AppBlog {
       this.allBlogPosts = resp.data;
       this.blogMeta = resp.meta;
       this.blogNumberOfPages = Math.ceil(resp.meta.count / this.pageSize);
-      this.getBlogPosts(1);
+
       this.getFeaturedPost();
+
+      // Find the index of the featuredPost.
+      this.indexOfFeaturedPost = this.allBlogPosts.findIndex(post => {
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+      });
+      // Find the page where the featuredPost is if found the featuredPost
+      if (this.indexOfFeaturedPost > -1) {
+        this.pageOfFeaturedPost = Math.floor(this.indexOfFeaturedPost / this.pageSize) + 1;
+      }
+
+      this.getBlogPosts(1);
     }
     this.blogIsLoading = false;
   }
@@ -96,12 +112,19 @@ export class AppBlog {
 
   getSearchPosts(page) {
     this.searchIsLoading = true;
-    const pageSize = 3;
-    Fetch.fetchSearchPosts(this.searchQuery, page, pageSize).then(resp => {
+    Fetch.fetchSearchPosts(this.searchQuery, page, this.pageSize).then(resp => {
       if (resp.data) {
         this.searchPostsData = resp.data;
         this.searchMeta = resp.meta;
-        this.searchNumberOfPages = Math.ceil(resp.meta.count / pageSize);
+
+        // Find the index of the featuredPost from the searhchPostsData
+        const index = this.searchPostsData.findIndex(post => {
+          return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+        });
+        // If found it, remove it from the searchPostsData to avoid display again.
+        if (index >= 0) this.searchPostsData.splice(index, 1);
+
+        this.searchNumberOfPages = Math.ceil(this.searchPostsData.length / this.pageSize);
         this.searchCurrentPage = page;
       } else {
         this.searchIsError = true;
@@ -114,15 +137,33 @@ export class AppBlog {
     this.blogIsLoading = true;
     if (this.blogFilter) {
       this.blogPostsData = await Fetch.fetchFilteredPosts(this.blogFilter, 1, this.pageSize, true);
+
+      // Find the index of the featuredPost from the blogPostsData
+      const index = this.blogPostsData.findIndex(post => {
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+      });
+      // If found it, remove it from the blogPostsData to avoid display again.
+      if (index >= 0) this.blogPostsData.splice(index, 1);
+
       this.blogNumberOfPages = Math.ceil(this.blogPostsData.length / this.pageSize);
       this.blogCurrentPage = 1;
     } else {
       this.blogNumberOfPages = Math.ceil(this.allBlogPosts.length / this.pageSize);
       this.blogPostsData = [];
       let index = (page - 1) * this.pageSize;
-      const endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+      let endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+
+      // Adjust the index and the endPoint by the index of the featuredPost
+      if (page > this.pageOfFeaturedPost) {
+        index += 1;
+      }
+      if (page === this.pageOfFeaturedPost) {
+        endPoint += 1;
+      }
+
       for (index; index < endPoint; index += 1) {
-        this.blogPostsData.push(this.allBlogPosts[index]);
+        // Don't push to the blogPostsData if it is the featuredPost.
+        if (index !== this.indexOfFeaturedPost) this.blogPostsData.push(this.allBlogPosts[index]);
       }
     }
     this.blogIsLoading = false;
@@ -149,8 +190,6 @@ export class AppBlog {
     if (!this.searchQuery && this.blogFilter !== filterName) {
       this.blogFilter = filterName;
       this.getBlogPosts(1);
-      // if (this.blogFilter) this.getBlogPosts(1);
-      // else this.getAllBlogPosts();
     }
   }
 
