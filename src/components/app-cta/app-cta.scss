@@ -1,13 +1,17 @@
 .cta {
   height: 344px;
+  background: #008092;
 
   @include media-breakpoint-down(sm) {
     height: 780px;
   }
 
+  .container {
+    height: 100%;
+  }
+
   .row {
     height: 100%;
-    background: #008092;
   }
 
   .cta-image {
