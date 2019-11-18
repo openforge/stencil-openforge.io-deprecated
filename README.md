@@ -4,7 +4,7 @@
 <p align="center">
   <a href="http://www.openforge.io/">Official Website</a> |
   <a href="http://www.openforge.io/opportunities">Opportunities</a> |
-  <a href="https://www.facebook.com/OpenForgeUS/">Facebook</a>
+  <a href="https://www.facebook.com/openforgemobile/">Facebook</a>
 </p>
 
 <h3 align="center">
