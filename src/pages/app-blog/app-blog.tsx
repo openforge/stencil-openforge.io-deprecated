@@ -342,7 +342,7 @@ export class AppBlog {
                   <span class="blog-search-icon">
                     <span class="fa fa-search" />
                   </span>
-                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" aria-label="search" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
               </li>
             </ul>
@@ -369,7 +369,7 @@ export class AppBlog {
               >
                 <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
                 <div class="form-group">
-                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required={true} />
+                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" aria-label="email" required={true} />
                   <div class="hidden" aria-hidden="true">
                     <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
                   </div>
