@@ -4,6 +4,8 @@ export const translations = {
       hero: {
         title: 'Mobile Solutions',
         subTitle: 'For A Digital World',
+        text: 'As experts in user experience, design, and application development, we specialize in creating mobile first, user-centered solutions to bring your ideas to life on the small screen',
+        buttonText: 'What Makes Us Different?',
       },
       process: {
         title: 'Our Process',

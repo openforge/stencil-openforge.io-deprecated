@@ -16,6 +16,7 @@ export class AppHome {
   @Prop() history: RouterHistory;
 
   @State() featuredPost: BlogPost = null;
+  @State() featuredPost1: BlogPost = null;
   @State() featuredIsError: boolean = false;
   @State() featuredIsLoading: boolean = true;
   timer: any;
@@ -72,10 +73,11 @@ export class AppHome {
   async getFeaturedPost() {
     this.featuredIsLoading = true;
     this.featuredPost = await Fetch.fetchOneBlogPost();
+    this.featuredPost1 = await Fetch.fetchOneBlogPost(1);
     this.featuredIsLoading = false;
   }
 
-  renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
+  renderFeaturedPost(featuredPost: BlogPost, featuredPost1: BlogPost, isLoading: boolean, isError: boolean) {
     if (isError) {
       return <div>Error loading featured post</div>;
     }
@@ -86,32 +88,40 @@ export class AppHome {
         </div>
       );
     }
-    return <app-blog-featured blogPost={featuredPost} />;
+    return <app-blog-featured-home blogPost={featuredPost} blogPost1={featuredPost1} />;
   }
 
   render() {
-    const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
+    const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredPost1, this.featuredIsLoading, this.featuredIsError);
     return (
       <div class="home">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-12 flex-column">
+              <div class="col-3 flex-column text">
                 <h1>
                   <app-translate keyword="home.hero.title" />
                 </h1>
                 <h2>
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
+                <p>
+                  <app-translate keyword="home.hero.text" />
+                </p>
+                <stencil-route-link url="/services" class="align-self-center">
+                  <button class="btn button">
+                    <app-translate keyword="home.hero.buttonText" />
+                  </button>
+                </stencil-route-link>
+              </div>
+              <div class="col-9 flex-column">
                 <div class="svg-header-desktop" aria-label="header" />
                 <div class="svg-header-mobile" aria-label="header" />
               </div>
             </div>
           </div>
         </header>
-
-        <div class="featured-blog">{featuredPost}</div>
 
         <section id="work" class="work">
           <div class="main-content">
@@ -206,6 +216,8 @@ export class AppHome {
             </div>
           </div>
         </section>
+
+        <div class="featured-blog">{featuredPost}</div>
 
         <section id="process" class="process">
           <div class="text-center header">

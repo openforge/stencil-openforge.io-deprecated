@@ -11,6 +11,10 @@
     height: auto;
     margin-top: 115px;
 
+    .text {
+      z-index: 1;
+    }
+
     .svg-header-desktop {
       background: url('assets/svg/home-graphic-header.svg') center center no-repeat;
       height: 542px;
@@ -44,16 +48,13 @@
     }
 
     h1 {
-      color: $gray-dark;
-      font-size: 48px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      height: 60px;
-      line-height: 0.79;
-      letter-spacing: 2.4px;
-      text-align: center;
-      text-transform: uppercase;
+      color: $orange;
+      font-family: Muli;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 2.08px;
+      line-height: 31px;
+      text-align: left;
 
       @include media-breakpoint-down(sm) {
         height: auto;
@@ -62,25 +63,38 @@
     }
 
     h2 {
-      color: $orange-dark;
+      color: $gray-dark;
       font-family: Muli;
-      font-size: 24px;
+      font-size: 47px;
       font-weight: 600;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: 1.5px;
-      text-align: center;
-      text-transform: uppercase;
+      letter-spacing: 1.73px;
+      line-height: 62px;
+      text-align: left;
 
       @include media-breakpoint-down(sm) {
         height: 0;
         margin-bottom: 50px;
       }
     }
+
+    .button {
+      background-color: #0095aa;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      width: 262px;
+      text-align: center;
+      color: #ffffff;
+      font-family: Muli;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.25px;
+      margin: auto;
+    }
   }
 
   .featured-blog {
+    margin-top: 50px;
+
     h4 {
       color: $orange-dark;
     }
