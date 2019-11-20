@@ -5,7 +5,7 @@ const urlSearch = 'https://api.buttercms.com/v2/search/';
 const authToken = `auth_token=${BUTTER_API_KEY}`;
 
 export async function fetchOneBlogPost(postNum: number = 0) {
-  return await fetch(`${urlPosts}'?'${authToken}`)
+  return await fetch(`${urlPosts}?${authToken}`)
     .then(res => res.json())
     .then(resp => {
       if (resp.data.length > postNum) {
