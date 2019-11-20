@@ -131,12 +131,15 @@ export class AppHome {
               </div>
             </div>
             <div class="content">
-              <div class="content-panel vanlife">
+              <div class="content-panel mobilemeasures">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.mobileWebApplications.title')}</h2>
                     <p>{translate('home.work.mobileWebApplications.text')}</p>
+                    <stencil-route-link url="/services" class="align-self-center">
+                      <button class="btn button">{translate('home.work.buttonText')}</button>
+                    </stencil-route-link>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -144,15 +147,15 @@ export class AppHome {
                     <app-translate keyword="home.work.mobileWebApplications.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
-                    <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
-                    <img src="/assets/apps/vanlife/graphic-example-3.png" class="behind-right" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobilemeasures app screenshot" />
+                    <img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobilemeasures app screenshot" />
+                    <img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobilemeasures app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener" data-cy="vanlife-apple">
+                    <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="vanlife-apple">
                       <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener" data-cy="vanlife-google">
+                    <a href="https://play.google.com/store/apps/details?id=com.mobilemeasuresllc.mobilemeasures" target="_blank" rel="noopener" data-cy="vanlife-google">
                       <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
@@ -164,6 +167,9 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.mobileTechnology.title')}</h2>
                     <p>{translate('home.work.mobileTechnology.text')}</p>
+                    <stencil-route-link url="/services" class="align-self-center">
+                      <button class="btn button">{translate('home.work.buttonText')}</button>
+                    </stencil-route-link>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -191,6 +197,9 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.digitalExperience.title')}</h2>
                     <p>{translate('home.work.digitalExperience.text')}</p>
+                    <stencil-route-link url="/services" class="align-self-center">
+                      <button class="btn button">{translate('home.work.buttonText')}</button>
+                    </stencil-route-link>
                   </div>
                 </div>
                 <div class="content-panel-image">

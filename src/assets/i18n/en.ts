@@ -35,11 +35,12 @@ export const translations = {
       },
       work: {
         experts: 'Experts in',
+        buttonText: 'VIEW PROJECT',
         mobileWebApplications: {
           title: 'Mobile & Web Applications',
           text:
             'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP. As experts in mobile application development, we can interface with any existing API or standard to deliver a secure, integrated product no matter what your product needs.',
-          example: 'The Vanlife App',
+          example: 'Mobile Measures',
         },
         digitalExperience: {
           title: 'Digital Experience',
