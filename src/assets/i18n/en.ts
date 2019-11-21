@@ -4,7 +4,7 @@ export const translations = {
       hero: {
         title: 'Mobile Solutions',
         subTitle: 'For A Digital World',
-        text: 'As experts in user experience, design, and application development, we specialize in creating mobile first, user-centered solutions to bring your ideas to life on the small screen',
+        text: 'As experts in user experience, design, and application development, we specialize in creating mobile first, user-centered solutions to bring your ideas to life on the small screen.',
         buttonText: 'What Makes Us Different?',
       },
       process: {
@@ -40,19 +40,19 @@ export const translations = {
         mobileWebApplications: {
           title: 'Mobile & Web Applications',
           text:
-            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP. As experts in mobile application development, we can interface with any existing API or standard to deliver a secure, integrated product no matter what your product needs.',
+            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP.',
           example: 'Mobile Measures',
         },
         digitalExperience: {
-          title: 'Digital Experience',
+          title: 'Mobile Technology',
           text:
-            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We will go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back.',
+            'With our combined expertise in design and marketing, you can rely on us to develop comprehensive strategies and graphics that will define your brand and inspire trust in your target audience.',
           example: 'The Voyage by New Ocean',
         },
         mobileTechnology: {
-          title: 'Mobile Technology',
+          title: 'Design & User Experience',
           text:
-            'We utilize technologies to bring the richest features to your app such as VoIP, Bluetooth LE, and other IOT tech to bring a whole new level of connectivity to your application providing your users with a rich and interactive experience that will boost engagement and retention. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+            'By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back for more.',
           example: 'LoudCloud',
         },
       },
@@ -409,7 +409,7 @@ export const translations = {
       title: 'Got a vision?',
       subTitle: `We've got your back.`,
       text: 'Contact us today to get started!',
-      link: 'GET IN TOUCH',
+      link: `LET'S GET STARTED`,
     },
 
     header: {
