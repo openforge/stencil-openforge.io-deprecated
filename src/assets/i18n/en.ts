@@ -429,6 +429,8 @@ export const translations = {
         header: 'Work At OpenForge',
         developer: `I'M A DEVELOPER`,
         designer: `I'M A DESIGNER`,
+        text: 'Are you looking for a new challenge? Show us what you got!',
+        apply: 'APPLY NOW',
       },
       social: {
         followUs: 'Follow Us',
@@ -437,11 +439,12 @@ export const translations = {
         linkedin: 'openforge',
         instagram: '@openforgemobile',
         sla: 'Read our SLA',
+        presskit: 'Download Our Press Kit',
       },
       webinar: {
-        signup: 'Startup Junto',
-        webinarText: 'Startup Junto is a curated community for startup founders and entrepreneurs.',
-        register: 'JOIN US',
+        signup: 'The Forge',
+        webinarText: 'We are the proud organizers of the Philadelphia Ionic, Angular, and Startup Junto communities. Join us to learn more!',
+        register: 'JOIN THE FORGE',
       },
     },
 
