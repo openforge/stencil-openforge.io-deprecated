@@ -240,90 +240,125 @@ export class AppHome {
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="row">
+                  <div class="col-12 text-center">
+                    <h2>
+                      <app-translate keyword="home.process.discovery.title" />
+                    </h2>
+                  </div>
+                </div>
+                <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" alt="discovery" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>
-                        <app-translate keyword="home.process.discovery.title" />
-                      </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="0" />
                       <p>
                         <app-translate keyword="home.process.discovery.text" />
                       </p>
+                      <stencil-route-link url="/services" class="align-self-center">
+                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                      </stencil-route-link>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="row">
+                  <div class="col-12 text-center">
+                    <h2>
+                      <app-translate keyword="home.process.design.title" />
+                    </h2>
+                  </div>
+                </div>
+                <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" alt="design" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>
-                        <app-translate keyword="home.process.design.title" />
-                      </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="1" />
                       <p>
                         <app-translate keyword="home.process.design.text" />
                       </p>
+                      <stencil-route-link url="/services" class="align-self-center">
+                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                      </stencil-route-link>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="row">
+                  <div class="col-12 text-center">
+                    <h2>
+                      <app-translate keyword="home.process.development.title" />
+                    </h2>
+                  </div>
+                </div>
+                <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <app-img class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" alt="development" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>
-                        <app-translate keyword="home.process.development.title" />
-                      </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="2" />
                       <p>
                         <app-translate keyword="home.process.development.text" />
                       </p>
+                      <stencil-route-link url="/services" class="align-self-center">
+                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                      </stencil-route-link>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="row">
+                  <div class="col-12 text-center">
+                    <h2>
+                      <app-translate keyword="home.process.deployment.title" />
+                    </h2>
+                  </div>
+                </div>
+                <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
                     <app-img class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" alt="deployment" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>
-                        <app-translate keyword="home.process.deployment.title" />
-                      </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="3" />
                       <p>
                         <app-translate keyword="home.process.deployment.text" />
                       </p>
+                      <stencil-route-link url="/services" class="align-self-center">
+                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                      </stencil-route-link>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="row">
+                  <div class="col-12 text-center">
+                    <h2>
+                      <app-translate keyword="home.process.userfeedback.title" />
+                    </h2>
+                  </div>
+                </div>
+                <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
                     <app-img class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" alt="user feedback" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <h2>
-                        <app-translate keyword="home.process.userfeedback.title" />
-                      </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="4" />
                       <p>
                         <app-translate keyword="home.process.userfeedback.text" />
                       </p>
+                      <stencil-route-link url="/services" class="align-self-center">
+                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                      </stencil-route-link>
                     </div>
                   </div>
                 </div>

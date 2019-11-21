@@ -363,8 +363,19 @@
 
     .carousel-item {
       .row {
-        height: 500px;
+        h2 {
+          color: #292a2d;
+          font-family: Muli;
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+      .row-main {
+        height: 400px;
         margin: 0;
+        padding: 0 40px 0 40px;
+        margin-bottom: 25px;
+
         @include media-breakpoint-down(sm) {
           height: auto;
         }
@@ -373,7 +384,7 @@
 
     .carousel-image {
       img {
-        height: 448px;
+        height: 392px;
         @include media-breakpoint-down(sm) {
           height: 200px;
         }
@@ -401,6 +412,7 @@
 
     .carousel-text {
       max-width: 425px;
+      text-align: center;
 
       h2 {
         color: $orange-dark;
@@ -419,6 +431,19 @@
         @include media-breakpoint-down(sm) {
           text-align: center;
         }
+      }
+
+      .button {
+        background-color: #0095aa;
+        border-radius: 16px;
+        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+        text-align: center;
+        color: #ffffff;
+        font-family: Muli;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.25px;
+        margin: auto;
       }
     }
   }
