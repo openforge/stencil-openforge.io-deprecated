@@ -1,0 +1,68 @@
+.search-results {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  width: 100%;
+  height: 100%;
+
+  .header {
+    position: fixed;
+    height: 75px;
+    padding: 0 16px;
+    background-color: #ffffff;
+    margin: 0;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .results {
+    margin: 76px 0 0 0;
+  }
+
+  .bkg {
+    background-color: rgba(41, 42, 45, 0.7);
+    opacity: 0.95;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .blog-search-group {
+    display: flex;
+  }
+
+  .blog-search-icon {
+    font-size: 37px;
+    margin-left: 50px;
+
+    @include media-breakpoint-down(sm) {
+      margin-left: 0;
+    }
+  }
+
+  #blog-search {
+    color: #375659;
+    font-family: Muli;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: 1.45px;
+    line-height: 35px;
+    border: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 100%;
+  }
+
+  .blog-close-icon {
+    font-size: 37px;
+    margin-right: 50px;
+    margin-left: auto;
+
+    @include media-breakpoint-down(sm) {
+      margin-right: 0;
+    }
+  }
+}
