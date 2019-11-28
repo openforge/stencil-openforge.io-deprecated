@@ -1,4 +1,4 @@
-import { Component, h, State } from '@stencil/core';
+import { Component, h, State, EventEmitter } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import * as Fetch from '../../shared/fetch-handler';
@@ -17,7 +17,11 @@ export class AppSearchResults {
   @State() searchMeta: BlogMeta;
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
+
+  @Event() close: EventEmitter;
+
   pageSize = 3;
+  increment = 3;
 
   handleSearch(query) {
     this.searchQuery = query;
@@ -45,13 +49,23 @@ export class AppSearchResults {
 
         this.searchNumberOfPages = Math.ceil(this.searchPostsData.length / this.pageSize);
         this.searchCurrentPage = page;
-
-        console.log(this.searchPostsData);
       } else {
         this.searchIsError = true;
       }
     });
     this.searchIsLoading = false;
+  }
+
+  loadMore() {
+    this.pageSize += this.increment;
+    this.getSearchPosts(1);
+  }
+
+  handleClose(pageChanged) {
+    (document.querySelector('#blog-search') as HTMLInputElement).value = '';
+    this.handleSearch('');
+    this.pageSize = 3;
+    this.close.emit({ pageChanged });
   }
 
   render() {
@@ -63,17 +77,49 @@ export class AppSearchResults {
               <span class="blog-search-icon">
                 <span class="fa fa-search" />
               </span>
-              <input id="blog-search" type="search" class="blog-search-input" placeholder="Search" onKeyUp={e => this.handleSearch(e.target['value'])} />
-              <span class="blog-close-icon">
+              <input
+                id="blog-search"
+                type="search"
+                class="blog-search-input"
+                placeholder="Search"
+                onKeyUp={e => this.handleSearch(e.target['value'])}
+                onSearch={e => this.handleSearch(e.target['value'])}
+              />
+              <span class="blog-close-icon" onClick={() => this.handleClose(false)}>
                 <span class="far fa-times-circle" />
               </span>
             </div>
           </div>
         </div>
-        <div class="row results">
-          <div class="col-12">Results</div>
-        </div>
         <div class="bkg" />
+        <div class="divider" />
+        {this.searchPostsData.map(e => {
+          const url = `/blog/${e.slug}`;
+          return (
+            <div class="row result">
+              <div class="col-12">
+                <h1>
+                  <stencil-route-link onClick={() => this.handleClose(true)} url={url}>
+                    {e.title}
+                  </stencil-route-link>
+                </h1>
+                <p>{e.summary}</p>
+                <div class="categories">
+                  {e.categories.map(c => {
+                    return <div>{c.name}</div>;
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        {this.searchMeta && this.searchPostsData && this.searchMeta.count > this.searchPostsData.length ? (
+          <div class="load-more" onClick={() => this.loadMore()}>
+            Load More
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     );
   }

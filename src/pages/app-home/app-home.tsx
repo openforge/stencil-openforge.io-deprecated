@@ -93,7 +93,6 @@ export class AppHome {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     return (
       <div class="home">
-        <app-search-results />
         {/* header - hero */}
         <header class="hero">
           <div class="container">

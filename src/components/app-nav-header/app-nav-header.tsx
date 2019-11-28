@@ -21,99 +21,127 @@ export class AppNavHeader {
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       });
     });
+
+    this.toogleSearch('hidden');
+  }
+
+  toogleSearch(value: string, pageChanged = false) {
+    if (value === 'hidden') {
+      document.querySelector('open-forge-app').style.position = 'initial';
+      if (!pageChanged) {
+        const scrollY = document.querySelector('open-forge-app').style.top;
+        document.querySelector('open-forge-app').style.position = '';
+        document.querySelector('open-forge-app').style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      }
+    } else {
+      const scrollY = window.scrollY;
+      document.querySelector('open-forge-app').style.position = 'fixed';
+      document.querySelector('open-forge-app').style.top = `-${scrollY}px`;
+      window.scrollTo(0, 0);
+    }
+    document.querySelector('app-search-results').style.visibility = value;
   }
 
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
-        <div class="container">
-          <div class="navbar-brand">
-            <stencil-route-link tabindex="0" url="/" exact={true} anchorClass="nav-link" activeClass="active">
-              <h1>
-                <app-img class="img-fluid" src="/assets/logo-openforge.png" alt={translate('nav.header.img.alt')} />
-              </h1>
-            </stencil-route-link>
-          </div>
-          <button
-            class="navbar-toggler"
-            data-cy="burgerMenu"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon" />
-          </button>
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
+          <div class="container">
+            <div class="navbar-brand">
+              <stencil-route-link tabindex="0" url="/" exact={true} anchorClass="nav-link" activeClass="active">
+                <h1>
+                  <app-img class="img-fluid" src="/assets/logo-openforge.png" alt={translate('nav.header.img.alt')} />
+                </h1>
+              </stencil-route-link>
+            </div>
+            <button
+              class="navbar-toggler"
+              data-cy="burgerMenu"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon" />
+            </button>
 
-          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-md-auto">
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link url="/" exact={true} anchorClass="nav-link" activeClass="active">
-                  {translate('nav.links.home')}
-                </stencil-route-link>
-              </li>
-              <li class="nav-item dropdown split" data-target="#navbarSupportedContent">
-                <stencil-route-link anchorClass="nav-link main" url="/services" role="button" activeClass="active">
-                  Services
-                </stencil-route-link>
-                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="sr-only">Toggle Dropdown</span>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Development
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-md-auto">
+                <li class="nav-item" data-target="#navbarSupportedContent">
+                  <stencil-route-link url="/" exact={true} anchorClass="nav-link" activeClass="active">
+                    {translate('nav.links.home')}
                   </stencil-route-link>
-                  <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Design
+                </li>
+                <li class="nav-item dropdown split" data-target="#navbarSupportedContent">
+                  <stencil-route-link anchorClass="nav-link main" url="/services" role="button" activeClass="active">
+                    Services
                   </stencil-route-link>
-                  <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Consulting
+                  <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <stencil-route-link url="/services/app-developer" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Development
+                    </stencil-route-link>
+                    <stencil-route-link url="/services/app-designer" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Design
+                    </stencil-route-link>
+                    <stencil-route-link url="/services/startup-consulting" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Consulting
+                    </stencil-route-link>
+                    <stencil-route-link url="/services/training" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Training
+                    </stencil-route-link>
+                  </div>
+                </li>
+                <li class="nav-item dropdown" data-target="#navbarSupportedContent">
+                  <a href="" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {translate('nav.links.about')}
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Meet the team
+                    </stencil-route-link>
+                    <stencil-route-link url="/juntoscope" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Juntoscope Case Study
+                    </stencil-route-link>
+                    <stencil-route-link url="/toolbox" anchorClass="nav-link dropdown-item" activeClass="active">
+                      Toolbox
+                    </stencil-route-link>
+                    <stencil-route-link url="/resources/pwa-white-paper" anchorClass="nav-link dropdown-item" activeClass="active">
+                      PWA White Paper
+                    </stencil-route-link>
+                  </div>
+                </li>
+                <li class="nav-item" data-target="#navbarSupportedContent">
+                  <stencil-route-link url="/contact" anchorClass="nav-link" activeClass="active">
+                    {translate('nav.links.contact')}
                   </stencil-route-link>
-                  <stencil-route-link url="/services/training" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Training
+                </li>
+                <li class="nav-item" data-target="#navbarSupportedContent">
+                  <stencil-route-link url="/blog" exact={true} anchorClass="nav-link" activeClass="active">
+                    {translate('nav.links.blog')}
                   </stencil-route-link>
-                </div>
-              </li>
-              <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {translate('nav.links.about')}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                  <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Meet the team
-                  </stencil-route-link>
-                  <stencil-route-link url="/juntoscope" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Juntoscope Case Study
-                  </stencil-route-link>
-                  <stencil-route-link url="/toolbox" anchorClass="nav-link dropdown-item" activeClass="active">
-                    Toolbox
-                  </stencil-route-link>
-                  <stencil-route-link url="/resources/pwa-white-paper" anchorClass="nav-link dropdown-item" activeClass="active">
-                    PWA White Paper
-                  </stencil-route-link>
-                </div>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link url="/contact" anchorClass="nav-link" activeClass="active">
-                  {translate('nav.links.contact')}
-                </stencil-route-link>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <stencil-route-link url="/blog" exact={true} anchorClass="nav-link" activeClass="active">
-                  {translate('nav.links.blog')}
-                </stencil-route-link>
-              </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
-                <a class="nav-link" id="github" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
-                  <div class="fab fa-github" />
-                </a>
-              </li>
-            </ul>
+                </li>
+                <li class="nav-item" data-target="#navbarSupportedContent">
+                  <a class="nav-link" id="github" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
+                    <div class="fab fa-github" />
+                  </a>
+                </li>
+                <li class="nav-item" data-target="#navbarSupportedContent" onClick={() => this.toogleSearch('visible')}>
+                  <a class="nav-link">
+                    <div class="fa fa-search" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+        <app-search-results onClose={ev => this.toogleSearch('hidden', ev.detail.pageChanged)} />
+      </div>
     );
   }
 }
