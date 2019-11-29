@@ -106,9 +106,8 @@ export const translations = {
     contact: {
       hero: {
         title: "Let's Work Together",
-        request:
-          'We are Philadelphia web and mobile application experts, and we are here to help.  Contact us today to start working with our team.  Let us apply industry best practices to enhance your business!',
-        requestNow: 'Request Free Quote',
+        request: 'You’ve got questions, we’ve got answers. Contact us today to start working with our team and see how our process can enhance your business.',
+        requestNow: 'GET IN TOUCH',
       },
       form: {
         title: 'Get in Touch',
