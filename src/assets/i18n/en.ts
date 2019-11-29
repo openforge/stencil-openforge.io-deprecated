@@ -456,5 +456,9 @@ export const translations = {
         github: 'Openforge Github account',
       },
     },
+
+    common: {
+      back: 'Back',
+    },
   },
 };
