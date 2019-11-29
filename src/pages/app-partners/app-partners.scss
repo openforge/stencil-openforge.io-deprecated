@@ -136,7 +136,7 @@
     height: 344px;
 
     @include media-breakpoint-down(sm) {
-      height: 780px;
+      height: 500px;
     }
 
     .row {
@@ -151,11 +151,7 @@
       background-repeat: no-repeat;
 
       @include media-breakpoint-down(sm) {
-        background-image: url('/assets/svg/about-graphic-honesty.svg');
-        background-size: 480px 450px;
-        background-position: top center;
-        height: 450px;
-        margin-top: 0;
+        height: 300px;
       }
     }
 
