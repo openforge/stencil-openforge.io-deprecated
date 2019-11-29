@@ -362,6 +362,22 @@ export const translations = {
       },
     },
 
+    partners: {
+      hero: {
+        trusted: 'Trusted Partners',
+        additional: 'Additional Partners',
+        title: 'Meet Our Partners',
+        text:
+          'Our value is greater than just our experience, as we have spent years fostering meaningful partnerships with the top technology providers world wide. These partnerships give us an edge in providing enterprise level support and expertise on an ongoing basis.',
+        button: 'Become a partner',
+      },
+      cta: {
+        title: 'Interested in partnering with us?',
+        subTitle: `Contact us today to get started!        `,
+        link: 'GET IN TOUCH',
+      },
+    },
+
     resources: {
       hero: {
         title: 'What is a PWA and is it right for you?',
