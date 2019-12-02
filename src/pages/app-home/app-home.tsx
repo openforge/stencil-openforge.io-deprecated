@@ -108,28 +108,27 @@ export class AppHome {
 
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredPost1, this.featuredIsLoading, this.featuredIsError);
-    const subTxt = this.renderSubTxt();
     return (
       <div class="home">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-4 col-md-6 col-sm-12 flex-column text">
+              <div class="col-lg-4 col-md-5 col-sm-12 flex-column text">
                 <h1>
                   <app-translate keyword="home.hero.title" />
                 </h1>
                 <h2>
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
-                {subTxt}
+                {this.renderSubTxt()}
               </div>
-              <div class="col-lg-8 col-md-6 col-sm-12 flex-column">
+              <div class="col-lg-8 col-md-7 col-sm-12 flex-column">
                 <div class="svg-header-desktop" aria-label="header" />
                 <div class="svg-header-mobile" aria-label="header" />
               </div>
             </div>
-            <div class="row align-items-center mobile">{subTxt}</div>
+            <div class="row align-items-center mobile">{this.renderSubTxt()}</div>
           </div>
         </header>
 
@@ -147,8 +146,8 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.mobileWebApplications.title')}</h2>
                     <p>{translate('home.work.mobileWebApplications.text')}</p>
-                    <stencil-route-link url="/services" class="align-self-center">
-                      <button class="btn button">{translate('home.work.buttonText')}</button>
+                    <stencil-route-link url="/services" class="align-self-center d-none d-md-block">
+                      <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
                     </stencil-route-link>
                   </div>
                 </div>
@@ -169,6 +168,9 @@ export class AppHome {
                       <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
+                  <stencil-route-link url="/services" class="align-self-center d-sm-block d-md-none">
+                    <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
+                  </stencil-route-link>
                 </div>
               </div>
               <div class="content-panel loudcloud">
@@ -177,8 +179,8 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.mobileTechnology.title')}</h2>
                     <p>{translate('home.work.mobileTechnology.text')}</p>
-                    <stencil-route-link url="/services" class="align-self-center">
-                      <button class="btn button">{translate('home.work.buttonText')}</button>
+                    <stencil-route-link url="/services" class="align-self-center d-none d-md-block">
+                      <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
                     </stencil-route-link>
                   </div>
                 </div>
@@ -199,6 +201,9 @@ export class AppHome {
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
+                  <stencil-route-link url="/services" class="align-self-center d-sm-block d-md-none">
+                    <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
+                  </stencil-route-link>
                 </div>
               </div>
               <div class="content-panel voyage">
@@ -207,8 +212,8 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.digitalExperience.title')}</h2>
                     <p>{translate('home.work.digitalExperience.text')}</p>
-                    <stencil-route-link url="/services" class="align-self-center">
-                      <button class="btn button">{translate('home.work.buttonText')}</button>
+                    <stencil-route-link url="/services" class="align-self-center d-none d-md-block">
+                      <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
                     </stencil-route-link>
                   </div>
                 </div>
@@ -229,6 +234,9 @@ export class AppHome {
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
+                  <stencil-route-link url="/services" class="align-self-center d-sm-block d-md-none">
+                    <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
+                  </stencil-route-link>
                 </div>
               </div>
               <div class="content-panel last-panel" />
