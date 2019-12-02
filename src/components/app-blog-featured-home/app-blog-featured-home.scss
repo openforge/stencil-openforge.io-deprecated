@@ -1,11 +1,16 @@
 .blog-featured {
   .post {
     align-items: center !important;
+    margin: 20px 0;
   }
 
   .container {
     min-width: 90%;
     margin-bottom: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
   }
 
   .featured-title {
@@ -23,7 +28,11 @@
       font-weight: 600;
       letter-spacing: 2.1px;
       line-height: 50px;
-      text-align: left;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 25px;
+        line-height: 40px;
+      }
     }
   }
 
@@ -58,7 +67,6 @@
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 19px;
-    text-align: left;
 
     .profile-image {
       height: 54px;

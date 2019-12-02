@@ -413,7 +413,7 @@
     background-color: white;
     height: 583px;
     @include media-breakpoint-down(sm) {
-      height: 775px;
+      height: auto;
     }
 
     .header > h2 {

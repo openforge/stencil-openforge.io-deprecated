@@ -37,31 +37,6 @@ export class AppFooter {
               <a href="/opportunities/develop" class="btn-primary button-link">
                 {translate('footer.work.apply')}
               </a>
-              {/* <ul class="footer--social-links">
-                <li>
-                  <a href="https://twitter.com/openforgemobile" id="twitter" target="_blank" rel="noopener">
-                    <i class="fab fa-twitter-square" aria-hidden="true" /> {translate('footer.social.twitter')}
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.facebook.com/openforgemobile/" id="facebook" target="_blank" rel="noopener">
-                    <i class="fab fa-facebook-square" aria-hidden="true" /> {translate('footer.social.facebook')}
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/company/openforge/" id="linkedin" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin" aria-hidden="true" /> {translate('footer.social.linkedin')}
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/openforgemobile/" id="instagram" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram" aria-hidden="true" /> {translate('footer.social.instagram')}
-                  </a>
-                </li>
-                <li>
-                  <stencil-route-link url="/service-level-agreement">{translate('footer.social.sla')}</stencil-route-link>
-                </li>
-              </ul> */}
             </div>
             <div class="footer--column col-12 col-sm-4">
               <h2>{translate('footer.webinar.signup')}</h2>
@@ -73,10 +48,10 @@ export class AppFooter {
           </div>
 
           <div class="row">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
               <p class="copyright">&copy; OpenForge 2019 v 1.3.0</p>
             </div>
-            <div class="col-6 social">
+            <div class="col-lg-6 col-md-6 col-sm-12 order-first order-md-2 social">
               <p class="follow">
                 Follow us:
                 <a href="https://twitter.com/openforgemobile" id="twitter" target="_blank" rel="noopener">

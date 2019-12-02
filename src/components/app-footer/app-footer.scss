@@ -40,6 +40,10 @@
       @include media-breakpoint-down(md) {
         margin-top: 2rem;
       }
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
     }
 
     &.follow {
@@ -58,6 +62,10 @@
       }
       @include media-breakpoint-down(md) {
         margin-top: 2rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
       }
     }
   }

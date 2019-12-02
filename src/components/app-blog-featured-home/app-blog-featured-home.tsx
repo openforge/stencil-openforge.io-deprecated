@@ -30,7 +30,7 @@ export class AppBlogFeaturedHome {
             </div>
           </div>
           <div class="row post">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-8">
               <div class="featured-post-title">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                   <h2 id="featured-blog-title">{this.blogPost.title}</h2>
@@ -49,7 +49,7 @@ export class AppBlogFeaturedHome {
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-4">
               <div class="featured-image">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                   <img src={this.blogPost.featured_image} alt={this.blogPost.title} />
@@ -60,7 +60,7 @@ export class AppBlogFeaturedHome {
 
           {this.blogPost1 ? (
             <div class="row post">
-              <div class="col-md-6">
+              <div class="col-lg-6 col-md-8">
                 <div class="featured-post-title">
                   <stencil-route-link url={`/blog/${this.blogPost1.slug}`}>
                     <h2 id="featured-blog-title">{this.blogPost1.title}</h2>
@@ -79,7 +79,7 @@ export class AppBlogFeaturedHome {
                   </div>
                 </div>
               </div>
-              <div class="col-md-6">
+              <div class="col-lg-6 col-md-4">
                 <div class="featured-image">
                   <stencil-route-link url={`/blog/${this.blogPost1.slug}`}>
                     <img src={this.blogPost1.featured_image} alt={this.blogPost1.title} />
