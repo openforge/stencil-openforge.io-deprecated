@@ -1,0 +1,223 @@
+// section - services
+
+.services {
+  font-family: 'Muli', sans-serif;
+  overflow-x: hidden;
+
+  @include media-breakpoint-down(sm) {
+    overflow-x: hidden;
+  }
+
+  .hero {
+    background-color: white;
+    height: auto;
+    margin-top: 115px;
+
+    @include media-breakpoint-down(sm) {
+      margin-top: 83px;
+    }
+
+    .desktop {
+      display: initial;
+
+      @include media-breakpoint-up(md) {
+        display: initial;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+
+      .services-graphic-background {
+        background: url('/assets/svg/services-graphic-background.svg') center top no-repeat;
+        width: 100%;
+        position: absolute;
+        padding-top: 58.35%;
+        top: 50px;
+      }
+
+      .svg-header-desktop {
+        background: url('/assets/svg/services-graphic-header.svg') center center no-repeat;
+        width: 100%;
+        padding-top: 56.22%;
+      }
+
+      h1 {
+        position: absolute;
+        width: 100%;
+        top: 100px;
+        color: $gray-dark;
+        font-size: 48px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        height: 60px;
+        line-height: 0.79;
+        letter-spacing: 2.4px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      p {
+        padding: 0 100px;
+        text-align: center;
+      }
+    }
+
+    .mobile {
+      display: none;
+
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: initial;
+      }
+
+      h1 {
+        font-size: 32px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 1.2px;
+        text-align: center;
+        margin: 15px;
+      }
+
+      p {
+        padding: 0 15px;
+        text-align: center;
+      }
+    }
+
+    object {
+      width: 100%;
+    }
+  }
+
+  .our-services {
+    .container {
+      max-width: 960px;
+    }
+
+    .card {
+      background: rgba($gray-100, 0.5);
+      border-radius: 22px;
+      margin: 72px;
+      flex-direction: initial;
+
+      @include media-breakpoint-down(sm) {
+        margin: 20px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 2rem;
+      }
+
+      .img-col {
+        text-align: center;
+
+        @include media-breakpoint-down(sm) {
+          padding: 41px 41px 0 41px;
+        }
+
+        app-img {
+          height: 100%;
+          lazy-img {
+            height: 100%;
+            display: inline-block;
+          }
+        }
+        img {
+          max-height: 360px;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+
+      .text-col {
+        @include media-breakpoint-down(sm) {
+          order: 2;
+        }
+      }
+
+      .desktop {
+        display: initial;
+
+        @include media-breakpoint-up(lg) {
+          display: initial;
+        }
+
+        @include media-breakpoint-down(lg) {
+          display: none;
+        }
+      }
+
+      .mobile {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+
+        @include media-breakpoint-down(lg) {
+          display: initial;
+        }
+      }
+
+      h3 {
+        @include media-breakpoint-up(sm) {
+          font-size: 36px;
+          font-weight: bold;
+        }
+      }
+
+      a {
+        font-family: Muli;
+        font-size: 22px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: #0095aa;
+        text-decoration: underline;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      div {
+        padding: 32px 16px 32px 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include media-breakpoint-down(md) {
+          padding: 32px 16px 32px 16px;
+        }
+        @include media-breakpoint-down(sm) {
+          padding: 32px 16px 32px 16px;
+        }
+        @include media-breakpoint-down(xs) {
+          padding: 32px 16px 32px 16px;
+          text-align: center;
+        }
+      }
+
+      .card-img-top {
+        margin: 2rem 0;
+        padding: 1rem;
+      }
+
+      .card-body {
+        text-align: left;
+
+        @include media-breakpoint-down(sm) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}

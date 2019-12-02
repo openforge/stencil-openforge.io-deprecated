@@ -401,6 +401,36 @@ export const translations = {
       thanks: 'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
+    process: {
+      hero: {
+        title: 'Our Process',
+        text:
+          'At OpenForge, we have our own way of doing things. For one, everything we do follows the process we have developed and honed over years of successful projects. This process informs every decision we make and allows us to create world-class products that delight and satisfy our users. Read on to find out more.',
+      },
+      cards: {
+        'digital-experience-design': {
+          title: 'Design is Our Foundation',
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        'webapp-development': {
+          title: "Don't Develop in a Vaccuum",
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        'technology-consulting': {
+          title: 'Ready, Set, Launch!',
+          text:
+            'Web apps can provide your users with a robust tool that is easily accessible across all devices through a web browser. Web apps are especially useful for employee portals and company tools. Web apps can be used on Android, iOS, and desktop devices. Our app developer team has extensive experience in the producing powerful and reliable web apps.',
+        },
+        'process-training-support': {
+          title: "We're with You Every Step of the Way",
+          text:
+            'Our business and startup consulting services cover a range of business processes from technology integration to team outputs and efficiency. We’ll help you understand what you’re paying for and how to use it. From your operations to your bottom line, we can work with you to ensure that each of your team members produce results that match your projections.',
+        },
+      },
+    },
+
     cta: {
       title: 'Got a vision?',
       subTitle: `We've got your back.`,
