@@ -130,6 +130,10 @@
         }
       }
     }
+
+    .additional-rows {
+      text-align: center;
+    }
   }
 
   .cta {
@@ -142,6 +146,7 @@
     .row {
       height: 100%;
       background: #008092;
+      margin: 0;
     }
 
     .cta-image {
@@ -206,76 +211,44 @@
       text-align: center;
     }
   }
-}
 
-.carousel-inner {
-  width: 158% !important;
-  left: -29%;
-}
-
-.carousel,
-.carousel-inner,
-.carousel-inner > .carousel-item {
-  overflow: hidden;
-}
-.carousel-inner > .carousel-item.active,
-.carousel-inner > .carousel-item-next,
-.carousel-inner > .carousel-item-prev {
-  display: flex;
-  flex-wrap: nowrap;
-}
-.carousel-inner:before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 82%;
-  left: 0;
-  content: '';
-  display: block;
-  background-color: #fff;
-  z-index: 2;
-}
-.carousel-inner:after {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 82%;
-  content: '';
-  display: block;
-  background-color: #fff;
-  z-index: 2;
-}
-
-.carousel-item {
-  .carousel-item-col:first-child {
-    mask-image: gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
-    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  .carousel-inner {
+    padding: 25px 0;
+    background: #e6eaea;
   }
 
-  .carousel-item-col:last-child {
-    mask-image: gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
-    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  .carousel-item-col {
+    padding: 0 25%;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 25px;
+    }
+
+    img {
+      max-width: 500px;
+    }
+
+    p {
+      margin-top: 3rem;
+    }
   }
-}
-
-.carousel-item-col {
-  padding: 70px !important;
-}
-
-.carousel-control {
-  color: #e95500;
-  font-size: 60px;
-
-  &.right {
-    font-size: 60px;
-    padding-right: 100px;
-    text-align: right;
+  .carousel-indicators {
+    bottom: 0;
+    position: initial;
+    @include media-breakpoint-down(sm) {
+      position: initial;
+    }
   }
 
-  &.left {
-    font-size: 60px;
-    padding-left: 100px;
-    text-align: left;
+  .carousel-indicators li {
+    border-radius: 100%;
+    background-color: #d8d8d8;
+    height: 10px;
+    margin: 0.5rem;
+    width: 10px;
+  }
+
+  .carousel-indicators .active {
+    background-color: $orange;
   }
 }

@@ -16,37 +16,8 @@ export class AppPartners {
     /* tslint:disable-next-line */
     $(document).ready(function() {
       // Force bootstrap to initialize carousel
-      const processCarousel = $('#myCarousel');
-      setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
-      console.log(processCarousel);
-
-      ($('#myCarousel') as any).carousel({
-        interval: false,
-      });
-
-      $('.carousel .carousel-item').each(function() {
-        let next = $(this).next();
-        if (!next.length) {
-          next = $(this).siblings(':first');
-        }
-        next
-          .children(':first-child')
-          .clone()
-          .appendTo($(this));
-        if (next.next().length > 0) {
-          next
-            .next()
-            .children(':first-child')
-            .clone()
-            .appendTo($(this));
-        } else {
-          $(this)
-            .siblings(':first')
-            .children(':first-child')
-            .clone()
-            .appendTo($(this));
-        }
-      });
+      const partnersCarousel = $('#partnersCarousel');
+      setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);
     });
   }
 
@@ -119,43 +90,43 @@ export class AppPartners {
 
             <div class="row">
               <div class="col-12 text-center">
-                <div class="carousel slide" id="myCarousel">
+                <div class="carousel slide" id="partnersCarousel">
                   <div class="carousel-inner">
-                    <div class="row no-gutters carousel-item active">
-                      <div class="col-4 carousel-item-col">
+                    <div class="row carousel-item active">
+                      <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
                       </div>
                     </div>
-                    <div class="row no-gutters carousel-item">
-                      <div class="col-4 carousel-item-col">
-                        <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
+                    <div class="row carousel-item">
+                      <div class="col-12 carousel-item-col">
+                        <img src="/assets/partners-1776-logo.png" class="img-fluid" />
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
                       </div>
                     </div>
-                    <div class="row no-gutters carousel-item">
-                      <div class="col-4 carousel-item-col">
-                        <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
-                      </div>
-                    </div>
-                    <div class="row no-gutters carousel-item">
-                      <div class="col-4 carousel-item-col">
-                        <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
+                    <div class="row carousel-item">
+                      <div class="col-12 carousel-item-col">
+                        <img src="/assets/partners-strapi-logo.png" class="img-fluid" />
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
                       </div>
                     </div>
                   </div>
+                  <ol class="carousel-indicators">
+                    <li data-target="#partnersCarousel" data-slide-to="0" class="active" />
+                    <li data-target="#partnersCarousel" data-slide-to="1" />
+                    <li data-target="#partnersCarousel" data-slide-to="2" />
+                  </ol>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <a class="col-4 left carousel-control" href="#myCarousel" data-slide="prev">
-                <i class="fa fa-chevron-left" />
-              </a>
-              <p class="col-4">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.
-              </p>
-              <a class="col-4 right carousel-control" href="#myCarousel" data-slide="next">
-                <i class="fa fa-chevron-right" />
-              </a>
             </div>
           </div>
         </section>
@@ -169,7 +140,7 @@ export class AppPartners {
                 </h2>
               </div>
             </div>
-            <div class="row">
+            <div class="row additional-rows">
               <div class="col-md-3 col-sm-12">
                 <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
               </div>
@@ -187,7 +158,7 @@ export class AppPartners {
               </div>
             </div>
 
-            <div class="row">
+            <div class="row additional-rows">
               <div class="col-md-6 col-sm-12">
                 <app-img class="img-fluid pad" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
               </div>
@@ -197,7 +168,7 @@ export class AppPartners {
               </div>
             </div>
 
-            <div class="row">
+            <div class="row additional-rows">
               <div class="col-md-6 col-sm-12 align-right">
                 <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
               </div>
