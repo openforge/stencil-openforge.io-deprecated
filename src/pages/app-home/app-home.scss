@@ -13,6 +13,27 @@
 
     .text {
       z-index: 1;
+
+      .sub-txt {
+        visibility: visible;
+        height: auto;
+        @include media-breakpoint-down(sm) {
+          visibility: hidden;
+          height: 0;
+        }
+      }
+    }
+
+    .mobile {
+      visibility: visible;
+      height: auto;
+      padding: 10px;
+      margin-bottom: 40px;
+
+      @include media-breakpoint-up(sm) {
+        visibility: hidden;
+        height: 0;
+      }
     }
 
     .svg-header-desktop {
@@ -31,7 +52,7 @@
 
     .svg-header-mobile {
       background: url('assets/svg/home-graphic-header-mobile.svg') center center no-repeat;
-      height: 768px;
+      height: 542px;
       display: none;
 
       @include media-breakpoint-up(md) {
@@ -58,7 +79,8 @@
 
       @include media-breakpoint-down(sm) {
         height: auto;
-        line-height: 1;
+        line-height: 3;
+        text-align: center;
       }
     }
 
@@ -73,22 +95,30 @@
 
       @include media-breakpoint-down(sm) {
         height: 0;
-        margin-bottom: 50px;
+        margin-bottom: 120px;
+        text-align: center;
+        font-size: 43px;
+        line-height: 50px;
       }
     }
 
-    .button {
-      background-color: #0095aa;
-      border-radius: 16px;
-      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
-      width: 262px;
-      text-align: center;
-      color: #ffffff;
-      font-family: Muli;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.25px;
-      margin: auto;
+    .sub-txt {
+      text-align: left;
+
+      button.button-hero {
+        background-color: #0095aa;
+        border: 0.75px solid #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+        text-transform: none;
+        &:hover {
+          background: #0095aa linear-gradient(180deg, #00b4cc, #0095aa) repeat-x;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+      }
     }
   }
 

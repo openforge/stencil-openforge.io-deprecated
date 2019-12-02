@@ -91,35 +91,45 @@ export class AppHome {
     return <app-blog-featured-home blogPost={featuredPost} blogPost1={featuredPost1} />;
   }
 
+  renderSubTxt() {
+    return (
+      <div class="sub-txt">
+        <p>
+          <app-translate keyword="home.hero.text" />
+        </p>
+        <stencil-route-link url="/services" class="align-self-center">
+          <button class="btn btn-primary button-hero">
+            <app-translate keyword="home.hero.buttonText" />
+          </button>
+        </stencil-route-link>
+      </div>
+    );
+  }
+
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredPost1, this.featuredIsLoading, this.featuredIsError);
+    const subTxt = this.renderSubTxt();
     return (
       <div class="home">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-3 flex-column text">
+              <div class="col-lg-4 col-md-6 col-sm-12 flex-column text">
                 <h1>
                   <app-translate keyword="home.hero.title" />
                 </h1>
                 <h2>
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
-                <p>
-                  <app-translate keyword="home.hero.text" />
-                </p>
-                <stencil-route-link url="/services" class="align-self-center">
-                  <button class="btn button">
-                    <app-translate keyword="home.hero.buttonText" />
-                  </button>
-                </stencil-route-link>
+                {subTxt}
               </div>
-              <div class="col-9 flex-column">
+              <div class="col-lg-8 col-md-6 col-sm-12 flex-column">
                 <div class="svg-header-desktop" aria-label="header" />
                 <div class="svg-header-mobile" aria-label="header" />
               </div>
             </div>
+            <div class="row align-items-center mobile">{subTxt}</div>
           </div>
         </header>
 
