@@ -210,15 +210,8 @@ export class AppContact {
             ) : null}
 
             {this.formSubmitted ? (
-              <div class="container">
-                <content-graphic img-url="/assets/rocket.png">
-                  <h3 slot="header">
-                    <app-translate keyword="contact.form.thanx" />
-                  </h3>
-                  <p slot="body">
-                    <app-translate keyword="contact.form.thanxText" />
-                  </p>
-                </content-graphic>
+              <div class="container submit-container">
+                <app-img src="/assets/svg/contact-animation.svg" alt="Map page graphic" />
               </div>
             ) : null}
           </div>
