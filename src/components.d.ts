@@ -245,6 +245,9 @@ export namespace Components {
     'match'?: MatchResults;
   }
 
+  interface AppOurWork {}
+  interface AppOurWorkAttributes extends StencilHTMLAttributes {}
+
   interface AppResources {
     'errorIconStyles': any;
     'history': RouterHistory;
@@ -308,6 +311,7 @@ declare global {
     'AppDetailedService': Components.AppDetailedService;
     'AppHome': Components.AppHome;
     'AppOpportunities': Components.AppOpportunities;
+    'AppOurWork': Components.AppOurWork;
     'AppResources': Components.AppResources;
     'AppServiceLevelAgreement': Components.AppServiceLevelAgreement;
     'AppServices': Components.AppServices;
@@ -343,6 +347,7 @@ declare global {
     'app-detailed-service': Components.AppDetailedServiceAttributes;
     'app-home': Components.AppHomeAttributes;
     'app-opportunities': Components.AppOpportunitiesAttributes;
+    'app-our-work': Components.AppOurWorkAttributes;
     'app-resources': Components.AppResourcesAttributes;
     'app-service-level-agreement': Components.AppServiceLevelAgreementAttributes;
     'app-services': Components.AppServicesAttributes;
@@ -503,6 +508,12 @@ declare global {
     new (): HTMLAppOpportunitiesElement;
   };
 
+  interface HTMLAppOurWorkElement extends Components.AppOurWork, HTMLStencilElement {}
+  var HTMLAppOurWorkElement: {
+    prototype: HTMLAppOurWorkElement;
+    new (): HTMLAppOurWorkElement;
+  };
+
   interface HTMLAppResourcesElement extends Components.AppResources, HTMLStencilElement {}
   var HTMLAppResourcesElement: {
     prototype: HTMLAppResourcesElement;
@@ -571,6 +582,7 @@ declare global {
     'app-detailed-service': HTMLAppDetailedServiceElement
     'app-home': HTMLAppHomeElement
     'app-opportunities': HTMLAppOpportunitiesElement
+    'app-our-work': HTMLAppOurWorkElement
     'app-resources': HTMLAppResourcesElement
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement
     'app-services': HTMLAppServicesElement
@@ -606,6 +618,7 @@ declare global {
     'app-detailed-service': HTMLAppDetailedServiceElement;
     'app-home': HTMLAppHomeElement;
     'app-opportunities': HTMLAppOpportunitiesElement;
+    'app-our-work': HTMLAppOurWorkElement;
     'app-resources': HTMLAppResourcesElement;
     'app-service-level-agreement': HTMLAppServiceLevelAgreementElement;
     'app-services': HTMLAppServicesElement;
