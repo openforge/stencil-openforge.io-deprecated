@@ -6,6 +6,24 @@
     overflow-x: hidden;
   }
 
+  .ada-link {
+    color: #e88212 !important;
+    text-decoration: underline !important;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    position: absolute;
+    left: -300px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+
+    &:focus {
+      left: 0;
+      color: $orange !important;
+      -webkit-transition: top 0.1s ease-in;
+      transition: top 0.1s ease-in;
+    }
+  }
+
   .hero {
     background-color: white;
     height: auto;

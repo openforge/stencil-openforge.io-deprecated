@@ -96,6 +96,17 @@ export class AppHome {
         {/* header - hero */}
         <header class="hero">
           <div class="container">
+            <div class="ada-links">
+              <a tabIndex={0} class="ada-link" href="#work">
+                Technology Consulting
+              </a>
+              <a tabIndex={0} class="ada-link" href="#work">
+                Web App Development
+              </a>
+              <a tabIndex={0} class="ada-link" href="#work">
+                Mobile Design and User Experience
+              </a>
+            </div>
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <h1>
