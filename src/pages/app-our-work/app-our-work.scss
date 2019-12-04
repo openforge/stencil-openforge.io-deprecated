@@ -1,12 +1,18 @@
 .ourwork {
+  margin-top:50px;
   font-family: 'Muli', sans-serif;
   overflow-x: hidden;
 
   .hero {
-    //background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
+    background: url('/assets/svg/our-work-header.svg') right top no-repeat;
     text-align: center;
     @include media-breakpoint-down(md) {
       background-position: right bottom;
+    }
+
+    .ourworkb{
+      padding-left:300px;
+      padding-right:300px;
     }
 
     .row {
