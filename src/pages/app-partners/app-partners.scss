@@ -13,7 +13,7 @@
       padding-bottom: 2rem;
 
       img {
-        max-height: 360px;
+        min-height: 300px;
       }
     }
 
@@ -150,8 +150,8 @@
     }
 
     .cta-image {
-      background-image: url('/assets/svg/about-graphic-honesty.svg');
-      background-size: 480px 262px;
+      background-image: url('/assets/svg/partners-graphic-cta.svg');
+      background-size: 338px 195px;
       background-position: center center;
       background-repeat: no-repeat;
 

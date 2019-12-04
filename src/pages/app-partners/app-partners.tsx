@@ -60,7 +60,7 @@ export class AppPartners {
             </div>
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-5 order-md-2 d-flex justify-content-center">
-                <img src="/assets/svg/about-graphic-honesty.svg" alt="Header Graphic" />
+                <img src="/assets/svg/partners-graphic-header.svg" alt="Header Graphic" />
               </div>
               <div class="col-sm-12 col-md-7 order-md-1">
                 <h1>
