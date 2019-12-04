@@ -32,4 +32,196 @@
       }
     }
   }
+
+ .work {
+    height: auto;
+    width: 100%;
+
+    .main-content {
+      background-color: $gray-100;
+      display: flex;
+
+      @include media-breakpoint-down(md) {
+        display: block;
+      }
+    }
+
+    .sidebar {
+      min-height: 100%;
+      width: 50%;
+      @include media-breakpoint-down(md) {
+        display: none;
+      }
+
+      #sticky-sidebar-inner {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+      }
+    }
+
+    .content {
+      width: 50%;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      .content-panel {
+        align-items: flex-end;
+        display: flex;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          display: table;
+        }
+      }
+
+      .last-panel {
+        height: 0;
+      }
+    }
+
+    .content-panel-inner {
+      align-items: center;
+      background-color: $gray-100;
+      display: flex;
+      height: 75vh;
+      justify-content: center;
+
+      .panel-inner-text {
+        margin: 0 4rem;
+        text-align: left;
+
+        @include media-breakpoint-down(md) {
+          margin: 0 1rem;
+          text-align: center;
+        }
+
+        h2 {
+          color: $gray-dark;
+          font-size: 42px;
+          font-weight: bold;
+          line-height: 1.19;
+
+          @include media-breakpoint-down(sm) {
+            font-size: 30px;
+          }
+        }
+
+        h3 {
+          color: $orange-dark;
+          font-size: 24px;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: $gray-dark;
+          font-size: 16px;
+          line-height: 1.78;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        height: 95vh;
+      }
+    }
+
+    .content-panel-image {
+      position: relative;
+
+      h2 {
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 16px;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .behind-left {
+        position: relative;
+        height: 350px;
+        left: -60px;
+        top: 30px;
+
+        @include media-breakpoint-down(md) {
+          left: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+
+      .behind-right {
+        position: relative;
+        height: 350px;
+        right: -60px;
+        top: 30px;
+
+        @include media-breakpoint-down(md) {
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+
+      .front-center {
+        position: absolute;
+        height: 400px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+
+        @include media-breakpoint-down(xs) {
+          position: relative;
+        }
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+
+        a {
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .description {
+      display: none;
+
+      @include media-breakpoint-down(md) {
+        display: flex;
+      }
+    }
+
+    .loudcloud {
+      background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+      background-size: cover;
+    }
+
+    .voyage {
+      background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+      background-size: cover;
+    }
+
+    .vanlife {
+      background-image: url('/assets/home-graphic-vanlife-pattern.jpg');
+      background-size: cover;
+    }
+  }
 }
