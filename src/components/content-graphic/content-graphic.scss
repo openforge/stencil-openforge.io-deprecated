@@ -25,6 +25,15 @@
       line-height: 2.5rem;
       margin-bottom: 15px;
     }
+
+    &.original {
+      color: #121212;
+      font-size: 28px;
+    }
+
+    &.thin {
+      font-weight: 400;
+    }
   }
 
   p {
@@ -40,5 +49,14 @@
     @include media-breakpoint-down(sm) {
       padding: 0 15px;
     }
+  }
+
+  .align-left {
+    text-align: left !important;
+  }
+
+  .footer-btn {
+    display: flex;
+    justify-content: flex-start;
   }
 }

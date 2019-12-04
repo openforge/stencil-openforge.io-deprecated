@@ -29,12 +29,7 @@ export class ContentGraphic {
             'text-md-right': !this.reverse,
           }}
         >
-          <app-img
-            class="img-fluid d-none d-md-inline"
-            src={this.imgUrl}
-            preLoad={this.preLoadImg}
-            alt=""
-          />
+          <app-img class="img-fluid d-none d-md-inline" src={this.imgUrl} preLoad={this.preLoadImg} alt="" />
         </div>
         <div
           class={{
@@ -45,13 +40,9 @@ export class ContentGraphic {
           }}
         >
           <slot name="header" />
-          <app-img
-            class="img-fluid d-xs-inline d-md-none"
-            src={this.imgUrl}
-            alt=""
-            preLoad={this.preLoadImg}
-          />
+          <app-img class="img-fluid d-xs-inline d-md-none" src={this.imgUrl} alt="" preLoad={this.preLoadImg} />
           <slot name="body" />
+          <slot name="footer" />
         </div>
       </div>
     );
