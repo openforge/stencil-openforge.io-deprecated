@@ -80,7 +80,7 @@ export class AppContact {
         break;
     }
 
-    this.formValues.nameValid && this.formValues.emailValid && this.formValues.phoneValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
+    this.formValues.nameValid && this.formValues.emailValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
@@ -122,36 +122,6 @@ export class AppContact {
   render() {
     return (
       <div class="contact">
-        <header>
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-sm-12 col-md-7 col-lg-6 text-col">
-                <h2>
-                  <app-translate keyword="contact.hero.title" />
-                </h2>
-                <p>
-                  <app-translate keyword="contact.hero.request" />
-                </p>
-                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary btn-contact">
-                  <app-translate keyword="contact.hero.requestNow" />
-                </button>
-              </div>
-              <div class="col-sm-12 col-md-5 col-lg-6 image-col">
-                <app-img src="/assets/contact/contact-graphic.png" alt="Contact page graphic" />
-              </div>
-            </div>
-          </div>
-        </header>
-        <section class="container location-content">
-          <div class="bell-content">
-            <app-img src="/assets/contact/bell-graphic.png" alt="Bell page graphic" />
-            <p>We are proud to be located in the heart of Philadelphia as a member of 1776’s Rittenhouse location.</p>
-          </div>
-          <div class="map-content">
-            <app-img src="/assets/contact/map-graphic.png" alt="Map page graphic" />
-          </div>
-        </section>
-        <hr class="d-none d-lg-block" />
         <section id="second-content" class="contact-form">
           <div class="container">
             {!this.formSubmitted ? (
@@ -181,7 +151,7 @@ export class AppContact {
                         {this.emailError}
                       </p>
 
-                      <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder="" required={true} />
+                      <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder="" required={false} />
                       <p class="error">
                         <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
@@ -211,7 +181,7 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container submit-container">
-                <app-img src="/assets/svg/contact-animation.svg" alt="Map page graphic" />
+                <app-img src="/assets/svg/contact-anim.svg" alt="Map page graphic" />
               </div>
             ) : null}
           </div>
