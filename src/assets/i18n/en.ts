@@ -127,7 +127,7 @@ export const translations = {
         email: 'E-mail',
         phone: 'Phone',
         github: 'GitHub URL',
-        whereDidYouHear: 'How did you hear about OpenForge?',
+        whatAreYouWorkingOn: 'What are you working on?',
         appDevelopment: 'App Development',
         webDevelopment: 'Web Development',
         uiDesign: 'UI Design',

@@ -159,7 +159,7 @@ export class AppContact {
                         {this.phoneError}
                       </p>
 
-                      <app-input name="message" label={translate('contact.form.whereDidYouHear')} type="text" placeholder="" required={true} />
+                      <app-input name="message" label={translate('contact.form.whatAreYouWorkingOn')} type="text" placeholder="" required={true} />
                       <p class="error">
                         <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
