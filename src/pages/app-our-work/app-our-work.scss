@@ -1,5 +1,5 @@
 .ourwork {
-  margin-top:50px;
+  margin-top: 50px;
   font-family: 'Muli', sans-serif;
   overflow-x: hidden;
 
@@ -10,13 +10,13 @@
       background-position: right bottom;
     }
 
-    .ourworkb{
-      padding-left:300px;
-      padding-right:300px;
+    .ourworkb {
+      padding-left: 300px;
+      padding-right: 300px;
     }
 
     .row {
-      height: 700px;
+      height: 570px;
 
       @include media-breakpoint-down(md) {
         height: 780px;
@@ -28,7 +28,7 @@
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 5rem;
       }
 
       .text-container {
@@ -39,12 +39,97 @@
     }
   }
 
- .work {
+  .work {
     height: auto;
     width: 100%;
 
+    .jumbotron {
+      background-color: white;
+      padding: 10px;
+      box-shadow: 2px 4px 5px 3px rgba(194, 179, 194, 1);
+      border-radius: 2%;
+      .full {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .cont {
+      background-color: white;
+      padding: 10px;
+      box-shadow: 2px 4px 5px 3px rgba(194, 179, 194, 1);
+      border-radius: 2%;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    .img {
+      width: 100%;
+      height: auto;
+
+      .behind-left {
+        position: relative;
+        height: 350px;
+        left: 60px;
+        top: 30px;
+
+        @include media-breakpoint-down(md) {
+          left: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+
+      .behind-right {
+        position: relative;
+        height: 350px;
+        right: 60px;
+        top: 30px;
+
+        @include media-breakpoint-down(md) {
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include media-breakpoint-down(xs) {
+          display: none;
+        }
+      }
+
+      .front-center {
+        position: relative;
+        height: 400px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+
+        @include media-breakpoint-down(xs) {
+          position: relative;
+        }
+      }
+
+      .store-buttons {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+        z-index: 10;
+
+        a {
+          margin: 0 10px;
+        }
+      }
+    }
+
     .main-content {
-      background-color: $gray-100;
       display: flex;
 
       @include media-breakpoint-down(md) {
@@ -214,20 +299,32 @@
         display: flex;
       }
     }
+  }
+  .mobile-measures {
+    background-image: url('/assets/mobile-measures-background.png');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
 
-    .loudcloud {
-      background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
-      background-size: cover;
-    }
+  .loud-cloud {
+    background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
 
-    .voyage {
-      background-image: url('/assets/home-graphic-voyage-pattern.jpg');
-      background-size: cover;
-    }
+  .voyage {
+    background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
 
-    .vanlife {
-      background-image: url('/assets/home-graphic-vanlife-pattern.jpg');
-      background-size: cover;
-    }
+  .digithermo {
+    background-image: url('/assets/digithermo-background.png');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
   }
 }
