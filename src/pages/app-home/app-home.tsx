@@ -91,21 +91,6 @@ export class AppHome {
     return <app-blog-featured-home blogPost={featuredPost} blogPost1={featuredPost1} />;
   }
 
-  renderSubTxt() {
-    return (
-      <div class="sub-txt">
-        <p>
-          <app-translate keyword="home.hero.text" />
-        </p>
-        <stencil-route-link url="/services" class="align-self-center">
-          <button class="btn btn-primary button-hero">
-            <app-translate keyword="home.hero.buttonText" />
-          </button>
-        </stencil-route-link>
-      </div>
-    );
-  }
-
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredPost1, this.featuredIsLoading, this.featuredIsError);
     return (
@@ -121,14 +106,24 @@ export class AppHome {
                 <h2>
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
-                {this.renderSubTxt()}
+                <div class="sub-txt">
+                  <p>
+                    <app-translate keyword="home.hero.text" />
+                  </p>
+                </div>
               </div>
               <div class="col-lg-8 col-md-7 col-sm-12 flex-column">
                 <div class="svg-header-desktop" aria-label="header" />
                 <div class="svg-header-mobile" aria-label="header" />
               </div>
             </div>
-            <div class="row align-items-center mobile">{this.renderSubTxt()}</div>
+            <div class="row align-items-center mobile">
+              <div class="sub-txt">
+                <p>
+                  <app-translate keyword="home.hero.text" />
+                </p>
+              </div>
+            </div>
           </div>
         </header>
 
@@ -146,9 +141,6 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.mobileWebApplications.title')}</h2>
                     <p>{translate('home.work.mobileWebApplications.text')}</p>
-                    <stencil-route-link url="/services" class="align-self-center d-none d-md-block">
-                      <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
-                    </stencil-route-link>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -168,9 +160,6 @@ export class AppHome {
                       <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
-                  <stencil-route-link url="/services" class="align-self-center d-sm-block d-md-none">
-                    <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
-                  </stencil-route-link>
                 </div>
               </div>
               <div class="content-panel loudcloud">
@@ -179,9 +168,6 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.mobileTechnology.title')}</h2>
                     <p>{translate('home.work.mobileTechnology.text')}</p>
-                    <stencil-route-link url="/services" class="align-self-center d-none d-md-block">
-                      <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
-                    </stencil-route-link>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -201,9 +187,6 @@ export class AppHome {
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
-                  <stencil-route-link url="/services" class="align-self-center d-sm-block d-md-none">
-                    <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
-                  </stencil-route-link>
                 </div>
               </div>
               <div class="content-panel voyage">
@@ -212,9 +195,6 @@ export class AppHome {
                     <h3>{translate('home.work.experts')}</h3>
                     <h2>{translate('home.work.digitalExperience.title')}</h2>
                     <p>{translate('home.work.digitalExperience.text')}</p>
-                    <stencil-route-link url="/services" class="align-self-center d-none d-md-block">
-                      <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
-                    </stencil-route-link>
                   </div>
                 </div>
                 <div class="content-panel-image">
@@ -234,9 +214,6 @@ export class AppHome {
                       <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                     </a>
                   </div>
-                  <stencil-route-link url="/services" class="align-self-center d-sm-block d-md-none">
-                    <button class="btn btn-primary button-work">{translate('home.work.buttonText')}</button>
-                  </stencil-route-link>
                 </div>
               </div>
               <div class="content-panel last-panel" />
@@ -270,11 +247,12 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="0" />
+                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="0" />
                       <p>
                         <app-translate keyword="home.process.discovery.text" />
                       </p>
-                      <stencil-route-link url="/services" class="align-self-center">
+                      <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="0" />
+                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
                       </stencil-route-link>
                     </div>
@@ -295,11 +273,12 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="1" />
+                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="1" />
                       <p>
                         <app-translate keyword="home.process.design.text" />
                       </p>
-                      <stencil-route-link url="/services" class="align-self-center">
+                      <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="1" />
+                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
                       </stencil-route-link>
                     </div>
@@ -320,11 +299,12 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="2" />
+                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="2" />
                       <p>
                         <app-translate keyword="home.process.development.text" />
                       </p>
-                      <stencil-route-link url="/services" class="align-self-center">
+                      <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="2" />
+                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
                       </stencil-route-link>
                     </div>
@@ -345,11 +325,12 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="3" />
+                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="3" />
                       <p>
                         <app-translate keyword="home.process.deployment.text" />
                       </p>
-                      <stencil-route-link url="/services" class="align-self-center">
+                      <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="3" />
+                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
                       </stencil-route-link>
                     </div>
@@ -370,11 +351,12 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="4" />
+                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="4" />
                       <p>
                         <app-translate keyword="home.process.userfeedback.text" />
                       </p>
-                      <stencil-route-link url="/services" class="align-self-center">
+                      <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="4" />
+                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
                       </stencil-route-link>
                     </div>
@@ -390,6 +372,11 @@ export class AppHome {
               <span class="carousel-control-next-icon" aria-hidden="true" />
               <span class="sr-only">Next</span>
             </a>
+          </div>
+          <div class="learn-more-container d-lg-none">
+            <stencil-route-link url="/services" class="align-self-center">
+              <button class="btn button carousel-btn">{translate('home.process.buttonText')}</button>
+            </stencil-route-link>
           </div>
         </section>
 

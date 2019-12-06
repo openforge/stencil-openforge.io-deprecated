@@ -274,13 +274,14 @@
           line-height: 1.78;
 
           @include media-breakpoint-down(sm) {
-            text-align: left;
+            text-align: center;
+            margin-bottom: 0;
           }
         }
       }
 
       @include media-breakpoint-down(sm) {
-        height: 95vh;
+        height: 60vh;
       }
     }
 
@@ -423,6 +424,7 @@
 
       @include media-breakpoint-down(sm) {
         margin: 5rem 0;
+        font-size: 36px;
       }
     }
 
@@ -444,6 +446,7 @@
       bottom: 0;
       @include media-breakpoint-down(sm) {
         position: initial;
+        margin-bottom: 0;
       }
     }
 
@@ -548,6 +551,28 @@
         letter-spacing: 1.25px;
         margin: auto;
       }
+    }
+  }
+
+  .learn-more-container {
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1rem;
+    }
+
+    .carousel-btn {
+      background-color: #0095aa;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      text-align: center;
+      color: #ffffff;
+      font-family: Muli;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.25px;
+      margin: auto;
     }
   }
 }

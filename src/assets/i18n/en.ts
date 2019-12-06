@@ -43,13 +43,13 @@ export const translations = {
             'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP.',
           example: 'Mobile Measures',
         },
-        digitalExperience: {
+        mobileTechnology: {
           title: 'Mobile Technology',
           text:
             'With our combined expertise in design and marketing, you can rely on us to develop comprehensive strategies and graphics that will define your brand and inspire trust in your target audience.',
           example: 'The Voyage by New Ocean',
         },
-        mobileTechnology: {
+        digitalExperience: {
           title: 'Design & User Experience',
           text:
             'By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back for more.',
