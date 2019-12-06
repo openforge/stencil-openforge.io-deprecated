@@ -1,10 +1,9 @@
 .blog-container {
   font-family: 'Muli';
-  margin-top: 70px;
-  max-width: 95%;
+  margin-top: 76px;
 
   h4 {
-    color: $orange;
+    color: #c65300;
   }
 
   .posts-row {
@@ -14,6 +13,12 @@
     @include media-breakpoint-down(lg) {
       margin: 0;
     }
+
+    .post-row-container {
+      @include media-breakpoint-down(md) {
+        order: 2;
+      }
+    }
   }
 
   .form-row {
@@ -22,6 +27,11 @@
     .form-row-content {
       @include media-breakpoint-down(sm) {
         text-align: center;
+      }
+
+      @include media-breakpoint-down(md) {
+        display: flex;
+        justify-content: space-between;
       }
 
       .hidden {
@@ -35,7 +45,7 @@
 
       label {
         font-size: 18px;
-        color: #e88212;
+        color: #121212;
         font-weight: bold;
       }
 
@@ -52,14 +62,14 @@
       }
 
       button {
-        background: #e88212;
+        background: #c65300;
         padding: 12px 15px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.27);
         color: #fff;
 
         @include media-breakpoint-down(sm) {
           background: #fff;
-          border: solid 1px #e88212;
+          border: solid 1px #c65300;
           padding: 4px 15px;
         }
 
@@ -167,7 +177,7 @@
       }
 
       .blog-filter-item .active {
-        color: #e88212;
+        color: #c65300;
         text-decoration: underline;
         cursor: auto;
 
@@ -212,12 +222,12 @@
 
     .blog-page-item {
       padding: 7px;
+      color: #b9c3c4;
     }
 
     .blog-page-item .active {
       padding: 7px;
-      color: $orange;
-      text-decoration: underline $orange;
+      color: #c65300;
     }
   }
 }
