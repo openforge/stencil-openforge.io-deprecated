@@ -20,8 +20,8 @@ export class AppOurWork {
         </header>
         <section class="work text-center container">
           <div class="cont">
-            <div class="row full">
-              <div class="col-6 mobile-measures">
+            <div class="row">
+              <div class="col-md-6 mobile-measures">
                 <div class="img">
                   <div>
                     <div class="row">
@@ -35,15 +35,15 @@ export class AppOurWork {
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <h2> Mobile Measures</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui erat, suscipit eu eros a, tincidunt pulvinar justo. Ut eget magna eros. Integer vitae consectetur risus. </p>
               </div>
             </div>
           </div>
           <div class="cont">
-            <div class="row full">
-              <div class="col-6 loud-cloud">
+            <div class="row">
+              <div class="col-md-6 loud-cloud">
                 <div class="img">
                   <div>
                     <div class="row">
@@ -57,7 +57,7 @@ export class AppOurWork {
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <h2>Loud Cloud</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui erat, suscipit eu eros a, tincidunt pulvinar justo. Ut eget magna eros. Integer vitae consectetur risus. </p>
               </div>
@@ -65,7 +65,7 @@ export class AppOurWork {
           </div>
           <div class="cont">
             <div class="row full">
-              <div class="col-6 voyage">
+              <div class="col-md-6 voyage">
                 <div class="img">
                   <div>
                     <div class="row">
@@ -79,7 +79,7 @@ export class AppOurWork {
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <h2>The Voyage</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui erat, suscipit eu eros a, tincidunt pulvinar justo. Ut eget magna eros. Integer vitae consectetur risus. </p>
               </div>
@@ -87,7 +87,7 @@ export class AppOurWork {
           </div>
           <div class="cont">
             <div class="row full">
-              <div class="col-6 digithermo">
+              <div class="col-md-6 digithermo">
                 <div class="img">
                   <div>
                     <div class="row">
@@ -101,9 +101,28 @@ export class AppOurWork {
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 <h2>DigiThermo</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dui erat, suscipit eu eros a, tincidunt pulvinar justo. Ut eget magna eros. Integer vitae consectetur risus. </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services text-center">
+          <h1>Who We've Worked With</h1>
+          <div class="containerser">
+            <div class="row r1">
+              <div class="col-md-2">
+                <app-img class="img-fluid" src="/assets/services-logo-bb.png" alt="BB Logo" />
+              </div>
+              <div class="col-md-2">
+                <app-img class="img-fluid" src="/assets/services-logo-aeris.png" alt="Aeris Logo" />
+              </div>
+              <div class="col-md-2">
+                <app-img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Logo" />
+              </div>
+              <div class="col-md-2">
+                <app-img class="img-fluid" src="/assets/services-logo-kemin.png" alt="Kemin Logo" />
               </div>
             </div>
           </div>

@@ -7,19 +7,43 @@
     background: url('/assets/svg/our-work-header.svg') right top no-repeat;
     text-align: center;
     @include media-breakpoint-down(md) {
-      background-position: right bottom;
+      background-position: right center;
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-size:0 0;
+      .ourworkb {
+      padding-left: 5% !important;
+      padding-right: 5% !important;
+      }
+
+      h1 {
+        font-size: 10vw !important;
+      }
+
+      h2{
+        font-size:5vw !important;
+      }
+
     }
 
     .ourworkb {
-      padding-left: 300px;
-      padding-right: 300px;
+      padding-left: 25%;
+      padding-right: 25%;
     }
 
     .row {
       height: 570px;
 
       @include media-breakpoint-down(md) {
-        height: 780px;
+        height: 350px;
+        h1 {
+        font-size: 5vw;
+       }
+
+       h2{
+        font-size:3vw;
+        }
       }
 
       p {
@@ -28,7 +52,11 @@
       }
 
       h1 {
-        font-size: 5rem;
+        font-size: 4.2vw;
+      }
+
+      h2{
+        font-size:2.2vw;
       }
 
       .text-container {
@@ -42,7 +70,11 @@
   .work {
     height: auto;
     width: 100%;
-
+    @include media-breakpoint-down(md) {
+         .container{
+          width:100%
+         }
+        }
     .jumbotron {
       background-color: white;
       padding: 10px;
@@ -69,9 +101,9 @@
 
       .behind-left {
         position: relative;
-        height: 350px;
-        left: 60px;
-        top: 30px;
+        height: 250px;
+        left: 50px;
+        top: 20px;
 
         @include media-breakpoint-down(md) {
           left: 0;
@@ -86,9 +118,9 @@
 
       .behind-right {
         position: relative;
-        height: 350px;
-        right: 60px;
-        top: 30px;
+        height: 250px;
+        left: 50px;
+        top: 20px;
 
         @include media-breakpoint-down(md) {
           right: 0;
@@ -103,9 +135,10 @@
 
       .front-center {
         position: relative;
-        height: 400px;
+        height: 300px;
         left: 0;
         right: 0;
+        padding-top:5%;
         margin-left: auto;
         margin-right: auto;
         z-index: 1;
@@ -303,28 +336,66 @@
   .mobile-measures {
     background-image: url('/assets/mobile-measures-background.png');
     background-size: cover;
-    height: 100%;
-    width: 100%;
+    overflow:hidden;
+    @include media-breakpoint-down(xs) {
+        background-size: cover;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        background-repeat: no-repeat;
+      }
   }
 
   .loud-cloud {
     background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
     background-size: cover;
-    height: 100%;
-    width: 100%;
+    @include media-breakpoint-down(xs) {
+        background-size: cover;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        background-repeat: no-repeat;
+      }
   }
 
   .voyage {
     background-image: url('/assets/home-graphic-voyage-pattern.jpg');
     background-size: cover;
-    height: 100%;
-    width: 100%;
+    @include media-breakpoint-down(xs) {
+        background-size: cover;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        background-repeat: no-repeat;
+      }
   }
 
   .digithermo {
     background-image: url('/assets/digithermo-background.png');
     background-size: cover;
-    height: 100%;
-    width: 100%;
+    @include media-breakpoint-down(xs) {
+        background-size: cover;
+        margin-left: 3.5%;
+        margin-right: 3.5%;
+        background-repeat: no-repeat;
+      }
+  }
+
+  .services{
+    margin-top: 10%;
+    .containerser{
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+
+    .r1{
+      margin-left: 20%;
+      margin-right:20%
+    }
+
+    app-img {
+          height: 100%;
+          lazy-img {
+            height: 100%;
+            display: inline-block;
+          }
+        }
   }
 }
