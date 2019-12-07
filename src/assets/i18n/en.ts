@@ -56,7 +56,7 @@ export const translations = {
 
     about: {
       header: {
-        title: 'We Are Passionate About Technology and Design',
+        title: 'We Are Passionate About Technology & Design',
         text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
         action: 'LEARN MORE',
       },
@@ -72,28 +72,27 @@ export const translations = {
         value3: 'Transparency',
       },
       team: {
-        title: 'Get to Know Us',
-        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        title: 'Meet our Team',
         member: {
           title: {
             founder: 'Founder and Head of Technology',
             accountManager: 'Account Manager',
-            designer: 'Designer',
+            designer: 'Visual Designer',
             developer: 'Software Engineer',
             frontEndDeveloper: 'Front End Developer',
-            projectManager: 'Project Manager',
+            projectManagement: 'Project Management',
             qualityManager: 'Quality Manager',
             consultant: 'Consultant',
             officer: 'Chief Happiness Officer',
             softwareIntern: 'Software Intern',
             marketing: 'Marketing',
+            operations: 'Director of Operations',
           },
         },
       },
       landing: {
         container: {
-          title1: 'What',
-          title2: 'Does',
+          title1: 'About',
           skills: 'Skills',
         },
         cta: {

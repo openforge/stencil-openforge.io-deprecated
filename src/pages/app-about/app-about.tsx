@@ -6,7 +6,6 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-
   members = [
     {
       name: 'Jedi Weller',
@@ -220,7 +219,7 @@ export class AppAbout {
                 <p>
                   <app-translate keyword="about.header.text" />
                 </p>
-                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
+                <button onClick={this.scrollToForm.bind(this)} class="btn btn-secondary">
                   <app-translate keyword="about.header.action" />
                 </button>
               </div>
@@ -263,16 +262,16 @@ export class AppAbout {
             </div>
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="integrity" />
-                <app-translate class="value-text" key="about.values.value2" />
+                <div class="honesty" />
+                <app-translate class="value-text" keyword="about.values.value1" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="honesty" />
-                <app-translate class="value-text" key="about.values.value1" />
+                <div class="integrity" />
+                <app-translate class="value-text" keyword="about.values.value2" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
                 <div class="transparency" />
-                <app-translate class="value-text" key="about.values.value3" />
+                <app-translate class="value-text" keyword="about.values.value3" />
               </div>
             </div>
           </div>
@@ -285,9 +284,6 @@ export class AppAbout {
               <h2>
                 <app-translate keyword="about.team.title" />
               </h2>
-              <p>
-                <app-translate keyword="about.team.text" />
-              </p>
             </div>
 
             <app-members members={this.members} />
