@@ -214,7 +214,8 @@ export class AppAbout {
             <div class="row align-items-center">
               <div class="col-md-8 col-sm-10 text-container">
                 <h1>
-                  <app-translate keyword="about.header.title" />
+                  <app-translate class="title" keyword="about.header.title" />
+                  <app-translate class="title-small" keyword="about.header.titleSmall" />
                 </h1>
                 <p>
                   <app-translate keyword="about.header.text" />
@@ -240,7 +241,10 @@ export class AppAbout {
 
         {/* section - mission statement */}
         <section id="mission-statement" class="mission-statement">
-          <div class="mission-statement d-flex text-center">
+          <div class="mission-statement d-flex flex-column text-center">
+            <h1 class="text-white">
+              <app-translate keyword="about.mission.title" />
+            </h1>
             <p class="text-white align-self-center">
               <app-translate keyword="about.mission.statement" />
             </p>
