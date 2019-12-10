@@ -3,55 +3,47 @@ section.team-landing {
   font-family: 'Muli', sans-serif;
 
   .hero {
+    @include media-breakpoint-down(sm) {
+      background-position: left top;
+    }
     background-position: top center;
     background-size: cover;
-    height: 100vh;
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      width: 100%;
-      height: 100vh;
-    }
-
+    height: 534px;
+    margin: 75px 0 0;
     .container,
     .row {
       height: 100%;
     }
 
     h2 {
-      color: $orange-dark;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      text-align: right;
-
       @include media-breakpoint-down(lg) {
-        font-size: 3rem;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        line-height: 38px;
       }
 
       @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
+        font-size: 1.75rem;
         text-align: center;
       }
+      color: $white;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      text-align: left;
     }
 
     h4 {
-      color: $orange;
-      margin-bottom: 3rem;
-      text-align: right;
-
       @include media-breakpoint-down(sm) {
         text-align: center;
       }
+      color: $white;
+      font-weight: 600;
+      line-height: 34px;
+      text-align: left;
     }
 
     p {
-      color: $white;
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
-      text-align: right;
-
       @include media-breakpoint-down(lg) {
         font-size: 1rem;
       }
@@ -59,39 +51,26 @@ section.team-landing {
       @include media-breakpoint-down(sm) {
         text-align: center;
       }
-    }
-
-    @include media-breakpoint-down(sm) {
-      background-position: left top;
+      color: $white;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      text-align: left;
     }
   }
 
   .bio {
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: none;
+      padding: 2rem;
+    }
+    align-items: center;
+    column-gap: 4rem;
     display: grid;
     grid-template-columns: 0.5fr 1fr;
-    padding: 4rem;
+    padding: 5rem 8rem;
 
     .text {
-      margin-left: 35px;
-
-      h2,
-      h4 {
-        color: $orange;
-        text-align: left;
-      }
-
-      p {
-        text-align: left;
-        padding: 0;
-        margin-bottom: 1rem;
-
-        &.check-link {
-          font-size: 26px;
-          color: $orange;
-          margin-bottom: 0;
-        }
-      }
-
       @include media-breakpoint-down(sm) {
         margin-left: 0;
         text-align: center;
@@ -102,46 +81,61 @@ section.team-landing {
           text-align: center;
         }
       }
-    }
+      margin-left: 35px;
 
-    @include media-breakpoint-down(sm) {
-      grid-template-columns: none;
-      padding: 2rem;
+      h2 {
+        color: #333333;
+
+        font-size: 2.625rem;
+        font-weight: 600;
+        letter-spacing: 2.1px;
+        line-height: 47px;
+        text-align: left;
+      }
+      h4 {
+        color: #333333;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 34px;
+        text-align: left;
+      }
+      p {
+        color: #4a494a;
+        font-weight: 400;
+        line-height: 32px;
+        margin-bottom: 2rem;
+        padding: 0;
+        text-align: left;
+        &.check-link {
+          color: $orange;
+          font-size: 26px;
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
   .skill-chip {
-    background: orange;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 21px;
+    background: #e95500;
+    border-radius: 20px;
     color: $white;
     font-size: 12px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
-  .cta-about {
-    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
-    height: 114px;
-
-    .cta-container {
-      height: inherit;
-      line-height: 2.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin: 0 4rem;
-      @include media-breakpoint-down(sm) {
-        margin-left: 0;
-        margin-right: 2rem;
-      }
-    }
-
-    @include media-breakpoint-down(sm) {
-      height: 140px;
+  .members {
+    margin-bottom: 8rem;
+    h2 {
+      color: #333333;
+      font-size: 2.625rem;
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      line-height: 38px;
+      margin: 2rem 0 3rem;
     }
   }
 }

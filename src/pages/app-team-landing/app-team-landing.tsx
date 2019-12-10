@@ -327,10 +327,9 @@ export class AppTeamLanding {
               <header
                 class="hero"
                 style={{
-                  'background-image': `url(${backgroundPhoto})`,
+                  'background-image': `linear-gradient(90deg, #000000 25%, rgba(255, 255, 255, 0) 100%), url(${backgroundPhoto})`,
                 }}
               >
-                <div class="overlay" />,
                 <div class="container">
                   <div class="row align-items-center">
                     <div class="col-sm-12 col-md-8 col-lg-8">
@@ -349,9 +348,8 @@ export class AppTeamLanding {
                 />
                 <div class="text">
                   <h2>
-                    <app-translate keyword="about.landing.container.title1" />
-                    &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
-                    <app-translate keyword="about.landing.container.title2" />
+                    <app-translate keyword="about.landing.container.title" />
+                    &nbsp;{this.data[this.match.params.member].firstname}
                   </h2>
                   <p>{this.data[this.match.params.member].bodyText}</p>
                   <h4>
@@ -361,19 +359,16 @@ export class AppTeamLanding {
                 </div>
               </section>,
 
-              <aside class="cta-about text-white">
-                <div class="cta-container d-flex flex-row justify-content-center">
-                  <h3 class="align-self-center">
-                    <app-translate keyword="about.landing.cta.title" />
-                  </h3>
-
-                  <stencil-route-link url="/about" class="align-self-center">
-                    <button class="btn btn-primary">
-                      <app-translate keyword="about.landing.cta.button" />
-                    </button>
-                  </stencil-route-link>
+              <section id="members" class="members">
+                <div class="container text-center">
+                  <div class="header">
+                    <h2>
+                      <app-translate keyword="about.landing.cta.title" />
+                    </h2>
+                  </div>
                 </div>
-              </aside>,
+                <app-members-section />
+              </section>,
 
               <app-footer />,
             ]
