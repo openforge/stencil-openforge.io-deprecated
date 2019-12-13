@@ -391,11 +391,17 @@
     }
 
     app-img {
-          height: 100%;
+
+          height: 30%;
           lazy-img {
-            height: 100%;
+            height: 30%;
             display: inline-block;
           }
         }
+  }
+
+  .services {
+    padding-left: 30%;
+    padding-right: 30%;
   }
 }

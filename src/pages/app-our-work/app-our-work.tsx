@@ -108,25 +108,54 @@ export class AppOurWork {
             </div>
           </div>
         </section>
-        <section class="services text-center">
-          <h1>Who We've Worked With</h1>
-          <div class="containerser">
-            <div class="row r1">
-              <div class="col-md-2">
-                <app-img class="img-fluid" src="/assets/services-logo-bb.png" alt="BB Logo" />
+        <section class="services">
+          <div class="row header container text-center">
+            <div class="col-12">
+              <h2>Who We've Worked With</h2>
+            </div>
+          </div>
+          <div class="container text-center">
+
+            <div class="row pad">
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
               </div>
-              <div class="col-md-2">
-                <app-img class="img-fluid" src="/assets/services-logo-aeris.png" alt="Aeris Logo" />
+
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
               </div>
-              <div class="col-md-2">
-                <app-img class="img-fluid" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Logo" />
+
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
               </div>
-              <div class="col-md-2">
-                <app-img class="img-fluid" src="/assets/services-logo-kemin.png" alt="Kemin Logo" />
+
+              <div class="col-md-3 col-sm-12">
+                <app-img class="img-fluid no-pad" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
+              </div>
+            </div>
+
+            <div class="row pad">
+              <div class="col-md-6 col-sm-12">
+                <app-img class="img-fluid pad" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
+              </div>
+
+              <div class="col-md-6 col-sm-12">
+                <app-img class="img-fluid pad" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
+              </div>
+            </div>
+
+            <div class="row pad">
+              <div class="col-md-6 col-sm-12 align-right">
+                <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
+              </div>
+
+              <div class="col-md-6 col-sm-12 align-left">
+                <app-img class="img-fluid pad" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
               </div>
             </div>
           </div>
         </section>
+        <br />
         <app-cta />
         <app-footer />
       </div>
