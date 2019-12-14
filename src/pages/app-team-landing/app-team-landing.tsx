@@ -327,7 +327,7 @@ export class AppTeamLanding {
               <header
                 class="hero"
                 style={{
-                  'background-image': `linear-gradient(90deg, #000000 25%, rgba(255, 255, 255, 0) 100%), url(${backgroundPhoto})`,
+                  'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${backgroundPhoto})`,
                 }}
               >
                 <div class="container">
@@ -348,8 +348,9 @@ export class AppTeamLanding {
                 />
                 <div class="text">
                   <h2>
-                    <app-translate keyword="about.landing.container.title" />
-                    &nbsp;{this.data[this.match.params.member].firstname}
+                    <app-translate keyword="about.landing.container.title1" />
+                    &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
+                    <app-translate keyword="about.landing.container.title2" />
                   </h2>
                   <p>{this.data[this.match.params.member].bodyText}</p>
                   <h4>

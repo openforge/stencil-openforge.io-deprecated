@@ -92,7 +92,8 @@ export const translations = {
       },
       landing: {
         container: {
-          title: 'About',
+          title1: 'What',
+          title2: 'Does',
           skills: 'Skills',
         },
         cta: {

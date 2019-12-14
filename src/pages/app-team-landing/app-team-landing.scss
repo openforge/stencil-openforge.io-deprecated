@@ -3,37 +3,50 @@ section.team-landing {
   font-family: 'Muli', sans-serif;
 
   .hero {
+    @include media-breakpoint-down(md) {
+      height: 350px;
+    }
     @include media-breakpoint-down(sm) {
       background-position: left top;
     }
-    background-position: top center;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 534px;
-    margin: 75px 0 0;
+    height: 550px;
+    margin: 71px 0 0;
+
     .container,
     .row {
       height: 100%;
     }
 
     h2 {
-      @include media-breakpoint-down(lg) {
-        font-size: 2rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
         font-weight: 600;
-        letter-spacing: 1.6px;
-        line-height: 38px;
+        line-height: 34px;
+        text-align: left;
       }
-
       @include media-breakpoint-down(sm) {
         font-size: 1.75rem;
         text-align: center;
       }
       color: $white;
-      font-size: 4rem;
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 1.6px;
+      line-height: 58px;
       margin-bottom: 1rem;
       text-align: left;
     }
 
     h4 {
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1.02px;
+        line-height: 19px;
+      }
       @include media-breakpoint-down(sm) {
         text-align: center;
       }
@@ -47,7 +60,13 @@ section.team-landing {
       @include media-breakpoint-down(lg) {
         font-size: 1rem;
       }
-
+      @include media-breakpoint-down(md) {
+        font-size: 0.81rem;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        line-height: 17px;
+        width: 434px;
+      }
       @include media-breakpoint-down(sm) {
         text-align: center;
       }
@@ -60,6 +79,10 @@ section.team-landing {
   }
 
   .bio {
+    @include media-breakpoint-down(md) {
+      column-gap: 2rem;
+      padding: 3rem;
+    }
     @include media-breakpoint-down(sm) {
       grid-template-columns: none;
       padding: 2rem;
@@ -84,8 +107,12 @@ section.team-landing {
       margin-left: 35px;
 
       h2 {
+        @include media-breakpoint-down(md) {
+          font-size: 1.5rem;
+          letter-spacing: 1.54px;
+          line-height: 29px;
+        }
         color: #333333;
-
         font-size: 2.625rem;
         font-weight: 600;
         letter-spacing: 2.1px;
@@ -93,6 +120,11 @@ section.team-landing {
         text-align: left;
       }
       h4 {
+        @include media-breakpoint-down(md) {
+          font-size: 1rem;
+          letter-spacing: 1.02px;
+          line-height: 19px;
+        }
         color: #333333;
         font-size: 1.75rem;
         font-weight: 600;
@@ -100,6 +132,10 @@ section.team-landing {
         text-align: left;
       }
       p {
+        @include media-breakpoint-down(md) {
+          font-size: 0.81rem;
+          line-height: 28px;
+        }
         color: #4a494a;
         font-weight: 400;
         line-height: 32px;
