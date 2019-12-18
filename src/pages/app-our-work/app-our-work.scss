@@ -14,6 +14,12 @@
       height: 350px;
     }
 
+    @include media-breakpoint-down(sm) {
+      height: initial;
+      margin-top: calc(3rem + 76px);
+      background-image: none;
+    }
+
     h1 {
       color: #292a2d;
       font-family: 'Muli';
@@ -38,7 +44,6 @@
       text-align: center;
 
       @include media-breakpoint-down(md) {
-        font-size: 14px;
         width: 300px;
       }
     }
@@ -52,6 +57,11 @@
     -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: initial;
+      grid-template-rows: 1fr 1fr;
+    }
 
     .card-content {
       display: flex;
@@ -102,6 +112,10 @@
         text-align: center;
         height: 32px;
         margin-top: 70px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: 30px;
+        }
       }
     }
 
@@ -111,14 +125,30 @@
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
 
+      @include media-breakpoint-down(sm) {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+        padding: 2rem 0 0;
+      }
+
       .behind-left {
         position: relative;
         height: 350px;
         left: 100px;
         top: 30px;
 
+        @include media-breakpoint-down(lg) {
+          height: 300px;
+          left: 80px;
+        }
+
         @include media-breakpoint-down(md) {
           left: 30px;
+          height: 220px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          left: 80px;
           height: 220px;
         }
       }
@@ -129,13 +159,19 @@
         right: 100px;
         top: 30px;
 
+        @include media-breakpoint-down(lg) {
+          height: 300px;
+          right: 80px;
+        }
+
         @include media-breakpoint-down(md) {
           height: 220px;
           right: 30px;
         }
 
-        @include media-breakpoint-down(xs) {
-          display: none;
+        @include media-breakpoint-down(sm) {
+          height: 220px;
+          right: 80px;
         }
       }
 
@@ -145,15 +181,27 @@
         margin-right: auto;
         z-index: 1;
 
+        @include media-breakpoint-down(lg) {
+          height: 340px;
+          margin-left: initial;
+          margin-right: initial;
+        }
+
         @include media-breakpoint-down(md) {
           height: 280px;
           margin-left: initial;
           margin-right: initial;
         }
 
-        @include media-breakpoint-down(xs) {
+        @include media-breakpoint-down(sm) {
           position: relative;
+          margin: auto;
+          height: 280px;
         }
+      }
+
+      .card-image-row {
+        justify-content: center;
       }
 
       .store-buttons {
@@ -164,6 +212,10 @@
 
         a {
           margin: 0 10px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin: 2rem 0 2rem;
         }
       }
 
@@ -187,6 +239,10 @@
   .worked-with {
     padding: 5rem 0;
 
+    @include media-breakpoint-down(sm) {
+      padding: 3rem 1rem;
+    }
+
     .header {
       margin: 0 auto 3rem;
       max-width: 768px;
@@ -209,6 +265,11 @@
     .img-row {
       justify-content: center;
       margin-bottom: 16px;
+    }
+
+    .center-col {
+      display: flex;
+      align-items: center;
     }
   }
 }
