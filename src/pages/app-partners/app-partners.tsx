@@ -32,32 +32,12 @@ export class AppPartners {
     document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile App Developer, Mobile App Development, Progressive Web App');
   }
 
-  scrollToTrustedPartners() {
-    const section = document.getElementById('trusted-partners');
-    section.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  }
-
-  scrollToAdditionalPartners() {
-    const section = document.getElementById('additional-partners');
-    section.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  }
-
   render() {
     return (
       <div class="partners">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
-            <div class="row">
-              <div class="col-sm-12">
-                <span onClick={() => this.scrollToTrustedPartners()}>
-                  <app-translate keyword="partners.hero.trusted" />
-                </span>
-                <span onClick={() => this.scrollToAdditionalPartners()}>
-                  <app-translate keyword="partners.hero.additional" />
-                </span>
-              </div>
-            </div>
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-5 order-md-2 d-flex justify-content-center">
                 <img src="/assets/svg/partners-graphic-header.svg" alt="Header Graphic" />
@@ -67,14 +47,13 @@ export class AppPartners {
                   <app-translate keyword={`partners.hero.title`} />
                 </h1>
                 <p>
-                  <app-translate keyword={`partners.hero.text`} />
+                  <app-translate keyword={`partners.hero.text1`} />
                 </p>
-                <button onClick={() => this.scrollToTrustedPartners()} class="btn btn-primary btn-partner">
-                  <app-translate keyword="partners.hero.button" />
-                </button>
+                <p>
+                  <app-translate keyword={`partners.hero.text2`} />
+                </p>
               </div>
             </div>
-            <div class="line-break" />
           </div>
         </header>
 
@@ -83,7 +62,7 @@ export class AppPartners {
             <div class="row header">
               <div class="col-12">
                 <h2>
-                  <app-translate keyword="partners.hero.trusted" />
+                  <app-translate keyword="partners.trusted.title" />
                 </h2>
               </div>
             </div>
@@ -96,8 +75,7 @@ export class AppPartners {
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          <app-translate keyword="partners.trusted.ionic" />
                         </p>
                       </div>
                     </div>
@@ -105,8 +83,7 @@ export class AppPartners {
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-1776-logo.png" class="img-fluid" />
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          <app-translate keyword="partners.trusted.t1776" />
                         </p>
                       </div>
                     </div>
@@ -114,8 +91,31 @@ export class AppPartners {
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-strapi-logo.png" class="img-fluid" />
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                          ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          <app-translate keyword="partners.trusted.strapi" />
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row carousel-item">
+                      <div class="col-12 carousel-item-col">
+                        <img src="/assets/partners-215-logo.png" class="img-fluid" />
+                        <p>
+                          <app-translate keyword="partners.trusted.t215Marketing" />
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row carousel-item">
+                      <div class="col-12 carousel-item-col">
+                        <img src="/assets/partners-financial-gps-logo.png" class="img-fluid" />
+                        <p>
+                          <app-translate keyword="partners.trusted.finantialGPS" />
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row carousel-item">
+                      <div class="col-12 carousel-item-col">
+                        <img src="/assets/partners-drexel-logo.png" class="img-fluid" />
+                        <p>
+                          <app-translate keyword="partners.trusted.drexel" />
                         </p>
                       </div>
                     </div>
@@ -124,58 +124,20 @@ export class AppPartners {
                     <li data-target="#partnersCarousel" data-slide-to="0" class="active" />
                     <li data-target="#partnersCarousel" data-slide-to="1" />
                     <li data-target="#partnersCarousel" data-slide-to="2" />
+                    <li data-target="#partnersCarousel" data-slide-to="3" />
+                    <li data-target="#partnersCarousel" data-slide-to="4" />
+                    <li data-target="#partnersCarousel" data-slide-to="5" />
                   </ol>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section id="additional-partners" class="additional-partners">
-          <div class="container">
-            <div class="row header">
-              <div class="col-12">
-                <h2>
-                  <app-translate keyword="partners.hero.additional" />
-                </h2>
-              </div>
-            </div>
-            <div class="row additional-rows">
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
-              </div>
-
-              <div class="col-md-3 col-sm-12">
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
-              </div>
-            </div>
-
-            <div class="row additional-rows">
-              <div class="col-md-6 col-sm-12">
-                <app-img class="img-fluid pad" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
-              </div>
-
-              <div class="col-md-6 col-sm-12">
-                <app-img class="img-fluid pad" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
-              </div>
-            </div>
-
-            <div class="row additional-rows">
-              <div class="col-md-6 col-sm-12 align-right">
-                <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
-              </div>
-
-              <div class="col-md-6 col-sm-12 align-left">
-                <app-img class="img-fluid pad" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
-              </div>
+            <div class="row carousel-arrows">
+              <a class="col-6 left carousel-control" href="#partnersCarousel" data-slide="prev">
+                <i class="fa fa-chevron-left" />
+              </a>
+              <a class="col-6 right carousel-control" href="#partnersCarousel" data-slide="next">
+                <i class="fa fa-chevron-right" />
+              </a>
             </div>
           </div>
         </section>

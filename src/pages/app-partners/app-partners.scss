@@ -31,6 +31,25 @@
         color: #a15a0c;
       }
     }
+
+    h1 {
+      color: #292a2d;
+      font-family: Muli;
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: 1.73px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    p {
+      color: #292a2d;
+      font-family: Muli;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: left;
+    }
   }
 
   button.btn-partner {
@@ -43,15 +62,22 @@
     }
   }
 
-  .trusted-partners,
-  .additional-partners {
+  .trusted-partners {
+    position: relative;
+
     .header {
       margin: 4rem auto 4rem;
       max-width: 768px;
       text-align: center;
 
       h2 {
-        font-weight: bold;
+        color: #333333;
+        font-family: Muli;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: 2.1px;
+        line-height: 45px;
+        text-align: center;
       }
     }
 
@@ -81,58 +107,6 @@
         right: -0.5em;
         margin-right: -50%;
       }
-    }
-  }
-
-  .additional-partners {
-    .align-right {
-      text-align: right;
-      @include media-breakpoint-down(sm) {
-        text-align: center;
-      }
-    }
-
-    .align-left {
-      text-align: left;
-      @include media-breakpoint-down(sm) {
-        text-align: center;
-      }
-    }
-
-    app-img {
-      height: 100%;
-      lazy-img {
-        height: 100%;
-        display: inline-block;
-      }
-
-      &.no-pad {
-        img {
-          padding: 2rem 0;
-        }
-      }
-
-      &.pad {
-        img {
-          padding: 2rem 2rem;
-        }
-      }
-
-      img {
-        padding: 2rem;
-        max-height: 360px;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-
-        @include media-breakpoint-down(sm) {
-          padding: 2rem 6.5rem;
-        }
-      }
-    }
-
-    .additional-rows {
-      text-align: center;
     }
   }
 
@@ -214,7 +188,6 @@
 
   .carousel-inner {
     padding: 25px 0;
-    background: #e6eaea;
   }
 
   .carousel-item-col {
@@ -226,6 +199,7 @@
 
     img {
       max-width: 500px;
+      max-height: 170px;
     }
 
     p {
@@ -250,5 +224,28 @@
 
   .carousel-indicators .active {
     background-color: $orange;
+  }
+
+  .carousel-arrows {
+    position: absolute;
+    top: 275px;
+    width: 100%;
+  }
+
+  .carousel-control {
+    color: #9baaab;
+    font-size: 60px;
+
+    &.right {
+      font-size: 60px;
+      padding-right: 100px;
+      text-align: right;
+    }
+
+    &.left {
+      font-size: 60px;
+      padding-left: 100px;
+      text-align: left;
+    }
   }
 }
