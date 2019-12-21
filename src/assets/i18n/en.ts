@@ -57,10 +57,12 @@ export const translations = {
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
+        titleSmall: 'We Are Passionate About Technology & Design',
         text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
         action: 'LEARN MORE',
       },
       mission: {
+        title: 'Our Mission',
         statement: 'Our mission is to forge a bond between people and technology through digital experiences.',
       },
       values: {
@@ -72,8 +74,7 @@ export const translations = {
         value3: 'Transparency',
       },
       team: {
-        title: 'Get to Know Us',
-        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        title: 'Meet our Team',
         member: {
           title: {
             apply: 'Click to Apply',
@@ -94,8 +95,7 @@ export const translations = {
       },
       landing: {
         container: {
-          title1: 'What',
-          title2: 'Does',
+          title1: 'About',
           skills: 'Skills',
         },
         cta: {

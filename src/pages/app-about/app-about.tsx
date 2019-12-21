@@ -28,12 +28,13 @@ export class AppAbout {
             <div class="row align-items-center">
               <div class="col-md-8 col-sm-10 text-container">
                 <h1>
-                  <app-translate keyword="about.header.title" />
+                  <app-translate class="title" keyword="about.header.title" />
+                  <app-translate class="title-small" keyword="about.header.titleSmall" />
                 </h1>
                 <p>
                   <app-translate keyword="about.header.text" />
                 </p>
-                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
+                <button onClick={this.scrollToForm.bind(this)} class="btn btn-secondary">
                   <app-translate keyword="about.header.action" />
                 </button>
               </div>
@@ -54,7 +55,10 @@ export class AppAbout {
 
         {/* section - mission statement */}
         <section id="mission-statement" class="mission-statement">
-          <div class="mission-statement d-flex text-center">
+          <div class="mission-statement d-flex flex-column text-center">
+            <h1 class="text-white">
+              <app-translate keyword="about.mission.title" />
+            </h1>
             <p class="text-white align-self-center">
               <app-translate keyword="about.mission.statement" />
             </p>
@@ -76,16 +80,16 @@ export class AppAbout {
             </div>
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="integrity" />
-                <app-translate class="value-text" key="about.values.value2" />
+                <div class="honesty" />
+                <app-translate class="value-text" keyword="about.values.value1" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="honesty" />
-                <app-translate class="value-text" key="about.values.value1" />
+                <div class="integrity" />
+                <app-translate class="value-text" keyword="about.values.value2" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
                 <div class="transparency" />
-                <app-translate class="value-text" key="about.values.value3" />
+                <app-translate class="value-text" keyword="about.values.value3" />
               </div>
             </div>
           </div>
@@ -98,9 +102,6 @@ export class AppAbout {
               <h2>
                 <app-translate keyword="about.team.title" />
               </h2>
-              <p>
-                <app-translate keyword="about.team.text" />
-              </p>
             </div>
             <app-members-section />
           </div>
