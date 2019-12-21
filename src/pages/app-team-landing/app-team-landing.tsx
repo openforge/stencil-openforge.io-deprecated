@@ -14,15 +14,35 @@ export class AppTeamLanding {
 
   @State() chips;
   data = {
+    'jedi-weller': {
+      firstname: 'Jedi',
+      surname: 'Weller',
+      title: translate('about.team.member.title.founder'),
+      headerText:
+        'Jedi (Jedidah) is a speaker, community leader, and developer who advocates for the empowerment of businesses through technology. Jedi and his team have been pioneering new ways of designing mobile solutions for the digital world. His work at OpenForge and the development community continues to lay the groundwork for clearer communication and enhanced transparency in the technology and Startup communities.',
+      bodyText:
+        'Besides being the chief morale booster, Jedi leads the strategic partnerships and public outreach programs at OpenForge. His boundless energy and ambition means he’s constantly jumping between client calls, networking events, and ensuring the team and clients are happy with the work being done.',
+      skills: ['UI/UX Design', 'Graphic Design', 'Consulting', 'Communication', 'Illustration', 'Presentation Design', 'Marketing', 'Photo Editing', 'Copywriting'],
+      team: 'design',
+      backgroundPhoto: '/assets/bios-background-jedi.jpg',
+      metatags: {
+        title: 'Rachel Bennett - Visual Designer | OpenForge',
+        description:
+          'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or concepting, she approaches each problem with an equal measure of discipline and curiosity.',
+        keywords: 'Rachel Bennett, designer, visual designer, UIUX',
+        url: 'https://openforge.io/about/rachel-bennett/',
+        image: 'https://openforge.io/assets/bios-background-jedi.jpg',
+      },
+    },
     'rachel-bennett': {
       firstname: 'Rachel',
       surname: 'Bennett',
       title: translate('about.team.member.title.designer'),
       headerText:
-        "Rachel is originally from the suburbs of Washington, DC and moved to Philadelphia for school, ultimately deciding to stay in Philly after graduating. Her interest in art and language led her to pursue a degree in Graphic Design at Philadelphia University. After graduating with a Bachelor's of Science in 2012, she has been working in the field of design ever since.",
+        'Originally hailing from the Washington, D.C. area, Rachel first came to Philadelphia to study Graphic Design. She has since adopted the city as her second home and currently resides in South Philadelphia. When she’s not solving UX problems, she likes to spend her time drawing, running, and taking pictures of her cats.',
       bodyText:
-        'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or concepting, she approaches each problem with an equal measure of discipline and curiosity.',
-      skills: ['UI/UX Design', 'Graphic Design', 'Consulting', 'Communication', 'Illustration', 'Presentation Design', 'Marketing', 'Photo Editing', 'Copywriting'],
+        'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or conceptualizing, she approaches each problem with an equal measure of discipline and curiosity.',
+      skills: ['UI Design', 'UX Design', 'Web Design', 'Product Design', 'Graphic Design', 'Prototyping', 'Consulting'],
       team: 'design',
       backgroundPhoto: '/assets/bios-background-rachel.jpg',
       metatags: {
@@ -34,47 +54,15 @@ export class AppTeamLanding {
         image: 'https://openforge.io/assets/bios-background-rachel.jpg',
       },
     },
-    'geoffrey-melle': {
-      firstname: 'Geoffrey',
-      surname: 'Melle',
-      title: translate('about.team.member.title.projectManager'),
-      headerText:
-        'Geoffrey grew up in the suburbs of Philadelphia and started his college career pursuing engineering at Drexel University. He formed a new found love for the marketing field though graduating Summa Cum Laude with a Marketing and Business Management degree from West Chester University.',
-      bodyText:
-        'As Project Manager, Geoffrey ensures that our team and your team have the resources and requirements needed to launch your product successfully.  Additionally, Geoffrey takes part in tackles marketing and sales objectives for OpenForge with his experience in digital marketing.',
-      skills: ['Email Marketing', 'SEO', 'Networking', 'Digital Markting Analysis', 'Dog Whispering'],
-      team: 'management',
-      backgroundPhoto: '/assets/bios-background-geoff.jpg',
-      metatags: {
-        title: 'Geoffrey Melle - Account Manager | OpenForge',
-        description:
-          'As account manager, Geoffrey tackles marketing and sales objectives for OpenForge with his experience in digital marketing. Additionally Geoffrey takes part in project management overseeing internal and client projects, ensuring smooth communication and delivery of assets.',
-        keywords: 'Geoffrey Melle',
-        url: 'https://openforge.io/about/geoffrey-melle/',
-        image: 'https://openforge.io/assets/bios-background-geoff.jpg',
-      },
-    },
-    'joni-lehto': {
-      firstname: 'Joni',
-      surname: 'Lehto',
-      title: translate('about.team.member.title.developer'),
-      headerText:
-        'Joni grew up and currently lives in Rovaniemi Finland. After receiving a Bachelor’s degree he has worked as a senior software developer for several prominent companies. He joined OpenForge team to get new international experiences and become a part of a diverse and growing organization.',
-      bodyText:
-        'As a software engineer, Joni uses his wide expertise and skills to ensure the best possible result. Having worked on various development projects across  industries, he is capable of working on any task that comes his way whether front end or back end development. Joni is also always keen to learn new technologies and processes with your team and ours.',
-      skills: ['Angular', 'Ionic', 'Frontend Development', 'Firebase', 'NodeJS', 'Android', 'HTML/CSS', 'MongoDB', 'React'],
-      team: 'development',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
-    },
     'paulina-gallo': {
       firstname: 'Paulina',
       surname: 'Gallo',
       title: translate('about.team.member.title.developer'),
       headerText:
-        'Paulina started her technical journey at a very young age through an interest of video games. This interest sparked her drive to study and receive her Bachelor’s in Computer Science and Digital Media. She has spent the past few years developing web and mobile applications for a wide range of startup and enterprise level clients, all while attending, volunteering, and speaking at various conferences within the development community. In her spare time she is the co-organizer of both the Ionic Philly meetup and Philly Angular meetup.',
+        'Paulina started her technical journey at a young age through an interest in video games. This interest sparked her drive to study and she received her Bachelor’s in Computer Science and Digital Media. She has spent the past few years developing web and mobile applications for a wide range of start-up and enterprise level clients, all while attending, volunteering, and speaking at various conferences within the development community. Even with all this she still finds time to play video games.',
       bodyText:
-        'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the development process of a project. This includes the initial scoping, architecture planning, client communication, and the deployment of all projects. Paulina volunteers for various organizations and is the co-organizer of Angular Philly and Ionic Philly.',
-      skills: ['Angular', 'Ionic', 'iOS', 'Android', 'Frontend Development', 'UX', 'Firebase', 'ParseSDK', 'Public speaking', 'Project Management'],
+        'Not only does Paulina code on a daily basis and maintain her development skills, she stays heavily involved with managing the development process. This includes the initial scoping, architecture planning, client communication, and the deployment of all projects. Outside of OpenForge Paulina volunteers for various local tech organizations and is the co-organizer of Angular Philly and Ionic Philly.',
+      skills: ['Front-end Wizard', 'Angular', 'Ionic', 'Typescript', 'Cordova', 'Capacitor', 'Firebase', 'RxJS', 'Redux', 'NgRx'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-paulina.png',
       metatags: {
@@ -86,14 +74,33 @@ export class AppTeamLanding {
         image: 'https://openforge.io/assets/bios-background-paulina.png',
       },
     },
+    'leon-degtar': {
+      firstname: 'Leon',
+      surname: 'Degtar',
+      title: translate('about.team.member.title.operationsDirector'),
+      headerText:
+        'Leon is an operational and financial leader who has worked in a variety of industries and businesses. He has worked on technology projects with many Fortune 1000 companies. As Director of Operations, Leon focuses on partnering with our clients to solve their business problems with cutting-edge mobile technology.',
+      bodyText: 'Leon provides guidance to our clients and team with clear process and a focus on execution and communication.',
+      skills: ['Business Analysis', 'Financial Oversight', 'Organizational Development', 'Process Optimization'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-leon.png',
+      metatags: {
+        title: 'Fernando Del Olmo - Software Engineer | OpenForge',
+        description:
+          'Fernando is originally from Madrid, Spain where he recieved his Bachelors degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.',
+        keywords: 'Fernano Del Olmo',
+        url: 'https://openforge.io/about/fernando-del-olmo/',
+        image: 'https://openforge.io/assets/bios-background-fernando.png',
+      },
+    },
     'fernando-del-olmo': {
       firstname: 'Fernando',
       surname: 'Del Olmo',
       title: translate('about.team.member.title.developer'),
       headerText:
-        "Fernando is originally from Madrid, Spain where he received his Bachelor's degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.",
+        'Growing up, Fernando was surrounded by people who loved computers and gaming. This stirred his own interest in learning more about technology, which eventually lead him to becoming a Computer Engineer. After graduating, he worked for a number of different companies, all dealing with web technologies and finally found the perfect fit with OpenForge!',
       bodyText:
-        'Fernando leverages his development skills and curiousity to troubleshoot road bumps that come up when coding. His ability to discover new technologies and introduce them to the team have kept us up to date with the latest and greatest tools and technology available to the community.',
+        'Fernando helps manage the development process of projects; from the initial scoping and architectural planning aspects, all the way through to the actual development of the product. He is always considering ways to improve the way the development team functions by staying up-to-date on  technology and tools.',
       skills: ['Angular', 'Ionic', 'Stencil', 'Firebase', 'NGRX', 'NodeJS', 'Frontend Development'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-fernando.png',
@@ -106,7 +113,7 @@ export class AppTeamLanding {
         image: 'https://openforge.io/assets/bios-background-fernando.png',
       },
     },
-    'billy-holloran': {
+    'william-holloran': {
       firstname: 'Billy',
       surname: 'Holloran',
       title: translate('about.team.member.title.qualityManager'),
@@ -131,10 +138,10 @@ export class AppTeamLanding {
       surname: 'Chacon',
       title: translate('about.team.member.title.developer'),
       headerText:
-        'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Masters in Software Engineering with a full scholarship from the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
+        'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. He received a full scholarship from the European Union and traveled to Italy and Spain in order to pursue a Master’s degree in Software Engineering. Since then, he has developed a diverse range of mobile applications for companies, start-ups and governmental institutions before joining our team at OpenForge.',
       bodyText:
-        'Luis has mastered the agile approach to software development having the ability to pivot when necessity arises. His physical distance from other team members does not stand in the way when it comes to pulling the team together for collaboration to tackle tasks at hand and deliver working code that ourselves and clients can rely on.',
-      skills: ['Angular', 'Ionic', 'Firebase', 'Scrum', 'Video Game Development'],
+        'Luis has mastered the agile approach to software development and has the ability to seamlessly transition between tasks and pivot if the necessity arises. His physical distance from the other team members does not stand in the way when it comes to pulling the team together for collaboration to tackle tasks at hand and deliver working code that ourselves and clients can rely on.',
+      skills: ['Typescript', 'Firebase', 'Scrum'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-luis.png',
       metatags: {
@@ -151,131 +158,143 @@ export class AppTeamLanding {
       surname: 'Del Valle',
       title: translate('about.team.member.title.developer'),
       headerText:
+        'Claudio began programming early in High School as a way to learn more about robotics. After being introduced to OpenForge; and stemming from his love for creating and a passion for continuous improvement, Web Development became his main focus. Finally, a couple of years (and a bachelor’s degree in Computer Engineering) later, Claudio enjoys keeping up with the newest trends in web development; especially those related to Ionic and Angular.',
+      bodyText:
+        'Like most of the developers at OpenForge, Claudio is involved in the scoping and development process of mobile apps. He enjoys the discovery process and lends his technical opinion wherever needed to improve the overall product. He enjoys keeping up with the latest web development trends and sharing his knowledge with the rest of the team.',
+      skills: ['NodeJS', 'RxJS', 'Angular', 'Ionic', 'StencilJS', 'Firebase'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-claudio.png',
+    },
+    'min-lee': {
+      firstname: 'Min',
+      surname: 'Lee',
+      title: translate('about.team.member.title.developer'),
+      headerText:
         'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
       bodyText:
         "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
       skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
       team: 'development',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
+      headshotPhoto: './../../assets/headshot-min.png',
     },
-    'ethan-bohan': {
-      firstname: 'Ethan',
-      surname: 'Bohan',
-      title: translate('about.team.member.title.designer'),
+    'may-alkhraisha': {
+      firstname: 'May',
+      surname: 'Alkhraisha',
+      title: translate('about.team.member.title.marketingCoordinator'),
       headerText:
-        'Ethan is originally from Long Island New York. He received his Bachelor’s degree in Interactive Digital Media from Drexel University. While at Drexel University he worked with our team as an intern which lead him to his full-time position with Open Forge after graduation.',
+        'After studying business in her home country; Jordan, May undertook a course in Web & Graphic Design. She entered the world of marketing through her work in branding agencies. She became the newest addition to our team after attending a start-up event hosted by OpenForge. May lives in Center City and spends her free time working on her own mobile application, hiking, or climbing.',
       bodyText:
-        "As a designer, Ethan leverages his design experience and front end development skills helping your team to create an intuitive user interface that translates into a positive user experience. Through close collaboration with our design team and development team, Ethan's skills streamline the design process.",
-      skills: ['UI/UX Design', 'Graphic Design', 'Frontend development', 'Ionic', 'Sketch', 'Adobe Creative Suite'],
-      team: 'design',
-      backgroundPhoto: '/assets/bios-background-ethan.jpg',
-      metatags: {
-        title: 'Ethan Bohan- Visual Designer | OpenForge',
-        description:
-          "As a designer, Ethan leverages his design experience and front end development skills helping your team to create an intuitive user interface that translates into a positive user experience. Through close collaboration with our design team and development team, Ethan's skills streamline the design process.",
-        keywords: 'Ethan Bohan',
-        url: 'https://openforge.io/about/ethan-bohan/',
-        image: 'https://openforge.io/assets/bios-background-ethan.jpg',
-      },
-    },
-    'dhairya-pujara': {
-      firstname: 'Dhairya',
-      surname: 'Pujara',
-      title: translate('about.team.member.title.consultant'),
-      headerText:
-        "Dhairya Pujara is the Founder, CEO at Ycenter, he is responsible for building a global ecosystem bringing in corporates, universities, NGOs for creating experiential educational programs. Dhairya's core expertise is in Design Thinking, Business Model, Market Research, Customer Journey using Empathy maps and Story-telling for Brand positioning.",
-      bodyText:
-        "Dhairya has been the curator for 'Global Shaper Hub Philadelphia' by World Economic Forum. He has been a global TEDx organizer and a sought-after public speaker on entrepreneurship and international development. He delivers keynote and guest lectures in some of the top business schools and conferences around the globe. From United Nations G77 to Wharton Business School, Dhairya is a leading speaker and educator around the world. Dhairya sits on the advisory board for European Commission program LASIN - Latin American Social Innovation network. In 2015, American Immigration granted him an approval for special category work visa reserved for 'an individual of extra-ordinary abilities. For more information please visit https://dhairyapujara.me/",
-      skills: ['Design Thinking', 'Business Model', 'Market Research', 'Customer Journey', 'Empathy Maps', 'Story Telling', 'Brand Positioning'],
-      team: 'consultant',
-      backgroundPhoto: '/assets/team-landing-header.jpg',
-    },
-    'ted-grant': {
-      firstname: 'Ted',
-      surname: 'Grant',
-      title: translate('about.team.member.title.designer'),
-      headerText:
-        'Ted grew up in Westchester, New York and Atlanta, Georgia. He is a Junior attending Drexel University in Philadelphia, pursuing a degree in Game Design and Production, and is on a co-op with Open Forge. He enjoys working with 3D modeling, 2D art, and pen-and-paper games.',
-      bodyText:
-        "As a designer, Ted uses his experience in visual design and eye for user-flow to help make a product that is visually pleasing and tactually smooth. Thanks to Drexel's rapid-fire scheduling, he is extremely adaptable and quickly learns new skills, helping to ease collaborator's work and get projects done faster.",
-      skills: ['UI/UX Design', 'Adobe Creative Suite', 'Sketch', 'Autodesk applications', 'Unity'],
-      team: 'design',
-      backgroundPhoto: '/assets/bios-background-ted.png',
-      metatags: {
-        title: 'Ted Grant - Design Intern | OpenForge',
-        description:
-          "As a designer, Ted uses his experience in visual design and eye for user-flow to help make a product that is visually pleasing and tactually smooth. Thanks to Drexel's rapid-fire scheduling, he is adaptable and quick to learn new skills, helping to ease collaborators' work and get projects done faster.",
-        keywords: 'Ted Grant',
-        url: 'https://openforge.io/about/ted-grant/',
-        image: 'https://openforge.io/assets/bios-background-ted.png',
-      },
-    },
-    'kevon-chambers': {
-      firstname: 'Kevon',
-      surname: 'Chambers',
-      title: translate('about.team.member.title.marketing'),
-      headerText:
-        'Kevon was raised by Jamaican parents in northern New Jersey, Irvington to be exact. He would leave home at 14 years to attend The Kiski School in Saltsburg PA. Kevon is currently an entrepreneurship and innovation major at Temple University. He has interned for the Philly Startup Leaders accelerator, College Money Search. He has worked for Pomeroy as a computer technician and Wells Fargo.',
-      bodyText: '',
-      skills: [],
-      team: 'design',
-      backgroundPhoto: '/assets/bios-background-kevon.png',
-    },
-    'young-song': {
-      firstname: 'Young',
-      surname: 'Song',
-      title: translate('about.team.member.title.softwareIntern'),
-      headerText:
-        'Young was born in Korea. He came to the USA in 1990 to study Physics. His first programming experience was about 25 years ago. However, he had to stop his coding job after he failed to get a working visa. In 2017, after he received a green card, He restarted coding. He learned coding using a mixture of Udemy, YouTube, and Collegiate courses.',
-      bodyText: 'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-      skills: ['UI/UX Design', 'Frontend development', 'Backend development'],
+        'May handles branding, marketing & communication efforts within the company. In a turn of fate, she is also responsible for planning the same events that introduced her to OpenForge! May also meets with clients & is happy to introduce them to our process & walk them through it step-by-step.',
+      skills: ['Branding', 'Content Writing', 'Editing', 'Marketing'],
       team: 'development',
-      backgroundPhoto: '/assets/bios-background-young.jpg',
-      metatags: {
-        title: 'Young Son - Software Intern | OpenForge',
-        description: 'Young is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-        keywords: 'Young Song',
-        url: 'https://openforge.io/about/young-song/',
-        image: 'https://openforge.io/assets/bios-background-young.jpg',
-      },
+      headshotPhoto: './../../assets/headshot-may.png',
     },
-    'sam-hudgens': {
-      firstname: 'Sam',
-      surname: 'Hudgens',
-      title: translate('about.team.member.title.softwareIntern'),
+    'mariela-mora': {
+      firstname: 'Mariela',
+      surname: 'Mora Quesada',
+      title: translate('about.team.member.title.developer'),
       headerText:
-        'Sam is originally from Montgomery, Alabama. He studied Chinese and Business Administration at the University of Southern California in Los Angeles with plans of going into finance, but decided on a career change into tech at the last minute. He attended a programming boot camp after graduating college and ended up in Philadelphia. Sam likes learning both computer languages and human languages.',
-      bodyText: 'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-      skills: ['HTML', 'CSS', 'JavaScript', 'Java'],
-      team: 'development',
-      backgroundPhoto: '/assets/bios-background-sam.jpg',
-      metatags: {
-        title: 'Sam Hudgens - Software Intern | OpenForge',
-        description: 'Sam is an intern at OpenForge learning mobile app development with the Ionic framework and Angular.',
-        keywords: 'Sam Hudgens',
-        url: 'https://openforge.io/about/sam-hudgens/',
-        image: 'https://openforge.io/assets/bios-background-sam.jpg',
-      },
-    },
-    casey: {
-      firstname: 'Casey',
-      surname: '',
-      title: translate('about.team.member.title.officer'),
-      headerText:
-        'Casey started her life out on the streets in the Kensington section of Philadelphia where a good samaritan found her at just a few weeks old and dropped her off at a local animal shelter. She enjoys long hikes, belly rubs, doggy bones, and giving kisses to all who are present.',
+        'Mariela is our administrative assistant and is from Coronado; just east of San Jose, Costa Rica. While she has a degree in Physical Therapy, she  accumulated 15 years experience in customer service and interpretation, which makes her an excellent communicator. Her curiosity about web & mobile app development lead her to joining the OpenForge team.',
       bodyText:
-        'As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.',
-      skills: ['Running', 'Jumping', 'Bone Chewing', 'Licking', 'Napping', 'Barking', 'Whinning'],
-      team: 'pet',
-      backgroundPhoto: '/assets/bios-background-casey.jpg',
-      metatags: {
-        title: 'Casey - Chief Happiness Officer | OpenForge',
-        description:
-          'As office dog, Casey ensures that no employee is ever left feeling like they are suffering from a lack of doggy affection. Working tirelessly to give doggy kisses and taking naps throughout the day, she offers a fresh perspective on what it means to live a worry-free life.',
-        keywords: 'Casey',
-        url: 'https://openforge.io/about/casey/',
-        image: 'https://openforge.io/assets/bios-background-casey.jpg',
-      },
+        "Mariela is in charge of reviewing the team's schedules and generating both internal and external reports, as well as invoicing. She constantly strives to improve the services we provide.",
+      skills: ['Communication', 'Problem Solving', 'Customer Service'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-mariela.png',
+    },
+    'petrell-vereen': {
+      firstname: 'Petrell',
+      surname: 'Vereen',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-petrell.png',
+    },
+    'jared-bradshaw': {
+      firstname: 'Jared',
+      surname: 'Bradshaw',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-jared.png',
+    },
+    'harry-scheuerle': {
+      firstname: 'Harry',
+      surname: 'Scheuerle',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-harry.png',
+    },
+    'matt-moran': {
+      firstname: 'Matt',
+      surname: 'Moran',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-matt.png',
+    },
+    'carter-simonson': {
+      firstname: 'Carter',
+      surname: 'Simonson',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        "Carter is a school student and software developer from small-town Wisconsin, who - like many developers - discovered his passion for software development at an early age through video games. He soon after learned that he loved mobile app development, and hasn't looked back since! Joining the OpenForge team remotely allowed him the flexibility to pursue his software development career while still attending school.",
+      bodyText: 'Carter is primarily a mobile developer, and helps our team in the initial setup, planning,and development of new mobile applications.',
+      skills: ['Typescript', 'Angular', 'React', 'Ionic', 'Firebase', 'NodeJS'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-carter.png',
+    },
+    'griffin-robbins': {
+      firstname: 'Griffin',
+      surname: 'Robbins',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-griffin.png',
+    },
+    'pablo-huerta': {
+      firstname: 'Pablo',
+      surname: 'Huerta',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-pablo.png',
+    },
+    'alberto-carniel': {
+      firstname: 'Alberto',
+      surname: 'Carniel',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Claudio is from Monterrey, Mexico and came to the OpenForge team as an intern from Drexel University. He is currently a senior at Drexel University, where he is expected to graduate with a B.A. in Computer Engineering in 2019. Claudio is a self-proclaimed thinkerer who enjoys 3D-printing and machine learning.',
+      bodyText:
+        "Claudio leverages his development skills and strong troubleshooting abilities, helping our development team find creative ways to code and debug. Claudio's experience with Angular, Ionic, and Firebase have accelerated our development team and overall processes improving efficiency and productivity.",
+      skills: ['Angular', 'Ionic', 'Firebase', 'NGRX', 'NGXS', 'Thinker', 'Maker', 'Doer'],
+      team: 'development',
+      headshotPhoto: './../../assets/headshot-alberto.png',
     },
   };
 
@@ -319,58 +338,86 @@ export class AppTeamLanding {
 
   render() {
     const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto);
+    const headshotPhoto = this.changeImageFormat(this.data[this.match.params.member].headshotPhoto);
+    let style = {};
+    if (window.innerWidth > 767.98) {
+      style = backgroundPhoto
+        ? {
+            'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${backgroundPhoto})`,
+          }
+        : {
+            'background-color': '#292A2D',
+          };
+    }
+    window.addEventListener('resize', () => {
+      const hero = document.querySelector('.hero') as HTMLElement;
+      if (window.innerWidth > 767.98) {
+        hero.style.backgroundColor = '#292A2D';
+        if (backgroundPhoto) {
+          hero.style.backgroundImage = `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${backgroundPhoto})`;
+        }
+      } else {
+        hero.style.backgroundImage = 'none';
+        hero.style.backgroundColor = 'transparent';
+      }
+    });
+
     return (
       <section class="team-landing">
         {/* header - hero */}
         {this.data[this.match.params.member]
           ? [
-              <header
-                class="hero"
-                style={{
-                  'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${backgroundPhoto})`,
-                }}
-              >
-                <div class="container">
-                  <div class="row align-items-center">
-                    <div class="col-sm-12 col-md-8 col-lg-8">
-                      <h2>{`${this.data[this.match.params.member].firstname} ${this.data[this.match.params.member].surname}`}</h2>
-                      <h4>{this.data[this.match.params.member].title}</h4>
+              <div class="container-fluid">
+                <div class="row justify-content-center align-items-center hero" style={style}>
+                  <div class="col-10 col-sm-12 d-block d-md-none">
+                    <app-img class="headshot-mobile" src={headshotPhoto} />
+                  </div>
+                  <div class="col-11 col-sm-9 col-md-7 col-lg-6 align-self-start">
+                    <div class="header-text">
+                      <h1>{`${this.data[this.match.params.member].firstname} ${this.data[this.match.params.member].surname}`}</h1>
+                      <h3>{this.data[this.match.params.member].title}</h3>
+                      <app-img
+                        class="d-md-none badge"
+                        src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
+                        alt="Job Title Badge - Design, Development, Management"
+                      />
                       <p>{this.data[this.match.params.member].headerText}</p>
                     </div>
                   </div>
+                  <div class="col-md-4 d-none d-md-block">{!backgroundPhoto && <app-img class="headshot" src={headshotPhoto} />}</div>
                 </div>
-              </header>,
-              <section class="bio">
-                <app-img
-                  class="img-fluid d-none d-md-inline"
-                  src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
-                  alt="Job Title Badge - Design, Development, Management"
-                />
-                <div class="text">
-                  <h2>
-                    <app-translate keyword="about.landing.container.title1" />
-                    &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
-                    <app-translate keyword="about.landing.container.title2" />
-                  </h2>
-                  <p>{this.data[this.match.params.member].bodyText}</p>
-                  <h4>
-                    <app-translate keyword="about.landing.container.skills" />
-                  </h4>
-                  {this.chips}
-                </div>
-              </section>,
 
-              <section id="members" class="members">
-                <div class="container text-center">
-                  <div class="header">
+                <div class="row align-items-center justify-content-center bio">
+                  <div class="col-9 col-sm-9 col-md-5 col-lg-4">
+                    <app-img
+                      class="d-none d-md-block badge"
+                      src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
+                      alt="Job Title Badge - Design, Development, Management"
+                    />
+                  </div>
+                  <div class="col-11 col-sm-9 col-md-7 col-lg-5">
+                    <h2>
+                      <app-translate keyword="about.landing.container.title1" />
+                      &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
+                      <app-translate keyword="about.landing.container.title2" />
+                    </h2>
+                    <p>{this.data[this.match.params.member].bodyText}</p>
+                    <h4>
+                      <app-translate keyword="about.landing.container.skills" />
+                    </h4>
+                    <div class="chips-container">{this.chips}</div>
+                  </div>
+                </div>
+
+                <div id="members" class="row justify-content-center members">
+                  <div class="col-11 col-lg-12">
                     <h2>
                       <app-translate keyword="about.landing.cta.title" />
                     </h2>
+                    <app-members-section />
                   </div>
                 </div>
-                <app-members-section />
-              </section>,
-
+              </div>,
               <app-footer />,
             ]
           : null}

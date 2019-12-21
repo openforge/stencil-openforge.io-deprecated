@@ -1,154 +1,192 @@
 // section - team-landing
 section.team-landing {
   font-family: 'Muli', sans-serif;
+  padding: 73px 0 0 0;
 
-  .hero {
+  h1 {
     @include media-breakpoint-down(md) {
-      height: 350px;
-    }
-    @include media-breakpoint-down(sm) {
-      background-position: left top;
-    }
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 550px;
-    margin: 71px 0 0;
-
-    .container,
-    .row {
-      height: 100%;
-    }
-
-    h2 {
-      @include media-breakpoint-down(md) {
-        font-size: 1.75rem;
-        font-weight: 600;
-        line-height: 34px;
-        text-align: left;
-      }
-      @include media-breakpoint-down(sm) {
-        font-size: 1.75rem;
-        text-align: center;
-      }
-      color: $white;
-      font-size: 3rem;
-      font-weight: 600;
-      letter-spacing: 1.6px;
-      line-height: 58px;
-      margin-bottom: 1rem;
-      text-align: left;
-    }
-
-    h4 {
-      @include media-breakpoint-down(md) {
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: 1.02px;
-        line-height: 19px;
-      }
-      @include media-breakpoint-down(sm) {
-        text-align: center;
-      }
-      color: $white;
+      font-size: 1.75rem;
       font-weight: 600;
       line-height: 34px;
       text-align: left;
     }
+    @include media-breakpoint-down(sm) {
+      color: $gray-dark;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      text-align: center;
+    }
+    color: $white;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    line-height: 58px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  h2 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1.54px;
+      line-height: 29px;
+      text-align: left;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+    color: $gray-dark;
+    font-size: 2.63rem;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+    line-height: 47px;
+  }
+
+  h3 {
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+      line-height: 19px;
+    }
+    @include media-breakpoint-down(sm) {
+      color: $orange-medium;
+      font-size: 1.31rem;
+      font-weight: 700;
+      letter-spacing: 2.1px;
+      line-height: 38px;
+      text-align: center;
+    }
+    color: $white;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 34px;
+    text-align: left;
+  }
+
+  h4 {
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+      line-height: 19px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      margin: 0 0 1rem;
+      text-align: left;
+    }
+    color: $gray-dark;
+  }
+
+  .hero {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 4rem;
+    }
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 1rem;
+    }
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5rem;
+
+    .header-text {
+      @include media-breakpoint-down(md) {
+        height: 350px;
+      }
+      @include media-breakpoint-down(sm) {
+        height: 100%;
+      }
+      display: flex;
+      flex-direction: column;
+      height: 550px;
+      justify-content: center;
+    }
 
     p {
-      @include media-breakpoint-down(lg) {
-        font-size: 1rem;
-      }
       @include media-breakpoint-down(md) {
         font-size: 0.81rem;
         font-weight: 400;
         letter-spacing: 0.6px;
         line-height: 17px;
-        width: 434px;
       }
       @include media-breakpoint-down(sm) {
-        text-align: center;
+        color: $gray-dark;
+        font-size: 1rem;
+        line-height: 32px;
+        text-align: left;
+        width: 100%;
       }
       color: $white;
-      font-size: 1.2rem;
+      font-size: 1rem;
       font-weight: 400;
       margin-bottom: 2rem;
+      max-width: 500px;
       text-align: left;
     }
   }
 
   .bio {
+    @include media-breakpoint-down(sm) {
+      justify-content: center;
+    }
+    p {
+      @include media-breakpoint-down(md) {
+        font-size: 0.81rem;
+        font-weight: 400;
+        line-height: 28px;
+        width: 400px;
+      }
+      @include media-breakpoint-down(sm) {
+        color: $gray-dark;
+        font-size: 1rem;
+        line-height: 32px;
+        text-align: left;
+        width: 100%;
+      }
+      color: $gray-brown;
+      font-size: 1rem;
+      line-height: 32px;
+      width: 465px;
+    }
+  }
+
+  .badge {
     @include media-breakpoint-down(md) {
-      column-gap: 2rem;
-      padding: 3rem;
+      margin: 0 1rem 0 0;
     }
     @include media-breakpoint-down(sm) {
-      grid-template-columns: none;
-      padding: 2rem;
+      margin: 0 auto 2rem;
+      width: 80%;
     }
-    align-items: center;
-    column-gap: 4rem;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    padding: 5rem 8rem;
+    margin: 0 2rem 0 0;
+  }
 
-    .text {
-      @include media-breakpoint-down(sm) {
-        margin-left: 0;
-        text-align: center;
-
-        h2,
-        h4,
-        p {
-          text-align: center;
-        }
-      }
-      margin-left: 35px;
-
-      h2 {
-        @include media-breakpoint-down(md) {
-          font-size: 1.5rem;
-          letter-spacing: 1.54px;
-          line-height: 29px;
-        }
-        color: #333333;
-        font-size: 2.625rem;
-        font-weight: 600;
-        letter-spacing: 2.1px;
-        line-height: 47px;
-        text-align: left;
-      }
-      h4 {
-        @include media-breakpoint-down(md) {
-          font-size: 1rem;
-          letter-spacing: 1.02px;
-          line-height: 19px;
-        }
-        color: #333333;
-        font-size: 1.75rem;
-        font-weight: 600;
-        line-height: 34px;
-        text-align: left;
-      }
-      p {
-        @include media-breakpoint-down(md) {
-          font-size: 0.81rem;
-          line-height: 28px;
-        }
-        color: #4a494a;
-        font-weight: 400;
-        line-height: 32px;
-        margin-bottom: 2rem;
-        padding: 0;
-        text-align: left;
-        &.check-link {
-          color: $orange;
-          font-size: 26px;
-          margin-bottom: 0;
-        }
-      }
+  .headshot {
+    img {
+      border-radius: 100%;
     }
+  }
+  .headshot-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 2rem;
+  }
+
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    max-width: 465px;
   }
 
   .skill-chip {
@@ -166,12 +204,20 @@ section.team-landing {
   .members {
     margin-bottom: 8rem;
     h2 {
-      color: #333333;
-      font-size: 2.625rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
+        line-height: 34px;
+        margin: 3rem 0;
+      }
+      @include media-breakpoint-down(md) {
+        margin: 2rem 0;
+      }
+      font-size: 2.63rem;
       font-weight: 600;
       letter-spacing: 2.1px;
       line-height: 38px;
-      margin: 2rem 0 3rem;
+      margin: 4rem 0;
+      text-align: center;
     }
   }
 }

@@ -13,6 +13,7 @@ export class AppMembersSection {
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
+      url: '/about/jedi-weller',
     },
     {
       name: 'Paulina Gallo',
@@ -39,6 +40,7 @@ export class AppMembersSection {
       mail: 'leon@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/leon-degtar',
     },
     {
       name: 'Fernando Del Olmo',
@@ -65,6 +67,7 @@ export class AppMembersSection {
       mail: 'claudio@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/claudio-del-valle',
     },
     {
       name: 'Min Lee',
@@ -73,13 +76,14 @@ export class AppMembersSection {
       mail: 'min@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/min-lee',
     },
     {
       name: 'William Holloran',
       image: './../../assets/headshot-billy.png',
       title: translate('about.team.member.title.qualityManager'),
       mail: 'william@openforge.io',
-      url: '/about/billy-holloran',
+      url: '/about/william-holloran',
     },
     {
       name: 'May Alkhraisha',
@@ -88,6 +92,7 @@ export class AppMembersSection {
       mail: 'may@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/may-alkhraisha',
     },
     {
       name: 'Mariela Mora',
@@ -96,6 +101,7 @@ export class AppMembersSection {
       mail: 'mariela@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/mariela-mora',
     },
     {
       name: 'Petrell Vereen',
@@ -104,6 +110,7 @@ export class AppMembersSection {
       mail: 'petrell@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/petrell-vereen',
     },
     {
       name: 'Jared Bradshaw',
@@ -112,6 +119,7 @@ export class AppMembersSection {
       mail: 'jared@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/jared-bradshaw',
     },
     {
       name: 'Harry Scheuerle',
@@ -120,6 +128,7 @@ export class AppMembersSection {
       mail: 'harry@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/harry-scheuerle',
     },
     {
       name: 'Matt Moran',
@@ -128,6 +137,7 @@ export class AppMembersSection {
       mail: 'matt@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/matt-moran',
     },
     {
       name: 'Carter Simonson',
@@ -136,6 +146,7 @@ export class AppMembersSection {
       mail: 'carter@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/carter-simonson',
     },
     {
       name: 'Griffin Robbins',
@@ -144,6 +155,7 @@ export class AppMembersSection {
       mail: 'griffin@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/griffin-robbins',
     },
     {
       name: 'Pablo Huerta',
@@ -152,6 +164,7 @@ export class AppMembersSection {
       mail: 'pablo@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/pablo-huerta',
     },
     {
       name: 'Alberto Carniel',
@@ -160,6 +173,7 @@ export class AppMembersSection {
       mail: 'alberto@openforge.io',
       twitter: '',
       github: '',
+      url: '/about/alberto-carniel',
     },
     {
       name: 'Join Us',
@@ -168,6 +182,7 @@ export class AppMembersSection {
       mail: '',
       twitter: '',
       github: '',
+      url: '/about/join-us',
     },
     // {
     //   name: 'YOU?',
