@@ -52,7 +52,7 @@ export class AppMembersSection {
       url: '/about/fernando-del-olmo',
     },
     {
-      name: 'Luis Chacon',
+      name: 'Luis Chacón',
       image: './../../assets/headshot-luis.png',
       title: translate('about.team.member.title.developer'),
       mail: 'luis@openforge.io',
@@ -95,13 +95,13 @@ export class AppMembersSection {
       url: '/about/may-alkhraisha',
     },
     {
-      name: 'Mariela Mora',
+      name: 'Mariela Mora Quesada',
       image: './../../assets/headshot-mariela.png',
       title: translate('about.team.member.title.projectManagement'),
       mail: 'mariela@openforge.io',
       twitter: '',
       github: '',
-      url: '/about/mariela-mora',
+      url: '/about/mariela-mora-quesada',
     },
     {
       name: 'Petrell Vereen',
@@ -137,7 +137,7 @@ export class AppMembersSection {
       mail: 'matt@openforge.io',
       twitter: '',
       github: '',
-      url: '/about/matt-moran',
+      // url: '/about/matt-moran',
     },
     {
       name: 'Carter Simonson',
