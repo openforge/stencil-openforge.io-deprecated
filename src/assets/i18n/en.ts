@@ -57,9 +57,9 @@ export const translations = {
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
-        titleSmall: 'We Are Passionate About Technology & Design',
+        titleSmall: 'We Are Passionate About Design & Technology',
         text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-        action: 'LEARN MORE',
+        action: 'MEET OUR TEAM',
       },
       mission: {
         title: 'Our Mission',

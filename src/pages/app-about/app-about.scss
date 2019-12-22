@@ -2,232 +2,180 @@
   font-family: 'Muli', sans-serif;
   height: 100%;
   overflow-x: hidden;
-  .container {
-    @include media-breakpoint-down(sm) {
-      padding: 0 2rem;
-    }
-    padding: 0;
-  }
-  .hero {
-    @include media-breakpoint-down(lg) {
-      background-position: right bottom;
-    }
+  padding: 73px 0 0 0;
+
+  h1 {
     @include media-breakpoint-down(md) {
-      background-size: 80% 80%;
-      width: calc(100% + 4rem);
+      font-size: 2.625rem;
+      letter-spacing: 2.1px;
+      line-height: 47px;
     }
     @include media-breakpoint-down(sm) {
-      background-size: auto;
-      width: calc(100% + 2rem);
+      font-size: 1.75rem;
+      letter-spacing: 1.05px;
+      line-height: 34px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    line-height: 58px;
+    margin: 0 0 1rem;
+    text-align: left;
+  }
+
+  h2 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.75rem;
+      line-height: 34px;
+    }
+    font-size: 2.63rem;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+    line-height: 45px;
+  }
+
+  h3 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.5rem;
+      letter-spacing: 1.54px;
+      line-height: 29px;
+    }
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 34px;
+  }
+
+  p {
+    @include media-breakpoint-down(md) {
+      color: #5d534e;
+      margin-bottom: 1rem;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1rem;
+      line-height: 32px;
+      margin: 0 auto;
+    }
+    color: $gray-dark;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 36px;
+  }
+
+  .hero {
+    @include media-breakpoint-down(md) {
+      background-size: 80%;
+    }
+    @include media-breakpoint-down(sm) {
+      background: none;
+      height: 100%;
     }
     background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
-    background-size: auto;
-    height: 100%;
-
-    .row {
-      @include media-breakpoint-down(md) {
-        padding: 0 0 50px;
-      }
-      @include media-breakpoint-down(sm) {
-        padding: 0 0 150px;
-      }
-      height: 700px;
-
-      p {
-        @include media-breakpoint-down(md) {
-          width: 320px;
-        }
-        @include media-breakpoint-down(sm) {
-          letter-spacing: 0.5px;
-          line-height: 32px;
-          margin: 0 0 1rem;
-          text-align: left;
-          width: 263px;
-        }
-
-        color: $gray-brown;
-        font-size: 1rem;
-        font-weight: 400;
-        letter-spacing: 1px;
-        line-height: 32px;
-        margin: 0 0 2rem;
-        width: 419px;
-      }
-
-      h1 {
-        @include media-breakpoint-down(md) {
-          font-size: 2.625rem;
-          letter-spacing: 2.1px;
-          line-height: 47px;
-          width: 421px;
-        }
-        @include media-breakpoint-down(sm) {
-          font-size: 1.75rem;
-          letter-spacing: 1.05px;
-          line-height: 34px;
-          margin: 0 0 1rem;
-          width: 278px;
-        }
-
-        font-size: 3rem;
-        font-weight: 600;
-        letter-spacing: 1.6px;
-        line-height: 58px;
-        margin: 0 0 2rem;
-        max-width: 632px;
-      }
-
-      button {
-        @include media-breakpoint-down(md) {
-          display: none;
-        }
-      }
-
-      .text-container {
-        @include media-breakpoint-down(sm) {
-          margin-bottom: 2rem;
-        }
-      }
-
-      .title {
-        @include media-breakpoint-down(sm) {
-          display: none;
-        }
-      }
-
-      .title-small {
-        @include media-breakpoint-down(sm) {
-          display: block;
-        }
-        display: none;
-      }
-    }
-  }
-
-  .team-photo {
-    @include media-breakpoint-down(sm) {
-      margin: 0;
-      min-height: 240px;
-    }
-    background-image: url('/assets/about-photo-team.jpg');
+    background-position: calc(100% + 3rem) calc(100% + 3rem);
     background-repeat: no-repeat;
-    background-size: 100%;
-    height: 100%;
-    margin: 0 0 7rem;
-    min-height: 610px;
-
-    app-img {
-      @include media-breakpoint-down(sm) {
-        display: none;
-      }
-      position: absolute;
-      top: 600px;
-      transform: translate(-50%, -50%);
-      width: 100%;
-    }
-  }
-
-  .mission-statement {
-    @include media-breakpoint-down(sm) {
-      display: block;
-    }
-    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
-    display: none;
-    height: 100%;
+    background-size: 70%;
+    height: 600px;
 
     h1 {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 1.02px;
-      line-height: 19px;
-      margin: 1rem 0;
+      @include media-breakpoint-down(md) {
+        max-width: 421px;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 278px;
+      }
+      max-width: 632px;
     }
 
     p {
-      font-size: 0.8125rem;
-      font-weight: 400;
-      line-height: 22px;
-      margin: 0 0 2rem;
+      @include media-breakpoint-down(md) {
+        max-width: 320px;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 278px;
+        text-align: center;
+      }
+      color: #5d534e;
+      max-width: 420px;
+      text-align: left;
     }
   }
 
-  .values,
   .members {
-    padding: 3rem 0;
-    .container {
-      padding: 0 0.5rem;
-    }
-
+    margin-bottom: 8rem;
     h2 {
-      font-size: 2.625rem;
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
+        line-height: 34px;
+        margin: 3rem 0;
+      }
+      @include media-breakpoint-down(sm) {
+        margin: 3rem 0 2rem;
+      }
+      font-size: 2.63rem;
       font-weight: 600;
       letter-spacing: 2.1px;
       line-height: 38px;
-      margin: 0 0 2rem;
+      margin: 4rem 0;
       text-align: center;
-    }
-
-    p {
-      @include media-breakpoint-down(sm) {
-        font-size: 1rem;
-        margin: 0 auto;
-        text-align: center;
-        width: 85%;
-      }
-      color: $gray-dark;
-      font-size: 1.125rem;
-      font-weight: 400;
-      line-height: 36px;
-      text-align: center;
-    }
-
-    .header {
-      margin: 0 auto 3rem;
-      max-width: 768px;
-    }
-
-    .integrity {
-      background: url('assets/svg/about-graphic-integrity.svg') center center no-repeat;
-      height: 164px;
-      width: 220px;
-    }
-
-    .honesty {
-      background: url('assets/svg/about-graphic-honesty.svg') center center no-repeat;
-      height: 164px;
-      width: 220px;
-    }
-
-    .transparency {
-      background: url('assets/svg/about-graphic-transparency.svg') center center no-repeat;
-      height: 164px;
-      width: 220px;
     }
   }
 
   .values {
+    margin: 0 0 4rem;
     h2 {
-      @include media-breakpoint-down(sm) {
-        font-size: 1.5rem;
-        margin: 0 0 1rem;
-      }
+      margin: 4rem 0 1rem;
+      text-align: center;
+    }
+    p {
+      margin: auto;
+      max-width: 681px;
+      text-align: center;
     }
   }
 
-  .members {
-    h2 {
-      @include media-breakpoint-down(sm) {
-        font-size: 2rem;
-        margin: 0;
-      }
-    }
+  .value-badges {
+    margin: 0 0 4rem;
   }
 
-  .value-text {
-    color: $gray-dark;
-    font-size: 1.5rem;
-    font-weight: 600;
-    line-height: 34px;
-    margin: 2rem 0 0;
+  .integrity {
+    background: url('assets/svg/about-graphic-integrity.svg') center center no-repeat;
+    height: 164px;
+    width: 220px;
   }
+
+  .honesty {
+    background: url('assets/svg/about-graphic-honesty.svg') center center no-repeat;
+    height: 164px;
+    width: 220px;
+  }
+
+  .transparency {
+    background: url('assets/svg/about-graphic-transparency.svg') center center no-repeat;
+    height: 164px;
+    width: 220px;
+  }
+
+  // .team-photo {
+  //   @include media-breakpoint-down(sm) {
+  //     margin: 0;
+  //     min-height: 240px;
+  //   }
+  //   background-image: url('/assets/about-photo-team.jpg');
+  //   background-repeat: no-repeat;
+  //   background-size: 100%;
+  //   height: 100%;
+  //   margin: 0 0 7rem;
+  //   min-height: 610px;
+
+  //   app-img {
+  //     @include media-breakpoint-down(sm) {
+  //       display: none;
+  //     }
+  //     position: absolute;
+  //     top: 600px;
+  //     transform: translate(-50%, -50%);
+  //     width: 100%;
+  //   }
+  // }
 }

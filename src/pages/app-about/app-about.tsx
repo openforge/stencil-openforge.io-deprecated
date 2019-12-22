@@ -15,35 +15,76 @@ export class AppAbout {
   }
 
   scrollToForm() {
-    const form = document.getElementById('team-photo');
+    const form = document.getElementById('members');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   render() {
     return (
       <div class="about">
-        {/* header - hero */}
-        <header class="hero">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-md-8 col-sm-10 text-container">
-                <h1>
-                  <app-translate class="title" keyword="about.header.title" />
-                  <app-translate class="title-small" keyword="about.header.titleSmall" />
-                </h1>
-                <p>
-                  <app-translate keyword="about.header.text" />
-                </p>
-                <button onClick={this.scrollToForm.bind(this)} class="btn btn-secondary">
-                  <app-translate keyword="about.header.action" />
-                </button>
+        <div class="container-fluid">
+          <div class="row align-items-center hero">
+            <div class="col-12 col-md-11 offset-md-1">
+              <h1>
+                <app-translate class="d-none d-md-block" keyword="about.header.title" />
+                <app-translate class="d-block d-md-none" keyword="about.header.titleSmall" />
+              </h1>
+              <p>
+                <app-translate keyword="about.header.text" />
+              </p>
+              <app-img class="d-block d-md-none" src="../../assets/svg/about-graphic-header.svg" />
+              <button onClick={this.scrollToForm.bind(this)} class="btn btn-secondary d-none d-md-block">
+                <app-translate keyword="about.header.action" />
+              </button>
+            </div>
+          </div>
+
+          <div class="row justify-content-center d-none d-md-block values">
+            <div class="col-12">
+              <h2>
+                <app-translate keyword="about.values.title" />
+              </h2>
+              <p>
+                <app-translate keyword="about.values.text" />
+              </p>
+            </div>
+          </div>
+
+          <div class="d-none d-md-block value-badges">
+            <div class="row justify-content-center">
+              <div class="col-md-4 col-lg-3 d-flex flex-column align-items-center">
+                <div class="honesty" />
+                <h3>
+                  <app-translate keyword="about.values.value1" />
+                </h3>
+              </div>
+              <div class="col-md-4 col-lg-3 d-flex flex-column align-items-center">
+                <div class="integrity" />
+                <h3>
+                  <app-translate keyword="about.values.value2" />
+                </h3>
+              </div>
+              <div class="col-md-4 col-lg-3 d-flex flex-column align-items-center">
+                <div class="transparency" />
+                <h3>
+                  <app-translate keyword="about.values.value3" />
+                </h3>
               </div>
             </div>
           </div>
-        </header>
+
+          <div id="members" class="row justify-content-center members">
+            <div class="col-11 col-lg-12">
+              <h2>
+                <app-translate keyword="about.landing.cta.title" />
+              </h2>
+              <app-members-section />
+            </div>
+          </div>
+        </div>
 
         {/* section - team */}
-        <section id="team-photo" class="team-photo {this.className}">
+        {/* <section id="team-photo" class="team-photo {this.className}">
           <div class="container">
             <div class="row align-items-end text-center">
               <div class="col-12">
@@ -51,62 +92,7 @@ export class AppAbout {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* section - mission statement */}
-        <section id="mission-statement" class="mission-statement">
-          <div class="mission-statement d-flex flex-column text-center">
-            <h1 class="text-white">
-              <app-translate keyword="about.mission.title" />
-            </h1>
-            <p class="text-white align-self-center">
-              <app-translate keyword="about.mission.statement" />
-            </p>
-          </div>
-        </section>
-
-        {/* section - values */}
-        <section id="values" class="values">
-          <div class="container text-center">
-            <div class="row header">
-              <div class="col-12">
-                <h2>
-                  <app-translate keyword="about.values.title" />
-                </h2>
-                <p>
-                  <app-translate keyword="about.values.text" />
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="honesty" />
-                <app-translate class="value-text" keyword="about.values.value1" />
-              </div>
-              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="integrity" />
-                <app-translate class="value-text" keyword="about.values.value2" />
-              </div>
-              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="transparency" />
-                <app-translate class="value-text" keyword="about.values.value3" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* section - members */}
-        <section id="members" class="members">
-          <div class="container text-center">
-            <div class="header">
-              <h2>
-                <app-translate keyword="about.team.title" />
-              </h2>
-            </div>
-            <app-members-section />
-          </div>
-        </section>
-
+        </section> */}
         {/* aside - cta */}
         <app-cta />
 
