@@ -452,10 +452,11 @@ export const translations = {
         },
       },
       links: {
-        home: 'Home',
+        ourWork: 'Our Work',
+        resources: 'Resources',
         blog: 'Blog',
         about: 'About',
-        contact: 'Contact',
+        workWithUs: 'Work With Us',
         opportunities: 'Opportunities',
         github: 'Openforge Github account',
       },
