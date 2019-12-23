@@ -50,11 +50,6 @@ export class AppContact {
     this.validateField(target);
   }
 
-  private className;
-  componentWillLoad() {
-    this.className = 'webp';
-  }
-
   componentDidLoad() {
     if (Build.isBrowser) {
       this.resetFormValues();
@@ -85,7 +80,7 @@ export class AppContact {
         break;
     }
 
-    this.formValues.nameValid && this.formValues.emailValid && this.formValues.phoneValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
+    this.formValues.nameValid && this.formValues.emailValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
@@ -127,85 +122,66 @@ export class AppContact {
   render() {
     return (
       <div class="contact">
-        {/* header - hero */}
-        <header class={this.className}>
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-sm-12 col-md-8 col-lg-6">
-                <h2>
-                  <app-translate keyword="contact.hero.title" />
-                </h2>
-                <p>
-                  <app-translate keyword="contact.hero.request" />
-                </p>
-                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  <app-translate keyword="contact.hero.requestNow" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </header>
-
         <section id="second-content" class="contact-form">
           <div class="container">
             {!this.formSubmitted ? (
-              <div class="jumbotron">
-                <h2 class="display-5 font-weight-bold">
-                  <app-translate keyword="contact.form.title" />
-                </h2>
-                <p class="lead">
-                  <app-translate keyword="contact.form.text" />
-                </p>
-                <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
-                  <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder="" required={true} />
-                  <p class="error">
-                    <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.nameError}
-                  </p>
+              <div class="row align-items-center">
+                <div class="col-lg-6 col-sm-12 col-md-12">
+                  <div class="letter-form">
+                    <h2 class="display-5 font-weight-bold">
+                      <app-translate keyword="contact.form.title" />
+                    </h2>
+                    <p class="lead">
+                      <app-translate keyword="contact.form.text" />
+                    </p>
+                    <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
+                      <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder="" required={true} />
+                      <p class="error">
+                        <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.nameError}
+                      </p>
 
-                  <app-input name="email" label={translate('contact.form.email')} type="email" id="email" placeholder="" required={true} />
-                  <p class="error">
-                    <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.emailError}
-                  </p>
+                      <app-input name="email" label={translate('contact.form.email')} type="email" id="email" placeholder="" required={true} />
+                      <p class="error">
+                        <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.emailError}
+                      </p>
 
-                  <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder="" required={true} />
-                  <p class="error">
-                    <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.phoneError}
-                  </p>
+                      <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder="" required={false} />
+                      <p class="error">
+                        <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.phoneError}
+                      </p>
 
-                  <app-input name="message" label={translate('contact.form.whereDidYouHear')} type="text" placeholder="" required={true} />
-                  <p class="error">
-                    <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
-                      <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                    </span>
-                    {this.messageError}
-                  </p>
+                      <app-input name="message" label={translate('contact.form.whatAreYouWorkingOn')} type="text" placeholder="" required={true} />
+                      <p class="error">
+                        <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.messageError}
+                      </p>
 
-                  <button name="submit" type="submit" class="btn btn-primary" disabled={this.isDisabled}>
-                    <app-translate keyword="contact.form.button.send" />
-                  </button>
-                </form>
+                      <button name="submit" type="submit" class="btn btn-primary btn-submit" disabled={this.isDisabled}>
+                        <app-translate keyword="contact.form.button.send" />
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-none d-lg-flex form-image-content">
+                  <app-img src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" />
+                </div>
               </div>
             ) : null}
 
             {this.formSubmitted ? (
-              <div class="container">
-                <content-graphic img-url="/assets/rocket.png">
-                  <h3 slot="header">
-                    <app-translate keyword="contact.form.thanx" />
-                  </h3>
-                  <p slot="body">
-                    <app-translate keyword="contact.form.thanxText" />
-                  </p>
-                </content-graphic>
+              <div class="container submit-container">
+                <app-img src="/assets/svg/contact-anim.svg" alt="Map page graphic" />
               </div>
             ) : null}
           </div>
