@@ -54,9 +54,17 @@ export class AppNavHeader {
                   {translate('nav.links.ourWork')}
                 </stencil-route-link>
               </li>
-              <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  {translate('nav.links.resources')}
+              <li class="nav-item" data-target="#navbarSupportedContent">
+                <stencil-route-link url="/our-work" anchorClass="nav-link" activeClass="active">
+                  Our Work
+                </stencil-route-link>
+              </li>
+              <li class="nav-item dropdown split" data-target="#navbarSupportedContent">
+                <stencil-route-link anchorClass="nav-link main" url="/services" role="button" activeClass="active">
+                  Services
+                </stencil-route-link>
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                   <stencil-route-link url="/blog" anchorClass="nav-link dropdown-item" activeClass="active">
