@@ -19,11 +19,8 @@ export class AppBlogFeatured {
           <div class="row">
             <div class="col-md-12">
               <div class="featured-title">
-                <div class="d-none d-md-block">
-                  <h4>What's New in Our Blog</h4>
-                </div>
-                <div class="d-block d-sm-block d-md-none">
-                  <h4>Featured Post</h4>
+                <div>
+                  <h4>What's New In Our Blog</h4>
                 </div>
               </div>
               <div class="featured-image">
