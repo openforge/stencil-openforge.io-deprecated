@@ -1,4 +1,4 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, State, Prop, Watch, h } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
 
@@ -7,7 +7,7 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
+  // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
 
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
@@ -310,10 +310,10 @@ export class AppTeamLanding {
   }
 
   changeImageFormat(img: string) {
-    if (img && this.allowWebp) {
-      const idx = img.lastIndexOf('.');
-      return `${img.substring(0, idx)}.webp`;
-    }
+    // if (img && this.allowWebp) {
+    //   const idx = img.lastIndexOf('.');
+    //   return `${img.substring(0, idx)}.webp`;
+    // }
     return img;
   }
 
@@ -349,13 +349,13 @@ export class AppTeamLanding {
                 />
                 <div class="text">
                   <h2>
-                    <app-translate key="about.landing.container.title1" />
+                    <app-translate keyword="about.landing.container.title1" />
                     &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
-                    <app-translate key="about.landing.container.title2" />
+                    <app-translate keyword="about.landing.container.title2" />
                   </h2>
                   <p>{this.data[this.match.params.member].bodyText}</p>
                   <h4>
-                    <app-translate key="about.landing.container.skills" />
+                    <app-translate keyword="about.landing.container.skills" />
                   </h4>
                   {this.chips}
                 </div>
@@ -364,12 +364,12 @@ export class AppTeamLanding {
               <aside class="cta-about text-white">
                 <div class="cta-container d-flex flex-row justify-content-center">
                   <h3 class="align-self-center">
-                    <app-translate key="about.landing.cta.title" />
+                    <app-translate keyword="about.landing.cta.title" />
                   </h3>
 
                   <stencil-route-link url="/about" class="align-self-center">
                     <button class="btn btn-primary">
-                      <app-translate key="about.landing.cta.button" />
+                      <app-translate keyword="about.landing.cta.button" />
                     </button>
                   </stencil-route-link>
                 </div>

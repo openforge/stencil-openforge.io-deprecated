@@ -1,4 +1,4 @@
-import { Component, Element, Prop, State, Watch } from '@stencil/core';
+import { Component, Element, Prop, State, Watch, h, Build } from '@stencil/core';
 // import { LazyImg } from './lazy-img';
 
 @Component({
@@ -16,6 +16,7 @@ export class Img {
   @Prop() alt: string;
   @Prop() preLoad: boolean = false;
   @Prop() src: string;
+
   @Watch('src')
   srcChanged() {
     this.addIntersectionObserver();
@@ -57,7 +58,7 @@ export class Img {
   }
 
   private changeImageFormat() {
-    if (this.loadSrc && localStorage && localStorage.getItem('allowWebp') === 'true') {
+    if (this.loadSrc && (!Build.isBrowser || localStorage.getItem('allowWebp') === 'true')) {
       const idx = this.loadSrc.lastIndexOf('.');
       const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
       if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {

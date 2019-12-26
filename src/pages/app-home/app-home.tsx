@@ -1,12 +1,12 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State, h, Build } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
 import { translate } from '../../services/translation.service';
+import { BlogPost } from '../../model/blog-post.model';
+import * as Fetch from '../../shared/fetch-handler';
 
 /* tslint:disable-next-line */
-import $ from 'jquery';
-
-declare var fbq;
+declare var bootstrap;
 
 @Component({
   tag: 'app-home',
@@ -15,95 +15,202 @@ declare var fbq;
 export class AppHome {
   @Prop() history: RouterHistory;
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
+  @State() featuredPost: BlogPost = null;
+  @State() featuredIsError: boolean = false;
+  @State() featuredIsLoading: boolean = true;
+  timer: any;
+  currItem = 0;
 
-  //  private sticky;
+  componentWillLoad() {
+    if (Build.isBrowser) {
+      this.getFeaturedPost();
+    }
+  }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
     }
-
     /* tslint:disable-next-line */
-    $(window).on('scroll resize', function() {
-      const pos = $('#content-panel-inner').offset().top + $('#content-panel-inner').height() / 2;
-      let done = false;
-      $('.content-panel').each(function() {
-        if (!done && pos <= Math.floor($(this).offset().top + $(this).height())) {
-          const newDescr = $(this)
-            .find('.description')
-            .html();
-          $('#content-panel-inner').html(newDescr);
+    window.addEventListener('scroll', () => {
+      const innerPanel = document.getElementById('content-panel-inner');
+      if (innerPanel && innerPanel.offsetHeight) {
+        const rect = innerPanel.getBoundingClientRect();
+        const pos = rect.top + rect.height / 2;
+        let done = false;
+        const panels = document.querySelectorAll('.content-panel');
+        panels.forEach((el: HTMLElement) => {
+          const innerRect = el.getBoundingClientRect();
+          if (!done && pos < innerRect.top + innerRect.height) {
+            innerPanel.innerHTML = el.children[0].innerHTML;
+            done = true;
+          }
+        });
 
-          done = true;
+        if (innerPanel.offsetTop === (panels[0] as HTMLElement).offsetTop) {
+          innerPanel.innerHTML = panels[0].innerHTML;
         }
-      });
-
-      if (
-        $('#content-panel-inner').offset().top ===
-        $('.content-panel')
-          .first()
-          .offset().top
-      ) {
-        const newDescr = $('.content-panel')
-          .first()
-          .find('.description')
-          .html();
-
-        $('#content-panel-inner').html(newDescr);
       }
     });
 
-    /* tslint:disable-next-line */
-    $(document).ready(function() {
-      // Force bootstrap to initialize carousel
-      const processCarousel = $('#processCarousel');
-      setTimeout(() => window['bootstrap'].Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
+    if (Build.isBrowser) {
+      /* tslint:disable-next-line */
+      $(document).ready(function() {
+        // Force bootstrap to initialize carousel
+        const processCarousel = $('#processCarousel');
+        setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
 
-      $(window).trigger('scroll'); // init the value
-    });
+        $(window).trigger('scroll'); // init the value
+      });
+    }
   }
 
-  scrollToForm() {
-    const form = document.getElementById('services');
-    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  componentDidUnload() {
+    clearInterval(this.timer);
+  }
+
+  async getFeaturedPost() {
+    this.featuredIsLoading = true;
+    this.featuredPost = await Fetch.fetchOneBlogPost();
+    this.featuredIsLoading = false;
+  }
+
+  renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
+    if (isError) {
+      return <div>Error loading featured post</div>;
+    }
+    if (isLoading) {
+      return (
+        <div class="loading">
+          <i class="fa fa-spinner fa-spin" />
+        </div>
+      );
+    }
+    return <app-blog-featured blogPost={featuredPost} />;
   }
 
   render() {
+    const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     return (
       <div class="home">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="hero-content col-12">
+              <div class="col-12 flex-column">
                 <h1>
-                  <app-translate key="home.hero.title" />
+                  <app-translate keyword="home.hero.title" />
                 </h1>
                 <h2>
-                  <app-translate key="home.hero.subTitle" />
+                  <app-translate keyword="home.hero.subTitle" />
                 </h2>
-                <p class="subtext">
-                  <i>
-                    <app-translate key="home.hero.subtext" />
-                  </i>
-                </p>
-                <p class="subtext-mobile">
-                  <app-translate key="home.hero.subtextMobile" />
-                </p>
+                <div class="svg-header-desktop" aria-label="header" />
+                <div class="svg-header-mobile" aria-label="header" />
               </div>
             </div>
           </div>
-          <object data="/assets/svg/home-graphic-header.svg" class="svg-header-desktop" aria-label="header" />
         </header>
+
+        <div class="featured-blog">{featuredPost}</div>
+
+        <section id="work" class="work">
+          <div class="main-content">
+            <div id="sticky-sidebar" class="sidebar">
+              <div id="sticky-sidebar-inner">
+                <div id="content-panel-inner" class="content-panel-inner" />
+              </div>
+            </div>
+            <div class="content">
+              <div class="content-panel vanlife">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h3>{translate('home.work.experts')}</h3>
+                    <h2>{translate('home.work.mobileWebApplications.title')}</h2>
+                    <p>{translate('home.work.mobileWebApplications.text')}</p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    <app-translate keyword="home.work.mobileWebApplications.example" />
+                  </h2>
+                  <div class="row">
+                    <img src="/assets/apps/vanlife/graphic-example-1.png" class="behind-left" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-2.png" class="front-center" alt="vanlife app screenshot" />
+                    <img src="/assets/apps/vanlife/graphic-example-3.png" class="behind-right" alt="vanlife app screenshot" />
+                  </div>
+                  <div class="store-buttons">
+                    <a href="https://itunes.apple.com/us/app/the-vanlife-app/id1447689037?mt=8" target="_blank" rel="noopener" data-cy="vanlife-apple">
+                      <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.thevanlifeapp.vanlifeapp&hl=en" target="_blank" rel="noopener" data-cy="vanlife-google">
+                      <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="content-panel loudcloud">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h3>{translate('home.work.experts')}</h3>
+                    <h2>{translate('home.work.mobileTechnology.title')}</h2>
+                    <p>{translate('home.work.mobileTechnology.text')}</p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    <app-translate keyword="home.work.mobileTechnology.example" />
+                  </h2>
+                  <div class="row">
+                    <img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
+                    <img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
+                  </div>
+                  <div class="store-buttons">
+                    <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener" data-cy="loudcloud-apple">
+                      <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener" data-cy="loudcloud-google">
+                      <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="content-panel voyage">
+                <div class="content-panel-inner description">
+                  <div class="panel-inner-text">
+                    <h3>{translate('home.work.experts')}</h3>
+                    <h2>{translate('home.work.digitalExperience.title')}</h2>
+                    <p>{translate('home.work.digitalExperience.text')}</p>
+                  </div>
+                </div>
+                <div class="content-panel-image">
+                  <h2>
+                    <app-translate keyword="home.work.digitalExperience.example" />
+                  </h2>
+                  <div class="row">
+                    <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
+                    <img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
+                  </div>
+                  <div class="store-buttons">
+                    <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener" data-cy="voyage-apple">
+                      <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                    </a>
+                    <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener" data-cy="voyage-google">
+                      <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="content-panel last-panel" />
+            </div>
+          </div>
+        </section>
 
         <section id="process" class="process">
           <div class="text-center header">
             <h2>
-              <app-translate key="home.process.title" />
+              <app-translate keyword="home.process.title" />
             </h2>
           </div>
 
@@ -118,11 +225,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.discovery.title" />
+                        <app-translate keyword="home.process.discovery.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="0" />
                       <p>
-                        <app-translate key="home.process.discovery.text" />
+                        <app-translate keyword="home.process.discovery.text" />
                       </p>
                     </div>
                   </div>
@@ -136,11 +243,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.design.title" />
+                        <app-translate keyword="home.process.design.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="1" />
                       <p>
-                        <app-translate key="home.process.design.text" />
+                        <app-translate keyword="home.process.design.text" />
                       </p>
                     </div>
                   </div>
@@ -154,11 +261,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.development.title" />
+                        <app-translate keyword="home.process.development.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="2" />
                       <p>
-                        <app-translate key="home.process.development.text" />
+                        <app-translate keyword="home.process.development.text" />
                       </p>
                     </div>
                   </div>
@@ -172,11 +279,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.deployment.title" />
+                        <app-translate keyword="home.process.deployment.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="3" />
                       <p>
-                        <app-translate key="home.process.deployment.text" />
+                        <app-translate keyword="home.process.deployment.text" />
                       </p>
                     </div>
                   </div>
@@ -190,11 +297,11 @@ export class AppHome {
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
                       <h2>
-                        <app-translate key="home.process.userfeedback.title" />
+                        <app-translate keyword="home.process.userfeedback.title" />
                       </h2>
                       <app-carousel-indicators class="carousel-mobile-indicators" activeIndex="4" />
                       <p>
-                        <app-translate key="home.process.userfeedback.text" />
+                        <app-translate keyword="home.process.userfeedback.text" />
                       </p>
                     </div>
                   </div>
@@ -209,103 +316,6 @@ export class AppHome {
               <span class="carousel-control-next-icon" aria-hidden="true" />
               <span class="sr-only">Next</span>
             </a>
-          </div>
-        </section>
-
-        <section id="work" class="work">
-          <div class="main-content">
-            <div id="sticky-sidebar" class="sidebar">
-              <div id="sticky-sidebar-inner">
-                <div id="content-panel-inner" class="content-panel-inner" />
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-panel loudcloud">
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate('home.services.mobileTechnology.title')}</h2>
-                    <p>{translate('home.services.mobileTechnology.text')}</p>
-                  </div>
-                </div>
-                <div class="content-panel-image">
-                  <h2>
-                    <app-translate key="home.services.mobileTechnology.example" />
-                  </h2>
-                  <div class="container">
-                    <div class="row store-buttons">
-                      <div class="col-6 text-right">
-                        <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                        </a>
-                      </div>
-                      <div class="col-6 text-left">
-                        <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/assets/shared-graphic-loudcloud.png" class="phone-image" alt="loudcloud" />
-                </div>
-              </div>
-              <div class="content-panel voyage">
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate('home.services.digitalExperience.title')}</h2>
-                    <p>{translate('home.services.digitalExperience.text')}</p>
-                  </div>
-                </div>
-                <div class="content-panel-image">
-                  <h2>
-                    <app-translate key="home.services.digitalExperience.example" />
-                  </h2>
-                  <div class="container">
-                    <div class="row store-buttons">
-                      <div class="col-6 text-right">
-                        <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                        </a>
-                      </div>
-                      <div class="col-6 text-left">
-                        <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/assets/shared-graphic-voyage.png" class="phone-image" alt="voyage" />
-                </div>
-              </div>
-              <div class="content-panel juntoscope">
-                <div class="content-panel-inner description">
-                  <div class="panel-inner-text">
-                    <h2>{translate('home.services.brandingDesign.title')}</h2>
-                    <p>{translate('home.services.brandingDesign.text')}</p>
-                  </div>
-                </div>
-                <div class="content-panel-image">
-                  <h2>
-                    <app-translate key="home.services.brandingDesign.example" />
-                  </h2>
-                  <div class="container">
-                    <div class="row store-buttons">
-                      <div class="col-6 text-right">
-                        <a href="https://itunes.apple.com/us/app/digi-thermo/id1307130445?mt=8" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
-                        </a>
-                      </div>
-                      <div class="col-6 text-left">
-                        <a href="https://play.google.com/store/apps/details?id=com.webjuntollc.digithermoapp" target="_blank" rel="noopener">
-                          <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/assets/shared-graphic-juntoscope.png" class="phone-image" alt="juntoscope" />
-                </div>
-              </div>
-              <div class="content-panel last-panel" />
-            </div>
           </div>
         </section>
 

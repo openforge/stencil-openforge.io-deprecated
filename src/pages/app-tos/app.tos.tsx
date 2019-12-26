@@ -1,10 +1,12 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-tos',
   styleUrl: 'app-tos.scss',
 })
 export class AppTOS {
+  componentDidLoad() {}
+
   render() {
     return (
       <div class="terms-of-service">

@@ -1,7 +1,5 @@
-import { Component, State, Listen, Prop } from '@stencil/core';
+import { Component, State, Listen, Prop, h, Build } from '@stencil/core';
 import { translate } from '../../services/translation.service';
-
-declare var fbq;
 
 @Component({
   tag: 'app-contact',
@@ -31,8 +29,6 @@ export class AppContact {
 
   @State() isDisabled = true;
 
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
   @Prop()
   errorIconStyles = {
     display: 'inline',
@@ -45,8 +41,8 @@ export class AppContact {
   constructor() {}
 
   @Listen('check')
-  @Listen('valueChange')
-  valueChangeHandler(event) {
+  @Listen('valueChanged')
+  valueChangedHandler(event) {
     const { field, value, target } = event.detail;
 
     this.formValues[field] = value;
@@ -54,14 +50,16 @@ export class AppContact {
     this.validateField(target);
   }
 
+  private className;
+  componentWillLoad() {
+    this.className = 'webp';
+  }
+
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-      fbq('track', 'Lead');
+    if (Build.isBrowser) {
+      this.resetFormValues();
+      window.scrollTo(0, 0);
     }
-    this.resetFormValues();
   }
 
   validateField(e) {
@@ -106,12 +104,6 @@ export class AppContact {
         body: JSON.stringify(this.formValues),
       });
 
-      // isServer is false when running in the browser
-      // and true when being prerendered
-      if (!this.isServer) {
-        fbq('track', 'CompleteRegistration');
-      }
-
       event.target.reset();
       this.resetFormValues();
 
@@ -132,8 +124,6 @@ export class AppContact {
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
-  private className = localStorage.getItem('allowWebp') === 'false' ? 'webp' : 'hero';
-
   render() {
     return (
       <div class="contact">
@@ -143,13 +133,13 @@ export class AppContact {
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">
                 <h2>
-                  <app-translate key="contact.hero.title" />
+                  <app-translate keyword="contact.hero.title" />
                 </h2>
                 <p>
-                  <app-translate key="contact.hero.request" />
+                  <app-translate keyword="contact.hero.request" />
                 </p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  <app-translate key="contact.hero.requestNow" />
+                  <app-translate keyword="contact.hero.requestNow" />
                 </button>
               </div>
             </div>
@@ -161,10 +151,10 @@ export class AppContact {
             {!this.formSubmitted ? (
               <div class="jumbotron">
                 <h2 class="display-5 font-weight-bold">
-                  <app-translate key="contact.form.title" />
+                  <app-translate keyword="contact.form.title" />
                 </h2>
                 <p class="lead">
-                  <app-translate key="contact.form.text" />
+                  <app-translate keyword="contact.form.text" />
                 </p>
                 <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
                   <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder="" required={true} />
@@ -200,7 +190,7 @@ export class AppContact {
                   </p>
 
                   <button name="submit" type="submit" class="btn btn-primary" disabled={this.isDisabled}>
-                    <app-translate key="contact.form.button.send" />
+                    <app-translate keyword="contact.form.button.send" />
                   </button>
                 </form>
               </div>
@@ -210,10 +200,10 @@ export class AppContact {
               <div class="container">
                 <content-graphic img-url="/assets/rocket.png">
                   <h3 slot="header">
-                    <app-translate key="contact.form.thanx" />
+                    <app-translate keyword="contact.form.thanx" />
                   </h3>
                   <p slot="body">
-                    <app-translate key="contact.form.thanxText" />
+                    <app-translate keyword="contact.form.thanxText" />
                   </p>
                 </content-graphic>
               </div>

@@ -1,11 +1,11 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'app-case-study',
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
-  private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToTop() {
     const form = document.getElementsByTagName('header')[0];
@@ -28,7 +28,7 @@ export class AppCaseStudy {
   render() {
     return (
       <div class="case-study">
-        <header class={this.className}>
+        <header class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div style={{ margin: 'auto' }}>
@@ -55,7 +55,7 @@ export class AppCaseStudy {
           </div>
         </section>
         <section class="container product-section">
-          <app-img class="" src="/assets/work-example-juntoscope-mobile.png" alt="juntoscope mobile view" />
+          <app-img class="" src="/assets/work-example-juntoscope-mobile.jpg" alt="juntoscope mobile view" />
           <div class="text-container">
             <h2>The Product</h2>
             <p>

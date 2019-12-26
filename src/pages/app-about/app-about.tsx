@@ -1,15 +1,11 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
-
-declare var fbq;
 
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
 
   members = [
     {
@@ -197,12 +193,6 @@ export class AppAbout {
   ];
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
-    }
-
     // Change meta tags dynamically
     document.querySelector("meta[property='og:title']").setAttribute('content', 'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge');
     document.querySelector("meta[property='og:description']").setAttribute('content', 'We are Technology and Design Experts who specialize in Mobile Application Development in Philadelphia');
@@ -225,13 +215,13 @@ export class AppAbout {
             <div class="row align-items-center">
               <div class="col-md-8 col-sm-10 text-container">
                 <h1>
-                  <app-translate key="about.header.title" />
+                  <app-translate keyword="about.header.title" />
                 </h1>
                 <p>
-                  <app-translate key="about.header.text" />
+                  <app-translate keyword="about.header.text" />
                 </p>
                 <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  <app-translate key="about.header.action" />
+                  <app-translate keyword="about.header.action" />
                 </button>
               </div>
             </div>
@@ -253,7 +243,7 @@ export class AppAbout {
         <section id="mission-statement" class="mission-statement">
           <div class="mission-statement d-flex text-center">
             <p class="text-white align-self-center">
-              <app-translate key="about.mission.statement" />
+              <app-translate keyword="about.mission.statement" />
             </p>
           </div>
         </section>
@@ -264,24 +254,24 @@ export class AppAbout {
             <div class="row header">
               <div class="col-12">
                 <h2>
-                  <app-translate key="about.values.title" />
+                  <app-translate keyword="about.values.title" />
                 </h2>
                 <p>
-                  <app-translate key="about.values.text" />
+                  <app-translate keyword="about.values.text" />
                 </p>
               </div>
             </div>
             <div class="row">
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object data="assets/svg/about-graphic-integrity.svg" height="164px" width="220px" />
+                <div class="integrity" />
                 <app-translate class="value-text" key="about.values.value2" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object data="assets/svg/about-graphic-honesty.svg" height="164px" width="220px" />
+                <div class="honesty" />
                 <app-translate class="value-text" key="about.values.value1" />
               </div>
               <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <object data="assets/svg/about-graphic-transparency.svg" height="164px" width="220px" />
+                <div class="transparency" />
                 <app-translate class="value-text" key="about.values.value3" />
               </div>
             </div>
@@ -293,10 +283,10 @@ export class AppAbout {
           <div class="container text-center">
             <div class="header">
               <h2>
-                <app-translate key="about.team.title" />
+                <app-translate keyword="about.team.title" />
               </h2>
               <p>
-                <app-translate key="about.team.text" />
+                <app-translate keyword="about.team.text" />
               </p>
             </div>
 
