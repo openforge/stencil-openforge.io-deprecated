@@ -1,315 +1,207 @@
-.ourwork {
-  margin-top: 50px;
-  font-family: 'Muli', sans-serif;
-  overflow-x: hidden;
+.our-work {
+  margin-top: 76px;
 
-  .hero {
-    background: url('/assets/svg/our-work-header.svg') right top no-repeat;
-    text-align: center;
+  header {
+    background-image: url(assets/our-work/our-work-header.svg);
+    background-repeat: no-repeat;
+    height: 542px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
     @include media-breakpoint-down(md) {
-      background-position: right center;
+      height: 350px;
     }
 
     @include media-breakpoint-down(sm) {
-      background-size: 0 0;
-      .ourworkb {
-        padding-left: 5% !important;
-        padding-right: 5% !important;
-      }
-
-      h1 {
-        font-size: 10vw !important;
-      }
-
-      h2 {
-        font-size: 5vw !important;
-      }
+      height: initial;
+      margin-top: calc(3rem + 76px);
+      background-image: none;
     }
 
-    .ourworkb {
-      padding-left: 25%;
-      padding-right: 25%;
-    }
-
-    .row {
-      height: 570px;
+    h1 {
+      color: #292a2d;
+      font-family: 'Muli';
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: 1.73px;
+      line-height: 62px;
+      text-align: left;
 
       @include media-breakpoint-down(md) {
-        height: 350px;
-        h1 {
-          font-size: 5vw;
-        }
+        font-size: 40px;
+      }
+    }
+    p {
+      margin-top: 15px;
+      color: #292a2d;
+      font-family: 'Muli';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 32px;
+      width: 427px;
+      text-align: center;
 
-        h2 {
-          font-size: 3vw;
+      @include media-breakpoint-down(md) {
+        width: 300px;
+      }
+    }
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: initial;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h2 {
+        color: #333333;
+        font-family: Muli;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: 2.1px;
+        line-height: 38px;
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          font-size: 28px;
         }
       }
 
       p {
-        color: black;
-        font-weight: bolder;
-      }
-
-      h1 {
-        font-size: 4.2vw;
-      }
-
-      h2 {
-        font-size: 2.2vw;
-      }
-
-      .text-container {
-        @include media-breakpoint-down(md) {
-          margin-bottom: 10rem;
-        }
-      }
-    }
-  }
-
-  .work {
-    height: auto;
-    width: 100%;
-    @include media-breakpoint-down(md) {
-      .container {
-        width: 100%;
-      }
-    }
-    .jumbotron {
-      background-color: white;
-      padding: 10px;
-      box-shadow: 2px 4px 5px 3px rgba(194, 179, 194, 1);
-      border-radius: 2%;
-      .full {
-        height: 100%;
-        width: auto;
-      }
-    }
-
-    .cont {
-      background-color: white;
-      padding: 10px;
-      box-shadow: 2px 4px 5px 3px rgba(194, 179, 194, 1);
-      border-radius: 2%;
-      padding: 0;
-      margin-bottom: 20px;
-    }
-
-    .img {
-      width: 100%;
-      height: auto;
-
-      .behind-left {
-        position: relative;
-        height: 250px;
-        left: 50px;
-        top: 20px;
-
-        @include media-breakpoint-down(md) {
-          left: 0;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        @include media-breakpoint-down(xs) {
-          display: none;
-        }
-      }
-
-      .behind-right {
-        position: relative;
-        height: 250px;
-        left: 50px;
-        top: 20px;
-
-        @include media-breakpoint-down(md) {
-          right: 0;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        @include media-breakpoint-down(xs) {
-          display: none;
-        }
-      }
-
-      .front-center {
-        position: relative;
-        height: 300px;
-        left: 0;
-        right: 0;
-        padding-top: 5%;
-        margin-left: auto;
-        margin-right: auto;
-        z-index: 1;
-
-        @include media-breakpoint-down(xs) {
-          position: relative;
-        }
-      }
-
-      .store-buttons {
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin: 4rem 0 2rem;
-        z-index: 10;
-
-        a {
-          margin: 0 10px;
-        }
-      }
-    }
-
-    .main-content {
-      display: flex;
-
-      @include media-breakpoint-down(md) {
-        display: block;
-      }
-    }
-
-    .sidebar {
-      min-height: 100%;
-      width: 50%;
-      @include media-breakpoint-down(md) {
-        display: none;
-      }
-
-      #sticky-sidebar-inner {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-      }
-    }
-
-    .content {
-      width: 50%;
-
-      @include media-breakpoint-down(md) {
-        width: 100%;
-      }
-
-      .content-panel {
-        align-items: flex-end;
-        display: flex;
-        height: auto;
-        justify-content: center;
+        color: #292a2d;
+        font-family: Muli;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
         text-align: center;
+        margin-bottom: 0;
+        width: 80%;
 
         @include media-breakpoint-down(md) {
-          display: table;
+          font-size: 14px;
         }
       }
 
-      .last-panel {
-        height: 0;
+      button {
+        background-color: #292a2d;
+        border-radius: 16px;
+        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+        width: 188px;
+        color: #ffffff;
+        font-family: Muli;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.25px;
+        line-height: 20px;
+        text-align: center;
+        height: 32px;
+        margin-top: 70px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: 30px;
+        }
       }
     }
 
-    .content-panel-inner {
-      align-items: center;
-      background-color: $gray-100;
-      display: flex;
-      height: 75vh;
-      justify-content: center;
-
-      .panel-inner-text {
-        margin: 0 4rem;
-        text-align: left;
-
-        @include media-breakpoint-down(md) {
-          margin: 0 1rem;
-          text-align: center;
-        }
-
-        h2 {
-          color: $gray-dark;
-          font-size: 42px;
-          font-weight: bold;
-          line-height: 1.19;
-
-          @include media-breakpoint-down(sm) {
-            font-size: 30px;
-          }
-        }
-
-        h3 {
-          color: $orange-dark;
-          font-size: 24px;
-          margin-bottom: 1rem;
-        }
-
-        p {
-          color: $gray-dark;
-          font-size: 16px;
-          line-height: 1.78;
-        }
-      }
+    .card-image {
+      position: relative;
+      padding: 4rem 0 2rem;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
 
       @include media-breakpoint-down(sm) {
-        height: 95vh;
-      }
-    }
-
-    .content-panel-image {
-      position: relative;
-
-      h2 {
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-        padding: 16px;
-        text-align: center;
-        margin-top: 2rem;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+        padding: 2rem 0 0;
       }
 
       .behind-left {
         position: relative;
         height: 350px;
-        left: -60px;
+        left: 100px;
         top: 30px;
 
-        @include media-breakpoint-down(md) {
-          left: 0;
-          margin-left: auto;
-          margin-right: auto;
+        @include media-breakpoint-down(lg) {
+          height: 300px;
+          left: 80px;
         }
 
-        @include media-breakpoint-down(xs) {
-          display: none;
+        @include media-breakpoint-down(md) {
+          left: 30px;
+          height: 220px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          left: 80px;
+          height: 220px;
         }
       }
 
       .behind-right {
         position: relative;
         height: 350px;
-        right: -60px;
+        right: 100px;
         top: 30px;
 
-        @include media-breakpoint-down(md) {
-          right: 0;
-          margin-left: auto;
-          margin-right: auto;
+        @include media-breakpoint-down(lg) {
+          height: 300px;
+          right: 80px;
         }
 
-        @include media-breakpoint-down(xs) {
-          display: none;
+        @include media-breakpoint-down(md) {
+          height: 220px;
+          right: 30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          height: 220px;
+          right: 80px;
         }
       }
 
       .front-center {
-        position: absolute;
         height: 400px;
-        left: 0;
-        right: 0;
         margin-left: auto;
         margin-right: auto;
         z-index: 1;
 
-        @include media-breakpoint-down(xs) {
-          position: relative;
+        @include media-breakpoint-down(lg) {
+          height: 340px;
+          margin-left: initial;
+          margin-right: initial;
         }
+
+        @include media-breakpoint-down(md) {
+          height: 280px;
+          margin-left: initial;
+          margin-right: initial;
+        }
+
+        @include media-breakpoint-down(sm) {
+          position: relative;
+          margin: auto;
+          height: 280px;
+        }
+      }
+
+      .card-image-row {
+        justify-content: center;
       }
 
       .store-buttons {
@@ -321,85 +213,63 @@
         a {
           margin: 0 10px;
         }
+
+        @include media-breakpoint-down(sm) {
+          margin: 2rem 0 2rem;
+        }
       }
-    }
 
-    .description {
-      display: none;
-
-      @include media-breakpoint-down(md) {
-        display: flex;
+      &.mobilemeasures {
+        background-image: url('/assets/apps/mobilemeasures/background-graphic.png');
+        background-size: cover;
       }
-    }
-  }
-  .mobile-measures {
-    background-image: url('/assets/mobile-measures-background.png');
-    background-size: cover;
-    overflow: hidden;
-    @include media-breakpoint-down(xs) {
-      background-size: cover;
-      margin-left: 3.5%;
-      margin-right: 3.5%;
-      background-repeat: no-repeat;
-    }
-  }
 
-  .loud-cloud {
-    background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
-    background-size: cover;
-    @include media-breakpoint-down(xs) {
-      background-size: cover;
-      margin-left: 3.5%;
-      margin-right: 3.5%;
-      background-repeat: no-repeat;
-    }
-  }
+      &.loudcloud {
+        background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+        background-size: cover;
+      }
 
-  .voyage {
-    background-image: url('/assets/home-graphic-voyage-pattern.jpg');
-    background-size: cover;
-    @include media-breakpoint-down(xs) {
-      background-size: cover;
-      margin-left: 3.5%;
-      margin-right: 3.5%;
-      background-repeat: no-repeat;
-    }
-  }
-
-  .digithermo {
-    background-image: url('/assets/digithermo-background.png');
-    background-size: cover;
-    @include media-breakpoint-down(xs) {
-      background-size: cover;
-      margin-left: 3.5%;
-      margin-right: 3.5%;
-      background-repeat: no-repeat;
-    }
-  }
-
-  .services {
-    margin-top: 10%;
-    .containerser {
-      padding-left: 20%;
-      padding-right: 20%;
-    }
-
-    .r1 {
-      margin-left: 20%;
-      margin-right: 20%;
-    }
-
-    app-img {
-      height: 30%;
-      lazy-img {
-        height: 30%;
-        display: inline-block;
+      &.voyage {
+        background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+        background-size: cover;
       }
     }
   }
 
-  .services {
-    padding-left: 30%;
-    padding-right: 30%;
+  .worked-with {
+    padding: 5rem 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 3rem 1rem;
+    }
+
+    .header {
+      margin: 0 auto 3rem;
+      max-width: 768px;
+
+      h2 {
+        color: #292a2d;
+        font-family: 'Muli';
+        font-size: 52px;
+        font-weight: 600;
+        letter-spacing: 1.73px;
+        line-height: 62px;
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          font-size: 40px;
+        }
+      }
+    }
+
+    .img-row {
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .center-col {
+      display: flex;
+      align-items: center;
+    }
   }
 }
