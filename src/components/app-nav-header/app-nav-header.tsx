@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { translate, TranslationService } from '../../services/translation.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class AppNavHeader {
       <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
         <div class="container">
           <div class="navbar-brand">
-            <stencil-route-link url="/" exact={true} anchorClass="nav-link" activeClass="active">
+            <stencil-route-link tabindex="0" url="/" exact={true} anchorClass="nav-link" activeClass="active">
               <h1>
                 <app-img class="img-fluid" src="/assets/logo-openforge.png" alt={translate('nav.header.img.alt')} />
               </h1>
@@ -58,7 +58,7 @@ export class AppNavHeader {
                 <stencil-route-link anchorClass="nav-link main" url="/services" role="button" activeClass="active">
                   Services
                 </stencil-route-link>
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="sr-only">Toggle Dropdown</span>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -77,7 +77,7 @@ export class AppNavHeader {
                 </div>
               </li>
               <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   {translate('nav.links.about')}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">

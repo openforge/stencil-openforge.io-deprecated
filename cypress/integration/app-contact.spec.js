@@ -194,16 +194,16 @@ describe('Contact Page', function () {
       // cy.contains('Register Today!').click()
     })
     it('Navigates to OpenForge Twitter', function () {
-      cy.contains('@OpenForge_US').click()
+      cy.contains('@openforgemobile').click()
     })
     it('Navigates to OpenForge Facebook', function () {
-      cy.contains('OpenForge_US').click()
+      cy.contains('openforgemobile').click()
     })
     it('Navigates to OpenForge Linkedin', function () {
-      cy.contains('OpenForge_US').click()
+      cy.contains('openforge').click()
     })
     it('Navigates to OpenForge Instagram', function () {
-      cy.contains('@OpenForgeTeam').click()
+      cy.contains('@openforgemobile').click()
     })
     //it('Open native mail to contact Hello@openforge.io', function () {
     //cy.contains('hello@openforge.io').click()

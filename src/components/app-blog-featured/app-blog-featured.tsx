@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { formatDate } from '../../shared/date-format';
 
@@ -9,9 +9,7 @@ import { formatDate } from '../../shared/date-format';
 export class AppBlogFeatured {
   @Prop() blogPost: BlogPost;
 
-  componentDidLoad() {
-    console.log('blog data', this.blogPost);
-  }
+  componentDidLoad() {}
 
   render() {
     const publishDate = new Date(this.blogPost.published);

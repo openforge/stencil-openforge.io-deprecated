@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, h, Build } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { formatDate } from '../../shared/date-format';
 
@@ -7,14 +7,10 @@ import { formatDate } from '../../shared/date-format';
   styleUrl: 'app-blog-content.scss',
 })
 export class AppBlogContent {
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop() blogPost: BlogPost;
 
   componentDidLoad() {
-    console.log('blog content', this.blogPost);
-    console.log(this.blogPost.author);
-
-    if (!this.isServer) {
+    if (Build.isBrowser) {
       this.handleIcons();
       window.addEventListener('resize', this.handleIcons);
     }
@@ -54,6 +50,10 @@ export class AppBlogContent {
     }
   }
 
+  componentDidUnload() {
+    window.removeEventListener('resize', this.handleIcons, false);
+  }
+
   render() {
     const publishDate = new Date(this.blogPost.published);
     const contactIconsTop = (
@@ -74,8 +74,8 @@ export class AppBlogContent {
     return (
       <div class="blog-content">
         <div class="header">
-          <h1>{this.blogPost.title}</h1>
-          <p>{this.blogPost.summary}</p>
+          <h1 class="text-left">{this.blogPost.title}</h1>
+          <p class="text-left">{this.blogPost.summary}</p>
           <div>
             <div class="header--date">{formatDate(publishDate)}</div>
             <div class="header--author">
@@ -100,10 +100,10 @@ export class AppBlogContent {
             <div class="col-md-2">
               <div id="contact-icons-side">{contactIconsSide}</div>
             </div>
-            <div class="col-md-8">
+            <div class="text-left col-md-8">
               <div innerHTML={this.blogPost.body} class="blog-content-body" />
             </div>
-            <div class="col-md-2" />
+            <div class="col-md-2 col-sm-2" />
           </div>
         </div>
         <div class="blog-content-author">
@@ -116,7 +116,7 @@ export class AppBlogContent {
             <div class="col-md-6 blog-content-author-text">
               <h5>About the Author</h5>
               <h2>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</h2>
-              <p>{this.blogPost.author.bio}</p>
+              <p class="text-left">{this.blogPost.author.bio}</p>
             </div>
             <div class="col-md-2" />
           </div>

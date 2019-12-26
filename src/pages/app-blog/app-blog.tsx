@@ -1,19 +1,14 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, State, h, Build } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
-
-declare var fbq;
+import * as Fetch from '../../shared/fetch-handler';
 
 @Component({
   tag: 'app-blog',
   styleUrl: 'app-blog.scss',
 })
 export class AppBlog {
-  @Prop({ context: 'isServer' })
-  private isServer: boolean;
-  @Prop() butter: any;
-
   @State() featuredPost: BlogPost = null;
   @State() featuredIsError: boolean = false;
   @State() featuredIsLoading: boolean = true;
@@ -29,6 +24,7 @@ export class AppBlog {
 
   // Use searchQuery to keep track of whether or not search is being used
   @State() searchQuery: string = '';
+  @State() allBlogPosts: BlogPost[] = [];
   @State() searchPostsData: BlogPost[] = [];
   @State() searchNumberOfPages: number = 0;
   @State() searchCurrentPage: number = 1;
@@ -36,6 +32,9 @@ export class AppBlog {
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
 
+  pageSize = 3;
+  indexOfFeaturedPost = -1;
+  pageOfFeaturedPost = 0;
   private filters: BlogCategory[] = [
     {
       name: 'All',
@@ -60,17 +59,12 @@ export class AppBlog {
   ];
 
   componentWillLoad() {
-    if (!this.isServer) {
-      this.getFeaturedPost();
-      this.getBlogPosts(1);
-    }
+    this.getAllBlogPosts();
   }
 
   componentDidLoad() {
-    // isServer is false when running in the browser
-    // and true when being prerendered
-    if (!this.isServer) {
-      fbq('track', 'ViewContent');
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
     }
     const input = document.getElementById('blog-search');
     input.addEventListener('search', () => this.handleSearch(input.innerText));
@@ -84,68 +78,98 @@ export class AppBlog {
     document.querySelector("meta[name='keywords']").setAttribute('content', 'Mobile apps, mobile app news, mobile applications, mobile app technology, mobile app strategies, mvp apps');
   }
 
+  async getAllBlogPosts() {
+    this.blogIsLoading = true;
+    const resp = await Fetch.fetchBlogPosts();
+    if (resp) {
+      this.allBlogPosts = resp.data;
+      this.blogMeta = resp.meta;
+      this.blogNumberOfPages = Math.ceil(resp.meta.count / this.pageSize);
+
+      this.getFeaturedPost();
+
+      // Find the index of the featuredPost.
+      this.indexOfFeaturedPost = this.allBlogPosts.findIndex(post => {
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+      });
+      // Find the page where the featuredPost is if found the featuredPost
+      if (this.indexOfFeaturedPost > -1) {
+        this.pageOfFeaturedPost = Math.floor(this.indexOfFeaturedPost / this.pageSize) + 1;
+      }
+
+      this.getBlogPosts(1);
+    }
+    this.blogIsLoading = false;
+  }
+
   getFeaturedPost() {
     this.featuredIsLoading = true;
-    const listOptions = { page: 1, page_size: 1, exclude_body: true, tag_slug: 'featured' };
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        if (resp.data.data.length > 0) {
-          this.featuredPost = resp.data.data[0];
-          this.featuredIsLoading = false;
-        }
-      })
-      .catch(resp => {
-        this.featuredIsError = true;
-        this.featuredIsLoading = false;
-        console.log(resp);
-      });
+    if (this.allBlogPosts.length > 0) {
+      this.featuredPost = this.allBlogPosts[0];
+      this.featuredIsLoading = false;
+    }
   }
 
   getSearchPosts(page) {
     this.searchIsLoading = true;
-    const pageSize = 3;
-    this.butter.post
-      .search(this.searchQuery, { page, page_size: pageSize })
-      .then(resp => {
-        this.searchPostsData = resp.data.data;
-        this.searchMeta = resp.data.meta;
-        this.searchNumberOfPages = Math.ceil(resp.data.meta.count / pageSize);
+    Fetch.fetchSearchPosts(this.searchQuery, page, this.pageSize).then(resp => {
+      if (resp.data) {
+        this.searchPostsData = resp.data;
+        this.searchMeta = resp.meta;
+
+        // Find the index of the featuredPost from the searhchPostsData
+        const index = this.searchPostsData.findIndex(post => {
+          return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+        });
+        // If found it, remove it from the searchPostsData to avoid display again.
+        if (index >= 0) this.searchPostsData.splice(index, 1);
+
+        this.searchNumberOfPages = Math.ceil(this.searchPostsData.length / this.pageSize);
         this.searchCurrentPage = page;
-        this.searchIsLoading = false;
-      })
-      .catch(resp => {
+      } else {
         this.searchIsError = true;
-        this.searchIsLoading = false;
-        console.log(resp);
-      });
+      }
+    });
+    this.searchIsLoading = false;
   }
 
-  getBlogPosts(page: number) {
+  async getBlogPosts(page: number) {
     this.blogIsLoading = true;
-    const pageSize = 3;
-    const listOptions = { page, page_size: pageSize, exclude_body: true };
     if (this.blogFilter) {
-      listOptions['category_slug'] = this.blogFilter;
-    }
-    this.butter.post
-      .list(listOptions)
-      .then(resp => {
-        this.blogPostsData = resp.data.data;
-        this.blogMeta = resp.data.meta;
-        this.blogNumberOfPages = Math.ceil(resp.data.meta.count / pageSize);
-        this.blogCurrentPage = page;
-        this.blogIsLoading = false;
-      })
-      .catch(resp => {
-        this.blogIsError = true;
-        this.blogIsLoading = false;
-        console.log(resp);
+      this.blogPostsData = await Fetch.fetchFilteredPosts(this.blogFilter, 1, this.pageSize, true);
+
+      // Find the index of the featuredPost from the blogPostsData
+      const index = this.blogPostsData.findIndex(post => {
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
       });
+      // If found it, remove it from the blogPostsData to avoid display again.
+      if (index >= 0) this.blogPostsData.splice(index, 1);
+
+      this.blogNumberOfPages = Math.ceil(this.blogPostsData.length / this.pageSize);
+      this.blogCurrentPage = 1;
+    } else {
+      this.blogNumberOfPages = Math.ceil(this.allBlogPosts.length / this.pageSize);
+      this.blogPostsData = [];
+      let index = (page - 1) * this.pageSize;
+      let endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+
+      // Adjust the index and the endPoint by the index of the featuredPost
+      if (page > this.pageOfFeaturedPost) {
+        index += 1;
+      }
+      if (page === this.pageOfFeaturedPost) {
+        endPoint += 1;
+      }
+
+      for (index; index < endPoint; index += 1) {
+        // Don't push to the blogPostsData if it is the featuredPost.
+        if (index !== this.indexOfFeaturedPost) this.blogPostsData.push(this.allBlogPosts[index]);
+      }
+    }
+    this.blogIsLoading = false;
   }
 
   handleSearch(query) {
-    console.log(query);
     this.searchQuery = query;
     if (this.searchQuery) {
       this.getSearchPosts(1);
@@ -190,10 +214,13 @@ export class AppBlog {
     }
 
     if (this.searchQuery) {
+      this.searchCurrentPage = newPage;
       this.getSearchPosts(newPage);
     } else {
+      this.blogCurrentPage = newPage;
       this.getBlogPosts(newPage);
     }
+    window.scrollTo(0, 0);
   }
 
   renderFeaturedPost(featuredPost: BlogPost, isLoading: boolean, isError: boolean) {
@@ -220,7 +247,7 @@ export class AppBlog {
       }
       return (
         <li class={filterClass}>
-          <a onClick={() => this.handleFilter(filter.slug)} class={filterLinkClass}>
+          <a onClick={() => this.handleFilter(filter.slug)} href="#" class={filterLinkClass}>
             {filter.name}
           </a>
         </li>
@@ -276,7 +303,7 @@ export class AppBlog {
         const pageLinkClass = currentPage === i + 1 ? 'blog-page-item active' : 'blog-page-item';
         return (
           <li class={pageItemClass}>
-            <a id={`nav-to-page-${i + 1}`} onClick={e => this.handlePaging(e)} class={pageLinkClass}>
+            <a id={`nav-to-page-${i + 1}`} onClick={e => this.handlePaging(e)} href="#" class={pageLinkClass}>
               {i + 1}
             </a>
           </li>
@@ -359,10 +386,10 @@ export class AppBlog {
 
               <p class="contact-icons-label">Follow Us:</p>
               <div class="contact-icons">
-                <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
+                <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>
-                <a href="https://www.facebook.com/OpenForgeUS/" target="_blank" rel="noopener">
+                <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                 </a>
                 <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">

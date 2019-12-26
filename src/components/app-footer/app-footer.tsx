@@ -1,4 +1,4 @@
-import { Component } from '@stencil/core';
+import { Component, h } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 
 @Component({
@@ -41,12 +41,12 @@ export class AppFooter {
               <h2>{translate('footer.social.followUs')}</h2>
               <ul class="footer--social-links">
                 <li>
-                  <a href="https://twitter.com/OpenForge_US" id="twitter" target="_blank" rel="noopener">
+                  <a href="https://twitter.com/openforgemobile" id="twitter" target="_blank" rel="noopener">
                     <i class="fab fa-twitter-square" aria-hidden="true" /> {translate('footer.social.twitter')}
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/OpenForgeUS/" id="facebook" target="_blank" rel="noopener">
+                  <a href="https://www.facebook.com/openforgemobile/" id="facebook" target="_blank" rel="noopener">
                     <i class="fab fa-facebook-square" aria-hidden="true" /> {translate('footer.social.facebook')}
                   </a>
                 </li>
@@ -56,7 +56,7 @@ export class AppFooter {
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/openforgeteam/" id="instagram" target="_blank" rel="noopener">
+                  <a href="https://www.instagram.com/openforgemobile/" id="instagram" target="_blank" rel="noopener">
                     <i class="fab fa-instagram" aria-hidden="true" /> {translate('footer.social.instagram')}
                   </a>
                 </li>

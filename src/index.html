@@ -12,10 +12,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
 
   <meta property="og:title" content="Mobile Design - App Development - Startup Consulting | OpenForge" />
-  <meta property="og:description" content="OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular" />
-  <meta property="og:url" content="https://openforge.io/" />
+  <meta property="og:description" content="OpenForge is the Top Mobile App Development Agency in the US.  We specialize in Mobile Application Development and Design using Ionic and Angular" />  
+  <meta property="og:url" content="https://www.openforge.io" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://openforge.io/assets/about-photo-team.jpg" />
+  <meta property="og:image" content="https://www.openforge.io/assets/about-photo-team.jpg" />
   <meta property="og:site_name" content="OpenForge" />
   <meta property="og:locale" content="en_US" />
   <meta http-equiv="x-ua-compatible" content="IE=Edge" />
@@ -26,7 +26,10 @@
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
   <link rel="manifest" href="/manifest.json">
 
-  <script src="/build/app.js" rel="script"></script>
+  <!-- <script src="/build/app.js" rel="script"></script> -->
+  <script type="module" src="/build/app.esm.js"></script>
+  <script nomodule src="/build/app.js"></script>
+  
   <link href='/assets/fonts/Roboto.css' rel='stylesheet'>
   <link href="/assets/fonts/Muli.css" rel="stylesheet">
   <!-- <link rel='stylesheet' href="/build/app.css"> Should have this; but it breaks smooth scroll -->
@@ -101,7 +104,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <app-nav-header />
+  <app-nav-header></app-nav-header>
   
   <open-forge-app></open-forge-app>
   

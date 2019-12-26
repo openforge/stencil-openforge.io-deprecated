@@ -29,8 +29,17 @@
       }
 
       .services-graphic-background {
+        background: url('/assets/svg/services-graphic-background.svg') center top no-repeat;
+        width: 100%;
         position: absolute;
+        padding-top: 58.35%;
         top: 50px;
+      }
+
+      .svg-header-desktop {
+        background: url('/assets/svg/services-graphic-header.svg') center center no-repeat;
+        width: 100%;
+        padding-top: 56.22%;
       }
 
       h1 {

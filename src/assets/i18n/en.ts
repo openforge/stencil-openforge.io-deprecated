@@ -428,10 +428,10 @@ export const translations = {
       },
       social: {
         followUs: 'Follow Us',
-        twitter: '@OpenForge_US',
-        facebook: 'OpenForge_US',
-        linkedin: 'OpenForge_US',
-        instagram: '@OpenForgeTeam',
+        twitter: '@openforgemobile',
+        facebook: 'openforgemobile',
+        linkedin: 'openforge',
+        instagram: '@openforgemobile',
         sla: 'Read our SLA',
       },
       webinar: {

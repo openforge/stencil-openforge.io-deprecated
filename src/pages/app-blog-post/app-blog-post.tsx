@@ -1,7 +1,8 @@
-import { Component, Prop, State, Watch } from '@stencil/core';
+import { Component, Prop, State, Watch, h, Build } from '@stencil/core';
 import { RouterHistory, MatchResults } from '@stencil/router';
 import { BlogPost } from '../../model/blog-post.model';
 import { BLOG_DATA } from './prerender-blog-data';
+import * as Fetch from '../../shared/fetch-handler';
 
 @Component({
   tag: 'app-blog-post',
@@ -10,8 +11,6 @@ import { BLOG_DATA } from './prerender-blog-data';
 export class AppBlogPost {
   @Prop() history: RouterHistory;
   @Prop() match: MatchResults;
-  @Prop({ context: 'isServer' }) private isServer: boolean;
-  @Prop() butter: any;
   @Prop() preRenderBlogPost: BlogPost;
 
   @State() blogPost: BlogPost;
@@ -27,9 +26,18 @@ export class AppBlogPost {
 
   @Watch('match')
   watchHandler(newValue: any, oldValue: any) {
+    if (!newValue || !oldValue) {
+      return;
+    }
     if (newValue.params.slug !== oldValue.params.slug) {
       this.getPostContent();
       this.filterNextPosts(newValue.params.slug);
+    }
+  }
+
+  componentDidLoad() {
+    if (!Build.isBrowser) {
+      this.setMetaTags();
     }
   }
 
@@ -39,49 +47,41 @@ export class AppBlogPost {
     // get a bunch of blog posts and pick 3 to display in read next
     // it's kind of a hack but Butter doesn't support getting random posts
     const pageSize = 12;
-    const listOptions = { page: 1, page_size: pageSize, exclude_body: true };
-    if (!this.isServer) {
-      this.butter.post
-        .list(listOptions)
-        .then(resp => {
-          this.otherPosts = resp.data.data;
+    if (Build.isBrowser) {
+      this.nextPostsIsLoading = true;
+      Fetch.fetchPostContent(1, pageSize, true).then(resp => {
+        if (resp.data) {
+          this.otherPosts = resp.data;
           this.filterNextPosts(this.match.params.slug);
-          this.nextPostsIsLoading = false;
           this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
-        })
-
-        .catch(resp => {
+        } else {
           this.nextPostsIsError = true;
-          this.nextPostsIsLoading = false;
           this.nextPostsHelper = this.renderPosts(this.nextPosts, this.nextPostsIsLoading, this.nextPostsIsError);
-          console.log(resp);
-        });
+        }
+      });
+      this.nextPostsIsLoading = false;
     }
   }
 
   getPostContent() {
-    if (this.isServer) {
+    if (!Build.isBrowser) {
       this.blogPost = BLOG_DATA.data.find(post => {
         return post.slug === this.match.params.slug;
       });
       this.setMetaTags();
     } else {
       this.blogPostIsLoading = true;
-      return this.butter.post
-        .retrieve(this.match.params.slug)
-        .then(resp => {
-          this.blogPost = resp.data.data;
-          this.blogPostIsLoading = false;
+      Fetch.fetchPostWithSlug(this.match.params.slug).then(resp => {
+        if (resp) {
+          this.blogPost = resp.data;
           // set scroll to top for when navigating to a new blog post
-          if (!this.isServer) {
-            window.scrollTo(0, 0);
-          }
+          window.scrollTo(0, 0);
           this.setMetaTags();
-        })
-        .catch(_ => {
-          this.blogPostIsLoading = false;
+        } else {
           this.blogPostIsError = true;
-        });
+        }
+      });
+      this.blogPostIsLoading = false;
     }
   }
 
@@ -99,6 +99,7 @@ export class AppBlogPost {
     document.querySelector("meta[property='og:url']").setAttribute('content', `https://openforge.io/blog/${this.blogPost.slug}`);
     document.querySelector("meta[property='og:image']").setAttribute('content', this.blogPost.featured_image);
     document.querySelector("meta[name='keywords']").setAttribute('content', tagList);
+    document.querySelector("meta[property='og:type']").setAttribute('content', 'article');
   }
 
   filterNextPosts(slug: string) {

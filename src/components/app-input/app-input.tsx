@@ -1,4 +1,4 @@
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'app-input',
@@ -14,16 +14,16 @@ export class AppInput {
   @Prop()
   placeholder: string;
   @Prop()
-  id: string;
+  inputId: string;
   @Prop()
   maxlength: string;
   @Prop()
   required = false;
   @Event()
-  valueChange: EventEmitter;
+  valueChanged: EventEmitter;
 
   inputHandler(event) {
-    this.valueChange.emit({
+    this.valueChanged.emit({
       field: this.name,
       value: event.target.value,
       target: event.target,
@@ -38,7 +38,7 @@ export class AppInput {
           class="form-control"
           type={this.type}
           name={this.name}
-          id={this.id}
+          id={this.inputId}
           maxlength={this.maxlength}
           required={this.required}
           placeholder={this.placeholder}
