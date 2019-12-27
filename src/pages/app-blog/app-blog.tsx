@@ -352,7 +352,7 @@ export class AppBlog {
           </div>
         </div>
         <div class="row posts-row">
-          <div class="col-md-12 d-none d-md-block">
+          <div class="col-md-12 d-none d-md-block d-lg-none">
             <div class="form-row-content">
               <div class="row">
                 <div class="col-sm-6 text-center">

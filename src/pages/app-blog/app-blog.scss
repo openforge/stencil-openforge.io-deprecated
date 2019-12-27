@@ -191,6 +191,7 @@
         color: #9baaab;
         cursor: pointer;
         text-transform: uppercase;
+        margin-bottom: 32px;
 
         @include media-breakpoint-down(md) {
           padding: 12px 10px;
