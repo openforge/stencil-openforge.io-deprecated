@@ -77,9 +77,18 @@ export class AppNavHeader {
                 </div>
               </li>
               <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                <a href="" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <stencil-route-link
+                  urlMatch={['/about', '/juntoscope', '/toolbox', '/resources/pwa-white-paper']}
+                  activeClass="active"
+                  anchorClass="nav-link dropdown-toggle"
+                  id="navbarDropdown1"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   {translate('nav.links.about')}
-                </a>
+                </stencil-route-link>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                   <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
                     Meet the team
