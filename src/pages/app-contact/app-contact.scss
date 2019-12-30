@@ -130,8 +130,11 @@
     .letter-form {
       padding: 2rem;
       background-image: url('/assets/contact/letter-background.png');
-      background-repeat: round;
-      background-position: initial;
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+      background-color: #e9e2d9;
+      border-radius: 20px;
 
       h2 {
         padding-top: 1rem;
