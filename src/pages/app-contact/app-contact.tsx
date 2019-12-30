@@ -80,7 +80,7 @@ export class AppContact {
         break;
     }
 
-    this.formValues.nameValid && this.formValues.emailValid && this.formValues.messageValid ? (this.isDisabled = false) : (this.isDisabled = true);
+    this.formValues.nameValid && this.formValues.emailValid && (this.formValues.phoneValid || !this.formValues.phone) ? (this.isDisabled = false) : (this.isDisabled = true);
   }
 
   async handleSubmit(event) {
@@ -159,7 +159,7 @@ export class AppContact {
                         {this.phoneError}
                       </p>
 
-                      <app-input name="message" label={translate('contact.form.whatAreYouWorkingOn')} type="text" placeholder={translate('contact.form.placeholder.message')} required={true} />
+                      <app-input name="message" label={translate('contact.form.whatAreYouWorkingOn')} type="text" placeholder={translate('contact.form.placeholder.message')} required={false} />
                       <p class="error">
                         <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />

@@ -135,6 +135,8 @@
 
       h2 {
         padding-top: 1rem;
+        margin-bottom: 2rem;
+        font-weight: initial !important;
       }
 
       button.btn-submit {
@@ -142,14 +144,26 @@
         border-radius: 20px;
         box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       }
+
+      p {
+        margin-bottom: 2rem;
+      }
     }
 
     .form-image-content {
       justify-content: center;
 
       img {
-        width: 340px;
+        width: 320px;
       }
+    }
+  }
+
+  .submit-container {
+    text-align: center;
+
+    img {
+      max-width: 1000px;
     }
   }
   .error {
