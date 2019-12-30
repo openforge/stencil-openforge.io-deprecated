@@ -1,6 +1,6 @@
 .cta {
   height: 344px;
-  background: #008092;
+  background: $blue-green;
 
   @include media-breakpoint-down(sm) {
     height: 780px;
