@@ -59,6 +59,9 @@ export class AppHome {
       $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
+        (processCarousel as any).carousel({
+          interval: 15000,
+        });
         setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
 
         $(window).trigger('scroll'); // init the value
@@ -247,7 +250,6 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="0" />
                       <p>
                         <app-translate keyword="home.process.discovery.text" />
                       </p>
@@ -273,7 +275,6 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="1" />
                       <p>
                         <app-translate keyword="home.process.design.text" />
                       </p>
@@ -299,7 +300,6 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="2" />
                       <p>
                         <app-translate keyword="home.process.development.text" />
                       </p>
@@ -325,7 +325,6 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="3" />
                       <p>
                         <app-translate keyword="home.process.deployment.text" />
                       </p>
@@ -351,7 +350,6 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="4" />
                       <p>
                         <app-translate keyword="home.process.userfeedback.text" />
                       </p>
