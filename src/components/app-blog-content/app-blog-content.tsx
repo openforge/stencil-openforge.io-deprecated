@@ -79,7 +79,7 @@ export class AppBlogContent {
           <div>
             <div class="header--date">{formatDate(publishDate)}</div>
             <div class="header--author">
-              <img src={this.blogPost.author.profile_image} />
+              <img src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
               <div>
                 By &nbsp;
                 {this.blogPost.author.slug === 'jedidiah-weller' ? (
@@ -93,7 +93,7 @@ export class AppBlogContent {
           <div class="contact-icons-top" id="contact-icons-top">
             {contactIconsTop}
           </div>
-          <img class="header--main-image" src={this.blogPost.featured_image} />
+          <img class="header--main-image" src={this.blogPost.featured_image} alt={this.blogPost.title} />
         </div>
         <div class="content">
           <div class="row">
@@ -111,7 +111,7 @@ export class AppBlogContent {
           <div class="row">
             <div class="col-md-2 offset-md-2 blog-content-author-image">
               <h5>About the Author</h5>
-              <img src={this.blogPost.author.profile_image} />
+              <img src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
             </div>
             <div class="col-md-6 blog-content-author-text">
               <h5>About the Author</h5>
