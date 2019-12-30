@@ -148,6 +148,14 @@
       p {
         margin-bottom: 2rem;
       }
+
+      @include media-breakpoint-down(md) {
+        margin: 0 3rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin: 0;
+      }
     }
 
     .form-image-content {
