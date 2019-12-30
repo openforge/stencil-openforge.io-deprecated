@@ -83,6 +83,8 @@
         height: auto;
         line-height: 3;
         text-align: center;
+        margin-bottom: -10px;
+        margin-top: 15px;
       }
     }
 
@@ -104,6 +106,12 @@
 
       @include media-breakpoint-down(sm) {
         text-align: center;
+        font-family: Muli;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 2.08px;
+        line-height: 31px;
+        margin-bottom: 0;
       }
     }
 

@@ -24,7 +24,7 @@ export class AppBlogFeaturedHome {
                   <h4>What's New in Our Blog</h4>
                 </div>
                 <div class="d-block d-sm-block d-md-none">
-                  <h4>Featured Post</h4>
+                  <h4>What's New in Our Blog</h4>
                 </div>
               </div>
             </div>
@@ -36,7 +36,7 @@ export class AppBlogFeaturedHome {
                   <h2 id="featured-blog-title">{this.blogPost.title}</h2>
                 </stencil-route-link>
               </div>
-              <div class="author">
+              <div class="author d-none d-md-flex">
                 <img class="profile-image d-none d-md-block" src={this.blogPost.author.profile_image} />
                 <div>
                   By &nbsp;
@@ -55,6 +55,18 @@ export class AppBlogFeaturedHome {
                   <img src={this.blogPost.featured_image} alt={this.blogPost.title} />
                 </stencil-route-link>
               </div>
+              <div class="author d-block d-sm-block d-md-none">
+                <img class="profile-image d-none d-md-block" src={this.blogPost.author.profile_image} />
+                <div>
+                  By &nbsp;
+                  {this.blogPost.author.slug === 'jedidiah-weller' ? (
+                    <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
+                  ) : (
+                    <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                  )}
+                  &nbsp; on {formatDate(publishDate)}
+                </div>
+              </div>
             </div>
           </div>
 
@@ -66,7 +78,7 @@ export class AppBlogFeaturedHome {
                     <h2 id="featured-blog-title">{this.blogPost1.title}</h2>
                   </stencil-route-link>
                 </div>
-                <div class="author">
+                <div class="author d-none d-md-flex">
                   <img class="profile-image d-none d-md-block" src={this.blogPost1.author.profile_image} />
                   <div>
                     By &nbsp;
@@ -84,6 +96,18 @@ export class AppBlogFeaturedHome {
                   <stencil-route-link url={`/blog/${this.blogPost1.slug}`}>
                     <img src={this.blogPost1.featured_image} alt={this.blogPost1.title} />
                   </stencil-route-link>
+                </div>
+                <div class="author d-block d-sm-block d-md-none">
+                  <img class="profile-image d-none d-md-block" src={this.blogPost1.author.profile_image} />
+                  <div>
+                    By &nbsp;
+                    {this.blogPost1.author.slug === 'jedidiah-weller' ? (
+                      <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost1.author.first_name} ${this.blogPost1.author.last_name}`}</a>
+                    ) : (
+                      <stencil-route-link url={`/about/${this.blogPost1.author.slug}`}>{`${this.blogPost1.author.first_name} ${this.blogPost1.author.last_name}`}</stencil-route-link>
+                    )}
+                    &nbsp; on {formatDate(publishDate)}
+                  </div>
                 </div>
               </div>
             </div>
