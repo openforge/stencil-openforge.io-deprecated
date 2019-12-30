@@ -28,6 +28,9 @@ export class AppHome {
   }
 
   componentDidLoad() {
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
+    }
     /* tslint:disable-next-line */
     window.addEventListener('scroll', () => {
       const innerPanel = document.getElementById('content-panel-inner');
@@ -51,6 +54,7 @@ export class AppHome {
     });
 
     if (Build.isBrowser) {
+      /* tslint:disable-next-line */
       $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
