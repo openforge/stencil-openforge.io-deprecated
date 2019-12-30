@@ -122,9 +122,9 @@ export const translations = {
         alert: {
           text: "Thank you for reaching out! we'll get back to you within 24 hours!",
         },
-        fullName: 'Full Name',
+        fullName: 'Full Name*',
         company: 'Company',
-        email: 'E-mail',
+        email: 'E-mail*',
         phone: 'Phone',
         github: 'GitHub URL',
         whatAreYouWorkingOn: 'What are you working on?',
