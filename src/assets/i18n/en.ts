@@ -147,6 +147,12 @@ export const translations = {
         thanx: 'Thank you!',
         thanxText: 'Your message has been delivered. Someone will be in touch with you soon!',
         unsure: 'Unsure',
+        placeholder: {
+          name: 'Your Name Here',
+          email: 'example@gmail.com',
+          phone: 'Your Phone Number',
+          message: 'Briefly describe your project',
+        },
       },
     },
 

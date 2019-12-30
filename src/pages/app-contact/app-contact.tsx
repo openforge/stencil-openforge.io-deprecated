@@ -135,7 +135,7 @@ export class AppContact {
                       <app-translate keyword="contact.form.text" />
                     </p>
                     <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
-                      <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder="" required={true} />
+                      <app-input name="name" label={translate('contact.form.fullName')} type="text" id="name" placeholder={translate('contact.form.placeholder.name')} required={true} />
                       <p class="error">
                         <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
@@ -143,7 +143,7 @@ export class AppContact {
                         {this.nameError}
                       </p>
 
-                      <app-input name="email" label={translate('contact.form.email')} type="email" id="email" placeholder="" required={true} />
+                      <app-input name="email" label={translate('contact.form.email')} type="email" id="email" placeholder={translate('contact.form.placeholder.email')} required={true} />
                       <p class="error">
                         <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
@@ -151,7 +151,7 @@ export class AppContact {
                         {this.emailError}
                       </p>
 
-                      <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder="" required={false} />
+                      <app-input name="phone" label={translate('contact.form.phone')} id="phone" type="tel" placeholder={translate('contact.form.placeholder.phone')} required={false} />
                       <p class="error">
                         <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
@@ -159,7 +159,7 @@ export class AppContact {
                         {this.phoneError}
                       </p>
 
-                      <app-input name="message" label={translate('contact.form.whatAreYouWorkingOn')} type="text" placeholder="" required={true} />
+                      <app-input name="message" label={translate('contact.form.whatAreYouWorkingOn')} type="text" placeholder={translate('contact.form.placeholder.message')} required={true} />
                       <p class="error">
                         <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
