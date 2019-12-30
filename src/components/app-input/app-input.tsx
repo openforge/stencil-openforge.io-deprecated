@@ -21,6 +21,8 @@ export class AppInput {
   required = false;
   @Event()
   valueChanged: EventEmitter;
+  @Prop()
+  valid = false;
 
   inputHandler(event) {
     this.valueChanged.emit({
@@ -32,7 +34,7 @@ export class AppInput {
 
   render() {
     return (
-      <div class="form-group">
+      <div class={`form-group${this.valid ? ` valid` : ``}`}>
         <label htmlFor={this.name}>{this.label}</label>
         <input
           class="form-control"
@@ -44,6 +46,7 @@ export class AppInput {
           placeholder={this.placeholder}
           onInput={this.inputHandler.bind(this)}
         />
+        {this.valid ? <i class="fas fa-check" /> : null}
       </div>
     );
   }

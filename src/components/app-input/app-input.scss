@@ -1,0 +1,20 @@
+.valid {
+  position: relative;
+
+  label {
+    color: $green;
+    font-weight: 600;
+  }
+
+  input {
+    border: $green 1px solid;
+  }
+
+  svg {
+    position: absolute;
+    bottom: 7px;
+    right: 5px;
+    transform: translate(-50%, -50%);
+    color: $green;
+  }
+}
