@@ -46,7 +46,7 @@ export class AppInput {
           placeholder={this.placeholder}
           onInput={this.inputHandler.bind(this)}
         />
-        {this.valid ? <i class="fas fa-check" /> : null}
+        <i class="fas fa-check" />
       </div>
     );
   }

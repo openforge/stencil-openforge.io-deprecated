@@ -1,3 +1,7 @@
+.fa-check {
+  display: none;
+}
+
 .valid {
   position: relative;
 
@@ -10,11 +14,12 @@
     border: $green 1px solid;
   }
 
-  svg {
+  .fa-check {
     position: absolute;
     bottom: 7px;
     right: 5px;
     transform: translate(-50%, -50%);
     color: $green;
+    display: block;
   }
 }

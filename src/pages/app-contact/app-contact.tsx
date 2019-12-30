@@ -142,7 +142,7 @@ export class AppContact {
                         id="name"
                         placeholder={translate('contact.form.placeholder.name')}
                         required={true}
-                        valid={this.formValues.nameValid}
+                        valid={this.formValues && this.formValues.nameValid}
                       />
                       <p class="error">
                         <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
@@ -158,7 +158,7 @@ export class AppContact {
                         id="email"
                         placeholder={translate('contact.form.placeholder.email')}
                         required={true}
-                        valid={this.formValues.emailValid}
+                        valid={this.formValues && this.formValues.emailValid}
                       />
                       <p class="error">
                         <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
@@ -174,7 +174,7 @@ export class AppContact {
                         type="tel"
                         placeholder={translate('contact.form.placeholder.phone')}
                         required={false}
-                        valid={this.formValues.phoneValid}
+                        valid={this.formValues && this.formValues.phoneValid}
                       />
                       <p class="error">
                         <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
@@ -189,7 +189,7 @@ export class AppContact {
                         type="text"
                         placeholder={translate('contact.form.placeholder.message')}
                         required={false}
-                        valid={this.formValues.messageValid}
+                        valid={this.formValues && this.formValues.messageValid}
                       />
                       <p class="error">
                         <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
