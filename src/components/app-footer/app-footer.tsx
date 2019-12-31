@@ -24,6 +24,7 @@ export class AppFooter {
                   {translate('footer.address.phoneNumber')}
                   <br />
                   <a href="mailto:hello@openforge.io">{translate('footer.address.email')}</a>
+                  <br />
                   <stencil-route-link url="/service-level-agreement">{translate('footer.social.sla')}</stencil-route-link>
                   <br />
                   <stencil-route-link url="/service-level-agreement">{translate('footer.social.presskit')}</stencil-route-link>

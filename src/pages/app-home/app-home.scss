@@ -358,6 +358,10 @@
         a {
           margin: 0 10px;
         }
+
+        @include media-breakpoint-down(sm) {
+          margin: 2rem 0 2rem;
+        }
       }
 
       button.button-work {
@@ -375,6 +379,8 @@
 
       @include media-breakpoint-down(md) {
         display: flex;
+        padding: 20px;
+        height: initial;
       }
     }
 
