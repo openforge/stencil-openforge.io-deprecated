@@ -92,12 +92,12 @@ export class AppNavHeader {
                 </stencil-route-link>
               </li>
               <li class="nav-item search d-none d-lg-block" data-target="#navbarSupportedContent">
-                <i class="fas fa-search" />
+                <i class="fa fa-search" />
               </li>
               <li class="nav-item search-bar d-md-block d-lg-none" data-target="#navbarSupportedContent">
                 <input type="text" placeholder="Type to search content..." class="search-input" />
                 <div class="search-icon">
-                  <i class="fas fa-search" />
+                  <i class="fa fa-search" />
                 </div>
               </li>
             </ul>
