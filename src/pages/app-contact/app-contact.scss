@@ -139,7 +139,9 @@
       h2 {
         padding-top: 1rem;
         margin-bottom: 2rem;
-        font-weight: initial !important;
+        font-family: Muli;
+        font-size: 28px;
+        font-weight: 400 !important;
       }
 
       button.btn-submit {
@@ -150,6 +152,9 @@
 
       p {
         margin-bottom: 2rem;
+        font-family: Muli;
+        font-size: 16px;
+        font-weight: 400;
       }
 
       @include media-breakpoint-down(md) {
