@@ -469,6 +469,11 @@ export const translations = {
       },
     },
 
+    notFound: {
+      text: 'We looked everywhere, but we couldn’t find what you were searching for!',
+      buttonText: 'Go Back',
+    },
+
     nav: {
       header: {
         img: {
@@ -483,6 +488,10 @@ export const translations = {
         opportunities: 'Opportunities',
         github: 'Openforge Github account',
       },
+    },
+
+    common: {
+      back: 'Back',
     },
   },
 };
