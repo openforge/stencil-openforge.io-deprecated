@@ -6,14 +6,23 @@
 
     @include media-breakpoint-down(sm) {
       text-align: center;
+      padding-top: 125px;
     }
 
     .row {
       height: auto;
       padding-bottom: 2rem;
 
+      @include media-breakpoint-down(sm) {
+        padding-bottom: 0;
+      }
+
       img {
         min-height: 300px;
+
+        @include media-breakpoint-down(md) {
+          min-height: 260px;
+        }
       }
     }
 
@@ -54,7 +63,6 @@
     }
 
     p {
-      color: #292a2d;
       font-family: Muli;
       font-size: 16px;
       font-weight: 400;
@@ -81,9 +89,13 @@
     position: relative;
 
     .header {
-      margin: 4rem auto 4rem;
+      margin: 4rem auto 2rem;
       max-width: 768px;
       text-align: center;
+
+      @include media-breakpoint-down(sm) {
+        margin: 0 auto 2rem;
+      }
 
       h2 {
         color: #333333;
@@ -140,7 +152,7 @@
     height: 344px;
 
     @include media-breakpoint-down(sm) {
-      height: 500px;
+      height: 530px;
     }
 
     .row {
@@ -161,6 +173,11 @@
     }
 
     .cta-text {
+      padding: 0 110px;
+      @include media-breakpoint-down(md) {
+        padding: 0 20px;
+      }
+
       @include media-breakpoint-down(sm) {
         margin-bottom: 5rem;
       }
@@ -197,7 +214,7 @@
       border-radius: 16px;
       box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       color: #ffffff;
-      width: 223px;
+      width: 130px;
       cursor: pointer;
       font-family: Roboto;
       font-size: 11px;
