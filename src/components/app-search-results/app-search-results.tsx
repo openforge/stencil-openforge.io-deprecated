@@ -1,4 +1,4 @@
-import { Component, h, State, EventEmitter } from '@stencil/core';
+import { Component, h, State, Event, EventEmitter } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import * as Fetch from '../../shared/fetch-handler';
@@ -77,14 +77,7 @@ export class AppSearchResults {
               <span class="blog-search-icon">
                 <span class="fa fa-search" />
               </span>
-              <input
-                id="blog-search"
-                type="search"
-                class="blog-search-input"
-                placeholder="Search"
-                onKeyUp={e => this.handleSearch(e.target['value'])}
-                onSearch={e => this.handleSearch(e.target['value'])}
-              />
+              <input id="blog-search" type="search" class="blog-search-input" placeholder="Search" onKeyUp={e => this.handleSearch(e.target['value'])} />
               <span class="blog-close-icon" onClick={() => this.handleClose(false)}>
                 <span class="far fa-times-circle" />
               </span>
