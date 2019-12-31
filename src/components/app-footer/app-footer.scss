@@ -166,9 +166,14 @@
       border-radius: 16px;
       box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       height: 34px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
 
       @include media-breakpoint-down(sm) {
         max-width: none;
+        position: initial;
+        width: initial;
       }
 
       &:hover {

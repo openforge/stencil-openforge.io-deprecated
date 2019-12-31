@@ -55,17 +55,17 @@ export class AppFooter {
             <div class="col-lg-6 col-md-6 col-sm-12 order-first order-md-2 social">
               <p class="follow">
                 Follow us:
+                <a href="https://www.instagram.com/openforgemobile/" id="instagram" target="_blank" rel="noopener">
+                  <i class="fab fa-instagram" aria-hidden="true" />
+                </a>
                 <a href="https://twitter.com/openforgemobile" id="twitter" target="_blank" rel="noopener">
                   <i class="fab fa-twitter-square" aria-hidden="true" />
-                </a>
-                <a href="https://www.facebook.com/openforgemobile/" id="facebook" target="_blank" rel="noopener">
-                  <i class="fab fa-facebook-square" aria-hidden="true" />
                 </a>
                 <a href="https://www.linkedin.com/company/openforge/" id="linkedin" target="_blank" rel="noopener">
                   <i class="fab fa-linkedin" aria-hidden="true" />
                 </a>
-                <a href="https://www.instagram.com/openforgemobile/" id="instagram" target="_blank" rel="noopener">
-                  <i class="fab fa-instagram" aria-hidden="true" />
+                <a href="https://www.facebook.com/openforgemobile/" id="facebook" target="_blank" rel="noopener">
+                  <i class="fab fa-facebook-square" aria-hidden="true" />
                 </a>
               </p>
             </div>
