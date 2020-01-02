@@ -42,9 +42,14 @@
       background: url('assets/svg/home-animation-desktop.svg') center center no-repeat;
       height: 542px;
       display: block;
+      background-size: cover;
 
       @include media-breakpoint-up(md) {
         display: block;
+      }
+
+      @include media-breakpoint-down(md) {
+        background-size: contain;
       }
 
       @include media-breakpoint-down(sm) {
@@ -91,7 +96,7 @@
     h2 {
       color: $gray-dark;
       font-family: Muli;
-      font-size: 47px;
+      font-size: 45px;
       font-weight: 600;
       letter-spacing: 1.73px;
       line-height: 62px;

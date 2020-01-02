@@ -171,7 +171,8 @@
       width: 100%;
 
       @include media-breakpoint-down(sm) {
-        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
         position: initial;
         width: initial;
       }

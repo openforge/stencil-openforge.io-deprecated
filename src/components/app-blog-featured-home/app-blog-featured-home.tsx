@@ -30,7 +30,7 @@ export class AppBlogFeaturedHome {
             </div>
           </div>
           <div class="row post">
-            <div class="col-lg-6 col-md-8">
+            <div class="col-lg-6 col-md-8 col-title">
               <div class="featured-post-title">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
                   <h2 id="featured-blog-title">{this.blogPost.title}</h2>
@@ -72,7 +72,7 @@ export class AppBlogFeaturedHome {
 
           {this.blogPost1 ? (
             <div class="row post">
-              <div class="col-lg-6 col-md-8">
+              <div class="col-lg-6 col-md-8 col-title">
                 <div class="featured-post-title">
                   <stencil-route-link url={`/blog/${this.blogPost1.slug}`}>
                     <h2 id="featured-blog-title">{this.blogPost1.title}</h2>
