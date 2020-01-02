@@ -332,7 +332,7 @@ export class AppBlog {
     }
 
     return (
-      <div class="blog-container">
+      <div id="contentStart" class="blog-container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
             <ul class="blog-filters-list">

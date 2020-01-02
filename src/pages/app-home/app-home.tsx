@@ -92,21 +92,10 @@ export class AppHome {
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     return (
-      <div class="home">
+      <div id="contentStart" class="home">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
-            <div class="ada-links">
-              <a tabIndex={0} class="ada-link" href="#work">
-                Technology Consulting
-              </a>
-              <a tabIndex={0} class="ada-link" href="#work">
-                Web App Development
-              </a>
-              <a tabIndex={0} class="ada-link" href="#work">
-                Mobile Design and User Experience
-              </a>
-            </div>
             <div class="row align-items-center">
               <div class="col-12 flex-column">
                 <h1>
@@ -124,7 +113,7 @@ export class AppHome {
 
         <div class="featured-blog">{featuredPost}</div>
 
-        <section id="work" class="work">
+        <section class="work">
           <div class="main-content">
             <div id="sticky-sidebar" class="sidebar">
               <div id="sticky-sidebar-inner">

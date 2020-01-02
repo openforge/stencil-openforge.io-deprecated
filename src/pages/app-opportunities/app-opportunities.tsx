@@ -344,7 +344,7 @@ export class AppOpportunities {
 
   render() {
     return (
-      <div class="opportunities">
+      <div id="contentStart" class="opportunities">
         {/* header - hero */}
         {this.texts[this.match.params.type]
           ? [

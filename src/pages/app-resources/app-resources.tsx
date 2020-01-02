@@ -141,7 +141,7 @@ export class AppResources {
       <div id="top" class="resources">
         {/* header - hero */}
         {!this.formSubmitted ? (
-          <header class="hero">
+          <header id="contentStart" class="hero">
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">
@@ -163,7 +163,7 @@ export class AppResources {
         ) : null}
 
         {this.formSubmitted ? (
-          <header class="hero changed-bkg">
+          <header id="contentStart" class="hero changed-bkg">
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">

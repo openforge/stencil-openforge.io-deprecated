@@ -9,7 +9,7 @@ export class AppTOS {
 
   render() {
     return (
-      <div class="terms-of-service">
+      <div id="contentStart" class="terms-of-service">
         <section class="container">
           <iframe src="https://docs.google.com/document/d/e/2PACX-1vSCOEP_k68YrVKq9tkxSrks-cIoP1pRavN39B52GrSNyEEHtzXIWF5xpIgbw_GKa-5tgxklgPA_xzlr/pub?embedded=true" />
         </section>

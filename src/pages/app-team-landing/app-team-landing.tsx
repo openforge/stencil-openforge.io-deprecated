@@ -320,7 +320,7 @@ export class AppTeamLanding {
   render() {
     const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto);
     return (
-      <section class="team-landing">
+      <section id="contentStart" class="team-landing">
         {/* header - hero */}
         {this.data[this.match.params.member]
           ? [

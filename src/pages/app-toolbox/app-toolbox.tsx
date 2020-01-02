@@ -27,7 +27,7 @@ export class AppToolbox {
 
   render() {
     return (
-      <div class="toolbox">
+      <div id="contentStart" class="toolbox">
         {/* header - hero */}
         <header class="hero">
           <div class="container">

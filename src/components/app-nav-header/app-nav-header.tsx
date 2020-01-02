@@ -26,6 +26,10 @@ export class AppNavHeader {
   render() {
     return (
       <nav class="navbar navbar-expand-lg navbar-dark align-items-lg-end fixed-top">
+        <a class="skip-navigation" href="#contentStart">
+          Skip Navigation
+        </a>
+
         <div class="container">
           <div class="navbar-brand">
             <stencil-route-link tabindex="0" url="/" exact={true} anchorClass="nav-link" activeClass="active">
@@ -95,7 +99,7 @@ export class AppNavHeader {
                   </stencil-route-link>
                 </div>
               </li>
-              <li class="nav-item" data-target="#navbarSupportedContent">
+              <li class="nav-item" data-target="#navbarSupportedContent" id="main-content">
                 <stencil-route-link url="/contact" anchorClass="nav-link" activeClass="active">
                   {translate('nav.links.contact')}
                 </stencil-route-link>

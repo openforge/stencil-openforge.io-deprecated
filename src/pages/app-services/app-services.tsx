@@ -29,7 +29,7 @@ export class AppServices {
     return (
       <div class="services">
         {/* header - hero */}
-        <header class="hero">
+        <header id="contentStart" class="hero">
           <div class="container desktop">
             <div class="services-graphic-background" aria-label="header" />
             <div class="row align-items-center">

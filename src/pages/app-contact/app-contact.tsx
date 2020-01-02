@@ -128,7 +128,7 @@ export class AppContact {
     return (
       <div class="contact">
         {/* header - hero */}
-        <header class={this.className}>
+        <header id="contentStart" class={this.className}>
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-8 col-lg-6">

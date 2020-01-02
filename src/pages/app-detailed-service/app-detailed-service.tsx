@@ -142,7 +142,7 @@ export class AppDetailedService {
     return (
       <div class="services">
         {/* header - hero */}
-        <header class="hero">
+        <header id="contentStart" class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-5 order-md-2 d-flex justify-content-center">

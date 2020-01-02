@@ -28,7 +28,7 @@ export class AppCaseStudy {
   render() {
     return (
       <div class="case-study">
-        <header class="hero">
+        <header id="contentStart" class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div style={{ margin: 'auto' }}>

@@ -174,7 +174,7 @@ export class AppBlogPost {
     const post = this.renderPostContent(this.blogPost, this.blogPostIsLoading, this.blogPostIsError);
     return (
       <div class="blog-post-page">
-        <div class="blog-post-content">
+        <div id="contentStart" class="blog-post-content">
           <stencil-route-link url={'/blog'}>
             <h3>Back to Blog</h3>
           </stencil-route-link>

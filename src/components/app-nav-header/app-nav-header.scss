@@ -1,3 +1,21 @@
+.skip-navigation {
+  position: absolute;
+  left: -300px;
+  top: 90px;
+  padding: 8px;
+  color: #e88212 !important;
+  text-decoration: underline !important;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+
+  &:focus {
+    left: 16px;
+    color: $orange !important;
+    -webkit-transition: top 0.1s ease-in;
+    transition: top 0.1s ease-in;
+  }
+}
+
 nav.navbar {
   background: rgba(23, 23, 25, 1);
 }
@@ -36,7 +54,6 @@ nav.navbar .navbar-nav .nav-item {
   }
 
   &.split {
-
     .dropdown-menu {
       margin-top: 0;
       @include media-breakpoint-up(md) {

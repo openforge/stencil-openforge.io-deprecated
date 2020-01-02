@@ -6,7 +6,6 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-
   members = [
     {
       name: 'Jedi Weller',
@@ -210,7 +209,7 @@ export class AppAbout {
     return (
       <div class="about">
         {/* header - hero */}
-        <header class="hero">
+        <header id="contentStart" class="hero">
           <div class="container">
             <div class="row align-items-center">
               <div class="col-md-8 col-sm-10 text-container">

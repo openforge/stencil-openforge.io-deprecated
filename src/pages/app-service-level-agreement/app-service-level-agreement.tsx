@@ -5,7 +5,6 @@ import { Component, h } from '@stencil/core';
   styleUrl: 'app-service-level-agreement.scss',
 })
 export class AppServiceLevelAgreement {
-
   private className;
   componentWillLoad() {
     // Removing optimized assets for now
@@ -28,7 +27,7 @@ export class AppServiceLevelAgreement {
   render() {
     return (
       <div class="service-level-agreement">
-        <header class={this.className}>
+        <header id="contentStart" class={this.className}>
           <div class="overlay" />
           <div class="container">
             <div class="row align-items-center">
