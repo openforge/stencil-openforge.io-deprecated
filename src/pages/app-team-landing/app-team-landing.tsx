@@ -363,13 +363,9 @@ export class AppTeamLanding {
 
               <aside class="cta-about text-white">
                 <div class="cta-container d-flex flex-row justify-content-center">
-                  <h3 class="align-self-center">
-                    <app-translate keyword="about.landing.cta.title" />
-                  </h3>
-
                   <stencil-route-link url="/about" class="align-self-center">
                     <button class="btn btn-primary">
-                      <app-translate keyword="about.landing.cta.button" />
+                      <app-translate keyword="common.back" />
                     </button>
                   </stencil-route-link>
                 </div>
