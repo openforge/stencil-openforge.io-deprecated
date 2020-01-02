@@ -4,9 +4,12 @@ export const translations = {
       hero: {
         title: 'Mobile Solutions',
         subTitle: 'For A Digital World',
+        text: 'As experts in user experience, design, and application development, we specialize in creating mobile first, user-centered solutions to bring your ideas to life on the small screen.',
+        buttonText: 'What Makes Us Different?',
       },
       process: {
         title: 'Our Process',
+        buttonText: 'LEARN MORE',
         discovery: {
           title: 'Discovery',
           text: `We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.`,
@@ -33,22 +36,23 @@ export const translations = {
       },
       work: {
         experts: 'Experts in',
+        buttonText: 'VIEW PROJECT',
         mobileWebApplications: {
           title: 'Mobile & Web Applications',
           text:
-            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP. As experts in mobile application development, we can interface with any existing API or standard to deliver a secure, integrated product no matter what your product needs.',
-          example: 'The Vanlife App',
-        },
-        digitalExperience: {
-          title: 'Digital Experience',
-          text:
-            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We will go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back.',
-          example: 'The Voyage by New Ocean',
+            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP.',
+          example: 'Mobile Measures',
         },
         mobileTechnology: {
           title: 'Mobile Technology',
           text:
-            'We utilize technologies to bring the richest features to your app such as VoIP, Bluetooth LE, and other IOT tech to bring a whole new level of connectivity to your application providing your users with a rich and interactive experience that will boost engagement and retention. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+            'With our combined expertise in design and marketing, you can rely on us to develop comprehensive strategies and graphics that will define your brand and inspire trust in your target audience.',
+          example: 'The Voyage by New Ocean',
+        },
+        digitalExperience: {
+          title: 'Design & User Experience',
+          text:
+            'By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back for more.',
           example: 'LoudCloud',
         },
       },
@@ -410,7 +414,7 @@ export const translations = {
       title: 'Got a vision?',
       subTitle: `We've got your back.`,
       text: 'Contact us today to get started!',
-      link: 'GET IN TOUCH',
+      link: `LET'S GET STARTED`,
     },
 
     header: {
@@ -430,6 +434,8 @@ export const translations = {
         header: 'Work At OpenForge',
         developer: `I'M A DEVELOPER`,
         designer: `I'M A DESIGNER`,
+        text: 'Are you looking for a new challenge? Show us what you got!',
+        apply: 'APPLY NOW',
       },
       social: {
         followUs: 'Follow Us',
@@ -438,11 +444,12 @@ export const translations = {
         linkedin: 'openforge',
         instagram: '@openforgemobile',
         sla: 'Read our SLA',
+        presskit: 'Download Our Press Kit',
       },
       webinar: {
-        signup: 'Startup Junto',
-        webinarText: 'Startup Junto is a curated community for startup founders and entrepreneurs.',
-        register: 'JOIN US',
+        signup: 'The Forge',
+        webinarText: 'We are the proud organizers of the Philadelphia Ionic, Angular, and Startup Junto communities. Join us to learn more!',
+        register: 'JOIN THE FORGE',
       },
     },
 
