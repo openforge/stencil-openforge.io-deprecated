@@ -198,7 +198,7 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container">
-                <content-graphic img-url="/assets/rocket.png">
+                <content-graphic img-url="/assets/rocket.png" alt="rocket">
                   <h3 slot="header">
                     <app-translate keyword="contact.form.thanx" />
                   </h3>
