@@ -25,6 +25,9 @@ export class OpenForgeApp {
         if (srcEl.classList.contains('dropdown-toggle')) {
           return;
         }
+        if (srcEl.classList.contains('search-input')) {
+          return;
+        }
         const opened = document.getElementsByClassName('navbar-collapse show');
         if (opened.length > 0) {
           const navbarButton: any = document.getElementsByClassName('navbar-toggler')[0];
