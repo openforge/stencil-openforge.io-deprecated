@@ -126,9 +126,9 @@ export class AppContact {
           <div class="container">
             {!this.formSubmitted ? (
               <div class="row align-items-center">
-                <div class="col-lg-6 col-sm-12 col-md-12">
+                <div class="col-xl-6 col-lg-12 col-sm-12 col-md-12">
                   <div class="letter-form">
-                    <h2 class="display-5 font-weight-bold">
+                    <h2 class="display-5">
                       <app-translate keyword="contact.form.title" />
                     </h2>
                     <p class="lead">
@@ -204,7 +204,7 @@ export class AppContact {
                     </form>
                   </div>
                 </div>
-                <div class="col-lg-6 d-none d-lg-flex form-image-content">
+                <div class="col-xl-6 d-none d-xl-flex form-image-content">
                   <app-img src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" />
                 </div>
               </div>
