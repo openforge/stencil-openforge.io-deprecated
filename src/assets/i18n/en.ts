@@ -106,9 +106,8 @@ export const translations = {
     contact: {
       hero: {
         title: "Let's Work Together",
-        request:
-          'We are Philadelphia web and mobile application experts, and we are here to help.  Contact us today to start working with our team.  Let us apply industry best practices to enhance your business!',
-        requestNow: 'Request Free Quote',
+        request: 'You’ve got questions, we’ve got answers. Contact us today to start working with our team and see how our process can enhance your business.',
+        requestNow: 'GET IN TOUCH',
       },
       form: {
         title: 'Get in Touch',
@@ -123,12 +122,12 @@ export const translations = {
         alert: {
           text: "Thank you for reaching out! we'll get back to you within 24 hours!",
         },
-        fullName: 'Full Name',
+        fullName: 'Full Name*',
         company: 'Company',
-        email: 'E-mail',
+        email: 'E-mail*',
         phone: 'Phone',
         github: 'GitHub URL',
-        whereDidYouHear: 'How did you hear about OpenForge?',
+        whatAreYouWorkingOn: 'What are you working on?',
         appDevelopment: 'App Development',
         webDevelopment: 'Web Development',
         uiDesign: 'UI Design',
@@ -148,6 +147,12 @@ export const translations = {
         thanx: 'Thank you!',
         thanxText: 'Your message has been delivered. Someone will be in touch with you soon!',
         unsure: 'Unsure',
+        placeholder: {
+          name: 'Your Name Here',
+          email: 'example@gmail.com',
+          phone: 'Your Phone Number',
+          message: 'Briefly describe your project',
+        },
       },
     },
 
