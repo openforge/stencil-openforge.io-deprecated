@@ -331,8 +331,12 @@ export class AppBlog {
       postData = this.renderPosts(this.blogPostsData, this.blogIsLoading, this.blogIsError, '', this.blogFilter);
     }
 
+    console.log(this.searchQuery);
+    console.log(this.blogCurrentPage);
+    console.log(this.blogFilter);
+
     return (
-      <div class="blog-container">
+      <div class="blog-container container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
             <div class="blog-search-group d-md-none">
@@ -397,7 +401,7 @@ export class AppBlog {
             </div>
           </div>
           <div class="col-lg-8 col-md-12">
-            <div class="featured-post">{featuredPost}</div>
+            {!this.searchQuery && this.blogCurrentPage === 1 && !this.blogFilter ? <div class="featured-post">{featuredPost}</div> : null}
             <div class="blog-posts">{postData}</div>
           </div>
           <div class="col-lg-3 col-md-12 form-row d-sm-block d-md-none d-lg-block">
@@ -444,7 +448,6 @@ export class AppBlog {
           </div>
         </div>
         <div class="blog-pagination">{pagination}</div>
-
         <stencil-route-link url="/blog-index" />
         <app-footer />
       </div>

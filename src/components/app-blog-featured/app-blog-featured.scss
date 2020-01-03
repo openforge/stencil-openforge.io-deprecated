@@ -1,4 +1,12 @@
 .blog-featured {
+  a {
+    color: #4099a8;
+  }
+
+  .author a {
+    text-decoration: underline;
+  }
+
   .container {
     min-width: 90%;
     margin-bottom: 2rem;

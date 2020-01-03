@@ -5,7 +5,7 @@
   overflow-x: hidden;
 
   h4 {
-    color: $orange;
+    color: #c65300;
   }
 
   .posts-row {
@@ -17,6 +17,12 @@
       padding-left: 0;
       padding-right: 0;
       margin: 0;
+    }
+
+    .post-row-container {
+      @include media-breakpoint-down(md) {
+        order: 2;
+      }
     }
   }
 
@@ -208,7 +214,7 @@
       }
 
       .blog-filter-item .active {
-        color: #e88212;
+        color: #c65300;
         text-decoration: underline;
         cursor: auto;
 
@@ -254,12 +260,12 @@
 
     .blog-page-item {
       padding: 7px;
+      color: #b9c3c4;
     }
 
     .blog-page-item .active {
       padding: 7px;
-      color: $orange;
-      text-decoration: underline $orange;
+      color: #c65300;
     }
   }
 }
