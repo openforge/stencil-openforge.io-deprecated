@@ -1,4 +1,4 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Build } from '@stencil/core';
 
 // import { translate } from '../../services/translation.service';
 
@@ -13,12 +13,14 @@ export class AppPartners {
   componentDidLoad() {
     this.changeMetadata();
 
-    /* tslint:disable-next-line */
-    $(document).ready(function() {
-      // Force bootstrap to initialize carousel
-      const partnersCarousel = $('#partnersCarousel');
-      setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);
-    });
+    if (Build.isBrowser) {
+      /* tslint:disable-next-line */
+      $(document).ready(function() {
+        // Force bootstrap to initialize carousel
+        const partnersCarousel = $('#partnersCarousel');
+        setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);
+      });
+    }
   }
 
   changeMetadata() {
