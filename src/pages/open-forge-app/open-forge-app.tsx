@@ -70,6 +70,7 @@ export class OpenForgeApp {
           <stencil-route url="/blog/" component="app-blog" exact={true} />
           <stencil-route url="/blog-index" component="app-blog-index" exact={true} />
           <stencil-route url="/blog/:slug" component="app-blog-post" />
+          <stencil-route url="/partners" component="app-partners" exact={true} />
           <stencil-route component="app-not-found" />
         </stencil-route-switch>
       </stencil-router>

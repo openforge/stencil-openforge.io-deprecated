@@ -371,6 +371,34 @@ export const translations = {
       },
     },
 
+    partners: {
+      hero: {
+        title: 'Meet Our Partners',
+        text1: 'Isaac Newton once said "If I have seen further, it is by standing on the shoulders of giants." and that is exactly how we feel about our partners!',
+        text2:
+          'We believe in industry-wide collaboration and have connected with the top firms in their fields in order to create true value to our clients. Our partnerships provide us with cutting-edge solutions and services. The combination of our expertise and their support means we provide you with the best experience money can buy.',
+      },
+      trusted: {
+        title: 'Trusted Partners',
+        ionic: 'Ionic Framework is an open source app development platform which allows our team of developers to build and deploy high-quality cross-platform apps in record time.',
+        t1776:
+          '1776 is the largest start-up incubator in the Northeast Corridor. It is a public benefit corporation that empowers start-ups by providing them with access to a global network of connections, and the intellectual and financial capital needed for them to prosper.',
+        strapi:
+          'Strapi is an open source Headless CMS, used to manage content and make it available through a fully-customizable API. It is a framework designed for building practical applications and services in a matter of hours, instead of the usual weeks; saving your team precious time.',
+        t215Marketing:
+          '215Marketing is a Google Partner and full-service digital marketing agency; providing everything from traditional design to CRM implementation. Their primary focus is creating websites, effective Search Engine Marketing and measuring Return On Investment.',
+        finantialGPS:
+          'Financial GPS is a virtual accounting solution for small enterprises, that presents them with monthly reports and videos. The wonderful team at Financial GPS provides different services, including bookkeeping, payroll processing and tax preparation.',
+        drexel:
+          'Drexel University and the Science Center offer an incubator and accelerator for early-stage, funded start-ups. ic@3401 is a community of experts and investors that plays an important role in the building of the collaborative culture in Philadelphia’s Innovation Neighborhood.',
+      },
+      cta: {
+        title: 'Interested in partnering with us?',
+        subTitle: `Contact us today to get started!        `,
+        link: 'GET IN TOUCH',
+      },
+    },
+
     resources: {
       hero: {
         title: 'What is a PWA and is it right for you?',
