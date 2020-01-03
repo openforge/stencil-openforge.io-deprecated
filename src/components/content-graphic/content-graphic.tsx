@@ -9,6 +9,8 @@ export class ContentGraphic {
   @Prop() reverse: boolean = false;
   @Prop() preLoadImg: boolean = false;
   @Prop() alt: string;
+  @Prop() wider: boolean;
+  @Prop() inverseOrder: boolean;
 
   render() {
     return (
@@ -23,6 +25,7 @@ export class ContentGraphic {
       >
         <div
           class={{
+            'col-lg-4': this.wider,
             'col-sm-12': true,
             'col-md-5': true,
             'px-lg-5': true,
@@ -34,10 +37,12 @@ export class ContentGraphic {
         </div>
         <div
           class={{
+            'col-lg-6': this.wider,
             'col-sm-12': true,
             'col-md-5': true,
-            'px-lg-5': true,
+            'px-lg-5': !this.wider,
             'text-md-right': this.reverse,
+            'content-container': this.inverseOrder,
           }}
         >
           <slot name="header" />

@@ -4,7 +4,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     height: calc(100vh - 76px);
-    margin-top: 76px;
+    padding-top: 76px;
 
     &.header-animated {
       background-image: url('/assets/opportunities/opportunities-header-animated.svg');
@@ -338,19 +338,39 @@
             letter-spacing: 0.1rem;
             line-height: 1.4rem;
             margin-bottom: 0;
-            width: 20%;
-            @include media-breakpoint-down(sm) {
-              width: 100%;
+            width: 100%;
+
+            &.resume {
+              width: initial;
+            }
+
+            &.resume-filename {
+              width: initial;
+              margin-left: 16px;
+            }
+
+            &.resume-btn {
+              background-color: #0095aa;
+              border: 0.75px solid #ffffff;
+              border-radius: 16px;
+              -webkit-box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+              box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+              width: initial;
+              padding: 5px 10px;
+              text-align: center;
+              color: white;
+              margin-left: 16px;
             }
           }
 
-          .form-control,
-          input[type='file'] {
+          .form-control {
             display: inline-block;
-            width: 80%;
-            @include media-breakpoint-down(sm) {
-              width: 100%;
-            }
+            width: 100%;
+          }
+
+          input[type='file'] {
+            visibility: hidden;
+            display: none;
           }
         }
         .error {
@@ -381,5 +401,14 @@
     width: 100%;
     margin: 0;
     border: 1.5px solid rgba(23, 23, 25, 0.1);
+  }
+
+  .submitted-text {
+    margin-top: 2rem;
+
+    p {
+      margin-bottom: 0;
+      text-align: center;
+    }
   }
 }

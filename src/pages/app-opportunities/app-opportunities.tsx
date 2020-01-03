@@ -19,10 +19,10 @@ export class AppOpportunities {
     css: number;
 
     sketch: number;
+    photoshop: number;
+    illustrator: number;
     adobe: number;
-    interactive: number;
-    ux: number;
-    presentation: number;
+    prototyping: number;
 
     file: string;
     name: string;
@@ -43,6 +43,7 @@ export class AppOpportunities {
   };
 
   @State() fileError: any;
+  @State() fileName: any;
   @State() nameError: string;
   @State() emailError: string;
   @State() phoneError: string;
@@ -133,20 +134,20 @@ export class AppOpportunities {
           name: 'sketch',
         },
         second: {
-          label: 'Adobe CC',
-          name: 'adobe',
+          label: 'Photoshop CC',
+          name: 'photoshop',
         },
         third: {
-          label: 'Interactive Prototyping',
-          name: 'interactive',
+          label: 'Illustrator CC',
+          name: 'illustrator',
         },
         fourth: {
-          label: 'User Experience Design',
-          name: 'ux',
+          label: 'Adobe XD CC',
+          name: 'adobe',
         },
         fifth: {
-          label: 'Presentation Design',
-          name: 'presentation',
+          label: 'Prototyping',
+          name: 'prototyping',
         },
       },
       metatags: {
@@ -207,7 +208,7 @@ export class AppOpportunities {
     }
 
     if (this.opporunityTypeCurrent === 'design') {
-      if (this.formValues.sketch > 70 && this.formValues.adobe > 70 && this.formValues.interactive > 70 && this.formValues.ux > 70 && this.formValues.presentation > 70) {
+      if (this.formValues.sketch > 70 && this.formValues.photoshop > 70 && this.formValues.illustrator > 70 && this.formValues.adobe > 70 && this.formValues.prototyping > 70) {
         this.interviewButtonDisabled = false;
       } else {
         this.interviewButtonDisabled = true;
@@ -271,16 +272,15 @@ export class AppOpportunities {
   handleSliders(e) {
     e.preventDefault();
     this.canRequestInterview = true;
-    document.getElementById('apply').scrollIntoView({ block: 'start' });
+    document.getElementById('hero').scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   handleFile(e) {
     const files = e.target.files;
     const file = files[0];
-
     this.formData = new FormData();
     this.formData.append('files', files[0]);
-
+    this.fileName = file.name;
     this.formValues.formErrors.fileValid = e.target.checkValidity();
     if (file && file.size > this.maxFileSize) {
       this.fileSizeErrorShown = true;
@@ -321,7 +321,7 @@ export class AppOpportunities {
       this.formSubmitted = true;
       this.fileSizeErrorShown = false;
 
-      document.getElementById('apply').scrollIntoView({ block: 'start' });
+      document.getElementById('thanks').scrollIntoView({ block: 'start' });
     } catch (error) {
       console.log('Error', error);
     }
@@ -330,6 +330,11 @@ export class AppOpportunities {
   scrollToForm() {
     const form = document.getElementById('interviews');
 
+    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }
+
+  scrollToApply() {
+    const form = document.getElementById('applyForm');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
@@ -360,6 +365,7 @@ export class AppOpportunities {
         {!this.canRequestInterview ? (
           // Header for initial state
           <header
+            id="hero"
             class={
               !this.opporunityTypePrevious && !this.opporunityTypeCurrent
                 ? 'hero header-animated'
@@ -414,14 +420,14 @@ export class AppOpportunities {
               img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-design-active.svg' : '/assets/opportunities/opportunities-dev-active.svg'}
               reverse={this.opporunityTypeCurrent === 'design' ? true : false}
             >
-              <h3 class="original thin align-left" slot="header">
+              <h3 class="original thin margin-bottom auto-align" slot="header">
                 <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.title`} />
               </h3>
-              <p class="align-left" slot="body">
+              <p class="auto-align" slot="body">
                 <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.text`} />
               </p>
               <div class="footer-btn" slot="footer">
-                <button class="btn btn-primary apply-btn">
+                <button class="btn btn-primary apply-btn" onClick={this.scrollToApply.bind(this)}>
                   <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.button`} />
                 </button>
               </div>
@@ -434,16 +440,16 @@ export class AppOpportunities {
             <section id="interviews" class="interviews">
               <div class="container">
                 <content-graphic img-url="/assets/graphic-opportunities-suck.jpg" reverse={true}>
-                  <h3 class="original thin align-left" slot="header">
+                  <h3 class="original thin margin-bottom auto-align" slot="header">
                     <app-translate keyword="opportunities.intro.title" />
                   </h3>
-                  <p class="align-left" slot="body">
+                  <p class="auto-align" slot="body">
                     <app-translate keyword={`opportunities.intro.${this.opporunityTypeCurrent}.text`} />
                   </p>
                 </content-graphic>
 
                 <content-graphic img-url={`/assets/graphic-opportunities-master-${this.opporunityTypeCurrent}.jpg`}>
-                  <h3 class="original thin" slot="header">
+                  <h3 class="original thin margin-bottom" slot="header">
                     <app-translate keyword="opportunities.test.title" />
                   </h3>
                   <p slot="body">
@@ -482,10 +488,10 @@ export class AppOpportunities {
 
               <div class="container">
                 <content-graphic img-url="/assets/graphic-opportunities-ionic.jpg" reverse={true}>
-                  <h3 class="original thin align-left" slot="header">
+                  <h3 class="original thin margin-bottom auto-align" slot="header">
                     <app-translate keyword="opportunities.reputation.title" />
                   </h3>
-                  <p class="align-left" slot="body">
+                  <p class="auto-align" slot="body">
                     <app-translate keyword="opportunities.reputation.text" />
                   </p>
                 </content-graphic>
@@ -504,11 +510,11 @@ export class AppOpportunities {
             // Content section for the state after click on apply
             <section class="container">
               <hr />
-              <content-graphic img-url={this.texts[this.opporunityTypeCurrent].candidateUrl} reverse={this.opporunityTypeCurrent === 'develop' ? true : false}>
-                <h3 class="original thin align-left" slot="header">
+              <content-graphic inverseOrder={true} wider={true} img-url={this.texts[this.opporunityTypeCurrent].candidateUrl} reverse={this.opporunityTypeCurrent === 'develop' ? true : false}>
+                <h3 class="original thin margin-bottom auto-align" slot="header">
                   <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.title`} />
                 </h3>
-                <ul class="align-left" slot="body">
+                <ul class="auto-align" slot="body">
                   <li>
                     <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text1`} />
                   </li>
@@ -528,11 +534,11 @@ export class AppOpportunities {
                   ) : null}
                 </ul>
               </content-graphic>
-              <content-graphic img-url={this.texts[this.opporunityTypeCurrent].requisitesUrl} reverse={this.opporunityTypeCurrent === 'develop' ? false : true}>
-                <h3 class="original thin align-left" slot="header">
+              <content-graphic inverseOrder={true} wider={true} img-url={this.texts[this.opporunityTypeCurrent].requisitesUrl} reverse={this.opporunityTypeCurrent === 'develop' ? false : true}>
+                <h3 class="original thin margin-bottom auto-align" slot="header">
                   <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.title`} />
                 </h3>
-                <ul class="align-left" slot="body">
+                <ul class="auto-align" slot="body">
                   <li>
                     <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text1`} />
                   </li>
@@ -570,151 +576,155 @@ export class AppOpportunities {
         {this.opporunityTypeCurrent
           ? [
               <section id="apply" class="apply">
-                {!this.formSubmitted ? (
-                  <div class="container">
-                    {!this.canRequestInterview ? (
-                      // First form with sliders
-                      <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
-                        <h2>
-                          <app-translate keyword="opportunities.skills.title" />
-                        </h2>
-                        <p>
-                          <app-translate keyword="opportunities.skills.text" />
-                        </p>
-
-                        <div class="slider-labels">
-                          <p>
-                            <app-translate keyword="opportunities.skills.noob" />
-                          </p>
-                          <p>
-                            <app-translate keyword="opportunities.skills.expert" />
-                          </p>
-                        </div>
-
-                        <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.first.name} label={this.texts[this.opporunityTypeCurrent].sliders.first.label} />
-                        <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.second.name} label={this.texts[this.opporunityTypeCurrent].sliders.second.label} />
-                        <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.third.name} label={this.texts[this.opporunityTypeCurrent].sliders.third.label} />
-                        <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fourth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fourth.label} />
-                        <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fifth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fifth.label} />
-
-                        {!this.interviewButtonDisabled ? (
-                          <p>
-                            <app-translate keyword="opportunities.form.allset" />
-                          </p>
-                        ) : (
-                          <p>
-                            <app-translate keyword="opportunities.form.almost" />
-                          </p>
-                        )}
-
-                        <button class="btn btn-primary apply-btn" type="submit" disabled={this.interviewButtonDisabled}>
-                          <app-translate keyword="opportunities.form.request" />
-                        </button>
-                      </form>
-                    ) : (
-                      // Second form to submit the resume
-                      <form class="apply-2" id="myLittleAnchor" onSubmit={this.handleSubmit.bind(this)}>
-                        <p>
-                          Want to know exactly what you're getting yourself into? Check out our
-                          <a class="doc-link" target="_blank" rel="noopener" href={this.texts[this.opporunityTypeCurrent].googleDoc}>
-                            Google Document
-                          </a>
-                          to see the ins and outs of what this epic adventure will include!
-                        </p>
-                        <h3>
-                          <app-translate keyword="opportunities.form.submitTitle" />
-                        </h3>
-
-                        <div class="form-group">
-                          <label>
-                            <app-translate keyword="opportunities.form.resume" />
-                          </label>
-                          <input
-                            class="input-file"
-                            type="file"
-                            name="file"
-                            onChange={this.handleFile.bind(this)}
-                            // onBlur={this.validateField.bind(this)}
-                            required={!this.fileSizeErrorShown}
-                          />
-                        </div>
-                        <p class="error">
-                          <span style={!this.fileError ? { display: 'none' } : this.errorIconStyles}>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                          </span>
-                          {this.fileError}
-                        </p>
-
-                        <app-input label={translate('contact.form.fullName')} name="name" type="text" required={true} />
-                        <p class="error">
-                          <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                          </span>
-                          {this.nameError}
-                        </p>
-                        <app-input label={translate('contact.form.email')} name="email" type="email" required={true} />
-                        <p class="error">
-                          <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                          </span>
-                          {this.emailError}
-                        </p>
-                        <app-input label={translate('contact.form.phone')} name="phone" type="number" required={true} />
-                        <p class="error">
-                          <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                          </span>
-                          {this.phoneError}
-                        </p>
-                        <app-input label={translate('contact.form.github')} name="github" type="text" required={true} />
-                        <p class="error">
-                          <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                          </span>
-                          {this.githubError}
-                        </p>
-
-                        <h3>
-                          <app-translate keyword="opportunities.form.unique.title" />
-                        </h3>
-
-                        <div class="form-group input-textarea">
-                          <label>
-                            <app-translate keyword="opportunities.form.unique.text" />
-                          </label>
-                          <textarea class="form-control" name="message" maxLength={150} required={true} onChange={this.validateField.bind(this)} />
-                        </div>
-                        <p class="error">
-                          <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                          </span>
-                          {this.messageError}
-                        </p>
-
-                        <div class="submit-btn-container">
-                          <button class="btn btn-primary apply-btn" type="submit" disabled={this.submitButtonDisabled}>
-                            <app-translate keyword="opportunities.form.submit" />
-                          </button>
-                        </div>
-                      </form>
-                    )}
-                  </div>
-                ) : (
-                  <div class="container apply-3">
-                    <h2>
-                      <app-translate keyword="opportunities.form.submitted" />
-                    </h2>
-
-                    <content-graphic img-url="/assets/graphic-opportunities-robot.png">
-                      <h3 slot="header">
-                        <app-translate keyword="opportunities.form.thanks.title" />
-                      </h3>
-                      <p slot="body">
-                        <app-translate keyword="opportunities.form.thanks.text" />
+                <div class="container">
+                  {!this.canRequestInterview ? (
+                    // First form with sliders
+                    <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
+                      <h2>
+                        <app-translate keyword="opportunities.skills.title" />
+                      </h2>
+                      <p>
+                        <app-translate keyword="opportunities.skills.text" />
                       </p>
-                    </content-graphic>
-                  </div>
-                )}
+
+                      <div class="slider-labels">
+                        <p>
+                          <app-translate keyword="opportunities.skills.noob" />
+                        </p>
+                        <p>
+                          <app-translate keyword="opportunities.skills.expert" />
+                        </p>
+                      </div>
+
+                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.first.name} label={this.texts[this.opporunityTypeCurrent].sliders.first.label} />
+                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.second.name} label={this.texts[this.opporunityTypeCurrent].sliders.second.label} />
+                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.third.name} label={this.texts[this.opporunityTypeCurrent].sliders.third.label} />
+                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fourth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fourth.label} />
+                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fifth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fifth.label} />
+
+                      {!this.interviewButtonDisabled ? (
+                        <p>
+                          <app-translate keyword="opportunities.form.allset" />
+                        </p>
+                      ) : (
+                        <p>
+                          <app-translate keyword="opportunities.form.almost" />
+                        </p>
+                      )}
+
+                      <button class="btn btn-primary apply-btn" type="submit" disabled={this.interviewButtonDisabled}>
+                        <app-translate keyword="opportunities.form.request" />
+                      </button>
+                    </form>
+                  ) : (
+                    // Second form to submit the resume
+                    <form class="apply-2" id="applyForm" onSubmit={this.handleSubmit.bind(this)}>
+                      <h3>
+                        <app-translate keyword="opportunities.form.submitTitle" />
+                      </h3>
+
+                      <div class="form-group">
+                        <label class="resume">
+                          <app-translate keyword="opportunities.form.resume" />
+                        </label>
+                        <label htmlFor="files" class="resume-btn">
+                          {this.fileName ? 'Modify File' : 'Choose File'}
+                        </label>
+                        {this.fileName ? <label class="resume-filename">{this.fileName}</label> : null}
+                        <input
+                          id="files"
+                          class="input-file"
+                          type="file"
+                          name="file"
+                          onChange={this.handleFile.bind(this)}
+                          // onBlur={this.validateField.bind(this)}
+                          required={!this.fileSizeErrorShown}
+                        />
+                      </div>
+                      <p class="error">
+                        <span style={!this.fileError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.fileError}
+                      </p>
+
+                      <app-input placeholder={translate('contact.form.placeholder.fullName')} label={translate('contact.form.fullName')} name="name" type="text" required={true} />
+                      <p class="error">
+                        <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.nameError}
+                      </p>
+                      <app-input placeholder={translate('contact.form.placeholder.email')} label={translate('contact.form.email')} name="email" type="email" required={true} />
+                      <p class="error">
+                        <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.emailError}
+                      </p>
+                      <app-input placeholder={translate('contact.form.placeholder.phone')} label={translate('contact.form.phone')} name="phone" type="number" required={true} />
+                      <p class="error">
+                        <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.phoneError}
+                      </p>
+                      {this.opporunityTypeCurrent === 'develop'
+                        ? [
+                            <app-input placeholder={translate('contact.form.placeholder.github')} label={translate('contact.form.github')} name="github" type="text" required={true} />,
+                            <p class="error">
+                              <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                              </span>
+                              {this.githubError}
+                            </p>,
+                          ]
+                        : [
+                            <app-input placeholder={translate('contact.form.placeholder.designProfile')} label={translate('contact.form.designProfile')} name="github" type="text" required={true} />,
+                            <p class="error">
+                              <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                              </span>
+                              {this.githubError}
+                            </p>,
+                          ]}
+
+                      <h3>
+                        <app-translate keyword="opportunities.form.unique.title" />
+                      </h3>
+
+                      <div class="form-group input-textarea">
+                        <label>
+                          <app-translate keyword="opportunities.form.unique.text" />
+                        </label>
+                        <textarea class="form-control" name="message" maxLength={200} required={true} onChange={this.validateField.bind(this)} />
+                      </div>
+                      <p class="error">
+                        <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
+                          <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                        </span>
+                        {this.messageError}
+                      </p>
+
+                      <div class="submit-btn-container">
+                        <button class="btn btn-primary apply-btn" type="submit" disabled={this.submitButtonDisabled}>
+                          <app-translate keyword="opportunities.form.submit" />
+                        </button>
+                      </div>
+
+                      {this.formSubmitted ? (
+                        <div class="submitted-text" id="thanks">
+                          <p>
+                            <app-translate keyword="opportunities.form.submitted" />
+                          </p>
+                          <p>
+                            <app-translate keyword="opportunities.form.thanks_interest" />
+                          </p>
+                        </div>
+                      ) : null}
+                    </form>
+                  )}
+                </div>
               </section>,
             ]
           : null}
@@ -733,9 +743,9 @@ export class AppOpportunities {
 
       sketch: parseFloat(''),
       adobe: parseFloat(''),
-      interactive: parseFloat(''),
-      ux: parseFloat(''),
-      presentation: parseFloat(''),
+      prototyping: parseFloat(''),
+      illustrator: parseFloat(''),
+      photoshop: parseFloat(''),
 
       file: '',
       name: '',
