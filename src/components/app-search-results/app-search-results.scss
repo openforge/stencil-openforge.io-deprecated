@@ -46,14 +46,14 @@
     }
 
     .categories {
-      display: table;
+      display: block;
       border-spacing: 25px 0;
       margin-left: -25px;
 
       div {
         background-color: #ff5d00;
         border-radius: 20px;
-        width: 128px;
+        min-width: 128px;
         height: 53px;
         text-align: center;
         display: table-cell;
@@ -63,6 +63,13 @@
         font-size: 16px;
         font-weight: 700;
         line-height: 19px;
+        display: inline-block;
+        padding: 15px;
+        margin: 3px;
+
+        @include media-breakpoint-up(md) {
+          margin: 3px 20px;
+        }
       }
     }
   }
