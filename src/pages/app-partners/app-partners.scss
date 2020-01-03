@@ -160,6 +160,10 @@
       background: #008092;
       margin: 0;
       padding: 0 200px;
+
+      @include media-breakpoint-down(md) {
+        padding: 0;
+      }
     }
 
     .cta-image {
