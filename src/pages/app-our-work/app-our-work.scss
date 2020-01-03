@@ -227,16 +227,19 @@
       &.mobilemeasures {
         background-image: url('/assets/apps/mobilemeasures/background-graphic.png');
         background-size: cover;
+        background-position: center;
       }
 
       &.loudcloud {
         background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
         background-size: cover;
+        background-position: center;
       }
 
       &.voyage {
         background-image: url('/assets/home-graphic-voyage-pattern.jpg');
         background-size: cover;
+        background-position: center;
       }
     }
   }
