@@ -2,22 +2,26 @@
   margin-top: 76px;
 
   header {
-    background-image: url(assets/our-work/our-work-header.svg);
-    background-repeat: no-repeat;
-    height: 542px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
 
-    @include media-breakpoint-down(md) {
-      height: 350px;
-    }
 
-    @include media-breakpoint-down(sm) {
-      height: initial;
-      margin-top: calc(3rem + 76px);
-      background-image: none;
+    section {
+      align-items: center;
+      background-image: url(assets/our-work/our-work-header.svg);
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 420px;
+
+      @include media-breakpoint-down(md) {
+        height: 350px;
+      }
+  
+      @include media-breakpoint-down(sm) {
+        height: initial;
+        margin-top: calc(3rem + 76px);
+        background-image: none;
+      }
     }
 
     h1 {
@@ -33,6 +37,7 @@
         font-size: 40px;
       }
     }
+
     p {
       margin-top: 15px;
       color: #292a2d;

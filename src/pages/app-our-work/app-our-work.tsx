@@ -8,9 +8,11 @@ export class AppOurWork {
   render() {
     return (
       <div class="our-work">
-        <header class="container">
-          <h1>Our Work</h1>
-          <p>Each day we work to make our world better by design. Below you will find examples of projects that we've had the pleasure of working on.</p>
+        <header>
+          <section class="container">
+            <h1>Our Work</h1>
+            <p>Each day we work to make our world better by design. Below you will find examples of projects that we've had the pleasure of working on.</p>
+          </section>
         </header>
         <section class="container">
           <div class="card-container">
