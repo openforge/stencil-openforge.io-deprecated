@@ -331,17 +331,13 @@ export class AppBlog {
       postData = this.renderPosts(this.blogPostsData, this.blogIsLoading, this.blogIsError, '', this.blogFilter);
     }
 
-    console.log(this.searchQuery);
-    console.log(this.blogCurrentPage);
-    console.log(this.blogFilter);
-
     return (
       <div class="blog-container container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
             <div class="blog-search-group d-md-none">
               <span class="blog-search-icon fa fa-search" />
-              <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+              <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
             </div>
 
             <ul class="blog-filters-list">
@@ -349,7 +345,7 @@ export class AppBlog {
               <li class="blog-filter-item d-none d-md-block">
                 <div class="blog-search-group">
                   <span class="blog-search-icon fa fa-search" />
-                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
               </li>
             </ul>
