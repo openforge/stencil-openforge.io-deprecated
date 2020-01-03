@@ -1,15 +1,22 @@
 .blog-featured {
-  a {
-    color: #4099a8;
-  }
-
-  .author a {
-    text-decoration: underline;
+  .post {
+    align-items: center !important;
+    margin: 40px 0;
   }
 
   .container {
     min-width: 90%;
     margin-bottom: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  .col-title {
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
   }
 
   .featured-title {
@@ -22,7 +29,16 @@
   .featured-post-title {
     h2 {
       color: $gray-dark;
-      margin-bottom: 2rem;
+      font-family: Muli;
+      font-size: 42px;
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      line-height: 50px;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 25px;
+        line-height: 40px;
+      }
     }
   }
 
@@ -52,9 +68,15 @@
     flex-direction: row;
     align-items: center;
 
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 19px;
+
     .profile-image {
-      height: 40px;
-      width: 40px;
+      height: 54px;
+      width: 54px;
       object-fit: cover;
       margin-right: 15px;
       border-radius: 50%;
@@ -64,5 +86,9 @@
   .read-more {
     font-size: 18px;
     text-decoration: underline;
+  }
+
+  hr {
+    border-color: #979797;
   }
 }

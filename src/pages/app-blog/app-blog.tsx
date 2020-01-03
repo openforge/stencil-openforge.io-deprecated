@@ -332,7 +332,7 @@ export class AppBlog {
     }
 
     return (
-      <div class="blog-container">
+      <div class="blog-container container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
             <ul class="blog-filters-list">
@@ -349,15 +349,12 @@ export class AppBlog {
           </div>
         </div>
         <div class="row posts-row">
-          <div class="col-md-8 col-sm-12">
+          <div class="col-lg-7 col-md-12 col-sm-12 post-row-container">
             <div class="featured-post">{featuredPost}</div>
-            <div class="blog-posts">
-              {postData}
-              <div class="blog-pagination">{pagination}</div>
-            </div>
+            <div class="blog-posts">{postData}</div>
           </div>
-          <div class="col-md-3 col-sm-12 form-row">
-            <div class="form-row-content">
+          <div class="col-lg-4 col-md-12 col-sm-12 form-row">
+            <div class="d-none d-md-block form-row-content">
               <form
                 action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
                 method="post"
@@ -383,23 +380,24 @@ export class AppBlog {
                   </div>
                 </div>
               </form>
-
-              <p class="contact-icons-label">Follow Us:</p>
-              <div class="contact-icons">
-                <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
-                  <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
-                </a>
-                <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
-                  <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
-                </a>
-                <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
-                  <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
-                </a>
+              <div class="social-links-container">
+                <p class="contact-icons-label">Follow Us:</p>
+                <div class="contact-icons">
+                  <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
+                    <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
+                  </a>
+                  <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
+                    <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
+                  </a>
+                  <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                    <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
+        <div class="blog-pagination">{pagination}</div>
         <stencil-route-link url="/blog-index" />
         <app-footer />
       </div>
