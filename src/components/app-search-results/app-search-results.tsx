@@ -77,7 +77,7 @@ export class AppSearchResults {
               <span class="blog-search-icon">
                 <span class="fa fa-search" />
               </span>
-              <input id="blog-search" type="search" class="blog-search-input" placeholder="Search" onKeyUp={e => this.handleSearch(e.target['value'])} />
+              <input id="blog-search" type="text" class="blog-search-input" placeholder="Search" onKeyUp={e => this.handleSearch(e.target['value'])} />
               <span class="blog-close-icon" onClick={() => this.handleClose(false)}>
                 <span class="far fa-times-circle" />
               </span>
