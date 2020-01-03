@@ -405,7 +405,7 @@ export const translations = {
       title: 'Got a vision?',
       subTitle: `We've got your back.`,
       text: 'Contact us today to get started!',
-      link: 'GET IN TOUCH',
+      link: `LET'S GET STARTED`,
     },
 
     header: {

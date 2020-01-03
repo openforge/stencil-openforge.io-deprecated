@@ -33,7 +33,10 @@
 
   h2 {
     color: white;
-    font-size: 22px;
+    font-family: Muli;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
     margin: 0 0 20px 0;
 
     @include media-breakpoint-down(sm) {
@@ -41,10 +44,13 @@
     }
   }
 
-  p {
+  h3 {
     color: $white;
-    font-size: 38px;
-    margin: 1rem 0;
+    font-family: Muli;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    margin: 1rem 0 3rem;
 
     @include media-breakpoint-down(sm) {
       font-size: 55px;
@@ -54,22 +60,17 @@
   }
 
   button {
-    background-color: #ec9b41;
-    border: solid 0.8px white;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
-    color: $gray-dark;
+    background-color: #C75300;
+    border: 0.75px solid #FFFFFF;
+    border-radius: 16px;
+    color: $white;
     cursor: pointer;
-    font-family: Roboto;
+    font-family: Muli;
     font-size: 11px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    letter-spacing: 1.3px;
-    height: auto;
-    line-height: 1.82;
-    padding: 0.5rem 1rem;
-    text-align: center;
-    width: auto;
+    font-weight: 700;
+    height: 32px;
+    letter-spacing: 1.25px;
+    line-height: 20px;
+    width: 223px;
   }
 }
