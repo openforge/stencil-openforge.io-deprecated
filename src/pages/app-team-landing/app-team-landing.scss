@@ -3,6 +3,14 @@ section.team-landing {
   font-family: 'Muli', sans-serif;
   padding: 73px 0 0 0;
 
+  @include media-breakpoint-down(md) {
+    padding: 60px 0 0 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 73px 0 0 0;
+  }
+
   h1 {
     @include media-breakpoint-down(md) {
       font-size: 1.75rem;
@@ -210,7 +218,7 @@ section.team-landing {
         margin: 3rem 0;
       }
       @include media-breakpoint-down(md) {
-        margin: 2rem 0;
+        margin: 3rem 0;
       }
       font-size: 2.63rem;
       font-weight: 600;

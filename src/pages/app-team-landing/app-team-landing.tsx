@@ -106,7 +106,7 @@ export class AppTeamLanding {
       skills: ['Front-end Wizard ✨', 'Angular', 'Ionic', 'Firebase', 'StencilJS', 'RxJS', 'NGXS', 'NGRX', 'Redux', 'NodeJS'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-fernando.png',
-      headshotPhoto: '/assets/headshot-fernando.png',
+      headshotPhoto: '/assets/headshot-fer.png',
       metatags: {
         title: 'Fernando Del Olmo - Software Engineer | OpenForge',
         description:
@@ -148,6 +148,7 @@ export class AppTeamLanding {
       skills: ['Angular', 'Ionic', 'Typescript', 'Firebase', 'Scrum'],
       team: 'development',
       backgroundPhoto: '/assets/bios-background-luis.png',
+      headshotPhoto: '/assets/headshot-luis.png',
       metatags: {
         title: 'Luis Chacon - Software Engineer | OpenForge',
         description:
@@ -162,7 +163,7 @@ export class AppTeamLanding {
       surname: 'Del Valle',
       title: translate('about.team.member.title.developer'),
       headerText:
-        'Claudio began programming early in High School as a way to learn more about robotics. After being introduced to OpenForge; and stemming from his love for creating and a passion for continuous improvement, Web Development became his main focus. Finally, a couple of years (and a bachelor’s degree in Computer Engineering) later, Claudio enjoys keeping up with the newest trends in web development; especially those related to Ionic and Angular.',
+        'Claudio began programming early in High School as a way to learn more about robotics. After being introduced to OpenForge; and stemming from his love for creating and a passion for continuous improvement, Web Development became his main focus. Claudio graduated with a degree in Computer Engineering and still enjoys keeping up with the newest trends in web development; especially those related to Ionic and Angular. He acts as both a Project Manager & Developer.',
       bodyText:
         'Like most of the developers at OpenForge, Claudio is involved in the scoping and development process of mobile apps. He enjoys the discovery process and lends his technical opinion wherever needed to improve the overall product. He enjoys keeping up with the latest web development trends and sharing his knowledge with the rest of the team.',
       skills: ['NodeJS', 'RxJS', 'Angular', 'Ionic', 'StencilJS', 'Firebase'],
@@ -434,6 +435,7 @@ export class AppTeamLanding {
           };
     }
     window.addEventListener('resize', () => {
+      const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto);
       const hero = document.querySelector('.hero') as HTMLElement;
       if (window.innerWidth > 767.98) {
         hero.style.backgroundColor = '#292A2D';
