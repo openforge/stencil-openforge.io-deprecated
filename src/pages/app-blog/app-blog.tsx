@@ -346,10 +346,15 @@ export class AppBlog {
 
             <ul class="blog-filters-list">
               {filters}
-              <li class="blog-filter-item d-none d-md-block">
+              <li class="blog-filter-item d-none d-lg-block">
                 <div class="blog-search-group">
                   <span class="blog-search-icon fa fa-search" />
                   <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                </div>
+              </li>
+              <li class="blog-filter-item d-lg-none">
+                <div class="blog-search-group">
+                  <span class="blog-search-icon fa fa-search" />
                 </div>
               </li>
             </ul>
@@ -424,7 +429,7 @@ export class AppBlog {
                   <div class="clear">
                     <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
                       <span class="d-block d-sm-block d-md-none">
-                        Get the Newsletter &nbsp; <i class="fa fa-arrow-right" />
+                        Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
                       </span>
                       <i class="d-none d-md-block fa fa-arrow-right" />
                     </button>

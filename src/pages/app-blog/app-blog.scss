@@ -82,12 +82,13 @@
 
       @include media-breakpoint-down(sm) {
         background: #fff;
+        border: 1px solid #c75300;
         padding: 4px 15px;
       }
 
       span {
         font-size: 14px;
-        text-transform: uppercase;
+        text-transform: capitalize;
         color: $gray-dark;
         font-weight: bold;
 
@@ -171,6 +172,11 @@
       margin-top: 10px;
       margin-left: 10px;
       color: #615853;
+      @include media-breakpoint-down(md) {
+        position: initial;
+        margin-top: 0;
+        margin-left: 0;
+      }
     }
 
     .blog-filters-list {
@@ -182,7 +188,7 @@
       padding: 0;
       margin-bottom: 5rem;
 
-      @include media-breakpoint-down(sm) {
+      @include media-breakpoint-down(md) {
         overflow: auto;
         white-space: nowrap;
         margin-bottom: 1rem;

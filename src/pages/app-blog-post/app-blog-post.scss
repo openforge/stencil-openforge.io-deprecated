@@ -62,4 +62,53 @@
       color: #9baaab;
     }
   }
+
+  .back-link {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding: 0 6rem;
+
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+
+    svg {
+      margin-right: 5px;
+    }
+
+    &.align-left {
+      justify-content: left;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .top-buttons-container {
+    display: flex;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(md) {
+      padding: 0 1rem;
+    }
+  }
+
+  button {
+    background: #fff;
+    border: 1px solid #c75300;
+    padding: 4px 15px;
+
+    span {
+      font-size: 14px;
+      text-transform: capitalize;
+      color: $gray-dark;
+      font-weight: bold;
+
+      i {
+        color: #000;
+      }
+    }
+  }
 }

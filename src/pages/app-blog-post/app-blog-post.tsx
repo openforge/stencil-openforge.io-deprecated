@@ -175,9 +175,23 @@ export class AppBlogPost {
     return (
       <div class="blog-post-page">
         <div class="blog-post-content">
-          <stencil-route-link url={'/blog'}>
-            <h3>Back to Blog</h3>
-          </stencil-route-link>
+          <div class="top-buttons-container">
+            <div class="back-link align-left">
+              <stencil-route-link url={'/blog'}>
+                <a>
+                  <i class="fa fa-angle-left" aria-hidden="true" />
+                  Back
+                </a>
+              </stencil-route-link>
+            </div>
+            <div class="d-none d-md-block d-lg-none clear">
+              <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <span>
+                  Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
+                </span>
+              </button>
+            </div>
+          </div>
           <div>{post}</div>
         </div>
         <div class="blog-next-posts-header">
@@ -192,6 +206,14 @@ export class AppBlogPost {
           </div>
         </div>
         <div class="next-posts">{this.nextPostsHelper}</div>
+        <div class="d-md-none back-link">
+          <stencil-route-link url={'/blog'}>
+            <a>
+              <i class="fa fa-angle-left" aria-hidden="true" />
+              Back to blog posts
+            </a>
+          </stencil-route-link>
+        </div>
         <app-footer />
       </div>
     );
