@@ -32,6 +32,8 @@ export class AppBlog {
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
 
+  @State() displaySearchBar: boolean = false;
+
   pageSize = 3;
   indexOfFeaturedPost = -1;
   pageOfFeaturedPost = 0;
@@ -318,6 +320,14 @@ export class AppBlog {
     return pagination;
   }
 
+  showSearchbar() {
+    this.displaySearchBar = true;
+  }
+
+  hideSearchBar() {
+    this.displaySearchBar = false;
+  }
+
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
@@ -340,24 +350,36 @@ export class AppBlog {
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
             <div class="blog-search-group d-md-none">
-              <span class="blog-search-icon fa fa-search" />
+              <span class="blog-search-icon-top fa fa-search" />
               <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
             </div>
 
-            <ul class="blog-filters-list">
-              {filters}
-              <li class="blog-filter-item d-none d-lg-block">
+            {this.displaySearchBar ? (
+              <div class="searchbar-top">
                 <div class="blog-search-group">
-                  <span class="blog-search-icon fa fa-search" />
-                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <span class="blog-search-icon-top fa fa-search" />
+                  <input id="blog-search" type="search" class="blog-search-input-top" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
-              </li>
-              <li class="blog-filter-item d-lg-none">
-                <div class="blog-search-group">
-                  <span class="blog-search-icon fa fa-search" />
-                </div>
-              </li>
-            </ul>
+                <button onClick={() => this.hideSearchBar()}>
+                  <i class="far fa-times-circle" />
+                </button>
+              </div>
+            ) : (
+              <ul class="blog-filters-list">
+                {filters}
+                <li class="blog-filter-item d-none d-lg-block">
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                    <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  </div>
+                </li>
+                <li class="blog-filter-item d-lg-none" onClick={() => this.showSearchbar()}>
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                  </div>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
         <div class="row posts-row">
