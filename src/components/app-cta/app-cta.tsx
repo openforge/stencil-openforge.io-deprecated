@@ -4,6 +4,7 @@ import { Component, h } from '@stencil/core';
   tag: 'app-cta',
   styleUrl: 'app-cta.scss',
 })
+
 export class AppCta {
   render() {
     return (
@@ -11,7 +12,6 @@ export class AppCta {
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-12 text-center cta-image" />
-
             <div class="col-md-6 col-sm-12 align-self-center text-center cta-text">
               <h2>
                 <app-translate keyword="cta.title" />
