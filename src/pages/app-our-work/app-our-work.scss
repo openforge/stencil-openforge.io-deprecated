@@ -2,8 +2,6 @@
   margin-top: 76px;
 
   header {
-
-
     section {
       align-items: center;
       background-image: url(assets/our-work/our-work-header.svg);
@@ -11,14 +9,14 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-height: 420px;
+      min-height: 520px;
 
       @include media-breakpoint-down(md) {
-        height: 350px;
+        min-height: 350px;
       }
-  
+
       @include media-breakpoint-down(sm) {
-        height: initial;
+        min-height: initial;
         margin-top: calc(3rem + 76px);
         background-image: none;
       }

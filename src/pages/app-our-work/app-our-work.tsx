@@ -10,8 +10,12 @@ export class AppOurWork {
       <div class="our-work">
         <header>
           <section class="container">
-            <h1>Our Work</h1>
-            <p>Each day we work to make our world better by design. Below you will find examples of projects that we've had the pleasure of working on.</p>
+            <h1>
+              <app-translate keyword="ourWork.header.title" />
+            </h1>
+            <p>
+              <app-translate keyword="ourWork.header.text" />
+            </p>
           </section>
         </header>
         <section class="container">
@@ -32,12 +36,15 @@ export class AppOurWork {
               </div>
             </div>
             <div class="card-content">
-              <h2>Mobile Measures</h2>
+              <h2>
+                <app-translate keyword="ourWork.cards.mobile_measures.title" />
+              </h2>
               <p>
-                A Physical Therapist's brainchild; this app aims to help Physical Therapists keep track of their patients’ progress. Like many founders and entrepreneurs, Ben’s foray into the start-up
-                world started with a simple idea: "There has to be a better way!"
+                <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
-              <button>View Project</button>
+              <button>
+                <app-translate keyword="ourWork.button" />
+              </button>
             </div>
           </div>
         </section>
@@ -59,12 +66,15 @@ export class AppOurWork {
               </div>
             </div>
             <div class="card-content">
-              <h2>LoudCloud</h2>
+              <h2>
+                <app-translate keyword="ourWork.cards.loudcloud.title" />
+              </h2>
               <p>
-                This app was designed with privacy in mind. Users can receive and make calls through a temporary and disposable phone number; in over 40 countries! LoudCloud allows for more secure
-                business and social interactions.
+                <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
-              <button>View Project</button>
+              <button>
+                <app-translate keyword="ourWork.button" />
+              </button>
             </div>
           </div>
         </section>
@@ -86,12 +96,15 @@ export class AppOurWork {
               </div>
             </div>
             <div class="card-content">
-              <h2>The Voyage</h2>
+              <h2>
+                <app-translate keyword="ourWork.cards.voyage.title" />
+              </h2>
               <p>
-                Employers can now incentivize their employees to develop and commit to healthy habits thanks to New Ocean Health’s unique app. A company-wide social platform where employees can
-                interact & challenge each other to reap the benefits.
+                <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
-              <button>View Project</button>
+              <button>
+                <app-translate keyword="ourWork.button" />
+              </button>
             </div>
           </div>
         </section>
@@ -99,16 +112,20 @@ export class AppOurWork {
           <div class="container text-center">
             <div class="row header">
               <div class="col-12">
-                <h2>Who We've Worked With</h2>
+                <h2>
+                  <app-translate keyword="ourWork.worked_with" />
+                </h2>
               </div>
             </div>
 
             <div class="row img-row">
               <div class="col-md-2 col-6 center-col">
+                {/* swap with ic3401 */}
                 <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
+                {/* Swap with omnifan */}
                 <app-img class="img-fluid no-pad" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
               </div>
 
@@ -127,12 +144,14 @@ export class AppOurWork {
               </div>
 
               <div class="col-md-2 col-6 center-col">
+                {/* swap with gomerchant */}
                 <app-img class="img-fluid pad" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
               </div>
             </div>
 
             <div class="row img-row">
               <div class="col-md-2 col-6 center-col">
+                {/* swap with ng atl */}
                 <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
               </div>
 
