@@ -15,9 +15,12 @@ export class AppCta {
             <h2>
               <app-translate keyword="cta.title" />
             </h2>
-            <p>
+            <h3>
               <app-translate keyword="cta.subTitle" />
-            </p>
+            </h3>
+            {/* <h2>
+              <app-translate keyword="cta.text" />
+            </h2> */}
 
             <stencil-route-link url="/contact">
               <button class="btn btn-primary">

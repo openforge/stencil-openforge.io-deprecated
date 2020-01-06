@@ -438,6 +438,32 @@ export const translations = {
       thanks: 'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
+    ourWork: {
+      header: {
+        title: 'Our Work',
+        text: "Each day we work to make our world better by design. Below you will find examples of projects that we've had the pleasure of working on.",
+      },
+      cards: {
+        mobile_measures: {
+          title: 'Mobile Measures',
+          text:
+            "A Physical Therapist's brainchild; this app aims to help Physical Therapists keep track of their patients' progress. Like many founders and entrepreneurs, Ben's foray into the start-up world started with a simple idea: \"There has to be a better way!\"",
+        },
+        loudcloud: {
+          title: 'LoudCloud',
+          text:
+            'This app was designed with privacy in mind. Users can receive and make calls through a temporary and disposable phone number; in over 40 countries! LoudCloud allows for more secure business and social interactions.',
+        },
+        voyage: {
+          title: 'The Voyage',
+          text:
+            "Employers can now incentivize their employees to develop and commit to healthy habits thanks to New Ocean Health's unique app. A company-wide social platform where employees can interact & challenge each other to reap the benefits.",
+        },
+        button: 'View Project',
+      },
+      worked_with: "Who We've Worked With",
+    },
+
     cta: {
       title: 'Got a vision?',
       subTitle: `We've got your back.`,
