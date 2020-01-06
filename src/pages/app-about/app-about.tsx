@@ -41,8 +41,10 @@ export class AppAbout {
 
           <div class="row justify-content-center d-none d-md-block values">
             <div class="col-12">
-              <h2>
-                <app-translate keyword="about.values.title" />
+              <h2 class="aside-lines">
+                <span>
+                  <app-translate keyword="about.values.title" />
+                </span>
               </h2>
               <p>
                 <app-translate keyword="about.values.text" />
@@ -74,7 +76,7 @@ export class AppAbout {
           </div>
 
           <div id="members" class="row justify-content-center members">
-            <div class="col-11 col-lg-12">
+            <div class="col-10 col-lg-10">
               <h2>
                 <app-translate keyword="about.landing.cta.title" />
               </h2>
