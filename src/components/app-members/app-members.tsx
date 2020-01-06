@@ -64,6 +64,7 @@ export class AppMembers {
             </figure>
           );
         })}
+        <figure class="member" />
       </div>
     );
   }

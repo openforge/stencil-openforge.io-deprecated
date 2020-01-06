@@ -34,6 +34,31 @@
     font-weight: 600;
     letter-spacing: 2.1px;
     line-height: 45px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid #9d9d9e;
+        top: 20px;
+        width: 500px;
+      }
+
+      &:before {
+        right: 100%;
+        margin-right: 15px;
+      }
+      &:after {
+        left: 100%;
+        margin-left: 15px;
+      }
+    }
   }
 
   h3 {
@@ -116,7 +141,7 @@
       font-weight: 600;
       letter-spacing: 2.1px;
       line-height: 38px;
-      margin: 4rem 0;
+      margin: 5rem 0;
       text-align: center;
     }
   }
@@ -142,18 +167,30 @@
     background: url('assets/svg/about-graphic-integrity.svg') center center no-repeat;
     height: 164px;
     width: 220px;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+      width: 120px;
+    }
   }
 
   .honesty {
     background: url('assets/svg/about-graphic-honesty.svg') center center no-repeat;
     height: 164px;
     width: 220px;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+      width: 120px;
+    }
   }
 
   .transparency {
     background: url('assets/svg/about-graphic-transparency.svg') center center no-repeat;
     height: 164px;
     width: 220px;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+      width: 120px;
+    }
   }
 
   // .team-photo {

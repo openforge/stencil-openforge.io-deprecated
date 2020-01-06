@@ -182,7 +182,7 @@ export class AppMembersSection {
       mail: '',
       twitter: '',
       github: '',
-      url: '/about/join-us',
+      url: '/opportunities',
     },
     // {
     //   name: 'YOU?',
