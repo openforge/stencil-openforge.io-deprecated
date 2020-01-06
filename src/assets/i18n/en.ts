@@ -61,10 +61,12 @@ export const translations = {
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
+        titleSmall: 'We Are Passionate About Design & Technology',
         text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-        action: 'LEARN MORE',
+        action: 'MEET OUR TEAM',
       },
       mission: {
+        title: 'Our Mission',
         statement: 'Our mission is to forge a bond between people and technology through digital experiences.',
       },
       values: {
@@ -76,21 +78,22 @@ export const translations = {
         value3: 'Transparency',
       },
       team: {
-        title: 'Get to Know Us',
-        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        title: 'Meet our Team',
         member: {
           title: {
+            apply: 'Click to Apply',
             founder: 'Founder and Head of Technology',
             accountManager: 'Account Manager',
-            designer: 'Designer',
+            designer: 'Visual Designer',
+            designCoordinator: 'Design Coordinator',
             developer: 'Software Engineer',
-            frontEndDeveloper: 'Front End Developer',
-            projectManager: 'Project Manager',
-            qualityManager: 'Quality Manager',
+            gameDesigner: 'Game Designer',
+            projectManagement: 'Project Management',
+            qualityManager: 'QA Manager',
+            operationsDirector: ' Director of Operations',
             consultant: 'Consultant',
-            officer: 'Chief Happiness Officer',
-            softwareIntern: 'Software Intern',
-            marketing: 'Marketing',
+            marketingCoordinator: 'Marketing Coordinator',
+            marketingSpecialist: 'Marketing Specialist',
           },
         },
       },
@@ -101,8 +104,7 @@ export const translations = {
           skills: 'Skills',
         },
         cta: {
-          title: 'Meet The Team',
-          button: `Let's Go`,
+          title: 'Meet Our Team',
         },
       },
     },
