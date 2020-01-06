@@ -422,7 +422,7 @@ export class AppTeamLanding {
   }
 
   render() {
-    const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto);
+    const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
     const headshotPhoto = this.changeImageFormat(this.data[this.match.params.member].headshotPhoto);
     let style = {};
     if (window.innerWidth > 767.98) {
@@ -435,7 +435,7 @@ export class AppTeamLanding {
           };
     }
     window.addEventListener('resize', () => {
-      const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto);
+      const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
       const hero = document.querySelector('.hero') as HTMLElement;
       if (window.innerWidth > 767.98) {
         hero.style.backgroundColor = '#292A2D';
@@ -500,7 +500,7 @@ export class AppTeamLanding {
                 </div>
 
                 <div id="members" class="row justify-content-center members">
-                  <div class="col-11 col-lg-12">
+                  <div class="col-10 col-lg-10">
                     <h2>
                       <app-translate keyword="about.landing.cta.title" />
                     </h2>

@@ -217,14 +217,14 @@ section.team-landing {
         line-height: 34px;
         margin: 3rem 0;
       }
-      @include media-breakpoint-down(md) {
-        margin: 3rem 0;
+      @include media-breakpoint-down(sm) {
+        margin: 3rem 0 2rem;
       }
       font-size: 2.63rem;
       font-weight: 600;
       letter-spacing: 2.1px;
       line-height: 38px;
-      margin: 4rem 0;
+      margin: 5rem 0;
       text-align: center;
     }
   }
