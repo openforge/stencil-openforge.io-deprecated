@@ -21,8 +21,18 @@ export class OpenForgeApp {
 
     if (this.mainEl) {
       this.mainEl.addEventListener('click', ev => {
+        const aboutDropDown = document.getElementById('navbarDropdown1');
+        if (this.checkInAbout()) {
+          aboutDropDown.className = 'nav-link dropdown-toggle active';
+        } else {
+          aboutDropDown.className = 'nav-link dropdown-toggle';
+        }
+
         const srcEl = ev.srcElement as HTMLElement;
         if (srcEl.classList.contains('dropdown-toggle')) {
+          return;
+        }
+        if (srcEl.classList.contains('search-input')) {
           return;
         }
         const opened = document.getElementsByClassName('navbar-collapse show');
@@ -32,6 +42,10 @@ export class OpenForgeApp {
         }
       });
     }
+  }
+
+  checkInAbout() {
+    return window.location.pathname === '/about' || window.location.pathname === '/juntoscope' || window.location.pathname === '/toolbox' || window.location.pathname === '/resources/pwa-white-paper';
   }
 
   render() {
@@ -56,6 +70,7 @@ export class OpenForgeApp {
           <stencil-route url="/blog/" component="app-blog" exact={true} />
           <stencil-route url="/blog-index" component="app-blog-index" exact={true} />
           <stencil-route url="/blog/:slug" component="app-blog-post" />
+          <stencil-route url="/partners" component="app-partners" exact={true} />
           <stencil-route component="app-not-found" />
         </stencil-route-switch>
       </stencil-router>

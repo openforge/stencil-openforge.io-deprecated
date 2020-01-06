@@ -1,25 +1,14 @@
 .contact {
-  // hero
-  .hero {
-    background-image: url('/assets/bg-hero-handshake-desk.jpg');
+  margin-top: 75px;
+  @include media-breakpoint-down(md) {
+    margin-top: 75px;
   }
-  .webp {
-    background-image: url('/assets/bg-hero-handshake-desk.jpg');
+  @include media-breakpoint-down(xs) {
+    margin-top: 68px;
   }
 
-  .hero,
-  .webp {
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
-
-    .container,
-    .row {
-      height: 100%;
-    }
-
+  header {
     h2 {
-      color: $white;
       font-size: 4rem;
       margin-bottom: 1rem;
       @include media-breakpoint-down(lg) {
@@ -31,28 +20,166 @@
     }
 
     p {
-      color: $white;
       font-size: 1.2rem;
       font-weight: 300;
       margin-bottom: 3rem;
       max-width: 500px;
       @include media-breakpoint-down(lg) {
         font-size: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    button.btn-contact {
+      background-color: #0095aa;
+      border: 0.75px solid #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      &:hover {
+        background: #0095aa linear-gradient(180deg, #00b4cc, #0095aa) repeat-x;
+      }
+    }
+
+    .image-col {
+      display: flex;
+      justify-content: center;
+
+      img {
+        height: 850px;
+
+        @include media-breakpoint-down(md) {
+          height: 550px;
+        }
+        @include media-breakpoint-down(sm) {
+          height: 350px;
+        }
+      }
+    }
+
+    .text-col {
+      @include media-breakpoint-down(sm) {
+        order: 2;
       }
     }
   }
 
-  .contact-form {
-    padding: 7rem 0;
+  .location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 3rem;
+    }
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 2rem;
+    }
 
+    .bell-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 150px;
+        @include media-breakpoint-down(md) {
+          width: 100px;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+        padding-top: 1rem;
+        max-width: 250px;
+        text-align: center;
+        color: black;
+        @include media-breakpoint-down(md) {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .map-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        @include media-breakpoint-down(md) {
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin: 0;
+    border-bottom: 1px solid #979797;
+  }
+
+  .contact-form {
+    padding: 5rem 0;
+
+    @include media-breakpoint-down(md) {
+      padding: 3rem 0;
+    }
     @include media-breakpoint-down(sm) {
       padding: 3rem 0;
     }
 
-    @include media-breakpoint-down(xs) {
-      button {
-        width: 100%;
+    .letter-form {
+      padding: 2rem;
+      background-image: url('/assets/contact/letter-background.png');
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+      background-color: #e9e2d9;
+      border-radius: 20px;
+
+      h2 {
+        padding-top: 1rem;
+        margin-bottom: 2rem;
+        font-family: Muli;
+        font-size: 28px;
+        font-weight: 400 !important;
       }
+
+      button.btn-submit {
+        border: 0.75px solid #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+      }
+
+      p {
+        margin-bottom: 2rem;
+        font-family: Muli;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin: 0 3rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin: 0;
+      }
+    }
+
+    .form-image-content {
+      justify-content: center;
+
+      img {
+        width: 320px;
+      }
+    }
+  }
+
+  .submit-container {
+    text-align: center;
+
+    img {
+      max-width: 1000px;
     }
   }
   .error {

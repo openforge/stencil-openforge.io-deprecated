@@ -58,6 +58,12 @@
   }
 
   button {
+    background-color: $orange-dark;
+    border: 0.75px solid #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+    color: #ffffff;
+    width: 223px;
     cursor: pointer;
     font-family: Roboto;
     font-size: 11px;
@@ -69,6 +75,5 @@
     line-height: 1.82;
     padding: 0.5rem 1rem;
     text-align: center;
-    width: auto;
   }
 }

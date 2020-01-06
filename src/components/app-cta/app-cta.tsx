@@ -22,7 +22,6 @@ export class AppCta {
               <h2>
                 <app-translate keyword="cta.text" />
               </h2>
-
               <stencil-route-link url="/contact">
                 <button class="button">
                   <app-translate keyword="cta.link" />
