@@ -60,17 +60,22 @@
   }
 
   button {
-    background-color: #C75300;
-    border: 0.75px solid #FFFFFF;
+    background-color: $orange-dark;
+    border: 0.75px solid #ffffff;
     border-radius: 16px;
-    color: $white;
+    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+    color: #ffffff;
+    width: 223px;
     cursor: pointer;
     font-family: Muli;
     font-size: 11px;
-    font-weight: 700;
-    height: 32px;
-    letter-spacing: 1.25px;
-    line-height: 20px;
-    width: 223px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: 1.3px;
+    height: auto;
+    line-height: 1.82;
+    padding: 0.5rem 1rem;
+    text-align: center;
   }
 }
