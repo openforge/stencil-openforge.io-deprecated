@@ -137,7 +137,7 @@ export class AppBlogPost {
         </div>
       );
     } else if (blogPost) {
-      post = <app-blog-content blogPost={blogPost} />;
+      post = <app-blog-content blogPost={blogPost} nextPostsHelper={this.nextPostsHelper} />;
     }
     return post;
   }
@@ -154,16 +154,30 @@ export class AppBlogPost {
       );
     } else if (blogData.length > 0) {
       postData = blogData.map(post => {
-        const cardClass = 'blog-card-wrapper';
         if (post === null) {
-          return <div class={cardClass} />;
+          return '';
         }
         return (
-          <div class={cardClass}>
-            <app-blog-card blogPost={post} />
+          <div class="col-lg-12 col-md-4 col-sm-12">
+            <div class="blog-card-image">
+              <stencil-route-link url={`/blog/${post.slug}`}>
+                <img src={post.featured_image} alt={post.title} />
+              </stencil-route-link>
+            </div>
+            <div class="blog-next-posts-title">
+              <stencil-route-link url={`/blog/${post.slug}`}>
+                <h2>{post.title}</h2>
+              </stencil-route-link>
+            </div>
           </div>
         );
       });
+      const cardClass = 'blog-card-wrapper';
+      postData = (
+        <div class={cardClass}>
+          <div class="row"> {postData}</div>
+        </div>
+      );
     } else if (blogData === []) {
       postData = <div>No posts found.</div>;
     }
@@ -175,23 +189,33 @@ export class AppBlogPost {
     return (
       <div class="blog-post-page">
         <div class="blog-post-content">
-          <stencil-route-link url={'/blog'}>
-            <h3>Back to Blog</h3>
-          </stencil-route-link>
+          <div class="top-buttons-container">
+            <div class="back-link align-left">
+              <stencil-route-link url={'/blog'}>
+                <a>
+                  <i class="fa fa-angle-left" aria-hidden="true" />
+                  Back
+                </a>
+              </stencil-route-link>
+            </div>
+            <div class="d-none d-md-block d-lg-none clear">
+              <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                <span>
+                  Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
+                </span>
+              </button>
+            </div>
+          </div>
           <div>{post}</div>
         </div>
-        <div class="blog-next-posts-header">
-          <div class="blog-next-posts-divider">
-            <div class="line-break" />
-            <div class="spacer" />
-          </div>
-          <div class="blog-next-posts-title">Read Next</div>
-          <div class="blog-next-posts-divider">
-            <div class="line-break" />
-            <div class="spacer" />
-          </div>
+        <div class="d-md-none back-link">
+          <stencil-route-link url={'/blog'}>
+            <a>
+              <i class="fa fa-angle-left" aria-hidden="true" />
+              Back to blog posts
+            </a>
+          </stencil-route-link>
         </div>
-        <div class="next-posts">{this.nextPostsHelper}</div>
         <app-footer />
       </div>
     );
