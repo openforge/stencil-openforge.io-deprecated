@@ -43,7 +43,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
               <button>
-                <app-translate keyword="ourWork.button" />
+                <app-translate keyword="ourWork.cards.button" />
               </button>
             </div>
           </div>
@@ -73,7 +73,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
               <button>
-                <app-translate keyword="ourWork.button" />
+                <app-translate keyword="ourWork.cards.button" />
               </button>
             </div>
           </div>
@@ -103,7 +103,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
               <button>
-                <app-translate keyword="ourWork.button" />
+                <app-translate keyword="ourWork.cards.button" />
               </button>
             </div>
           </div>
