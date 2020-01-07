@@ -74,28 +74,32 @@ export class AppBlogContent {
 
     return (
       <div class="blog-content">
-        <div class="header">
-          <h1 class="text-left">{this.blogPost.title}</h1>
-          <div>
-            <div class="header--author">
-              <div class="author-img-container">
-                <img class="d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
-                <div>
-                  By &nbsp;
-                  {this.blogPost.author.slug === 'jedidiah-weller' ? (
-                    <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
-                  ) : (
-                    <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                  )}{' '}
-                  on {formatDate(publishDate)}
+        <div class="row">
+          <div class="col-md-1 col-lg-2" />
+          <div class="header col-md-10 col-lg-8">
+            <h1 class="text-left">{this.blogPost.title}</h1>
+            <div>
+              <div class="header--author">
+                <div class="author-img-container">
+                  <img class="d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
+                  <div>
+                    By &nbsp;
+                    {this.blogPost.author.slug === 'jedidiah-weller' ? (
+                      <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
+                    ) : (
+                      <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                    )}{' '}
+                    on {formatDate(publishDate)}
+                  </div>
+                </div>
+                <div class="d-none d-md-block d-lg-none contact-icons-top" id="contact-icons-top">
+                  {contactIconsTop}
                 </div>
               </div>
-              <div class="d-none d-md-block d-lg-none contact-icons-top" id="contact-icons-top">
-                {contactIconsTop}
-              </div>
             </div>
+            <img class="header--main-image" src={this.blogPost.featured_image} alt={this.blogPost.title} />
           </div>
-          <img class="header--main-image" src={this.blogPost.featured_image} alt={this.blogPost.title} />
+          <div class="col-md-1 col-lg-2" />
         </div>
         <div class="content">
           <div class="row">

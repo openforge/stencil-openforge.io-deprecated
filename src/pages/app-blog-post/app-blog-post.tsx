@@ -198,13 +198,28 @@ export class AppBlogPost {
                 </a>
               </stencil-route-link>
             </div>
-            <div class="d-none d-md-block d-lg-none clear">
-              <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
-                <span>
-                  Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
-                </span>
-              </button>
-            </div>
+            <form
+              action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate="true"
+            >
+              <div class="form-group d-none d-md-block">
+                <div class="hidden" aria-hidden="true">
+                  <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
+                </div>
+                <div class="clear">
+                  <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    <span class="d-none d-md-block">
+                      Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
           <div>{post}</div>
         </div>

@@ -203,6 +203,10 @@
 
     .searchbar-top {
       display: flex;
+
+      button {
+        height: 52px;
+      }
     }
 
     .blog-filters-list {
@@ -218,7 +222,6 @@
         overflow: auto;
         white-space: nowrap;
         margin-bottom: 1rem;
-        justify-content: normal;
       }
 
       .blog-filter-item {

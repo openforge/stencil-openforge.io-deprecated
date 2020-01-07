@@ -347,14 +347,14 @@ export class AppBlog {
           <div class="blog-filters-nav">
             <div class="blog-search-group d-md-none">
               <span class="blog-search-icon-top fa fa-search" />
-              <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+              <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
             </div>
 
             {this.displaySearchBar ? (
               <div class="searchbar-top">
                 <div class="blog-search-group">
                   <span class="blog-search-icon-top fa fa-search" />
-                  <input id="blog-search" type="search" class="blog-search-input-top" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <input id="blog-search" type="text" class="blog-search-input-top" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
                 <button onClick={() => this.hideSearchBar()}>
                   <i class="far fa-times-circle" />
@@ -366,10 +366,10 @@ export class AppBlog {
                 <li class="blog-filter-item d-none d-lg-block">
                   <div class="blog-search-group">
                     <span class="blog-search-icon fa fa-search" />
-                    <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                    <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
                   </div>
                 </li>
-                <li class="blog-filter-item d-lg-none" onClick={() => this.showSearchbar()}>
+                <li class="blog-filter-item d-none d-md-block d-lg-none" onClick={() => this.showSearchbar()}>
                   <div class="blog-search-group">
                     <span class="blog-search-icon fa fa-search" />
                   </div>

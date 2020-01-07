@@ -1,12 +1,6 @@
 .header {
   text-align: left;
 
-  padding: 0 6rem;
-
-  @include media-breakpoint-down(md) {
-    padding: 0 1rem;
-  }
-
   h1 {
     @include media-breakpoint-down(md) {
       padding: 20px 0;
