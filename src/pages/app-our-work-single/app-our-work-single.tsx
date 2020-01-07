@@ -19,7 +19,7 @@ export class AppOurWorkSingle {
       header: {
         title: 'Mobile Measures',
         text: 'A One-Stop-Shop for Physical Therapy outcome measures',
-        logo: '/assets/our-work/mm-logo.png', // NEED ASSET
+        logo: '/assets/our-work/mm-logo.svg',
         background: '/assets/our-work/mm-background.png',
         backgroundMobile: '/assets/our-work/mm-background-mobile.png',
       },
@@ -40,8 +40,12 @@ export class AppOurWorkSingle {
         text:
           'Mobile Measures is HIPPA-compliant and provides Physical Therapists with an accurate representation of their patients’ risk assessment. The application also provides useful instructions and demonstration videos.',
         image1: '/assets/our-work/mm-feature-image1.png',
-        image2: '/assets/our-work/mm-feature-image2.png', // NEED ASSET
+        image2: '/assets/our-work/mm-feature-image2.svg',
         image3: '/assets/our-work/mm-feature-image3.png',
+      },
+      otherProjectImgs: {
+        image1: '/assets/our-work/mm-feature-image3.png',
+        image2: '/assets/our-work/mm-feature-image1.png',
       },
     },
     loudcloud: {
@@ -50,7 +54,7 @@ export class AppOurWorkSingle {
       header: {
         title: 'LoudCloud',
         text: 'Disposable World-Wide Phone Numbers',
-        logo: '/assets/our-work/lc-logo.png', // NEED ASSET
+        logo: '/assets/our-work/lc-logo.svg',
         background: '/assets/our-work/lc-background.png',
         backgroundMobile: '/assets/our-work/lc-background-mobile.png',
       },
@@ -72,7 +76,11 @@ export class AppOurWorkSingle {
           'One of the advantages LoudCloud has over its competitors is the simplicity of its interface. If a user were to have more than one account (one for business and another for social, for example), they would be able to access them all on a central dashboard instead of switching between the different accounts. Users can label their numbers, forward calls to their phones and even pre-announce them to ensure there is no confusion.',
         image1: '/assets/our-work/lc-feature-image1.png',
         image2: '/assets/our-work/lc-feature-image2.png',
-        image3: '/assets/our-work/lc-feature-image3.png', // NEED ASSET
+        image3: '/assets/our-work/lc-feature-image3.svg',
+      },
+      otherProjectImgs: {
+        image1: '/assets/our-work/lc-feature-image2.png',
+        image2: '/assets/our-work/lc-feature-image1.png',
       },
     },
     voyage: {
@@ -81,7 +89,7 @@ export class AppOurWorkSingle {
       header: {
         title: 'The Voyage',
         text: 'Health and Well-Being Tracker and Evaluator',
-        logo: '/assets/our-work/voyage-logo.png', // NEED ASSET
+        logo: '/assets/our-work/voyage-logo.svg',
         background: '/assets/our-work/voyage-background.png',
         backgroundMobile: '/assets/our-work/voyage-background-mobile.png', // NEED ASSET
       },
@@ -90,7 +98,7 @@ export class AppOurWorkSingle {
         text:
           'Equal parts fun and useful, this app allows users to set goals and earn rewards when committing to them! Goals can fall under a variety of different programs such as nutrition, financial well-being or stress management, to name a few. Employees within the same company can challenge each other to make it more fun. The app also provides its users with useful articles, motivational videos and other resources to provide them with a truly useful experience.<br><br>New Ocean Health had a clear idea of what they wanted to provide their users with, and we were more than happy to show them mock-ups and come up with UI/UX designs that adhered to their vision, as well as the development that made it all come to life.',
         image1: '/assets/our-work/voyage-content-image1.png',
-        image2: '/assets/our-work/voyage-content-image2.png', // NEED ASSET
+        image2: '/assets/our-work/voyage-content-image2.svg',
         icon1: '/assets/our-work/health-icon.svg',
         icon2: '/assets/our-work/productivity-icon.svg',
         icon3: '/assets/our-work/lifestyle-icon.svg',
@@ -102,8 +110,12 @@ export class AppOurWorkSingle {
         text:
           'Starting with the confidential Private Health Assessment (PHA); users answer questions in order to establish a profile and map out what their goals are. The app then provides them with reminders of their daily goals and links to helpful resources. The Voyage syncs with most health apps so that more people can benefit from its services.',
         image1: '/assets/our-work/voyage-feature-image1.png',
-        image2: '/assets/our-work/voyage-feature-image2.png', // NEED ASSET
-        image3: '/assets/our-work/voyage-feature-image3.png', // NEED ASSET
+        image2: '/assets/our-work/voyage-feature-image2.svg',
+        image3: '/assets/our-work/voyage-feature-image3.svg',
+      },
+      otherProjectImgs: {
+        image1: '/assets/our-work/voyage-content-image1.png',
+        image2: '/assets/our-work/voyage-feature-image1.png',
       },
     },
   };
@@ -130,8 +142,8 @@ export class AppOurWorkSingle {
       return (
         <div class="more-project-single">
           <div class="images-col">
-            <img src={project.content.image1} />
-            <img src={project.content.image2} />
+            <img src={project.otherProjectImgs.image1} />
+            <img src={project.otherProjectImgs.image2} />
           </div>
           <div class="store-buttons">
             <a href={project.content.appleStore} target="_blank" rel="noopener">
