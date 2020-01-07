@@ -123,11 +123,11 @@ export class AppBlogContent {
           </div>
           <hr />
           <div class="row">
-            <div class="col-md-2 offset-md-2 blog-content-author-image">
+            <div class="col-md-3 col-lg-2 offset-md-1 offset-lg-2 blog-content-author-image">
               <h5>About the Author</h5>
               <img src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
             </div>
-            <div class="col-md-6 blog-content-author-text">
+            <div class="col-md-7 col-lg-6 blog-content-author-text">
               <h5>About the Author</h5>
               <h2>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</h2>
               <p class="text-left">{this.blogPost.author.bio}</p>

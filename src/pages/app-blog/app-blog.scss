@@ -205,7 +205,9 @@
       display: flex;
 
       button {
-        height: 52px;
+        padding: 0;
+        border: 0;
+        background: transparent;
       }
     }
 
