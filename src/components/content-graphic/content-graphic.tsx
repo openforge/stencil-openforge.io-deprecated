@@ -11,6 +11,7 @@ export class ContentGraphic {
   @Prop() alt: string;
   @Prop() wider: boolean;
   @Prop() inverseOrder: boolean;
+  @Prop() leftAlign: boolean;
 
   render() {
     return (
@@ -43,6 +44,7 @@ export class ContentGraphic {
             'px-lg-5': !this.wider,
             'text-md-right': this.reverse,
             'content-container': this.inverseOrder,
+            'left-align': this.leftAlign,
           }}
         >
           <slot name="header" />

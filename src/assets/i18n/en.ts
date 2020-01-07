@@ -131,7 +131,7 @@ export const translations = {
         email: 'E-mail*',
         phone: 'Phone*',
         github: 'GitHub URL*',
-        designProfile: 'Link to your profile*',
+        designProfile: 'Portfolio*',
         whatAreYouWorkingOn: 'What are you working on?',
         appDevelopment: 'App Development',
         webDevelopment: 'Web Development',
@@ -159,7 +159,7 @@ export const translations = {
           message: 'Briefly describe your project',
           fullName: 'Your Name Here',
           github: 'Your Github account',
-          designProfile: 'Your profile account',
+          designProfile: 'Your Portfolio',
         },
       },
     },
@@ -374,7 +374,7 @@ export const translations = {
         },
         design: {
           text:
-            "From our work to our interview process, we break the norm. We believe in Open Source contributions; so part of your interview assignment will be exactly that - build out a simple (open source) <a href='https://ionicframework.com/' target='_blank' rel='noopener'>Ionic</a> or <a href='https://reactjs.org/' target='_blank' rel='noopener'>React App!</a>.",
+            'At OpenForge, we believe that sometimes actions speak louder than words, so as part of your interview assignment, we’d like to challenge you to design 3 pages of an app of your choosing.',
         },
       },
       test: {
@@ -416,7 +416,7 @@ export const translations = {
         technology: 'Technology',
         fullTime: 'Full-Time',
         submitTitle: 'Submit your application',
-        resume: 'Resume/CV',
+        resume: 'Resume/CV*',
         unique: {
           title: 'What makes you unique?',
           text: 'In 200 characters or less, tell us what makes you unique.',

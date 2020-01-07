@@ -3,8 +3,9 @@
   .hero {
     background-size: contain;
     background-repeat: no-repeat;
-    height: calc(100vh - 76px);
+    height: calc(100vh - 152px);
     padding-top: 76px;
+    margin-top: 76px;
 
     &.header-animated {
       background-image: url('/assets/opportunities/opportunities-header-animated.svg');
@@ -13,6 +14,10 @@
         background-image: url('/assets/opportunities/opportunities-tablet-header-animated.svg');
       }
       @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
         background-image: url('/assets/opportunities/opportunities-mobile-header-animated.svg');
       }
     }
@@ -24,6 +29,10 @@
         background-image: url('/assets/opportunities/opportunities-tablet-transition-dev.svg');
       }
       @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev.svg');
       }
     }
@@ -35,6 +44,10 @@
         background-image: url('/assets/opportunities/opportunities-tablet-transition-design.svg');
       }
       @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design.svg');
       }
     }
@@ -43,10 +56,14 @@
       background-image: url('/assets/opportunities/opportunities-transition-dev-design.svg');
 
       @include media-breakpoint-down(md) {
-        background-image: url('/assets/opportunities/opportunities-tablet-transition-design.svg'); // MISSING REAL TRANSITION SVG
+        background-image: url('/assets/opportunities/opportunities-tablet-transition-dev-design.svg');
       }
       @include media-breakpoint-down(sm) {
-        background-image: url('/assets/opportunities/opportunities-mobile-transition-design.svg'); // MISSING REAL TRANSITION SVG
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
+        background-image: url('/assets/opportunities/opportunities-mobile-transition-dev-design.svg');
       }
     }
 
@@ -54,10 +71,14 @@
       background-image: url('/assets/opportunities/opportunities-transition-design-dev.svg');
 
       @include media-breakpoint-down(md) {
-        background-image: url('/assets/opportunities/opportunities-tablet-transition-dev.svg'); // MISSING REAL TRANSITION SVG
+        background-image: url('/assets/opportunities/opportunities-tablet-transition-design-dev.svg');
       }
       @include media-breakpoint-down(sm) {
-        background-image: url('/assets/opportunities/opportunities-mobile-transition-dev.svg'); // MISSING REAL TRANSITION SVG
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
+        background-image: url('/assets/opportunities/opportunities-mobile-transition-design-dev.svg');
       }
     }
 
@@ -65,9 +86,13 @@
       background-image: url('/assets/opportunities/opportunities-dev-active.svg');
 
       @include media-breakpoint-down(md) {
-        background-image: url('/assets/opportunities/opportunities-tablet-dev-active.svg'); // MISSING SVG
+        background-image: url('/assets/opportunities/opportunities-tablet-dev-active.svg');
       }
       @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
         background-image: url('/assets/opportunities/opportunities-mobile-dev-active.svg');
       }
     }
@@ -76,9 +101,13 @@
       background-image: url('/assets/opportunities/opportunities-design-active.svg');
 
       @include media-breakpoint-down(md) {
-        background-image: url('/assets/opportunities/opportunities-tablet-design-active.svg'); // MISSING SVG
+        background-image: url('/assets/opportunities/opportunities-tablet-design-active.svg');
       }
       @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 40px;
+        height: calc(100vh - 76px);
         background-image: url('/assets/opportunities/opportunities-mobile-design-active.svg');
       }
     }
@@ -245,7 +274,7 @@
 
   .apply {
     background: $gray-100;
-    padding: 5rem 0;
+    padding: 4rem 0;
 
     h2 {
       color: $gray-800;
@@ -301,7 +330,7 @@
         }
 
         h3 {
-          margin-top: 50px;
+          padding-top: 5rem;
           @include media-breakpoint-down(sm) {
             text-align: center;
           }

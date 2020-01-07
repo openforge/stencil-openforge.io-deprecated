@@ -417,6 +417,7 @@ export class AppOpportunities {
           // Header for the state after click on apply
           <header class="hero-submit container">
             <content-graphic
+              leftAlign={true}
               img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-design-active.svg' : '/assets/opportunities/opportunities-dev-active.svg'}
               reverse={this.opporunityTypeCurrent === 'design' ? true : false}
             >
@@ -510,7 +511,13 @@ export class AppOpportunities {
             // Content section for the state after click on apply
             <section class="container">
               <hr />
-              <content-graphic inverseOrder={true} wider={true} img-url={this.texts[this.opporunityTypeCurrent].candidateUrl} reverse={this.opporunityTypeCurrent === 'develop' ? true : false}>
+              <content-graphic
+                leftAlign={true}
+                inverseOrder={true}
+                wider={true}
+                img-url={this.texts[this.opporunityTypeCurrent].candidateUrl}
+                reverse={this.opporunityTypeCurrent === 'develop' ? true : false}
+              >
                 <h3 class="original thin margin-bottom auto-align" slot="header">
                   <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.title`} />
                 </h3>
@@ -534,7 +541,13 @@ export class AppOpportunities {
                   ) : null}
                 </ul>
               </content-graphic>
-              <content-graphic inverseOrder={true} wider={true} img-url={this.texts[this.opporunityTypeCurrent].requisitesUrl} reverse={this.opporunityTypeCurrent === 'develop' ? false : true}>
+              <content-graphic
+                leftAlign={true}
+                inverseOrder={true}
+                wider={true}
+                img-url={this.texts[this.opporunityTypeCurrent].requisitesUrl}
+                reverse={this.opporunityTypeCurrent === 'develop' ? false : true}
+              >
                 <h3 class="original thin margin-bottom auto-align" slot="header">
                   <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.title`} />
                 </h3>

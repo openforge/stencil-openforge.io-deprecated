@@ -91,6 +91,8 @@
     @include media-breakpoint-down(sm) {
       margin-bottom: 2rem;
       margin-top: 0;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -98,6 +100,14 @@
     @include media-breakpoint-down(sm) {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  .left-align {
+    h3,
+    p,
+    li {
+      text-align: left !important;
     }
   }
 }
