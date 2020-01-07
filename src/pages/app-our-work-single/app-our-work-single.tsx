@@ -141,6 +141,7 @@ export class AppOurWorkSingle {
     return otherProjects.map(project => {
       return (
         <div class="more-project-single">
+          <p class="d-sm-block d-md-none sm">{project.header.title}</p>
           <div class="images-col">
             <img src={project.otherProjectImgs.image1} />
             <img src={project.otherProjectImgs.image2} />
@@ -153,7 +154,7 @@ export class AppOurWorkSingle {
               <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
             </a>
           </div>
-          <p>{project.header.title}</p>
+          <p class="d-none d-md-block">{project.header.title}</p>
           <div class="other-button">
             <stencil-route-link url={`/our-work-single/${project.key}`} exact={true}>
               <button>

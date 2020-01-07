@@ -97,19 +97,36 @@
           margin-left: 50px;
         }
 
+        &:first-child {
+          position: absolute;
+          right: 175px;
+
+          @include media-breakpoint-down(md) {
+            position: initial;
+            right: initial;
+          }
+
+          @include media-breakpoint-down(sm) {
+            position: initial;
+            right: initial;
+          }
+        }
+
         &:last-child {
           position: absolute;
           top: 200px;
-          left: 125px;
+          right: 50px;
 
           @include media-breakpoint-down(md) {
             top: 100px;
             left: 100px;
+            right: initial;
           }
 
           @include media-breakpoint-down(sm) {
             top: 80px;
             left: 80px;
+            right: initial;
           }
         }
       }
@@ -159,7 +176,11 @@
       }
 
       img {
-        margin: 10px 20px 10px 0;
+        margin: 10px 40px 10px 0;
+
+        @include media-breakpoint-down(sm) {
+          margin: 10px 20px 10px 0;
+        }
       }
     }
 
@@ -287,6 +308,10 @@
           top: 30px;
           width: 100%;
 
+          @include media-breakpoint-down(md) {
+            width: 50%;
+          }
+
           @include media-breakpoint-down(sm) {
             content: none;
           }
@@ -305,7 +330,7 @@
 
     .more-projects-items {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       margin-top: 120px;
       margin-bottom: 160px;
 
@@ -342,6 +367,11 @@
           text-align: center;
           margin-top: 36px;
           margin-bottom: 0;
+
+          &.sm {
+            margin-bottom: 36px;
+            margin-top: 0;
+          }
         }
 
         .images-col {
@@ -371,5 +401,25 @@
         }
       }
     }
+  }
+
+  .carousel-indicators {
+    bottom: 0;
+    position: initial;
+    @include media-breakpoint-down(sm) {
+      position: initial;
+    }
+  }
+
+  .carousel-indicators li {
+    border-radius: 100%;
+    background-color: #d8d8d8;
+    height: 21px;
+    margin: 0.5rem;
+    width: 21px;
+  }
+
+  .carousel-indicators .active {
+    background-color: $gray-dark;
   }
 }
