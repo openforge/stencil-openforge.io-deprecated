@@ -40,7 +40,7 @@ export class AppOurWorkSingle {
         text:
           'Mobile Measures is HIPPA-compliant and provides Physical Therapists with an accurate representation of their patients’ risk assessment. The application also provides useful instructions and demonstration videos.',
         image1: '/assets/our-work/mm-feature-image1.png',
-        image2: '/assets/our-work/mm-feature-image2.svg',
+        image2: '/assets/our-work/mm-feature-image2.png',
         image3: '/assets/our-work/mm-feature-image3.png',
       },
       otherProjectImgs: {
@@ -76,7 +76,7 @@ export class AppOurWorkSingle {
           'One of the advantages LoudCloud has over its competitors is the simplicity of its interface. If a user were to have more than one account (one for business and another for social, for example), they would be able to access them all on a central dashboard instead of switching between the different accounts. Users can label their numbers, forward calls to their phones and even pre-announce them to ensure there is no confusion.',
         image1: '/assets/our-work/lc-feature-image1.png',
         image2: '/assets/our-work/lc-feature-image2.png',
-        image3: '/assets/our-work/lc-feature-image3.svg',
+        image3: '/assets/our-work/lc-feature-image3.png',
       },
       otherProjectImgs: {
         image1: '/assets/our-work/lc-feature-image2.png',
@@ -110,8 +110,8 @@ export class AppOurWorkSingle {
         text:
           'Starting with the confidential Private Health Assessment (PHA); users answer questions in order to establish a profile and map out what their goals are. The app then provides them with reminders of their daily goals and links to helpful resources. The Voyage syncs with most health apps so that more people can benefit from its services.',
         image1: '/assets/our-work/voyage-feature-image1.png',
-        image2: '/assets/our-work/voyage-feature-image2.svg',
-        image3: '/assets/our-work/voyage-feature-image3.svg',
+        image2: '/assets/our-work/voyage-feature-image2.png',
+        image3: '/assets/our-work/voyage-feature-image3.png',
       },
       otherProjectImgs: {
         image1: '/assets/our-work/voyage-content-image1.png',
