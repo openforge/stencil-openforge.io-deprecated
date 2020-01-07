@@ -91,7 +91,7 @@ export class AppOurWorkSingle {
         text: 'Health and Well-Being Tracker and Evaluator',
         logo: '/assets/our-work/voyage-logo.svg',
         background: '/assets/our-work/voyage-background.png',
-        backgroundMobile: '/assets/our-work/voyage-background-mobile.png', // NEED ASSET
+        backgroundMobile: '/assets/our-work/voyage-background-mobile.png',
       },
       content: {
         title: 'Get Rewarded For Your Lifestyle',
