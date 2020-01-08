@@ -11,6 +11,11 @@
       background-image: url('/assets/opportunities/opportunities-header-animated.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-header-animated.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -26,6 +31,11 @@
       background-image: url('/assets/opportunities/opportunities-transition-dev.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-transition-dev.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -41,6 +51,11 @@
       background-image: url('/assets/opportunities/opportunities-transition-design.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-transition-design.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -56,6 +71,11 @@
       background-image: url('/assets/opportunities/opportunities-transition-dev-design.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-transition-dev-design.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -71,6 +91,11 @@
       background-image: url('/assets/opportunities/opportunities-transition-design-dev.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-transition-design-dev.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -86,6 +111,11 @@
       background-image: url('/assets/opportunities/opportunities-dev-active.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-dev-active.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -101,6 +131,11 @@
       background-image: url('/assets/opportunities/opportunities-design-active.svg');
 
       @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
         background-image: url('/assets/opportunities/opportunities-tablet-design-active.svg');
       }
       @include media-breakpoint-down(sm) {
@@ -325,6 +360,10 @@
 
       // Application
       &.apply-2 {
+        @include media-breakpoint-down(md) {
+          max-width: 60%;
+        }
+
         h2 {
           text-align: center;
         }

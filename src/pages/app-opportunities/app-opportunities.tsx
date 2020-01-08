@@ -107,7 +107,7 @@ export class AppOpportunities {
         url: 'https://openforge.io/opportunities/develop/',
         image: 'https://openforge.io/assets/graphic-opportunities-dev-header.png',
       },
-      candidateUrl: '/assets/graphic-opportunities-master-develop.jpg',
+      candidateUrl: '/assets/opportunities/codemaster.png',
       requisitesUrl: '/assets/case-study-development.png',
     },
     design: {
@@ -158,7 +158,7 @@ export class AppOpportunities {
         url: 'https://openforge.io/opportunities/design/',
         image: 'https://openforge.io/assets/graphic-opportunities-design-header.png',
       },
-      candidateUrl: '/assets/graphic-opportunities-master-design.jpg',
+      candidateUrl: '/assets/opportunities/designmaster.png',
       requisitesUrl: '/assets/case-study-design.png',
     },
   };
@@ -449,7 +449,7 @@ export class AppOpportunities {
                   </p>
                 </content-graphic>
 
-                <content-graphic img-url={`/assets/graphic-opportunities-master-${this.opporunityTypeCurrent}.jpg`}>
+                <content-graphic img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/test-designer.png' : '/assets/opportunities/test-dev.png'}>
                   <h3 class="original thin margin-bottom" slot="header">
                     <app-translate keyword="opportunities.test.title" />
                   </h3>
@@ -497,7 +497,7 @@ export class AppOpportunities {
                   </p>
                 </content-graphic>
 
-                <content-graphic img-url="/assets/graphic-opportunities-sword.png">
+                <content-graphic img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/designmaster.png' : '/assets/opportunities/codemaster.png'}>
                   <h3 class="thin" slot="header">
                     <app-translate keyword="opportunities.prepared.title" />
                   </h3>
@@ -661,21 +661,21 @@ export class AppOpportunities {
                         {this.fileError}
                       </p>
 
-                      <app-input placeholder={translate('contact.form.placeholder.fullName')} label={translate('contact.form.fullName')} name="name" type="text" required={true} />
+                      <app-input slimmer={true} placeholder={translate('contact.form.placeholder.fullName')} label={translate('contact.form.fullName')} name="name" type="text" required={true} />
                       <p class="error">
                         <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
                         {this.nameError}
                       </p>
-                      <app-input placeholder={translate('contact.form.placeholder.email')} label={translate('contact.form.email')} name="email" type="email" required={true} />
+                      <app-input slimmer={true} placeholder={translate('contact.form.placeholder.email')} label={translate('contact.form.email')} name="email" type="email" required={true} />
                       <p class="error">
                         <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
                         {this.emailError}
                       </p>
-                      <app-input placeholder={translate('contact.form.placeholder.phone')} label={translate('contact.form.phone')} name="phone" type="number" required={true} />
+                      <app-input slimmer={true} placeholder={translate('contact.form.placeholder.phone')} label={translate('contact.form.phone')} name="phone" type="number" required={true} />
                       <p class="error">
                         <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
@@ -684,7 +684,7 @@ export class AppOpportunities {
                       </p>
                       {this.opporunityTypeCurrent === 'develop'
                         ? [
-                            <app-input placeholder={translate('contact.form.placeholder.github')} label={translate('contact.form.github')} name="github" type="text" required={true} />,
+                            <app-input slimmer={true} placeholder={translate('contact.form.placeholder.github')} label={translate('contact.form.github')} name="github" type="text" required={true} />,
                             <p class="error">
                               <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
                                 <i class="fa fa-exclamation-circle" aria-hidden="true" />
@@ -693,7 +693,14 @@ export class AppOpportunities {
                             </p>,
                           ]
                         : [
-                            <app-input placeholder={translate('contact.form.placeholder.designProfile')} label={translate('contact.form.designProfile')} name="github" type="text" required={true} />,
+                            <app-input
+                              slimmer={true}
+                              placeholder={translate('contact.form.placeholder.designProfile')}
+                              label={translate('contact.form.designProfile')}
+                              name="github"
+                              type="text"
+                              required={true}
+                            />,
                             <p class="error">
                               <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
                                 <i class="fa fa-exclamation-circle" aria-hidden="true" />

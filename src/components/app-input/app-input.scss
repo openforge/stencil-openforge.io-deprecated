@@ -23,3 +23,9 @@
     display: block;
   }
 }
+
+input.form-control.slimmer {
+  @include media-breakpoint-down(md) {
+    height: calc(2em + 0.25rem + 2px);
+  }
+}
