@@ -85,9 +85,9 @@ export class AppNavHeader {
                     <stencil-route-link url="/blog" anchorClass="nav-link dropdown-item" activeClass="active">
                       Blog
                     </stencil-route-link>
-                    <stencil-route-link url="/forge" anchorClass="nav-link dropdown-item" activeClass="active">
+                    {/* <stencil-route-link url="/forge" anchorClass="nav-link dropdown-item" activeClass="active">
                       The Forge
-                    </stencil-route-link>
+                    </stencil-route-link> */}
                     <a class="nav-link" id="github" href="https://github.com/openforge" title={translate('nav.links.github')} target="_blank" rel="noopener">
                       Github
                     </a>
@@ -101,9 +101,9 @@ export class AppNavHeader {
                     <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
                       Meet the Team
                     </stencil-route-link>
-                    <stencil-route-link url="/process" anchorClass="nav-link dropdown-item" activeClass="active">
+                    {/* <stencil-route-link url="/process" anchorClass="nav-link dropdown-item" activeClass="active">
                       Our Process
-                    </stencil-route-link>
+                    </stencil-route-link> */}
                     <stencil-route-link url="/partners" anchorClass="nav-link dropdown-item" activeClass="active">
                       Partners
                     </stencil-route-link>
