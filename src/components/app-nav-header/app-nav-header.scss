@@ -26,6 +26,9 @@ button.navbar-toggler {
 }
 
 nav.navbar .navbar-nav .nav-item {
+  .active {
+    color: $orange;
+  }
   text-align: left;
 
   @include media-breakpoint-down(md) {
