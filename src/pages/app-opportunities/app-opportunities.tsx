@@ -418,7 +418,7 @@ export class AppOpportunities {
           <header class="hero-submit container">
             <content-graphic
               leftAlign={true}
-              img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-design-active.svg' : '/assets/opportunities/opportunities-dev-active.svg'}
+              img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-designer-candidate.svg' : '/assets/opportunities/opportunities-dev-candidate.svg'}
               reverse={this.opporunityTypeCurrent === 'design' ? true : false}
             >
               <h3 class="original thin margin-bottom auto-align" slot="header">
@@ -497,7 +497,7 @@ export class AppOpportunities {
                   </p>
                 </content-graphic>
 
-                <content-graphic img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/designmaster.png' : '/assets/opportunities/codemaster.png'}>
+                <content-graphic smallerImg={true} img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/designmaster.png' : '/assets/opportunities/codemaster.png'}>
                   <h3 class="thin" slot="header">
                     <app-translate keyword="opportunities.prepared.title" />
                   </h3>

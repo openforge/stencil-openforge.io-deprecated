@@ -18,6 +18,12 @@
         max-height: 200px;
       }
     }
+
+    &.small-img {
+      img {
+        max-height: 250px;
+      }
+    }
   }
 
   h3 {

@@ -12,6 +12,7 @@ export class ContentGraphic {
   @Prop() wider: boolean;
   @Prop() inverseOrder: boolean;
   @Prop() leftAlign: boolean;
+  @Prop() smallerImg: boolean;
 
   render() {
     return (
@@ -34,7 +35,17 @@ export class ContentGraphic {
             'text-md-right': !this.reverse,
           }}
         >
-          <app-img class="img-fluid d-none d-md-inline" src={this.imgUrl} preLoad={this.preLoadImg} alt={this.alt} />
+          <app-img
+            class={{
+              'img-fluid': true,
+              'd-none': true,
+              'd-md-inline': true,
+              'small-img': this.smallerImg,
+            }}
+            src={this.imgUrl}
+            preLoad={this.preLoadImg}
+            alt={this.alt}
+          />
         </div>
         <div
           class={{
@@ -48,7 +59,17 @@ export class ContentGraphic {
           }}
         >
           <slot name="header" />
-          <app-img class="img-fluid d-xs-inline d-md-none" src={this.imgUrl} alt={this.alt} preLoad={this.preLoadImg} />
+          <app-img
+            class={{
+              'img-fluid': true,
+              'd-xs-inline': true,
+              'd-md-none': true,
+              'small-img': this.smallerImg,
+            }}
+            src={this.imgUrl}
+            alt={this.alt}
+            preLoad={this.preLoadImg}
+          />
           <slot name="body" />
           <slot name="footer" />
         </div>

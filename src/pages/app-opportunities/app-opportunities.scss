@@ -21,8 +21,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 60px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-header-animated.svg');
       }
     }
@@ -41,8 +41,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 50px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev.svg');
       }
     }
@@ -61,8 +61,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 50px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design.svg');
       }
     }
@@ -81,8 +81,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 50px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev-design.svg');
       }
     }
@@ -101,8 +101,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 50px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design-dev.svg');
       }
     }
@@ -121,8 +121,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 50px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-dev-active.svg');
       }
     }
@@ -141,8 +141,8 @@
       @include media-breakpoint-down(sm) {
         background-size: contain;
         margin-top: 0;
-        padding-top: 40px;
-        height: calc(100vh - 76px);
+        padding-top: 50px;
+        height: 100vh;
         background-image: url('/assets/opportunities/opportunities-mobile-design-active.svg');
       }
     }
@@ -309,7 +309,10 @@
 
   .apply {
     background: $gray-100;
-    padding: 4rem 0;
+
+    .apply-1 {
+      padding: 4rem 0;
+    }
 
     h2 {
       color: $gray-800;
@@ -360,6 +363,8 @@
 
       // Application
       &.apply-2 {
+        padding: 4rem 0;
+
         @include media-breakpoint-down(xl) {
           max-width: 60%;
         }
@@ -373,7 +378,7 @@
         }
 
         h3 {
-          padding-top: 5rem;
+          padding-top: 0;
           @include media-breakpoint-down(sm) {
             text-align: center;
           }
