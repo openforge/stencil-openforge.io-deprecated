@@ -146,8 +146,7 @@
 
       @include media-breakpoint-down(sm) {
         text-align: left;
-        padding-left: 50px;
-        width: 70%;
+        padding: 0 28px;
       }
     }
 

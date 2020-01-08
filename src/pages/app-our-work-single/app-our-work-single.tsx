@@ -253,18 +253,18 @@ export class AppOurWorkSingle {
             <div class="col-12 text-center">
               <div class="carousel slide" id="partnersCarousel">
                 <div class="carousel-inner">
-                  <div class="row carousel-item active">
-                    <div class="col-12 carousel-item-col">
+                  <div class="carousel-item active">
+                    <div class="carousel-item-col">
                       <img src={this.projects[this.match.params.project].features.image1} />
                     </div>
                   </div>
-                  <div class="row carousel-item">
-                    <div class="col-12 carousel-item-col">
+                  <div class="carousel-item">
+                    <div class="carousel-item-col">
                       <img src={this.projects[this.match.params.project].features.image2} />
                     </div>
                   </div>
-                  <div class="row carousel-item">
-                    <div class="col-12 carousel-item-col">
+                  <div class="carousel-item">
+                    <div class="carousel-item-col">
                       <img src={this.projects[this.match.params.project].features.image3} />
                     </div>
                   </div>

@@ -125,39 +125,39 @@ export class AppOurWork {
             </div>
 
             <div class="row img-row">
-              <div class="col-md-3 col-6 center-col">
+              <div class="col-md-2 col-6 center-col">
                 <img class="img-fluid no-pad" src="/assets/our-work/ic3401-logo.png" alt="ic 3401 logo" />
               </div>
 
-              <div class="col-md-3 col-6 center-col">
+              <div class="col-md-2 col-6 center-col">
                 <app-img class="img-fluid no-pad" src="/assets/our-work/omnifan-logo.png" alt="Omnifan logo" />
               </div>
 
-              <div class="col-md-3 col-6 center-col">
+              <div class="col-md-2 col-6 center-col">
                 <app-img class="img-fluid no-pad" src="/assets/our-work/mobilemeasures-logo.png" alt="Mobile Measures logo" />
               </div>
 
-              <div class="col-md-3 col-6 center-col">
+              <div class="col-md-2 col-6 center-col">
                 <app-img class="img-fluid no-pad" src="/assets/our-work/kemin-logo.png" alt="Kemin logo" />
               </div>
             </div>
 
             <div class="row img-row">
-              <div class="col-md-4 col-6 center-col">
+              <div class="col-md-3 col-6 center-col">
                 <app-img class="img-fluid pad" src="/assets/our-work/new-ocean-health-logo.png" alt="New Ocean Health logo" />
               </div>
 
-              <div class="col-md-4 col-6 center-col">
+              <div class="col-md-3 col-6 center-col">
                 <app-img class="img-fluid pad" src="/assets/our-work/gomerchant-logo.png" alt="GoMerchang logo" />
               </div>
             </div>
 
             <div class="row img-row">
-              <div class="col-md-3 col-6 center-col">
+              <div class="col-md-2 col-6 center-col">
                 <app-img class="img-fluid pad" src="/assets/our-work/ngatl-logo.png" alt="NGATL logo" />
               </div>
 
-              <div class="col-md-3 col-6 center-col">
+              <div class="col-md-2 col-6 center-col">
                 <app-img class="img-fluid pad" src="/assets/our-work/loudcloud-logo.png" alt="LoudCloud logo" />
               </div>
             </div>
