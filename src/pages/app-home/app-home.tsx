@@ -254,9 +254,9 @@ export class AppHome {
                         <app-translate keyword="home.process.discovery.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="0" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -279,9 +279,9 @@ export class AppHome {
                         <app-translate keyword="home.process.design.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="1" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -304,9 +304,9 @@ export class AppHome {
                         <app-translate keyword="home.process.development.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="2" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -329,9 +329,9 @@ export class AppHome {
                         <app-translate keyword="home.process.deployment.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="3" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -354,9 +354,9 @@ export class AppHome {
                         <app-translate keyword="home.process.userfeedback.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="4" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -372,9 +372,9 @@ export class AppHome {
             </a>
           </div>
           <div class="learn-more-container d-lg-none">
-            <stencil-route-link url="/services" class="align-self-center">
+            {/* <stencil-route-link url="/services" class="align-self-center">
               <button class="btn button carousel-btn">{translate('home.process.buttonText')}</button>
-            </stencil-route-link>
+            </stencil-route-link> */}
           </div>
         </section>
 
