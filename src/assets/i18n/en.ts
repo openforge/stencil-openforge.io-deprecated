@@ -47,13 +47,13 @@ export const translations = {
           title: 'Mobile Technology',
           text:
             'With our combined expertise in design and marketing, you can rely on us to develop comprehensive strategies and graphics that will define your brand and inspire trust in your target audience.',
-          example: 'The Voyage by New Ocean',
+          example: 'LoudCloud',
         },
         digitalExperience: {
           title: 'Design & User Experience',
           text:
             'By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back for more.',
-          example: 'LoudCloud',
+          example: 'The Voyage by New Ocean',
         },
       },
     },
