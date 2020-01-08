@@ -131,3 +131,11 @@ ul.navbar-nav {
     margin: 0;
   }
 }
+
+.navbar.navbar-light ul.navbar-nav li.nav-item a.nav-link.active {
+  color: $orange;
+}
+
+.navbar.navbar-light ul.navbar-nav li.nav-item.dropdown a.nav-link.dropdown-toggle.active {
+  color: rgba(23, 23, 25, 0.9);
+}
