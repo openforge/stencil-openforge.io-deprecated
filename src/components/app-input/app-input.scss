@@ -25,7 +25,11 @@
 }
 
 input.form-control.slimmer {
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(xl) {
     height: calc(2em + 0.25rem + 2px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: calc(2em + 0.75rem + 2px);
   }
 }

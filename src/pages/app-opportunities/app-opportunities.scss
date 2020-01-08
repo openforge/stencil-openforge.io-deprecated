@@ -360,8 +360,12 @@
 
       // Application
       &.apply-2 {
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(xl) {
           max-width: 60%;
+        }
+
+        @include media-breakpoint-down(sm) {
+          max-width: initial;
         }
 
         h2 {
