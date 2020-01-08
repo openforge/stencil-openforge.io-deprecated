@@ -524,6 +524,7 @@ export const translations = {
         button: 'View Project',
       },
       worked_with: "Who We've Worked With",
+      more_projects: 'More Projects',
     },
 
     cta: {

@@ -42,9 +42,11 @@ export class AppOurWork {
               <p>
                 <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
-              <button>
-                <app-translate keyword="ourWork.cards.button" />
-              </button>
+              <stencil-route-link url="/our-work-single/mobilemeasures" exact={true}>
+                <button>
+                  <app-translate keyword="ourWork.cards.button" />
+                </button>
+              </stencil-route-link>
             </div>
           </div>
         </section>
@@ -72,9 +74,11 @@ export class AppOurWork {
               <p>
                 <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
-              <button>
-                <app-translate keyword="ourWork.cards.button" />
-              </button>
+              <stencil-route-link url="/our-work-single/loudcloud" exact={true}>
+                <button>
+                  <app-translate keyword="ourWork.cards.button" />
+                </button>
+              </stencil-route-link>
             </div>
           </div>
         </section>
@@ -102,9 +106,11 @@ export class AppOurWork {
               <p>
                 <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
-              <button>
-                <app-translate keyword="ourWork.cards.button" />
-              </button>
+              <stencil-route-link url="/our-work-single/voyage" exact={true}>
+                <button>
+                  <app-translate keyword="ourWork.cards.button" />
+                </button>
+              </stencil-route-link>
             </div>
           </div>
         </section>
@@ -120,43 +126,39 @@ export class AppOurWork {
 
             <div class="row img-row">
               <div class="col-md-2 col-6 center-col">
-                {/* swap with ic3401 */}
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-bb.png" alt="BB logo" />
+                <img class="img-fluid no-pad" src="/assets/our-work/ic3401-logo.png" alt="ic 3401 logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                {/* Swap with omnifan */}
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-aeris.png" alt="Aeris logo" />
+                <app-img class="img-fluid no-pad" src="/assets/our-work/omnifan-logo.png" alt="Omnifan logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-mobilemeasures.png" alt="Mobile Measures logo" />
+                <app-img class="img-fluid no-pad" src="/assets/our-work/mobilemeasures-logo.png" alt="Mobile Measures logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid no-pad" src="/assets/services-logo-kemin.png" alt="Kemin logo" />
+                <app-img class="img-fluid no-pad" src="/assets/our-work/kemin-logo.png" alt="Kemin logo" />
+              </div>
+            </div>
+
+            <div class="row img-row">
+              <div class="col-md-3 col-6 center-col">
+                <app-img class="img-fluid pad" src="/assets/our-work/new-ocean-health-logo.png" alt="New Ocean Health logo" />
+              </div>
+
+              <div class="col-md-3 col-6 center-col">
+                <app-img class="img-fluid pad" src="/assets/our-work/gomerchant-logo.png" alt="GoMerchang logo" />
               </div>
             </div>
 
             <div class="row img-row">
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid pad" src="/assets/services-logo-newocean.png" alt="New Ocean Health logo" />
+                <app-img class="img-fluid pad" src="/assets/our-work/ngatl-logo.png" alt="NGATL logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                {/* swap with gomerchant */}
-                <app-img class="img-fluid pad" src="/assets/services-logo-wharton.png" alt="Wharton logo" />
-              </div>
-            </div>
-
-            <div class="row img-row">
-              <div class="col-md-2 col-6 center-col">
-                {/* swap with ng atl */}
-                <app-img class="img-fluid pad" src="/assets/services-logo-redqueen.jpg" alt="RedQueen logo" />
-              </div>
-
-              <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid pad" src="/assets/services-logo-loudcloud.png" alt="LoudCloud logo" />
+                <app-img class="img-fluid pad" src="/assets/our-work/loudcloud-logo.png" alt="LoudCloud logo" />
               </div>
             </div>
           </div>
