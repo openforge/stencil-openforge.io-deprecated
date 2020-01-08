@@ -41,7 +41,7 @@
       }
 
       h1 {
-        color: #ffffff;
+        color: $white;
         font-family: 'Muli';
         font-size: 48px;
         font-weight: 600;
@@ -61,7 +61,7 @@
       }
 
       p {
-        color: #ffffff;
+        color: $white;
         font-family: 'Muli';
         font-size: 18px;
         font-weight: 400;
@@ -132,7 +132,7 @@
       }
     }
     h2 {
-      color: #333333;
+      color: $gray-dark;
       font-family: 'Muli';
       font-size: 42px;
       font-weight: 600;
@@ -152,7 +152,7 @@
 
     p {
       margin-top: 30px;
-      color: #292a2d;
+      color: $gray-dark;
       font-family: 'Muli';
       font-size: 18px;
       font-weight: 400;
@@ -202,7 +202,7 @@
     margin-top: 80px;
 
     .key-features-text {
-      background-color: #292a2d;
+      background-color: $gray-dark;
       padding-bottom: 36px;
       padding-top: 60px;
 
@@ -282,7 +282,7 @@
     }
 
     h2 {
-      color: #292a2d;
+      color: $gray-dark;
       font-family: 'Muli';
       font-size: 52px;
       font-weight: 600;
@@ -341,7 +341,7 @@
       }
 
       button {
-        background-color: #292a2d;
+        background-color: $gray-dark;
         border-radius: 16px;
         box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
         width: 188px;
@@ -358,7 +358,7 @@
 
       .more-project-single {
         p {
-          color: #292a2d;
+          color: $gray-dark;
           font-family: 'Muli';
           font-size: 28px;
           font-weight: 600;

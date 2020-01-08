@@ -286,7 +286,9 @@ export class AppOurWorkSingle {
         </section>
         <section class="more-projects container">
           <h2 class="aside-lines">
-            <span>More Projects</span>
+            <span>
+              <app-translate keyword="ourWork.more_projects" />
+            </span>
           </h2>
           <div class="more-projects-items">{this.getOtherProjects()}</div>
         </section>
