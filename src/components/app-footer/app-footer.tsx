@@ -28,7 +28,7 @@ export class AppFooter {
                   <br class="d-none d-md-block" />
                   <stencil-route-link url="/service-level-agreement">{translate('footer.social.sla')}</stencil-route-link>
                   <br />
-                  <stencil-route-link url="/service-level-agreement">{translate('footer.social.presskit')}</stencil-route-link>
+                  {/* <stencil-route-link url="/service-level-agreement">{translate('footer.social.presskit')}</stencil-route-link> */}
                 </p>
               </div>
             </div>

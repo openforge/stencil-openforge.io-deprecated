@@ -20,7 +20,7 @@ export class AppBlogFeatured {
             <div class="col-md-12">
               <div class="featured-title">
                 <div>
-                  <h4>What's New in Our Blog</h4>
+                  <h4>What's New In Our Blog</h4>
                 </div>
               </div>
               <div class="featured-image">

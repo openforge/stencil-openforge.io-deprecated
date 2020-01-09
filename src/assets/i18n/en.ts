@@ -47,13 +47,13 @@ export const translations = {
           title: 'Mobile Technology',
           text:
             'With our combined expertise in design and marketing, you can rely on us to develop comprehensive strategies and graphics that will define your brand and inspire trust in your target audience.',
-          example: 'The Voyage by New Ocean',
+          example: 'LoudCloud',
         },
         digitalExperience: {
           title: 'Design & User Experience',
           text:
             'By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back for more.',
-          example: 'LoudCloud',
+          example: 'The Voyage by New Ocean',
         },
       },
     },
@@ -61,10 +61,12 @@ export const translations = {
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
+        titleSmall: 'We Are Passionate About Design & Technology',
         text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-        action: 'LEARN MORE',
+        action: 'MEET OUR TEAM',
       },
       mission: {
+        title: 'Our Mission',
         statement: 'Our mission is to forge a bond between people and technology through digital experiences.',
       },
       values: {
@@ -76,21 +78,22 @@ export const translations = {
         value3: 'Transparency',
       },
       team: {
-        title: 'Get to Know Us',
-        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        title: 'Meet our Team',
         member: {
           title: {
+            apply: 'Click to Apply',
             founder: 'Founder and Head of Technology',
             accountManager: 'Account Manager',
-            designer: 'Designer',
+            designer: 'Visual Designer',
+            designCoordinator: 'Design Coordinator',
             developer: 'Software Engineer',
-            frontEndDeveloper: 'Front End Developer',
-            projectManager: 'Project Manager',
-            qualityManager: 'Quality Manager',
+            gameDesigner: 'Game Designer',
+            projectManagement: 'Project Management',
+            qualityManager: 'QA Manager',
+            operationsDirector: ' Director of Operations',
             consultant: 'Consultant',
-            officer: 'Chief Happiness Officer',
-            softwareIntern: 'Software Intern',
-            marketing: 'Marketing',
+            marketingCoordinator: 'Marketing Coordinator',
+            marketingSpecialist: 'Marketing Specialist',
           },
         },
       },
@@ -101,8 +104,7 @@ export const translations = {
           skills: 'Skills',
         },
         cta: {
-          title: 'Meet The Team',
-          button: `Let's Go`,
+          title: 'Meet Our Team',
         },
       },
     },
@@ -129,8 +131,9 @@ export const translations = {
         fullName: 'Full Name*',
         company: 'Company',
         email: 'E-mail*',
-        phone: 'Phone',
-        github: 'GitHub URL',
+        phone: 'Phone*',
+        github: 'GitHub URL*',
+        designProfile: 'Portfolio*',
         whatAreYouWorkingOn: 'What are you working on?',
         appDevelopment: 'App Development',
         webDevelopment: 'Web Development',
@@ -156,6 +159,9 @@ export const translations = {
           email: 'example@gmail.com',
           phone: 'Your Phone Number',
           message: 'Briefly describe your project',
+          fullName: 'Your Name Here',
+          github: 'Your Github account',
+          designProfile: 'Your Portfolio',
         },
       },
     },
@@ -303,9 +309,64 @@ export const translations = {
 
     opportunities: {
       hero: {
-        title: "Great News! We're Hiring.",
-        text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
-        text2: 'Learn More',
+        title: 'Looking for a New Adventure?',
+        text: 'If you’re a talented designer or developer, we want to hear from you! Choose the role that best describes you to continue.',
+        text2: 'Let’s get to know each other…',
+        developer: 'DEVELOPER',
+        designer: 'DESIGNER',
+        develop: {
+          title: 'Show Us What You’re Made Of',
+          text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+          button: 'Apply Now',
+        },
+        design: {
+          title: 'Show Us What You’re Made Of',
+          text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+          button: 'Apply Now',
+        },
+      },
+      candidate: {
+        develop: {
+          title: 'The ideal candidate can....',
+          text1: 'Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.',
+          text2: 'Continually keep yourself and your design team updated with the latest changes in your industry’s standards.',
+          text3: 'Be self-starter.',
+          text4: 'Be a team player -- you put the interests of the team and the company above your own.',
+          text5: 'Be passionate about open source software',
+        },
+        design: {
+          title: 'The ideal candidate can....',
+          text1: 'Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.',
+          text2: 'Create, improve and utilize wireframes, prototypes, style guides, user flows, and effectively communicate your interaction ideas using any of these methods.',
+          text3:
+            'Present and defend your design decisions. All your design decisions should be based on the overall design roadmap as well as your own design thinking and fundamental principles (i.e. color theory, visual weight, etc.)',
+          text4: 'Continually keep yourself and your design team updated with the latest changes in your industry’s standards.',
+        },
+      },
+      requisites: {
+        develop: {
+          title: 'And can meet the following prerequisites:',
+          text1: 'Three or more years of experience and proven track record.',
+          text2: 'Strong portfolio to be presented and defended during interview.',
+          text3: 'Experience using Firebase products (Database,  Authentication, Notifications).',
+          text4: 'Experience in CSS (SCSS, BEM, LESS, SASS).',
+          text5: 'Experience in JavaScript (React, Angular, Node, Express).',
+          text6: 'Experience in Hybrid Apps (Ionic).',
+          text7: 'Experience with Heroku, Github Pages, or AWS is a plus.',
+          text8: 'Experience building web applications and/or mobile apps is a plus.',
+          text9: 'Experience in working on open source projects is a plus.',
+        },
+        design: {
+          title: 'And can meet the following prerequisites',
+          text1: 'Three or more years of experience and proven track record.',
+          text2: 'Strong portfolio to be presented and defended during the interview.',
+          text3: 'Hands-on experience creating wireframes, prototypes, storyboards, user flows, etc.',
+          text4: 'Proficiency with tools such as Photoshop, Sketch, Illustrator, InVision, MarvelApp, etc.',
+          text5: 'Understanding of basic front-end languages: HTML5, CSS3 Javascript.',
+          text6: 'The ability to generate creative ideas with problem-solving mindset.',
+          text7: 'Experience working in an agile/scrum development process.',
+          text8: 'Be open to receiving objective criticism and improving upon it.',
+        },
       },
       intro: {
         title: 'Forget normal interviews!',
@@ -352,18 +413,19 @@ export const translations = {
       form: {
         allset: "You're all set! Let's get started.",
         almost: 'Not quite...keep sliding or keep learning; you can do it!',
-        request: 'Request an interview',
+        request: 'Apply',
         midLevelTitle: 'Mid-Level Developer',
         technology: 'Technology',
         fullTime: 'Full-Time',
         submitTitle: 'Submit your application',
-        resume: 'Resume/CV',
+        resume: 'Resume/CV*',
         unique: {
           title: 'What makes you unique?',
-          text: 'In 150 characters or fewer, tell us what makes you unique. Try to be creative and say something that will catch our eye!',
+          text: 'In 200 characters or less, tell us what makes you unique.',
         },
         submit: 'Submit Application',
-        submitted: 'Application Submitted',
+        submitted: 'Application Submitted!',
+        thanks_interest: 'Thank you for your interest in OpenForge.',
         thanks: {
           title: 'Thank you!',
           text: 'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
@@ -436,6 +498,33 @@ export const translations = {
       enjoy: 'Enjoy!',
       enjoysub: 'Expand Your PWA Knowledge',
       thanks: 'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
+    },
+
+    ourWork: {
+      header: {
+        title: 'Our Work',
+        text: "Each day we work to make our world better by design. Below you will find examples of projects that we've had the pleasure of working on.",
+      },
+      cards: {
+        mobile_measures: {
+          title: 'Mobile Measures',
+          text:
+            "A Physical Therapist's brainchild; this app aims to help Physical Therapists keep track of their patients' progress. Like many founders and entrepreneurs, Ben's foray into the start-up world started with a simple idea: \"There has to be a better way!\"",
+        },
+        loudcloud: {
+          title: 'LoudCloud',
+          text:
+            'This app was designed with privacy in mind. Users can receive and make calls through a temporary and disposable phone number; in over 40 countries! LoudCloud allows for more secure business and social interactions.',
+        },
+        voyage: {
+          title: 'The Voyage',
+          text:
+            "Employers can now incentivize their employees to develop and commit to healthy habits thanks to New Ocean Health's unique app. A company-wide social platform where employees can interact & challenge each other to reap the benefits.",
+        },
+        button: 'View Project',
+      },
+      worked_with: "Who We've Worked With",
+      more_projects: 'More Projects',
     },
 
     cta: {
