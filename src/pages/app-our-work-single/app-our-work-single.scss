@@ -249,16 +249,34 @@
       &.mobilemeasures {
         background-image: url('/assets/apps/mobilemeasures/background-graphic.png');
         background-size: cover;
+
+        @include media-breakpoint-down(sm) {
+          max-width: 100%;
+          margin: 0;
+          background-position: center;
+        }
       }
 
       &.loudcloud {
         background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
         background-size: cover;
+
+        @include media-breakpoint-down(sm) {
+          max-width: 100%;
+          margin: 0;
+          background-position: center;
+        }
       }
 
       &.voyage {
         background-image: url('/assets/home-graphic-voyage-pattern.jpg');
         background-size: cover;
+
+        @include media-breakpoint-down(sm) {
+          max-width: 100%;
+          margin: 0;
+          background-position: center;
+        }
       }
 
       img {
