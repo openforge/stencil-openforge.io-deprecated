@@ -126,6 +126,9 @@ nav.navbar .navbar-nav .nav-link {
       margin-top: 0.5rem;
       margin-bottom: 1.5rem;
     }
+    &.active {
+      color: $orange;
+    }
   }
 }
 
