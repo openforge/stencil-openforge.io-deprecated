@@ -124,6 +124,18 @@
       max-width: 420px;
       text-align: left;
     }
+
+    button {
+      &:hover {
+        background: #ff5d00;
+        border-color: white;
+      }
+
+      &:not(:disabled):active {
+        background-color: #ff5d00;
+        border-color: white;
+      }
+    }
   }
 
   .members {
