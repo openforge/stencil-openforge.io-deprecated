@@ -29,7 +29,7 @@ export class AppAbout {
                 <app-translate class="d-none d-md-block" keyword="about.header.title" />
                 <app-translate class="d-block d-md-none" keyword="about.header.titleSmall" />
               </h1>
-              <p>
+              <p class="about-text">
                 <app-translate keyword="about.header.text" />
               </p>
               <app-img class="d-block d-md-none" src="../../assets/svg/about-graphic-header.svg" />
@@ -46,7 +46,7 @@ export class AppAbout {
                   <app-translate keyword="about.values.title" />
                 </span>
               </h2>
-              <p>
+              <p class="about-text">
                 <app-translate keyword="about.values.text" />
               </p>
             </div>
