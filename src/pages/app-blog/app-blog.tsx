@@ -341,7 +341,7 @@ export class AppBlog {
       postData = this.renderPosts(this.blogPostsData, this.blogIsLoading, this.blogIsError, '', this.blogFilter);
     }
 
-    return (
+    return [
       <div class="blog-container container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
@@ -472,8 +472,8 @@ export class AppBlog {
         </div>
         <div class="blog-pagination">{pagination}</div>
         <stencil-route-link url="/blog-index" />
-        <app-footer />
-      </div>
-    );
+      </div>,
+      <app-footer />,
+    ];
   }
 }
