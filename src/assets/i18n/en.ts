@@ -132,6 +132,7 @@ export const translations = {
         company: 'Company',
         email: 'E-mail*',
         phone: 'Phone*',
+        contact_phone: 'Phone',
         github: 'GitHub URL*',
         designProfile: 'Portfolio*',
         whatAreYouWorkingOn: 'What are you working on?',
