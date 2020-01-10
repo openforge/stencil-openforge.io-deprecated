@@ -2,6 +2,14 @@
   margin-top: 76px;
 
   header {
+    @include media-breakpoint-down(md) {
+      background-image: url(assets/our-work/our-work-header.svg);
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-image: none;
+    }
+
     section {
       align-items: center;
       background-image: url(assets/our-work/our-work-header.svg);
@@ -14,12 +22,12 @@
 
       @include media-breakpoint-down(md) {
         min-height: 350px;
+        background-image: none;
       }
 
       @include media-breakpoint-down(sm) {
         min-height: initial;
         margin-top: calc(3rem + 76px);
-        background-image: none;
       }
     }
 
@@ -48,7 +56,7 @@
       text-align: center;
 
       @include media-breakpoint-down(md) {
-        width: 300px;
+        width: 380px;
       }
     }
   }
