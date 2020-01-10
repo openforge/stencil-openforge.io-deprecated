@@ -427,12 +427,10 @@ export class AppTeamLanding {
   }
 
   updateBackground() {
-    console.error('this is the background photo - ', this.backgroundPhoto);
     const hero = document.querySelector('.team-landing > .container-fluid > .hero') as HTMLElement;
     if (window.innerWidth > 767.98) {
       hero.style.backgroundColor = '#292A2D';
       if (this.backgroundPhoto != null) {
-        console.error('THIS IS THE RESIZE');
         hero.style.backgroundImage = `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`;
       }
     } else {
@@ -442,9 +440,6 @@ export class AppTeamLanding {
   }
 
   render() {
-    console.error('render - ', this.data[this.match.params.member].backgroundPhoto);
-    console.error('again - ', this.data[this.match.params.member].headshotPhoto);
-
     this.backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
     this.headshotPhoto = this.changeImageFormat(this.data[this.match.params.member].headshotPhoto);
     let style = {};
@@ -457,7 +452,6 @@ export class AppTeamLanding {
             'background-color': '#292A2D',
           };
     }
-
     window.addEventListener('resize', this.updateBackground);
 
     return (
