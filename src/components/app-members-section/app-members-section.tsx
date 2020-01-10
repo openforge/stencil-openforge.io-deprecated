@@ -13,7 +13,7 @@ export class AppMembersSection {
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
       github: 'https://github.com/jedihacks',
-      url: '/about/jedi-weller',
+      url: '/about/jedidiah-weller',
     },
     {
       name: 'Paulina Gallo',
