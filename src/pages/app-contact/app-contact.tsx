@@ -128,10 +128,10 @@ export class AppContact {
               <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-12 col-md-12">
                   <div class="letter-form">
-                    <h2 class="display-5 font-weight-bold">
+                    <h3 class="display-5">
                       <app-translate keyword="contact.form.title" />
-                    </h2>
-                    <p class="lead">
+                    </h3>
+                    <p class="medium lead">
                       <app-translate keyword="contact.form.text" />
                     </p>
                     <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} novalidate={true}>
@@ -144,7 +144,7 @@ export class AppContact {
                         required={true}
                         valid={this.formValues && this.formValues.nameValid}
                       />
-                      <p class="error">
+                      <p class="large error">
                         <span style={!this.nameError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
@@ -160,7 +160,7 @@ export class AppContact {
                         required={true}
                         valid={this.formValues && this.formValues.emailValid}
                       />
-                      <p class="error">
+                      <p class="large error">
                         <span style={!this.emailError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
@@ -176,7 +176,7 @@ export class AppContact {
                         required={false}
                         valid={this.formValues && this.formValues.phoneValid}
                       />
-                      <p class="error">
+                      <p class="large error">
                         <span style={!this.phoneError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
@@ -191,7 +191,7 @@ export class AppContact {
                         required={false}
                         valid={this.formValues && this.formValues.messageValid}
                       />
-                      <p class="error">
+                      <p class="large error">
                         <span style={!this.messageError ? { display: 'none' } : this.errorIconStyles}>
                           <i class="fa fa-exclamation-circle" aria-hidden="true" />
                         </span>
