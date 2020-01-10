@@ -8,6 +8,7 @@ import { formatDate } from '../../shared/date-format';
 })
 export class AppBlogContent {
   @Prop() blogPost: BlogPost;
+  @Prop() nextPostsHelper: any;
 
   componentDidLoad() {
     if (Build.isBrowser) {
@@ -73,53 +74,70 @@ export class AppBlogContent {
 
     return (
       <div class="blog-content">
-        <div class="header">
-          <h1 class="text-left">{this.blogPost.title}</h1>
-          <p class="text-left">{this.blogPost.summary}</p>
-          <div>
-            <div class="header--date">{formatDate(publishDate)}</div>
-            <div class="header--author">
-              <img src={this.blogPost.author.profile_image} />
-              <div>
-                By &nbsp;
-                {this.blogPost.author.slug === 'jedidiah-weller' ? (
-                  <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
-                ) : (
-                  <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                )}
+        <div class="row">
+          <div class="col-md-1 col-lg-2" />
+          <div class="header col-md-10 col-lg-8">
+            <h1 class="text-left">{this.blogPost.title}</h1>
+            <div>
+              <div class="header--author">
+                <div class="author-img-container">
+                  <img class="d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
+                  <div>
+                    By &nbsp;
+                    {this.blogPost.author.slug === 'jedidiah-weller' ? (
+                      <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
+                    ) : (
+                      <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                    )}{' '}
+                    on {formatDate(publishDate)}
+                  </div>
+                </div>
+                <div class="d-none d-md-block d-lg-none contact-icons-top" id="contact-icons-top">
+                  {contactIconsTop}
+                </div>
               </div>
             </div>
+            <img class="header--main-image" src={this.blogPost.featured_image} alt={this.blogPost.title} />
           </div>
-          <div class="contact-icons-top" id="contact-icons-top">
-            {contactIconsTop}
-          </div>
-          <img class="header--main-image" src={this.blogPost.featured_image} />
+          <div class="col-md-1 col-lg-2" />
         </div>
         <div class="content">
           <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-1 col-lg-2">
               <div id="contact-icons-side">{contactIconsSide}</div>
             </div>
-            <div class="text-left col-md-8">
+            <div class="text-left col-md-10 col-lg-8">
               <div innerHTML={this.blogPost.body} class="blog-content-body" />
             </div>
-            <div class="col-md-2 col-sm-2" />
+            <div class="col-md-1 col-lg-2">
+              <div class="blog-next-posts" id="blog-next-posts-side">
+                <h1>Related Blog Articles</h1>
+                <div>{this.nextPostsHelper}</div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="blog-content-author">
+          <div class="d-md-none contact-icons-top" id="contact-icons-top">
+            {contactIconsTop}
+          </div>
           <hr />
           <div class="row">
-            <div class="col-md-2 offset-md-2 blog-content-author-image">
+            <div class="col-md-3 col-lg-2 offset-md-1 offset-lg-2 blog-content-author-image">
               <h5>About the Author</h5>
-              <img src={this.blogPost.author.profile_image} />
+              <img src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
             </div>
-            <div class="col-md-6 blog-content-author-text">
+            <div class="col-md-7 col-lg-6 blog-content-author-text">
               <h5>About the Author</h5>
               <h2>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</h2>
               <p class="text-left">{this.blogPost.author.bio}</p>
             </div>
             <div class="col-md-2" />
           </div>
+        </div>
+        <div class="blog-next-posts" id="blog-next-posts-bottom">
+          <h1>Related Blog Articles</h1>
+          <div>{this.nextPostsHelper}</div>
         </div>
       </div>
     );

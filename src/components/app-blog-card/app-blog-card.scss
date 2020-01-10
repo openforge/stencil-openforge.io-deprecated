@@ -1,4 +1,8 @@
 .blog-card {
+  .author a {
+    text-decoration: underline;
+  }
+
   .container {
     min-width: 90%;
     margin-bottom: 2rem;

@@ -1,0 +1,35 @@
+.fa-check {
+  display: none;
+}
+
+.valid {
+  position: relative;
+
+  label {
+    color: $green;
+    font-weight: 600;
+  }
+
+  input {
+    border: $green 1px solid;
+  }
+
+  .fa-check {
+    position: absolute;
+    bottom: 7px;
+    right: 5px;
+    transform: translate(-50%, -50%);
+    color: $green;
+    display: block;
+  }
+}
+
+input.form-control.slimmer {
+  @include media-breakpoint-down(xl) {
+    height: calc(2em + 0.25rem + 2px);
+  }
+
+  @include media-breakpoint-down(sm) {
+    height: calc(2em + 0.75rem + 2px);
+  }
+}

@@ -1,105 +1,218 @@
 .about {
   font-family: 'Muli', sans-serif;
+  height: 100%;
   overflow-x: hidden;
+  padding: 73px 0 0 0;
+
+  h1 {
+    @include media-breakpoint-down(md) {
+      font-size: 2.625rem;
+      letter-spacing: 2.1px;
+      line-height: 47px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75rem;
+      letter-spacing: 1.05px;
+      line-height: 34px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    line-height: 58px;
+    margin: 0 0 1rem;
+    text-align: left;
+  }
+
+  h2 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.75rem;
+      line-height: 34px;
+    }
+    font-size: 2.63rem;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+    line-height: 45px;
+    text-align: center;
+
+    span {
+      display: inline-block;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid #9d9d9e;
+        top: 20px;
+        width: 500px;
+      }
+
+      &:before {
+        right: 100%;
+        margin-right: 15px;
+      }
+      &:after {
+        left: 100%;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  h3 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.5rem;
+      letter-spacing: 1.54px;
+      line-height: 29px;
+    }
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 34px;
+  }
+
+  p.about-text {
+    @include media-breakpoint-down(md) {
+      color: #5d534e;
+      margin-bottom: 1rem;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1rem;
+      line-height: 32px;
+      margin: 0 auto;
+    }
+    color: $gray-dark;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 36px;
+  }
 
   .hero {
-    background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
-
     @include media-breakpoint-down(md) {
-      background-position: right bottom;
+      background-size: 80%;
     }
-
-    .row {
-      height: 700px;
-
-      @include media-breakpoint-down(md) {
-        height: 780px;
-      }
-
-      p {
-        color: black;
-        font-weight: bolder;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .text-container {
-        @include media-breakpoint-down(md) {
-          margin-bottom: 10rem;
-        }
-      }
-    }
-  }
-
-  .team-photo {
-    background-image: url('/assets/about-photo-team.jpg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    height: 100%;
-    min-height: 540px;
-
     @include media-breakpoint-down(sm) {
-      min-height: 240px;
+      background: none;
+      height: 100%;
     }
+    background: url('/assets/svg/about-graphic-header.svg') right top no-repeat;
+    background-position: calc(100% + 3rem) calc(100% + 3rem);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    height: 600px;
 
-    app-img {
-      position: absolute;
-      top: 480px;
-      transform: translate(-50%, -50%);
-      width: 100%;
-
-      @include media-breakpoint-down(sm) {
-        display: none;
+    h1 {
+      @include media-breakpoint-down(md) {
+        max-width: 421px;
       }
+      @include media-breakpoint-down(sm) {
+        max-width: 278px;
+      }
+      max-width: 632px;
     }
-  }
-
-  .mission-statement {
-    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
-    display: none;
-    height: 100px;
 
     p {
-      line-height: 24px;
-      margin: 0;
-    }
-
-    @include media-breakpoint-down(sm) {
-      display: block;
+      @include media-breakpoint-down(md) {
+        max-width: 320px;
+      }
+      @include media-breakpoint-down(sm) {
+        max-width: 278px;
+        text-align: center;
+      }
+      color: #5d534e;
+      max-width: 420px;
+      text-align: left;
     }
   }
 
-  .values,
   .members {
-    padding: 5rem 0;
-
-    .header {
-      margin: 0 auto 3rem;
-      max-width: 768px;
-    }
-
-    .integrity {
-      background: url('assets/svg/about-graphic-integrity.svg') center center no-repeat;
-      height: 164px;
-      width: 220px;
-    }
-
-    .honesty {
-      background: url('assets/svg/about-graphic-honesty.svg') center center no-repeat;
-      height: 164px;
-      width: 220px;
-    }
-
-    .transparency {
-      background: url('assets/svg/about-graphic-transparency.svg') center center no-repeat;
-      height: 164px;
-      width: 220px;
+    margin-bottom: 8rem;
+    h2 {
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
+        line-height: 34px;
+        margin: 3rem 0;
+      }
+      @include media-breakpoint-down(sm) {
+        margin: 3rem 0 2rem;
+      }
+      font-size: 2.63rem;
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      line-height: 38px;
+      margin: 5rem 0;
+      text-align: center;
     }
   }
 
-  .value-text {
-    font-size: 24px;
+  .values {
+    margin: 0 0 4rem;
+    h2 {
+      margin: 4rem 0 1rem;
+      text-align: center;
+    }
+    p {
+      margin: auto;
+      max-width: 681px;
+      text-align: center;
+    }
   }
+
+  .value-badges {
+    margin: 0 0 4rem;
+  }
+
+  .integrity {
+    background: url('assets/svg/about-graphic-integrity.svg') center center no-repeat;
+    height: 164px;
+    width: 220px;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  .honesty {
+    background: url('assets/svg/about-graphic-honesty.svg') center center no-repeat;
+    height: 164px;
+    width: 220px;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  .transparency {
+    background: url('assets/svg/about-graphic-transparency.svg') center center no-repeat;
+    height: 164px;
+    width: 220px;
+    @include media-breakpoint-down(md) {
+      height: 120px;
+      width: 120px;
+    }
+  }
+
+  // .team-photo {
+  //   @include media-breakpoint-down(sm) {
+  //     margin: 0;
+  //     min-height: 240px;
+  //   }
+  //   background-image: url('/assets/about-photo-team.jpg');
+  //   background-repeat: no-repeat;
+  //   background-size: 100%;
+  //   height: 100%;
+  //   margin: 0 0 7rem;
+  //   min-height: 610px;
+
+  //   app-img {
+  //     @include media-breakpoint-down(sm) {
+  //       display: none;
+  //     }
+  //     position: absolute;
+  //     top: 600px;
+  //     transform: translate(-50%, -50%);
+  //     width: 100%;
+  //   }
+  // }
 }

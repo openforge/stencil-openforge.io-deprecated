@@ -32,6 +32,8 @@ export class AppBlog {
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
 
+  @State() displaySearchBar: boolean = false;
+
   pageSize = 3;
   indexOfFeaturedPost = -1;
   pageOfFeaturedPost = 0;
@@ -318,6 +320,14 @@ export class AppBlog {
     return pagination;
   }
 
+  showSearchbar() {
+    this.displaySearchBar = true;
+  }
+
+  hideSearchBar() {
+    this.displaySearchBar = false;
+  }
+
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
@@ -331,32 +341,93 @@ export class AppBlog {
       postData = this.renderPosts(this.blogPostsData, this.blogIsLoading, this.blogIsError, '', this.blogFilter);
     }
 
-    return (
-      <div id="contentStart" class="blog-container">
+    return [
+      <div class="blog-container container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
-            <ul class="blog-filters-list">
-              {filters}
-              <li class="blog-filter-item d-none d-md-block">
+            <div class="blog-search-group d-md-none">
+              <span class="blog-search-icon-top fa fa-search" />
+              <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+            </div>
+
+            {this.displaySearchBar ? (
+              <div class="searchbar-top">
                 <div class="blog-search-group">
-                  <span class="blog-search-icon">
-                    <span class="fa fa-search" />
-                  </span>
-                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <span class="blog-search-icon-top fa fa-search" />
+                  <input id="blog-search" type="text" class="blog-search-input-top" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
-              </li>
-            </ul>
+                <button onClick={() => this.hideSearchBar()}>
+                  <i class="far fa-times-circle" />
+                </button>
+              </div>
+            ) : (
+              <ul class="blog-filters-list">
+                {filters}
+                <li class="blog-filter-item d-none d-lg-block">
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                    <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  </div>
+                </li>
+                <li class="blog-filter-item d-none d-md-block d-lg-none" onClick={() => this.showSearchbar()}>
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                  </div>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
         <div class="row posts-row">
-          <div class="col-md-8 col-sm-12">
-            <div class="featured-post">{featuredPost}</div>
-            <div class="blog-posts">
-              {postData}
-              <div class="blog-pagination">{pagination}</div>
+          <div class="col-md-12 d-none d-md-block d-lg-none">
+            <div class="form-row-content">
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                  <form
+                    action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
+                    method="post"
+                    id="mc-embedded-subscribe-form"
+                    name="mc-embedded-subscribe-form"
+                    class="validate"
+                    target="_blank"
+                    novalidate="true"
+                  >
+                    <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
+                    <div class="form-group">
+                      <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required={true} />
+                      <div class="hidden" aria-hidden="true">
+                        <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
+                      </div>
+                      <div class="clear d-none d-md-block">
+                        <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                          <i class="d-none d-md-block fa fa-arrow-right" />
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
+                  <div class="contact-icons d-none d-md-block">
+                    <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
+                      <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
+                    </a>
+                    <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
+                      <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                      <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 form-row">
+          <div class="col-lg-8 col-md-12">
+            {!this.searchQuery && this.blogCurrentPage === 1 && !this.blogFilter ? <div class="featured-post">{featuredPost}</div> : null}
+            <div class="blog-posts">{postData}</div>
+          </div>
+          <div class="col-lg-3 col-md-12 form-row d-sm-block d-md-none d-lg-block">
             <div class="form-row-content">
               <form
                 action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
@@ -376,7 +447,7 @@ export class AppBlog {
                   <div class="clear">
                     <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
                       <span class="d-block d-sm-block d-md-none">
-                        Get the Newsletter &nbsp; <i class="fa fa-arrow-right" />
+                        Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
                       </span>
                       <i class="d-none d-md-block fa fa-arrow-right" />
                     </button>
@@ -384,8 +455,8 @@ export class AppBlog {
                 </div>
               </form>
 
-              <p class="contact-icons-label">Follow Us:</p>
-              <div class="contact-icons">
+              <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
+              <div class="contact-icons d-none d-md-block">
                 <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>
@@ -399,10 +470,10 @@ export class AppBlog {
             </div>
           </div>
         </div>
-
+        <div class="blog-pagination">{pagination}</div>
         <stencil-route-link url="/blog-index" />
-        <app-footer />
-      </div>
-    );
+      </div>,
+      <app-footer />,
+    ];
   }
 }

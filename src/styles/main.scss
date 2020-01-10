@@ -7,13 +7,16 @@
 // General
 
 h2 {
-  letter-spacing: 0.1rem;
-  line-height: 1.2;
   @include media-breakpoint-down(sm) {
     font-size: 1.75rem;
   }
+  letter-spacing: 0.1rem;
+  line-height: 1.2;
 
   .small {
+    @include media-breakpoint-down(md) {
+      margin-bottom: 0.25rem;
+    }
     color: $orange;
     display: block;
     font-family: $font-roboto;
@@ -21,18 +24,15 @@ h2 {
     font-weight: 700;
     margin-bottom: 0.75rem;
     text-transform: uppercase;
-    @include media-breakpoint-down(md) {
-      margin-bottom: 0.25rem;
-    }
   }
 }
 
 h3 {
-  font-weight: 400;
-  margin-bottom: 0.5rem;
   @include media-breakpoint-down(md) {
     margin-bottom: 0.25rem;
   }
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 
   .small {
     display: block;
@@ -59,18 +59,37 @@ hr {
 // Buttons
 
 .btn-primary {
+  @include media-breakpoint-down(md) {
+    padding: 0.375rem 2rem;
+  }
   background: $orange;
   border-color: $white;
-  border-radius: 2px;
+  border-radius: 16px;
   box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
   color: $white;
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5rem;
   text-transform: uppercase;
+
+  span {
+    color: $white;
+  }
+}
+
+.btn-secondary {
   @include media-breakpoint-down(md) {
     padding: 0.375rem 2rem;
   }
+  background: $cyan;
+  border-color: $white;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+  color: $white;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5rem;
+  text-transform: uppercase;
 
   span {
     color: $white;
