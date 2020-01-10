@@ -1,97 +1,248 @@
 @import 'mixins.scss';
 @import 'variables.scss';
 @import 'node_modules/bootstrap/scss/bootstrap';
-// @import 'variables';
-// @import 'mixins';
-// Todo:  We may want to do this later.
-// General
+
+// OPENFORGE TYPOGRAPHY
+h1 {
+  font-family: 'Muli';
+  font-weight: 600;
+  font-size: 52px;
+  color: #292a2d;
+
+  &.subheading {
+    font-size: 26px;
+    color: #c75300;
+  }
+}
 
 h2 {
-  @include media-breakpoint-down(sm) {
-    font-size: 1.75rem;
-  }
-  letter-spacing: 0.1rem;
-  line-height: 1.2;
+  font-family: 'Muli';
+  font-weight: 400;
+  font-size: 42px;
+  color: #292a2d;
 
-  .small {
-    @include media-breakpoint-down(md) {
-      margin-bottom: 0.25rem;
-    }
-    color: $orange;
-    display: block;
-    font-family: $font-roboto;
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    text-transform: uppercase;
+  &.subheading {
+    font-size: 21px;
+    color: #c75300;
   }
 }
 
 h3 {
-  @include media-breakpoint-down(md) {
-    margin-bottom: 0.25rem;
-  }
+  font-family: 'Muli';
+  font-weight: 600;
+  font-size: 28px;
+  color: #292a2d;
+}
+
+h4 {
+  font-family: 'Muli';
+  font-weight: 600;
+  font-size: 24px;
+  color: #292a2d;
+}
+
+h5.dark {
+  font-family: 'Muli';
+  font-weight: 700;
+  font-size: 16px;
+  color: $white;
+}
+
+h5.gray {
+  font-family: 'Muli';
+  font-weight: 700;
+  font-size: 16px;
+  color: #5f7172;
+}
+
+p.small {
+  font-family: 'Muli';
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 28px;
+  color: #5d534e;
+}
+
+p.medium {
+  font-family: 'Muli';
   font-weight: 400;
-  margin-bottom: 0.5rem;
+  font-size: 16px;
+  line-height: 32px;
+  color: #5d534e;
+}
 
-  .small {
-    display: block;
-    font-family: $font-roboto;
-    font-size: 1rem;
+p.large {
+  font-family: 'Muli';
+  font-weight: 700;
+  font-size: 18px;
+  color: #5d534e;
+}
+
+p.disclaimer {
+  font-family: 'Muli';
+  font-weight: 300;
+  font-size: 13px;
+  color: #5d534e;
+}
+
+@media (prefers-color-scheme: dark) {
+  h1 {
+    font-family: 'Muli';
+    font-weight: 600;
+    font-size: 52px;
+    color: $white;
+
+    &.subheading {
+      font-size: 26px;
+      color: #ffc829;
+    }
+  }
+
+  h2 {
+    font-family: 'Muli';
+    font-weight: 400;
+    font-size: 42px;
+    color: $white;
+
+    &.subheading {
+      font-size: 21px;
+      color: #ffc829;
+    }
+  }
+
+  h3 {
+    font-family: 'Muli';
+    font-weight: 600;
+    font-size: 28px;
+    color: $white;
+  }
+
+  h4 {
+    font-family: 'Muli';
+    font-weight: 600;
+    font-size: 24px;
+    color: $white;
+  }
+
+  h5.dark,
+  h5.gray {
+    font-family: 'Muli';
     font-weight: 700;
-    letter-spacing: 0.05rem;
-    margin: 10px 0 5px;
-    text-transform: uppercase;
+    font-size: 16px;
+    color: $white;
+  }
+
+  p.small {
+    font-family: 'Muli';
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 28px;
+    color: #5d534e;
+  }
+
+  p.medium {
+    font-family: 'Muli';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: #5d534e;
+  }
+
+  p.large {
+    font-family: 'Muli';
+    font-weight: 700;
+    font-size: 18px;
+    color: #5d534e;
+  }
+
+  p.disclaimer {
+    font-family: 'Muli';
+    font-weight: 300;
+    font-size: 13px;
+    color: #5d534e;
   }
 }
 
-p {
-  color: $gray-600;
-  margin-bottom: 3rem;
-}
-
-hr {
-  border-color: rgba($white, 0.33);
-  margin: 3rem auto;
-  width: 50%;
-}
-
-// Buttons
-
-.btn-primary {
-  @include media-breakpoint-down(md) {
-    padding: 0.375rem 2rem;
-  }
-  background: $orange;
+// OPENFORGE BUTTONS
+button.primary {
+  background: #0095aa;
   border-color: $white;
   border-radius: 16px;
-  box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
   color: $white;
-  font-weight: 700;
+  padding: 0.375rem 3rem;
   letter-spacing: 0.1em;
   line-height: 1.5rem;
   text-transform: uppercase;
+  box-shadow: 0 2px 4px 0 hsla(0, 0%, 50.2%, 0.5);
+  -webkit-box-shadow: 0 2px 4px 0 hsla(0, 0%, 50.2%, 0.5);
 
-  span {
-    color: $white;
-  }
-}
-
-.btn-secondary {
   @include media-breakpoint-down(md) {
     padding: 0.375rem 2rem;
   }
-  background: $cyan;
-  border-color: $white;
-  border-radius: 16px;
-  box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
-  color: $white;
-  font-weight: 700;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: #007180;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}
+
+button.secondary {
+  background: #0095aa;
+  border-radius: 50px;
+  color: #ffffff;
+  padding: 1rem 0.75rem;
   letter-spacing: 0.1em;
   line-height: 1.5rem;
   text-transform: uppercase;
+  border-color: #0095aa;
+  box-shadow: none;
 
-  span {
-    color: $white;
+  @include media-breakpoint-down(md) {
+    padding: 0.375rem 2rem;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    -webkit-box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+}
+
+button.terciary {
+  background: #698083;
+  border-radius: 50px;
+  color: #ffffff;
+  padding: 1rem 0.75rem;
+  letter-spacing: 0.1em;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  border-color: #698083;
+  box-shadow: none;
+
+  @include media-breakpoint-down(md) {
+    padding: 0.375rem 2rem;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    -webkit-box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 2px 10px 0 rgba(0, 0, 0, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.7;
   }
 }
