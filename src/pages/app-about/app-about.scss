@@ -74,7 +74,7 @@
 
   p.about-text {
     @include media-breakpoint-down(md) {
-      color: #5d534e;
+      color: $gray-brown;
       margin-bottom: 1rem;
     }
     @include media-breakpoint-down(sm) {
@@ -120,20 +120,20 @@
         max-width: 278px;
         text-align: center;
       }
-      color: #5d534e;
+      color: $gray-brown;
       max-width: 420px;
       text-align: left;
     }
 
     button {
       &:hover {
-        background: #ff5d00;
-        border-color: white;
+        background: $orange-dark;
+        border-color: $white;
       }
 
       &:not(:disabled):active {
-        background-color: #ff5d00;
-        border-color: white;
+        background-color: $orange-dark;
+        border-color: $white;
       }
     }
   }
