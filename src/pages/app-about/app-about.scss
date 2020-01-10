@@ -4,77 +4,10 @@
   overflow-x: hidden;
   padding: 73px 0 0 0;
 
-  h1 {
-    @include media-breakpoint-down(md) {
-      font-size: 2.625rem;
-      letter-spacing: 2.1px;
-      line-height: 47px;
-    }
-    @include media-breakpoint-down(sm) {
-      font-size: 1.75rem;
-      letter-spacing: 1.05px;
-      line-height: 34px;
-      margin: 2rem auto;
-      text-align: center;
-    }
-    font-size: 3rem;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    line-height: 58px;
-    margin: 0 0 1rem;
-    text-align: left;
-  }
-
-  h2 {
-    @include media-breakpoint-down(md) {
-      font-size: 1.75rem;
-      line-height: 34px;
-    }
-    font-size: 2.63rem;
-    font-weight: 600;
-    letter-spacing: 2.1px;
-    line-height: 45px;
-    text-align: center;
-
-    span {
-      display: inline-block;
-      position: relative;
-
-      &:before,
-      &:after {
-        content: '';
-        position: absolute;
-        height: 5px;
-        border-bottom: 1px solid #9d9d9e;
-        top: 20px;
-        width: 500px;
-      }
-
-      &:before {
-        right: 100%;
-        margin-right: 15px;
-      }
-      &:after {
-        left: 100%;
-        margin-left: 15px;
-      }
-    }
-  }
-
-  h3 {
-    @include media-breakpoint-down(md) {
-      font-size: 1.5rem;
-      letter-spacing: 1.54px;
-      line-height: 29px;
-    }
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 34px;
-  }
-
   p.about-text {
+    font-weight: 400;
+
     @include media-breakpoint-down(md) {
-      color: #5d534e;
       margin-bottom: 1rem;
     }
     @include media-breakpoint-down(sm) {
@@ -82,10 +15,6 @@
       line-height: 32px;
       margin: 0 auto;
     }
-    color: $gray-dark;
-    font-size: 1.125rem;
-    font-weight: 400;
-    line-height: 36px;
   }
 
   .hero {
@@ -103,13 +32,23 @@
     height: 600px;
 
     h1 {
+      max-width: 632px;
+      font-size: 48px;
+
       @include media-breakpoint-down(md) {
+        font-size: 2.625rem;
+        letter-spacing: 2.1px;
+        line-height: 47px;
         max-width: 421px;
       }
       @include media-breakpoint-down(sm) {
+        font-size: 1.75rem;
+        letter-spacing: 1.05px;
         max-width: 278px;
+        line-height: 34px;
+        margin: 2rem auto;
+        text-align: center;
       }
-      max-width: 632px;
     }
 
     p {
@@ -129,6 +68,10 @@
   .members {
     margin-bottom: 8rem;
     h2 {
+      font-weight: 600;
+      margin: 5rem 0;
+      text-align: center;
+
       @include media-breakpoint-down(md) {
         font-size: 1.75rem;
         line-height: 34px;
@@ -137,12 +80,6 @@
       @include media-breakpoint-down(sm) {
         margin: 3rem 0 2rem;
       }
-      font-size: 2.63rem;
-      font-weight: 600;
-      letter-spacing: 2.1px;
-      line-height: 38px;
-      margin: 5rem 0;
-      text-align: center;
     }
   }
 
@@ -151,6 +88,38 @@
     h2 {
       margin: 4rem 0 1rem;
       text-align: center;
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      line-height: 45px;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
+        line-height: 34px;
+      }
+
+      span {
+        display: inline-block;
+        position: relative;
+
+        &:before,
+        &:after {
+          content: '';
+          position: absolute;
+          height: 5px;
+          border-bottom: 1px solid #9d9d9e;
+          top: 20px;
+          width: 500px;
+        }
+
+        &:before {
+          right: 100%;
+          margin-right: 15px;
+        }
+        &:after {
+          left: 100%;
+          margin-left: 15px;
+        }
+      }
     }
     p {
       margin: auto;
@@ -161,6 +130,14 @@
 
   .value-badges {
     margin: 0 0 4rem;
+
+    h3 {
+      @include media-breakpoint-down(md) {
+        font-size: 1.5rem;
+        letter-spacing: 1.54px;
+        line-height: 29px;
+      }
+    }
   }
 
   .integrity {

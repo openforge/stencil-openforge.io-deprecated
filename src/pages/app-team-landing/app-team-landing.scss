@@ -11,90 +11,6 @@ section.team-landing {
     padding: 73px 0 0 0;
   }
 
-  h1 {
-    @include media-breakpoint-down(md) {
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 34px;
-      text-align: left;
-    }
-    @include media-breakpoint-down(sm) {
-      color: $gray-dark;
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 34px;
-      text-align: center;
-    }
-    color: $white;
-    font-size: 3rem;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    line-height: 58px;
-    margin-bottom: 1rem;
-    text-align: left;
-  }
-
-  h2 {
-    @include media-breakpoint-down(md) {
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 1.54px;
-      line-height: 29px;
-      text-align: left;
-    }
-    @include media-breakpoint-down(sm) {
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 34px;
-      margin: 0 0 1rem;
-      text-align: center;
-    }
-    color: $gray-dark;
-    font-size: 2.63rem;
-    font-weight: 600;
-    letter-spacing: 2.1px;
-    line-height: 47px;
-  }
-
-  h3 {
-    @include media-breakpoint-down(md) {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 1.02px;
-      line-height: 19px;
-    }
-    @include media-breakpoint-down(sm) {
-      color: $orange-medium;
-      font-size: 1.31rem;
-      font-weight: 700;
-      letter-spacing: 2.1px;
-      line-height: 38px;
-      text-align: center;
-    }
-    color: $white;
-    font-size: 1.75rem;
-    font-weight: 600;
-    line-height: 34px;
-    text-align: left;
-  }
-
-  h4 {
-    @include media-breakpoint-down(md) {
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 1.02px;
-      line-height: 19px;
-    }
-    @include media-breakpoint-down(sm) {
-      font-size: 1.75rem;
-      font-weight: 600;
-      line-height: 34px;
-      margin: 0 0 1rem;
-      text-align: left;
-    }
-    color: $gray-dark;
-  }
-
   .hero {
     @include media-breakpoint-down(md) {
       margin-bottom: 4rem;
@@ -120,7 +36,51 @@ section.team-landing {
       justify-content: center;
     }
 
+    h1 {
+      color: $white;
+      font-size: 48px;
+      margin-bottom: 1rem;
+      text-align: left;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 34px;
+        text-align: left;
+      }
+      @include media-breakpoint-down(sm) {
+        color: $gray-dark;
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 34px;
+        text-align: center;
+      }
+    }
+
+    h3 {
+      color: $white;
+      text-align: left;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1.02px;
+        line-height: 19px;
+      }
+      @include media-breakpoint-down(sm) {
+        color: $orange-medium;
+        font-size: 1.31rem;
+        font-weight: 700;
+        letter-spacing: 2.1px;
+        line-height: 38px;
+        text-align: center;
+      }
+    }
+
     p {
+      color: $white;
+      max-width: 500px;
+
       @include media-breakpoint-down(md) {
         font-size: 0.81rem;
         font-weight: 400;
@@ -134,12 +94,6 @@ section.team-landing {
         text-align: left;
         width: 100%;
       }
-      color: $white;
-      font-size: 1rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      max-width: 500px;
-      text-align: left;
     }
   }
 
@@ -147,7 +101,30 @@ section.team-landing {
     @include media-breakpoint-down(sm) {
       justify-content: center;
     }
+
+    h2 {
+      font-weight: 600;
+      letter-spacing: 2.1px;
+
+      @include media-breakpoint-down(md) {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 1.54px;
+        line-height: 29px;
+        text-align: left;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 34px;
+        margin: 0 0 1rem;
+        text-align: center;
+      }
+    }
+
     p {
+      width: 465px;
+
       @include media-breakpoint-down(md) {
         font-size: 0.81rem;
         font-weight: 400;
@@ -161,10 +138,22 @@ section.team-landing {
         text-align: left;
         width: 100%;
       }
-      color: $gray-brown;
-      font-size: 1rem;
-      line-height: 32px;
-      width: 465px;
+    }
+
+    h3 {
+      @include media-breakpoint-down(md) {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1.02px;
+        line-height: 19px;
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: 1.75rem;
+        font-weight: 600;
+        line-height: 34px;
+        margin: 0 0 1rem;
+        text-align: left;
+      }
     }
   }
 
@@ -211,7 +200,13 @@ section.team-landing {
 
   .members {
     margin-bottom: 8rem;
+
     h2 {
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      margin: 5rem 0;
+      text-align: center;
+
       @include media-breakpoint-down(md) {
         font-size: 1.75rem;
         line-height: 34px;
@@ -220,12 +215,6 @@ section.team-landing {
       @include media-breakpoint-down(sm) {
         margin: 3rem 0 2rem;
       }
-      font-size: 2.63rem;
-      font-weight: 600;
-      letter-spacing: 2.1px;
-      line-height: 38px;
-      margin: 5rem 0;
-      text-align: center;
     }
   }
 }

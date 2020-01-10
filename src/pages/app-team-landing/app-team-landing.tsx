@@ -467,7 +467,7 @@ export class AppTeamLanding {
                         src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
                         alt="Job Title Badge - Design, Development, Management"
                       />
-                      <p>{this.data[this.match.params.member].headerText}</p>
+                      <p class="medium">{this.data[this.match.params.member].headerText}</p>
                     </div>
                   </div>
                   <div class="col-md-4 d-none d-md-block">{!backgroundPhoto && <app-img class="headshot" src={headshotPhoto} />}</div>
@@ -487,10 +487,10 @@ export class AppTeamLanding {
                       &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
                       <app-translate keyword="about.landing.container.title2" />
                     </h2>
-                    <p>{this.data[this.match.params.member].bodyText}</p>
-                    <h4>
+                    <p class="medium">{this.data[this.match.params.member].bodyText}</p>
+                    <h3>
                       <app-translate keyword="about.landing.container.skills" />
-                    </h4>
+                    </h3>
                     <div class="chips-container">
                       {this.data[this.match.params.member].skills.map(skill => {
                         return <label class="skill-chip">{skill}</label>;

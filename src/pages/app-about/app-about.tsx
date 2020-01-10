@@ -29,11 +29,11 @@ export class AppAbout {
                 <app-translate class="d-none d-md-block" keyword="about.header.title" />
                 <app-translate class="d-block d-md-none" keyword="about.header.titleSmall" />
               </h1>
-              <p class="about-text">
+              <p class="medium about-text">
                 <app-translate keyword="about.header.text" />
               </p>
               <app-img class="d-block d-md-none" src="../../assets/svg/about-graphic-header.svg" />
-              <button onClick={this.scrollToForm.bind(this)} class="btn btn-secondary d-none d-md-block">
+              <button onClick={this.scrollToForm.bind(this)} class="primary d-none d-md-block">
                 <app-translate keyword="about.header.action" />
               </button>
             </div>
@@ -46,7 +46,7 @@ export class AppAbout {
                   <app-translate keyword="about.values.title" />
                 </span>
               </h2>
-              <p class="about-text">
+              <p class="large about-text">
                 <app-translate keyword="about.values.text" />
               </p>
             </div>
