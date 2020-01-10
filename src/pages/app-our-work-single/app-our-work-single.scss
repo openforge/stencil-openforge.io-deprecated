@@ -277,10 +277,9 @@
         background-size: cover;
 
         @include media-breakpoint-down(sm) {
-          background-image: url('/assets/home-graphic-voyage-pattern-mobile.jpg');
-          background-position: center;
-          margin: 0;
           max-width: 100%;
+          margin: 0;
+          background-position: center;
         }
       }
 
