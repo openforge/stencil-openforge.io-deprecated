@@ -25,6 +25,9 @@
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-header-animated.svg');
       }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
     }
 
     &.header-transition-dev {
@@ -45,6 +48,9 @@
         background-position: bottom;
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -67,6 +73,9 @@
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design.svg');
       }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
     }
 
     &.header-transition-dev-design {
@@ -87,6 +96,9 @@
         background-position: bottom;
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev-design.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -109,6 +121,9 @@
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design-dev.svg');
       }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
     }
 
     &.header-dev-active {
@@ -130,6 +145,9 @@
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-dev-active.svg');
       }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
     }
 
     &.header-design-active {
@@ -150,6 +168,10 @@
         background-position: bottom;
         height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-design-active.svg');
+      }
+
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
