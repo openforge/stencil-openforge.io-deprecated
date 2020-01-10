@@ -21,10 +21,10 @@ export class AppBlogFeaturedHome {
             <div class="col-md-12">
               <div class="featured-title">
                 <div class="d-none d-md-block">
-                  <h4>What's New in Our Blog</h4>
+                  <h1 class="subheading">What's New In Our Blog</h1>
                 </div>
                 <div class="d-block d-sm-block d-md-none">
-                  <h4>What's New in Our Blog</h4>
+                  <h1 class="subheading">What's New In Our Blog</h1>
                 </div>
               </div>
             </div>
