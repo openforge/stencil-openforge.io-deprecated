@@ -141,7 +141,7 @@ export class AppOurWorkSingle {
     return otherProjects.map(project => {
       return (
         <div class="more-project-single">
-          <p class="d-sm-block d-md-none sm">{project.header.title}</p>
+          <h3 class="d-sm-block d-md-none sm">{project.header.title}</h3>
           <div class="images-col">
             <img src={project.otherProjectImgs.image1} />
             <img src={project.otherProjectImgs.image2} />
@@ -154,7 +154,7 @@ export class AppOurWorkSingle {
               <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
             </a>
           </div>
-          <p class="d-none d-md-block">{project.header.title}</p>
+          <h3 class="d-none d-md-block">{project.header.title}</h3>
           <div class="other-button">
             <stencil-route-link url={`/our-work-single/${project.key}`} exact={true}>
               <button>
@@ -174,8 +174,8 @@ export class AppOurWorkSingle {
           <img class="d-none d-md-block" src={this.projects[this.match.params.project].header.background} />
           <img class="d-md-none" src={this.projects[this.match.params.project].header.backgroundMobile} />
           <div class="header-content">
-            <h1>{this.projects[this.match.params.project].header.title}</h1>
-            <p>{this.projects[this.match.params.project].header.text}</p>
+            <h2>{this.projects[this.match.params.project].header.title}</h2>
+            <p class="large">{this.projects[this.match.params.project].header.text}</p>
             <img class="logo" src={this.projects[this.match.params.project].header.logo} />
           </div>
         </header>
@@ -187,7 +187,7 @@ export class AppOurWorkSingle {
             </div>
             <div class="col-md-8 col-lg-6">
               <h2>{this.projects[this.match.params.project].content.title}</h2>
-              <p innerHTML={this.projects[this.match.params.project].content.text} />
+              <p class="large" innerHTML={this.projects[this.match.params.project].content.text} />
               <div class="project-content-icons">
                 <img src={this.projects[this.match.params.project].content.icon1} />
                 <img src={this.projects[this.match.params.project].content.icon2} />
@@ -222,7 +222,7 @@ export class AppOurWorkSingle {
               <img src={this.projects[this.match.params.project].content.icon2} />
               <img src={this.projects[this.match.params.project].content.icon3} />
             </div>
-            <p innerHTML={this.projects[this.match.params.project].content.text} />
+            <p class="large" innerHTML={this.projects[this.match.params.project].content.text} />
           </div>
         </section>
         <section class="key-features">
@@ -280,16 +280,16 @@ export class AppOurWorkSingle {
           <div class="key-features-text">
             <div class="container">
               <h2>{this.projects[this.match.params.project].features.title}</h2>
-              <p>{this.projects[this.match.params.project].features.text}</p>
+              <p class="medium">{this.projects[this.match.params.project].features.text}</p>
             </div>
           </div>
         </section>
         <section class="more-projects container">
-          <h2 class="aside-lines">
+          <h1 class="aside-lines">
             <span>
               <app-translate keyword="ourWork.more_projects" />
             </span>
-          </h2>
+          </h1>
           <div class="more-projects-items">{this.getOtherProjects()}</div>
         </section>
         <app-cta />

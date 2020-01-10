@@ -40,15 +40,8 @@
         top: 40px;
       }
 
-      h1 {
+      h2 {
         color: $white;
-        font-family: 'Muli';
-        font-size: 48px;
-        font-weight: 600;
-        letter-spacing: 1.6px;
-        line-height: 58px;
-        width: 542px;
-        text-align: center;
 
         @include media-breakpoint-down(md) {
           font-size: 42px;
@@ -62,10 +55,7 @@
 
       p {
         color: $white;
-        font-family: 'Muli';
-        font-size: 18px;
         font-weight: 400;
-        line-height: 36px;
         width: 311px;
         text-align: center;
 
@@ -132,9 +122,6 @@
       }
     }
     h2 {
-      color: $gray-dark;
-      font-family: 'Muli';
-      font-size: 42px;
       font-weight: 600;
       letter-spacing: 2.1px;
       line-height: 47px;
@@ -156,12 +143,7 @@
 
     p {
       margin-top: 30px;
-      color: $gray-dark;
-      font-family: 'Muli';
-      font-size: 18px;
       font-weight: 400;
-      line-height: 36px;
-      text-align: left;
       margin-bottom: 30px;
       width: 80%;
 
@@ -212,11 +194,7 @@
 
       h2 {
         color: #ffffff;
-        font-family: 'Muli';
         font-size: 48px;
-        font-weight: 600;
-        letter-spacing: 1.6px;
-        line-height: 58px;
         text-align: center;
 
         @include media-breakpoint-down(sm) {
@@ -226,12 +204,7 @@
       }
 
       p {
-        margin-top: 35px;
         color: #ffffff;
-        font-family: 'Muli';
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 32px;
         text-align: center;
         width: 715px;
         margin-left: auto;
@@ -303,11 +276,7 @@
       margin-top: 40px;
     }
 
-    h2 {
-      color: $gray-dark;
-      font-family: 'Muli';
-      font-size: 52px;
-      font-weight: 600;
+    h1 {
       letter-spacing: 1.73px;
       line-height: 62px;
       text-align: center;
@@ -379,15 +348,9 @@
       }
 
       .more-project-single {
-        p {
-          color: $gray-dark;
-          font-family: 'Muli';
-          font-size: 28px;
-          font-weight: 600;
-          line-height: 34px;
+        h3 {
           text-align: center;
           margin-top: 36px;
-          margin-bottom: 0;
 
           &.sm {
             margin-bottom: 36px;

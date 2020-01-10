@@ -13,7 +13,7 @@ export class AppOurWork {
             <h1>
               <app-translate keyword="ourWork.header.title" />
             </h1>
-            <p>
+            <p class="medium">
               <app-translate keyword="ourWork.header.text" />
             </p>
           </section>
@@ -39,7 +39,7 @@ export class AppOurWork {
               <h2>
                 <app-translate keyword="ourWork.cards.mobile_measures.title" />
               </h2>
-              <p>
+              <p class="medium">
                 <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
               <stencil-route-link url="/our-work-single/mobilemeasures" exact={true}>
@@ -71,7 +71,7 @@ export class AppOurWork {
               <h2>
                 <app-translate keyword="ourWork.cards.loudcloud.title" />
               </h2>
-              <p>
+              <p class="medium">
                 <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
               <stencil-route-link url="/our-work-single/loudcloud" exact={true}>
@@ -103,7 +103,7 @@ export class AppOurWork {
               <h2>
                 <app-translate keyword="ourWork.cards.voyage.title" />
               </h2>
-              <p>
+              <p class="medium">
                 <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
               <stencil-route-link url="/our-work-single/voyage" exact={true}>
@@ -118,9 +118,9 @@ export class AppOurWork {
           <div class="container text-center">
             <div class="row header">
               <div class="col-12">
-                <h2>
+                <h1>
                   <app-translate keyword="ourWork.worked_with" />
-                </h2>
+                </h1>
               </div>
             </div>
 
