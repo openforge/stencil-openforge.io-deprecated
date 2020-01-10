@@ -33,6 +33,7 @@ export class ContentGraphic {
             'px-lg-5': true,
             'p-4': true,
             'text-md-right': !this.reverse,
+            'left-align': this.leftAlign,
           }}
         >
           <app-img

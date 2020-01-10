@@ -497,7 +497,11 @@ export class AppOpportunities {
                   </p>
                 </content-graphic>
 
-                <content-graphic smallerImg={true} img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/designmaster.png' : '/assets/opportunities/codemaster.png'}>
+                <content-graphic
+                  leftAlign={true}
+                  smallerImg={true}
+                  img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/designmaster.png' : '/assets/opportunities/codemaster.png'}
+                >
                   <h3 class="thin" slot="header">
                     <app-translate keyword="opportunities.prepared.title" />
                   </h3>
