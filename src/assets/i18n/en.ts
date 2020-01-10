@@ -8,7 +8,7 @@ export const translations = {
         buttonText: 'What Makes Us Different?',
       },
       process: {
-        title: 'Our Process',
+        title: 'Our Process:',
         buttonText: 'LEARN MORE',
         discovery: {
           title: 'Discovery',

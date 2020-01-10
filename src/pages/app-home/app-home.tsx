@@ -102,20 +102,20 @@ export class AppHome {
         <header class="hero">
           <div class="container">
             <div class="row align-items-center">
-              <div class="col-lg-4 col-md-5 col-sm-12 flex-column text">
-                <h1>
+              <div class="col-lg-6 col-md-5 col-sm-12 flex-column text">
+                <h1 class="subheading">
                   <app-translate keyword="home.hero.title" />
                 </h1>
-                <h2>
+                <h1>
                   <app-translate keyword="home.hero.subTitle" />
-                </h2>
+                </h1>
                 <div class="sub-txt">
-                  <p>
+                  <p class="medium">
                     <app-translate keyword="home.hero.text" />
                   </p>
                 </div>
               </div>
-              <div class="col-lg-8 col-md-7 col-sm-12 flex-column">
+              <div class="col-lg-6 col-md-7 col-sm-12 flex-column">
                 <div class="svg-header-desktop" aria-label="header" />
                 <div class="svg-header-mobile" aria-label="header" />
               </div>
@@ -141,15 +141,15 @@ export class AppHome {
               <div class="content-panel mobilemeasures">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h3>{translate('home.work.experts')}</h3>
+                    <h1 class="subheading">{translate('home.work.experts')}</h1>
                     <h2>{translate('home.work.mobileWebApplications.title')}</h2>
-                    <p>{translate('home.work.mobileWebApplications.text')}</p>
+                    <p class="medium">{translate('home.work.mobileWebApplications.text')}</p>
                   </div>
                 </div>
                 <div class="content-panel-image">
-                  <h2>
+                  <h3>
                     <app-translate keyword="home.work.mobileWebApplications.example" />
-                  </h2>
+                  </h3>
                   <div class="row">
                     <img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobilemeasures app screenshot" />
                     <img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobilemeasures app screenshot" />
@@ -168,15 +168,15 @@ export class AppHome {
               <div class="content-panel loudcloud">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h3>{translate('home.work.experts')}</h3>
+                    <h1 class="subheading">{translate('home.work.experts')}</h1>
                     <h2>{translate('home.work.mobileTechnology.title')}</h2>
-                    <p>{translate('home.work.mobileTechnology.text')}</p>
+                    <p class="medium">{translate('home.work.mobileTechnology.text')}</p>
                   </div>
                 </div>
                 <div class="content-panel-image">
-                  <h2>
+                  <h3>
                     <app-translate keyword="home.work.mobileTechnology.example" />
-                  </h2>
+                  </h3>
                   <div class="row">
                     <img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
                     <img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
@@ -195,15 +195,15 @@ export class AppHome {
               <div class="content-panel voyage">
                 <div class="content-panel-inner description">
                   <div class="panel-inner-text">
-                    <h3>{translate('home.work.experts')}</h3>
+                    <h1 class="subheading">{translate('home.work.experts')}</h1>
                     <h2>{translate('home.work.digitalExperience.title')}</h2>
-                    <p>{translate('home.work.digitalExperience.text')}</p>
+                    <p class="medium">{translate('home.work.digitalExperience.text')}</p>
                   </div>
                 </div>
                 <div class="content-panel-image">
-                  <h2>
+                  <h3>
                     <app-translate keyword="home.work.digitalExperience.example" />
-                  </h2>
+                  </h3>
                   <div class="row">
                     <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
                     <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
@@ -228,9 +228,9 @@ export class AppHome {
 
         <section id="process" class="process">
           <div class="text-center header">
-            <h2>
+            <h1>
               <app-translate keyword="home.process.title" />
-            </h2>
+            </h1>
           </div>
 
           <div id="processCarousel" class="carousel slide" data-ride="carousel" data-pause="false">
@@ -239,9 +239,9 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h4>
                       <app-translate keyword="home.process.discovery.title" />
-                    </h2>
+                    </h4>
                   </div>
                 </div>
                 <div class="row row-main">
@@ -250,7 +250,7 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <p>
+                      <p class="medium">
                         <app-translate keyword="home.process.discovery.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="0" />
@@ -264,9 +264,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h4>
                       <app-translate keyword="home.process.design.title" />
-                    </h2>
+                    </h4>
                   </div>
                 </div>
                 <div class="row row-main">
@@ -275,7 +275,7 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <p>
+                      <p class="medium">
                         <app-translate keyword="home.process.design.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="1" />
@@ -289,9 +289,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h4>
                       <app-translate keyword="home.process.development.title" />
-                    </h2>
+                    </h4>
                   </div>
                 </div>
                 <div class="row row-main">
@@ -300,7 +300,7 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <p>
+                      <p class="medium">
                         <app-translate keyword="home.process.development.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="2" />
@@ -314,9 +314,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h4>
                       <app-translate keyword="home.process.deployment.title" />
-                    </h2>
+                    </h4>
                   </div>
                 </div>
                 <div class="row row-main">
@@ -325,7 +325,7 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <p>
+                      <p class="medium">
                         <app-translate keyword="home.process.deployment.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="3" />
@@ -339,9 +339,9 @@ export class AppHome {
               <div class="carousel-item">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h4>
                       <app-translate keyword="home.process.userfeedback.title" />
-                    </h2>
+                    </h4>
                   </div>
                 </div>
                 <div class="row row-main">
@@ -350,7 +350,7 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <p>
+                      <p class="medium">
                         <app-translate keyword="home.process.userfeedback.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="4" />

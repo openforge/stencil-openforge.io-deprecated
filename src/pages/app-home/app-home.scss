@@ -76,14 +76,6 @@
     }
 
     h1 {
-      color: $orange;
-      font-family: Muli;
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: 2.08px;
-      line-height: 31px;
-      text-align: left;
-
       @include media-breakpoint-down(sm) {
         height: auto;
         line-height: 3;
@@ -94,14 +86,6 @@
     }
 
     h2 {
-      color: $gray-dark;
-      font-family: Muli;
-      font-size: 45px;
-      font-weight: 600;
-      letter-spacing: 1.73px;
-      line-height: 62px;
-      text-align: left;
-
       @include media-breakpoint-down(md) {
         height: 0;
         margin-bottom: 120px;
@@ -154,10 +138,6 @@
 
   .featured-blog {
     margin-top: 50px;
-
-    h4 {
-      color: $orange-dark;
-    }
   }
 
   .work {
@@ -260,11 +240,6 @@
         }
 
         h2 {
-          color: $gray-dark;
-          font-size: 42px;
-          font-weight: bold;
-          line-height: 1.19;
-
           @include media-breakpoint-down(sm) {
             font-size: 30px;
             margin-bottom: 35px;
@@ -282,10 +257,6 @@
         }
 
         p {
-          color: $gray-dark;
-          font-size: 16px;
-          line-height: 1.78;
-
           @include media-breakpoint-down(sm) {
             text-align: center;
             margin-bottom: 0;
@@ -302,11 +273,9 @@
       position: relative;
       max-width: 330px;
 
-      h2 {
+      h3 {
         color: white;
-        font-size: 28px;
         padding: 16px;
-        text-align: center;
         margin-top: 2rem;
       }
 
@@ -436,15 +405,12 @@
       height: auto;
     }
 
-    .header > h2 {
-      font-size: 48px;
-      font-weight: 600;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-
-      @include media-breakpoint-down(sm) {
-        margin: 5rem 0;
-        font-size: 36px;
+    .header {
+      h1 {
+        @include media-breakpoint-down(sm) {
+          margin: 5rem 0;
+          font-size: 36px;
+        }
       }
     }
 
@@ -488,14 +454,6 @@
     }
 
     .carousel-item {
-      .row {
-        h2 {
-          color: #292a2d;
-          font-family: Muli;
-          font-size: 24px;
-          font-weight: 600;
-        }
-      }
       .row-main {
         height: 400px;
         margin: 0;
@@ -538,22 +496,8 @@
 
     .carousel-text {
       max-width: 425px;
-      text-align: center;
-
-      h2 {
-        color: $orange-dark;
-        font-size: 42px;
-        font-weight: bold;
-        @include media-breakpoint-down(sm) {
-          text-align: center;
-        }
-      }
 
       p {
-        color: $gray-dark;
-        font-size: 18px;
-        line-height: 1.78;
-        text-align: left;
         @include media-breakpoint-down(sm) {
           text-align: center;
         }
