@@ -1,5 +1,4 @@
 .home {
-  font-family: 'Muli', sans-serif;
   width: auto;
 
   @include media-breakpoint-down(sm) {
@@ -7,7 +6,7 @@
   }
 
   .hero {
-    background-color: white;
+    background-color: $white;
     height: auto;
     margin-top: 115px;
 
@@ -95,9 +94,8 @@
 
       @include media-breakpoint-down(sm) {
         text-align: center;
-        font-family: Muli;
-        font-size: 26px;
-        font-weight: 700;
+        font-size: 24px;
+        font-weight: 600;
         letter-spacing: 2.08px;
         line-height: 31px;
         margin-bottom: 0;
@@ -109,7 +107,7 @@
 
       button.button-hero {
         background-color: #0095aa;
-        border: 0.75px solid #ffffff;
+        border: 0.75px solid $white;
         border-radius: 20px;
         box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
         text-transform: none;
@@ -172,7 +170,6 @@
       }
 
       #sticky-sidebar-inner {
-        position: -webkit-sticky;
         position: sticky;
         top: 0;
       }
@@ -223,7 +220,7 @@
       }
 
       @include media-breakpoint-down(sm) {
-        background-color: #ffffff;
+        background-color: $white;
       }
 
       .panel-inner-text {
@@ -243,16 +240,6 @@
           @include media-breakpoint-down(sm) {
             font-size: 30px;
             margin-bottom: 35px;
-          }
-        }
-
-        h3 {
-          color: $orange-dark;
-          font-size: 24px;
-          margin-bottom: 1rem;
-
-          @include media-breakpoint-down(sm) {
-            text-transform: uppercase;
           }
         }
 
@@ -502,19 +489,6 @@
           text-align: center;
         }
       }
-
-      .button {
-        background-color: #0095aa;
-        border-radius: 16px;
-        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
-        text-align: center;
-        color: #ffffff;
-        font-family: Muli;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 1.25px;
-        margin: auto;
-      }
     }
   }
 
@@ -524,19 +498,6 @@
 
     @include media-breakpoint-down(sm) {
       margin-bottom: 1rem;
-    }
-
-    .carousel-btn {
-      background-color: #0095aa;
-      border-radius: 16px;
-      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
-      text-align: center;
-      color: #ffffff;
-      font-family: Muli;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.25px;
-      margin: auto;
     }
   }
 }

@@ -255,7 +255,7 @@ export class AppHome {
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="0" />
                       {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
-                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                        <button class="primary">{translate('home.process.buttonText')}</button>
                       </stencil-route-link> */}
                     </div>
                   </div>
@@ -280,7 +280,7 @@ export class AppHome {
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="1" />
                       {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
-                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                        <button class="primary">{translate('home.process.buttonText')}</button>
                       </stencil-route-link> */}
                     </div>
                   </div>
@@ -305,7 +305,7 @@ export class AppHome {
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="2" />
                       {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
-                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                        <button class="primary">{translate('home.process.buttonText')}</button>
                       </stencil-route-link> */}
                     </div>
                   </div>
@@ -330,7 +330,7 @@ export class AppHome {
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="3" />
                       {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
-                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                        <button class="primary">{translate('home.process.buttonText')}</button>
                       </stencil-route-link> */}
                     </div>
                   </div>
@@ -355,7 +355,7 @@ export class AppHome {
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="4" />
                       {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
-                        <button class="btn button">{translate('home.process.buttonText')}</button>
+                        <button class="primary">{translate('home.process.buttonText')}</button>
                       </stencil-route-link> */}
                     </div>
                   </div>
@@ -373,7 +373,7 @@ export class AppHome {
           </div>
           <div class="learn-more-container d-lg-none">
             {/* <stencil-route-link url="/services" class="align-self-center">
-              <button class="btn button carousel-btn">{translate('home.process.buttonText')}</button>
+              <button class="primary">{translate('home.process.buttonText')}</button>
             </stencil-route-link> */}
           </div>
         </section>
