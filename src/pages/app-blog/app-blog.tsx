@@ -353,8 +353,10 @@ export class AppBlog {
             {this.displaySearchBar ? (
               <div class="searchbar-top">
                 <div class="blog-search-group">
-                  <span class="blog-search-icon-top fa fa-search" />
-                  <input id="blog-search" type="text" class="blog-search-input-top" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <span class="blog-search-icon">
+                    <span class="fa fa-search" />
+                  </span>
+                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" aria-label="search" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
                 <button onClick={() => this.hideSearchBar()}>
                   <i class="far fa-times-circle" />
@@ -440,7 +442,7 @@ export class AppBlog {
               >
                 <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
                 <div class="form-group">
-                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required={true} />
+                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" aria-label="email" required={true} />
                   <div class="hidden" aria-hidden="true">
                     <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
                   </div>
