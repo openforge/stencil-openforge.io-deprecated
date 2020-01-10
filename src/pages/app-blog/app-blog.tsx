@@ -1,4 +1,4 @@
-import { Component, State, h } from '@stencil/core';
+import { Component, State, h, Build } from '@stencil/core';
 import { BlogPost } from '../../model/blog-post.model';
 import { BlogMeta } from '../../model/blog-meta.model';
 import { BlogCategory } from '../../model/blog-category.model';
@@ -32,7 +32,11 @@ export class AppBlog {
   @State() searchIsError: boolean = false;
   @State() searchIsLoading: boolean = false;
 
+  @State() displaySearchBar: boolean = false;
+
   pageSize = 3;
+  indexOfFeaturedPost = -1;
+  pageOfFeaturedPost = 0;
   private filters: BlogCategory[] = [
     {
       name: 'All',
@@ -61,6 +65,9 @@ export class AppBlog {
   }
 
   componentDidLoad() {
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
+    }
     const input = document.getElementById('blog-search');
     input.addEventListener('search', () => this.handleSearch(input.innerText));
 
@@ -80,8 +87,19 @@ export class AppBlog {
       this.allBlogPosts = resp.data;
       this.blogMeta = resp.meta;
       this.blogNumberOfPages = Math.ceil(resp.meta.count / this.pageSize);
-      this.getBlogPosts(1);
+
       this.getFeaturedPost();
+
+      // Find the index of the featuredPost.
+      this.indexOfFeaturedPost = this.allBlogPosts.findIndex(post => {
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+      });
+      // Find the page where the featuredPost is if found the featuredPost
+      if (this.indexOfFeaturedPost > -1) {
+        this.pageOfFeaturedPost = Math.floor(this.indexOfFeaturedPost / this.pageSize) + 1;
+      }
+
+      this.getBlogPosts(1);
     }
     this.blogIsLoading = false;
   }
@@ -96,12 +114,19 @@ export class AppBlog {
 
   getSearchPosts(page) {
     this.searchIsLoading = true;
-    const pageSize = 3;
-    Fetch.fetchSearchPosts(this.searchQuery, page, pageSize).then(resp => {
+    Fetch.fetchSearchPosts(this.searchQuery, page, this.pageSize).then(resp => {
       if (resp.data) {
         this.searchPostsData = resp.data;
         this.searchMeta = resp.meta;
-        this.searchNumberOfPages = Math.ceil(resp.meta.count / pageSize);
+
+        // Find the index of the featuredPost from the searhchPostsData
+        const index = this.searchPostsData.findIndex(post => {
+          return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+        });
+        // If found it, remove it from the searchPostsData to avoid display again.
+        if (index >= 0) this.searchPostsData.splice(index, 1);
+
+        this.searchNumberOfPages = Math.ceil(this.searchPostsData.length / this.pageSize);
         this.searchCurrentPage = page;
       } else {
         this.searchIsError = true;
@@ -114,15 +139,33 @@ export class AppBlog {
     this.blogIsLoading = true;
     if (this.blogFilter) {
       this.blogPostsData = await Fetch.fetchFilteredPosts(this.blogFilter, 1, this.pageSize, true);
+
+      // Find the index of the featuredPost from the blogPostsData
+      const index = this.blogPostsData.findIndex(post => {
+        return post.title === this.featuredPost.title && post.published === this.featuredPost.published;
+      });
+      // If found it, remove it from the blogPostsData to avoid display again.
+      if (index >= 0) this.blogPostsData.splice(index, 1);
+
       this.blogNumberOfPages = Math.ceil(this.blogPostsData.length / this.pageSize);
       this.blogCurrentPage = 1;
     } else {
       this.blogNumberOfPages = Math.ceil(this.allBlogPosts.length / this.pageSize);
       this.blogPostsData = [];
       let index = (page - 1) * this.pageSize;
-      const endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
-      for (index; index < endPoint; index++) {
-        this.blogPostsData.push(this.allBlogPosts[index]);
+      let endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+
+      // Adjust the index and the endPoint by the index of the featuredPost
+      if (page > this.pageOfFeaturedPost) {
+        index += 1;
+      }
+      if (page === this.pageOfFeaturedPost) {
+        endPoint += 1;
+      }
+
+      for (index; index < endPoint; index += 1) {
+        // Don't push to the blogPostsData if it is the featuredPost.
+        if (index !== this.indexOfFeaturedPost) this.blogPostsData.push(this.allBlogPosts[index]);
       }
     }
     this.blogIsLoading = false;
@@ -149,8 +192,6 @@ export class AppBlog {
     if (!this.searchQuery && this.blogFilter !== filterName) {
       this.blogFilter = filterName;
       this.getBlogPosts(1);
-      // if (this.blogFilter) this.getBlogPosts(1);
-      // else this.getAllBlogPosts();
     }
   }
 
@@ -279,6 +320,14 @@ export class AppBlog {
     return pagination;
   }
 
+  showSearchbar() {
+    this.displaySearchBar = true;
+  }
+
+  hideSearchBar() {
+    this.displaySearchBar = false;
+  }
+
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
@@ -292,32 +341,95 @@ export class AppBlog {
       postData = this.renderPosts(this.blogPostsData, this.blogIsLoading, this.blogIsError, '', this.blogFilter);
     }
 
-    return (
-      <div class="blog-container">
+    return [
+      <div class="blog-container container">
         <div id="blog-filters" class="blog-filters">
           <div class="blog-filters-nav">
-            <ul class="blog-filters-list">
-              {filters}
-              <li class="blog-filter-item d-none d-md-block">
+            <div class="blog-search-group d-md-none">
+              <span class="blog-search-icon-top fa fa-search" />
+              <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+            </div>
+
+            {this.displaySearchBar ? (
+              <div class="searchbar-top">
                 <div class="blog-search-group">
                   <span class="blog-search-icon">
                     <span class="fa fa-search" />
                   </span>
-                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" aria-label="search" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
-              </li>
-            </ul>
+                <button onClick={() => this.hideSearchBar()}>
+                  <i class="far fa-times-circle" />
+                </button>
+              </div>
+            ) : (
+              <ul class="blog-filters-list">
+                {filters}
+                <li class="blog-filter-item d-none d-lg-block">
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                    <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  </div>
+                </li>
+                <li class="blog-filter-item d-none d-md-block d-lg-none" onClick={() => this.showSearchbar()}>
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                  </div>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
         <div class="row posts-row">
-          <div class="col-md-8 col-sm-12">
-            <div class="featured-post">{featuredPost}</div>
-            <div class="blog-posts">
-              {postData}
-              <div class="blog-pagination">{pagination}</div>
+          <div class="col-md-12 d-none d-md-block d-lg-none">
+            <div class="form-row-content">
+              <div class="row">
+                <div class="col-sm-6 text-center">
+                  <form
+                    action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
+                    method="post"
+                    id="mc-embedded-subscribe-form"
+                    name="mc-embedded-subscribe-form"
+                    class="validate"
+                    target="_blank"
+                    novalidate="true"
+                  >
+                    <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
+                    <div class="form-group">
+                      <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required={true} />
+                      <div class="hidden" aria-hidden="true">
+                        <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
+                      </div>
+                      <div class="clear d-none d-md-block">
+                        <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                          <i class="d-none d-md-block fa fa-arrow-right" />
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
+                  <div class="contact-icons d-none d-md-block">
+                    <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
+                      <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
+                    </a>
+                    <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
+                      <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                      <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-3 col-sm-12 form-row">
+          <div class="col-lg-8 col-md-12">
+            {!this.searchQuery && this.blogCurrentPage === 1 && !this.blogFilter ? <div class="featured-post">{featuredPost}</div> : null}
+            <div class="blog-posts">{postData}</div>
+          </div>
+          <div class="col-lg-3 col-md-12 form-row d-sm-block d-md-none d-lg-block">
             <div class="form-row-content">
               <form
                 action="https://openforge.us8.list-manage.com/subscribe/post?u=7e95d70b390d0adf7aaa31ad6&amp;id=78738bfcb4"
@@ -330,14 +442,14 @@ export class AppBlog {
               >
                 <label class="d-none d-md-block">Sign Up for News &amp; Updates</label>
                 <div class="form-group">
-                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" required={true} />
+                  <input type="email" value="" name="EMAIL" class="email d-none d-md-block" id="mce-EMAIL" placeholder="Email Address" aria-label="email" required={true} />
                   <div class="hidden" aria-hidden="true">
                     <input type="text" name="b_7e95d70b390d0adf7aaa31ad6_78738bfcb4" tabindex="-1" value="" />
                   </div>
                   <div class="clear">
                     <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
                       <span class="d-block d-sm-block d-md-none">
-                        Get the Newsletter &nbsp; <i class="fa fa-arrow-right" />
+                        Get the Newsletter &nbsp; <i class="fa fa-envelope" aria-hidden="true" />
                       </span>
                       <i class="d-none d-md-block fa fa-arrow-right" />
                     </button>
@@ -345,12 +457,12 @@ export class AppBlog {
                 </div>
               </form>
 
-              <p class="contact-icons-label">Follow Us:</p>
-              <div class="contact-icons">
-                <a href="https://twitter.com/OpenForge_US" target="_blank" rel="noopener">
+              <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
+              <div class="contact-icons d-none d-md-block">
+                <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>
-                <a href="https://www.facebook.com/OpenForgeUS/" target="_blank" rel="noopener">
+                <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
                   <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                 </a>
                 <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
@@ -360,10 +472,10 @@ export class AppBlog {
             </div>
           </div>
         </div>
-
+        <div class="blog-pagination">{pagination}</div>
         <stencil-route-link url="/blog-index" />
-        <app-footer />
-      </div>
-    );
+      </div>,
+      <app-footer />,
+    ];
   }
 }

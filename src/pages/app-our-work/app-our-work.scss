@@ -1,0 +1,316 @@
+.our-work {
+  margin-top: 76px;
+
+  header {
+    @include media-breakpoint-down(md) {
+      background-image: url(assets/our-work/our-work-header.svg);
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-image: none;
+    }
+
+    section {
+      align-items: center;
+      background-image: url(assets/our-work/our-work-header.svg);
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-position: center;
+      min-height: 520px;
+
+      @include media-breakpoint-down(md) {
+        min-height: 350px;
+        background-image: none;
+      }
+
+      @include media-breakpoint-down(sm) {
+        min-height: initial;
+        margin-top: calc(3rem + 76px);
+      }
+    }
+
+    h1 {
+      color: #292a2d;
+      font-family: 'Muli';
+      font-size: 52px;
+      font-weight: 600;
+      letter-spacing: 1.73px;
+      line-height: 62px;
+      text-align: left;
+
+      @include media-breakpoint-down(md) {
+        font-size: 40px;
+      }
+    }
+
+    p {
+      margin-top: 15px;
+      color: #292a2d;
+      font-family: 'Muli';
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 32px;
+      width: 427px;
+      text-align: center;
+
+      @include media-breakpoint-down(md) {
+        width: 380px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: initial;
+      }
+    }
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+
+    @include media-breakpoint-down(sm) {
+      grid-template-columns: initial;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      h2 {
+        color: #333333;
+        font-family: Muli;
+        font-size: 42px;
+        font-weight: 600;
+        letter-spacing: 2.1px;
+        line-height: 38px;
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          font-size: 28px;
+        }
+      }
+
+      p {
+        color: #292a2d;
+        font-family: Muli;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 32px;
+        text-align: center;
+        margin-bottom: 0;
+        width: 80%;
+
+        @include media-breakpoint-down(md) {
+          font-size: 14px;
+        }
+      }
+
+      button {
+        background-color: #292a2d;
+        border-radius: 16px;
+        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+        width: 188px;
+        color: #ffffff;
+        font-family: Muli;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 1.25px;
+        line-height: 20px;
+        text-align: center;
+        height: 32px;
+        margin-top: 70px;
+
+        @include media-breakpoint-down(sm) {
+          margin-top: 30px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    .card-image {
+      position: relative;
+      padding: 4rem 0 2rem;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+
+      @include media-breakpoint-down(sm) {
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 20px;
+        padding: 2rem 0 0;
+      }
+
+      .behind-left {
+        position: relative;
+        height: 350px;
+        left: 100px;
+        top: 30px;
+
+        @include media-breakpoint-down(lg) {
+          height: 300px;
+          left: 80px;
+        }
+
+        @include media-breakpoint-down(md) {
+          left: 30px;
+          height: 220px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          left: 80px;
+          height: 220px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          left: 50px;
+          height: 190px;
+          top: 20px;
+        }
+      }
+
+      .behind-right {
+        position: relative;
+        height: 350px;
+        right: 100px;
+        top: 30px;
+
+        @include media-breakpoint-down(lg) {
+          height: 300px;
+          right: 80px;
+        }
+
+        @include media-breakpoint-down(md) {
+          height: 220px;
+          right: 30px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          height: 220px;
+          right: 80px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          top: 20px;
+          right: 50px;
+          height: 190px;
+        }
+      }
+
+      .front-center {
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 1;
+
+        @include media-breakpoint-down(lg) {
+          height: 340px;
+          margin-left: initial;
+          margin-right: initial;
+        }
+
+        @include media-breakpoint-down(md) {
+          height: 280px;
+          margin-left: initial;
+          margin-right: initial;
+        }
+
+        @include media-breakpoint-down(sm) {
+          position: relative;
+          margin: auto;
+          height: 280px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          position: relative;
+          margin: auto;
+          height: 220px;
+        }
+      }
+
+      .card-image-row {
+        justify-content: center;
+      }
+
+      .store-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 4rem 0 2rem;
+
+        a {
+          margin: 0 10px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin: 2rem 0 2rem;
+        }
+      }
+
+      &.mobilemeasures {
+        background-image: url('/assets/apps/mobilemeasures/background-graphic.png');
+        background-size: cover;
+        background-position: center;
+      }
+
+      &.loudcloud {
+        background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      &.voyage {
+        background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .worked-with {
+    padding: 5rem 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 3rem 1rem;
+    }
+
+    .header {
+      margin: 0 auto 3rem;
+      max-width: 768px;
+
+      h2 {
+        color: #292a2d;
+        font-family: 'Muli';
+        font-size: 52px;
+        font-weight: 600;
+        letter-spacing: 1.73px;
+        line-height: 62px;
+        text-align: center;
+
+        @include media-breakpoint-down(md) {
+          font-size: 40px;
+        }
+      }
+    }
+
+    .img-row {
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .center-col {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

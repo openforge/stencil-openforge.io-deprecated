@@ -1,10 +1,15 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Build } from '@stencil/core';
 
 @Component({
   tag: 'app-services',
   styleUrl: 'app-services.scss',
 })
 export class AppServices {
+  componentDidLoad() {
+    if (Build.isBrowser) {
+      window.scrollTo(0, 0);
+    }
+  }
 
   changeMetadata() {
     // Change meta tags dynamically
