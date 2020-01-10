@@ -302,6 +302,16 @@
       position: relative;
       max-width: 330px;
 
+      .row {
+        @include media-breakpoint-down(md) {
+          max-width: 100%;
+        }
+
+        @include media-breakpoint-down(sm) {
+          max-width: initial;
+        }
+      }
+
       h2 {
         color: white;
         font-size: 28px;
