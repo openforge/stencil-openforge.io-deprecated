@@ -436,7 +436,7 @@ export class AppTeamLanding {
     }
     window.addEventListener('resize', () => {
       const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
-      const hero = document.querySelector('.hero') as HTMLElement;
+      const hero = document.querySelector('.team-landing > .container-fluid > .hero') as HTMLElement;
       if (window.innerWidth > 767.98) {
         hero.style.backgroundColor = '#292A2D';
         if (backgroundPhoto) {
