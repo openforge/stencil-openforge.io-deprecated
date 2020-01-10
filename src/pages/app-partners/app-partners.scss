@@ -9,66 +9,26 @@
       padding-top: 125px;
     }
 
-    .row {
-      height: auto;
-      padding-bottom: 2rem;
+    img {
+      min-height: 300px;
 
-      @include media-breakpoint-down(sm) {
-        padding-bottom: 0;
-      }
-
-      img {
-        min-height: 300px;
-
-        @include media-breakpoint-down(md) {
-          min-height: 260px;
-        }
-      }
-    }
-
-    .line-break {
-      border-bottom: 1px solid $gray-800;
-    }
-
-    span {
-      margin-right: 20px;
-      text-decoration: underline;
-      color: #e88212;
-      background-color: transparent;
-
-      &:hover {
-        color: #a15a0c;
+      @include media-breakpoint-down(md) {
+        min-height: 260px;
       }
     }
 
     h1 {
-      color: #292a2d;
-      font-family: Muli;
-      font-size: 52px;
-      font-weight: 600;
       letter-spacing: 1.73px;
-      text-align: left;
       margin-bottom: 40px;
 
       @include media-breakpoint-down(sm) {
-        color: #333333;
-        font-family: Muli;
-        font-size: 32px;
-        font-weight: 600;
         letter-spacing: 2.1px;
-        line-height: 45px;
         text-align: center;
         margin-top: 40px;
       }
     }
 
     p {
-      font-family: Muli;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 30px;
-      text-align: left;
-
       @include media-breakpoint-down(sm) {
         text-align: center;
       }
@@ -102,19 +62,13 @@
       }
 
       h2 {
-        color: #333333;
-        font-family: Muli;
-        font-size: 42px;
         font-weight: 600;
         letter-spacing: 2.1px;
         line-height: 45px;
         text-align: center;
 
         @include media-breakpoint-down(sm) {
-          color: #333333;
-          font-family: Muli;
           font-size: 32px;
-          font-weight: 600;
           letter-spacing: 2.1px;
           line-height: 45px;
           text-align: center;
@@ -195,9 +149,6 @@
     h2 {
       margin: 0 0 20px 0;
       color: #ffffff;
-      font-family: Muli;
-      font-size: 40px;
-      font-weight: 700;
       line-height: 48px;
       text-align: center;
 
@@ -208,8 +159,6 @@
 
     p {
       color: #ffffff;
-      font-family: Muli;
-      font-size: 18px;
       font-weight: 400;
       text-align: center;
 

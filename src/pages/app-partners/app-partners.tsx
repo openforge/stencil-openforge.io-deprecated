@@ -48,10 +48,10 @@ export class AppPartners {
                 <h1>
                   <app-translate keyword={`partners.hero.title`} />
                 </h1>
-                <p>
+                <p class="medium">
                   <app-translate keyword={`partners.hero.text1`} />
                 </p>
-                <p>
+                <p class="medium">
                   <app-translate keyword={`partners.hero.text2`} />
                 </p>
               </div>
@@ -76,7 +76,7 @@ export class AppPartners {
                     <div class="row carousel-item active">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
-                        <p>
+                        <p class="medium">
                           <app-translate keyword="partners.trusted.ionic" />
                         </p>
                       </div>
@@ -84,7 +84,7 @@ export class AppPartners {
                     <div class="row carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-1776-logo.png" class="img-fluid" />
-                        <p>
+                        <p class="medium">
                           <app-translate keyword="partners.trusted.t1776" />
                         </p>
                       </div>
@@ -92,7 +92,7 @@ export class AppPartners {
                     <div class="row carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-strapi-logo.png" class="img-fluid" />
-                        <p>
+                        <p class="medium">
                           <app-translate keyword="partners.trusted.strapi" />
                         </p>
                       </div>
@@ -100,7 +100,7 @@ export class AppPartners {
                     <div class="row carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-215-logo.png" class="img-fluid" />
-                        <p>
+                        <p class="medium">
                           <app-translate keyword="partners.trusted.t215Marketing" />
                         </p>
                       </div>
@@ -108,7 +108,7 @@ export class AppPartners {
                     <div class="row carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-financial-gps-logo.png" class="img-fluid" />
-                        <p>
+                        <p class="medium">
                           <app-translate keyword="partners.trusted.finantialGPS" />
                         </p>
                       </div>
@@ -116,7 +116,7 @@ export class AppPartners {
                     <div class="row carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-drexel-logo.png" class="img-fluid" />
-                        <p>
+                        <p class="medium">
                           <app-translate keyword="partners.trusted.drexel" />
                         </p>
                       </div>
@@ -152,7 +152,7 @@ export class AppPartners {
               <h2>
                 <app-translate keyword="partners.cta.title" />
               </h2>
-              <p>
+              <p class="large">
                 <app-translate keyword="partners.cta.subTitle" />
               </p>
               <stencil-route-link url="/contact">
