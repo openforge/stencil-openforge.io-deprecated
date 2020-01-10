@@ -72,7 +72,7 @@
     line-height: 34px;
   }
 
-  p {
+  p.about-text {
     @include media-breakpoint-down(md) {
       color: #5d534e;
       margin-bottom: 1rem;
