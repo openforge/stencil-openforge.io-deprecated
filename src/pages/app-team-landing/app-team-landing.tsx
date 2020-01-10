@@ -8,7 +8,8 @@ import { translate } from '../../services/translation.service';
 })
 export class AppTeamLanding {
   // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
-
+  backgroundPhoto: string;
+  headshotPhoto: string;
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
 
@@ -402,6 +403,10 @@ export class AppTeamLanding {
     this.changeMetadata();
   }
 
+  componentDidUnload() {
+    window.removeEventListener('resize', this.updateBackground, false);
+  }
+
   changeMetadata() {
     if (this.data[this.match.params.member]) {
       // Change meta tags dynamically
@@ -421,32 +426,39 @@ export class AppTeamLanding {
     return img;
   }
 
+  updateBackground() {
+    console.error('this is the background photo - ', this.backgroundPhoto);
+    const hero = document.querySelector('.team-landing > .container-fluid > .hero') as HTMLElement;
+    if (window.innerWidth > 767.98) {
+      hero.style.backgroundColor = '#292A2D';
+      if (this.backgroundPhoto != null) {
+        console.error('THIS IS THE RESIZE');
+        hero.style.backgroundImage = `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`;
+      }
+    } else {
+      hero.style.backgroundImage = 'none';
+      hero.style.backgroundColor = 'transparent';
+    }
+  }
+
   render() {
-    const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
-    const headshotPhoto = this.changeImageFormat(this.data[this.match.params.member].headshotPhoto);
+    console.error('render - ', this.data[this.match.params.member].backgroundPhoto);
+    console.error('again - ', this.data[this.match.params.member].headshotPhoto);
+
+    this.backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
+    this.headshotPhoto = this.changeImageFormat(this.data[this.match.params.member].headshotPhoto);
     let style = {};
     if (window.innerWidth > 767.98) {
-      style = backgroundPhoto
+      style = this.backgroundPhoto
         ? {
-            'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${backgroundPhoto})`,
+            'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`,
           }
         : {
             'background-color': '#292A2D',
           };
     }
-    window.addEventListener('resize', () => {
-      const backgroundPhoto = this.changeImageFormat(this.data[this.match.params.member].backgroundPhoto ? this.data[this.match.params.member].backgroundPhoto : null);
-      const hero = document.querySelector('.team-landing > .container-fluid > .hero') as HTMLElement;
-      if (window.innerWidth > 767.98) {
-        hero.style.backgroundColor = '#292A2D';
-        if (backgroundPhoto) {
-          hero.style.backgroundImage = `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${backgroundPhoto})`;
-        }
-      } else {
-        hero.style.backgroundImage = 'none';
-        hero.style.backgroundColor = 'transparent';
-      }
-    });
+
+    window.addEventListener('resize', this.updateBackground);
 
     return (
       <section class="team-landing">
@@ -456,7 +468,7 @@ export class AppTeamLanding {
               <div class="container-fluid">
                 <div class="row justify-content-center align-items-center hero" style={style}>
                   <div class="col-10 col-sm-12 d-block d-md-none">
-                    <app-img class="headshot-mobile" src={headshotPhoto} />
+                    <app-img class="headshot-mobile" src={this.headshotPhoto} />
                   </div>
                   <div class="col-11 col-sm-9 col-md-7 col-lg-6 align-self-start">
                     <div class="header-text">
@@ -470,7 +482,7 @@ export class AppTeamLanding {
                       <p>{this.data[this.match.params.member].headerText}</p>
                     </div>
                   </div>
-                  <div class="col-md-4 d-none d-md-block">{!backgroundPhoto && <app-img class="headshot" src={headshotPhoto} />}</div>
+                  <div class="col-md-4 d-none d-md-block">{!this.backgroundPhoto && <app-img class="headshot" src={this.headshotPhoto} />}</div>
                 </div>
 
                 <div class="row align-items-center justify-content-center bio">
