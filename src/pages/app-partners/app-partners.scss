@@ -94,7 +94,6 @@
 
     .header {
       margin: 4rem auto 2rem;
-      max-width: 768px;
       text-align: center;
 
       @include media-breakpoint-down(sm) {
@@ -109,6 +108,7 @@
         letter-spacing: 2.1px;
         line-height: 45px;
         text-align: center;
+        margin-bottom: 3rem;
 
         @include media-breakpoint-down(sm) {
           color: #333333;
@@ -120,34 +120,6 @@
           text-align: center;
           margin-top: 40px;
         }
-      }
-    }
-
-    .line-title {
-      display: block;
-      position: relative;
-
-      &:before,
-      &:after {
-        content: '';
-        display: inline-block;
-        height: 1px;
-        background: gray;
-        width: 50%;
-        position: relative;
-        vertical-align: middle;
-
-        @include media-breakpoint-down(sm) {
-          display: none;
-        }
-      }
-      &:before {
-        left: -0.5em;
-        margin-left: -50%;
-      }
-      &:after {
-        right: -0.5em;
-        margin-right: -50%;
       }
     }
   }
@@ -241,6 +213,12 @@
 
   .carousel-inner {
     padding: 25px 0;
+    height: 450px;
+
+    @include media-breakpoint-down(sm) {
+      height: 550px;
+    }
+    
   }
 
   .carousel-item-col {
