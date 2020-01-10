@@ -78,10 +78,19 @@ export class AppNavHeader {
                   </stencil-route-link>
                 </li>
                 <li class="nav-item dropdown" data-target="#navbarSupportedContent">
-                  <a href="" class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <stencil-route-link
+                    urlMatch={['/blog', '/forge']}
+                    activeClass="active"
+                    anchorClass="nav-link dropdown-toggle"
+                    id="navbarDropdown0"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
                     {translate('nav.links.resources')}
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                  </stencil-route-link>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown0">
                     <stencil-route-link url="/blog" anchorClass="nav-link dropdown-item" activeClass="active">
                       Blog
                     </stencil-route-link>

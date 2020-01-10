@@ -4,7 +4,6 @@ import { Component, h } from '@stencil/core';
   tag: 'app-cta',
   styleUrl: 'app-cta.scss',
 })
-
 export class AppCta {
   render() {
     return (
@@ -19,9 +18,6 @@ export class AppCta {
               <p>
                 <app-translate keyword="cta.subTitle" />
               </p>
-              <h2>
-                <app-translate keyword="cta.text" />
-              </h2>
               <stencil-route-link url="/contact">
                 <button class="button">
                   <app-translate keyword="cta.link" />
