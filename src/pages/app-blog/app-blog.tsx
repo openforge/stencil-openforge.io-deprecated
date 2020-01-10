@@ -353,9 +353,7 @@ export class AppBlog {
             {this.displaySearchBar ? (
               <div class="searchbar-top">
                 <div class="blog-search-group">
-                  <span class="blog-search-icon">
-                    <span class="fa fa-search" />
-                  </span>
+                  <span class="blog-search-icon-top fa fa-search" />
                   <input id="blog-search" type="search" class="blog-search-input" placeholder="Search the blog" aria-label="search" onKeyUp={e => this.handleSearch(e.target['value'])} />
                 </div>
                 <button onClick={() => this.hideSearchBar()}>
