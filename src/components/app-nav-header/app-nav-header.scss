@@ -26,9 +26,16 @@ button.navbar-toggler {
 }
 
 nav.navbar .navbar-nav .nav-item {
+  font-family: 'Muli';
+  font-weight: 400;
+  font-size: 18px;
+  color: #375659;
+
   .active {
-    color: $orange;
+    font-weight: 600;
+    color: #ff5d00;
   }
+
   text-align: left;
 
   @include media-breakpoint-down(md) {
@@ -97,15 +104,18 @@ nav.navbar .navbar-nav .nav-item {
 }
 
 nav.navbar .navbar-nav .nav-link {
-  color: #121212;
-  font-weight: 300;
+  font-family: 'Muli';
+  font-weight: 400;
+  font-size: 18px;
+  color: #375659;
   padding-top: 0;
   padding-bottom: 0;
 
   &.dropdown-item {
     background: white;
     &.active {
-      color: $orange;
+      font-weight: 600;
+      color: #ff5d00;
     }
   }
 
