@@ -14,7 +14,7 @@ export class AppTeamLanding {
 
   @State() chips;
   data = {
-    'jedi-weller': {
+    'jedidiah-weller': {
       firstname: 'Jedi',
       surname: 'Weller',
       title: translate('about.team.member.title.founder'),
@@ -31,7 +31,7 @@ export class AppTeamLanding {
         description:
           'Besides being the chief morale booster, Jedi leads the strategic partnerships and public outreach programs at OpenForge. His boundless energy and ambition means he’s constantly jumping between client calls, networking events, and ensuring the team and clients are happy with the work being done.',
         keywords: 'Jedi Weller, ceo, head of technology',
-        url: 'https://openforge.io/about/jedi-weller/',
+        url: 'https://openforge.io/about/jedidiah-weller/',
         image: 'https://openforge.io/assets/bios-background-jedi.png',
       },
     },
