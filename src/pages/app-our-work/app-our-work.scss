@@ -58,6 +58,10 @@
       @include media-breakpoint-down(md) {
         width: 380px;
       }
+
+      @include media-breakpoint-down(sm) {
+        width: initial;
+      }
     }
   }
 
@@ -127,6 +131,10 @@
 
         @include media-breakpoint-down(sm) {
           margin-top: 30px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          margin-bottom: 30px;
         }
       }
     }
