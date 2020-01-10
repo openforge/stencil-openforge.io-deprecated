@@ -163,7 +163,6 @@
       height: 100%;
       background: #008092;
       margin: 0;
-      padding: 0 200px;
 
       @include media-breakpoint-down(md) {
         padding: 0;
@@ -183,6 +182,7 @@
 
     .cta-text {
       padding: 0 60px;
+
       @include media-breakpoint-down(md) {
         padding: 0 20px;
       }
@@ -193,7 +193,7 @@
     }
 
     h2 {
-      margin: 0 0 20px 0;
+      margin: 0 50px 20px 50px;
       color: #ffffff;
       font-family: Muli;
       font-size: 40px;
@@ -203,6 +203,8 @@
 
       @include media-breakpoint-down(sm) {
         font-size: 20px;
+        line-height: normal;
+        margin: 20px 10px;
       }
     }
 
@@ -214,14 +216,14 @@
       text-align: center;
 
       @include media-breakpoint-down(sm) {
-        margin: 2rem 0;
+        margin: 0 0 10px 0;
       }
     }
 
     button {
       background-color: #c75300;
       border: 0.75px solid #ffffff;
-      border-radius: 16px;
+      border-radius: 22px;
       box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       color: #ffffff;
       width: 130px;
