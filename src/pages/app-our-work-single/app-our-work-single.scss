@@ -10,22 +10,18 @@
     display: flex;
     justify-content: center;
 
-    img {
-      width: 100%;
+    .logo {
+      height: 260px;
+      width: 260px;
 
-      &.logo {
-        height: 260px;
-        width: 260px;
+      @include media-breakpoint-down(md) {
+        height: 145px;
+        width: 145px;
+      }
 
-        @include media-breakpoint-down(md) {
-          height: 145px;
-          width: 145px;
-        }
-
-        @include media-breakpoint-down(sm) {
-          height: 200px;
-          width: 200px;
-        }
+      @include media-breakpoint-down(sm) {
+        height: 200px;
+        width: 200px;
       }
     }
 
@@ -82,7 +78,7 @@
     .images-col {
       position: relative;
 
-      img {
+      app-img {
         width: 250px;
         height: 500px;
 

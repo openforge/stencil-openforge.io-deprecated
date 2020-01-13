@@ -22,7 +22,7 @@ export class AppBlogCard {
             <div class="col-md-12">
               <div class="blog-card-image">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-                  <img src={this.blogPost.featured_image} alt={this.blogPost.title} />
+                  <app-img src={this.blogPost.featured_image} alt={this.blogPost.title} />
                 </stencil-route-link>
               </div>
               <div class="blog-title">
@@ -31,7 +31,7 @@ export class AppBlogCard {
                 </stencil-route-link>
               </div>
               <div class="author">
-                <img class="profile-image d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
+                <app-img class="profile-image d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
                 <div>
                   By &nbsp;
                   <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
