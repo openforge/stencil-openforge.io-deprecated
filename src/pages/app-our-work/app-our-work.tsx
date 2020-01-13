@@ -42,7 +42,7 @@ export class AppOurWork {
               <p>
                 <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
-              <stencil-route-link url="/our-work-single/mobilemeasures" exact={true}>
+              <stencil-route-link url="/our-work/mobilemeasures" exact={true}>
                 <button>
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
@@ -74,7 +74,7 @@ export class AppOurWork {
               <p>
                 <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
-              <stencil-route-link url="/our-work-single/loudcloud" exact={true}>
+              <stencil-route-link url="/our-work/loudcloud" exact={true}>
                 <button>
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
@@ -106,7 +106,7 @@ export class AppOurWork {
               <p>
                 <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
-              <stencil-route-link url="/our-work-single/voyage" exact={true}>
+              <stencil-route-link url="/our-work/voyage" exact={true}>
                 <button>
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
