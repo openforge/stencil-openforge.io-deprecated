@@ -33,7 +33,7 @@ export class AppBlogFeaturedHome {
             <div class="col-lg-6 col-md-8 col-title">
               <div class="featured-post-title">
                 <stencil-route-link url={`/blog/${this.blogPost.slug}`}>
-                  <h2 id="featured-blog-title">{this.blogPost.title}</h2>
+                  <h2 id="featured-blog-title-first">{this.blogPost.title}</h2>
                 </stencil-route-link>
               </div>
               <div class="author d-none d-md-flex">
@@ -67,7 +67,7 @@ export class AppBlogFeaturedHome {
               <div class="col-lg-6 col-md-8 col-title">
                 <div class="featured-post-title">
                   <stencil-route-link url={`/blog/${this.blogPost1.slug}`}>
-                    <h2 id="featured-blog-title">{this.blogPost1.title}</h2>
+                    <h2 id="featured-blog-title-second">{this.blogPost1.title}</h2>
                   </stencil-route-link>
                 </div>
                 <div class="author d-none d-md-flex">
