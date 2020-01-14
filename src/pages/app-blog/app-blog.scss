@@ -136,22 +136,24 @@
     }
 
     .blog-search-group {
+      width: 100%;
+
       @include media-breakpoint-up(xl) {
         padding-left: 66.6px; // The number of the beast
       }
+
       @include media-breakpoint-down(md) {
-        width: calc(100% - 16px);
         margin: 8px;
+        width: calc(100% - 16px);
       }
-      width: 100%;
     }
 
     .blog-search-input {
-      background-color: #f4f5f9;
+      background-color: $gray-100;
       border: none;
       border-radius: 3px;
       box-shadow: inset -1px -1px 1px 0 rgba(0, 0, 0, 0.15);
-      color: #5d534e;
+      color: $gray-brown;
       font-family: Muli;
       font-size: 13px;
       font-weight: 300;
@@ -160,10 +162,11 @@
       padding: 4px 4px 4px calc(2.4rem + 2px);
       width: 100%;
 
-      @include media-breakpoint-down(sm) {
-        box-shadow: none;
-        border: 1px solid #ebecef;
-        border-radius: 6px;
+      @include media-breakpoint-down(md) {
+        background-color: $white;
+        border: 1px solid $gray-100;
+        border-radius: 8px;
+        min-height: 45px;
       }
     }
 
@@ -186,6 +189,7 @@
       margin-top: 10px;
       margin-left: 10px;
       color: $gray-brown;
+
       @include media-breakpoint-down(md) {
         position: initial;
         margin-top: 0;
@@ -198,15 +202,20 @@
       margin-top: 10px;
       margin-left: 10px;
       color: $gray-brown;
+
+      @include media-breakpoint-down(md) {
+        margin-top: 15px;
+      }
     }
 
     .searchbar-top {
       display: flex;
 
       button {
-        padding: 0;
-        border: 0;
         background: transparent;
+        border: 0;
+        color: $gray-dark;
+        padding: 0;
       }
     }
 

@@ -60,20 +60,17 @@ export class AppPartners {
         </header>
 
         <section id="trusted-partners" class="trusted-partners">
-          <div>
             <div class="row header">
               <div class="col-12">
                 <h2>
                   <app-translate keyword="partners.trusted.title" />
                 </h2>
               </div>
-            </div>
-
-            <div class="row">
-              <div class="col-12 text-center">
+ 
+            <div class="col-12 text-center">
                 <div class="carousel slide" id="partnersCarousel">
                   <div class="carousel-inner">
-                    <div class="row carousel-item active">
+                    <div class="carousel-item active">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
                         <p>
@@ -81,7 +78,7 @@ export class AppPartners {
                         </p>
                       </div>
                     </div>
-                    <div class="row carousel-item">
+                    <div class="carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-1776-logo.png" class="img-fluid" />
                         <p>
@@ -89,7 +86,7 @@ export class AppPartners {
                         </p>
                       </div>
                     </div>
-                    <div class="row carousel-item">
+                    <div class="carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-strapi-logo.png" class="img-fluid" />
                         <p>
@@ -97,7 +94,7 @@ export class AppPartners {
                         </p>
                       </div>
                     </div>
-                    <div class="row carousel-item">
+                    <div class="carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-215-logo.png" class="img-fluid" />
                         <p>
@@ -105,7 +102,7 @@ export class AppPartners {
                         </p>
                       </div>
                     </div>
-                    <div class="row carousel-item">
+                    <div class="carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-financial-gps-logo.png" class="img-fluid" />
                         <p>
@@ -113,7 +110,7 @@ export class AppPartners {
                         </p>
                       </div>
                     </div>
-                    <div class="row carousel-item">
+                    <div class="carousel-item">
                       <div class="col-12 carousel-item-col">
                         <img src="/assets/partners-drexel-logo.png" class="img-fluid" />
                         <p>
@@ -132,7 +129,6 @@ export class AppPartners {
                   </ol>
                 </div>
               </div>
-            </div>
             <div class="row carousel-arrows">
               <a class="col-6 left carousel-control" href="#partnersCarousel" data-slide="prev">
                 <i class="fa fa-chevron-left" />

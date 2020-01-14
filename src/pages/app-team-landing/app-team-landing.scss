@@ -96,16 +96,17 @@ section.team-landing {
   }
 
   .hero {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5rem;
+
     @include media-breakpoint-down(md) {
       margin-bottom: 4rem;
     }
     @include media-breakpoint-down(sm) {
       margin-bottom: 1rem;
     }
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin-bottom: 5rem;
 
     .header-text {
       @include media-breakpoint-down(md) {

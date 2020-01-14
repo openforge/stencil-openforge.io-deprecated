@@ -2,6 +2,14 @@
   margin-top: 76px;
 
   header {
+    @include media-breakpoint-down(md) {
+      background-image: url(assets/our-work/our-work-header.svg);
+    }
+
+    @include media-breakpoint-down(sm) {
+      background-image: none;
+    }
+
     section {
       align-items: center;
       background-image: url(assets/our-work/our-work-header.svg);
@@ -9,16 +17,17 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background-position: center;
       min-height: 520px;
 
       @include media-breakpoint-down(md) {
         min-height: 350px;
+        background-image: none;
       }
 
       @include media-breakpoint-down(sm) {
         min-height: initial;
         margin-top: calc(3rem + 76px);
-        background-image: none;
       }
     }
 
@@ -47,7 +56,11 @@
       text-align: center;
 
       @include media-breakpoint-down(md) {
-        width: 300px;
+        width: 380px;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: initial;
       }
     }
   }
@@ -119,6 +132,10 @@
         @include media-breakpoint-down(sm) {
           margin-top: 30px;
         }
+
+        @include media-breakpoint-down(xs) {
+          margin-bottom: 30px;
+        }
       }
     }
 
@@ -154,6 +171,12 @@
           left: 80px;
           height: 220px;
         }
+
+        @include media-breakpoint-down(xs) {
+          left: 50px;
+          height: 190px;
+          top: 20px;
+        }
       }
 
       .behind-right {
@@ -175,6 +198,12 @@
         @include media-breakpoint-down(sm) {
           height: 220px;
           right: 80px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          top: 20px;
+          right: 50px;
+          height: 190px;
         }
       }
 
@@ -200,6 +229,12 @@
           position: relative;
           margin: auto;
           height: 280px;
+        }
+
+        @include media-breakpoint-down(xs) {
+          position: relative;
+          margin: auto;
+          height: 220px;
         }
       }
 
@@ -270,7 +305,7 @@
 
     .img-row {
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 30px;
     }
 
     .center-col {

@@ -169,7 +169,7 @@ export class AppContact {
 
                       <app-input
                         name="phone"
-                        label={translate('contact.form.phone')}
+                        label={translate('contact.form.contact_phone')}
                         id="phone"
                         type="tel"
                         placeholder={translate('contact.form.placeholder.phone')}

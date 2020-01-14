@@ -23,7 +23,7 @@ export class AppFooter {
                   <br />
                   {translate('footer.address.phoneNumber')}
                   <br />
-                  <a href="mailto:hello@openforge.io">{translate('footer.address.email')}</a>
+                  <a href="mailto:hello@openforge.io" target="_blank">{translate('footer.address.email')}</a>
                   <br />
                   <br class="d-none d-md-block" />
                   <stencil-route-link url="/service-level-agreement">{translate('footer.social.sla')}</stencil-route-link>
@@ -43,15 +43,15 @@ export class AppFooter {
             <div class="footer--column col-12 col-sm-4">
               <h2>{translate('footer.webinar.signup')}</h2>
               <p>{translate('footer.webinar.webinarText')}</p>
-              <a href="http://startupjunto.org/" target="_blank" id="startup-junto meetup" rel="noopener" class="btn-primary button-link">
+              {/* <a href="http://startupjunto.org/" target="_blank" id="startup-junto meetup" rel="noopener" class="btn-primary button-link">
                 {translate('footer.webinar.register')}
-              </a>
+              </a> */}
             </div>
           </div>
 
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <p class="copyright">&copy; OpenForge 2019 v 1.3.0</p>
+              <p class="copyright">&copy; OpenForge 2019 v2.5.0</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 order-first order-md-2 social">
               <p class="follow">

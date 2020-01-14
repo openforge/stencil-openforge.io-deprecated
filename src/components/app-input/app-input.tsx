@@ -23,6 +23,8 @@ export class AppInput {
   valueChanged: EventEmitter;
   @Prop()
   valid = false;
+  @Prop()
+  slimmer = false;
 
   inputHandler(event) {
     this.valueChanged.emit({
@@ -37,7 +39,10 @@ export class AppInput {
       <div class={`form-group${this.valid ? ` valid` : ``}`}>
         <label htmlFor={this.name}>{this.label}</label>
         <input
-          class="form-control"
+          class={{
+            slimmer: this.slimmer,
+            'form-control': true,
+          }}
           type={this.type}
           name={this.name}
           id={this.inputId}
