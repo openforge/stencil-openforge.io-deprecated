@@ -26,7 +26,8 @@ export const config: Config = {
       serviceWorker: {
         globPatterns: [
           '**/*.{js,css,json,html,ico,png,svg}'
-        ]
+        ],
+        swSrc: 'src/sw.js'
       },
       copy: [
         { src: 'robots.txt' }

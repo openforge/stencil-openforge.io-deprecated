@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, h } from '@stencil/core';
+import { Component, h, Listen } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -11,6 +11,29 @@ polyfill();
 export class OpenForgeApp {
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
+  registration: ServiceWorkerRegistration;
+
+  @Listen('swUpdate', { target: 'window' })
+  async onSWUpdate() {
+    this.registration = await navigator.serviceWorker.getRegistration();
+    if (this.registration && this.registration.waiting) {
+      this.showToast();
+    }
+  }
+
+  showToast() {
+    const toastDiv = document.getElementById('toast');
+    toastDiv.className = 'show';
+    const toastButton = document.getElementById('toast-button');
+    toastButton.addEventListener('click', () => this.closeAndReload());
+  }
+
+  closeAndReload() {
+    if (this.registration && this.registration.waiting) {
+      this.registration.waiting.postMessage('skipWaiting');
+    }
+    window.location.reload();
+  }
 
   componentDidLoad() {
     try {
