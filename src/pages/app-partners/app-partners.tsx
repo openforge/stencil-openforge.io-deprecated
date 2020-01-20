@@ -60,75 +60,75 @@ export class AppPartners {
         </header>
 
         <section id="trusted-partners" class="trusted-partners">
-            <div class="row header">
-              <div class="col-12">
-                <h2>
-                  <app-translate keyword="partners.trusted.title" />
-                </h2>
-              </div>
- 
+          <div class="row header">
+            <div class="col-12">
+              <h2>
+                <app-translate keyword="partners.trusted.title" />
+              </h2>
+            </div>
+
             <div class="col-12 text-center">
-                <div class="carousel slide" id="partnersCarousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="col-12 carousel-item-col">
-                        <img src="/assets/partners-ionic-logo-landscape.png" class="img-fluid" />
-                        <p>
-                          <app-translate keyword="partners.trusted.ionic" />
-                        </p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="col-12 carousel-item-col">
-                        <img src="/assets/partners-1776-logo.png" class="img-fluid" />
-                        <p>
-                          <app-translate keyword="partners.trusted.t1776" />
-                        </p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="col-12 carousel-item-col">
-                        <img src="/assets/partners-strapi-logo.png" class="img-fluid" />
-                        <p>
-                          <app-translate keyword="partners.trusted.strapi" />
-                        </p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="col-12 carousel-item-col">
-                        <img src="/assets/partners-215-logo.png" class="img-fluid" />
-                        <p>
-                          <app-translate keyword="partners.trusted.t215Marketing" />
-                        </p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="col-12 carousel-item-col">
-                        <img src="/assets/partners-financial-gps-logo.png" class="img-fluid" />
-                        <p>
-                          <app-translate keyword="partners.trusted.finantialGPS" />
-                        </p>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="col-12 carousel-item-col">
-                        <img src="/assets/partners-drexel-logo.png" class="img-fluid" />
-                        <p>
-                          <app-translate keyword="partners.trusted.drexel" />
-                        </p>
-                      </div>
+              <div class="carousel slide" id="partnersCarousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="col-12 carousel-item-col">
+                      <app-img src="/assets/partners-ionic-logo-landscape.png" />
+                      <p>
+                        <app-translate keyword="partners.trusted.ionic" />
+                      </p>
                     </div>
                   </div>
-                  <ol class="carousel-indicators">
-                    <li data-target="#partnersCarousel" data-slide-to="0" class="active" />
-                    <li data-target="#partnersCarousel" data-slide-to="1" />
-                    <li data-target="#partnersCarousel" data-slide-to="2" />
-                    <li data-target="#partnersCarousel" data-slide-to="3" />
-                    <li data-target="#partnersCarousel" data-slide-to="4" />
-                    <li data-target="#partnersCarousel" data-slide-to="5" />
-                  </ol>
+                  <div class="carousel-item">
+                    <div class="col-12 carousel-item-col">
+                      <app-img src="/assets/partners-1776-logo.png" />
+                      <p>
+                        <app-translate keyword="partners.trusted.t1776" />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-12 carousel-item-col">
+                      <app-img src="/assets/partners-strapi-logo.png" />
+                      <p>
+                        <app-translate keyword="partners.trusted.strapi" />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-12 carousel-item-col">
+                      <app-img src="/assets/partners-215-logo.png" />
+                      <p>
+                        <app-translate keyword="partners.trusted.t215Marketing" />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-12 carousel-item-col">
+                      <app-img src="/assets/partners-financial-gps-logo.png" />
+                      <p>
+                        <app-translate keyword="partners.trusted.finantialGPS" />
+                      </p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-12 carousel-item-col">
+                      <app-img src="/assets/partners-drexel-logo.png" />
+                      <p>
+                        <app-translate keyword="partners.trusted.drexel" />
+                      </p>
+                    </div>
+                  </div>
                 </div>
+                <ol class="carousel-indicators">
+                  <li data-target="#partnersCarousel" data-slide-to="0" class="active" />
+                  <li data-target="#partnersCarousel" data-slide-to="1" />
+                  <li data-target="#partnersCarousel" data-slide-to="2" />
+                  <li data-target="#partnersCarousel" data-slide-to="3" />
+                  <li data-target="#partnersCarousel" data-slide-to="4" />
+                  <li data-target="#partnersCarousel" data-slide-to="5" />
+                </ol>
               </div>
+            </div>
             <div class="row carousel-arrows">
               <a class="col-6 left carousel-control" href="#partnersCarousel" data-slide="prev">
                 <i class="fa fa-chevron-left" />
