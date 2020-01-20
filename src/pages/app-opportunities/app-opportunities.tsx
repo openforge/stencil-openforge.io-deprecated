@@ -329,13 +329,19 @@ export class AppOpportunities {
 
   scrollToForm() {
     const form = document.getElementById('interviews');
-
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   scrollToApply() {
-    const form = document.getElementById('applyForm');
-    form.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    const element = document.getElementById('applyForm');
+    const headerOffset = 30;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
   }
 
   changeMetadata() {
