@@ -153,12 +153,6 @@ export class AppNavHeader {
           </div>
         </nav>
         <app-search-results onClose={ev => this.toogleSearch('hidden', ev.detail.pageChanged)} />
-        <div id="toast">
-          <app-translate keyword="home.newversion" />
-          <button id="toast-button">
-            <app-translate keyword="home.reload" />
-          </button>
-        </div>
       </div>
     );
   }

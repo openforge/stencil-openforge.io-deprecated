@@ -11,26 +11,13 @@ polyfill();
 export class OpenForgeApp {
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
-  registration: ServiceWorkerRegistration;
 
   @Listen('swUpdate', { target: 'window' })
   async onSWUpdate() {
-    this.registration = await navigator.serviceWorker.getRegistration();
-    if (this.registration && this.registration.waiting) {
-      this.showToast();
-    }
-  }
-
-  showToast() {
-    const toastDiv = document.getElementById('toast');
-    toastDiv.className = 'show';
-    const toastButton = document.getElementById('toast-button');
-    toastButton.addEventListener('click', () => this.closeAndReload());
-  }
-
-  closeAndReload() {
-    if (this.registration && this.registration.waiting) {
-      this.registration.waiting.postMessage('skipWaiting');
+    const registration = await navigator.serviceWorker.getRegistration();
+    console.log(registration);
+    if (registration && registration.waiting) {
+      registration.waiting.postMessage('skipWaiting');
     }
     window.location.reload();
   }

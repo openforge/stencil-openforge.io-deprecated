@@ -1,8 +1,6 @@
 export const translations = {
   translation: {
     home: {
-      newversion: 'New version available...',
-      reload: 'Reload',
       hero: {
         title: 'Mobile Solutions',
         subTitle: 'For A Digital World',
