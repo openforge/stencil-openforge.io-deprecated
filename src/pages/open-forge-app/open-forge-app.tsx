@@ -15,10 +15,12 @@ export class OpenForgeApp {
   @Listen('swUpdate', { target: 'window' })
   async onSWUpdate() {
     const registration = await navigator.serviceWorker.getRegistration();
-    console.log(registration);
-    if (registration && registration.waiting) {
-      registration.waiting.postMessage('skipWaiting');
+
+    if (!registration || !registration.waiting) {
+      return;
     }
+
+    registration.waiting.postMessage('skipWaiting');
     window.location.reload();
   }
 
