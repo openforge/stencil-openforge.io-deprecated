@@ -103,7 +103,7 @@
           }
 
           @include media-breakpoint-down(sm) {
-            position: initial;
+            position: absolute;
             right: initial;
           }
         }
@@ -193,7 +193,7 @@
       @include media-breakpoint-down(sm) {
         display: flex;
         justify-content: space-evenly;
-        margin-top: 140px;
+        margin-top: 30rem;
       }
 
       a {
@@ -387,6 +387,13 @@
       }
 
       .more-project-single {
+        @include media-breakpoint-down(sm) {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+
         p {
           color: $gray-dark;
           font-family: 'Muli';
