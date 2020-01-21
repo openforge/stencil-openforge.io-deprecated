@@ -195,6 +195,18 @@
         justify-content: space-evenly;
         margin-top: 140px;
       }
+
+      a {
+        margin-right: 30px;
+
+        @include media-breakpoint-down(md) {
+          margin-right: 20px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin-right: 10px;
+        }
+      }
     }
   }
 
