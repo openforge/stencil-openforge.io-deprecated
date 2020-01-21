@@ -53,7 +53,7 @@ export class AppFooter {
 
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <p class="copyright">&copy; OpenForge 2019 v2.5.0</p>
+              <p class="copyright">&copy; OpenForge 2019 v2.5.1</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 order-first order-md-2 social">
               <p class="follow">
