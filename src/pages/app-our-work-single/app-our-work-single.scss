@@ -417,6 +417,10 @@
             width: 150px;
             height: 300px;
 
+            @include media-breakpoint-down(sm) {
+              margin-right: 70px;
+            }
+
             &:last-child {
               position: absolute;
               top: 50px;
