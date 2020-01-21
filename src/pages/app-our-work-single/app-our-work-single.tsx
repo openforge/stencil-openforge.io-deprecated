@@ -156,7 +156,7 @@ export class AppOurWorkSingle {
           </div>
           <p class="d-none d-md-block">{project.header.title}</p>
           <div class="other-button">
-            <stencil-route-link url={`/our-work-single/${project.key}`} exact={true}>
+            <stencil-route-link url={`/our-work/${project.key}`} exact={true}>
               <button>
                 <app-translate keyword="ourWork.cards.button" />
               </button>
