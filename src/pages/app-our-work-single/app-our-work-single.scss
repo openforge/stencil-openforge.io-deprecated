@@ -10,6 +10,14 @@
     display: flex;
     justify-content: center;
 
+    app-img {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
     .logo {
       height: 260px;
       width: 260px;
