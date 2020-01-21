@@ -10,22 +10,18 @@
     display: flex;
     justify-content: center;
 
-    img {
-      width: 100%;
+    .logo {
+      height: 260px;
+      width: 260px;
 
-      &.logo {
-        height: 260px;
-        width: 260px;
+      @include media-breakpoint-down(md) {
+        height: 145px;
+        width: 145px;
+      }
 
-        @include media-breakpoint-down(md) {
-          height: 145px;
-          width: 145px;
-        }
-
-        @include media-breakpoint-down(sm) {
-          height: 200px;
-          width: 200px;
-        }
+      @include media-breakpoint-down(sm) {
+        height: 200px;
+        width: 200px;
       }
     }
 
@@ -82,7 +78,7 @@
     .images-col {
       position: relative;
 
-      img {
+      app-img {
         width: 250px;
         height: 500px;
 
@@ -131,6 +127,7 @@
         }
       }
     }
+
     h2 {
       color: $gray-dark;
       font-family: 'Muli';
@@ -145,8 +142,11 @@
       }
 
       @include media-breakpoint-down(sm) {
+        line-height: normal;
+        margin-bottom: 2rem;
+        margin-left: 25px;
         text-align: left;
-        padding: 0 28px;
+        width: 70%;
       }
 
       @include media-breakpoint-down(xs) {
@@ -174,7 +174,7 @@
     .project-content-icons {
       @include media-breakpoint-down(sm) {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         margin-top: 60px;
       }
 
@@ -182,7 +182,7 @@
         margin: 10px 40px 10px 0;
 
         @include media-breakpoint-down(sm) {
-          margin: 10px 20px 10px 0;
+          margin: 0 10px;
         }
       }
     }
@@ -192,12 +192,20 @@
 
       @include media-breakpoint-down(sm) {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         margin-top: 140px;
       }
 
       a {
-        margin: 10px 20px 10px 0;
+        margin-right: 30px;
+
+        @include media-breakpoint-down(md) {
+          margin-right: 20px;
+        }
+
+        @include media-breakpoint-down(sm) {
+          margin-right: 10px;
+        }
       }
     }
   }
@@ -397,6 +405,7 @@
 
         .images-col {
           position: relative;
+
           img {
             width: 150px;
             height: 300px;

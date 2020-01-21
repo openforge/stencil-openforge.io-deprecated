@@ -302,6 +302,16 @@
       position: relative;
       max-width: 330px;
 
+      .row {
+        @include media-breakpoint-down(md) {
+          max-width: 100%;
+        }
+
+        @include media-breakpoint-down(sm) {
+          max-width: initial;
+        }
+      }
+
       h2 {
         color: white;
         font-size: 28px;
@@ -311,46 +321,55 @@
       }
 
       .behind-left {
-        position: relative;
-        height: 350px;
-        left: -60px;
-        top: 30px;
+        z-index: 0;
+        img {
+          position: relative;
+          height: 350px;
+          left: -60px;
+          top: 30px;
 
-        @include media-breakpoint-down(md) {
-          left: 60px;
-        }
+          @include media-breakpoint-down(md) {
+            left: 60px;
+          }
 
-        @include media-breakpoint-down(sm) {
-          display: none;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
         }
       }
 
       .behind-right {
-        position: relative;
-        height: 350px;
-        right: -60px;
-        top: 30px;
+        z-index: 0;
+        img {
+          position: relative;
+          height: 350px;
+          right: -60px;
+          top: 30px;
 
-        @include media-breakpoint-down(md) {
-          right: 0;
-        }
+          @include media-breakpoint-down(md) {
+            right: 0;
+          }
 
-        @include media-breakpoint-down(sm) {
-          display: none;
+          @include media-breakpoint-down(sm) {
+            display: none;
+          }
         }
       }
 
       .front-center {
-        position: absolute;
-        height: 400px;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
         z-index: 1;
+        img {
+          position: absolute;
+          height: 400px;
+          left: 0;
+          right: 0;
+          margin-left: auto;
+          margin-right: auto;
+          z-index: 1;
 
-        @include media-breakpoint-down(sm) {
-          position: relative;
+          @include media-breakpoint-down(sm) {
+            position: relative;
+          }
         }
       }
 

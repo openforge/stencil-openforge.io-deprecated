@@ -22,8 +22,11 @@
         background-size: contain;
         margin-top: 0;
         padding-top: 60px;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-header-animated.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -43,8 +46,11 @@
         margin-top: 0;
         padding-top: 50px;
         background-position: bottom;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -64,8 +70,11 @@
         margin-top: 0;
         padding-top: 50px;
         background-position: bottom;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -85,8 +94,11 @@
         margin-top: 0;
         padding-top: 50px;
         background-position: bottom;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-dev-design.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -106,8 +118,11 @@
         margin-top: 0;
         padding-top: 50px;
         background-position: bottom;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-transition-design-dev.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -127,8 +142,11 @@
         margin-top: 0;
         background-position: bottom;
         padding-top: 50px;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-dev-active.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 
@@ -148,8 +166,12 @@
         margin-top: 0;
         padding-top: 50px;
         background-position: bottom;
-        height: 100vh;
+        height: 110vh;
         background-image: url('/assets/opportunities/opportunities-mobile-design-active.svg');
+      }
+
+      @media (max-height: 640px) {
+        height: 120vh;
       }
     }
 

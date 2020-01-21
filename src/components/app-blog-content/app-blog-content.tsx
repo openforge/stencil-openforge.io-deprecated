@@ -81,15 +81,11 @@ export class AppBlogContent {
             <div>
               <div class="header--author">
                 <div class="author-img-container">
-                  <img class="d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
+                  <app-img class="d-none d-md-block" src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
                   <div>
                     By &nbsp;
-                    {this.blogPost.author.slug === 'jedidiah-weller' ? (
-                      <a href="http://www.twitter.com/jedihacks" target="_blank" rel="noopener">{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</a>
-                    ) : (
-                      <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                    )}{' '}
-                    on {formatDate(publishDate)}
+                    <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
+                    &nbsp; on {formatDate(publishDate)}
                   </div>
                 </div>
                 <div class="d-none d-md-block d-lg-none contact-icons-top" id="contact-icons-top">
@@ -97,7 +93,7 @@ export class AppBlogContent {
                 </div>
               </div>
             </div>
-            <img class="header--main-image" src={this.blogPost.featured_image} alt={this.blogPost.title} />
+            <app-img class="header--main-image" src={this.blogPost.featured_image} alt={this.blogPost.title} />
           </div>
           <div class="col-md-1 col-lg-2" />
         </div>
@@ -125,7 +121,7 @@ export class AppBlogContent {
           <div class="row">
             <div class="col-md-3 col-lg-2 offset-md-1 offset-lg-2 blog-content-author-image">
               <h5>About the Author</h5>
-              <img src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
+              <app-img src={this.blogPost.author.profile_image} alt={`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`} />
             </div>
             <div class="col-md-7 col-lg-6 blog-content-author-text">
               <h5>About the Author</h5>

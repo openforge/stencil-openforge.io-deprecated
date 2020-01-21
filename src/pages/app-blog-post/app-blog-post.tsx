@@ -161,7 +161,7 @@ export class AppBlogPost {
           <div class="col-lg-12 col-md-4 col-sm-12">
             <div class="blog-card-image">
               <stencil-route-link url={`/blog/${post.slug}`}>
-                <img src={post.featured_image} alt={post.title} />
+                <app-img src={post.featured_image} alt={post.title} />
               </stencil-route-link>
             </div>
             <div class="blog-next-posts-title">
