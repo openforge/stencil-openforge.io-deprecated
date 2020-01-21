@@ -20,7 +20,7 @@ export class OpenForgeApp {
       return;
     }
 
-    registration.waiting.postMessage({ data: { type: 'SKIP_WAITING' } });
+    registration.waiting.postMessage({ data: 'skipWaiting' });
     window.location.reload();
   }
 
