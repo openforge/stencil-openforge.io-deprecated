@@ -309,6 +309,8 @@
 
         @include media-breakpoint-down(sm) {
           max-width: initial;
+          text-align: center;
+          display: block;
         }
       }
 
@@ -369,6 +371,7 @@
 
           @include media-breakpoint-down(sm) {
             position: relative;
+            margin: 0;
           }
         }
       }
