@@ -148,15 +148,15 @@ export class AppOurWorkSingle {
           </div>
           <div class="store-buttons">
             <a href={project.content.appleStore} target="_blank" rel="noopener">
-              <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+              <app-img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
             </a>
             <a href={project.content.googlePlay} target="_blank" rel="noopener">
-              <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+              <app-img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
             </a>
           </div>
           <p class="d-none d-md-block">{project.header.title}</p>
           <div class="other-button">
-            <stencil-route-link url={`/our-work-single/${project.key}`} exact={true}>
+            <stencil-route-link url={`/our-work/${project.key}`} exact={true}>
               <button>
                 <app-translate keyword="ourWork.cards.button" />
               </button>
@@ -171,34 +171,34 @@ export class AppOurWorkSingle {
     return (
       <div class="our-work-single">
         <header>
-          <img class="d-none d-md-block" src={this.projects[this.match.params.project].header.background} />
-          <img class="d-md-none" src={this.projects[this.match.params.project].header.backgroundMobile} />
+          <app-img class="d-none d-md-block" src={this.projects[this.match.params.project].header.background} />
+          <app-img class="d-md-none" src={this.projects[this.match.params.project].header.backgroundMobile} />
           <div class="header-content">
             <h1>{this.projects[this.match.params.project].header.title}</h1>
             <p>{this.projects[this.match.params.project].header.text}</p>
-            <img class="logo" src={this.projects[this.match.params.project].header.logo} />
+            <app-img class="logo" src={this.projects[this.match.params.project].header.logo} />
           </div>
         </header>
         <section class="container project-content">
           <div class="d-none d-md-flex row">
             <div class="col-md-4 col-lg-6 images-col">
-              <img src={this.projects[this.match.params.project].content.image1} />
-              <img src={this.projects[this.match.params.project].content.image2} />
+              <app-img src={this.projects[this.match.params.project].content.image1} />
+              <app-img src={this.projects[this.match.params.project].content.image2} />
             </div>
             <div class="col-md-8 col-lg-6">
               <h2>{this.projects[this.match.params.project].content.title}</h2>
               <p innerHTML={this.projects[this.match.params.project].content.text} />
               <div class="project-content-icons">
-                <img src={this.projects[this.match.params.project].content.icon1} />
-                <img src={this.projects[this.match.params.project].content.icon2} />
-                <img src={this.projects[this.match.params.project].content.icon3} />
+                <app-img src={this.projects[this.match.params.project].content.icon1} />
+                <app-img src={this.projects[this.match.params.project].content.icon2} />
+                <app-img src={this.projects[this.match.params.project].content.icon3} />
               </div>
               <div class="store-buttons">
                 <a href={this.projects[this.match.params.project].content.appleStore} target="_blank" rel="noopener">
-                  <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                  <app-img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                 </a>
                 <a href={this.projects[this.match.params.project].content.googlePlay} target="_blank" rel="noopener">
-                  <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                  <app-img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                 </a>
               </div>
             </div>
@@ -206,21 +206,21 @@ export class AppOurWorkSingle {
           <div class="d-md-none container">
             <h2>{this.projects[this.match.params.project].content.title}</h2>
             <div class="images-col">
-              <img src={this.projects[this.match.params.project].content.image1} />
-              <img src={this.projects[this.match.params.project].content.image2} />
+              <app-img src={this.projects[this.match.params.project].content.image1} />
+              <app-img src={this.projects[this.match.params.project].content.image2} />
             </div>
             <div class="store-buttons">
               <a href={this.projects[this.match.params.project].content.appleStore} target="_blank" rel="noopener">
-                <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                <app-img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
               </a>
               <a href={this.projects[this.match.params.project].content.googlePlay} target="_blank" rel="noopener">
-                <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                <app-img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
               </a>
             </div>
             <div class="project-content-icons">
-              <img src={this.projects[this.match.params.project].content.icon1} />
-              <img src={this.projects[this.match.params.project].content.icon2} />
-              <img src={this.projects[this.match.params.project].content.icon3} />
+              <app-img src={this.projects[this.match.params.project].content.icon1} />
+              <app-img src={this.projects[this.match.params.project].content.icon2} />
+              <app-img src={this.projects[this.match.params.project].content.icon3} />
             </div>
             <p innerHTML={this.projects[this.match.params.project].content.text} />
           </div>
@@ -236,9 +236,9 @@ export class AppOurWorkSingle {
               voyage: this.match.params.project === 'voyage' ? true : false,
             }}
           >
-            <img src={this.projects[this.match.params.project].features.image1} />
-            <img src={this.projects[this.match.params.project].features.image2} />
-            <img src={this.projects[this.match.params.project].features.image3} />
+            <app-img src={this.projects[this.match.params.project].features.image1} />
+            <app-img src={this.projects[this.match.params.project].features.image2} />
+            <app-img src={this.projects[this.match.params.project].features.image3} />
           </div>
           <div
             class={{
@@ -255,17 +255,17 @@ export class AppOurWorkSingle {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="carousel-item-col">
-                      <img src={this.projects[this.match.params.project].features.image1} />
+                      <app-img src={this.projects[this.match.params.project].features.image1} />
                     </div>
                   </div>
                   <div class="carousel-item">
                     <div class="carousel-item-col">
-                      <img src={this.projects[this.match.params.project].features.image2} />
+                      <app-img src={this.projects[this.match.params.project].features.image2} />
                     </div>
                   </div>
                   <div class="carousel-item">
                     <div class="carousel-item-col">
-                      <img src={this.projects[this.match.params.project].features.image3} />
+                      <app-img src={this.projects[this.match.params.project].features.image3} />
                     </div>
                   </div>
                 </div>

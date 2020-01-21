@@ -73,7 +73,7 @@ export class AppNavHeader {
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
               <ul class="navbar-nav">
                 <li class="nav-item" data-target="#navbarSupportedContent">
-                  <stencil-route-link url="/our-work" exact={true} anchorClass="nav-link" activeClass="active">
+                  <stencil-route-link url="/our-work" anchorClass="nav-link" activeClass="active">
                     {translate('nav.links.ourWork')}
                   </stencil-route-link>
                 </li>
