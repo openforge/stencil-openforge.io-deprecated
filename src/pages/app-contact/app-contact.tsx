@@ -121,7 +121,7 @@ export class AppContact {
 
   render() {
     return (
-      <div class="contact">
+      <div id="contentStart" class="contact">
         <section id="second-content" class="contact-form">
           <div class="container">
             {!this.formSubmitted ? (

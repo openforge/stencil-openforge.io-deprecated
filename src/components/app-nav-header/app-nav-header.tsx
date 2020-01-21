@@ -49,6 +49,9 @@ export class AppNavHeader {
     return (
       <div>
         <nav class="navbar navbar-expand-lg align-items-lg-end fixed-top navbar-light">
+          <a class="skip-navigation" href="#contentStart">
+            Skip Navigation
+          </a>
           <div class="container">
             <div class="navbar-brand">
               <stencil-route-link tabindex="0" url="/" exact={true} anchorClass="nav-link" activeClass="active">
@@ -72,7 +75,7 @@ export class AppNavHeader {
 
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
               <ul class="navbar-nav">
-                <li class="nav-item" data-target="#navbarSupportedContent">
+                <li class="nav-item" data-target="#navbarSupportedContent" id="main-content">
                   <stencil-route-link url="/our-work" exact={true} anchorClass="nav-link" activeClass="active">
                     {translate('nav.links.ourWork')}
                   </stencil-route-link>

@@ -23,7 +23,7 @@ export class AppAbout {
     return (
       <div class="about">
         <div class="container-fluid">
-          <div class="row align-items-center hero">
+          <div class="row align-items-center hero" id="contentStart">
             <div class="col-12 col-md-11 offset-md-1">
               <h1>
                 <app-translate class="d-none d-md-block" keyword="about.header.title" />

@@ -7,7 +7,7 @@ import { Component, h } from '@stencil/core';
 export class AppOurWork {
   render() {
     return (
-      <div class="our-work">
+      <div id="contentStart" class="our-work">
         <header>
           <section class="container">
             <h1>

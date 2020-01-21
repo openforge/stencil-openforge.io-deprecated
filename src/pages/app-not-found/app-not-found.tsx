@@ -21,7 +21,7 @@ export class AppNotFound {
 
   render() {
     return (
-      <div class="not-found">
+      <div id="contentStart" class="not-found">
         <section class="main">
           <app-img class="robot robot-body" src="/assets/svg/not-found-robot-body.svg" alt="robot body" />
           <app-img class="robot robot-arms" src="/assets/svg/not-found-robot-arms.svg" alt="robot arms" />

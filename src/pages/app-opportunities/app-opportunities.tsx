@@ -361,7 +361,7 @@ export class AppOpportunities {
 
   render() {
     return (
-      <div class="opportunities">
+      <div id="contentStart" class="opportunities">
         {!this.canRequestInterview ? (
           // Header for initial state
           <header

@@ -26,7 +26,7 @@ export class AppServiceLevelAgreement {
 
   render() {
     return (
-      <div class="service-level-agreement">
+      <div id="contentStart" class="service-level-agreement">
         <header id="contentStart" class={this.className}>
           <div class="overlay" />
           <div class="container">

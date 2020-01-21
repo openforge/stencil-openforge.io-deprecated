@@ -140,7 +140,7 @@ export class AppOurWorkSingle {
     const otherProjects = projects.filter(proyect => proyect.id !== this.projects[this.match.params.project].id);
     return otherProjects.map(project => {
       return (
-        <div class="more-project-single">
+        <div id="contentStart" class="more-project-single">
           <p class="d-sm-block d-md-none sm">{project.header.title}</p>
           <div class="images-col">
             <img src={project.otherProjectImgs.image1} />

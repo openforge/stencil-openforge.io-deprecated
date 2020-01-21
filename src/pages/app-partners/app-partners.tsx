@@ -36,7 +36,7 @@ export class AppPartners {
 
   render() {
     return (
-      <div class="partners">
+      <div id="contentStart" class="partners">
         {/* header - hero */}
         <header class="hero">
           <div class="container">
