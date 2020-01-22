@@ -1,23 +1,23 @@
 describe('Home Page', function () {
-  var env = 'http://localhost:3333';
+  var env = 'http://localhost:3335';
   beforeEach(() => {
     cy.visit(env)
   })
 
-  describe('Home Page', function() {
+  describe('Home Page', function () {
     describe('Navigation', function () {
       beforeEach(() => {
         cy.get('nav').as('navBar')
       })
       describe('Navigation from urls', function () {
         it('Should navigate to openforge.io/', function () {
-          cy.visit('localhost:3333/')
+          cy.visit('localhost:3335/')
         })
         it('Should navigate to openforge.io/contact', function () {
-          cy.visit('localhost:3333/contact')
+          cy.visit('localhost:3335/contact')
         })
         it('Should navigate to openforge.io/about', function () {
-          cy.visit('localhost:3333/about')
+          cy.visit('localhost:3335/about')
         })
       })
     })
@@ -32,7 +32,7 @@ describe('Home Page', function () {
       describe('Burger menu', function () {
         const lgSizes = ['macbook-15', 'macbook-13', 'macbook-11'];
         const mdSizes = ['ipad-2', 'ipad-mini'];
-        const smSizes = ['iphone-6+', 'iphone-6', 'iphone-5', 'iphone-4'];
+        const smSizes = ['iphone-xr', 'iphone-x', 'iphone-6+', 'iphone-6', 'iphone-5', 'iphone-4'];
 
         beforeEach(() => {
           cy.get('[data-cy=burgerMenu]').as('burgerMenu');
@@ -64,128 +64,115 @@ describe('Home Page', function () {
         })
       })
       describe('Nav bar options', function () {
-        it('Should have 5 navigation options', function () {
-          cy.get('a.nav-link').should('have.length', 5)
+        beforeEach(() => {
+          cy.get('nav').as('navBar');
         })
-        it('Home should exist and be visible in the nav bar', function () {
-          cy.get('@navBar')
-            .contains('Home')
+        it('Should have 9 navigation options (some are commented out)', function () {
+          cy.get('a.nav-link').should('have.length', 9)
+        })
+        it('Our Work should exist and be visible in the nav bar', function () {
+          cy.get('nav')
+            .contains('Our Work')
             .should('exist')
             .and('be.visible')
         })
         it('About should exist and be visible in the nav bar', function () {
-          cy.get('@navBar')
+          cy.get('nav')
             .contains('About')
             .should('exist')
             .and('be.visible')
         })
-        it('Services should exist and be visible in the nav bar', function () {
-          cy.get('@navBar')
-            .contains('Services')
+        it('Resources should exist and be visible in the nav bar', function () {
+          cy.get('nav')
+            .contains('Resources')
             .should('exist')
             .and('be.visible')
         })
-        it('Contact should exist and be visible in the nav bar', function () {
-          cy.get('@navBar')
-            .contains('Contact')
+        it('Work With Us should exist and be visible in the nav bar', function () {
+          cy.get('nav')
+            .contains('Work With Us')
             .should('exist')
             .and('be.visible')
-        })
-        it('Blog should exist and be visible in the nav bar', function () {
-          cy.get('@navBar')
-            .contains('Blog')
-            .should('exist')
-            .and('be.visible')
-        })
-      })
-      describe('Should have the correct href attributes for the navigation options', function () {
-        beforeEach(() => {
-          cy.get('stencil-route-link').as('route')
-        })
-        it('Contact link', function () {
-          cy.get('@route').contains('Contact')
-            .and('have.attr', 'href')
-            .and('match', /contact/)
         })
       })
     })
-    it('Should have a tags for VanLife project that navigate to the Apple Store and Google Play Store', function() {
+    it('Should have a tags for Mobile Measures project that navigate to the Apple Store and Google Play Store', function () {
       // Apple
-      cy.get('[data-cy=vanlife-apple]')
-      .should('have.attr', 'href')
-       .and('contain', 'itunes.apple.com')
-        .and('contain', 'the-vanlife-app')
+      cy.get('[data-cy=mobilemeasures-apple]')
+        .should('have.attr', 'href')
+        .and('contain', 'apps.apple.com')
+        .and('contain', 'mobile-measures')
 
       // Google
-      cy.get('[data-cy=vanlife-google]')
+      cy.get('[data-cy=mobilemeasures-google]')
         .should('have.attr', 'href')
-          .and('contain', 'play.google.com')
-          .and('contain', 'thevanlifeapp')
+        .and('contain', 'play.google.com')
+        .and('contain', 'mobilemeasures')
     })
 
-    it('Should have a tags for LoudCloud that navigate to the Apple Store and Google Play Store', function(){
+    it('Should have a tags for LoudCloud that navigate to the Apple Store and Google Play Store', function () {
       cy.get('[data-cy=loudcloud-apple]')
-      .should('have.attr', 'href')
+        .should('have.attr', 'href')
         .and('contain', 'itunes.apple.com')
         .and('contain', 'loudcloud')
 
       cy.get('[data-cy=loudcloud-google]')
-      .should('have.attr', 'href')
+        .should('have.attr', 'href')
         .and('contain', 'play.google.com')
         .and('contain', 'loudcloud')
     });
 
-    it('Should have a tags for Voyage that navigate to the Apple Store and Google Play Store', function() {
+    it('Should have a tags for Voyage that navigate to the Apple Store and Google Play Store', function () {
       cy.get('[data-cy=voyage-apple]')
-      .should('have.attr', 'href')
+        .should('have.attr', 'href')
         .and('contain', 'itunes.apple.com')
         .and('contain', 'the-voyage')
 
       cy.get('[data-cy=voyage-google]')
-      .should('have.attr', 'href')
+        .should('have.attr', 'href')
         .and('contain', 'play.google.com')
         .and('contain', 'carecaminnovations')
     });
 
     describe('Process Section', function () {
-      it('Should scroll to the process section', function() {
+      it('Should scroll to the process section', function () {
         cy.get('#process').scrollIntoView()
       })
-      it('Should have carousel components and activeIndex prop to change', function() {
+      it('Should have carousel components and activeIndex prop to change', function () {
         cy.get('app-carousel-indicators').should('exist')
           .and('have.prop', 'activeIndex')
       })
-      it('Active class should show on one carousel list element at a time', function(){
+      it('Active class should show on one carousel list element at a time', function () {
         cy.get('app-carousel-indicators').within(() => {
           cy.get('li').first().should('have.class', 'active');
           // Wait for carousel list el to change on the page
-          cy.wait(1000);
+          cy.wait(2000);
           cy.get('li:first').next().should('have.class', 'active');
           cy.get('li').first().should('not.have.class', 'active');
         })
       })
-      it('Process images should show in correct order', function() {
-        cy.get('app-img').each(($el, index) => {
-          switch(index) {
+      it('Process images should show in correct order', function () {
+        cy.get('[data-cy=capp-img]').each(($el, index) => {
+          switch (index) {
             case 0:
-            cy.wrap($el).should('have.prop', 'src').and('contain', 'discovery')
-            break;
+              cy.wrap($el).should('have.prop', 'src').and('contain', 'discovery')
+              break;
 
             case 1:
-            cy.wrap($el).should('have.prop', 'src').and('contain', 'design')
-            break;
+              cy.wrap($el).should('have.prop', 'src').and('contain', 'design')
+              break;
 
             case 2:
-            cy.wrap($el).should('have.prop', 'src').and('contain', 'development')
-            break;
+              cy.wrap($el).should('have.prop', 'src').and('contain', 'development')
+              break;
 
             case 3:
-            cy.wrap($el).should('have.prop', 'src').and('contain', 'deploy')
-            break;
+              cy.wrap($el).should('have.prop', 'src').and('contain', 'deploy')
+              break;
 
             case 4:
-            cy.wrap($el).should('have.prop', 'src').and('contain', 'userfeedback')
-            break;
+              cy.wrap($el).should('have.prop', 'src').and('contain', 'userfeedback')
+              break;
           }
         })
       })
