@@ -75,8 +75,9 @@ export class AppHome {
 
   async getFeaturedPost() {
     this.featuredIsLoading = true;
-    this.featuredPost = await Fetch.fetchOneBlogPost();
-    this.featuredPost1 = await Fetch.fetchOneBlogPost(1);
+    const homePosts = await Fetch.fetchHomeBlogPosts();
+    this.featuredPost = homePosts.first;
+    this.featuredPost1 = homePosts.second;
     this.featuredIsLoading = false;
   }
 
