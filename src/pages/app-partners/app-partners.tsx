@@ -15,7 +15,7 @@ export class AppPartners {
 
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function() {
+      $(document).ready(function () {
         // Force bootstrap to initialize carousel
         const partnersCarousel = $('#partnersCarousel');
         setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);
@@ -42,7 +42,7 @@ export class AppPartners {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-sm-12 col-md-5 order-md-2 d-flex justify-content-center">
-                <img src="/assets/svg/partners-graphic-header.svg" alt="Header Graphic" />
+                <img data-cy="head-image" src="/assets/svg/partners-graphic-header.svg" alt="Header Graphic" />
               </div>
               <div class="col-sm-12 col-md-7 order-md-1">
                 <h1>
@@ -72,7 +72,7 @@ export class AppPartners {
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <div class="col-12 carousel-item-col">
-                      <app-img src="/assets/partners-ionic-logo-landscape.png" />
+                      <app-img data-cy="capp-img" src="/assets/partners-ionic-logo-landscape.png" />
                       <p>
                         <app-translate keyword="partners.trusted.ionic" />
                       </p>
@@ -80,7 +80,7 @@ export class AppPartners {
                   </div>
                   <div class="carousel-item">
                     <div class="col-12 carousel-item-col">
-                      <app-img src="/assets/partners-1776-logo.png" />
+                      <app-img data-cy="capp-img" src="/assets/partners-1776-logo.png" />
                       <p>
                         <app-translate keyword="partners.trusted.t1776" />
                       </p>
@@ -88,7 +88,7 @@ export class AppPartners {
                   </div>
                   <div class="carousel-item">
                     <div class="col-12 carousel-item-col">
-                      <app-img src="/assets/partners-strapi-logo.png" />
+                      <app-img data-cy="capp-img" src="/assets/partners-strapi-logo.png" />
                       <p>
                         <app-translate keyword="partners.trusted.strapi" />
                       </p>
@@ -96,7 +96,7 @@ export class AppPartners {
                   </div>
                   <div class="carousel-item">
                     <div class="col-12 carousel-item-col">
-                      <app-img src="/assets/partners-215-logo.png" />
+                      <app-img data-cy="capp-img" src="/assets/partners-215-logo.png" />
                       <p>
                         <app-translate keyword="partners.trusted.t215Marketing" />
                       </p>
@@ -104,7 +104,7 @@ export class AppPartners {
                   </div>
                   <div class="carousel-item">
                     <div class="col-12 carousel-item-col">
-                      <app-img src="/assets/partners-financial-gps-logo.png" />
+                      <app-img data-cy="capp-img" src="/assets/partners-financial-gps-logo.png" />
                       <p>
                         <app-translate keyword="partners.trusted.finantialGPS" />
                       </p>
@@ -112,7 +112,7 @@ export class AppPartners {
                   </div>
                   <div class="carousel-item">
                     <div class="col-12 carousel-item-col">
-                      <app-img src="/assets/partners-drexel-logo.png" />
+                      <app-img data-cy="capp-img" src="/assets/partners-drexel-logo.png" />
                       <p>
                         <app-translate keyword="partners.trusted.drexel" />
                       </p>
@@ -133,7 +133,7 @@ export class AppPartners {
               <a class="col-6 left carousel-control" href="#partnersCarousel" data-slide="prev">
                 <i class="fa fa-chevron-left" />
               </a>
-              <a class="col-6 right carousel-control" href="#partnersCarousel" data-slide="next">
+              <a data-cy="right-arrow" class="col-6 right carousel-control" href="#partnersCarousel" data-slide="next">
                 <i class="fa fa-chevron-right" />
               </a>
             </div>
@@ -152,7 +152,7 @@ export class AppPartners {
                 <app-translate keyword="partners.cta.subTitle" />
               </p>
               <stencil-route-link url="/contact">
-                <button class="button">
+                <button data-cy="cta-button" class="button">
                   <app-translate keyword="partners.cta.link" />
                 </button>
               </stencil-route-link>
