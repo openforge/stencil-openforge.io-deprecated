@@ -1,5 +1,5 @@
 describe('Home Page', function () {
-  var env = 'http://localhost:3335';
+  var env = 'http://localhost:3333';
   beforeEach(() => {
     cy.visit(env)
   })
@@ -19,6 +19,13 @@ describe('Home Page', function () {
         it('Should navigate to openforge.io/about', function () {
           cy.visit('localhost:3335/about')
         })
+        it('Should navigate to openforge.io/partners', function () {
+          cy.visit('localhost:3335/partners')
+        })
+        it('Should navigate to openforge.io/blog', function () {
+          cy.visit('localhost:3335/blog')
+        })
+
       })
     })
     describe('App-nav-header', function () {

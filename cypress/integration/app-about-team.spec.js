@@ -1,5 +1,5 @@
 describe('About page team', function () {
-  var env = 'http://localhost:3335'
+  var env = 'http://localhost:3333'
   beforeEach(() => {
     cy.visit(env + '/about')
   })
