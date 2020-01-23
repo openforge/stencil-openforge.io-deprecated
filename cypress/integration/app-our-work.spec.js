@@ -36,6 +36,11 @@ describe('App Our Work', function () {
     })
   });
   describe('Our work cards', function () {
+    it('Should be able to visit the project page', () => {
+      cy.get(':nth-child(3) > .card-container > .card-content > stencil-route-link.hydrated > a > button').click()
+      cy.wait(1000)
+    })
+
     describe('Mobile Measures Card', () => {
       it('Card images should exist', () => {
         cy.viewport('macbook-15')
@@ -61,6 +66,7 @@ describe('App Our Work', function () {
           .and('contain', 'mobilemeasures')
       })
     })
+
     describe('LoudCloud Card', () => {
       it('Card images should exist', () => {
         cy.viewport('macbook-15')
@@ -74,7 +80,7 @@ describe('App Our Work', function () {
         cy.get('[data-cy=loudcloudfc]').should('have.prop', 'src').and('contain', 'loudcloud')
         cy.get('[data-cy=loudcloudbr]').should('have.prop', 'src').and('contain', 'loudcloud')
       })
-      it('Should have a tags for Mobile Measures project that navigate to the Apple Store and Google Play Store', function () {
+      it('Should have a tags for LoudCloud project that navigate to the Apple Store and Google Play Store', function () {
         cy.get('[data-cy=loudcloud-apple]')
           .should('have.attr', 'href')
           .and('contain', 'itunes.apple.com')
@@ -84,6 +90,129 @@ describe('App Our Work', function () {
           .should('have.attr', 'href')
           .and('contain', 'play.google.com')
           .and('contain', 'loudcloud')
+      })
+    })
+
+    describe('The Voyage Card', () => {
+      it('Card images should exist', () => {
+        cy.viewport('macbook-15')
+        cy.get('[data-cy=the-voyagebl]').should('exist')
+        cy.get('[data-cy=the-voyagefc]').should('exist')
+        cy.get('[data-cy=the-voyagebr]').should('exist')
+      })
+      it('Card images should be the correct one', () => {
+
+        cy.get('[data-cy=the-voyagebl]').should('have.prop', 'src').and('contain', 'voyage')
+        cy.get('[data-cy=the-voyagefc]').should('have.prop', 'src').and('contain', 'voyage')
+        cy.get('[data-cy=the-voyagebr]').should('have.prop', 'src').and('contain', 'voyage')
+      })
+      it('Should have a tags for The Voyage project that navigate to the Apple Store and Google Play Store', function () {
+        cy.get('[data-cy=voyage-apple]')
+          .should('have.attr', 'href')
+          .and('contain', 'itunes.apple.com')
+          .and('contain', 'voyage')
+
+        cy.get('[data-cy=voyage-google]')
+          .should('have.attr', 'href')
+          .and('contain', 'play.google.com')
+          .and('contain', 'carecaminnovations')
+      })
+    })
+
+    describe('Worked With', () => {
+      it('Worked with section should exist', () => {
+        cy.get('#worked-with').should('exist')
+        cy.get('#worked-with').scrollIntoView()
+      })
+
+      describe('Partners Logos', () => {
+        it('ic3401 logo should exist', () => {
+          cy.get('[data-cy=ic-3401-logo]')
+            .should('exist')
+        })
+
+        it('ic3401 logo should show the correct image', () => {
+          cy.get('[data-cy=ic-3401-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'ic3401')
+        })
+
+        it('omnifan logo should exist', () => {
+          cy.get('[data-cy=omnifan-logo]')
+            .should('exist')
+        })
+
+        it('omnifan logo should show the correct image', () => {
+          cy.get('[data-cy=omnifan-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'omnifan')
+        })
+
+        it('Mobile Measures logo should exist', () => {
+          cy.get('[data-cy=mobile-measures-logo]')
+            .should('exist')
+        })
+
+        it('Mobile Measures logo should show the correct image', () => {
+          cy.get('[data-cy=mobile-measures-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'mobilemeasures')
+        })
+
+        it('Kemin logo should exist', () => {
+          cy.get('[data-cy=kemin-logo]')
+            .should('exist')
+        })
+
+        it('Kemin logo should show the correct image', () => {
+          cy.get('[data-cy=kemin-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'kemin')
+        })
+
+        it('Ocean Health logo should exist', () => {
+          cy.get('[data-cy=ocean-health-logo]')
+            .should('exist')
+        })
+
+        it('Ocean Health logo should show the correct image', () => {
+          cy.get('[data-cy=ocean-health-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'ocean')
+        })
+
+        it('GoMerchan logo should exist', () => {
+          cy.get('[data-cy=gomerchang-logo]')
+            .should('exist')
+        })
+
+        it('GoMerchan logo should show the correct image', () => {
+          cy.get('[data-cy=gomerchang-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'gomerchant')
+        })
+
+        it('Ngatl logo should exist', () => {
+          cy.get('[data-cy=ngatl-logo]')
+            .should('exist')
+        })
+
+        it('Ngatl logo should show the correct image', () => {
+          cy.get('[data-cy=ngatl-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'ngatl')
+        })
+
+        it('LoudCloud logo should exist', () => {
+          cy.get('[data-cy=loud-cloud-logo]')
+            .should('exist')
+        })
+
+        it('LoudCloud logo should show the correct image', () => {
+          cy.get('[data-cy=loud-cloud-logo]')
+            .should('have.prop', 'src')
+            .and('contain', 'loudcloud')
+        })
       })
     })
   })
