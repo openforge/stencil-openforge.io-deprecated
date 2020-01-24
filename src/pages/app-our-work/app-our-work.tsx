@@ -22,9 +22,9 @@ export class AppOurWork {
           <div class="card-container">
             <div class="card-image mobilemeasures">
               <div class="row card-image-row">
-                <app-img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobile measures app screenshot" />
-                <app-img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobile measures app screenshot" />
-                <app-img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobile measures app screenshot" />
+                <app-img src="/assets/apps/mobilemeasures/graphic-example-1.webp" class="behind-left" alt="mobile measures app screenshot" />
+                <app-img src="/assets/apps/mobilemeasures/graphic-example-2.webp" class="front-center" alt="mobile measures app screenshot" />
+                <app-img src="/assets/apps/mobilemeasures/graphic-example-3.webp" class="behind-right" alt="mobile measures app screenshot" />
               </div>
               <div class="store-buttons">
                 <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="mobilemeasures-apple">
@@ -54,9 +54,9 @@ export class AppOurWork {
           <div class="card-container">
             <div class="card-image loudcloud">
               <div class="row card-image-row">
-                <app-img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
-                <app-img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
-                <app-img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
+                <app-img src="/assets/apps/loudcloud/graphic-example-1.webp" class="behind-left" alt="loudcloud app screenshot" />
+                <app-img src="/assets/apps/loudcloud/graphic-example-2.webp" class="front-center" alt="loudcloud app screenshot" />
+                <app-img src="/assets/apps/loudcloud/graphic-example-3.webp" class="behind-right" alt="loudcloud app screenshot" />
               </div>
               <div class="store-buttons">
                 <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener" data-cy="loudcloud-apple">
@@ -86,9 +86,9 @@ export class AppOurWork {
           <div class="card-container">
             <div class="card-image voyage">
               <div class="row card-image-row">
-                <app-img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
-                <app-img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
-                <app-img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
+                <app-img src="/assets/apps/voyage/graphic-example-1.webp" class="behind-left" alt="voyage app screenshot" />
+                <app-img src="/assets/apps/voyage/graphic-example-2.webp" class="front-center" alt="voyage app screenshot" />
+                <app-img src="/assets/apps/voyage/graphic-example-3.webp" class="behind-right" alt="voyage app screenshot" />
               </div>
               <div class="store-buttons">
                 <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener" data-cy="voyage-apple">

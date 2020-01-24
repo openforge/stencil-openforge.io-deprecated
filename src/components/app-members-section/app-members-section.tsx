@@ -8,7 +8,7 @@ export class AppMembersSection {
   members = [
     {
       name: 'Jedi Weller',
-      image: './../../assets/headshot-jedi.png',
+      image: './../../assets/headshot-jedi.webp',
       title: translate('about.team.member.title.founder'),
       mail: 'jedi@openforge.io',
       twitter: 'https://twitter.com/jedihacks',
@@ -17,7 +17,7 @@ export class AppMembersSection {
     },
     {
       name: 'Paulina Gallo',
-      image: './../../assets/headshot-paulina.png',
+      image: './../../assets/headshot-paulina.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'paulina@openforge.io',
       twitter: 'https://twitter.com/paulpaultweets',
@@ -26,7 +26,7 @@ export class AppMembersSection {
     },
     {
       name: 'Rachel Bennett',
-      image: './../../assets/headshot-rachel.png',
+      image: './../../assets/headshot-rachel.webp',
       title: translate('about.team.member.title.designer'),
       mail: 'rachel@openforge.io',
       twitter: '',
@@ -35,7 +35,7 @@ export class AppMembersSection {
     },
     {
       name: 'Leon Degtar',
-      image: './../../assets/headshot-leon.png',
+      image: './../../assets/headshot-leon.webp',
       title: translate('about.team.member.title.operationsDirector'),
       mail: 'leon@openforge.io',
       twitter: '',
@@ -44,7 +44,7 @@ export class AppMembersSection {
     },
     {
       name: 'Fernando Del Olmo',
-      image: './../../assets/headshot-fer.png',
+      image: './../../assets/headshot-fer.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'fernando@openforge.io',
       twitter: 'https://twitter.com/fdom92',
@@ -53,7 +53,7 @@ export class AppMembersSection {
     },
     {
       name: 'Luis Chacón',
-      image: './../../assets/headshot-luis.png',
+      image: './../../assets/headshot-luis.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'luis@openforge.io',
       twitter: 'https://twitter.com/luiskcs89',
@@ -62,7 +62,7 @@ export class AppMembersSection {
     },
     {
       name: 'Claudio Del Valle',
-      image: './../../assets/headshot-claudio.png',
+      image: './../../assets/headshot-claudio.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'claudio@openforge.io',
       twitter: '',
@@ -71,7 +71,7 @@ export class AppMembersSection {
     },
     {
       name: 'Min Lee',
-      image: './../../assets/headshot-min.png',
+      image: './../../assets/headshot-min.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'min@openforge.io',
       twitter: '',
@@ -80,14 +80,14 @@ export class AppMembersSection {
     },
     {
       name: 'William Holloran',
-      image: './../../assets/headshot-billy.png',
+      image: './../../assets/headshot-billy.webp',
       title: translate('about.team.member.title.qualityManager'),
       mail: 'william@openforge.io',
       url: '/about/william-holloran',
     },
     {
       name: 'May Alkhraisha',
-      image: './../../assets/headshot-may.png',
+      image: './../../assets/headshot-may.webp',
       title: translate('about.team.member.title.marketingCoordinator'),
       mail: 'may@openforge.io',
       twitter: '',
@@ -96,7 +96,7 @@ export class AppMembersSection {
     },
     {
       name: 'Mariela Mora Quesada',
-      image: './../../assets/headshot-mariela.png',
+      image: './../../assets/headshot-mariela.webp',
       title: translate('about.team.member.title.projectManagement'),
       mail: 'mariela@openforge.io',
       twitter: '',
@@ -105,7 +105,7 @@ export class AppMembersSection {
     },
     {
       name: 'Petrell Vereen',
-      image: './../../assets/headshot-petrell.png',
+      image: './../../assets/headshot-petrell.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'petrell@openforge.io',
       twitter: '',
@@ -114,7 +114,7 @@ export class AppMembersSection {
     },
     {
       name: 'Jared Bradshaw',
-      image: './../../assets/headshot-jared.png',
+      image: './../../assets/headshot-jared.webp',
       title: translate('about.team.member.title.designCoordinator'),
       mail: 'jared@openforge.io',
       twitter: '',
@@ -123,7 +123,7 @@ export class AppMembersSection {
     },
     {
       name: 'Harry Scheuerle',
-      image: './../../assets/headshot-harry.png',
+      image: './../../assets/headshot-harry.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'harry@openforge.io',
       twitter: '',
@@ -141,7 +141,7 @@ export class AppMembersSection {
     // },
     {
       name: 'Carter Simonson',
-      image: './../../assets/headshot-carter.png',
+      image: './../../assets/headshot-carter.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'carter@openforge.io',
       twitter: '',
@@ -150,7 +150,7 @@ export class AppMembersSection {
     },
     {
       name: 'Griffin Robbins',
-      image: './../../assets/headshot-griffin.png',
+      image: './../../assets/headshot-griffin.webp',
       title: translate('about.team.member.title.gameDesigner'),
       mail: 'griffin@openforge.io',
       twitter: '',
@@ -159,7 +159,7 @@ export class AppMembersSection {
     },
     {
       name: 'Pablo Huerta',
-      image: './../../assets/headshot-pablo.png',
+      image: './../../assets/headshot-pablo.webp',
       title: translate('about.team.member.title.developer'),
       mail: 'pablo@openforge.io',
       twitter: '',
@@ -168,7 +168,7 @@ export class AppMembersSection {
     },
     {
       name: 'Alberto Carniel',
-      image: './../../assets/headshot-alberto.png',
+      image: './../../assets/headshot-alberto.webp',
       title: translate('about.team.member.title.marketingSpecialist'),
       mail: 'alberto@openforge.io',
       twitter: '',
@@ -177,7 +177,7 @@ export class AppMembersSection {
     },
     {
       name: 'Join Us',
-      image: './../../assets/headshot-apply-now.png',
+      image: './../../assets/headshot-apply-now.webp',
       title: translate('about.team.member.title.apply'),
       mail: '',
       twitter: '',
