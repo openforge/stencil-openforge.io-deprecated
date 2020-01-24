@@ -56,7 +56,7 @@ export class AppHome {
 
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function() {
+      $(document).ready(function () {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
         (processCarousel as any).carousel({
@@ -152,8 +152,9 @@ export class AppHome {
                   </h2>
                   <div class="row">
                     <app-img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobilemeasures app screenshot" />
-                    <app-img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobilemeasures app screenshot" />
+                    <app-img src="/assets/apps/mobilemeasures/mobilemeasuresScreensHome.webp" class="front-center" alt="mobilemeasures app screenshot" />
                     <app-img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobilemeasures app screenshot" />
+
                   </div>
                   <div class="store-buttons">
                     <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="vanlife-apple">

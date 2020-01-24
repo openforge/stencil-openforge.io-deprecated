@@ -413,12 +413,12 @@
 
     .loudcloud {
       @include media-breakpoint-up(lg) {
-        background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+        background-image: url('/assets/home-graphic-loudcloud-pattern.webp');
         background-size: cover;
       }
       .content-panel-image {
         @include media-breakpoint-down(md) {
-          background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+          background-image: url('/assets/home-graphic-loudcloud-pattern.webp');
           background-size: cover;
         }
       }
@@ -426,12 +426,12 @@
 
     .voyage {
       @include media-breakpoint-up(lg) {
-        background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+        background-image: url('/assets/home-graphic-voyage-pattern.webp');
         background-size: cover;
       }
       .content-panel-image {
         @include media-breakpoint-down(md) {
-          background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+          background-image: url('/assets/home-graphic-voyage-pattern.webp');
           background-size: cover;
         }
       }
@@ -439,12 +439,12 @@
 
     .mobilemeasures {
       @include media-breakpoint-up(lg) {
-        background-image: url('/assets/home-graphic-mobilemeasures-pattern.jpg');
+        background-image: url('/assets/home-graphic-mobilemeasures-pattern.webp');
         background-size: cover;
       }
       .content-panel-image {
         @include media-breakpoint-down(md) {
-          background-image: url('/assets/home-graphic-mobilemeasures-pattern.jpg');
+          background-image: url('/assets/home-graphic-mobilemeasures-pattern.webp');
           background-size: cover;
         }
       }
