@@ -1,93 +1,119 @@
 .blog-container {
   font-family: 'Muli';
   margin-top: 70px;
-  max-width: 95%;
+  max-width: 100% !important;
+  overflow-x: hidden;
 
   h4 {
-    color: $orange;
+    color: #c65300;
   }
 
   .posts-row {
-    @include media-breakpoint-up(lg) {
-      margin: 0 130px;
+    @include media-breakpoint-up(md) {
+      padding-left: 10%;
+      padding-right: 10%;
     }
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+      padding-right: 0;
       margin: 0;
+    }
+
+    .post-row-container {
+      @include media-breakpoint-down(md) {
+        order: 2;
+      }
     }
   }
 
   .form-row {
     display: block;
 
-    .form-row-content {
+    @include media-breakpoint-up(sm) {
+      margin-top: 64px;
+    }
+  }
+
+  .form-row-content {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .form-group {
+      display: inline-flex;
+      margin-bottom: 50px;
+    }
+
+    label {
+      font-size: 16px;
+      color: #292a2d;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+    }
+
+    input {
+      border-radius: 2px;
+      border-bottom: 1px solid #9baaab;
+      border-left: 1px solid #9baaab;
+      border-top: 1px solid #9baaab;
+      border-right: none;
+      background-color: #fff;
+      padding: 5px;
+      font-size: 16px;
+      font-family: 'Roboto-Regular', sans-serif;
+    }
+
+    ::placeholder {
+      color: $gray-500;
+    }
+
+    button {
+      background: #c75300;
+      padding: 14px 15px;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.27);
+      color: #fff;
+      border: none;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+
       @include media-breakpoint-down(sm) {
-        text-align: center;
+        background: #fff;
+        border: 1px solid #c75300;
+        padding: 4px 15px;
       }
 
-      .hidden {
-        display: none;
-      }
-
-      .form-group {
-        display: inline-flex;
-        margin-bottom: 50px;
-      }
-
-      label {
-        font-size: 18px;
-        color: #e88212;
+      span {
+        font-size: 14px;
+        text-transform: capitalize;
+        color: $gray-dark;
         font-weight: bold;
-      }
 
-      input {
-        border-radius: 2px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.27);
-        background-color: #fff;
-        border: 0;
-        padding: 5px;
-      }
-
-      ::placeholder {
-        color: $gray-500;
-      }
-
-      button {
-        background: #e88212;
-        padding: 12px 15px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.27);
-        color: #fff;
-
-        @include media-breakpoint-down(sm) {
-          background: #fff;
-          border: solid 1px #e88212;
-          padding: 4px 15px;
-        }
-
-        span {
-          font-size: 14px;
-          text-transform: uppercase;
-          color: $gray-dark;
-          font-weight: bold;
-
-          i {
-            color: #000;
-          }
+        i {
+          color: #000;
         }
       }
+    }
 
-      .contact-icons-label {
-        margin: 0;
-      }
+    .contact-icons-label {
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+      font-size: 16px;
+      color: #9baaab;
+    }
 
-      .contact-icons {
-        width: 100%;
-      }
+    .contact-icons {
+      width: 100%;
+    }
 
-      .contact-icon {
-        margin: 10px;
-        img {
-          width: 20px;
-        }
+    .contact-icon {
+      margin-right: 12px;
+      img {
+        width: 20px;
       }
     }
   }
@@ -95,20 +121,109 @@
 
 .blog-filters {
   position: sticky;
-  top: 70px;
   background: #fff !important;
   z-index: 1;
-  @include media-breakpoint-down(lg) {
-    margin-right: -5%;
-  }
 
   .blog-filters-nav {
     background-color: unset;
 
+    @include media-breakpoint-up(lg) {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+    @include media-breakpoint-down(lg) {
+      margin: 0;
+    }
+
+    .blog-search-group {
+      width: 100%;
+
+      @include media-breakpoint-up(xl) {
+        padding-left: 66.6px; // The number of the beast
+      }
+
+      @include media-breakpoint-down(md) {
+        margin: 8px;
+        width: calc(100% - 16px);
+      }
+    }
+
+    .blog-search-input {
+      background-color: $gray-100;
+      border: none;
+      border-radius: 3px;
+      box-shadow: inset -1px -1px 1px 0 rgba(0, 0, 0, 0.15);
+      color: $gray-brown;
+      font-family: Muli;
+      font-size: 13px;
+      font-weight: 300;
+      height: 32px;
+      line-height: 18px;
+      padding: 4px 4px 4px calc(2.4rem + 2px);
+      width: 100%;
+
+      @include media-breakpoint-down(md) {
+        background-color: $white;
+        border: 1px solid $gray-100;
+        border-radius: 8px;
+        min-height: 45px;
+      }
+    }
+
+    .blog-search-input-top {
+      padding: 4px 4px 4px calc(2.4rem + 2px);
+      background-color: #f4f5f9;
+      border-radius: 3px;
+      width: 85%;
+      height: 32px;
+      font-family: Muli;
+      color: $gray-brown;
+      font-size: 13px;
+      font-weight: 300;
+      line-height: 18px;
+      border: 1.5px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .blog-search-icon {
+      position: absolute;
+      margin-top: 10px;
+      margin-left: 10px;
+      color: $gray-brown;
+
+      @include media-breakpoint-down(md) {
+        position: initial;
+        margin-top: 0;
+        margin-left: 0;
+      }
+    }
+
+    .blog-search-icon-top {
+      position: absolute;
+      margin-top: 10px;
+      margin-left: 10px;
+      color: $gray-brown;
+
+      @include media-breakpoint-down(md) {
+        margin-top: 15px;
+      }
+    }
+
+    .searchbar-top {
+      display: flex;
+
+      button {
+        background: transparent;
+        border: 0;
+        color: $gray-dark;
+        padding: 0;
+      }
+    }
+
     .blog-filters-list {
       display: flex;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       list-style: none;
       padding: 0;
       margin-bottom: 5rem;
@@ -117,57 +232,31 @@
         overflow: auto;
         white-space: nowrap;
         margin-bottom: 1rem;
-        justify-content: normal;
       }
 
       .blog-filter-item {
         padding: 40px 10px;
         padding-bottom: 4px;
         font-size: 18px;
-        color: #6b635f;
+        font-weight: 700;
+        color: #9baaab;
         cursor: pointer;
         text-transform: uppercase;
+        margin-bottom: 32px;
 
         @include media-breakpoint-down(md) {
-          padding: 26px 10px;
+          padding: 16px 10px 12px 10px;
           font-size: 12px;
         }
 
-        .blog-search-group {
-          @include media-breakpoint-up(xl) {
-            padding-left: 66.6px; // The number of the beast
-          }
-          @include media-breakpoint-down(lg) {
-            width: 90%;
-          }
-          width: 40%;
-        }
-
-        .blog-search-input {
-          padding: 4px 4px 4px calc(2.4rem + 2px);
-          border: 1px solid #ced4da;
-          border-radius: 0.25rem;
-        }
-
-        .blog-search-icon {
-          position: absolute;
-          @include media-breakpoint-down(md) {
-            top: 25%;
-          }
-          z-index: 2;
-          display: block;
-          margin-top: 3px;
-          width: 2rem;
-          height: 2rem;
-          line-height: 2.4rem;
-          text-align: center;
-          pointer-events: none;
-          color: #aaa;
+        @include media-breakpoint-down(sm) {
+          padding: 6px 10px;
+          font-size: 12px;
         }
       }
 
       .blog-filter-item .active {
-        color: #e88212;
+        color: #c65300;
         text-decoration: underline;
         cursor: auto;
 
@@ -209,15 +298,16 @@
     justify-content: center;
     list-style: none;
     padding: 0;
+    margin-bottom: 32px;
 
     .blog-page-item {
       padding: 7px;
+      color: #b9c3c4;
     }
 
     .blog-page-item .active {
       padding: 7px;
-      color: $orange;
-      text-decoration: underline $orange;
+      color: #c65300;
     }
   }
 }

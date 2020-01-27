@@ -7,11 +7,21 @@
   }
 
   app-img {
+    @include media-breakpoint-down(sm) {
+      order: 2;
+    }
+
     img {
       max-height: 400px;
       @include media-breakpoint-down(sm) {
         padding: 15px 30px 30px;
         max-height: 200px;
+      }
+    }
+
+    &.small-img {
+      img {
+        max-height: 250px;
       }
     }
   }
@@ -24,6 +34,25 @@
       font-size: 2rem;
       line-height: 2.5rem;
       margin-bottom: 15px;
+    }
+
+    &.original {
+      color: $black;
+      font-size: 28px;
+    }
+
+    &.thin {
+      font-weight: 400;
+    }
+
+    &.margin-bottom {
+      margin-bottom: 2rem;
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 1rem;
+      }
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -39,6 +68,52 @@
     padding: 0 3rem;
     @include media-breakpoint-down(sm) {
       padding: 0 15px;
+    }
+  }
+
+  li {
+    @include media-breakpoint-down(sm) {
+      text-align: left;
+    }
+  }
+
+  .auto-align {
+    text-align: left;
+
+    @include media-breakpoint-down(md) {
+      text-align: right;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  .footer-btn {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 2rem;
+      margin-top: 0;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .content-container {
+    @include media-breakpoint-down(sm) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .left-align {
+    h3,
+    p,
+    li {
+      text-align: left !important;
     }
   }
 }

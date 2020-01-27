@@ -1,4 +1,8 @@
 .blog-card {
+  .author a {
+    text-decoration: underline;
+  }
+
   .container {
     min-width: 90%;
     margin-bottom: 2rem;
@@ -37,7 +41,7 @@
     flex-direction: row;
     align-items: center;
 
-    .profile-image {
+    .profile-image img {
       height: 40px;
       width: 40px;
       object-fit: cover;

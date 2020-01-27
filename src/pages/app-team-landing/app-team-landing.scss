@@ -1,147 +1,232 @@
 // section - team-landing
 section.team-landing {
   font-family: 'Muli', sans-serif;
+  padding: 73px 0 0 0;
+
+  @include media-breakpoint-down(md) {
+    padding: 60px 0 0 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 73px 0 0 0;
+  }
+
+  h1 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      text-align: left;
+    }
+    @include media-breakpoint-down(sm) {
+      color: $gray-dark;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      text-align: center;
+    }
+    color: $white;
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    line-height: 58px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  h2 {
+    @include media-breakpoint-down(md) {
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1.54px;
+      line-height: 29px;
+      text-align: left;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      margin: 0 0 1rem;
+      text-align: center;
+    }
+    color: $gray-dark;
+    font-size: 2.63rem;
+    font-weight: 600;
+    letter-spacing: 2.1px;
+    line-height: 47px;
+  }
+
+  h3 {
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+      line-height: 19px;
+    }
+    @include media-breakpoint-down(sm) {
+      color: $orange-medium;
+      font-size: 1.31rem;
+      font-weight: 700;
+      letter-spacing: 2.1px;
+      line-height: 38px;
+      text-align: center;
+    }
+    color: $white;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 34px;
+    text-align: left;
+  }
+
+  h4 {
+    @include media-breakpoint-down(md) {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+      line-height: 19px;
+    }
+    @include media-breakpoint-down(sm) {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 34px;
+      margin: 0 0 1rem;
+      text-align: left;
+    }
+    color: $gray-dark;
+  }
 
   .hero {
-    background-position: top center;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    margin-bottom: 5rem;
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.5);
-      position: absolute;
-      width: 100%;
-      height: 100vh;
+    @include media-breakpoint-down(md) {
+      margin-bottom: 4rem;
     }
-
-    .container,
-    .row {
-      height: 100%;
-    }
-
-    h2 {
-      color: $orange-dark;
-      font-size: 4rem;
+    @include media-breakpoint-down(sm) {
       margin-bottom: 1rem;
-      text-align: right;
-
-      @include media-breakpoint-down(lg) {
-        font-size: 3rem;
-      }
-
-      @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
-        text-align: center;
-      }
     }
 
-    h4 {
-      color: $orange;
-      margin-bottom: 3rem;
-      text-align: right;
-
-      @include media-breakpoint-down(sm) {
-        text-align: center;
+    .header-text {
+      @include media-breakpoint-down(md) {
+        height: 350px;
       }
+      @include media-breakpoint-down(sm) {
+        height: 100%;
+      }
+      display: flex;
+      flex-direction: column;
+      height: 550px;
+      justify-content: center;
     }
 
     p {
-      color: $white;
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 3rem;
-      text-align: right;
-
-      @include media-breakpoint-down(lg) {
-        font-size: 1rem;
+      @include media-breakpoint-down(md) {
+        font-size: 0.81rem;
+        font-weight: 400;
+        letter-spacing: 0.6px;
+        line-height: 17px;
       }
-
       @include media-breakpoint-down(sm) {
-        text-align: center;
+        color: $gray-dark;
+        font-size: 1rem;
+        line-height: 32px;
+        text-align: left;
+        width: 100%;
       }
-    }
-
-    @include media-breakpoint-down(sm) {
-      background-position: left top;
+      color: $white;
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      max-width: 500px;
+      text-align: left;
     }
   }
 
   .bio {
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    padding: 4rem;
-
-    .text {
-      margin-left: 35px;
-
-      h2,
-      h4 {
-        color: $orange;
-        text-align: left;
-      }
-
-      p {
-        text-align: left;
-        padding: 0;
-        margin-bottom: 1rem;
-
-        &.check-link {
-          font-size: 26px;
-          color: $orange;
-          margin-bottom: 0;
-        }
-      }
-
-      @include media-breakpoint-down(sm) {
-        margin-left: 0;
-        text-align: center;
-
-        h2,
-        h4,
-        p {
-          text-align: center;
-        }
-      }
-    }
-
     @include media-breakpoint-down(sm) {
-      grid-template-columns: none;
-      padding: 2rem;
+      justify-content: center;
     }
+    p {
+      @include media-breakpoint-down(md) {
+        font-size: 0.81rem;
+        font-weight: 400;
+        line-height: 28px;
+        width: 400px;
+      }
+      @include media-breakpoint-down(sm) {
+        color: $gray-dark;
+        font-size: 1rem;
+        line-height: 32px;
+        text-align: left;
+        width: 100%;
+      }
+      color: $gray-brown;
+      font-size: 1rem;
+      line-height: 32px;
+      width: 465px;
+    }
+  }
+
+  .badge {
+    @include media-breakpoint-down(md) {
+      margin: 0 1rem 0 0;
+    }
+    @include media-breakpoint-down(sm) {
+      margin: 0 auto 2rem;
+      width: 80%;
+    }
+    margin: 0 2rem 0 0;
+  }
+
+  .headshot {
+    img {
+      border-radius: 100%;
+    }
+  }
+  .headshot-mobile {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 2rem;
+  }
+
+  .chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    max-width: 465px;
   }
 
   .skill-chip {
-    background: orange;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 21px;
+    background: #e95500;
+    border-radius: 20px;
     color: $white;
     font-size: 12px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
-  .cta-about {
-    background: linear-gradient(-160deg, #f99a2a 0%, #f9902a 100%);
-    height: 114px;
-
-    .cta-container {
-      height: inherit;
-      line-height: 2.5rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin: 0 4rem;
-      @include media-breakpoint-down(sm) {
-        margin-left: 0;
-        margin-right: 2rem;
+  .members {
+    margin-bottom: 8rem;
+    h2 {
+      @include media-breakpoint-down(md) {
+        font-size: 1.75rem;
+        line-height: 34px;
+        margin: 3rem 0;
       }
-    }
-
-    @include media-breakpoint-down(sm) {
-      height: 140px;
+      @include media-breakpoint-down(sm) {
+        margin: 3rem 0 2rem;
+      }
+      font-size: 2.63rem;
+      font-weight: 600;
+      letter-spacing: 2.1px;
+      line-height: 38px;
+      margin: 5rem 0;
+      text-align: center;
     }
   }
 }

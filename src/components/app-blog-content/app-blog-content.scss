@@ -1,8 +1,6 @@
 .header {
   text-align: left;
 
-  padding: 0 6rem;
-
   h1 {
     @include media-breakpoint-down(md) {
       padding: 20px 0;
@@ -19,10 +17,12 @@
   }
 
   &--author {
+    position: relative;
     align-items: center;
     display: flex;
     flex-direction: row;
     margin: 1rem 0;
+    justify-content: space-between;
 
     img {
       border-radius: 50%;
@@ -37,7 +37,7 @@
     }
   }
 
-  &--main-image {
+  &--main-image img {
     border-radius: 35px;
     padding: 2%;
     width: 100%;
@@ -104,10 +104,31 @@
   }
 }
 
+.contact-icon {
+  margin: 10px;
+  img {
+    width: 20px;
+  }
+}
+
 .contact-icons-top {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
+
+  .contact-icon {
+    margin: 5px;
+    img {
+      border-radius: 0;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    display: initial;
+    margin-bottom: 0;
+    justify-content: initial;
+  }
 }
 
 .contact-icons-side {
@@ -115,11 +136,70 @@
   flex-direction: column;
   float: right;
   padding: 15px;
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
 }
 
-.contact-icon {
-  margin: 10px;
-  img {
-    width: 20px;
+.author-img-container {
+  display: flex;
+  align-items: center;
+}
+
+#blog-next-posts-side {
+  display: block;
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+}
+
+#blog-next-posts-bottom {
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    display: block;
+  }
+}
+
+.blog-next-posts {
+  h1 {
+    color: $gray-dark;
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include media-breakpoint-down(md) {
+      text-align: left;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .blog-next-posts-title {
+    h2 {
+      color: #292a2d;
+      font-family: Muli;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1.02px;
+      line-height: 19px;
+      text-align: center;
+      margin-top: 10px;
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 20px;
+        margin-bottom: 35px;
+      }
+    }
   }
 }

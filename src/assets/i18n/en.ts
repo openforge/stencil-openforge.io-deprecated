@@ -4,9 +4,12 @@ export const translations = {
       hero: {
         title: 'Mobile Solutions',
         subTitle: 'For A Digital World',
+        text: 'As experts in user experience, design, and application development, we specialize in creating mobile first, user-centered solutions to bring your ideas to life on the small screen.',
+        buttonText: 'What Makes Us Different?',
       },
       process: {
         title: 'Our Process',
+        buttonText: 'LEARN MORE',
         discovery: {
           title: 'Discovery',
           text: `We'll help you evaluate your business needs and challenge your assumptions before entering into the Design and Development processs. Make sure that the technology you're building makes sense for your business.`,
@@ -33,23 +36,24 @@ export const translations = {
       },
       work: {
         experts: 'Experts in',
+        buttonText: 'VIEW PROJECT',
         mobileWebApplications: {
           title: 'Mobile & Web Applications',
           text:
-            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP. As experts in mobile application development, we can interface with any existing API or standard to deliver a secure, integrated product no matter what your product needs.',
-          example: 'The Vanlife App',
-        },
-        digitalExperience: {
-          title: 'Digital Experience',
-          text:
-            'It is our firm belief that we should engage users by providing value, both fundamentally and visually. By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We will go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back.',
-          example: 'The Voyage by New Ocean',
+            'We specialize in mobile application design, development, and App Store Optimization (ASO). Our team has been the top trusted partner of Ionic Framework since 2014 with experience in technologies such as Angular, React, Vue.js, Strapi, and VoIP.',
+          example: 'Mobile Measures',
         },
         mobileTechnology: {
           title: 'Mobile Technology',
           text:
-            'We utilize technologies to bring the richest features to your app such as VoIP, Bluetooth LE, and other IOT tech to bring a whole new level of connectivity to your application providing your users with a rich and interactive experience that will boost engagement and retention. Our experts in mobile application development can interface with any existing API or standard to integrate systems properly and securely.',
+            'With our combined expertise in design and marketing, you can rely on us to develop comprehensive strategies and graphics that will define your brand and inspire trust in your target audience.',
           example: 'LoudCloud',
+        },
+        digitalExperience: {
+          title: 'Design & User Experience',
+          text:
+            'By combining the psychology of design with the capabilities of the digital age, we are able to develop solutions that think outside the box. We go beyond the norms of basic menus and navigation layouts and truly immerse your users in a beautiful and intuitive interface that keeps them coming back for more.',
+          example: 'The Voyage by New Ocean',
         },
       },
     },
@@ -57,10 +61,12 @@ export const translations = {
     about: {
       header: {
         title: 'We Are Passionate About Technology and Design',
+        titleSmall: 'We Are Passionate About Design & Technology',
         text: "We believe that your success is our success. We're here to challenge your assumptions and help you discover your web or mobile applications full potential.",
-        action: 'LEARN MORE',
+        action: 'MEET OUR TEAM',
       },
       mission: {
+        title: 'Our Mission',
         statement: 'Our mission is to forge a bond between people and technology through digital experiences.',
       },
       values: {
@@ -72,21 +78,22 @@ export const translations = {
         value3: 'Transparency',
       },
       team: {
-        title: 'Get to Know Us',
-        text: "There's no doubt that our team is made up of brilliant and talented individuals who are passionate about technology and design thinking. Together we design, code, grow, and evolve.",
+        title: 'Meet our Team',
         member: {
           title: {
+            apply: 'Click to Apply',
             founder: 'Founder and Head of Technology',
             accountManager: 'Account Manager',
-            designer: 'Designer',
+            designer: 'Visual Designer',
+            designCoordinator: 'Design Coordinator',
             developer: 'Software Engineer',
-            frontEndDeveloper: 'Front End Developer',
-            projectManager: 'Project Manager',
-            qualityManager: 'Quality Manager',
+            gameDesigner: 'Game Designer',
+            projectManagement: 'Project Management',
+            qualityManager: 'QA Manager',
+            operationsDirector: ' Director of Operations',
             consultant: 'Consultant',
-            officer: 'Chief Happiness Officer',
-            softwareIntern: 'Software Intern',
-            marketing: 'Marketing',
+            marketingCoordinator: 'Marketing Coordinator',
+            marketingSpecialist: 'Marketing Specialist',
           },
         },
       },
@@ -97,8 +104,7 @@ export const translations = {
           skills: 'Skills',
         },
         cta: {
-          title: 'Meet The Team',
-          button: `Let's Go`,
+          title: 'Meet Our Team',
         },
       },
     },
@@ -106,9 +112,8 @@ export const translations = {
     contact: {
       hero: {
         title: "Let's Work Together",
-        request:
-          'We are Philadelphia web and mobile application experts, and we are here to help.  Contact us today to start working with our team.  Let us apply industry best practices to enhance your business!',
-        requestNow: 'Request Free Quote',
+        request: 'You’ve got questions, we’ve got answers. Contact us today to start working with our team and see how our process can enhance your business.',
+        requestNow: 'GET IN TOUCH',
       },
       form: {
         title: 'Get in Touch',
@@ -123,12 +128,14 @@ export const translations = {
         alert: {
           text: "Thank you for reaching out! we'll get back to you within 24 hours!",
         },
-        fullName: 'Full Name',
+        fullName: 'Full Name*',
         company: 'Company',
-        email: 'E-mail',
-        phone: 'Phone',
-        github: 'GitHub URL',
-        whereDidYouHear: 'How did you hear about OpenForge?',
+        email: 'E-mail*',
+        phone: 'Phone*',
+        contact_phone: 'Phone',
+        github: 'GitHub URL*',
+        designProfile: 'Portfolio*',
+        whatAreYouWorkingOn: 'What are you working on?',
         appDevelopment: 'App Development',
         webDevelopment: 'Web Development',
         uiDesign: 'UI Design',
@@ -148,6 +155,15 @@ export const translations = {
         thanx: 'Thank you!',
         thanxText: 'Your message has been delivered. Someone will be in touch with you soon!',
         unsure: 'Unsure',
+        placeholder: {
+          name: 'Your Name Here',
+          email: 'example@gmail.com',
+          phone: 'Your Phone Number',
+          message: 'Briefly describe your project',
+          fullName: 'Your Name Here',
+          github: 'Your Github account',
+          designProfile: 'Your Portfolio',
+        },
       },
     },
 
@@ -294,9 +310,64 @@ export const translations = {
 
     opportunities: {
       hero: {
-        title: "Great News! We're Hiring.",
-        text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
-        text2: 'Learn More',
+        title: 'Looking for a New Adventure?',
+        text: 'If you’re a talented designer or developer, we want to hear from you! Choose the role that best describes you to continue.',
+        text2: 'Let’s get to know each other…',
+        developer: 'DEVELOPER',
+        designer: 'DESIGNER',
+        develop: {
+          title: 'Show Us What You’re Made Of',
+          text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+          button: 'Apply Now',
+        },
+        design: {
+          title: 'Show Us What You’re Made Of',
+          text: "If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.",
+          button: 'Apply Now',
+        },
+      },
+      candidate: {
+        develop: {
+          title: 'The ideal candidate can....',
+          text1: 'Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.',
+          text2: 'Continually keep yourself and your design team updated with the latest changes in your industry’s standards.',
+          text3: 'Be self-starter.',
+          text4: 'Be a team player -- you put the interests of the team and the company above your own.',
+          text5: 'Be passionate about open source software',
+        },
+        design: {
+          title: 'The ideal candidate can....',
+          text1: 'Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.',
+          text2: 'Create, improve and utilize wireframes, prototypes, style guides, user flows, and effectively communicate your interaction ideas using any of these methods.',
+          text3:
+            'Present and defend your design decisions. All your design decisions should be based on the overall design roadmap as well as your own design thinking and fundamental principles (i.e. color theory, visual weight, etc.)',
+          text4: 'Continually keep yourself and your design team updated with the latest changes in your industry’s standards.',
+        },
+      },
+      requisites: {
+        develop: {
+          title: 'And can meet the following prerequisites:',
+          text1: 'Three or more years of experience and proven track record.',
+          text2: 'Strong portfolio to be presented and defended during interview.',
+          text3: 'Experience using Firebase products (Database,  Authentication, Notifications).',
+          text4: 'Experience in CSS (SCSS, BEM, LESS, SASS).',
+          text5: 'Experience in JavaScript (React, Angular, Node, Express).',
+          text6: 'Experience in Hybrid Apps (Ionic).',
+          text7: 'Experience with Heroku, Github Pages, or AWS is a plus.',
+          text8: 'Experience building web applications and/or mobile apps is a plus.',
+          text9: 'Experience in working on open source projects is a plus.',
+        },
+        design: {
+          title: 'And can meet the following prerequisites',
+          text1: 'Three or more years of experience and proven track record.',
+          text2: 'Strong portfolio to be presented and defended during the interview.',
+          text3: 'Hands-on experience creating wireframes, prototypes, storyboards, user flows, etc.',
+          text4: 'Proficiency with tools such as Photoshop, Sketch, Illustrator, InVision, MarvelApp, etc.',
+          text5: 'Understanding of basic front-end languages: HTML5, CSS3 Javascript.',
+          text6: 'The ability to generate creative ideas with problem-solving mindset.',
+          text7: 'Experience working in an agile/scrum development process.',
+          text8: 'Be open to receiving objective criticism and improving upon it.',
+        },
       },
       intro: {
         title: 'Forget normal interviews!',
@@ -343,22 +414,51 @@ export const translations = {
       form: {
         allset: "You're all set! Let's get started.",
         almost: 'Not quite...keep sliding or keep learning; you can do it!',
-        request: 'Request an interview',
+        request: 'Apply',
         midLevelTitle: 'Mid-Level Developer',
         technology: 'Technology',
         fullTime: 'Full-Time',
         submitTitle: 'Submit your application',
-        resume: 'Resume/CV',
+        resume: 'Resume/CV*',
         unique: {
           title: 'What makes you unique?',
-          text: 'In 150 characters or fewer, tell us what makes you unique. Try to be creative and say something that will catch our eye!',
+          text: 'In 200 characters or less, tell us what makes you unique.',
         },
         submit: 'Submit Application',
-        submitted: 'Application Submitted',
+        submitted: 'Application Submitted!',
+        thanks_interest: 'Thank you for your interest in OpenForge.',
         thanks: {
           title: 'Thank you!',
           text: 'If your resume is a match, someone will be in touch to deliver the necessary materials to complete the challenge.',
         },
+      },
+    },
+
+    partners: {
+      hero: {
+        title: 'Meet Our Partners',
+        text1: 'Isaac Newton once said "If I have seen further, it is by standing on the shoulders of giants." and that is exactly how we feel about our partners!',
+        text2:
+          'We believe in industry-wide collaboration and have connected with the top firms in their fields in order to create true value to our clients. Our partnerships provide us with cutting-edge solutions and services. The combination of our expertise and their support means we provide you with the best experience money can buy.',
+      },
+      trusted: {
+        title: 'Trusted Partners',
+        ionic: 'Ionic Framework is an open source app development platform which allows our team of developers to build and deploy high-quality cross-platform apps in record time.',
+        t1776:
+          '1776 is the largest start-up incubator in the Northeast Corridor. It is a public benefit corporation that empowers start-ups by providing them with access to a global network of connections, and the intellectual and financial capital needed for them to prosper.',
+        strapi:
+          'Strapi is an open source Headless CMS, used to manage content and make it available through a fully-customizable API. It is a framework designed for building practical applications and services in a matter of hours, instead of the usual weeks; saving your team precious time.',
+        t215Marketing:
+          '215Marketing is a Google Partner and full-service digital marketing agency; providing everything from traditional design to CRM implementation. Their primary focus is creating websites, effective Search Engine Marketing and measuring Return On Investment.',
+        finantialGPS:
+          'Financial GPS is a virtual accounting solution for small enterprises, that presents them with monthly reports and videos. The wonderful team at Financial GPS provides different services, including bookkeeping, payroll processing and tax preparation.',
+        drexel:
+          'Drexel University and the Science Center offer an incubator and accelerator for early-stage, funded start-ups. ic@3401 is a community of experts and investors that plays an important role in the building of the collaborative culture in Philadelphia’s Innovation Neighborhood.',
+      },
+      cta: {
+        title: 'Interested in partnering with us?',
+        subTitle: `Contact us today to get started!        `,
+        link: 'GET IN TOUCH',
       },
     },
 
@@ -401,11 +501,38 @@ export const translations = {
       thanks: 'Progressive Web Apps can offer your business an array of benefits and improvements to your web and mobile users that can have a direct impact on your costs and revenue.',
     },
 
+    ourWork: {
+      header: {
+        title: 'Our Work',
+        text: "Each day we work to make our world better by design. Below you will find examples of projects that we've had the pleasure of working on.",
+      },
+      cards: {
+        mobile_measures: {
+          title: 'Mobile Measures',
+          text:
+            "A Physical Therapist's brainchild; this app aims to help Physical Therapists keep track of their patients' progress. Like many founders and entrepreneurs, Ben's foray into the start-up world started with a simple idea: \"There has to be a better way!\"",
+        },
+        loudcloud: {
+          title: 'LoudCloud',
+          text:
+            'This app was designed with privacy in mind. Users can receive and make calls through a temporary and disposable phone number; in over 40 countries! LoudCloud allows for more secure business and social interactions.',
+        },
+        voyage: {
+          title: 'The Voyage',
+          text:
+            "Employers can now incentivize their employees to develop and commit to healthy habits thanks to New Ocean Health's unique app. A company-wide social platform where employees can interact & challenge each other to reap the benefits.",
+        },
+        button: 'View Project',
+      },
+      worked_with: "Who We've Worked With",
+      more_projects: 'More Projects',
+    },
+
     cta: {
       title: 'Got a vision?',
       subTitle: `We've got your back.`,
       text: 'Contact us today to get started!',
-      link: 'GET IN TOUCH',
+      link: `LET'S GET STARTED`,
     },
 
     header: {
@@ -425,6 +552,8 @@ export const translations = {
         header: 'Work At OpenForge',
         developer: `I'M A DEVELOPER`,
         designer: `I'M A DESIGNER`,
+        text: 'Are you looking for a new challenge? Show us what you got!',
+        apply: 'APPLY NOW',
       },
       social: {
         followUs: 'Follow Us',
@@ -433,12 +562,18 @@ export const translations = {
         linkedin: 'openforge',
         instagram: '@openforgemobile',
         sla: 'Read our SLA',
+        presskit: 'Download Our Press Kit',
       },
       webinar: {
-        signup: 'Startup Junto',
-        webinarText: 'Startup Junto is a curated community for startup founders and entrepreneurs.',
-        register: 'JOIN US',
+        signup: 'The Forge',
+        webinarText: 'We are the proud organizers of the Philadelphia Ionic, Angular, and Startup Junto communities. Join us to learn more!',
+        register: 'JOIN THE FORGE',
       },
+    },
+
+    notFound: {
+      text: 'We looked everywhere, but we couldn’t find what you were searching for!',
+      buttonText: 'Go Back',
     },
 
     nav: {
@@ -448,13 +583,18 @@ export const translations = {
         },
       },
       links: {
-        home: 'Home',
+        ourWork: 'Our Work',
+        resources: 'Resources',
         blog: 'Blog',
         about: 'About',
-        contact: 'Contact',
+        workWithUs: 'Work With Us',
         opportunities: 'Opportunities',
         github: 'Openforge Github account',
       },
+    },
+
+    common: {
+      back: 'Back',
     },
   },
 };
