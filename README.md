@@ -142,7 +142,8 @@ If a developer went through providing all the information during a `npm run cz` 
 
 This project uses [ButterCMS](https://buttercms.com/) as a headless content management system. When a user accesses the deployed site, the blog data will be loaded from the ButterCMS API via AJAX. However, the blog data is also utilized in prerendering the site, to improve SEO. Before any build (dev, prod, prerender), the get-butter.js script is run to retrieve the blog data and stored in pages/blog-post/prerender-blog-data.ts. This file is git-ignored so that the repo is not cluttered with blog content.
 
-The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy of the master branch. Butter's webhooks are managed in the ButterCMS portal.
+The project also utilizes webhooks from [ButterCMS](https://buttercms.com/docs/api/?javascript#webhooks) and [Travis](https://docs.travis-ci.com/user/triggering-builds) to keep the prerendered blog content up to date. Whenever a new blog post is published, Butter's webook invokes the cloud function rebuildMaster, which relays the information to the Travis API, which in turn will trigger a rebuild and redeploy develop, qa, staging and master branches. Butter's webhooks are managed in the ButterCMS portal.
+note: It is important to update travis node version.
 
 
 The branches develop, qa, staging, and master are all set up for continuous integration and deployment with Travis CI and Firebase. To deploy, create a PR for the appropriate branch, or commit and push directly (avoid this if possible).
