@@ -1,13 +1,14 @@
 {
   "name": "@openforge/main-website",
   "private": true,
-  "version": "2.4.1",
+  "version": "2.5.1",
   "description": "The official website for OpenForge",
   "files": [
     "dist/"
   ],
   "scripts": {
     "build": "node scripts/get-butter.js && stencil build --prerender",
+    "build:functions": "cd functions && npm install && npm run build && cd ..",
     "cz": "git-cz",
     "dev": "node scripts/get-butter.js && sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",

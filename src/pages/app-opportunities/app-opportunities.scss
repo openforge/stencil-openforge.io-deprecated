@@ -1,43 +1,280 @@
 .opportunities {
   // hero
   .hero {
-    background-position: top center;
-    background-size: cover;
-    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: calc(100vh - 152px);
+    padding-top: 76px;
+    margin-top: 76px;
+
+    &.header-animated {
+      background-image: url('/assets/opportunities/opportunities-header-animated.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-header-animated.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 60px;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-header-animated.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
+
+    &.header-transition-dev {
+      background-image: url('/assets/opportunities/opportunities-transition-dev.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-transition-dev.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 50px;
+        background-position: bottom;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-transition-dev.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
+
+    &.header-transition-design {
+      background-image: url('/assets/opportunities/opportunities-transition-design.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-transition-design.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 50px;
+        background-position: bottom;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-transition-design.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
+
+    &.header-transition-dev-design {
+      background-image: url('/assets/opportunities/opportunities-transition-dev-design.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-transition-dev-design.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 50px;
+        background-position: bottom;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-transition-dev-design.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
+
+    &.header-transition-design-dev {
+      background-image: url('/assets/opportunities/opportunities-transition-design-dev.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-transition-design-dev.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 50px;
+        background-position: bottom;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-transition-design-dev.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
+
+    &.header-dev-active {
+      background-image: url('/assets/opportunities/opportunities-dev-active.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-dev-active.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        background-position: bottom;
+        padding-top: 50px;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-dev-active.svg');
+      }
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
+
+    &.header-design-active {
+      background-image: url('/assets/opportunities/opportunities-design-active.svg');
+
+      @include media-breakpoint-down(md) {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: calc(100vh);
+        padding-top: 156px;
+        margin-top: 0;
+        background-image: url('/assets/opportunities/opportunities-tablet-design-active.svg');
+      }
+      @include media-breakpoint-down(sm) {
+        background-size: contain;
+        margin-top: 0;
+        padding-top: 50px;
+        background-position: bottom;
+        height: 110vh;
+        background-image: url('/assets/opportunities/opportunities-mobile-design-active.svg');
+      }
+
+      @media (max-height: 640px) {
+        height: 120vh;
+      }
+    }
 
     .container,
     .row {
-      height: 100%;
+      height: calc(100vh - 76px);
+      justify-content: center;
+    }
+
+    .hero-text-container {
+      margin-top: 8rem;
+
+      @include media-breakpoint-down(lg) {
+        margin-top: 4rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin-top: 3rem;
+      }
+    }
+
+    .hero-arrow-img {
+      display: flex;
+      margin-top: 1rem;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 50px;
+      }
     }
 
     h2 {
-      color: $white;
+      color: #121212;
       font-size: 4rem;
       margin-bottom: 1rem;
+      text-align: center;
       @include media-breakpoint-down(lg) {
         font-size: 3rem;
       }
+      @include media-breakpoint-down(md) {
+        font-size: 2rem;
+      }
       @include media-breakpoint-down(sm) {
-        font-size: 2.2rem;
+        font-size: 26px;
       }
     }
 
     p {
-      color: $white;
+      color: #121212;
       font-size: 1.2rem;
       font-weight: 300;
       margin-bottom: 1.5rem;
-      max-width: 500px;
+      text-align: center;
       @include media-breakpoint-down(lg) {
-        font-size: 1rem;
+        font-size: 16px;
+      }
+      @include media-breakpoint-down(md) {
+        font-size: 14px;
       }
     }
+
+    .opportunity-btn {
+      background-color: #0095aa;
+      border: 0.75px solid #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+
+      &.active,
+      &:focus {
+        box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5), inset 0 0 7px 4px rgba(0, 0, 0, 0.3) !important;
+        background-color: #0095aa !important;
+        border-color: white !important;
+      }
+
+      @include media-breakpoint-down(sm) {
+        width: 60%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .hero-type-buttons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  header.hero-submit {
+    margin-top: 76px;
   }
 
   .interviews {
     padding: 3rem 0;
 
     a {
+      color: #6d6e71;
       text-decoration: underline;
     }
 
@@ -100,7 +337,10 @@
 
   .apply {
     background: $gray-100;
-    padding: 5rem 0;
+
+    .apply-1 {
+      padding: 4rem 0;
+    }
 
     h2 {
       color: $gray-800;
@@ -151,12 +391,22 @@
 
       // Application
       &.apply-2 {
+        padding: 4rem 0;
+
+        @include media-breakpoint-down(xl) {
+          max-width: 60%;
+        }
+
+        @include media-breakpoint-down(sm) {
+          max-width: initial;
+        }
+
         h2 {
           text-align: center;
         }
 
         h3 {
-          margin-top: 50px;
+          padding-top: 0;
           @include media-breakpoint-down(sm) {
             text-align: center;
           }
@@ -193,19 +443,39 @@
             letter-spacing: 0.1rem;
             line-height: 1.4rem;
             margin-bottom: 0;
-            width: 20%;
-            @include media-breakpoint-down(sm) {
-              width: 100%;
+            width: 100%;
+
+            &.resume {
+              width: initial;
+            }
+
+            &.resume-filename {
+              width: initial;
+              margin-left: 16px;
+            }
+
+            &.resume-btn {
+              background-color: #0095aa;
+              border: 0.75px solid #ffffff;
+              border-radius: 16px;
+              -webkit-box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+              box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+              width: initial;
+              padding: 5px 10px;
+              text-align: center;
+              color: white;
+              margin-left: 16px;
             }
           }
 
-          .form-control,
-          input[type='file'] {
+          .form-control {
             display: inline-block;
-            width: 80%;
-            @include media-breakpoint-down(sm) {
-              width: 100%;
-            }
+            width: 100%;
+          }
+
+          input[type='file'] {
+            visibility: hidden;
+            display: none;
           }
         }
         .error {
@@ -213,11 +483,37 @@
           color: #d9534f;
         }
       }
+
+      .submit-btn-container {
+        text-align: center;
+      }
     }
   }
 
   .doc-link {
     margin-left: 5px;
     margin-right: 5px;
+  }
+
+  button.apply-btn {
+    background-color: #0095aa;
+    border: 0.75px solid #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+  }
+
+  hr {
+    width: 100%;
+    margin: 0;
+    border: 1.5px solid rgba(23, 23, 25, 0.1);
+  }
+
+  .submitted-text {
+    margin-top: 2rem;
+
+    p {
+      margin-bottom: 0;
+      text-align: center;
+    }
   }
 }

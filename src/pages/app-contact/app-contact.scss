@@ -130,11 +130,18 @@
     .letter-form {
       padding: 2rem;
       background-image: url('/assets/contact/letter-background.png');
-      background-repeat: round;
-      background-position: initial;
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: contain;
+      background-color: #e9e2d9;
+      border-radius: 20px;
 
       h2 {
         padding-top: 1rem;
+        margin-bottom: 2rem;
+        font-family: Muli;
+        font-size: 28px;
+        font-weight: 400 !important;
       }
 
       button.btn-submit {
@@ -142,14 +149,37 @@
         border-radius: 20px;
         box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       }
+
+      p {
+        margin-bottom: 2rem;
+        font-family: Muli;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      @include media-breakpoint-down(md) {
+        margin: 0 3rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        margin: 0;
+      }
     }
 
     .form-image-content {
       justify-content: center;
 
       img {
-        width: 400px;
+        width: 320px;
       }
+    }
+  }
+
+  .submit-container {
+    text-align: center;
+
+    img {
+      max-width: 1000px;
     }
   }
   .error {

@@ -21,7 +21,14 @@ button.navbar-toggler {
   }
 }
 
+.navbar-light .navbar-toggler {
+  border-color: transparent !important;
+}
+
 nav.navbar .navbar-nav .nav-item {
+  .active {
+    color: $orange;
+  }
   text-align: left;
 
   @include media-breakpoint-down(md) {
@@ -63,6 +70,9 @@ nav.navbar .navbar-nav .nav-item {
     align-items: center;
     margin-left: 1.5rem;
     font-size: 24px;
+    position: absolute;
+    right: 20px;
+    top: 14px;
   }
 
   &.search-bar {
@@ -76,6 +86,7 @@ nav.navbar .navbar-nav .nav-item {
       border: 1px solid rgba(23, 23, 25, 0.5);
       border-radius: 20px;
       padding-left: 48px;
+      height: 36px;
     }
     .search-icon {
       position: absolute;
@@ -88,6 +99,8 @@ nav.navbar .navbar-nav .nav-item {
 nav.navbar .navbar-nav .nav-link {
   color: #121212;
   font-weight: 300;
+  padding-top: 0;
+  padding-bottom: 0;
 
   &.dropdown-item {
     background: white;
@@ -111,7 +124,10 @@ nav.navbar .navbar-nav .nav-link {
       margin-left: 0;
       margin-right: 0;
       margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &.active {
+      color: $orange;
     }
   }
 }

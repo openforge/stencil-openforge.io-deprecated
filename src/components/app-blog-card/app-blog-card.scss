@@ -1,8 +1,4 @@
 .blog-card {
-  a {
-    color: #4099a8;
-  }
-
   .author a {
     text-decoration: underline;
   }
@@ -45,7 +41,7 @@
     flex-direction: row;
     align-items: center;
 
-    .profile-image {
+    .profile-image img {
       height: 40px;
       width: 40px;
       object-fit: cover;

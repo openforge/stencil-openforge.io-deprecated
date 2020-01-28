@@ -59,6 +59,9 @@ export class AppHome {
       $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
+        (processCarousel as any).carousel({
+          interval: 15000,
+        });
         setTimeout(() => bootstrap.Carousel._jQueryInterface.call(processCarousel, processCarousel.data()), 0);
 
         $(window).trigger('scroll'); // init the value
@@ -148,16 +151,16 @@ export class AppHome {
                     <app-translate keyword="home.work.mobileWebApplications.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobilemeasures app screenshot" />
-                    <img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobilemeasures app screenshot" />
-                    <img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobilemeasures app screenshot" />
+                    <app-img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobilemeasures app screenshot" />
+                    <app-img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobilemeasures app screenshot" />
+                    <app-img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobilemeasures app screenshot" />
                   </div>
                   <div class="store-buttons">
                     <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="vanlife-apple">
-                      <img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
+                      <app-img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.mobilemeasuresllc.mobilemeasures" target="_blank" rel="noopener" data-cy="vanlife-google">
-                      <img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
+                      <app-img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
                 </div>
@@ -175,16 +178,16 @@ export class AppHome {
                     <app-translate keyword="home.work.mobileTechnology.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
-                    <img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
-                    <img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
+                    <app-img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
+                    <app-img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
+                    <app-img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
                   </div>
                   <div class="store-buttons">
                     <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener" data-cy="loudcloud-apple">
-                      <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                      <app-img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.ignitras.loudcloud&hl=en" target="_blank" rel="noopener" data-cy="loudcloud-google">
-                      <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                      <app-img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
                 </div>
@@ -202,16 +205,16 @@ export class AppHome {
                     <app-translate keyword="home.work.digitalExperience.example" />
                   </h2>
                   <div class="row">
-                    <img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
-                    <img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
-                    <img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
+                    <app-img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                    <app-img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
+                    <app-img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
                   </div>
                   <div class="store-buttons">
                     <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener" data-cy="voyage-apple">
-                      <img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
+                      <app-img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
                     <a href="https://play.google.com/store/apps/details?id=com.carecaminnovations.mobile" target="_blank" rel="noopener" data-cy="voyage-google">
-                      <img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
+                      <app-img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
                 </div>
@@ -247,14 +250,13 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="0" />
                       <p>
                         <app-translate keyword="home.process.discovery.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="0" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -273,14 +275,13 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="1" />
                       <p>
                         <app-translate keyword="home.process.design.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="1" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -299,14 +300,13 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="2" />
                       <p>
                         <app-translate keyword="home.process.development.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="2" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -325,14 +325,13 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="3" />
                       <p>
                         <app-translate keyword="home.process.deployment.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="3" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -351,14 +350,13 @@ export class AppHome {
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
-                      <app-carousel-indicators class="carousel-mobile-indicators d-none d-lg-block" activeIndex="4" />
                       <p>
                         <app-translate keyword="home.process.userfeedback.text" />
                       </p>
                       <app-carousel-indicators class="carousel-mobile-indicators d-lg-none" activeIndex="4" />
-                      <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
+                      {/* <stencil-route-link url="/services" class="align-self-center d-none d-lg-block">
                         <button class="btn button">{translate('home.process.buttonText')}</button>
-                      </stencil-route-link>
+                      </stencil-route-link> */}
                     </div>
                   </div>
                 </div>
@@ -374,9 +372,9 @@ export class AppHome {
             </a>
           </div>
           <div class="learn-more-container d-lg-none">
-            <stencil-route-link url="/services" class="align-self-center">
+            {/* <stencil-route-link url="/services" class="align-self-center">
               <button class="btn button carousel-btn">{translate('home.process.buttonText')}</button>
-            </stencil-route-link>
+            </stencil-route-link> */}
           </div>
         </section>
 

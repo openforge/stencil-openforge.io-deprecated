@@ -1,8 +1,4 @@
 .blog-featured {
-  a {
-    color: #4099a8;
-  }
-
   .author a {
     text-decoration: underline;
   }
@@ -13,6 +9,17 @@
   }
 
   .featured-title {
+    h4 {
+      color: #c75300;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 2.08px;
+
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+        font-size: 22px;
+      }
+    }
     h2 {
       color: $gray-dark;
       margin-bottom: 2rem;
@@ -32,14 +39,20 @@
 
     img {
       padding: 30px 0;
-      border-radius: 15px;
+
+      @include media-breakpoint-down(md) {
+        padding-top: 4px;
+        padding-bottom: 20px;
+      }
+
       object-fit: cover;
     }
   }
 
   .summary {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 18px;
   }
 
   p {
@@ -51,8 +64,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: $gray-dark;
+    font-weight: 300;
+    font-size: 16px;
 
-    .profile-image {
+    a {
+      text-decoration: underline;
+    }
+
+    .profile-image img {
       height: 40px;
       width: 40px;
       object-fit: cover;
@@ -62,7 +82,8 @@
   }
 
   .read-more {
-    font-size: 18px;
+    font-size: 16px;
     text-decoration: underline;
+    font-weight: 600;
   }
 }

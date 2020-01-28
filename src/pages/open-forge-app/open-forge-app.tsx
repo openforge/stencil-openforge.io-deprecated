@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, h } from '@stencil/core';
+import { Component, h, Listen } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -12,6 +12,18 @@ export class OpenForgeApp {
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
 
+  @Listen('swUpdate', { target: 'window' })
+  async onSWUpdate() {
+    const registration = await navigator.serviceWorker.getRegistration();
+
+    if (!registration || !registration.waiting) {
+      return;
+    }
+
+    registration.waiting.postMessage({ data: 'skipWaiting' });
+    window.location.reload();
+  }
+
   componentDidLoad() {
     try {
       this.mainEl = document.querySelector('app-nav-header') as HTMLElement;
@@ -21,13 +33,6 @@ export class OpenForgeApp {
 
     if (this.mainEl) {
       this.mainEl.addEventListener('click', ev => {
-        const aboutDropDown = document.getElementById('navbarDropdown1');
-        if (this.checkInAbout()) {
-          aboutDropDown.className = 'nav-link dropdown-toggle active';
-        } else {
-          aboutDropDown.className = 'nav-link dropdown-toggle';
-        }
-
         const srcEl = ev.srcElement as HTMLElement;
         if (srcEl.classList.contains('dropdown-toggle')) {
           return;
@@ -44,17 +49,13 @@ export class OpenForgeApp {
     }
   }
 
-  checkInAbout() {
-    return window.location.pathname === '/about' || window.location.pathname === '/juntoscope' || window.location.pathname === '/toolbox' || window.location.pathname === '/resources/pwa-white-paper';
-  }
-
   render() {
     return (
       <stencil-router>
-        <stencil-route-switch scrollTopOffset={0}>
+        <stencil-route-switch scrollTopOffset={1}>
           <stencil-route url="/" component="app-home" exact={true} />
           <stencil-route url="/contact" component="app-contact" />
-          <stencil-route url="/opportunities/:type" component="app-opportunities" />
+          <stencil-route url="/opportunities" component="app-opportunities" />
           <stencil-route url="/about" component="app-about" exact={true} />
           <stencil-route url="/about/" component="app-about" exact={true} />
           <stencil-route url="/toolbox" component="app-toolbox" />
@@ -65,12 +66,14 @@ export class OpenForgeApp {
           <stencil-route url="/about/:member" component="app-team-landing" />
           <stencil-route url="/juntoscope" component="app-case-study" />
           <stencil-route url="/terms-of-service" component="app-tos" />
-          <stencil-route url="/our-work" component="app-our-work" />
+          <stencil-route url="/our-work" component="app-our-work" exact={true} />
+          <stencil-route url="/our-work/:project" component="app-our-work-single" />
           <stencil-route url="/service-level-agreement" component="app-service-level-agreement" />
           <stencil-route url="/blog" component="app-blog" exact={true} />
           <stencil-route url="/blog/" component="app-blog" exact={true} />
           <stencil-route url="/blog-index" component="app-blog-index" exact={true} />
           <stencil-route url="/blog/:slug" component="app-blog-post" />
+          <stencil-route url="/partners" component="app-partners" exact={true} />
           <stencil-route component="app-not-found" />
         </stencil-route-switch>
       </stencil-router>

@@ -14,7 +14,7 @@
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
     @include media-breakpoint-down(md) {
-      font-size: 1rem;
+      font-size: 1.3rem;
       margin-bottom: 1rem;
     }
   }
@@ -166,9 +166,15 @@
       border-radius: 16px;
       box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
       height: 34px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
 
       @include media-breakpoint-down(sm) {
-        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+        position: initial;
+        width: initial;
       }
 
       &:hover {
