@@ -10,17 +10,8 @@ function deployToFirebase(project) {
     console.log('Deploying to firebase project openforge-'+project);
     if(project === 'dev'){
         exec('firebase use default', function(error, stdout, stderr) {
-            console.log(error);
-            console.log(stdout);
-            console.log(stderr);
             exec('firebase functions:config:set travis.rebuild_branch="develop"', function(error, stdout, stderr) {
-                console.log(error);
-                console.log(stdout);
-                console.log(stderr);
                 exec('firebase deploy --token ' + token, function(error, stdout, stderr) {
-                    console.log(error);
-                    console.log(stdout);
-                    console.log(stderr);
                 });
             });
         });
