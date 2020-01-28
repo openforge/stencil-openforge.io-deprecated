@@ -9,25 +9,65 @@ var token = process.env.FIREBASE_TOKEN
 function deployToFirebase(project) {
     console.log('Deploying to firebase project openforge-'+project);
     if(project === 'dev'){
-        exec('firebase use default && firebase functions:config:set travis.rebuild_branch="develop" && firebase deploy --token ' + token, function(error, stdout, stderr) {
+        exec('firebase use default', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase functions:config:set travis.rebuild_branch="develop"', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase deploy --token ' + token, function(error, stdout, stderr) {
             console.log(error);
             console.log(stdout);
             console.log(stderr);
         });
     } else if(project === 'qa') {
-        exec('firebase use qa && firebase functions:config:set travis.rebuild_branch="qa" && firebase deploy --token ' + token, function(error, stdout, stderr) {
+        exec('firebase use qa', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase functions:config:set travis.rebuild_branch="qa"', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase deploy --token ' + token, function(error, stdout, stderr) {
             console.log(error);
             console.log(stdout);
             console.log(stderr);
         });
     } else if(project === 'staging') {
-        exec('firebase use staging && firebase functions:config:set travis.rebuild_branch="staging" && firebase deploy --token ' + token, function(error, stdout, stderr) {
+        exec('firebase use staging', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase functions:config:set travis.rebuild_branch="staging"', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase deploy --token ' + token, function(error, stdout, stderr) {
             console.log(error);
             console.log(stdout);
             console.log(stderr);
         });
     } else if(project === 'prod') {
-        exec('firebase use production && firebase functions:config:set travis.rebuild_branch="master" && firebase deploy --token ' + token, function(error, stdout, stderr) {
+        exec('firebase use production', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase functions:config:set travis.rebuild_branch="master"', function(error, stdout, stderr) {
+            console.log(error);
+            console.log(stdout);
+            console.log(stderr);
+        });
+        exec('firebase deploy --token ' + token, function(error, stdout, stderr) {
             console.log(error);
             console.log(stdout);
             console.log(stderr);
