@@ -1,13 +1,17 @@
 .cta {
   height: 344px;
+  background: $blue-green;
 
   @include media-breakpoint-down(sm) {
     height: 780px;
   }
 
+  .container {
+    height: 100%;
+  }
+
   .row {
     height: 100%;
-    background: #008092;
   }
 
   .cta-image {
@@ -33,7 +37,10 @@
 
   h2 {
     color: white;
-    font-size: 22px;
+    font-family: Muli;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
     margin: 0 0 20px 0;
 
     @include media-breakpoint-down(sm) {
@@ -41,10 +48,13 @@
     }
   }
 
-  p {
+  h3 {
     color: $white;
-    font-size: 38px;
-    margin: 1rem 0;
+    font-family: Muli;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    margin: 1rem 0 3rem;
 
     @include media-breakpoint-down(sm) {
       font-size: 55px;
@@ -53,14 +63,24 @@
     }
   }
 
+  p {
+    color: #ffffff;
+    font-family: Muli;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: center;
+  }
+
   button {
-    background-color: #ec9b41;
-    border: solid 0.8px white;
-    border-radius: 2px;
+    background-color: $orange-dark;
+    border: 0.75px solid #ffffff;
+    border-radius: 16px;
     box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
-    color: $gray-dark;
+    color: #ffffff;
+    width: 223px;
     cursor: pointer;
-    font-family: Roboto;
+    font-family: Muli;
     font-size: 11px;
     font-weight: bold;
     font-style: normal;
@@ -70,6 +90,5 @@
     line-height: 1.82;
     padding: 0.5rem 1rem;
     text-align: center;
-    width: auto;
   }
 }

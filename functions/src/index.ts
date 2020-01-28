@@ -15,11 +15,11 @@ export const rebuildMaster = functions.https.onRequest((butterRequest, butterRes
             "Content-Type": "application/json",
             "Accept": "application/json",
             "Travis-API-Version": "3",
-            "Authorization": "token " + travisToken
+            "Authorization": `token ${travisToken}`
         }
       };
 
-    const body = '{"request": {"branch":"master"}}';
+    const body = `{"request": {"branch":"${functions.config().travis.rebuild_branch}"}}`;
       
     const travisRequest = https.request(options, (travisResponse: any) => {
     

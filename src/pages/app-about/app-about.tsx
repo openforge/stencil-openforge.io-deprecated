@@ -1,197 +1,10 @@
 import { Component, h } from '@stencil/core';
-import { translate } from '../../services/translation.service';
 
 @Component({
   tag: 'app-about',
   styleUrl: 'app-about.scss',
 })
 export class AppAbout {
-
-  members = [
-    {
-      name: 'Jedi Weller',
-      image: './../../assets/headshot-jedi.jpg',
-      title: translate('about.team.member.title.founder'),
-      mail: 'jedi@openforge.io',
-      twitter: 'https://twitter.com/jedihacks',
-      github: 'https://github.com/jedihacks',
-    },
-    {
-      name: 'Paulina Gallo',
-      image: './../../assets/headshot-paulina.png',
-      title: translate('about.team.member.title.developer'),
-      mail: 'paulina@openforge.io',
-      twitter: 'https://twitter.com/paulpaultweets',
-      github: 'https://github.com/paulpauldevelops',
-      url: '/about/paulina-gallo',
-    },
-    {
-      name: 'Geoffrey Melle',
-      image: './../../assets/headshot-geoff.jpg',
-      title: translate('about.team.member.title.accountManager'),
-      mail: 'geoff@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/about/geoffrey-melle',
-    },
-    {
-      name: 'Rachel Bennett',
-      image: './../../assets/headshot-rachel.jpg',
-      title: translate('about.team.member.title.designer'),
-      mail: 'rachel@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/about/rachel-bennett',
-    },
-    {
-      name: 'Billy Holloran',
-      image: './../../assets/headshot-billy.png',
-      title: translate('about.team.member.title.qualityManager'),
-      mail: 'billy@openforge.io',
-      url: '/about/billy-holloran',
-    },
-    {
-      name: 'Ethan Bohan',
-      image: './../../assets/headshot-ethan.jpg',
-      title: translate('about.team.member.title.designer'),
-      mail: 'ethan@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/about/ethan-bohan',
-    },
-    {
-      name: 'Fernando Del Olmo',
-      image: './../../assets/headshot-fernando.jpg',
-      title: translate('about.team.member.title.developer'),
-      mail: 'fernando@openforge.io',
-      twitter: 'https://twitter.com/fdom92',
-      github: 'https://github.com/Fdom92',
-      url: '/about/fernando-del-olmo',
-    },
-    {
-      name: 'Luis Chacon',
-      image: './../../assets/headshot-luis.jpg',
-      title: translate('about.team.member.title.developer'),
-      mail: 'luis@openforge.io',
-      twitter: 'https://twitter.com/luiskcs89',
-      github: 'https://github.com/luiskcs89',
-      url: '/about/luis-chacon',
-    },
-    {
-      name: 'Kevon Chambers',
-      image: '/assets/headshot-kevon.png',
-      title: translate('about.team.member.title.marketing'),
-      mail: 'kevon@openforge.io',
-      twitter: '',
-      github: '',
-    },
-    {
-      name: 'Sam Hudgens',
-      image: './../../assets/headshot-sam.jpg',
-      title: translate('about.team.member.title.softwareIntern'),
-      mail: 'sam@openforge.io',
-      twitter: '',
-      github: 'https://github.com/samhudgens',
-      url: '/about/sam-hudgens',
-    },
-    {
-      name: 'Young Song',
-      image: './../../assets/headshot-young.jpg',
-      title: translate('about.team.member.title.softwareIntern'),
-      mail: '',
-      twitter: 'https://twitter.com/YoungSongJS',
-      github: 'https://github.com/Hogusong',
-      url: '/about/young-song',
-    },
-    {
-      name: 'Ted Grant',
-      image: '/assets/headshot-ted.png',
-      title: translate('about.team.member.title.designer'),
-      mail: 'ted@openforge.io',
-      twitter: '',
-      github: '',
-      url: '/about/ted-grant',
-    },
-    {
-      name: 'Joni Lehto',
-      image: './../../assets/headshot-joni.jpg',
-      title: translate('about.team.member.title.developer'),
-      mail: 'joni@openforge.io',
-      twitter: 'https://twitter.com/lehto_joni',
-      github: '',
-    },
-    {
-      name: 'Meredith Alcorn',
-      image: './../../assets/headshot-meredith.jpg',
-      title: translate('about.team.member.title.developer'),
-      mail: 'meredith@openforge.io',
-      twitter: '',
-      github: 'https://github.com/mmalcorn',
-    },
-    {
-      name: 'Claudio Del Valle',
-      image: './../../assets/headshot-claudio.jpg',
-      title: translate('about.team.member.title.developer'),
-      mail: 'claudio@openforge.io',
-      titter: '',
-      github: 'https://github.com/daftclaud',
-    },
-    {
-      name: 'Auvo Severinkangas',
-      image: './../../assets/headshot-auvo.jpg',
-      title: translate('about.team.member.title.developer'),
-      mail: 'auvo@openforge.io',
-      twitter: '',
-      github: '',
-    },
-    {
-      name: 'Dhairya Pujara',
-      image: './../../assets/headshot-dhairya.jpg',
-      title: translate('about.team.member.title.consultant'),
-      mail: '',
-      twitter: 'https://twitter.com/dhairyapujara',
-      github: '',
-    },
-    {
-      name: 'Eli',
-      image: '/assets/headshot-eli.jpg',
-      title: 'Entertainment',
-      mail: '',
-      twitter: '',
-      github: '',
-      url: 'http://eliluproductions.com/',
-      external: true,
-    },
-    {
-      name: 'Lu',
-      image: '/assets/headshot-lu.jpg',
-      title: 'Entertainment',
-      mail: '',
-      twitter: '',
-      github: '',
-      url: 'http://eliluproductions.com/',
-      external: true,
-    },
-    {
-      name: 'Casey',
-      image: './../../assets/headshot-casey.jpg',
-      title: translate('about.team.member.title.officer'),
-      mail: '',
-      twitter: '',
-      github: '',
-      url: '/about/casey',
-    },
-    // {
-    //   name: 'YOU?',
-    //   image: '/assets/headshot-placeholder.jpg',
-    //   title: '',
-    //   mail: 'geoff@openforge.io',
-    //   twitter: '',
-    //   github: '',
-    //   url: '/opportunities/develop',
-    // },
-  ];
-
   componentDidLoad() {
     // Change meta tags dynamically
     document.querySelector("meta[property='og:title']").setAttribute('content', 'Philadelphia’s Top Mobile Technology and Design Experts | OpenForge');
@@ -202,34 +15,78 @@ export class AppAbout {
   }
 
   scrollToForm() {
-    const form = document.getElementById('team-photo');
+    const form = document.getElementById('members');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
 
   render() {
     return (
       <div class="about">
-        {/* header - hero */}
-        <header class="hero">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-md-8 col-sm-10 text-container">
-                <h1>
-                  <app-translate keyword="about.header.title" />
-                </h1>
-                <p>
-                  <app-translate keyword="about.header.text" />
-                </p>
-                <button onClick={this.scrollToForm.bind(this)} class="btn btn-primary">
-                  <app-translate keyword="about.header.action" />
-                </button>
+        <div class="container-fluid">
+          <div class="row align-items-center hero">
+            <div class="col-12 col-md-11 offset-md-1">
+              <h1>
+                <app-translate class="d-none d-md-block" keyword="about.header.title" />
+                <app-translate class="d-block d-md-none" keyword="about.header.titleSmall" />
+              </h1>
+              <p class="about-text">
+                <app-translate keyword="about.header.text" />
+              </p>
+              <app-img class="d-block d-md-none" src="../../assets/svg/about-graphic-header.svg" />
+              <button onClick={this.scrollToForm.bind(this)} class="btn btn-secondary d-none d-md-block">
+                <app-translate keyword="about.header.action" />
+              </button>
+            </div>
+          </div>
+
+          <div class="row justify-content-center d-none d-md-block values">
+            <div class="col-12">
+              <h2 class="aside-lines">
+                <span>
+                  <app-translate keyword="about.values.title" />
+                </span>
+              </h2>
+              <p class="about-text">
+                <app-translate keyword="about.values.text" />
+              </p>
+            </div>
+          </div>
+
+          <div class="d-none d-md-block value-badges">
+            <div class="row justify-content-center">
+              <div class="col-md-4 col-lg-3 d-flex flex-column align-items-center">
+                <div class="honesty" />
+                <h3>
+                  <app-translate keyword="about.values.value1" />
+                </h3>
+              </div>
+              <div class="col-md-4 col-lg-3 d-flex flex-column align-items-center">
+                <div class="integrity" />
+                <h3>
+                  <app-translate keyword="about.values.value2" />
+                </h3>
+              </div>
+              <div class="col-md-4 col-lg-3 d-flex flex-column align-items-center">
+                <div class="transparency" />
+                <h3>
+                  <app-translate keyword="about.values.value3" />
+                </h3>
               </div>
             </div>
           </div>
-        </header>
+
+          <div id="members" class="row justify-content-center members">
+            <div class="col-10 col-lg-10">
+              <h2>
+                <app-translate keyword="about.landing.cta.title" />
+              </h2>
+              <app-members-section />
+            </div>
+          </div>
+        </div>
 
         {/* section - team */}
-        <section id="team-photo" class="team-photo {this.className}">
+        {/* <section id="team-photo" class="team-photo {this.className}">
           <div class="container">
             <div class="row align-items-end text-center">
               <div class="col-12">
@@ -237,63 +94,7 @@ export class AppAbout {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* section - mission statement */}
-        <section id="mission-statement" class="mission-statement">
-          <div class="mission-statement d-flex text-center">
-            <p class="text-white align-self-center">
-              <app-translate keyword="about.mission.statement" />
-            </p>
-          </div>
-        </section>
-
-        {/* section - values */}
-        <section id="values" class="values">
-          <div class="container text-center">
-            <div class="row header">
-              <div class="col-12">
-                <h2>
-                  <app-translate keyword="about.values.title" />
-                </h2>
-                <p>
-                  <app-translate keyword="about.values.text" />
-                </p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="integrity" />
-                <app-translate class="value-text" key="about.values.value2" />
-              </div>
-              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="honesty" />
-                <app-translate class="value-text" key="about.values.value1" />
-              </div>
-              <div class="col-md-4 col-sm-12 d-flex flex-column align-items-center">
-                <div class="transparency" />
-                <app-translate class="value-text" key="about.values.value3" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* section - members */}
-        <section id="members" class="members">
-          <div class="container text-center">
-            <div class="header">
-              <h2>
-                <app-translate keyword="about.team.title" />
-              </h2>
-              <p>
-                <app-translate keyword="about.team.text" />
-              </p>
-            </div>
-
-            <app-members members={this.members} />
-          </div>
-        </section>
-
+        </section> */}
         {/* aside - cta */}
         <app-cta />
 
