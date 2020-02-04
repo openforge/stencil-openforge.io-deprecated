@@ -11,19 +11,19 @@ describe('Home Page', function () {
       })
       describe('Navigation from urls', function () {
         it('Should navigate to openforge.io/', function () {
-          cy.visit('localhost:3335/')
+          cy.visit('localhost:3333/')
         })
         it('Should navigate to openforge.io/contact', function () {
-          cy.visit('localhost:3335/contact')
+          cy.visit('localhost:3333/contact')
         })
         it('Should navigate to openforge.io/about', function () {
-          cy.visit('localhost:3335/about')
+          cy.visit('localhost:3333/about')
         })
         it('Should navigate to openforge.io/partners', function () {
-          cy.visit('localhost:3335/partners')
+          cy.visit('localhost:3333/partners')
         })
         it('Should navigate to openforge.io/blog', function () {
-          cy.visit('localhost:3335/blog')
+          cy.visit('localhost:3333/blog')
         })
 
       })
@@ -77,138 +77,114 @@ describe('Home Page', function () {
         it('Should have 9 navigation options (some are commented out)', function () {
           cy.get('a.nav-link').should('have.length', 9)
         })
-        it('Our Work should exist and be visible in the nav bar', function () {
-          cy.get('nav')
-            .contains('Our Work')
-            .should('exist')
-            .and('be.visible')
+
+      })
+      it('Should have a tags for Mobile Measures project that navigate to the Apple Store and Google Play Store', function () {
+        // Apple
+        cy.get('[data-cy=mobilemeasures-apple]')
+          .should('have.attr', 'href')
+          .and('contain', 'apps.apple.com')
+          .and('contain', 'mobile-measures')
+
+        // Google
+        cy.get('[data-cy=mobilemeasures-google]')
+          .should('have.attr', 'href')
+          .and('contain', 'play.google.com')
+          .and('contain', 'mobilemeasures')
+      })
+
+      it('Should have a tags for LoudCloud that navigate to the Apple Store and Google Play Store', function () {
+        cy.get('[data-cy=loudcloud-apple]')
+          .should('have.attr', 'href')
+          .and('contain', 'itunes.apple.com')
+          .and('contain', 'loudcloud')
+
+        cy.get('[data-cy=loudcloud-google]')
+          .should('have.attr', 'href')
+          .and('contain', 'play.google.com')
+          .and('contain', 'loudcloud')
+      });
+
+      it('Should have a tags for Voyage that navigate to the Apple Store and Google Play Store', function () {
+        cy.get('[data-cy=voyage-apple]')
+          .should('have.attr', 'href')
+          .and('contain', 'itunes.apple.com')
+          .and('contain', 'the-voyage')
+
+        cy.get('[data-cy=voyage-google]')
+          .should('have.attr', 'href')
+          .and('contain', 'play.google.com')
+          .and('contain', 'carecaminnovations')
+      });
+
+      describe('Process Section', function () {
+        it('Should scroll to the process section', function () {
+          cy.get('#process').scrollIntoView()
         })
-        it('About should exist and be visible in the nav bar', function () {
-          cy.get('nav')
-            .contains('About')
-            .should('exist')
-            .and('be.visible')
+        it('Should have carousel components and activeIndex prop to change', function () {
+          cy.get('app-carousel-indicators').should('exist')
+            .and('have.prop', 'activeIndex')
         })
-        it('Resources should exist and be visible in the nav bar', function () {
-          cy.get('nav')
-            .contains('Resources')
-            .should('exist')
-            .and('be.visible')
+        it('Active class should show on one carousel list element at a time', function () {
+          cy.get('app-carousel-indicators').within(() => {
+            cy.get('li').first().should('have.class', 'active');
+            // Wait for carousel list el to change on the page
+            cy.wait(2000);
+            cy.get('li:first').next().should('have.class', 'active');
+            cy.get('li').first().should('not.have.class', 'active');
+          })
         })
-        it('Work With Us should exist and be visible in the nav bar', function () {
-          cy.get('nav')
-            .contains('Work With Us')
-            .should('exist')
-            .and('be.visible')
+        it('Process images should show in correct order', function () {
+          cy.get('[data-cy=capp-img]').each(($el, index) => {
+            switch (index) {
+              case 0:
+                cy.wrap($el).should('have.prop', 'src').and('contain', 'discovery')
+                break;
+
+              case 1:
+                cy.wrap($el).should('have.prop', 'src').and('contain', 'design')
+                break;
+
+              case 2:
+                cy.wrap($el).should('have.prop', 'src').and('contain', 'development')
+                break;
+
+              case 3:
+                cy.wrap($el).should('have.prop', 'src').and('contain', 'deploy')
+                break;
+
+              case 4:
+                cy.wrap($el).should('have.prop', 'src').and('contain', 'userfeedback')
+                break;
+            }
+          })
         })
       })
-    })
-    it('Should have a tags for Mobile Measures project that navigate to the Apple Store and Google Play Store', function () {
-      // Apple
-      cy.get('[data-cy=mobilemeasures-apple]')
-        .should('have.attr', 'href')
-        .and('contain', 'apps.apple.com')
-        .and('contain', 'mobile-measures')
-
-      // Google
-      cy.get('[data-cy=mobilemeasures-google]')
-        .should('have.attr', 'href')
-        .and('contain', 'play.google.com')
-        .and('contain', 'mobilemeasures')
-    })
-
-    it('Should have a tags for LoudCloud that navigate to the Apple Store and Google Play Store', function () {
-      cy.get('[data-cy=loudcloud-apple]')
-        .should('have.attr', 'href')
-        .and('contain', 'itunes.apple.com')
-        .and('contain', 'loudcloud')
-
-      cy.get('[data-cy=loudcloud-google]')
-        .should('have.attr', 'href')
-        .and('contain', 'play.google.com')
-        .and('contain', 'loudcloud')
+      describe('App-Cta', function () {
+        it('Should exist', function () {
+          cy.get('app-cta').should('exist')
+        })
+        it('Should navigate to the contact page', function () {
+          cy.get('app-cta').within(() => {
+            cy.get('stencil-route-link')
+              .should('exist')
+              .should('have.prop', 'url')
+              .and('contain', '/contact')
+          })
+        })
+      })
+      describe('Footer', function () {
+        beforeEach(() => {
+          cy.get('app-footer').as('footer')
+        })
+        it('Should exist and be visible', function () {
+          cy.get('@footer').scrollIntoView()
+          cy.get('@footer').should('exist')
+        })
+        it('Should link to company e-mail', function () {
+          cy.get('@footer').contains('hello')
+            .should('have.attr', 'href', 'mailto:hello@openforge.io')
+        })
+      })
     });
-
-    it('Should have a tags for Voyage that navigate to the Apple Store and Google Play Store', function () {
-      cy.get('[data-cy=voyage-apple]')
-        .should('have.attr', 'href')
-        .and('contain', 'itunes.apple.com')
-        .and('contain', 'the-voyage')
-
-      cy.get('[data-cy=voyage-google]')
-        .should('have.attr', 'href')
-        .and('contain', 'play.google.com')
-        .and('contain', 'carecaminnovations')
-    });
-
-    describe('Process Section', function () {
-      it('Should scroll to the process section', function () {
-        cy.get('#process').scrollIntoView()
-      })
-      it('Should have carousel components and activeIndex prop to change', function () {
-        cy.get('app-carousel-indicators').should('exist')
-          .and('have.prop', 'activeIndex')
-      })
-      it('Active class should show on one carousel list element at a time', function () {
-        cy.get('app-carousel-indicators').within(() => {
-          cy.get('li').first().should('have.class', 'active');
-          // Wait for carousel list el to change on the page
-          cy.wait(2000);
-          cy.get('li:first').next().should('have.class', 'active');
-          cy.get('li').first().should('not.have.class', 'active');
-        })
-      })
-      it('Process images should show in correct order', function () {
-        cy.get('[data-cy=capp-img]').each(($el, index) => {
-          switch (index) {
-            case 0:
-              cy.wrap($el).should('have.prop', 'src').and('contain', 'discovery')
-              break;
-
-            case 1:
-              cy.wrap($el).should('have.prop', 'src').and('contain', 'design')
-              break;
-
-            case 2:
-              cy.wrap($el).should('have.prop', 'src').and('contain', 'development')
-              break;
-
-            case 3:
-              cy.wrap($el).should('have.prop', 'src').and('contain', 'deploy')
-              break;
-
-            case 4:
-              cy.wrap($el).should('have.prop', 'src').and('contain', 'userfeedback')
-              break;
-          }
-        })
-      })
-    })
-    describe('App-Cta', function () {
-      it('Should exist', function () {
-        cy.get('app-cta').should('exist')
-      })
-      it('Should navigate to the contact page', function () {
-        cy.get('app-cta').within(() => {
-          cy.get('stencil-route-link')
-            .should('exist')
-            .should('have.prop', 'url')
-            .and('contain', '/contact')
-        })
-      })
-    })
-    describe('Footer', function () {
-      beforeEach(() => {
-        cy.get('app-footer').as('footer')
-      })
-      it('Should exist and be visible', function () {
-        cy.get('@footer').scrollIntoView()
-        cy.get('@footer').should('exist')
-      })
-      it('Should link to company e-mail', function () {
-        cy.get('@footer').contains('hello')
-          .should('have.attr', 'href', 'mailto:hello@openforge.io')
-      })
-    })
-  });
-})
+  })

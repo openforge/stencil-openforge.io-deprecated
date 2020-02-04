@@ -72,7 +72,7 @@ export class AppNavHeader {
 
             <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
               <ul class="navbar-nav">
-                <li class="nav-item" data-target="#navbarSupportedContent">
+                <li data-cy="our-work" class="nav-item" data-target="#navbarSupportedContent">
                   <stencil-route-link url="/our-work" anchorClass="nav-link" activeClass="active">
                     {translate('nav.links.ourWork')}
                   </stencil-route-link>
@@ -132,7 +132,7 @@ export class AppNavHeader {
                     {translate('nav.links.workWithUs')}
                   </stencil-route-link>
                 </li>
-                <li class="nav-item search d-none d-lg-block" data-target="#navbarSupportedContent" onClick={() => this.toogleSearch('visible')}>
+                <li class="nav-item search d-none d-lg-block" data-cy="search-glass" data-target="#navbarSupportedContent" onClick={() => this.toogleSearch('visible')}>
                   <i class="fa fa-search" />
                 </li>
                 <li
