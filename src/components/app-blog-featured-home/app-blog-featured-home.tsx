@@ -14,6 +14,7 @@ export class AppBlogFeaturedHome {
 
   render() {
     const publishDate = new Date(this.blogPost.published);
+    const publishDate1 = new Date(this.blogPost1.published);
     return (
       <div class="blog-featured">
         <div class="container">
@@ -74,8 +75,8 @@ export class AppBlogFeaturedHome {
                   <app-img class="profile-image d-none d-md-block" src={this.blogPost1.author.profile_image} />
                   <div>
                     By &nbsp;
-                    <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                    &nbsp; on {formatDate(publishDate)}
+                    <stencil-route-link url={`/about/${this.blogPost1.author.slug}`}>{`${this.blogPost1.author.first_name} ${this.blogPost1.author.last_name}`}</stencil-route-link>
+                    &nbsp; on {formatDate(publishDate1)}
                   </div>
                 </div>
               </div>
@@ -89,8 +90,8 @@ export class AppBlogFeaturedHome {
                   <app-img class="profile-image d-none d-md-block" src={this.blogPost1.author.profile_image} />
                   <div>
                     By &nbsp;
-                    <stencil-route-link url={`/about/${this.blogPost.author.slug}`}>{`${this.blogPost.author.first_name} ${this.blogPost.author.last_name}`}</stencil-route-link>
-                    &nbsp; on {formatDate(publishDate)}
+                    <stencil-route-link url={`/about/${this.blogPost1.author.slug}`}>{`${this.blogPost1.author.first_name} ${this.blogPost1.author.last_name}`}</stencil-route-link>
+                    &nbsp; on {formatDate(publishDate1)}
                   </div>
                 </div>
               </div>
