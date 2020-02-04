@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "build": "node scripts/get-butter.js && stencil build --prerender",
+    "build:functions": "cd functions && npm install && npm run build && cd ..",
     "cz": "git-cz",
     "dev": "node scripts/get-butter.js && sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
