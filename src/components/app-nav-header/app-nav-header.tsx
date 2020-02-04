@@ -77,7 +77,7 @@ export class AppNavHeader {
                     {translate('nav.links.ourWork')}
                   </stencil-route-link>
                 </li>
-                <li class="nav-item dropdown" data-target="#navbarSupportedContent">
+                <li data-cy="resources" class="nav-item dropdown" data-target="#navbarSupportedContent">
                   <stencil-route-link
                     urlMatch={['/blog', '/forge']}
                     activeClass="active"
@@ -91,7 +91,7 @@ export class AppNavHeader {
                     {translate('nav.links.resources')}
                   </stencil-route-link>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown0">
-                    <stencil-route-link url="/blog" anchorClass="nav-link dropdown-item" activeClass="active">
+                    <stencil-route-link data-cy="blog" url="/blog" anchorClass="nav-link dropdown-item" activeClass="active">
                       Blog
                     </stencil-route-link>
                     {/* <stencil-route-link url="/forge" anchorClass="nav-link dropdown-item" activeClass="active">
@@ -102,7 +102,7 @@ export class AppNavHeader {
                     </a>
                   </div>
                 </li>
-                <li class="nav-item dropdown" data-target="#navbarSupportedContent">
+                <li data-cy="about" class="nav-item dropdown" data-target="#navbarSupportedContent">
                   <stencil-route-link
                     urlMatch={['/about', '/process', '/partners']}
                     activeClass="active"
@@ -116,19 +116,19 @@ export class AppNavHeader {
                     {translate('nav.links.about')}
                   </stencil-route-link>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                    <stencil-route-link url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
+                    <stencil-route-link data-cy="meet" url="/about" anchorClass="nav-link dropdown-item" activeClass="active">
                       Meet the Team
                     </stencil-route-link>
                     {/* <stencil-route-link url="/process" anchorClass="nav-link dropdown-item" activeClass="active">
                       Our Process
                     </stencil-route-link> */}
-                    <stencil-route-link url="/partners" anchorClass="nav-link dropdown-item" activeClass="active">
+                    <stencil-route-link data-cy="partners" url="/partners" anchorClass="nav-link dropdown-item" activeClass="active">
                       Partners
                     </stencil-route-link>
                   </div>
                 </li>
                 <li class="nav-item contact-us-button" data-target="#navbarSupportedContent">
-                  <stencil-route-link url="/contact" anchorClass="nav-link contact-us" activeClass="active">
+                  <stencil-route-link data-cy="contact" url="/contact" anchorClass="nav-link contact-us" activeClass="active">
                     {translate('nav.links.workWithUs')}
                   </stencil-route-link>
                 </li>
