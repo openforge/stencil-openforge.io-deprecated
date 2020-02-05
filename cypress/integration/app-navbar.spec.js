@@ -99,6 +99,7 @@ describe('Navbar', function () {
             it('Our work tab should be on select state', () => {
                 cy.get('[data-cy=our-work]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
+                cy.get('.mobile').scrollIntoView()
             })
         })
 

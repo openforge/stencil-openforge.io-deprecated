@@ -187,4 +187,5 @@ describe('Home Page', function () {
         })
       })
     });
-  })
+  });
+})
