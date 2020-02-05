@@ -30,16 +30,28 @@ export class AppServiceLevelAgreement {
       <div class="service-level-agreement">
         <header class={this.className}>
           <div class="container">
-            <div class="row align-items-center reverse-cols">
+            <div class="row align-items-center no-mobile">
               <div class="hero-content col-text col-lg-7 col-md-7 flex-column col-sm-12">
                 <h2>Service Level Agreement</h2>
-                <p>Below you can read the contents of our SLA. We welcome questions, so if you have any, don't hesitate to contact us at hello@openforge.io!</p>
+                <p>Below you can read the contents of our SLA. We welcome questions, so if you have any, don't hesitate to contact us at <span class="underline">hello@openforge.io!</span></p>
                 <button class="btn btn-blue" onClick={this.scrollTo.bind(this)}>
                   Learn More
                 </button>
               </div>
-              <div class="col-img col-lg-5 col-md-5 col-sm-12 flex-column justify-content-center">
+              <div class="col-img col-lg-5 col-md-5 col-sm-12 justify-content-center">
                 <img src="/assets/svg/SLA-header image.svg" alt="SLA Header" />
+              </div>
+            </div>
+            <div class="row align-items-center show-mobile">
+              <div class="hero-content col-text col-lg-7 col-md-7 flex-column col-sm-12">
+                <h2>Service Level Agreement</h2>
+                <div class="col-img col-lg-5 col-md-5 col-sm-12 justify-content-center">
+                  <img src="/assets/svg/SLA-header image.svg" alt="SLA Header" />
+                </div>
+                <p>Below you can read the contents of our SLA. We welcome questions, so if you have any, don't hesitate to contact us at hello@openforge.io!</p>
+                <button class="btn btn-blue" onClick={this.scrollTo.bind(this)}>
+                  Learn More
+                </button>
               </div>
             </div>
           </div>
@@ -53,7 +65,7 @@ export class AppServiceLevelAgreement {
           <hr />
           <div class="sla-row">
             <h3 class="topr">Client Service</h3>
-            <h3>Client Management</h3>
+            <h3 class="midrow">Client Management</h3>
             <div class="sla-detail">
               <ul>
                 <li>
@@ -80,7 +92,7 @@ export class AppServiceLevelAgreement {
           <hr />
           <div class="sla-row">
             <h3 class="topr">Creative</h3>
-            <h3>Concept</h3>
+            <h3 class="midrow">Concept</h3>
             <div class="sla-detail">
               <ul>
                 <li>
@@ -103,7 +115,7 @@ export class AppServiceLevelAgreement {
           <hr />
           <div class="sla-row">
             <h3 class="topr">Project Management</h3>
-            <h3>Planning & Scheduling</h3>
+            <h3 class="midrow">Planning & Scheduling</h3>
             <div class="sla-detail">
               <ul>
                 <li>
@@ -129,7 +141,7 @@ export class AppServiceLevelAgreement {
           <hr />
           <div class="sla-row">
             <h3 class="topr">Production</h3>
-            <h3>Costs</h3>
+            <h3 class="midrow">Costs</h3>
             <div class="sla-detail">
               <ul>
                 <li>
@@ -167,7 +179,7 @@ export class AppServiceLevelAgreement {
           <hr />
           <div class="sla-row">
             <h3 class="topr">Finance</h3>
-            <h3>Billing</h3>
+            <h3 class="midrow">Billing</h3>
             <div class="sla-detail">
               <ul>
                 <li>

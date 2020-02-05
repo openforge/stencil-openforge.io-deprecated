@@ -1,14 +1,44 @@
+
 .service-level-agreement {
   // hero
   .hero {
     background-image: none;
     @include media-breakpoint-down(md) {
           background-color: #00A7B6;
+          p{
+            padding: 10% 0 10% 0;
+          }
+
+          .underline{
+            text-decoration: underline;
+          }
         }
     @include media-breakpoint-down(sm) {
           background:white;
           text-align: center;
-          padding-top: 125px;
+          padding-top: 90px;
+          padding-bottom: 10%;
+
+           p{
+            padding: 0;
+          }
+
+          .underline{
+            text-decoration: none;
+          }
+        }
+  }
+
+  .show-mobile{
+    display:none;
+    @include media-breakpoint-down(sm) {
+          display:block;
+        }
+     }
+  
+  .no-mobile{
+    @include media-breakpoint-down(sm) {
+          display:none;
         }
   }
 
@@ -20,6 +50,7 @@
 
   @include media-breakpoint-down(sm) {
     background:#0595AB;
+    display: none;
   }
   background: #0595AB;
   border-color: $white;
@@ -45,6 +76,14 @@
     background-position: top center;
     background-size: cover;
     height: 100vh;
+
+    @include media-breakpoint-down(md) {
+        height: 60vh;
+      }
+
+    @include media-breakpoint-down(sm) {
+        height: 50%;
+      }
 
     .container,
     .row {
@@ -100,9 +139,16 @@
 
   .sla-content {
     padding-top: 6rem;
+    @include media-breakpoint-down(md) {
+       padding-top: 2rem;
+      }
+
+    @include media-breakpoint-down(sm) {
+       padding-top: 0;
+      }
     .sla-headers {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 2fr;
       
       @include media-breakpoint-down(md) {
         display:none
@@ -131,7 +177,7 @@
 
     .sla-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 2fr;
       margin-top: 20px;
 
        @include media-breakpoint-down(md) {
@@ -143,16 +189,31 @@
         text-transform: uppercase;
         color: $black;
         font-size: 28px;
-        font-weight:normal
+        font-weight:normal;
+        padding-top:5%;
         }
+
+        .midrow{
+          padding-bottom:5%;
+        }
+
       }
 
       @include media-breakpoint-down(sm) {
        display: block;
         width: 100%;
 
-        h3{
-          color:$black !important;
+        .topr{
+        text-transform: uppercase;
+        color: $black;
+        font-size: 28px;
+        font-weight:normal
+        }
+
+        .midrow{
+          color: $orange;
+          font-weight:normal;
+          padding-bottom:5%;
         }
       }
 
@@ -176,7 +237,7 @@
     p.top-link {
       margin-top: 15px;
       font-size: 25px;
-      font-weight: bold;
+      font-weight:normal;
       letter-spacing: 1.6px;
       text-align: center;
       color: $orange;
@@ -192,18 +253,11 @@
         @include media-breakpoint-down(md) {
           min-height: 260px;
         }
-      }
 
-  @include media-breakpoint-down(sm) {
-          .reverse-cols{
-            display: flex;
-            flex-flow: wrap;
-            flex-direction: column-reverse;
-
-            img{
-              padding-bottom:10% ;
-            }
-          }
+        @include media-breakpoint-down(sm) {
+           padding-top:10%;
+           padding-bottom: 15%;
         }
+      }
 
 }
