@@ -153,14 +153,14 @@ export class AppBlog {
       this.blogNumberOfPages = Math.ceil(this.allBlogPosts.length / this.pageSize);
       this.blogPostsData = [];
       let index = (page - 1) * this.pageSize;
-      let endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize);
+      let endPoint = Math.min(this.allBlogPosts.length, page * this.pageSize) + 1;
 
       // Adjust the index and the endPoint by the index of the featuredPost
       if (page > this.pageOfFeaturedPost) {
         index += 1;
       }
       if (page === this.pageOfFeaturedPost) {
-        endPoint += 1;
+        endPoint -= 1;
       }
 
       for (index; index < endPoint; index += 1) {
