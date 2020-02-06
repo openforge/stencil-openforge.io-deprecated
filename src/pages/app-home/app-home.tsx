@@ -146,7 +146,7 @@ export class AppHome {
                     <p>{translate('home.work.mobileWebApplications.text')}</p>
                   </div>
                 </div>
-                <div class="content-panel-image mobile">
+                <div class="content-panel-image">
                   <h2>
                     <app-translate keyword="home.work.mobileWebApplications.example" />
                   </h2>

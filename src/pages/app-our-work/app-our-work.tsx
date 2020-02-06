@@ -43,7 +43,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
               <stencil-route-link url="/our-work/mobilemeasures" exact={true}>
-                <button>
+                <button data-cy="mobilembutton">
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
               </stencil-route-link>
