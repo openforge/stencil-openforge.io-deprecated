@@ -103,14 +103,14 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-4 col-md-5 col-sm-12 flex-column text">
-                <h1>
+                <h1 data-cy='title'>
                   <app-translate keyword="home.hero.title" />
                 </h1>
-                <h2>
+                <h2 data-cy='subtitle'>
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
                 <div class="sub-txt">
-                  <p>
+                  <p data-cy='subpar'>
                     <app-translate keyword="home.hero.text" />
                   </p>
                 </div>
@@ -239,7 +239,7 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h2 data-cy="capp-head">
                       <app-translate keyword="home.process.discovery.title" />
                     </h2>
                   </div>
