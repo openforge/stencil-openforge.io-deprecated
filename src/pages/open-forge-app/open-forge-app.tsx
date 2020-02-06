@@ -1,6 +1,7 @@
 import '@stencil/router';
-import { Component, h, Listen } from '@stencil/core';
+import { Component, h, Listen, Build } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
+import { BrowserService } from '../../services/browser.services';
 
 polyfill();
 
@@ -11,6 +12,11 @@ polyfill();
 export class OpenForgeApp {
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
+
+  constructor() {
+    const browserService = new BrowserService();
+    browserService.check_webp(Build.isBrowser);
+  }
 
   @Listen('swUpdate', { target: 'window' })
   async onSWUpdate() {

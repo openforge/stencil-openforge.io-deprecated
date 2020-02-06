@@ -1,19 +1,21 @@
-import { Component, State, Prop, Watch, h } from '@stencil/core';
+import { Component, State, Prop, Watch, h, Build } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
+import { BrowserService } from '../../services/browser.services';
 
 @Component({
   tag: 'app-team-landing',
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
   backgroundPhoto: string;
   headshotPhoto: string;
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
 
   @State() chips;
+  @State() browserService: BrowserService;
+
   data = {
     'jedidiah-weller': {
       firstname: 'Jedi',
@@ -25,15 +27,15 @@ export class AppTeamLanding {
         'Besides being the chief morale booster, Jedi leads the strategic partnerships and public outreach programs at OpenForge. His boundless energy and ambition means he’s constantly jumping between client calls, networking events, and ensuring the team and clients are happy with the work being done.',
       skills: ['Software Engineering', 'Artificial Intelligence', 'Product Design', 'Business Strategy', 'Software Architecture', 'Marketing', 'Ionic', 'Angular', 'Node.js', 'C#'],
       team: 'ceo',
-      backgroundPhoto: '/assets/bios-background-jedi.webp',
-      headshotPhoto: '/assets/headshot-jedi.webp',
+      backgroundPhoto: '/assets/bios-background-jedi.png',
+      headshotPhoto: '/assets/headshot-jedi.png',
       metatags: {
         title: 'Jedi Weller - CEO & Head of Technology | OpenForge',
         description:
           'Besides being the chief morale booster, Jedi leads the strategic partnerships and public outreach programs at OpenForge. His boundless energy and ambition means he’s constantly jumping between client calls, networking events, and ensuring the team and clients are happy with the work being done.',
         keywords: 'Jedi Weller, ceo, head of technology',
         url: 'https://openforge.io/about/jedidiah-weller/',
-        image: 'https://openforge.io/assets/bios-background-jedi.webp',
+        image: 'https://openforge.io/assets/bios-background-jedi.png',
       },
     },
     'rachel-bennett': {
@@ -46,15 +48,15 @@ export class AppTeamLanding {
         'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or conceptualizing, she approaches each problem with an equal measure of discipline and curiosity.',
       skills: ['UX Design', 'UI Design', 'Web Design', 'Product Design', 'Graphic Design', 'Prototyping'],
       team: 'design',
-      backgroundPhoto: '/assets/bios-background-rachel.webp',
-      headshotPhoto: '/assets/headshot-rachel.webp',
+      backgroundPhoto: '/assets/bios-background-rachel.jpg',
+      headshotPhoto: '/assets/headshot-rachel.png',
       metatags: {
         title: 'Rachel Bennett - Visual Designer | OpenForge',
         description:
           'As Lead Designer, Rachel oversees all design projects and communicates directly with our clients for all design related needs. Whether she is designing, strategizing, or conceptualizing, she approaches each problem with an equal measure of discipline and curiosity.',
         keywords: 'Rachel Bennett, designer, visual designer, UIUX',
         url: 'https://openforge.io/about/rachel-bennett/',
-        image: 'https://openforge.io/assets/bios-background-rachel.webp',
+        image: 'https://openforge.io/assets/bios-background-rachel.jpg',
       },
     },
     'paulina-gallo': {
@@ -67,15 +69,15 @@ export class AppTeamLanding {
         'Besides coding on a daily basis and maintaining her development skills, Paulina is heavily involved with managing the development process. This includes the initial scoping, architecture planning, client communication, and the deployment of all projects. Outside of OpenForge Paulina volunteers for various local tech organizations and is the co-organizer of Angular Philly and Ionic Philly.',
       skills: ['Front-end Wizard ✨', 'Angular', 'Ionic', 'Typescript', 'Cordova', 'Capacitor', 'Firebase', 'RxJS', 'Redux', 'NgRx'],
       team: 'development',
-      backgroundPhoto: '/assets/bios-background-paulina.webp',
-      headshotPhoto: '/assets/headshot-paulina.webp',
+      backgroundPhoto: '/assets/bios-background-paulina.png',
+      headshotPhoto: '/assets/headshot-paulina.png',
       metatags: {
         title: 'Paulina Gallo - Software Engineer | OpenForge',
         description:
           'Not only does Paulina code and maintain her development skills, she stays heavily involved with managing the full development process of a project, including the initial scoping, architecture planning, client communication management, and deployment involved in all projects. Paulina volunteers for various organizations and is the co-organizer for Angular Philly and Ionic Philly.',
         keywords: 'Paulina Gallo',
         url: 'https://openforge.io/about/paulina-gallo/',
-        image: 'https://openforge.io/assets/bios-background-paulina.webp',
+        image: 'https://openforge.io/assets/bios-background-paulina.png',
       },
     },
     'leon-degtar': {
@@ -93,7 +95,7 @@ export class AppTeamLanding {
         description: 'Leon provides guidance to our clients and team with clear process and a focus on execution and communication.',
         keywords: 'Leon Degtar',
         url: 'https://openforge.io/about/leon-degtar/',
-        image: 'https://openforge.io/assets/headshot-leon.webp',
+        image: 'https://openforge.io/assets/headshot-leon.png',
       },
     },
     'fernando-del-olmo': {
@@ -106,15 +108,15 @@ export class AppTeamLanding {
         'Fernando helps manage the development process of projects; from the initial scoping and architectural planning aspects, all the way through to the actual development of the product. He is always considering ways to improve the way the development team functions by staying up-to-date on  technology and tools.',
       skills: ['Front-end Wizard ✨', 'Angular', 'Ionic', 'Firebase', 'StencilJS', 'RxJS', 'NGXS', 'NGRX', 'Redux', 'NodeJS'],
       team: 'development',
-      backgroundPhoto: '/assets/bios-background-fernando.webp',
-      headshotPhoto: '/assets/headshot-fer.webp',
+      backgroundPhoto: '/assets/bios-background-fernando.png',
+      headshotPhoto: '/assets/headshot-fer.png',
       metatags: {
         title: 'Fernando Del Olmo - Software Engineer | OpenForge',
         description:
           'Fernando is originally from Madrid, Spain where he recieved his Bachelors degree in Computer Engineering from Universidad Autónoma of Madrid. Joining the OpenForge team allowed Fernando to pursue his dream of having a flexible career working remotely and avoiding a life of cubicles.',
         keywords: 'Fernano Del Olmo',
         url: 'https://openforge.io/about/fernando-del-olmo/',
-        image: 'https://openforge.io/assets/bios-background-fernando.webp',
+        image: 'https://openforge.io/assets/bios-background-fernando.png',
       },
     },
     'william-holloran': {
@@ -127,7 +129,7 @@ export class AppTeamLanding {
         'As Quality Manager, Billy leads the team in testing all company deliverables. Through automated & manual testing strategies, he put tests in place to catch new bugs before they are introduced, as well as testing the applications to ensure that all bugs are found and fixed.',
       skills: ['Quality Assurance', 'Organization', 'Planning', 'Communication', 'Critical Thinking', 'Leadership', 'Problem-solving', 'Sense of Humor'],
       team: 'management',
-      backgroundPhoto: '/assets/bios-background-billy.webp',
+      backgroundPhoto: '/assets/bios-background-billy.png',
       headshotPhoto: '/assets/headshot-billy.png',
       metatags: {
         title: 'Billy Holloran - QA Manager | OpenForge',
@@ -135,7 +137,7 @@ export class AppTeamLanding {
           'As Project Manager, Billy ensures that our team and your team have the resources and requirements needed in order to successfully launch your product. Heading up our quality assurance process, Billy leads the team in testing all deliverables maintaining high quality standards.',
         keywords: 'William Billy Holloran',
         url: 'https://openforge.io/about/william-holloran/',
-        image: 'https://openforge.io/assets/bios-background-billy.webp',
+        image: 'https://openforge.io/assets/bios-background-billy.png',
       },
     },
     'luis-chacon': {
@@ -148,15 +150,15 @@ export class AppTeamLanding {
         'Luis has mastered the agile approach to software development and has the ability to seamlessly transition between tasks and pivot if the necessity arises. His physical distance from the other team members does not stand in the way when it comes to pulling the team together for collaboration to tackle tasks at hand and deliver working code that ourselves and clients can rely on.',
       skills: ['Angular', 'Ionic', 'Typescript', 'Firebase', 'Scrum'],
       team: 'development',
-      backgroundPhoto: '/assets/bios-background-luis.webp',
-      headshotPhoto: '/assets/headshot-luis.webp',
+      backgroundPhoto: '/assets/bios-background-luis.png',
+      headshotPhoto: '/assets/headshot-luis.png',
       metatags: {
         title: 'Luis Chacon - Software Engineer | OpenForge',
         description:
           'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Masters in Software Engineering with a full scholarship form the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
         keywords: 'Luis Chacon',
         url: 'https://openforge.io/about/luis-chacon/',
-        image: 'https://openforge.io/assets/bios-background-luis.webp',
+        image: 'https://openforge.io/assets/bios-background-luis.png',
       },
     },
     'claudio-del-valle': {
@@ -169,14 +171,14 @@ export class AppTeamLanding {
         'Like most of the developers at OpenForge, Claudio is involved in the scoping and development process of mobile apps. He enjoys the discovery process and lends his technical opinion wherever needed to improve the overall product. He enjoys keeping up with the latest web development trends and sharing his knowledge with the rest of the team.',
       skills: ['NodeJS', 'RxJS', 'Angular', 'Ionic', 'StencilJS', 'Firebase'],
       team: 'development',
-      headshotPhoto: '/assets/headshot-claudio.webp',
+      headshotPhoto: '/assets/headshot-claudio.png',
       metatags: {
         title: 'Claudio Del Valle - Software Engineer | OpenForge',
         description:
           'Like most of the developers at OpenForge, Claudio is involved in the scoping and development process of mobile apps. He enjoys the discovery process and lends his technical opinion wherever needed to improve the overall product. He enjoys keeping up with the latest web development trends and sharing his knowledge with the rest of the team.',
         keywords: 'Claudio Del Valle',
         url: 'https://openforge.io/about/claudio-del-valle/',
-        image: 'https://openforge.io/assets/headshot-claudio.webp',
+        image: 'https://openforge.io/assets/headshot-claudio.png',
       },
     },
     'min-lee': {
@@ -189,14 +191,14 @@ export class AppTeamLanding {
         'As a developer at OpenForge, Min spends most of his work building out features that deliver value to our clients. Day to day, he could be building out various UIs, endpoints, or scoping out business requirements for development.',
       skills: ['Angular', 'React', 'Ionic', 'Firebase', 'NodeJS', 'Java', 'C#', 'Full-stack'],
       team: 'development',
-      headshotPhoto: '/assets/headshot-min.webp',
+      headshotPhoto: '/assets/headshot-min.png',
       metatags: {
         title: 'Min Lee - Software Engineer | OpenForge',
         description:
           'As a developer at OpenForge, Min spends most of his work building out features that deliver value to our clients. Day to day, he could be building out various UIs, endpoints, or scoping out business requirements for development.',
         keywords: 'Min Lee',
         url: 'https://openforge.io/about/min-lee/',
-        image: 'https://openforge.io/assets/headshot-min.webp',
+        image: 'https://openforge.io/assets/headshot-min.png',
       },
     },
     'may-alkhraisha': {
@@ -209,15 +211,15 @@ export class AppTeamLanding {
         'May handles branding, marketing & communication efforts within the company. In a turn of fate, she is also responsible for planning the same events that introduced her to OpenForge! May also meets with clients & is happy to introduce them to our process & walk them through it step-by-step.',
       skills: ['Branding', 'Content Writing', 'Editing', 'Marketing'],
       team: 'marketing',
-      headshotPhoto: '/assets/headshot-may.webp',
-      backgroundPhoto: '/assets/bios-background-may.webp',
+      headshotPhoto: '/assets/headshot-may.png',
+      backgroundPhoto: '/assets/bios-background-may.jpg',
       metatags: {
         title: 'May Alkhraisha - Marketing Coordinator | OpenForge',
         description:
           'May handles branding, marketing & communication efforts within the company. In a turn of fate, she is also responsible for planning the same events that introduced her to OpenForge! May also meets with clients & is happy to introduce them to our process & walk them through it step-by-step.',
         keywords: 'May Alkhraisha',
         url: 'https://openforge.io/about/may-alkhraisha/',
-        image: 'https://openforge.io/assets/bios-background-may.webp',
+        image: 'https://openforge.io/assets/bios-background-may.jpg',
       },
     },
     'mariela-mora-quesada': {
@@ -230,14 +232,14 @@ export class AppTeamLanding {
         "Mariela is in charge of reviewing the team's schedules and generating both internal and external reports, as well as invoicing. She constantly strives to improve the services we provide.",
       skills: ['Communication', 'Problem Solving', 'Customer Service'],
       team: 'management',
-      headshotPhoto: '/assets/headshot-mariela.webp',
+      headshotPhoto: '/assets/headshot-mariela.png',
       metatags: {
         title: 'Mariela Mora Quesada - Project Management | OpenForge',
         description:
           'May handles branding, marketing & communication efforts within the company. In a turn of fate, she is also responsible for planning the same events that introduced her to OpenForge! May also meets with clients & is happy to introduce them to our process & walk them through it step-by-step.',
         keywords: 'May Alkhraisha',
         url: 'https://openforge.io/about/mariela-mora-quesada/',
-        image: 'https://openforge.io/assets/headshot-mariela.webp',
+        image: 'https://openforge.io/assets/headshot-mariela.png',
       },
     },
     'petrell-vereen': {
@@ -250,14 +252,14 @@ export class AppTeamLanding {
         'As a core developer, Petrell stays up to date with tech trends and modern code patterns to produce software that is secure and stands the test of time. Building out automated testing, discussing architecture, prepping a build pipeline, scoping features, and translating business requirements are all things he could be a part of, on any given day.',
       skills: ['Typescript', 'Angular', 'Vue', 'React', 'Redux', 'NGRX', 'Responsive Design', 'CI/CD', 'Scripting', 'Python', 'Java', 'Docker', 'Firebase'],
       team: 'development',
-      headshotPhoto: '/assets/headshot-petrell.webp',
+      headshotPhoto: '/assets/headshot-petrell.png',
       metatags: {
         title: 'Petrell Vereen - Software Engineer | OpenForge',
         description:
           'As a core developer, Petrell stays up to date with tech trends and modern code patterns to produce software that is secure and stands the test of time. Building out automated testing, discussing architecture, prepping a build pipeline, scoping features, and translating business requirements are all things he could be a part of, on any given day.',
         keywords: 'Petrell Vereen',
         url: 'https://openforge.io/about/patrell-vereen/',
-        image: 'https://openforge.io/assets/headshot-vereen.webp',
+        image: 'https://openforge.io/assets/headshot-vereen.png',
       },
     },
     'jared-bradshaw': {
@@ -270,14 +272,14 @@ export class AppTeamLanding {
         'Jared fills a unique role on the OpenForge team as a hybrid between Visual Designer and Project Manager. He uses his skills to assist the design team with numerous projects, while also managing the projects themselves. Always willing to fill in where he’s needed, he’s able to bring stability and a helping hand to OpenForge’s design process.',
       skills: ['Graphic Design', 'UI Design', 'Project Management', 'Quality Assurance'],
       team: 'design',
-      headshotPhoto: '/assets/headshot-jared.webp',
+      headshotPhoto: '/assets/headshot-jared.png',
       metatags: {
         title: 'Jared Bradshaw - Design Coordinator | OpenForge',
         description:
           'Jared fills a unique role on the OpenForge team as a hybrid between Visual Designer and Project Manager. He uses his skills to assist the design team with numerous projects, while also managing the projects themselves. Always willing to fill in where he’s needed, he’s able to bring stability and a helping hand to OpenForge’s design process.',
         keywords: 'Jared Bradshaw',
         url: 'https://openforge.io/about/jared-bradshaw/',
-        image: 'https://openforge.io/assets/headshot-bradshaw.webp',
+        image: 'https://openforge.io/assets/headshot-bradshaw.png',
       },
     },
     'harry-scheuerle': {
@@ -289,13 +291,13 @@ export class AppTeamLanding {
       bodyText: 'As a developer at OpenForge, Harry applies his Full-Stack experience and problem solving talents to advance the active projects at the company.',
       skills: ['Angular', 'React', 'RxJS', 'NGRX', 'Express', 'MongoDB', 'Firebase', 'Javascript', 'ES', 'Typscript'],
       team: 'development',
-      headshotPhoto: '/assets/headshot-harry.webp',
+      headshotPhoto: '/assets/headshot-harry.png',
       metatags: {
         title: 'Harry Scheuerle - Software Engineer | OpenForge',
         description: 'As a developer at OpenForge, Harry applies his Full-Stack experience and problem solving talents to advance the active projects at the company.',
         keywords: 'Harry Scheuerle',
         url: 'https://openforge.io/about/harry-scheuerle/',
-        image: 'https://openforge.io/assets/headshot-harry.webp',
+        image: 'https://openforge.io/assets/headshot-harry.png',
       },
     },
     // 'matt-moran': {
@@ -319,13 +321,13 @@ export class AppTeamLanding {
       bodyText: 'Carter is primarily a mobile developer, and helps our team in the initial setup, planning, and development of new mobile applications.',
       skills: ['Typescript', 'Angular', 'React', 'Ionic', 'Firebase', 'NodeJS'],
       team: 'development',
-      headshotPhoto: '/assets/headshot-carter.webp',
+      headshotPhoto: '/assets/headshot-carter.png',
       metatags: {
         title: 'Carter Simonson - Software Engineer | OpenForge',
         description: 'Carter is primarily a mobile developer, and helps our team in the initial setup, planning, and development of new mobile applications.',
         keywords: 'Carter Simonson',
         url: 'https://openforge.io/about/carter-simonson/',
-        image: 'https://openforge.io/assets/headshot-carter.webp',
+        image: 'https://openforge.io/assets/headshot-carter.png',
       },
     },
     'griffin-robbins': {
@@ -338,14 +340,14 @@ export class AppTeamLanding {
         'As a member of the design team, Griffin’s main focus is working on our very own game; Startup Wars! He also contributes by providing a continuous flow of creative ideas on other projects.',
       skills: ['Game Design', 'UI Design', 'Web Design', 'Animation'],
       team: 'design',
-      headshotPhoto: '/assets/headshot-griffin.webp',
+      headshotPhoto: '/assets/headshot-griffin.png',
       metatags: {
         title: 'Griffin Robbins - Software Engineer | OpenForge',
         description:
           'As a member of the design team, Griffin’s main focus is working on our very own game; Startup Wars! He also contributes by providing a continuous flow of creative ideas on other projects.',
         keywords: 'Griffin Robbins',
         url: 'https://openforge.io/about/griffin-robbins/',
-        image: 'https://openforge.io/assets/headshot-griffin.webp',
+        image: 'https://openforge.io/assets/headshot-griffin.png',
       },
     },
     'pablo-huerta': {
@@ -358,14 +360,14 @@ export class AppTeamLanding {
         'As an integral member of the development team, Pablo works hard to ensure that every project he is assigned to behaves in the correct way. His solid foundation in web & mobile app development helps him achieve this.',
       skills: ['Angular', 'Ionic', 'MongoDB', 'C#', 'NodeJS', 'Laravel', 'Java', 'Javascript', 'Firebase'],
       team: 'development',
-      headshotPhoto: '/assets/headshot-pablo.webp',
+      headshotPhoto: '/assets/headshot-pablo.png',
       metatags: {
         title: 'Pablo Huerta - Software Engineer | OpenForge',
         description:
           'As an integral member of the development team, Pablo works hard to ensure that every project he is assigned to behaves in the correct way. His solid foundation in web & mobile app development helps him achieve this.',
         keywords: 'Pablo Huerta',
         url: 'https://openforge.io/about/pablo-huerta/',
-        image: 'https://openforge.io/assets/headshot-pablo.webp',
+        image: 'https://openforge.io/assets/headshot-pablo.png',
       },
     },
     'alberto-carniel': {
@@ -377,17 +379,20 @@ export class AppTeamLanding {
       bodyText: 'Alberto supports OpenForge’s online marketing and outreach team, as well as search engine optimization efforts.',
       skills: ['Automation Marketing', 'Social Media Management', 'Search Engine Optimization (SEO)', 'E-commerce', 'Marketplace Management', 'Digital Marketing Strategy'],
       team: 'marketing',
-      headshotPhoto: '/assets/headshot-alberto.wepb',
+      headshotPhoto: '/assets/headshot-alberto.png',
       metatags: {
         title: 'Alberto Carniel - Marketing Specialist | OpenForge',
         description: 'Alberto supports OpenForge’s online marketing and outreach team, as well as search engine optimization efforts.',
         keywords: 'Pablo Huerta',
         url: 'https://openforge.io/about/alberto-carniel/',
-        image: 'https://openforge.io/assets/headshot-carniel.webp',
+        image: 'https://openforge.io/assets/headshot-carniel.png',
       },
     },
   };
 
+  constructor() {
+    this.browserService = new BrowserService();
+  }
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
@@ -419,11 +424,15 @@ export class AppTeamLanding {
   }
 
   changeImageFormat(img: string) {
-    // if (img && this.allowWebp) {
-    //   const idx = img.lastIndexOf('.');
-    //   return `${img.substring(0, idx)}.webp`;
-    // }
-    return img;
+    let result = img;
+    if (img && (Build.isBrowser && localStorage.getItem('allowWebp') === 'true')) {
+      const idx = img.lastIndexOf('.');
+      const ext = img.substring(idx + 1, img.length);
+      if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        result = `${img.substring(0, idx)}.webp`;
+      }
+    }
+    return result;
   }
 
   updateBackground() {
@@ -446,11 +455,11 @@ export class AppTeamLanding {
     if (window.innerWidth > 767.98) {
       style = this.backgroundPhoto
         ? {
-          'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`,
-        }
+            'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`,
+          }
         : {
-          'background-color': '#292A2D',
-        };
+            'background-color': '#292A2D',
+          };
     }
     window.addEventListener('resize', this.updateBackground);
 
@@ -459,63 +468,63 @@ export class AppTeamLanding {
         {/* header - hero */}
         {this.data[this.match.params.member]
           ? [
-            <div class="container-fluid">
-              <div class="row justify-content-center align-items-center hero" style={style}>
-                <div class="col-10 col-sm-12 d-block d-md-none">
-                  <app-img class="headshot-mobile" src={this.headshotPhoto} />
+              <div class="container-fluid">
+                <div class="row justify-content-center align-items-center hero" style={style}>
+                  <div class="col-10 col-sm-12 d-block d-md-none">
+                    <app-img class="headshot-mobile" src={this.headshotPhoto} />
+                  </div>
+                  <div class="col-11 col-sm-9 col-md-7 col-lg-6 align-self-start">
+                    <div class="header-text">
+                      <h1>{`${this.data[this.match.params.member].firstname} ${this.data[this.match.params.member].surname}`}</h1>
+                      <h3>{this.data[this.match.params.member].title}</h3>
+                      <app-img
+                        class="d-md-none badge"
+                        src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
+                        alt="Job Title Badge - Design, Development, Management"
+                      />
+                      <p>{this.data[this.match.params.member].headerText}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-none d-md-block">{!this.backgroundPhoto && <app-img class="headshot" src={this.headshotPhoto} />}</div>
                 </div>
-                <div class="col-11 col-sm-9 col-md-7 col-lg-6 align-self-start">
-                  <div class="header-text">
-                    <h1>{`${this.data[this.match.params.member].firstname} ${this.data[this.match.params.member].surname}`}</h1>
-                    <h3>{this.data[this.match.params.member].title}</h3>
+
+                <div class="row align-items-center justify-content-center bio">
+                  <div class="col-9 col-sm-9 col-md-5 col-lg-4">
                     <app-img
-                      class="d-md-none badge"
+                      class="d-none d-md-block badge"
                       src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
                       alt="Job Title Badge - Design, Development, Management"
                     />
-                    <p>{this.data[this.match.params.member].headerText}</p>
                   </div>
-                </div>
-                <div class="col-md-4 d-none d-md-block">{!this.backgroundPhoto && <app-img class="headshot" src={this.headshotPhoto} />}</div>
-              </div>
-
-              <div class="row align-items-center justify-content-center bio">
-                <div class="col-9 col-sm-9 col-md-5 col-lg-4">
-                  <app-img
-                    class="d-none d-md-block badge"
-                    src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
-                    alt="Job Title Badge - Design, Development, Management"
-                  />
-                </div>
-                <div class="col-11 col-sm-9 col-md-7 col-lg-5">
-                  <h2>
-                    <app-translate keyword="about.landing.container.title1" />
-                    &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
+                  <div class="col-11 col-sm-9 col-md-7 col-lg-5">
+                    <h2>
+                      <app-translate keyword="about.landing.container.title1" />
+                      &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
                       <app-translate keyword="about.landing.container.title2" />
-                  </h2>
-                  <p>{this.data[this.match.params.member].bodyText}</p>
-                  <h4>
-                    <app-translate keyword="about.landing.container.skills" />
-                  </h4>
-                  <div class="chips-container">
-                    {this.data[this.match.params.member].skills.map(skill => {
-                      return <label class="skill-chip">{skill}</label>;
-                    })}
+                    </h2>
+                    <p>{this.data[this.match.params.member].bodyText}</p>
+                    <h4>
+                      <app-translate keyword="about.landing.container.skills" />
+                    </h4>
+                    <div class="chips-container">
+                      {this.data[this.match.params.member].skills.map(skill => {
+                        return <label class="skill-chip">{skill}</label>;
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div id="members" class="row justify-content-center members">
-                <div class="col-10 col-lg-10">
-                  <h2>
-                    <app-translate keyword="about.landing.cta.title" />
-                  </h2>
-                  <app-members-section />
+                <div id="members" class="row justify-content-center members">
+                  <div class="col-10 col-lg-10">
+                    <h2>
+                      <app-translate keyword="about.landing.cta.title" />
+                    </h2>
+                    <app-members-section />
+                  </div>
                 </div>
-              </div>
-            </div>,
-            <app-footer />,
-          ]
+              </div>,
+              <app-footer />,
+            ]
           : null}
       </section>
     );

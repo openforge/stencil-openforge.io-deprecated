@@ -1,11 +1,11 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, Build } from '@stencil/core';
 
 @Component({
   tag: 'app-case-study',
   styleUrl: 'app-case-study.scss',
 })
 export class AppCaseStudy {
-  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  private className = Build.isBrowser && localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   scrollToTop() {
     const form = document.getElementsByTagName('header')[0];
@@ -28,7 +28,7 @@ export class AppCaseStudy {
   render() {
     return (
       <div class="case-study">
-        <header class="hero">
+        <header class={this.className}>
           <div class="container">
             <div class="row align-items-center">
               <div style={{ margin: 'auto' }}>

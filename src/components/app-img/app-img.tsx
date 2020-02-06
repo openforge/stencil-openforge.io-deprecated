@@ -39,6 +39,7 @@ export class Img {
         // we can just use data[0]
         if (data[0].isIntersecting) {
           this.loadSrc = this.src;
+          this.changeImageFormat();
           this.removeIntersectionObserver();
         }
       });
@@ -46,7 +47,10 @@ export class Img {
       this.io.observe(this.el);
     } else {
       // fall back to setTimeout for Safari and IE
-      setTimeout(() => (this.loadSrc = this.src), 300);
+      setTimeout(() => {
+        this.loadSrc = this.src;
+        this.changeImageFormat();
+      }, 300);
     }
   }
 
@@ -58,7 +62,7 @@ export class Img {
   }
 
   private changeImageFormat() {
-    if (this.loadSrc && (!Build.isBrowser || localStorage.getItem('allowWebp') === 'true')) {
+    if (this.loadSrc && (Build.isBrowser && localStorage.getItem('allowWebp') === 'true')) {
       const idx = this.loadSrc.lastIndexOf('.');
       const ext = this.loadSrc.substring(idx + 1, this.loadSrc.length);
       if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
@@ -68,7 +72,6 @@ export class Img {
   }
 
   render() {
-    this.changeImageFormat();
     return <lazy-img class={{ fit: this.fit }} src={this.loadSrc} alt={this.alt} />;
   }
 }

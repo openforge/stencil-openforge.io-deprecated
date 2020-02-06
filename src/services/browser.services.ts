@@ -1,6 +1,6 @@
 export class BrowserService {
   // Right now, this method can only check for lossy webp capabilities. The rest of the code for serving the proper .webp images is scattered throughout the site and is based on a boolean "allowWebp". Some refactoring later could potentially support lossless, alpha, and animation. At the time of this writing, 01-08-19, the only .webp images in the website assets are lossy.
-  check_webp(isServer) {
+  check_webp(isBrowser) {
     const kTestImages = {
       lossy: 'UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA',
       lossless: 'UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==',
@@ -12,13 +12,13 @@ export class BrowserService {
       const result = img.width > 0 && img.height > 0;
       console.log(result);
       const allowWebp = String(result);
-      if (!isServer) {
+      if (isBrowser) {
         localStorage.setItem('allowWebp', allowWebp);
       }
     };
     img.onerror = function() {
       const allowWebp = 'false';
-      if (!isServer) {
+      if (isBrowser) {
         localStorage.setItem('allowWebp', allowWebp);
       }
     };

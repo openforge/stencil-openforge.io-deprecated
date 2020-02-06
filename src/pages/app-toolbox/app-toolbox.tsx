@@ -5,8 +5,6 @@ import { Component, h } from '@stencil/core';
   styleUrl: 'app-toolbox.scss',
 })
 export class AppToolbox {
-  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
-
   scrollToForm() {
     const form = document.getElementById('second-content');
     form.scrollIntoView({ block: 'start', behavior: 'smooth' });
