@@ -1,10 +1,128 @@
-describe('Contact Page', function () {
-  var env = 'http://localhost:3333';
-  beforeEach(() => {
-    cy.visit(env + '/contact');
-    cy.get('button[type=submit]').as('submitBtn');
+describe('Contact Page', function() {
+  describe('The contact form displays with all fields', () => {
+    it('Check that the form displays', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('#second-content')
+        .contains('Get in Touch')
+        .should('exist')
+        .and('be.visible');
+      cy.get('#second-content')
+        .contains("Tell us a little bit about what you're working on. We'll be in touch to tell you about the next steps toward accomplishing your goals!")
+        .should('exist')
+        .and('be.visible');
+
+      cy.get('#contact-form')
+        .contains('Full Name*')
+        .should('exist')
+        .and('be.visible');
+      cy.get('#contact-form')
+        .contains('E-mail*')
+        .should('exist')
+        .and('be.visible');
+      cy.get('#contact-form')
+        .contains('Phone')
+        .should('exist')
+        .and('be.visible');
+      cy.get('#contact-form')
+        .contains('What are you working on?')
+        .should('exist')
+        .and('be.visible');
+    });
   });
 
+  describe('User is able to successfully submit a contact form & view the successful submission animation', () => {
+    it('Check that the form fades and appears the animation', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('input[name=name]').type('Tester');
+      cy.get('input[name=email]').type('Test@openforge.io');
+      cy.get('input[name=phone]').type('3333333333');
+      cy.get('input[name=message]').type('Testing');
+      cy.get('button[type=submit]').click();
+      cy.wait(9000);
+      cy.get('[data-cy=sub]').screenshot('exist'); //if the image is rendered the submit is done
+    });
+  });
+
+  describe('User is not able to submit a contact form with a empty full name field', () => {
+    it('Check that the submit is disabled', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('input[name=email]').type('Test@openforge.io');
+      cy.get('input[name=phone]').type('3333333333');
+      cy.get('input[name=message]').type('Testing');
+      cy.get('button[type=submit]')
+        .should('exist')
+        .and('be.disabled');
+    });
+  });
+
+  describe('User is not able to submit a contact form with a empty email field', () => {
+    it('Check that the submit is disabled', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('input[name=name]').type('Tester');
+      cy.get('input[name=phone]').type('3333333333');
+      cy.get('input[name=message]').type('Testing');
+      cy.get('button[type=submit]')
+        .should('exist')
+        .and('be.disabled');
+    });
+  });
+
+  describe('User is not able to submit a contact form with a empty email field', () => {
+    it('Check that the submit is disabled', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('input[name=name]').type('Tester');
+      cy.get('input[name=email]').type('wrong_email');
+      cy.get('input[name=phone]').type('3333333333');
+      cy.get('input[name=message]').type('Testing');
+      cy.get('button[type=submit]')
+        .should('exist')
+        .and('be.disabled');
+    });
+  });
+
+  describe('The mailbox icon displays on the right hand side of the contact form', () => {
+    it('Check that the img exists', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('[data-cy=mailbox-img]')
+        .should('exist')
+        .and('be.visible');
+    });
+  });
+
+  describe('User is not able to submit the contact form after clearing all of the fields', () => {
+    it('Check that the submit is disabled after clearing form', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('input[name=name]').type('Tester');
+      cy.get('input[name=name]').clear();
+      cy.get('input[name=email]').type('wrong_email');
+      cy.get('input[name=email]').clear();
+      cy.get('input[name=phone]').type('3333333333');
+      cy.get('input[name=phone]').clear();
+      cy.get('input[name=message]').type('Testing');
+      cy.get('input[name=message]').clear();
+      cy.get('button[type=submit]')
+        .should('exist')
+        .and('be.disabled');
+    });
+  });
+
+  describe('User is unable to submit a empty contact form', () => {
+    it('Check that the button is disabled', function() {
+      cy.visit('localhost:3333/contact');
+      cy.get('button[type=submit]')
+        .should('exist')
+        .and('be.disabled');
+    });
+  });
+
+  describe('The footer is visible on the "Contact" page', () => {
+    it('Check the footer exists', () => {
+      cy.visit('localhost:3333/contact');
+      cy.get('footer')
+        .should('exist')
+        .and('be.visible');
+    });
+  });
   /*describe('Nav Bar Navigation (Desktop)', function () {
     // TODO -> Test suite for the blog link in nav bar.
     it('Home on nav bar should redirect to home page', function () {
@@ -142,33 +260,32 @@ describe('Contact Page', function () {
     })
   })*/
 
-  describe('Contact Form', function () {
-    let nameField;
-    let emailField;
-    let phoneField;
-    let messageField;
+  // describe('Contact Form', function () {
+  //   let nameField;
+  //   let emailField;
+  //   let phoneField;
+  //   let messageField;
 
-    describe('Successful form submission', function () {
-      beforeEach(() => {
-        nameField = cy.get('input[name=name]').type('Testing');
-        emailField = cy.get('input[name=email]').type('testEmail@gmail.com');
-        phoneField = cy.get('input[name=phone]').type('1459341234');
-        messageField = cy.get('input[name=message]').type('This is a test message');
-        cy.get('@submitBtn').click();
-      });
+  //   describe('Successful form submission', function () {
+  //     beforeEach(() => {
+  //       nameField = cy.get('input[name=name]').type('Testing');
+  //       emailField = cy.get('input[name=email]').type('testEmail@gmail.com');
+  //       phoneField = cy.get('input[name=phone]').type('1459341234');
+  //       messageField = cy.get('input[name=message]').type('This is a test message');
+  //       cy.get('@submitBtn').click();
+  //     });
 
-      it('Should show a success message on submit when all form values have been filled out', function () {
-        cy.wait(9000);
-        cy.get('[data-cy=sub]').screenshot('exist'); //if the image is rendered the submit is done
-      });
+  //     it('Should show a success message on submit when all form values have been filled out', function () {
+  //       cy.wait(9000);
+  //       cy.get('[data-cy=sub]').screenshot('exist'); //if the image is rendered the submit is done
+  //     });
 
-    });
-    describe('Unsucessful form submission', function () {
-      it('DOM should not show success message when all fields of the form are not filled out', function () {
-        nameField = cy.get('input[name=name]').type('Test Name');
-        cy.get('@submitBtn').should('be.disabled');
-      });
-    });
-  });
-
+  //   });
+  //   describe('Unsucessful form submission', function () {
+  //     it('DOM should not show success message when all fields of the form are not filled out', function () {
+  //       nameField = cy.get('input[name=name]').type('Test Name');
+  //       cy.get('@submitBtn').should('be.disabled');
+  //     });
+  //   });
+  // });
 });
