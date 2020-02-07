@@ -59,6 +59,7 @@
       a {
         font-size: 19px;
         margin-left: 10px;
+        cursor: pointer;
       }
       @include media-breakpoint-down(md) {
         margin-top: 2rem;

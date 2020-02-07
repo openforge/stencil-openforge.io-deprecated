@@ -38,7 +38,7 @@ export class AppContact {
 
   radioChoices: any;
 
-  constructor() { }
+  constructor() {}
 
   @Listen('check')
   @Listen('valueChanged')
@@ -185,6 +185,7 @@ export class AppContact {
 
                       <app-input
                         name="message"
+                        id="message"
                         label={translate('contact.form.whatAreYouWorkingOn')}
                         type="text"
                         placeholder={translate('contact.form.placeholder.message')}
@@ -205,7 +206,7 @@ export class AppContact {
                   </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-flex form-image-content">
-                  <app-img src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" />
+                  <app-img data-cy="mailbox-img" src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" />
                 </div>
               </div>
             ) : null}
