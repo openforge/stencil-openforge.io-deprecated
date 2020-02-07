@@ -247,9 +247,11 @@ export class AppBlog {
         filterClass += ' disabled';
         filterLinkClass += ' disabled';
       }
+      const cyName = filter.slug ? filter.slug : 'all';
+
       return (
         <li class={filterClass}>
-          <a onClick={() => this.handleFilter(filter.slug)} href="#" class={filterLinkClass}>
+          <a onClick={() => this.handleFilter(filter.slug)} href="#" class={filterLinkClass} data-cy={cyName}>
             {filter.name}
           </a>
         </li>
@@ -409,13 +411,13 @@ export class AppBlog {
                 <div class="col-sm-6 text-center">
                   <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
                   <div class="contact-icons d-none d-md-block">
-                    <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
+                    <a id="twitter" href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
                       <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                     </a>
-                    <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
+                    <a id="facebook" href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
                       <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                     </a>
-                    <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                    <a id="linkedin" href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
                       <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
                     </a>
                   </div>
