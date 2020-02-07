@@ -219,9 +219,9 @@ describe('Home Page', function () {
         cy.get('app-footer').as('footer');
       });
       it('Should exist and be visible', function () {
-        cy.get('@footer').scrollIntoView()
-        cy.get('@footer').should('exist')
-      })
-    })
+        cy.get('@footer').scrollIntoView();
+        cy.get('@footer').should('exist');
+      });
+    });
   });
 });

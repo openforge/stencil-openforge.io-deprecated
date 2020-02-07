@@ -75,7 +75,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
               <stencil-route-link url="/our-work/loudcloud" exact={true}>
-                <button>
+                <button data-cy="loudcloudbutton">
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
               </stencil-route-link>
@@ -107,7 +107,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
               <stencil-route-link url="/our-work/voyage" exact={true}>
-                <button>
+                <button data-cy="voyagebutton">
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
               </stencil-route-link>
