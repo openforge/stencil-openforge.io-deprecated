@@ -330,6 +330,26 @@ export class AppBlog {
     this.displaySearchBar = false;
   }
 
+  open(provider: string) {
+    switch (provider) {
+      case 'instagram':
+        window.open('https://www.instagram.com/openforgemobile/', '_blank');
+        break;
+      case 'twitter':
+        window.open('https://twitter.com/openforgemobile', '_blank');
+        break;
+      case 'linkedin':
+        window.open('https://www.linkedin.com/company/openforge/', '_blank');
+        break;
+      case 'facebook':
+        window.open('https://www.facebook.com/openforgemobile/', '_blank');
+        break;
+
+      default:
+        break;
+    }
+  }
+
   render() {
     const featuredPost = this.renderFeaturedPost(this.featuredPost, this.featuredIsLoading, this.featuredIsError);
     const filters = this.renderFilters(this.blogFilter, this.searchIsLoading || this.blogIsLoading, this.searchQuery);
@@ -411,13 +431,13 @@ export class AppBlog {
                 <div class="col-sm-6 text-center">
                   <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
                   <div class="contact-icons d-none d-md-block">
-                    <a id="twitter" href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
+                    <a onClick={() => this.open('twitter')} id="twitter" target="_blank" rel="noopener" aria-label="Openforge Twitter account link">
                       <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                     </a>
-                    <a id="facebook" href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
+                    <a onClick={() => this.open('facebook')} id="facebook" target="_blank" rel="noopener" aria-label="Openforge Facebook account link">
                       <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                     </a>
-                    <a id="linkedin" href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                    <a onClick={() => this.open('linkedin')} id="linkedin" target="_blank" rel="noopener" aria-label="Openforge Linkedin account link">
                       <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
                     </a>
                   </div>
@@ -459,13 +479,13 @@ export class AppBlog {
 
               <p class="contact-icons-label d-none d-md-block">Follow Us:</p>
               <div class="contact-icons d-none d-md-block">
-                <a href="https://twitter.com/openforgemobile" target="_blank" rel="noopener">
+                <a onClick={() => this.open('twitter')} id="twitter" target="_blank" rel="noopener" aria-label="Openforge Twitter account link">
                   <app-img class="contact-icon" src="/assets/blog/twitter.png" alt="twitter" />
                 </a>
-                <a href="https://www.facebook.com/openforgemobile/" target="_blank" rel="noopener">
+                <a onClick={() => this.open('facebook')} id="facebook" target="_blank" rel="noopener" aria-label="Openforge Facebook account link">
                   <app-img class="contact-icon" src="/assets/blog/facebook.png" alt="facebook" />
                 </a>
-                <a href="https://www.linkedin.com/company/openforge/" target="_blank" rel="noopener">
+                <a onClick={() => this.open('linkedin')} id="linkedin" target="_blank" rel="noopener" aria-label="Openforge Linkedin account link">
                   <app-img class="contact-icon" src="/assets/blog/linkedin.png" alt="linkedin" />
                 </a>
               </div>

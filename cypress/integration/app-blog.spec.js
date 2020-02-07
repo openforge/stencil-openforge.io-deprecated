@@ -6,9 +6,8 @@ describe('Blog Page', function() {
           cy.stub(win, 'open');
         },
       });
-      cy.get('#twitter')
+      cy.get('.d-sm-block.d-md-none.d-lg-block #twitter')
         .should('exist')
-        .and('be.visible')
         .click();
       cy.window()
         .its('open')
@@ -23,9 +22,8 @@ describe('Blog Page', function() {
           cy.stub(win, 'open');
         },
       });
-      cy.get('#linkedin')
+      cy.get('.d-sm-block.d-md-none.d-lg-block #linkedin')
         .should('exist')
-        .and('be.visible')
         .click();
       cy.window()
         .its('open')
@@ -40,9 +38,8 @@ describe('Blog Page', function() {
           cy.stub(win, 'open');
         },
       });
-      cy.get('#facebook')
+      cy.get('.d-sm-block.d-md-none.d-lg-block #facebook')
         .should('exist')
-        .and('be.visible')
         .click();
       cy.window()
         .its('open')
@@ -60,26 +57,75 @@ describe('Blog Page', function() {
         .contains("What's New In Our Blog")
         .should('exist')
         .and('be.visible');
-      cy.get('[data-cy=announcements]')
+      cy.get('[data-cy=announcements]').click();
+      cy.wait(1000);
+      cy.get('app-blog-featured').should('not.exist');
+      cy.get('[data-cy=development]').click();
+      cy.wait(1000);
+      cy.get('app-blog-featured').should('not.exist');
+      cy.get('[data-cy=design]').click();
+      cy.wait(1000);
+      cy.get('app-blog-featured').should('not.exist');
+      cy.get('[data-cy=business]').click();
+      cy.wait(1000);
+      cy.get('app-blog-featured').should('not.exist');
+    });
+  });
+
+  describe('User is able to navigate blog posts via the pagination', () => {
+    it('Check pagination', () => {
+      cy.visit('localhost:3333/blog');
+      cy.get('[data-cy=all]')
+      .should('exist')
+      .should('have.class', 'active');
+      cy.get('ul.blog-page-list .blog-page-item:first-child()')
+      .should('exist')
+      .should('have.class', 'active');
+      cy.get('ul.blog-page-list .blog-page-item:nth-child(2)')
+      .should('exist')
+      .click();
+      cy.get('ul.blog-page-list .blog-page-item:nth-child(2)')
+      .should('exist')
+      .should('have.class', 'active');
+      cy.get('ul.blog-page-list .blog-page-item:nth-child(3)')
+      .should('exist')
+      .click();
+      cy.get('ul.blog-page-list .blog-page-item:nth-child(3)')
+      .should('exist')
+      .should('have.class', 'active');
+    });
+  });
+
+  describe('The user is able to navigate to our newsletter signup page from a blog article', () => {
+    it('Check newsletter', () => {
+      cy.visit('localhost:3333/blog');
+      cy.get('.featured-post-title')
+        .should('exist')
+        .and('be.visible')
         .click();
+        cy.get('#mc-embedded-subscribe')
+        .should('exist')
+        .and('be.visible');
+    });
+  });
+
+  describe('User is able to navigate back to the main blog page from a specific blog article', () => {
+    it('Check back navigation from blog', () => {
+      cy.visit('localhost:3333/blog');
+      cy.get('.featured-post-title')
+        .should('exist')
+        .and('be.visible')
+        .click();
+      cy.wait(1000);
+      cy.get('.top-buttons-container .back-link')
+        .should('exist')
+        .and('be.visible');
+      cy.get('.top-buttons-container .back-link:first-child() stencil-route-link').click();
+      cy.wait(1000);
       cy.get('app-blog-featured')
         .contains("What's New In Our Blog")
-        .should('not.exist');
-      cy.get('[data-cy=development]')
-        .click();
-      cy.get('app-blog-featured')
-        .contains("What's New In Our Blog")
-        .should('not.exist');
-      cy.get('[data-cy=design]')
-        .click();
-      cy.get('app-blog-featured')
-        .contains("What's New In Our Blog")
-        .should('not.exist');
-      cy.get('[data-cy=business]')
-        .click();
-      cy.get('app-blog-featured')
-        .contains("What's New In Our Blog")
-        .should('not.exist');
+        .should('exist')
+        .and('be.visible');
     });
   });
 
