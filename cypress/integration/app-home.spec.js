@@ -222,10 +222,6 @@ describe('Home Page', function () {
         cy.get('@footer').scrollIntoView()
         cy.get('@footer').should('exist')
       })
-      it('Should link to company e-mail', function () {
-        cy.get('@footer').contains('hello')
-          .should('have.attr', 'href', 'mailto:hello@openforge.io')
-      })
     })
   });
 });
