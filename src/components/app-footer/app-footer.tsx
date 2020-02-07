@@ -38,7 +38,7 @@ export class AppFooter {
             <div class="footer--column col-12 col-sm-4">
               <h2>{translate('footer.work.header')}</h2>
               <p>{translate('footer.work.text')}</p>
-              <a href="/opportunities/develop" class="btn-primary button-link">
+              <a href="/opportunities" class="btn-primary button-link">
                 {translate('footer.work.apply')}
               </a>
             </div>

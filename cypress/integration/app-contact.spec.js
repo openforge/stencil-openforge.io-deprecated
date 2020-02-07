@@ -1,9 +1,9 @@
 describe('Contact Page', function () {
   var env = 'http://localhost:3333';
   beforeEach(() => {
-    cy.visit(env + '/contact')
-    cy.get('button[type=submit]').as('submitBtn')
-  })
+    cy.visit(env + '/contact');
+    cy.get('button[type=submit]').as('submitBtn');
+  });
 
   /*describe('Nav Bar Navigation (Desktop)', function () {
     // TODO -> Test suite for the blog link in nav bar.
@@ -150,25 +150,25 @@ describe('Contact Page', function () {
 
     describe('Successful form submission', function () {
       beforeEach(() => {
-        nameField = cy.get('input[name=name]').type('Testing')
-        emailField = cy.get('input[name=email]').type('testEmail@gmail.com')
-        phoneField = cy.get('input[name=phone]').type('1459341234')
-        messageField = cy.get('input[name=message]').type('This is a test message')
-        cy.get('@submitBtn').click()
-      })
+        nameField = cy.get('input[name=name]').type('Testing');
+        emailField = cy.get('input[name=email]').type('testEmail@gmail.com');
+        phoneField = cy.get('input[name=phone]').type('1459341234');
+        messageField = cy.get('input[name=message]').type('This is a test message');
+        cy.get('@submitBtn').click();
+      });
 
       it('Should show a success message on submit when all form values have been filled out', function () {
-        cy.wait(9000)
-        cy.get('[data-cy=sub]').screenshot('exist') //if the image is rendered the submit is done
-      })
+        cy.wait(9000);
+        cy.get('[data-cy=sub]').screenshot('exist'); //if the image is rendered the submit is done
+      });
 
-    })
+    });
     describe('Unsucessful form submission', function () {
       it('DOM should not show success message when all fields of the form are not filled out', function () {
-        nameField = cy.get('input[name=name]').type('Test Name')
-        cy.get('@submitBtn').should('be.disabled')
-      })
-    })
-  })
+        nameField = cy.get('input[name=name]').type('Test Name');
+        cy.get('@submitBtn').should('be.disabled');
+      });
+    });
+  });
 
-})
+});
