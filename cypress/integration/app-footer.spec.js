@@ -122,4 +122,72 @@ describe('Footer', function() {
         .and('be.visible');
     });
   });
+
+  describe('The Twitter icon located in the footer opens the OpenForge Twitter page in a new tab of the Browser', () => {
+    it('Check that the twitter opens', function() {
+      cy.visit('localhost:3333', {
+        onBeforeLoad(win) {
+          cy.stub(win, 'open');
+        },
+      });
+      cy.get('#twitter')
+        .should('exist')
+        .and('be.visible')
+        .click();
+      cy.window()
+        .its('open')
+        .should('be.called');
+    });
+  });
+
+  describe('The Instagram icon located in the footer opens the OpenForge instagram page in a new tab of the Browser', () => {
+    it('Check that the instagram opens', function() {
+      cy.visit('localhost:3333', {
+        onBeforeLoad(win) {
+          cy.stub(win, 'open');
+        },
+      });
+      cy.get('#instagram')
+        .should('exist')
+        .and('be.visible')
+        .click();
+      cy.window()
+        .its('open')
+        .should('be.called');
+    });
+  });
+
+  describe('The LinkedIn icon located in the footer opens the OpenForge LinkedIn page in a new tab of the Browser', () => {
+    it('Check that the linkedin opens', function() {
+      cy.visit('localhost:3333', {
+        onBeforeLoad(win) {
+          cy.stub(win, 'open');
+        },
+      });
+      cy.get('#linkedin')
+        .should('exist')
+        .and('be.visible')
+        .click();
+      cy.window()
+        .its('open')
+        .should('be.called');
+    });
+  });
+
+  describe('The FaceBook icon located in the footer opens the OpenForge FaceBook page in a new tab of the Browser', () => {
+    it('Check that the facebook opens', function() {
+      cy.visit('localhost:3333', {
+        onBeforeLoad(win) {
+          cy.stub(win, 'open');
+        },
+      });
+      cy.get('#facebook')
+        .should('exist')
+        .and('be.visible')
+        .click();
+      cy.window()
+        .its('open')
+        .should('be.called');
+    });
+  });
 });
