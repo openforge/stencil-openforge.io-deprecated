@@ -15,7 +15,7 @@ export class AppPartners {
 
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function () {
+      $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const partnersCarousel = $('#partnersCarousel');
         setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);
@@ -130,7 +130,7 @@ export class AppPartners {
               </div>
             </div>
             <div class="row carousel-arrows">
-              <a class="col-6 left carousel-control" href="#partnersCarousel" data-slide="prev">
+              <a data-cy="left-arrow" class="col-6 left carousel-control" href="#partnersCarousel" data-slide="prev">
                 <i class="fa fa-chevron-left" />
               </a>
               <a data-cy="right-arrow" class="col-6 right carousel-control" href="#partnersCarousel" data-slide="next">
