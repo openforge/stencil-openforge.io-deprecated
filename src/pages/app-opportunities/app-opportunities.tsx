@@ -487,7 +487,7 @@ export class AppOpportunities {
                 </div>
               </div>
 
-              <div class="container">
+              <div id="reputation" class="container">
                 <content-graphic img-url="/assets/graphic-opportunities-ionic.jpg" reverse={true}>
                   <h3 class="original thin margin-bottom auto-align" slot="header">
                     <app-translate keyword="opportunities.reputation.title" />
@@ -509,7 +509,7 @@ export class AppOpportunities {
             </section>
           ) : (
             // Content section for the state after click on apply
-            <section class="container">
+            <section id="candidate-requisites" class="container">
               <hr />
               <content-graphic
                 leftAlign={true}
