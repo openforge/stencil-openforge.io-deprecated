@@ -349,12 +349,109 @@ describe('App Our Work', function () {
           cy.get(':nth-child(1) > .other-button > stencil-route-link.hydrated > a > button').click();
           cy.get('.header-content > h1').contains('Mobile Measures');
 
-          it('The footer is visible on the LoudCloud page', () => {
-            cy.visit(env + '/our-work/loudcloud');
-            cy.get('.footer').scrollIntoView();
-            cy.get('.footer').should('be.visible');
-          });
+        });
 
+        it('The footer is visible on the LoudCloud page', () => {
+          cy.visit(env + '/our-work/loudcloud');
+          cy.get('.footer').scrollIntoView();
+          cy.get('.footer').should('be.visible');
+        });
+      });
+      describe('Projects The Voyage', function () {
+        beforeEach(() => {
+          cy.visit(env + '/our-work/voyage');
+        });
+
+        it('The Voyage hero image, Text, and logo displays', () => {
+          cy.get('.header-content > h1').contains('The Voyage');
+          cy.get('.header-content > p').contains('Health and Well-Being Tracker and Evaluator');
+          cy.get('.logo').should('exist').and('be.visible');
+          cy.get('.d-none').should('exist').and('be.visible');
+        });
+
+        it('The Voyage Get back in motion section displays', () => {
+          cy.get('[data-cy=title]').should('exist');
+          cy.get('[data-cy=subtitle]').should('exist');
+          cy.get('.col-md-8 > .project-content-icons > :nth-child(1) > .hydrated > img').should('exist');
+          cy.get('.col-md-8 > .project-content-icons > :nth-child(2) > .hydrated > img').should('exist');
+          cy.get('.col-md-8 > .project-content-icons > :nth-child(3) > .hydrated > img').should('exist');
+          cy.get('[data-cy=apple-button]').should('exist');
+          cy.get('[data-cy=google-button]').should('exist');
+          cy.get('.col-md-4 > :nth-child(2) > .hydrated > img').should('exist');
+          cy.get('.col-md-4 > :nth-child(1) > .hydrated > img').should('exist');
+        });
+
+        it('The Voyage  App / Play store button navigate users to the listings', () => {
+          cy.get('[data-cy=apple-button]').should('have.attr', 'target', '_blank');
+          cy.get('[data-cy=google-button]').should('have.attr', 'target', '_blank');
+        });
+
+        it('The three Voyage phones display', () => {
+          cy.get('.key-features').scrollIntoView();
+          cy.get('[data-cy=image1k]').should('exist').and('be.visible');
+          cy.get('[data-cy=image2k]').should('exist').and('be.visible');
+          cy.get('[data-cy=image3k]').should('exist').and('be.visible');
+        });
+
+        it('Voyage Key features display', () => {
+          cy.get('.key-features-text').scrollIntoView();
+          cy.get('.key-features-text > .container > h2').contains('Key Features');
+          cy.get('.key-features-text > .container > p').contains('Starting with the confidential Private Health Assessment (PHA)');
+          cy.get('.key-features-text').should('have.css', 'background-color').and('contains', 'rgb(41, 42, 45)');
+        });
+
+        it('"More Projects" displays with the divider', () => {
+          cy.get('.more-projects').scrollIntoView();
+          cy.get('[data-cy=more-title]').contains('More Projects');
+          cy.get('.aside-lines').should('exist').and('be.visible');
+        });
+
+        it('Check that the LoudCloud app displays', () => {
+          cy.get('.more-projects').scrollIntoView();
+          cy.get('[src="/assets/our-work/lc-feature-image1.png"]').should('exist');
+          cy.get('[src="/assets/our-work/lc-feature-image2.png"]').should('exist');
+          cy.get('[data-cy=apple-button]').should('exist');
+          cy.get('[data-cy=google-button]').should('exist');
+          cy.get('.more-projects-items > :nth-child(2) > .d-none').should('exist');
+          cy.get('.other-button').should('exist');
+        });
+
+        it('Check that the LoudCloud "View project" button works', () => {
+          cy.get('.more-projects').scrollIntoView();
+          cy.get(':nth-child(2) > .other-button > stencil-route-link.hydrated > a > button').click();
+          cy.get('.header-content > h1').contains('LoudCloud');
+
+        });
+
+        it('Check that the LoudCloud App/Play store links work', () => {
+          cy.get('[data-cy=apple-button]').should('have.attr', 'target', '_blank');
+          cy.get('[data-cy=google-button]').should('have.attr', 'target', '_blank');
+        });
+
+        it('Check that the Mobile Measures app displays', () => {
+          cy.get('.more-projects').scrollIntoView();
+          cy.get('[src="/assets/our-work/mm-feature-image3.png"]').should('exist');
+          cy.get('[src="/assets/our-work/mm-feature-image1.png"]').should('exist');
+          cy.get('[data-cy=apple-button]').should('exist');
+          cy.get('[data-cy=google-button]').should('exist');
+          cy.get('.more-projects-items > :nth-child(1) > .d-none').should('exist');
+          cy.get('.other-button').should('exist');
+        });
+
+        it('Check that the Mobile Measures App/Play store links work', () => {
+          cy.get('[data-cy=apple-button]').should('have.attr', 'target', '_blank');
+          cy.get('[data-cy=google-button]').should('have.attr', 'target', '_blank');
+        });
+
+        it('Check that the Mobile Measures "View project" button works', () => {
+          cy.get('.more-projects').scrollIntoView();
+          cy.get(':nth-child(1) > .other-button > stencil-route-link.hydrated > a > button').click();
+          cy.get('.header-content > h1').contains('Mobile Measures');
+        });
+
+        it('The footer is visible on the Voyage page', () => {
+          cy.get('.footer').scrollIntoView();
+          cy.get('.footer').should('be.visible');
         });
       });
     });
