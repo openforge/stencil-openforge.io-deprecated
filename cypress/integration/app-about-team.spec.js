@@ -8,8 +8,8 @@ describe('About page team', function () {
 
   describe('About Hero', () => {
     it('The about page title and paragraph text display', () => {
-      cy.get('h1').contains('We Are Passionate About Technology and Design');
-      cy.get('.hero > .col-12 > .about-text').contains('We believe that your success is our success');
+      cy.get('[data-cy=title-hero]').contains('We Are Passionate About Technology and Design');
+      cy.get('.about-text').contains('We believe that your success is our success');
     });
 
     it('The meet our team button jumps the user to the "Meet Our Team" section', () => {
