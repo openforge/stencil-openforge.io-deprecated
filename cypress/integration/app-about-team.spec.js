@@ -264,6 +264,856 @@ describe('About page team', function () {
         cy.get('.footer').should('be.visible');
       });
     });
+    describe('Leon', () => {
+      it("User is able to see Leon's hero image, Title, and bio", () => {
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Leon Degtar');
+        cy.get('h3').contains('Director of Operations');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Leon is an operational and financial leader who has worked in a variety of industries and businesses.');
+      });
+
+      it("User is able to see Leon's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Leon');
+        cy.get('.col-11 > p').contains("Leon provides guidance to our clients and team with clear process and a focus on execution and communication");
+
+      });
+
+      it("User is able to see Leon's skills tags", () => {
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Business Analysis');
+        cy.get('.chips-container').contains('Financial Oversight');
+        cy.get('.chips-container').contains('Organizational Development');
+        cy.get('.chips-container').contains('Process Optimization');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Leon's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Fernando', () => {
+      it("User is able to see Fernando's hero image, Title, and bio", () => {
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Fernando Del Olmo');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Growing up, Fernando was surrounded by people who loved computers and gaming.');
+      });
+
+      it("User is able to see Fernando's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Fernando');
+        cy.get('.col-11 > p').contains("Fernando helps manage the development process of projects; from the initial scoping and architectural planning aspects, all the way through to the actual development of the product.");
+
+      });
+
+      it("User is able to see Fernando's skills tags", () => {
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Front-end Wizard');
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Ionic');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('StencilJS');
+        cy.get('.chips-container').contains('RxJS');
+        cy.get('.chips-container').contains('NGXS');
+        cy.get('.chips-container').contains('NGRX');
+        cy.get('.chips-container').contains('Redux');
+        cy.get('.chips-container').contains('NodeJS');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Fernando's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Luis', () => {
+      it("User is able to see Luis hero image, Title, and bio", () => {
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Luis Chacón');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics.');
+      });
+
+      it("User is able to see Luis position icon and the second part of his bio", () => {
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Luis');
+        cy.get('.col-11 > p').contains("Luis has mastered the agile approach to software development and has the ability to seamlessly transition between tasks and pivot if the necessity arises.");
+
+      });
+
+      it("User is able to see Luis skills tags", () => {
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Typescript');
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Ionic');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('Scrum');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Luis bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Claudio', () => {
+      it("User is able to see Claudio's hero image, Title, and bio", () => {
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Claudio Del Valle');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Claudio began programming early in High School as a way to learn more about robotics.');
+      });
+
+      it("User is able to see Claudio's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Claudio');
+        cy.get('.col-11 > p').contains("Like most of the developers at OpenForge, Claudio is involved in the scoping and development process of mobile apps.");
+
+      });
+
+      it("User is able to see Claudio's skills tags", () => {
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('NodeJS');
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Ionic');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('RxJS');
+        cy.get('.chips-container').contains('StencilJS');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Claudio's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Min', () => {
+      it("User is able to see Min's hero image, Title, and bio", () => {
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Min Lee');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Min has always been a problem-solver who enjoys optimizing any process and that translated beautifully when he found his passion in development as a result.');
+      });
+
+      it("User is able to see Min's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Min');
+        cy.get('.col-11 > p').contains("As a developer at OpenForge, Min spends most of his work building out features that deliver value to our clients.");
+
+      });
+
+      it("User is able to see Min's skills tags", () => {
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('NodeJS');
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Ionic');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('React');
+        cy.get('.chips-container').contains('Full-stack');
+        cy.get('.chips-container').contains('Java');
+        cy.get('.chips-container').contains('C#');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Min's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Billy', () => {
+      it("User is able to see Billy's hero image, Title, and bio", () => {
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('William (Billy) Holloran');
+        cy.get('h3').contains('QA Manager');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Billy was born and raised in Philadelphia and started his career training right out of High School');
+      });
+
+      it("User is able to see Billy's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('William');
+        cy.get('.col-11 > p').contains("As Quality Manager, Billy leads the team in testing all company deliverables.");
+
+      });
+
+      it("User is able to see Billy's skills tags", () => {
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Quality Assurance');
+        cy.get('.chips-container').contains('Organization');
+        cy.get('.chips-container').contains('Planning');
+        cy.get('.chips-container').contains('Communication');
+        cy.get('.chips-container').contains('Critical Thinking');
+        cy.get('.chips-container').contains('Leadership');
+        cy.get('.chips-container').contains('Problem-solving');
+        cy.get('.chips-container').contains('Sense of Humor');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Billy's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('May', () => {
+      it("User is able to see May's hero image, Title, and bio", () => {
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('May Alkhraisha');
+        cy.get('h3').contains('Marketing Coordinator');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('After studying business in her home country; Jordan, May undertook a course in Web & Graphic Design');
+      });
+
+      it("User is able to see May's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('May');
+        cy.get('.col-11 > p').contains("May handles branding, marketing & communication efforts within the company.");
+
+      });
+
+      it("User is able to see May's skills tags", () => {
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Branding');
+        cy.get('.chips-container').contains('Content Writing');
+        cy.get('.chips-container').contains('Editing');
+        cy.get('.chips-container').contains('Marketing');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on May's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Mariela', () => {
+      it("User is able to see Mariela's hero image, Title, and bio", () => {
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Mariela Mora Quesada');
+        cy.get('h3').contains('Project Management');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Mariela is our administrative assistant and is from Coronado;');
+      });
+
+      it("User is able to see Mariela's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Mariela');
+        cy.get('.col-11 > p').contains("Mariela is in charge of reviewing the team's schedules and generating both internal and external reports, as well as invoicing.");
+
+      });
+
+      it("User is able to see Mariela's skills tags", () => {
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Communication');
+        cy.get('.chips-container').contains('Problem Solving');
+        cy.get('.chips-container').contains('Customer Service');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Mariela's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Petrell', () => {
+      it("User is able to see Petrell's hero image, Title, and bio", () => {
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Petrell Vereen');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Petrell is a mobile developer and software generalist that has been solving software and hardware issues since he was a child.');
+      });
+
+      it("User is able to see Petrell's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Petrell');
+        cy.get('.col-11 > p').contains("As a core developer, Petrell stays up to date with tech trends and modern code patterns to produce software that is secure and stands the test of time.");
+
+      });
+
+      it("User is able to see Petrell's skills tags", () => {
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('React');
+        cy.get('.chips-container').contains('Redux');
+        cy.get('.chips-container').contains('Typescript');
+        cy.get('.chips-container').contains('Vue');
+        cy.get('.chips-container').contains('NGRX');
+        cy.get('.chips-container').contains('Responsive Design');
+        cy.get('.chips-container').contains('CI/CD');
+        cy.get('.chips-container').contains('Scripting');
+        cy.get('.chips-container').contains('Python');
+        cy.get('.chips-container').contains('Java');
+        cy.get('.chips-container').contains('Docker');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Petrell's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Jared', () => {
+      it("User is able to see Jared's hero image, Title, and bio", () => {
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Jared Bradshaw');
+        cy.get('h3').contains('Design Coordinator');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Jared started down the career path of design when he began making cover art for his friends’ music albums.');
+      });
+
+      it("User is able to see Jared's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Jared');
+        cy.get('.col-11 > p').contains("Jared fills a unique role on the OpenForge team as a hybrid between Visual Designer and Project Manager.");
+
+      });
+
+      it("User is able to see Jared's skills tags", () => {
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Graphic Design');
+        cy.get('.chips-container').contains('UI Design');
+        cy.get('.chips-container').contains('Project Management');
+        cy.get('.chips-container').contains('Quality Assurance');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Jared's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Harry', () => {
+      it("User is able to see Harry's hero image, Title, and bio", () => {
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Harry Scheuerle');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Harry is a Villanova alumni who still considers himself a self-taught developer.');
+      });
+
+      it("User is able to see Harry's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Harry');
+        cy.get('.col-11 > p').contains("As a developer at OpenForge, Harry applies his Full-Stack experience and problem solving talents to advance the active projects at the company");
+
+      });
+
+      it("User is able to see Harry's skills tags", () => {
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('React');
+        cy.get('.chips-container').contains('Typscript');
+        cy.get('.chips-container').contains('NGRX');
+        cy.get('.chips-container').contains('RxJS');
+        cy.get('.chips-container').contains('Express');
+        cy.get('.chips-container').contains('MongoDB');
+        cy.get('.chips-container').contains('Javascript');
+        cy.get('.chips-container').contains('ES');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Harry's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Carter', () => {
+      it("User is able to see Carter's hero image, Title, and bio", () => {
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Carter Simonson');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Carter is a school student and software developer from small-town Wisconsin');
+      });
+
+      it("User is able to see Carter's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Carter');
+        cy.get('.col-11 > p').contains("Carter is primarily a mobile developer, and helps our team in the initial setup, planning, and development of new mobile applications");
+
+      });
+
+      it("User is able to see Carter's skills tags", () => {
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('React');
+        cy.get('.chips-container').contains('Typescript');
+        cy.get('.chips-container').contains('Ionic');
+        cy.get('.chips-container').contains('NodeJS');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Carter's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Griffin', () => {
+      it("User is able to see Griffin's hero image, Title, and bio", () => {
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Griffin Robbins');
+        cy.get('h3').contains('Game Designer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('A life-long gamer and native of Massachusetts, Griffin’s transition into a Game Designer was a natural transition.');
+      });
+
+      it("User is able to see Griffin's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Griffin');
+        cy.get('.col-11 > p').contains("As a member of the design team, Griffin’s main focus is working on our very own game; Startup Wars! He also contributes by providing a continuous flow of creative ideas on other projects");
+
+      });
+
+      it("User is able to see Griffin's skills tags", () => {
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Game Design');
+        cy.get('.chips-container').contains('UI Design');
+        cy.get('.chips-container').contains('Web Design');
+        cy.get('.chips-container').contains('Animation');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Griffin's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Pablo', () => {
+      it("User is able to see Griffin's hero image, Title, and bio", () => {
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Pablo Huerta');
+        cy.get('h3').contains('Software Engineer');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Pablo started coding in High School; specifically, java and C++.');
+      });
+
+      it("User is able to see Pablo's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Pablo');
+        cy.get('.col-11 > p').contains("As an integral member of the development team, Pablo works hard to ensure that every project he is assigned to behaves in the correct way.");
+
+      });
+
+      it("User is able to see Pablo's skills tags", () => {
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Angular');
+        cy.get('.chips-container').contains('Firebase');
+        cy.get('.chips-container').contains('Ionic');
+        cy.get('.chips-container').contains('MongoDB');
+        cy.get('.chips-container').contains('Laravel');
+        cy.get('.chips-container').contains('NodeJS');
+        cy.get('.chips-container').contains('Java');
+        cy.get('.chips-container').contains('Javascript');
+        cy.get('.chips-container').contains('C#');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Pablo's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
+    describe('Alberto', () => {
+      it("User is able to see Alberto's hero image, Title, and bio", () => {
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.header-text > h1').contains('Alberto Carniel');
+        cy.get('h3').contains('Marketing Specialist');
+        cy.get('.hero').should('have.css', 'background');
+        cy.get('.header-text > p').contains('Alberto discovered his passion for Digital Marketing and fully embraced his role as a digital marketing manager within the luxury industry.');
+      });
+
+      it("User is able to see Alberto's position icon and the second part of his bio", () => {
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.d-none > .hydrated > img').should('exist').and('be.visible');
+        cy.get('.col-11 > h2').contains('Alberto');
+        cy.get('.col-11 > p').contains("Alberto supports OpenForge’s online marketing and outreach team, as well as search engine optimization efforts.");
+
+      });
+
+      it("User is able to see Alberto's skills tags", () => {
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('.chips-container').contains('Automation Marketing');
+        cy.get('.chips-container').contains('Social Media Management');
+        cy.get('.chips-container').contains('Search Engine Optimization (SEO)');
+        cy.get('.chips-container').contains('E-commerce');
+        cy.get('.chips-container').contains('Marketplace Management');
+        cy.get('.chips-container').contains('Digital Marketing Strategy');
+      });
+
+      it('User is able to see "Meet Our Team" and all of our team members images', () => {
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+        cy.get('#members').scrollIntoView();
+        cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(2) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(3) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(4) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(5) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(6) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(7) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(8) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(9) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(10) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(11) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(12) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(13) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(14) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(15) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(16) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(17) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(18) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+        cy.get(':nth-child(19) > stencil-route-link.hydrated > a > .member--overlay > .member--text').should('be.visible');
+      });
+
+      it("The footer is visible on Alberto's bio page", () => {
+        cy.get('.footer').scrollIntoView();
+        cy.get('.footer').should('be.visible');
+      });
+    });
     describe('App-Cta', function () {
       it('Should exist and display title', function () {
         cy.get('app-cta').should('exist');
