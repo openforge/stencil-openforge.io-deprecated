@@ -162,17 +162,15 @@ describe('Home Page', function () {
       });
 
       it('The "Our Process" Carousel automatically rotates through all 5 slides and then started over', function () {
-        cy.get('app-carousel-indicators').within(() => {
-          cy.get('.carousel-main-indicators > .carousel-indicators > [data-slide-to="0"]').click();
-          cy.get('[data-cy=capp-head]').contains('Discovery');
-          // Wait for carousel list el to change on the page
-          cy.wait(2000);
-          cy.wait(2000);
-          cy.wait(2000);
-          cy.wait(2000);
-          cy.wait(2000);
-          cy.get('[data-cy=capp-head]').contains('Discovery');
-        });
+        cy.get('.carousel-main-indicators > .carousel-indicators > [data-slide-to="0"]').click();
+        cy.get('[data-cy=capp-head] > .hydrated').contains('Discovery');
+        // Wait for carousel list el to change on the page
+        cy.wait(5000);
+        cy.wait(5000);
+        cy.wait(5000);
+        cy.wait(5000);
+        cy.wait(5000);
+        cy.get('[data-cy=capp-head] > .hydrated').contains('Discovery');
       });
 
       it('The carousel displays the correct image and content on all five slides', function () {
