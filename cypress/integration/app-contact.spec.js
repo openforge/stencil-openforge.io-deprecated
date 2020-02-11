@@ -1,6 +1,6 @@
-describe('Contact Page', function() {
+describe('Contact Page', function () {
   describe('The contact form displays with all fields', () => {
-    it('Check that the form displays', function() {
+    it('Check that the form displays', function () {
       cy.visit('localhost:3333/contact');
       cy.get('#second-content')
         .contains('Get in Touch')
@@ -31,7 +31,7 @@ describe('Contact Page', function() {
   });
 
   describe('User is able to successfully submit a contact form & view the successful submission animation', () => {
-    it('Check that the form fades and appears the animation', function() {
+    it('Check that the form fades and appears the animation', function () {
       cy.visit('localhost:3333/contact');
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=email]').type('Test@openforge.io');
@@ -44,7 +44,7 @@ describe('Contact Page', function() {
   });
 
   describe('User is not able to submit a contact form with a empty full name field', () => {
-    it('Check that the submit is disabled', function() {
+    it('Check that the submit is disabled', function () {
       cy.visit('localhost:3333/contact');
       cy.get('input[name=email]').type('Test@openforge.io');
       cy.get('input[name=phone]').type('3333333333');
@@ -56,7 +56,7 @@ describe('Contact Page', function() {
   });
 
   describe('User is not able to submit a contact form with a empty email field', () => {
-    it('Check that the submit is disabled', function() {
+    it('Check that the submit is disabled', function () {
       cy.visit('localhost:3333/contact');
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=phone]').type('3333333333');
@@ -67,11 +67,11 @@ describe('Contact Page', function() {
     });
   });
 
-  describe('User is not able to submit a contact form with a empty email field', () => {
-    it('Check that the submit is disabled', function() {
+  describe('User is not able to submit a contact form with a invalid email address', () => {
+    it('Check that the submit is disabled', function () {
       cy.visit('localhost:3333/contact');
       cy.get('input[name=name]').type('Tester');
-      cy.get('input[name=email]').type('wrong_email');
+      cy.get('input[name=email]').type('Test@openforge@io');
       cy.get('input[name=phone]').type('3333333333');
       cy.get('input[name=message]').type('Testing');
       cy.get('button[type=submit]')
@@ -81,7 +81,7 @@ describe('Contact Page', function() {
   });
 
   describe('The mailbox icon displays on the right hand side of the contact form', () => {
-    it('Check that the img exists', function() {
+    it('Check that the img exists', function () {
       cy.visit('localhost:3333/contact');
       cy.get('[data-cy=mailbox-img]')
         .should('exist')
@@ -90,7 +90,7 @@ describe('Contact Page', function() {
   });
 
   describe('User is not able to submit the contact form after clearing all of the fields', () => {
-    it('Check that the submit is disabled after clearing form', function() {
+    it('Check that the submit is disabled after clearing form', function () {
       cy.visit('localhost:3333/contact');
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=name]').clear();
@@ -107,7 +107,7 @@ describe('Contact Page', function() {
   });
 
   describe('User is unable to submit a empty contact form', () => {
-    it('Check that the button is disabled', function() {
+    it('Check that the button is disabled', function () {
       cy.visit('localhost:3333/contact');
       cy.get('button[type=submit]')
         .should('exist')
