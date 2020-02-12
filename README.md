@@ -1,4 +1,4 @@
-b<p align="center">
+<p align="center">
   <img src="https://github.com/openforge/main-website/blob/master/src/assets/logo-openforge.png?raw=true"/>
 </p>
 <p align="center">
