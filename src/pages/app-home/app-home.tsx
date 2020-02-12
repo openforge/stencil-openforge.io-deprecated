@@ -56,7 +56,7 @@ export class AppHome {
 
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function() {
+      $(document).ready(function () {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
         (processCarousel as any).carousel({
@@ -103,14 +103,14 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-4 col-md-5 col-sm-12 flex-column text">
-                <h1>
+                <h1 data-cy='title'>
                   <app-translate keyword="home.hero.title" />
                 </h1>
-                <h2>
+                <h2 data-cy='subtitle'>
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
                 <div class="sub-txt">
-                  <p>
+                  <p data-cy='subpar'>
                     <app-translate keyword="home.hero.text" />
                   </p>
                 </div>
@@ -156,10 +156,10 @@ export class AppHome {
                     <app-img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobilemeasures app screenshot" />
                   </div>
                   <div class="store-buttons">
-                    <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="vanlife-apple">
+                    <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="mobilemeasures-apple">
                       <app-img src="/assets/graphic-apple-appstore.png" alt="Download link on Apple App Store" />
                     </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.mobilemeasuresllc.mobilemeasures" target="_blank" rel="noopener" data-cy="vanlife-google">
+                    <a href="https://play.google.com/store/apps/details?id=com.mobilemeasuresllc.mobilemeasures" target="_blank" rel="noopener" data-cy="mobilemeasures-google">
                       <app-img src="/assets/graphic-google-googleplaystore.png" alt="Download link on Google Play Store" />
                     </a>
                   </div>
@@ -239,14 +239,14 @@ export class AppHome {
               <div class="carousel-item active">
                 <div class="row">
                   <div class="col-12 text-center">
-                    <h2>
+                    <h2 data-cy="capp-head">
                       <app-translate keyword="home.process.discovery.title" />
                     </h2>
                   </div>
                 </div>
                 <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" alt="discovery" />
+                    <app-img data-cy="capp-img" class="carousel-image-h" src="/assets/svg/home-graphic-process-discovery.svg" alt="discovery" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -271,7 +271,7 @@ export class AppHome {
                 </div>
                 <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" alt="design" />
+                    <app-img data-cy="capp-img" class="carousel-image-h" src="/assets/svg/home-graphic-process-design.svg" alt="design" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -296,7 +296,7 @@ export class AppHome {
                 </div>
                 <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" alt="development" />
+                    <app-img data-cy="capp-img" class="carousel-image" src="/assets/svg/home-graphic-process-development.svg" alt="development" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -321,7 +321,7 @@ export class AppHome {
                 </div>
                 <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center">
-                    <app-img class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" alt="deployment" />
+                    <app-img data-cy="capp-img" class="carousel-image" src="/assets/svg/home-graphic-process-deployment.svg" alt="deployment" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
@@ -346,7 +346,7 @@ export class AppHome {
                 </div>
                 <div class="row row-main">
                   <div class="col-lg-6 col-md-6 col-sm-12 align-self-center text-center ">
-                    <app-img class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" alt="user feedback" />
+                    <app-img data-cy="capp-img" class="carousel-image-userfeedback" src="/assets/svg/home-graphic-process-userfeedback.svg" alt="user feedback" />
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12 carousel-panel align-self-center">
                     <div class="carousel-text">
