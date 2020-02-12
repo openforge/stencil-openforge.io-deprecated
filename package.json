@@ -25,7 +25,8 @@
     "cypress:open": "cypress open",
     "firebase:deploy:qa": "firebase use qa && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:staging": "firebase use staging && firebase deploy --token \"$FIREBASE_TOKEN\"",
-    "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\""
+    "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\"",
+    "cypress-run": "cypress run --record"
   },
   "dependencies": {
     "@stencil/sass": "^1.1.0",
