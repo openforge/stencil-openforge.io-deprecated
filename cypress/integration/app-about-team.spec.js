@@ -85,7 +85,7 @@ describe('About page team', function () {
 
     it('Pressing the join us image takes the user to the opportunities page', () => {
       cy.get(':nth-child(20) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
-      cy.get('.hero-type-buttons').should('exist');
+      cy.get('.navbar').should('exist');
     });
     describe('Jedi', () => {
       it("User is able to see Jedi's hero image, Title, and bio", () => {
