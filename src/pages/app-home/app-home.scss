@@ -76,7 +76,7 @@
     }
 
     h1 {
-      color: $orange;
+      color: $gray-dark;
       font-family: Muli;
       font-size: 26px;
       font-weight: 700;
@@ -155,8 +155,9 @@
   .featured-blog {
     margin-top: 50px;
 
-    h4 {
-      color: $orange-dark;
+    h4,
+    a {
+      color: $gray-dark;
     }
   }
 
@@ -272,7 +273,7 @@
         }
 
         h3 {
-          color: $orange-dark;
+          color: $gray-dark;
           font-size: 24px;
           margin-bottom: 1rem;
 

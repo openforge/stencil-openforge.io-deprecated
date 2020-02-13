@@ -56,7 +56,7 @@ export class AppHome {
 
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function () {
+      $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const processCarousel = $('#processCarousel');
         (processCarousel as any).carousel({
@@ -75,8 +75,9 @@ export class AppHome {
 
   async getFeaturedPost() {
     this.featuredIsLoading = true;
-    this.featuredPost = await Fetch.fetchOneBlogPost();
-    this.featuredPost1 = await Fetch.fetchOneBlogPost(1);
+    const homePosts = await Fetch.fetchHomeBlogPosts();
+    this.featuredPost = homePosts.first;
+    this.featuredPost1 = homePosts.second;
     this.featuredIsLoading = false;
   }
 
@@ -103,14 +104,14 @@ export class AppHome {
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-4 col-md-5 col-sm-12 flex-column text">
-                <h1 data-cy='title'>
+                <h1 data-cy="title">
                   <app-translate keyword="home.hero.title" />
                 </h1>
-                <h2 data-cy='subtitle'>
+                <h2 data-cy="subtitle">
                   <app-translate keyword="home.hero.subTitle" />
                 </h2>
                 <div class="sub-txt">
-                  <p data-cy='subpar'>
+                  <p data-cy="subpar">
                     <app-translate keyword="home.hero.text" />
                   </p>
                 </div>

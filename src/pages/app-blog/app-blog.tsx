@@ -328,6 +328,7 @@ export class AppBlog {
 
   hideSearchBar() {
     this.displaySearchBar = false;
+    this.clearSearch();
   }
 
   open(provider: string) {

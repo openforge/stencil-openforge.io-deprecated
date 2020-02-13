@@ -386,6 +386,26 @@ export class AppTeamLanding {
         image: 'https://openforge.io/assets/headshot-carniel.png',
       },
     },
+    'matt-moran': {
+      firstname: 'Matt',
+      surname: 'Moran',
+      title: translate('about.team.member.title.developer'),
+      headerText:
+        'Matt joined OpenForge in 2019 as a member of the development team. A self-taught developer with experience working for large institutions, he has one foot in modern web development, and one in the growing Microsoft ecosystem. Matt is also a strong advocate for Computer Science education, having taught programming to over 1000 students and contributed to graduate-level CS curriculum at the University of Pennsylvania. Alongside his work with OpenForge, Matt continues to tutor programming while fostering dogs at his house in Georgia.',
+      bodyText:
+        'In addition to developing applications, Matt has worked for OpenForge as a database expert, software architect, DevOps specialist, and project lead. With specialties in backend development, database design, and enterprise systems, he focuses on product security, stability, and integrity. He draws upon his continually expanding base of development practices to help customers find solutions for their needs.',
+      skills: ['Angular', 'NGRX', 'Cordova', 'Node', 'SQL Server', ' C#', 'ASP.NET', 'Universal Windows Platform', 'Visual Studio', 'IIS', 'Azure', 'Serverless', 'DevOps', 'Git'],
+      team: 'development',
+      headshotPhoto: '/assets/headshot-matt.png',
+      metatags: {
+        title: 'Matt Moran - Software Engineer | OpenForge',
+        description:
+          'In addition to developing applications, Matt has worked for OpenForge as a database expert, software architect, DevOps specialist, and project lead. With specialties in backend development, database design, and enterprise systems, he focuses on product security, stability, and integrity. He draws upon his continually expanding base of development practices to help customers find solutions for their needs.',
+        keywords: 'Matt Moran',
+        url: 'https://openforge.io/about/matt-moran/',
+        image: 'https://openforge.io/assets/headshot-matt.png',
+      },
+    },
   };
 
   @Watch('match')
