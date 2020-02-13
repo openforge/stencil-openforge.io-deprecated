@@ -3,7 +3,14 @@
 
   header {
     @include media-breakpoint-down(md) {
-      background-image: url(assets/our-work/our-work-header.svg);
+      background-image: url(assets/our-work/our-work-header.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &.webp {
+        background-image: url(assets/our-work/our-work-header.webp);
+      }
     }
 
     @include media-breakpoint-down(sm) {
@@ -12,13 +19,18 @@
 
     section {
       align-items: center;
-      background-image: url(assets/our-work/our-work-header.svg);
+      background-image: url(assets/our-work/our-work-header.png);
       background-repeat: no-repeat;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background-position: center;
+      background-size: contain;
       min-height: 520px;
+
+      &.webp {
+        background-image: url(assets/our-work/our-work-header.webp);
+      }
 
       @include media-breakpoint-down(md) {
         min-height: 350px;
@@ -73,6 +85,10 @@
     -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.75);
+
+    &:first-child {
+      margin-top: 20px;
+    }
 
     @include media-breakpoint-down(sm) {
       grid-template-columns: initial;
