@@ -424,7 +424,7 @@ export class AppOpportunities {
           <header class="hero-submit container">
             <content-graphic
               leftAlign={true}
-              img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-designer-candidate.svg' : '/assets/opportunities/opportunities-dev-candidate.svg'}
+              img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-show-us-designer.svg' : '/assets/opportunities/opportunities-show-us-dev.svg'}
               reverse={this.opporunityTypeCurrent === 'design' ? true : false}
             >
               <h3 class="original thin margin-bottom auto-align" slot="header">
