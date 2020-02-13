@@ -79,7 +79,7 @@ describe('About page team', function () {
 
     it('Hovering over a team members photo displays the hover state', () => {
       cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text')
-        .trigger('mouseover');
+        .trigger('mouseover', { force: true });
       cy.get('.member--overlay').should('be.visible');
     });
 
