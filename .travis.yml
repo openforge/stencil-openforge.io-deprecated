@@ -17,7 +17,7 @@ before_script:
 script:
 - npm run build
 - npm run build:functions
-- npm run serve & wait-on http://localhost:3333
+- npm run serve
 - npm run cypress-run
 
 after_success:
