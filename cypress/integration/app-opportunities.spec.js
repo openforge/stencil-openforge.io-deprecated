@@ -1,5 +1,5 @@
-describe('Opportunities Page', function() {
-  it('User can view the the opportunites page landing state', function() {
+describe('Opportunities Page', function () {
+  it('User can view the the opportunites page landing state', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('#hero .hero-text-container')
       .contains('Looking for a New Adventure?')
@@ -19,7 +19,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User can toggle between "Developer" and "Designer"', function() {
+  it('User can toggle between "Developer" and "Designer"', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -42,7 +42,7 @@ describe('Opportunities Page', function() {
   });
 
   // DEVELOPER SELECTED
-  it('User can view the Developer opportunites page', function() {
+  it('User can view the Developer opportunites page', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -104,10 +104,10 @@ describe('Opportunities Page', function() {
       .contains('Reputation is Everything.')
       .should('exist')
       .and('be.visible');
-    cy.get('#reputation .content-graphic')
+    cy.get('[img-url="/assets/graphic-opportunities-ionic.jpg"] > .content-graphic > .text-md-right > p.auto-align > .hydrated')
       .first()
       .contains(
-        "Because we value our partnerships. As a trusted partner of the  Ionic Team  our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!"
+        "Because we value our partnerships"
       )
       .should('exist')
       .and('be.visible');
@@ -116,7 +116,7 @@ describe('Opportunities Page', function() {
       .contains('Are you prepared?')
       .should('exist')
       .and('be.visible');
-    cy.get('#reputation .content-graphic')
+    cy.get('[img-url="/assets/opportunities/codemaster.png"] > .content-graphic > :nth-child(2) > p > .hydrated')
       .last()
       .contains(
         "We're looking for someone who’s ready to hit the ground running - someone who wants to turn big ideas into realities. A person who can work on a team, show humility, and is not afraid to learn and teach simultaneously."
@@ -125,7 +125,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User can fill out the Developer sliders', function() {
+  it('User can fill out the Developer sliders', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -185,7 +185,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is able to see the developer application page filler content', function() {
+  it('User is able to see the developer application page filler content', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -259,9 +259,9 @@ describe('Opportunities Page', function() {
       .contains('Strong portfolio to be presented and defended during interview.')
       .should('exist')
       .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
+    cy.get('.content-graphic')
       .last()
-      .contains('Experience using Firebase products (Database,  Authentication, Notifications).')
+      .contains('Experience using Firebase products')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
@@ -300,7 +300,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('The developer application displays with all fields', function() {
+  it('The developer application displays with all fields', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -367,7 +367,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application without a attachment', function() {
+  it('User is not able to submit a developer application without a attachment', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -395,7 +395,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty full name field', function() {
+  it('User is not able to submit a developer application with a empty full name field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -426,7 +426,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer aplication with a empty email field', function() {
+  it('User is not able to submit a developer aplication with a empty email field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -457,7 +457,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a invalid email address', function() {
+  it('User is not able to submit a developer application with a invalid email address', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -489,7 +489,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty phone number', function() {
+  it('User is not able to submit a developer application with a empty phone number', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -520,7 +520,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty github URL', function() {
+  it('User is not able to submit a developer application with a empty github URL', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -551,7 +551,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application after clearing all of the fields', function() {
+  it('User is not able to submit a developer application after clearing all of the fields', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -588,7 +588,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty "what makes you unique" feild', function() {
+  it('User is not able to submit a developer application with a empty "what makes you unique" feild', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -619,7 +619,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is unable to submit a empty developer application', function() {
+  it('User is unable to submit a empty developer application', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
@@ -643,7 +643,7 @@ describe('Opportunities Page', function() {
   });
 
   // DESIGNER SELECTED
-  it('User can view the Designer opportunites page', function() {
+  it('User can view the Designer opportunites page', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:last-child()')
       .should('exist')
@@ -705,10 +705,10 @@ describe('Opportunities Page', function() {
       .contains('Reputation is Everything.')
       .should('exist')
       .and('be.visible');
-    cy.get('#reputation .content-graphic')
+    cy.get('[img-url="/assets/graphic-opportunities-ionic.jpg"] > .content-graphic > .text-md-right > p.auto-align > .hydrated')
       .first()
       .contains(
-        "Because we value our partnerships. As a trusted partner of the  Ionic Team  our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!"
+        "Because we value our partnerships"
       )
       .should('exist')
       .and('be.visible');
@@ -726,7 +726,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User can fill out the Designer sliders', function() {
+  it('User can fill out the Designer sliders', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:last-child()')
       .should('exist')
@@ -786,7 +786,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is able to see the designer application page filler content', function() {
+  it('User is able to see the designer application page filler content', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:last-child()')
       .should('exist')
@@ -893,7 +893,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('The designer application displays with all fields', function() {
+  it('The designer application displays with all fields', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:last-child()')
       .should('exist')
@@ -960,7 +960,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application without a attachment', function() {
+  it('User is not able to submit a designer application without a attachment', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:last-child()')
       .should('exist')
@@ -988,7 +988,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty full name field', function() {
+  it('User is not able to submit a designer application with a empty full name field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1019,7 +1019,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer aplication with a empty email field', function() {
+  it('User is not able to submit a designer aplication with a empty email field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1050,7 +1050,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a invalid email address', function() {
+  it('User is not able to submit a designer application with a invalid email address', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1082,7 +1082,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty phone number', function() {
+  it('User is not able to submit a designer application with a empty phone number', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1113,7 +1113,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty github URL', function() {
+  it('User is not able to submit a designer application with a empty github URL', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1144,7 +1144,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application after clearing all of the fields', function() {
+  it('User is not able to submit a designer application after clearing all of the fields', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1181,7 +1181,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty "what makes you unique" feild', function() {
+  it('User is not able to submit a designer application with a empty "what makes you unique" feild', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
@@ -1212,7 +1212,7 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is unable to submit a empty designer application', function() {
+  it('User is unable to submit a empty designer application', function () {
     cy.visit('localhost:3333/opportunities');
     cy.get('.hero-type-buttons button:last-child()')
       .should('exist')
