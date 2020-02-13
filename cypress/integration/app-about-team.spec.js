@@ -8,7 +8,7 @@ describe('About page team', function () {
 
   describe('About Hero', () => {
     it('The about page title and paragraph text display', () => {
-      cy.get('[data-cy=title-hero]').contains('We Are Passionate About Technology and Design');
+      cy.get('[data-cy=title-hero] > .d-none').contains('We Are Passionate About Technology and Design');
       cy.get('.about-text').contains('We believe that your success is our success');
     });
 
