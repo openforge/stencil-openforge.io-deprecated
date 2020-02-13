@@ -38,7 +38,7 @@ export class AppContact {
 
   radioChoices: any;
 
-  constructor() {}
+  constructor() { }
 
   @Listen('check')
   @Listen('valueChanged')
@@ -212,7 +212,7 @@ export class AppContact {
 
             {this.formSubmitted ? (
               <div class="container submit-container">
-                <app-img src="/assets/svg/contact-anim.svg" alt="Map page graphic" />
+                <app-img src="/assets/svg/contact-anim.svg" alt="Map page graphic" id='fimage' />
               </div>
             ) : null}
           </div>
