@@ -99,7 +99,6 @@ describe('Navbar', function () {
             it('Our work tab should be on select state', () => {
                 cy.get('[data-cy=our-work]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
-                cy.get('.mobilemeasures').scrollIntoView();
                 cy.get('[data-cy=mobilembutton]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
                 cy.get('.more-projects').scrollIntoView();
@@ -295,7 +294,6 @@ describe('Navbar', function () {
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=our-work]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
-                cy.get('.mobilemeasures').scrollIntoView();
                 cy.get('[data-cy=mobilembutton]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
                 cy.get('.more-projects').scrollIntoView();
@@ -363,7 +361,7 @@ describe('Navbar', function () {
                 cy.get('.search-input').click();
                 cy.get('.blog-search-group').should('exist').and('be.visible');
                 cy.get('#blog-search').type('Dark');
-                cy.get(':nth-child(4) > .col-12 > h1 > .hydrated > a').contains('How to Design for Dark Mode');
+                cy.get('h1 > .hydrated > a').contains('How to Design for Dark Mode');
                 cy.get(':nth-child(4) > .col-12 > p').should('exist').and('be.visible');
                 cy.get(':nth-child(4) > .col-12 > p').contains('Recently, Apple and Google have announced that');
                 cy.get(':nth-child(4) > .col-12 > .categories > :nth-child(1)').contains('Design');
