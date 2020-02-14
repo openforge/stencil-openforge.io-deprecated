@@ -95,7 +95,7 @@ describe('Footer', function() {
     it('Check that the title and column texts', function() {
       cy.visit('localhost:3333');
       cy.get('footer')
-        .contains('© OpenForge 2019 v2.5.1')
+        .contains('© OpenForge 2019 v2.5.2')
         .should('exist')
         .and('be.visible');
     });
