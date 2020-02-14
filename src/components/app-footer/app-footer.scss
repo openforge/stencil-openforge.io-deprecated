@@ -20,6 +20,9 @@
       font-size: 1.3rem;
       margin-bottom: 1rem;
     }
+    @include media-breakpoint-down(sm){
+      text-align: center;
+    }
   }
 
   p {
