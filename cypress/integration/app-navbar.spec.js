@@ -1,13 +1,11 @@
 describe('Navbar', function () {
     var env = 'http://localhost:3333';
-    beforeEach(() => {
-        cy.visit(env);
-    });
 
     describe('Desktop Mode', () => {
 
         describe('Should display the correct tabs', () => {
             it('Navbar should exist', () => {
+                cy.visit(env);
                 cy.get('nav')
                     .should('exist')
                     .and('be.visible');
@@ -56,7 +54,7 @@ describe('Navbar', function () {
 
         describe('Navigation tabs', () => {
             it('Should navigate to home when logo is clicked', () => {
-                cy.visit('localhost:3333/about');
+                cy.visit(env + '/about');
                 cy.get('.navbar-brand').click();
                 cy.get('.hero').should('exist').and('be.visible');
             });
