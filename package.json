@@ -26,7 +26,7 @@
     "firebase:deploy:qa": "firebase use qa && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:staging": "firebase use staging && firebase deploy --token \"$FIREBASE_TOKEN\"",
     "firebase:deploy:prod": "firebase use production && firebase deploy --token \"$FIREBASE_TOKEN\"",
-    "cypress-run": "cypress run --spec cypress/integration/app-opportunities.spec.js"
+    "cypress-run": "cypress run --spec cypress/integration/app-opportunities.spec.js --browser chrome"
   },
   "dependencies": {
     "@stencil/sass": "^1.1.0",
