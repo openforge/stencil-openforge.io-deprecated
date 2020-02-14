@@ -6,6 +6,26 @@ import { translate } from '../../services/translation.service';
   styleUrl: 'app-footer.scss',
 })
 export class AppFooter {
+  open(provider: string) {
+    switch (provider) {
+      case 'instagram':
+        window.open('https://www.instagram.com/openforgemobile/', '_blank');
+        break;
+      case 'twitter':
+        window.open('https://twitter.com/openforgemobile', '_blank');
+        break;
+      case 'linkedin':
+        window.open('https://www.linkedin.com/company/openforge/', '_blank');
+        break;
+      case 'facebook':
+        window.open('https://www.facebook.com/openforgemobile/', '_blank');
+        break;
+
+      default:
+        break;
+    }
+  }
+
   render() {
     return (
       <footer class="footer">
@@ -38,7 +58,7 @@ export class AppFooter {
             <div class="footer--column col-12 col-sm-4">
               <h2>{translate('footer.work.header')}</h2>
               <p>{translate('footer.work.text')}</p>
-              <a href="/opportunities/develop" class="btn-primary button-link">
+              <a href="/opportunities" class="btn-primary button-link">
                 {translate('footer.work.apply')}
               </a>
             </div>
@@ -53,21 +73,21 @@ export class AppFooter {
 
           <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12">
-              <p class="copyright">&copy; OpenForge 2019 v2.5.1</p>
+              <p class="copyright">&copy; OpenForge 2019 v2.5.2</p>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 order-first order-md-2 social">
               <p class="follow">
                 Follow us:
-                <a href="https://www.instagram.com/openforgemobile/" id="instagram" target="_blank" rel="noopener" aria-label="Openforge Instagram account link">
+                <a onClick={() => this.open('instagram')} id="instagram" target="_blank" rel="noopener" aria-label="Openforge Instagram account link">
                   <i class="fab fa-instagram" aria-hidden="true" />
                 </a>
-                <a href="https://twitter.com/openforgemobile" id="twitter" target="_blank" rel="noopener" aria-label="Openforge Twitter account link">
+                <a onClick={() => this.open('twitter')} id="twitter" target="_blank" rel="noopener" aria-label="Openforge Twitter account link">
                   <i class="fab fa-twitter-square" aria-hidden="true" />
                 </a>
-                <a href="https://www.linkedin.com/company/openforge/" id="linkedin" target="_blank" rel="noopener" aria-label="Openforge Linkedin account link">
+                <a onClick={() => this.open('linkedin')} id="linkedin" target="_blank" rel="noopener" aria-label="Openforge Linkedin account link">
                   <i class="fab fa-linkedin" aria-hidden="true" />
                 </a>
-                <a href="https://www.facebook.com/openforgemobile/" id="facebook" target="_blank" rel="noopener" aria-label="Openforge Facebook account link">
+                <a onClick={() => this.open('facebook')} id="facebook" target="_blank" rel="noopener" aria-label="Openforge Facebook account link">
                   <i class="fab fa-facebook-square" aria-hidden="true" />
                 </a>
               </p>

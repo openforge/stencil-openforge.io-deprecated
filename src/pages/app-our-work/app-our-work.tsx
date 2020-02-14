@@ -22,9 +22,9 @@ export class AppOurWork {
           <div class="card-container">
             <div class="card-image mobilemeasures">
               <div class="row card-image-row">
-                <app-img src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobile measures app screenshot" />
-                <app-img src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobile measures app screenshot" />
-                <app-img src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobile measures app screenshot" />
+                <app-img data-cy="mobile-measurebl" src="/assets/apps/mobilemeasures/graphic-example-1.png" class="behind-left" alt="mobile measures app screenshot" />
+                <app-img data-cy="mobile-measurefc" src="/assets/apps/mobilemeasures/graphic-example-2.png" class="front-center" alt="mobile measures app screenshot" />
+                <app-img data-cy="mobile-measurebr" src="/assets/apps/mobilemeasures/graphic-example-3.png" class="behind-right" alt="mobile measures app screenshot" />
               </div>
               <div class="store-buttons">
                 <a href="https://apps.apple.com/us/app/mobile-measures/id1440639312" target="_blank" rel="noopener" data-cy="mobilemeasures-apple">
@@ -43,7 +43,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.mobile_measures.text" />
               </p>
               <stencil-route-link url="/our-work/mobilemeasures" exact={true}>
-                <button>
+                <button data-cy="mobilembutton">
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
               </stencil-route-link>
@@ -54,9 +54,9 @@ export class AppOurWork {
           <div class="card-container">
             <div class="card-image loudcloud">
               <div class="row card-image-row">
-                <app-img src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
-                <app-img src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
-                <app-img src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
+                <app-img data-cy="loudcloudbl" src="/assets/apps/loudcloud/graphic-example-1.png" class="behind-left" alt="loudcloud app screenshot" />
+                <app-img data-cy="loudcloudfc" src="/assets/apps/loudcloud/graphic-example-2.png" class="front-center" alt="loudcloud app screenshot" />
+                <app-img data-cy="loudcloudbr" src="/assets/apps/loudcloud/graphic-example-3.png" class="behind-right" alt="loudcloud app screenshot" />
               </div>
               <div class="store-buttons">
                 <a href="https://itunes.apple.com/us/app/loudcloud-disposable-numbers/id723331666?mt=8" target="_blank" rel="noopener" data-cy="loudcloud-apple">
@@ -75,7 +75,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.loudcloud.text" />
               </p>
               <stencil-route-link url="/our-work/loudcloud" exact={true}>
-                <button>
+                <button data-cy="loudcloudbutton">
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
               </stencil-route-link>
@@ -86,9 +86,9 @@ export class AppOurWork {
           <div class="card-container">
             <div class="card-image voyage">
               <div class="row card-image-row">
-                <app-img src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
-                <app-img src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
-                <app-img src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
+                <app-img data-cy="the-voyagebl" src="/assets/apps/voyage/graphic-example-1.png" class="behind-left" alt="voyage app screenshot" />
+                <app-img data-cy="the-voyagefc" src="/assets/apps/voyage/graphic-example-2.png" class="front-center" alt="voyage app screenshot" />
+                <app-img data-cy="the-voyagebr" src="/assets/apps/voyage/graphic-example-3.png" class="behind-right" alt="voyage app screenshot" />
               </div>
               <div class="store-buttons">
                 <a href="https://itunes.apple.com/us/app/the-voyage-by-new-ocean-health/id779637437?mt=8" target="_blank" rel="noopener" data-cy="voyage-apple">
@@ -107,7 +107,7 @@ export class AppOurWork {
                 <app-translate keyword="ourWork.cards.voyage.text" />
               </p>
               <stencil-route-link url="/our-work/voyage" exact={true}>
-                <button>
+                <button data-cy="voyagebutton">
                   <app-translate keyword="ourWork.cards.button" />
                 </button>
               </stencil-route-link>
@@ -126,39 +126,39 @@ export class AppOurWork {
 
             <div class="row img-row">
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid no-pad" src="/assets/our-work/ic3401-logo.png" alt="ic 3401 logo" />
+                <app-img data-cy="ic-3401-logo" class="img-fluid no-pad" src="/assets/our-work/ic3401-logo.png" alt="ic 3401 logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid no-pad" src="/assets/our-work/omnifan-logo.png" alt="Omnifan logo" />
+                <app-img data-cy="omnifan-logo" class="img-fluid no-pad" src="/assets/our-work/omnifan-logo.png" alt="Omnifan logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid no-pad" src="/assets/our-work/mobilemeasures-logo.png" alt="Mobile Measures logo" />
+                <app-img data-cy="mobile-measures-logo" class="img-fluid no-pad" src="/assets/our-work/mobilemeasures-logo.png" alt="Mobile Measures logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid no-pad" src="/assets/our-work/kemin-logo.png" alt="Kemin logo" />
+                <app-img data-cy="kemin-logo" class="img-fluid no-pad" src="/assets/our-work/kemin-logo.png" alt="Kemin logo" />
               </div>
             </div>
 
             <div class="row img-row">
               <div class="col-md-3 col-6 center-col">
-                <app-img class="img-fluid pad" src="/assets/our-work/new-ocean-health-logo.png" alt="New Ocean Health logo" />
+                <app-img data-cy="ocean-health-logo" class="img-fluid pad" src="/assets/our-work/new-ocean-health-logo.png" alt="New Ocean Health logo" />
               </div>
 
               <div class="col-md-3 col-6 center-col">
-                <app-img class="img-fluid pad" src="/assets/our-work/gomerchant-logo.png" alt="GoMerchang logo" />
+                <app-img data-cy="gomerchang-logo" class="img-fluid pad" src="/assets/our-work/gomerchant-logo.png" alt="GoMerchang logo" />
               </div>
             </div>
 
             <div class="row img-row">
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid pad" src="/assets/our-work/ngatl-logo.png" alt="NGATL logo" />
+                <app-img data-cy="ngatl-logo" class="img-fluid pad" src="/assets/our-work/ngatl-logo.png" alt="NGATL logo" />
               </div>
 
               <div class="col-md-2 col-6 center-col">
-                <app-img class="img-fluid pad" src="/assets/our-work/loudcloud-logo.png" alt="LoudCloud logo" />
+                <app-img data-cy="loud-cloud-logo" class="img-fluid pad" src="/assets/our-work/loudcloud-logo.png" alt="LoudCloud logo" />
               </div>
             </div>
           </div>
