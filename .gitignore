@@ -27,4 +27,5 @@ UserInterfaceState.xcuserstate
 linters/sass-lint.html
 src/pages/app-blog-post/prerender-blog-data.ts
 src/butter-api/butter-api-key.js
-src/components.d.ts
+cypress/screenshots
+cypress/videos
