@@ -192,7 +192,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -300,22 +324,6 @@ describe('Opportunities Page', function () {
   });
 
   it('The developer application displays with all fields', function () {
-    cy.visit('http://localhost:3333/opportunities');
-    cy.get('.hero-type-buttons > :nth-child(1)')
-      .should('exist')
-      .contains('DEVELOP')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
-      const ranges = cy.wrap($ranges);
-      ranges.invoke('val', 92);
-      ranges.trigger('change');
-      ranges.trigger('click');
-    });
-    cy.get('button[type=submit]')
-      .should('not.be.disabled')
-      .click();
     cy.get('#apply').scrollIntoView();
     cy.get('#applyForm')
       .contains('Resume/CV*')
@@ -374,7 +382,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -405,7 +437,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -436,7 +492,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -467,7 +547,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -499,7 +603,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -530,7 +658,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -561,7 +713,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -598,7 +774,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -626,7 +826,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -769,7 +993,31 @@ describe('Opportunities Page', function () {
       .should('exist')
       .and('be.visible');
     cy.get('button[type=submit]').should('be.disabled');
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -786,22 +1034,6 @@ describe('Opportunities Page', function () {
   });
 
   it('User is able to see the designer application page filler content', function () {
-    cy.visit('http://localhost:3333/opportunities');
-    cy.get('.hero-type-buttons > :nth-child(2)')
-      .should('exist')
-      .contains('DESIGNER')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
-      const ranges = cy.wrap($ranges);
-      ranges.invoke('val', 92);
-      ranges.trigger('change');
-      ranges.trigger('click');
-    });
-    cy.get('button[type=submit]')
-      .should('not.be.disabled')
-      .click();
     cy.get('header').scrollIntoView();
     cy.get('header')
       .contains('Show Us What You’re Made Of')
@@ -893,22 +1125,6 @@ describe('Opportunities Page', function () {
   });
 
   it('The designer application displays with all fields', function () {
-    cy.visit('http://localhost:3333/opportunities');
-    cy.get('.hero-type-buttons > :nth-child(2)')
-      .should('exist')
-      .contains('DESIGNER')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
-      const ranges = cy.wrap($ranges);
-      ranges.invoke('val', 92);
-      ranges.trigger('change');
-      ranges.trigger('click');
-    });
-    cy.get('button[type=submit]')
-      .should('not.be.disabled')
-      .click();
     cy.get('#apply').scrollIntoView();
     cy.get('#applyForm')
       .contains('Resume/CV*')
@@ -967,7 +1183,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -998,7 +1238,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1029,7 +1293,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1060,7 +1348,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1092,7 +1404,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1123,7 +1459,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1154,7 +1514,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1191,7 +1575,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1219,7 +1627,31 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
