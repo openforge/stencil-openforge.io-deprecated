@@ -78,7 +78,8 @@
     height: 100vh;
 
     @include media-breakpoint-down(md) {
-        height: 60vh;
+        padding-top: 5rem;
+        height: 65vh;
       }
 
     @include media-breakpoint-down(sm) {
@@ -140,7 +141,7 @@
   .sla-content {
     padding-top: 6rem;
     @include media-breakpoint-down(md) {
-       padding-top: 2rem;
+       padding-top: 4rem;
       }
 
     @include media-breakpoint-down(sm) {
@@ -177,7 +178,7 @@
 
     .sla-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 2fr;
+      grid-template-columns: 0.8fr 0.8fr 1.8fr;
       margin-top: 20px;
 
        @include media-breakpoint-down(md) {
@@ -257,6 +258,7 @@
         @include media-breakpoint-down(sm) {
            padding-top:10%;
            padding-bottom: 15%;
+           width: 12rem;
         }
       }
 
