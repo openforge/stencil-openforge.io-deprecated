@@ -1,8 +1,71 @@
+
 .service-level-agreement {
   // hero
   .hero {
-    background-image: url('/assets/sla-background-header.png');
+    background-image: none;
+    @include media-breakpoint-down(md) {
+          background-color: #00A7B6;
+          p{
+            padding: 10% 0 10% 0;
+          }
+
+          .underline{
+            text-decoration: underline;
+          }
+        }
+    @include media-breakpoint-down(sm) {
+          background:white;
+          text-align: center;
+          padding-top: 90px;
+          padding-bottom: 10%;
+
+           p{
+            padding: 0;
+          }
+
+          .underline{
+            text-decoration: none;
+          }
+        }
   }
+
+  .show-mobile{
+    display:none;
+    @include media-breakpoint-down(sm) {
+          display:block;
+        }
+     }
+  
+  .no-mobile{
+    @include media-breakpoint-down(sm) {
+          display:none;
+        }
+  }
+
+  .btn-blue {
+  @include media-breakpoint-down(md) {
+    padding: 0.375rem 2rem;
+    background:  #00A7B6;
+  }
+
+  @include media-breakpoint-down(sm) {
+    background:#0595AB;
+    display: none;
+  }
+  background: #0595AB;
+  border-color: $white;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px 0 rgba(128, 128, 128, 0.5);
+  color: $white;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+
+  span {
+    color: $white;
+  }
+}
 
   .webp {
     background-image: url('/assets/sla-background-header.webp');
@@ -14,55 +77,146 @@
     background-size: cover;
     height: 100vh;
 
+    @include media-breakpoint-down(md) {
+        padding-top: 5rem;
+        height: 65vh;
+      }
+
+    @include media-breakpoint-down(sm) {
+        height: 50%;
+      }
+
     .container,
     .row {
       height: 100%;
     }
 
     h2 {
-      color: $white;
+      color: $black;
       font-size: 4rem;
       margin-bottom: 1rem;
+      font-family: Muli;
 
       @include media-breakpoint-down(lg) {
         font-size: 3rem;
+        font-family: Muli;
+      }
+
+       @include media-breakpoint-down(md) {
+        color: $white;
       }
 
       @include media-breakpoint-down(sm) {
+        color: $black;
         font-size: 2.2rem;
+        font-family: Muli;
       }
     }
 
     p {
-      color: $white;
+      color: $black;
       font-size: 1.2rem;
       font-weight: 300;
       margin-bottom: 1.5rem;
       max-width: 500px;
+      font-family: Muli;
 
       @include media-breakpoint-down(lg) {
         font-size: 1rem;
+        font-family: Muli;
+      }
+
+       @include media-breakpoint-down(md) {
+        color: $white;
+        font-family: Muli;
+      }
+
+      @include media-breakpoint-down(sm) {
+        color: $black;
+        font-family: Muli;
       }
     }
   }
 
   .sla-content {
     padding-top: 6rem;
+    @include media-breakpoint-down(md) {
+       padding-top: 4rem;
+      }
+
+    @include media-breakpoint-down(sm) {
+       padding-top: 0;
+      }
     .sla-headers {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 2fr;
+      
+      @include media-breakpoint-down(md) {
+        display:none
+      }
+
+      @include media-breakpoint-down(sm) {
+       display:none
+      }
+
     }
 
     hr {
       width: 100%;
       margin: 0;
       border-color: $gray-500;
+
+       @include media-breakpoint-down(md) {
+        display:none
+      }
+
+      @include media-breakpoint-down(sm) {
+       display:none
+      }
+      
     }
 
     .sla-row {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 0.8fr 0.8fr 1.8fr;
       margin-top: 20px;
+
+       @include media-breakpoint-down(md) {
+        display: block;
+        width: 100%;
+        padding: 0 10% 0 10%;
+
+        .topr{
+        text-transform: uppercase;
+        color: $black;
+        font-size: 28px;
+        font-weight:normal;
+        padding-top:5%;
+        }
+
+        .midrow{
+          padding-bottom:5%;
+        }
+
+      }
+
+      @include media-breakpoint-down(sm) {
+       display: block;
+        width: 100%;
+
+        .topr{
+        text-transform: uppercase;
+        color: $black;
+        font-size: 28px;
+        font-weight:normal
+        }
+
+        .midrow{
+          color: $orange;
+          font-weight:normal;
+          padding-bottom:5%;
+        }
+      }
 
       h3 {
         text-transform: uppercase;
@@ -84,11 +238,28 @@
     p.top-link {
       margin-top: 15px;
       font-size: 25px;
-      font-weight: bold;
+      font-weight:normal;
       letter-spacing: 1.6px;
       text-align: center;
       color: $orange;
       cursor: pointer;
     }
+
+    
   }
+
+  img {
+        min-height: 800px;
+
+        @include media-breakpoint-down(md) {
+          min-height: 260px;
+        }
+
+        @include media-breakpoint-down(sm) {
+           padding-top:10%;
+           padding-bottom: 15%;
+           width: 12rem;
+        }
+      }
+
 }
