@@ -153,6 +153,24 @@ If manual deployment is needed, use the following. Only do this on the develop b
 
 The featured post is managed in the ButterCMS portal. To make a post featured, it must be given a tag of 'featured'. The actual featured post will be the most recently published post with the featured tag. Currently, this post will also appear in the regular list of posts.
 
+## Protractor Testing
+
+This project uses Protractor for front end testing.
+It is neccesary to install protractor for tests.
+
+```
+npm install protractor
+```
+
+### Run Test
+
+Protractor uses a command for test running. It is neccesary to have a file with all the specs for test running. The file is called conf.js
+
+To run a test the next command is needed.
+
+```
+protractor protractor/conf.js
+```
 
 ## Deployment
 ```
