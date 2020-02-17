@@ -20,7 +20,7 @@ export class AppSlider {
     return (
       <div class="slider form-group text-center">
         <label>{this.label}</label>
-        <input type="range" class="form-control-range" name={this.name} id={this.name} onInput={this.inputHandler.bind(this)} />
+        <input type="range" class="form-control-range" name={this.name} id={this.name} onChange={this.inputHandler.bind(this)} onInput={this.inputHandler.bind(this)} />
       </div>
     );
   }

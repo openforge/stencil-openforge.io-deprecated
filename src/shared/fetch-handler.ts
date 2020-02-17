@@ -19,6 +19,24 @@ export async function fetchOneBlogPost(postNum: number = 0) {
     });
 }
 
+export async function fetchHomeBlogPosts() {
+  return await fetch(`${urlPosts}?${authToken}&page_size=2`)
+    .then(res => res.json())
+    .then(resp => {
+      if (resp.data.length > 1) {
+        return {
+          first: resp.data[0],
+          second: resp.data[1],
+        };
+      }
+      return null;
+    })
+    .catch(resp => {
+      console.log(resp);
+      return null;
+    });
+}
+
 export async function fetchBlogPosts() {
   return await fetch(`${urlPosts}?${authToken}`)
     .then(res => res.json())

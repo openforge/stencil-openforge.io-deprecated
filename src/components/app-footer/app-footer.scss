@@ -14,11 +14,14 @@
     font-size: 1.6rem;
     line-height: normal;
     margin-bottom: 1.5rem;
-    letter-spacing:normal;
+    letter-spacing: normal;
     text-align: left;
     @include media-breakpoint-down(md) {
       font-size: 1.3rem;
       margin-bottom: 1rem;
+    }
+    @include media-breakpoint-down(sm) {
+      text-align: center;
     }
   }
 
@@ -62,6 +65,7 @@
       a {
         font-size: 19px;
         margin-left: 10px;
+        cursor: pointer;
       }
       @include media-breakpoint-down(md) {
         margin-top: 2rem;
