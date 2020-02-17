@@ -206,14 +206,14 @@ export class AppContact {
                   </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-flex form-image-content">
-                  <app-img data-cy="mailbox-img" src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" />
+                  <app-img src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" id="simage" />
                 </div>
               </div>
             ) : null}
 
             {this.formSubmitted ? (
               <div class="container submit-container">
-                <app-img data-cy="sub" src="/assets/svg/contact-anim.svg" alt="Map page graphic" />
+                <app-img src="/assets/svg/contact-anim.svg" alt="Map page graphic" id="fimage" />
               </div>
             ) : null}
           </div>

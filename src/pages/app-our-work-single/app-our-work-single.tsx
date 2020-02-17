@@ -123,7 +123,7 @@ export class AppOurWorkSingle {
   componentDidLoad() {
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function () {
+      $(document).ready(function() {
         // Force bootstrap to initialize carousel
         const partnersCarousel = $('#partnersCarousel');
         setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);

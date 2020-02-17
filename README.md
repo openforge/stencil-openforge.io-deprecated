@@ -153,38 +153,24 @@ If manual deployment is needed, use the following. Only do this on the develop b
 
 The featured post is managed in the ButterCMS portal. To make a post featured, it must be given a tag of 'featured'. The actual featured post will be the most recently published post with the featured tag. Currently, this post will also appear in the regular list of posts.
 
-## Cypress Integration
+## Protractor Testing
 
-This project uses Cypress for front end testing.
+This project uses Protractor for front end testing.
+It is neccesary to install protractor for tests.
 
-It is neccesary to install Cypress for test writing
 ```
-npm install cypress --save-dev
+npm install protractor
 ```
-This will install Cypress locally as a dev dependency
 
-### Opening Cypress
+### Run Test
 
-To launch Cypress Test Runner, the next command is needed
+Protractor uses a command for test running. It is neccesary to have a file with all the specs for test running. The file is called conf.js
+
+To run a test the next command is needed.
+
 ```
-npx cypress open
+protractor protractor/conf.js
 ```
-### Github Integration
-
-Cypress provides a Dashboard, it is neccesary for the integration.
-
-1.- Go to organization switcher and choose your organization.
-
-2.- Click on the project you wish to integrate
-
-3.- Go to project settings
-
-4.- Click install Cypress Github app
-
-5.- Select repositary you wish to integrate
-
-6.- Done
-
 
 ## Deployment
 ```
