@@ -25,7 +25,7 @@ export class AppAbout {
         <div class="container-fluid">
           <div class="row align-items-center hero">
             <div class="col-12 col-md-11 offset-md-1">
-              <h1 data-cy='title-hero'>
+              <h1 data-cy="title-hero">
                 <app-translate class="d-none d-md-block" keyword="about.header.title" />
                 <app-translate class="d-block d-md-none" keyword="about.header.titleSmall" />
               </h1>
@@ -41,7 +41,7 @@ export class AppAbout {
 
           <div class="row justify-content-center d-none d-md-block values">
             <div class="col-12">
-              <h2 class="aside-lines">
+              <h2 class="about-header aside-lines">
                 <span>
                   <app-translate keyword="about.values.title" />
                 </span>
@@ -77,7 +77,7 @@ export class AppAbout {
 
           <div id="members" class="row justify-content-center members">
             <div class="col-10 col-lg-10">
-              <h2>
+              <h2 class="about-header">
                 <app-translate keyword="about.landing.cta.title" />
               </h2>
               <app-members-section />
