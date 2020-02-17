@@ -272,7 +272,17 @@ export class AppOpportunities {
   handleSliders(e) {
     e.preventDefault();
     this.canRequestInterview = true;
-    document.getElementById('hero').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    const element = document.getElementsByTagName('header')[0];
+    setTimeout(() => {
+      const headerOffset = 30;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }, 100);
   }
 
   handleFile(e) {
