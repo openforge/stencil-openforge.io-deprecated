@@ -54,7 +54,6 @@ describe('Navbar', function () {
 
         describe('Navigation tabs', () => {
             it('Should navigate to home when logo is clicked', () => {
-                cy.visit(env + '/about');
                 cy.get('.navbar-brand').click();
                 cy.get('.hero').should('exist').and('be.visible');
             });
