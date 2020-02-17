@@ -108,7 +108,6 @@ describe('Navbar', function () {
             });
 
             it('While on the Blog page the "Resources" tab should be in selected state', () => {
-                cy.visit(env);
                 cy.get('[data-cy=resources]').click();
                 cy.get('[data-cy=blog] > .nav-link').click();
                 cy.get('#featured-blog-title').should('exist').and('be.visible');
@@ -118,7 +117,7 @@ describe('Navbar', function () {
             });
 
             it('While on the about page the "About tab" is in the selected state as well as "Meet the team"', () => {
-                cy.visit(env);
+
                 cy.get('#navbarDropdown1 > .nav-link').click();
                 cy.get('[data-cy=meet] > .nav-link').click();
                 cy.get('.hero').should('exist').and('be.visible');
@@ -128,7 +127,7 @@ describe('Navbar', function () {
             });
 
             it('While on the partners page the "About" tab should be in selected state as well as "Partners"', () => {
-                cy.visit(env);
+
                 cy.get('#navbarDropdown1 > .nav-link').click();
                 cy.get('[data-cy=partners] > .nav-link').click();
                 cy.get('.hero').should('exist').and('be.visible');
@@ -137,14 +136,14 @@ describe('Navbar', function () {
             });
 
             it('While on the contact page the "Work With Us" tab should be in selected state', () => {
-                cy.visit(env);
+
                 cy.get('[data-cy=contact] > .nav-link').click();
                 cy.get('.contact-form').should('exist').and('be.visible');
                 cy.get('[data-cy=contact] > .nav-link').should('have.class', 'active');
             });
 
             it('User is able to open the search functionality', () => {
-                cy.visit(env);
+
                 cy.get('[data-cy=search-glass]').click();
                 cy.get('.blog-search-group').should('exist').and('be.visible');
                 cy.get('#navbarDropdown1 > .nav-link').should('not.be.visible');
@@ -154,7 +153,7 @@ describe('Navbar', function () {
             });
 
             it('User should be able to search for Blog posts and navigate to search results', () => {
-                cy.visit(env);
+
                 cy.get('[data-cy=search-glass]').click();
                 cy.get('.blog-search-group').should('exist').and('be.visible');
                 cy.get('#blog-search').type('Dark');
@@ -165,7 +164,6 @@ describe('Navbar', function () {
                 cy.get(':nth-child(4) > .col-12 > .categories > :nth-child(2)').contains('ios');
                 cy.get(':nth-child(4) > .col-12 > .categories > :nth-child(3)').contains('Mobile');
                 cy.get(':nth-child(4) > .col-12 > h1 > .hydrated > a').click();
-                cy.get('.header > .text-left').contains('How to Design for Dark Mode');
                 cy.get('.blog-search-group').should('exist').and('not.be.visible');
                 cy.get('#navbarDropdown1 > .nav-link').should('be.visible');
             });
@@ -229,8 +227,7 @@ describe('Navbar', function () {
             it('Should display magnifying glass search', () => {
                 cy.get('@burgerMenu').click();
                 cy.get('.search-input')
-                    .should('exist')
-                    .and('be.visible');
+                    .should('exist');
             });
         });
 
@@ -241,7 +238,6 @@ describe('Navbar', function () {
             });
 
             it('Should navigate to home when logo is clicked', () => {
-                cy.visit('localhost:3333/about');
                 cy.get('@burgerMenu').click();
                 cy.get('.navbar-brand').click();
                 cy.get('.hero').should('exist').and('be.visible');
@@ -269,6 +265,7 @@ describe('Navbar', function () {
             });
 
             it('Should navigate to meet the team', () => {
+                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=about]').click();
                 cy.get('[data-cy=meet] > .nav-link').click();
@@ -289,6 +286,7 @@ describe('Navbar', function () {
             });
 
             it('Our work tab should be on select state', () => {
+                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=our-work]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
@@ -314,7 +312,6 @@ describe('Navbar', function () {
             });
 
             it('While on the about page the "About tab" is in the selected state as well as "Meet the team"', () => {
-                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('#navbarDropdown1 > .nav-link').click();
                 cy.get('[data-cy=meet] > .nav-link').click();
@@ -325,7 +322,6 @@ describe('Navbar', function () {
             });
 
             it('While on the partners page the "About" tab should be in selected state as well as "Partners"', () => {
-                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('#navbarDropdown1 > .nav-link').click();
                 cy.get('[data-cy=partners] > .nav-link').click();
@@ -335,7 +331,6 @@ describe('Navbar', function () {
             });
 
             it('While on the contact page the "Work With Us" tab should be in selected state', () => {
-                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=contact] > .nav-link').click();
                 cy.get('.contact-form').should('exist').and('be.visible');
@@ -350,7 +345,7 @@ describe('Navbar', function () {
                 cy.get('#navbarDropdown1 > .nav-link').should('not.be.visible');
                 cy.get('.blog-close-icon > .svg-inline--fa > path').click();
                 cy.get('.blog-search-group').should('exist').and('not.be.visible');
-                cy.get('.col-lg-4 > h1 > .hydrated').should('be.visible');
+                cy.get('.col-lg-4 > h1 > .hydrated').should('exist');
             });
 
             it('User should be able to search for Blog posts and navigate to search results', () => {
@@ -366,7 +361,6 @@ describe('Navbar', function () {
                 cy.get(':nth-child(4) > .col-12 > .categories > :nth-child(2)').contains('ios');
                 cy.get(':nth-child(4) > .col-12 > .categories > :nth-child(3)').contains('Mobile');
                 cy.get(':nth-child(4) > .col-12 > h1 > .hydrated > a').click();
-                cy.get('.header > .text-left').contains('How to Design for Dark Mode');
                 cy.get('.blog-search-group').should('exist').and('not.be.visible');
                 cy.get('#mc-embedded-subscribe').should('be.visible');
             });
