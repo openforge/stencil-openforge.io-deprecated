@@ -205,7 +205,7 @@ export class AppContact {
                   </div>
                 </div>
                 <div class="col-lg-6 d-none d-lg-flex form-image-content">
-                  <app-img src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" />
+                  <app-img src="/assets/contact/mailbox-graphic.png" alt="Mail Box graphic" id='simage' />
                 </div>
               </div>
             ) : null}
