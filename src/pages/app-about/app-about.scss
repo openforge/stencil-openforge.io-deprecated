@@ -25,7 +25,7 @@
     text-align: left;
   }
 
-  h2 {
+  h2.about-header {
     @include media-breakpoint-down(md) {
       font-size: 1.75rem;
       line-height: 34px;
