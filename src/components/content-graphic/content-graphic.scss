@@ -72,8 +72,10 @@
   }
 
   li {
+    color: #6d6e71;
     @include media-breakpoint-down(sm) {
       text-align: left;
+      font-size: 14px;
     }
   }
 

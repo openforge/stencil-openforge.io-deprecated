@@ -1,5 +1,5 @@
 import '@stencil/router';
-import { Component, h } from '@stencil/core';
+import { Component, h, Listen } from '@stencil/core';
 import { polyfill } from 'smoothscroll-polyfill';
 
 polyfill();
@@ -11,6 +11,18 @@ polyfill();
 export class OpenForgeApp {
   mainEl: HTMLElement;
   newServiceWorker: boolean = false;
+
+  @Listen('swUpdate', { target: 'window' })
+  async onSWUpdate() {
+    const registration = await navigator.serviceWorker.getRegistration();
+
+    if (!registration || !registration.waiting) {
+      return;
+    }
+
+    registration.waiting.postMessage({ data: 'skipWaiting' });
+    window.location.reload();
+  }
 
   componentDidLoad() {
     try {

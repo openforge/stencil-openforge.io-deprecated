@@ -10,6 +10,14 @@
     display: flex;
     justify-content: center;
 
+    app-img {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
     .logo {
       height: 260px;
       width: 260px;
@@ -103,7 +111,7 @@
           }
 
           @include media-breakpoint-down(sm) {
-            position: initial;
+            position: absolute;
             right: initial;
           }
         }
@@ -193,7 +201,7 @@
       @include media-breakpoint-down(sm) {
         display: flex;
         justify-content: space-evenly;
-        margin-top: 140px;
+        margin-top: 30rem;
       }
 
       a {
@@ -387,6 +395,13 @@
       }
 
       .more-project-single {
+        @include media-breakpoint-down(sm) {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+        }
+
         p {
           color: $gray-dark;
           font-family: 'Muli';
@@ -409,6 +424,10 @@
           img {
             width: 150px;
             height: 300px;
+
+            @include media-breakpoint-down(sm) {
+              margin-right: 70px;
+            }
 
             &:last-child {
               position: absolute;

@@ -358,7 +358,7 @@ export const translations = {
           text9: 'Experience in working on open source projects is a plus.',
         },
         design: {
-          title: 'And can meet the following prerequisites',
+          title: 'And can meet the following prerequisites:',
           text1: 'Three or more years of experience and proven track record.',
           text2: 'Strong portfolio to be presented and defended during the interview.',
           text3: 'Hands-on experience creating wireframes, prototypes, storyboards, user flows, etc.',

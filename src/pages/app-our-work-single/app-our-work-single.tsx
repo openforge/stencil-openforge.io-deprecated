@@ -123,7 +123,7 @@ export class AppOurWorkSingle {
   componentDidLoad() {
     if (Build.isBrowser) {
       /* tslint:disable-next-line */
-      $(document).ready(function() {
+      $(document).ready(function () {
         // Force bootstrap to initialize carousel
         const partnersCarousel = $('#partnersCarousel');
         setTimeout(() => bootstrap.Carousel._jQueryInterface.call(partnersCarousel, partnersCarousel.data()), 0);
@@ -147,10 +147,10 @@ export class AppOurWorkSingle {
             <img src={project.otherProjectImgs.image2} />
           </div>
           <div class="store-buttons">
-            <a href={project.content.appleStore} target="_blank" rel="noopener">
+            <a data-cy="apple-button" href={project.content.appleStore} target="_blank" rel="noopener">
               <app-img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
             </a>
-            <a href={project.content.googlePlay} target="_blank" rel="noopener">
+            <a data-cy="google-button" href={project.content.googlePlay} target="_blank" rel="noopener">
               <app-img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
             </a>
           </div>
@@ -186,18 +186,18 @@ export class AppOurWorkSingle {
               <app-img src={this.projects[this.match.params.project].content.image2} />
             </div>
             <div class="col-md-8 col-lg-6">
-              <h2>{this.projects[this.match.params.project].content.title}</h2>
-              <p innerHTML={this.projects[this.match.params.project].content.text} />
+              <h2 data-cy="title">{this.projects[this.match.params.project].content.title}</h2>
+              <p data-cy="subtitle" innerHTML={this.projects[this.match.params.project].content.text} />
               <div class="project-content-icons">
                 <app-img src={this.projects[this.match.params.project].content.icon1} />
                 <app-img src={this.projects[this.match.params.project].content.icon2} />
                 <app-img src={this.projects[this.match.params.project].content.icon3} />
               </div>
               <div class="store-buttons">
-                <a href={this.projects[this.match.params.project].content.appleStore} target="_blank" rel="noopener">
+                <a data-cy="apple-button" href={this.projects[this.match.params.project].content.appleStore} target="_blank" rel="noopener">
                   <app-img src="/assets/graphic-apple-appstore.png" alt="download on app store" />
                 </a>
-                <a href={this.projects[this.match.params.project].content.googlePlay} target="_blank" rel="noopener">
+                <a data-cy="google-button" href={this.projects[this.match.params.project].content.googlePlay} target="_blank" rel="noopener">
                   <app-img src="/assets/graphic-google-googleplaystore.png" alt="download on play store" />
                 </a>
               </div>
@@ -206,8 +206,8 @@ export class AppOurWorkSingle {
           <div class="d-md-none container">
             <h2>{this.projects[this.match.params.project].content.title}</h2>
             <div class="images-col">
-              <app-img src={this.projects[this.match.params.project].content.image1} />
-              <app-img src={this.projects[this.match.params.project].content.image2} />
+              <app-img data-cy="img1" src={this.projects[this.match.params.project].content.image1} />
+              <app-img data-cy="img2" src={this.projects[this.match.params.project].content.image2} />
             </div>
             <div class="store-buttons">
               <a href={this.projects[this.match.params.project].content.appleStore} target="_blank" rel="noopener">
@@ -236,9 +236,9 @@ export class AppOurWorkSingle {
               voyage: this.match.params.project === 'voyage' ? true : false,
             }}
           >
-            <app-img src={this.projects[this.match.params.project].features.image1} />
-            <app-img src={this.projects[this.match.params.project].features.image2} />
-            <app-img src={this.projects[this.match.params.project].features.image3} />
+            <app-img data-cy="image1k" src={this.projects[this.match.params.project].features.image1} />
+            <app-img data-cy="image2k" src={this.projects[this.match.params.project].features.image2} />
+            <app-img data-cy="image3k" src={this.projects[this.match.params.project].features.image3} />
           </div>
           <div
             class={{
@@ -286,7 +286,7 @@ export class AppOurWorkSingle {
         </section>
         <section class="more-projects container">
           <h2 class="aside-lines">
-            <span>
+            <span data-cy="more-title">
               <app-translate keyword="ourWork.more_projects" />
             </span>
           </h2>
