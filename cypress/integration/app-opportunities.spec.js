@@ -1061,9 +1061,6 @@ describe('Opportunities Page', function () {
     cy.get('header')
       .should('exist')
       .and('be.visible');
-    cy.get('header button.apply-btn')
-      .should('exist')
-      .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .first()
       .should('exist')
