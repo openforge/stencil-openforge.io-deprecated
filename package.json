@@ -13,7 +13,7 @@
     "dev": "node scripts/get-butter.js && sd concurrent \"stencil build --dev --watch --no-cache\" \"stencil-dev-server\" ",
     "lint": "tslint -p ./tsconfig.json --exclude '**/*.d.ts'",
     "sass-lint": "node_modules/sass-lint/bin/sass-lint.js sass-lint -c sass-lint.yml '**/*.scss' -v -q",
-    "serve": "\"stencil build --dev --watch --no-cache\" \"stencil-dev-server\"",
+    "serve": "stencil-dev-server",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
     "cypress": "cypress open",
