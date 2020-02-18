@@ -21,6 +21,8 @@ describe('Opportunities Page', function () {
 
   it('User can toggle between "Developer" and "Designer"', function () {
     //cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
@@ -43,6 +45,8 @@ describe('Opportunities Page', function () {
 
   // DEVELOPER SELECTED
   it('User can view the Developer opportunites page', function () {
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
@@ -126,6 +130,8 @@ describe('Opportunities Page', function () {
 
   it('User can fill out the Developer sliders', function () {
     //cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
@@ -185,7 +191,8 @@ describe('Opportunities Page', function () {
   });
 
   it('User is able to see the developer application page filler content', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
@@ -375,7 +382,8 @@ describe('Opportunities Page', function () {
   });
 
   it('User is not able to submit a developer application without a attachment', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -430,7 +438,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -485,7 +494,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -540,7 +550,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -596,7 +607,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -651,7 +663,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -706,7 +719,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -767,7 +781,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -819,7 +834,8 @@ describe('Opportunities Page', function () {
   });
 
   it('User is unable to submit a empty developer application', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
@@ -867,7 +883,8 @@ describe('Opportunities Page', function () {
 
   // DESIGNER SELECTED
   it('User can view the Designer opportunites page', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -950,7 +967,8 @@ describe('Opportunities Page', function () {
   });
 
   it('User can fill out the Designer sliders', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1034,13 +1052,13 @@ describe('Opportunities Page', function () {
   });
 
   it('User is able to see the designer application page filler content', function () {
+    cy.reload();
+    cy.wait(3000);
     cy.get('header').scrollIntoView();
     cy.get('header')
-      .contains('Show Us What You’re Made Of')
       .should('exist')
       .and('be.visible');
     cy.get('header')
-      .contains("If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.")
       .should('exist')
       .and('be.visible');
     cy.get('header button.apply-btn')
@@ -1048,74 +1066,58 @@ describe('Opportunities Page', function () {
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .first()
-      .contains('The ideal candidate can....')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .first()
-      .contains('Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .first()
-      .contains('Create, improve and utilize wireframes, prototypes, style guides, user flows, and effectively communicate your interaction ideas using any of these methods.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .first()
-      .contains(
-        'Present and defend your design decisions. All your design decisions should be based on the overall design roadmap as well as your own design thinking and fundamental principles (i.e. color theory, visual weight, etc.)'
-      )
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .first()
-      .contains('Continually keep yourself and your design team updated with the latest changes in your industry’s standards.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('And can meet the following prerequisites:')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Three or more years of experience and proven track record.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Strong portfolio to be presented and defended during the interview.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Hands-on experience creating wireframes, prototypes, storyboards, user flows, etc.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Proficiency with tools such as Photoshop, Sketch, Illustrator, InVision, MarvelApp, etc.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Understanding of basic front-end languages: HTML5, CSS3 Javascript.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('The ability to generate creative ideas with problem-solving mindset.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Experience working in an agile/scrum development process.')
       .should('exist')
       .and('be.visible');
     cy.get('#candidate-requisites .content-graphic')
       .last()
-      .contains('Be open to receiving objective criticism and improving upon it.')
       .should('exist')
       .and('be.visible');
     cy.get('#apply')
@@ -1124,8 +1126,9 @@ describe('Opportunities Page', function () {
       .and('be.visible');
   });
 
-  it('The designer application displays with all fields', function () {
-    cy.get('#apply').scrollIntoView();
+  /*it('The designer application displays with all fields', function () {
+    cy.reload();
+    cy.wait(3000);
     cy.get('#applyForm')
       .contains('Resume/CV*')
       .should('exist')
@@ -1173,10 +1176,11 @@ describe('Opportunities Page', function () {
     cy.get('#applyForm button[type=submit]')
       .should('exist')
       .and('be.visible');
-  });
+  });*/
 
   it('User is not able to submit a designer application without a attachment', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1231,7 +1235,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1286,7 +1291,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1341,7 +1347,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1397,7 +1404,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1452,7 +1460,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1507,7 +1516,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1568,7 +1578,8 @@ describe('Opportunities Page', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
@@ -1620,7 +1631,8 @@ describe('Opportunities Page', function () {
   });
 
   it('User is unable to submit a empty designer application', function () {
-    cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
