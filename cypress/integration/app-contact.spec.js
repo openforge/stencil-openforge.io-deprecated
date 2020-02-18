@@ -35,6 +35,7 @@ describe('Contact Page', function () {
   describe('User is able to successfully submit a contact form & view the successful submission animation', () => {
     it('Check that the form fades and appears the animation', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=email]').type('Test@openforge.io');
       cy.get('input[name=phone]').type('3333333333');
@@ -48,6 +49,7 @@ describe('Contact Page', function () {
   describe('User is not able to submit a contact form with a empty full name field', () => {
     it('Check that the submit is disabled', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('input[name=email]').type('Test@openforge.io');
       cy.get('input[name=phone]').type('3333333333');
       cy.get('input[name=message]').type('Testing');
