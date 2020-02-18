@@ -89,7 +89,7 @@ describe('Navbar', function () {
 
             it('Should navigate to work with us', () => {
                 cy.get('[data-cy=contact]').click();
-                cy.wait(3000);
+                cy.wait(5000);
                 cy.get('.contact-form').should('exist');
             });
 

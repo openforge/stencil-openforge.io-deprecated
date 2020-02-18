@@ -32,7 +32,7 @@ script:
 - npm run build
 - npm run build:functions
 - npm run serve &
-- $(npm bin)/cypress run --record --spec cypress/integration/app-navbar.spec.js
+- $(npm bin)/cypress run --spec cypress/integration/app-footer.spec.js
 
 after_success:
 - npm run firebase:deploy
