@@ -280,7 +280,6 @@ describe('Navbar', function () {
             });
 
             it('Our work tab should be on select state', () => {
-                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=our-work]').click();
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
@@ -295,7 +294,6 @@ describe('Navbar', function () {
             });
 
             it('While on the Blog page the "Resources" tab should be in selected state', () => {
-                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=resources]').click();
                 cy.get('[data-cy=blog] > .nav-link').click();
@@ -332,7 +330,7 @@ describe('Navbar', function () {
             });
 
             it('User is able to open the search functionality', () => {
-                cy.visit(env);
+
                 cy.get('@burgerMenu').click();
                 cy.get('.search-input').click();
                 cy.get('.blog-search-group').should('exist').and('be.visible');
@@ -343,7 +341,7 @@ describe('Navbar', function () {
             });
 
             it('User should be able to search for Blog posts and navigate to search results', () => {
-                cy.visit(env);
+
                 cy.get('@burgerMenu').click();
                 cy.get('.search-input').click();
                 cy.get('.blog-search-group').should('exist').and('be.visible');
