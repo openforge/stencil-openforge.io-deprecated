@@ -76,8 +76,8 @@ describe('Navbar', function () {
             });
 
             it('Should navigate to meet the team', () => {
-                cy.get('[data-cy=about]').click();
-                cy.get('[data-cy=meet] > .nav-link').click();
+                cy.get('[data-cy=about]').click({ force: true });
+                cy.get('[data-cy=meet] > .nav-link').click({ force: true });
                 cy.get('.hero').should('exist').and('be.visible');
             });
 
@@ -262,8 +262,8 @@ describe('Navbar', function () {
 
             it('Should navigate to meet the team', () => {
                 cy.get('@burgerMenu').click();
-                cy.get('[data-cy=about]').click();
-                cy.get('[data-cy=meet] > .nav-link').click();
+                cy.get('[data-cy=about]').click({ force: true });
+                cy.get('[data-cy=meet] > .nav-link').click({ force: true });
                 cy.get('.hero').should('exist').and('be.visible');
             });
 
