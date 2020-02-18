@@ -66,7 +66,6 @@ describe('Navbar', function () {
             it('Should navigate to blogs', () => {
                 cy.get('[data-cy=resources]').click({ force: true });
                 cy.get('[data-cy=blog] > .nav-link').click({ force: true });
-                cy.get('#featured-blog-title').should('exist');
             });
 
             it('Github button should open another tab', () => {
@@ -249,7 +248,7 @@ describe('Navbar', function () {
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=resources]').click();
                 cy.get('[data-cy=blog] > .nav-link').click();
-                cy.get('#featured-blog-title').should('exist').and('be.visible');
+                cy.get('#featured-blog-title').should('exist');
             });
 
             it('Github button should open another tab', () => {
@@ -261,7 +260,6 @@ describe('Navbar', function () {
             });
 
             it('Should navigate to meet the team', () => {
-                cy.visit(env);
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=about]').click();
                 cy.get('[data-cy=meet] > .nav-link').click();
