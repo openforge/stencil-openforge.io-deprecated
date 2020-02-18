@@ -89,7 +89,8 @@ describe('Navbar', function () {
 
             it('Should navigate to work with us', () => {
                 cy.get('[data-cy=contact]').click();
-                cy.get('.contact-form').should('exist').and('be.visible');
+                cy.wait(3000);
+                cy.get('.contact-form').should('exist');
             });
 
             it('Our work tab should be on select state', () => {
@@ -337,7 +338,6 @@ describe('Navbar', function () {
                 cy.get('#navbarDropdown1 > .nav-link').should('not.be.visible');
                 cy.get('.blog-close-icon > .svg-inline--fa > path').click();
                 cy.get('.blog-search-group').should('exist').and('not.be.visible');
-                cy.get('.col-lg-4 > h1 > .hydrated').should('exist');
             });
 
             it('User should be able to search for Blog posts and navigate to search results', () => {
