@@ -62,6 +62,7 @@ describe('Contact Page', function () {
   describe('User is not able to submit a contact form with a empty email field', () => {
     it('Check that the submit is disabled', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=phone]').type('3333333333');
       cy.get('input[name=message]').type('Testing');
