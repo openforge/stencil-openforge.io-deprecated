@@ -270,37 +270,37 @@ describe('Navbar', function () {
             it('Should navigate to partners', () => {
                 cy.get('@burgerMenu').click();
                 cy.get('[data-cy=about]').click();
-                cy.get('[data-cy=partners] > .nav-link').click();
+                cy.get('[data-cy=partners] > .nav-link').click({ force: true });
                 cy.get('.hero').should('exist').and('be.visible');
             });
 
             it('Should navigate to work with us', () => {
                 cy.get('@burgerMenu').click();
-                cy.get('[data-cy=contact]').click();
+                cy.get('[data-cy=contact]').click({ force: true });
                 cy.get('.contact-form').should('exist').and('be.visible');
             });
 
             it('Our work tab should be on select state', () => {
                 cy.get('@burgerMenu').click();
-                cy.get('[data-cy=our-work]').click();
+                cy.get('[data-cy=our-work]').click({ force: true });
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
-                cy.get('[data-cy=mobilembutton]').click();
-                cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
-                cy.get('.more-projects').scrollIntoView();
-                cy.get(':nth-child(1) > .other-button > stencil-route-link.hydrated > a > button').click();
+                cy.get('[data-cy=mobilembutton]').click({ force: true });
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
                 cy.get('.more-projects').scrollIntoView();
-                cy.get(':nth-child(2) > .other-button > stencil-route-link.hydrated > a > button').click();
+                cy.get(':nth-child(1) > .other-button > stencil-route-link.hydrated > a > button').click({ force: true });
+                cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
+                cy.get('.more-projects').scrollIntoView();
+                cy.get(':nth-child(2) > .other-button > stencil-route-link.hydrated > a > button').click({ force: true });
                 cy.get('[data-cy=our-work] > .hydrated > .nav-link').should('have.class', 'active');
             });
 
             it('While on the Blog page the "Resources" tab should be in selected state', () => {
                 cy.get('@burgerMenu').click();
-                cy.get('[data-cy=resources]').click();
-                cy.get('[data-cy=blog] > .nav-link').click();
+                cy.get('[data-cy=resources]').click({ force: true });
+                cy.get('[data-cy=blog] > .nav-link').click({ force: true });
                 cy.get('#featured-blog-title').should('exist').and('be.visible');
                 cy.get('#navbarDropdown0 > .nav-link').should('have.class', 'active');
-                cy.get('#featured-blog-title').click();
+                cy.get('#featured-blog-title').click({ force: true });
                 cy.get('#navbarDropdown0 > .nav-link').should('have.class', 'active');
             });
 
@@ -325,7 +325,7 @@ describe('Navbar', function () {
 
             it('While on the contact page the "Work With Us" tab should be in selected state', () => {
                 cy.get('@burgerMenu').click();
-                cy.get('[data-cy=contact] > .nav-link').click();
+                cy.get('[data-cy=contact] > .nav-link').click({ force: true });
                 cy.get('.contact-form').should('exist').and('be.visible');
                 cy.get('[data-cy=contact] > .nav-link').should('have.class', 'active');
             });
@@ -336,7 +336,7 @@ describe('Navbar', function () {
                 cy.get('.search-input').click();
                 cy.get('.blog-search-group').should('exist').and('be.visible');
                 cy.get('#navbarDropdown1 > .nav-link').should('not.be.visible');
-                cy.get('.blog-close-icon > .svg-inline--fa > path').click();
+                cy.get('.blog-close-icon > .svg-inline--fa > path').click({ force: true });
                 cy.get('.blog-search-group').should('exist').and('not.be.visible');
             });
 
