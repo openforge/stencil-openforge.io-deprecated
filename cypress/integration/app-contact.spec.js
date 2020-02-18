@@ -75,6 +75,7 @@ describe('Contact Page', function () {
   describe('User is not able to submit a contact form with a invalid email address', () => {
     it('Check that the submit is disabled', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=email]').type('Test@openforge@io');
       cy.get('input[name=phone]').type('3333333333');
@@ -88,6 +89,7 @@ describe('Contact Page', function () {
   describe('The mailbox icon displays on the right hand side of the contact form', () => {
     it('Check that the img exists', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('[data-cy=mailbox-img]')
         .should('exist')
         .and('be.visible');
@@ -97,6 +99,7 @@ describe('Contact Page', function () {
   describe('User is not able to submit the contact form after clearing all of the fields', () => {
     it('Check that the submit is disabled after clearing form', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('input[name=name]').type('Tester');
       cy.get('input[name=name]').clear();
       cy.get('input[name=email]').type('wrong_email');
@@ -114,6 +117,7 @@ describe('Contact Page', function () {
   describe('User is unable to submit a empty contact form', () => {
     it('Check that the button is disabled', function () {
       cy.reload();
+      cy.wait(3000);
       cy.get('button[type=submit]')
         .should('exist')
         .and('be.disabled');
@@ -123,6 +127,7 @@ describe('Contact Page', function () {
   describe('The footer is visible on the "Contact" page', () => {
     it('Check the footer exists', () => {
       cy.reload();
+      cy.wait(3000);
       cy.get('footer')
         .should('exist')
         .and('be.visible');
