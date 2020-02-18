@@ -117,11 +117,11 @@ describe('Navbar', function () {
 
             it('While on the about page the "About tab" is in the selected state as well as "Meet the team"', () => {
 
-                cy.get('#navbarDropdown1 > .nav-link').click();
-                cy.get('[data-cy=meet] > .nav-link').click();
+                cy.get('#navbarDropdown1 > .nav-link').click({ force: true });
+                cy.get('[data-cy=meet] > .nav-link').click({ force: true });
                 cy.get('.hero').should('exist').and('be.visible');
                 cy.get('#members').scrollIntoView();
-                cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click();
+                cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click({ force: true });
                 cy.get('#navbarDropdown1 > .nav-link').should('have.class', 'active');
             });
 
@@ -305,9 +305,9 @@ describe('Navbar', function () {
             });
 
             it('While on the about page the "About tab" is in the selected state as well as "Meet the team"', () => {
-                cy.get('@burgerMenu').click();
-                cy.get('#navbarDropdown1 > .nav-link').click();
-                cy.get('[data-cy=meet] > .nav-link').click();
+                cy.get('@burgerMenu').click({ force: true });
+                cy.get('#navbarDropdown1 > .nav-link').click({ force: true });
+                cy.get('[data-cy=meet] > .nav-link').click({ force: true });
                 cy.get('.hero').should('exist').and('be.visible');
                 cy.get('#members').scrollIntoView();
                 cy.get(':nth-child(1) > stencil-route-link.hydrated > a > .member--overlay > .member--text').click({ force: true });
