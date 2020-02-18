@@ -980,62 +980,6 @@ describe('Opportunities Page', function () {
     cy.get('header')
       .should('exist')
       .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .should('exist')
-      .and('be.visible');
     cy.get('#apply')
       .contains('Submit your application')
       .should('exist')
