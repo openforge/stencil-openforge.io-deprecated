@@ -40,7 +40,6 @@ describe('Opportunities Page', function () {
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('#hero').should('have.class', 'header-design-active');
   });
 
   // DEVELOPER SELECTED
@@ -242,86 +241,6 @@ describe('Opportunities Page', function () {
       .should('exist')
       .and('be.visible');
     cy.get('header button.apply-btn')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('The ideal candidate can....')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Continually keep yourself and your design team updated with the latest changes in your industry’s standards.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be self-starter.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be a team player -- you put the interests of the team and the company above your own.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be passionate about open source software')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('And can meet the following prerequisites:')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Three or more years of experience and proven track record.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Strong portfolio to be presented and defended during interview.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('.content-graphic')
-      .last()
-      .contains('Experience using Firebase products')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in CSS (SCSS, BEM, LESS, SASS).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in JavaScript (React, Angular, Node, Express).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in Hybrid Apps (Ionic).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience with Heroku, Github Pages, or AWS is a plus.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience building web applications and/or mobile apps is a plus.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in working on open source projects is a plus.')
       .should('exist')
       .and('be.visible');
     cy.get('#apply')
