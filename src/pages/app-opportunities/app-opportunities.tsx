@@ -260,11 +260,11 @@ export class AppOpportunities {
     const isFileValid = this.formValues.formErrors.fileValid || this.fileSizeErrorShown;
 
     isFileValid &&
-    this.formValues.formErrors.nameValid &&
-    this.formValues.formErrors.emailValid &&
-    this.formValues.formErrors.phoneValid &&
-    this.formValues.formErrors.githubValid &&
-    this.formValues.formErrors.messageValid
+      this.formValues.formErrors.nameValid &&
+      this.formValues.formErrors.emailValid &&
+      this.formValues.formErrors.phoneValid &&
+      this.formValues.formErrors.githubValid &&
+      this.formValues.formErrors.messageValid
       ? (this.submitButtonDisabled = false)
       : (this.submitButtonDisabled = true);
   }
@@ -376,18 +376,18 @@ export class AppOpportunities {
               !this.opporunityTypePrevious && !this.opporunityTypeCurrent
                 ? 'hero header-animated'
                 : this.opporunityTypeActive === 'develop' && this.opporunityTypeCurrent === 'develop'
-                ? 'hero header-dev-active'
-                : this.opporunityTypeActive === 'design' && this.opporunityTypeCurrent === 'design'
-                ? 'hero header-design-active'
-                : !this.opporunityTypePrevious && this.opporunityTypeCurrent === 'develop'
-                ? 'hero header-transition-dev'
-                : !this.opporunityTypePrevious && this.opporunityTypeCurrent === 'design'
-                ? 'hero header-transition-design'
-                : this.opporunityTypePrevious === 'develop' && this.opporunityTypeCurrent === 'design'
-                ? 'hero header-transition-dev-design'
-                : this.opporunityTypePrevious === 'design' && this.opporunityTypeCurrent === 'develop'
-                ? 'hero header-transition-design-dev'
-                : 'hero header-animated'
+                  ? 'hero header-dev-active'
+                  : this.opporunityTypeActive === 'design' && this.opporunityTypeCurrent === 'design'
+                    ? 'hero header-design-active'
+                    : !this.opporunityTypePrevious && this.opporunityTypeCurrent === 'develop'
+                      ? 'hero header-transition-dev'
+                      : !this.opporunityTypePrevious && this.opporunityTypeCurrent === 'design'
+                        ? 'hero header-transition-design'
+                        : this.opporunityTypePrevious === 'develop' && this.opporunityTypeCurrent === 'design'
+                          ? 'hero header-transition-dev-design'
+                          : this.opporunityTypePrevious === 'design' && this.opporunityTypeCurrent === 'develop'
+                            ? 'hero header-transition-design-dev'
+                            : 'hero header-animated'
             }
           >
             <div class="container">
@@ -400,19 +400,19 @@ export class AppOpportunities {
                     <app-translate keyword="opportunities.hero.text" />
                   </p>
                   <div class="hero-type-buttons">
-                    <button onClick={() => this.selectType('develop')} class={this.opporunityTypeCurrent === 'develop' ? 'btn btn-primary opportunity-btn active' : 'btn btn-primary opportunity-btn'}>
+                    <button id='dev' onClick={() => this.selectType('develop')} class={this.opporunityTypeCurrent === 'develop' ? 'btn btn-primary opportunity-btn active' : 'btn btn-primary opportunity-btn'}>
                       <app-translate keyword="opportunities.hero.developer" />
                     </button>
-                    <button onClick={() => this.selectType('design')} class={this.opporunityTypeCurrent === 'design' ? 'btn btn-primary opportunity-btn active' : 'btn btn-primary opportunity-btn'}>
+                    <button id='des' onClick={() => this.selectType('design')} class={this.opporunityTypeCurrent === 'design' ? 'btn btn-primary opportunity-btn active' : 'btn btn-primary opportunity-btn'}>
                       <app-translate keyword="opportunities.hero.designer" />
                     </button>
                   </div>
                   <div class="hero-arrow-img">
                     {this.opporunityTypeCurrent
                       ? [
-                          <app-translate keyword="opportunities.hero.text2" />,
-                          <app-img onClick={this.scrollToForm.bind(this)} src="/assets/opportunities/opportunities-arrow-animated.svg" alt="down arrow svg" />,
-                        ]
+                        <app-translate keyword="opportunities.hero.text2" />,
+                        <app-img onClick={this.scrollToForm.bind(this)} src="/assets/opportunities/opportunities-arrow-animated.svg" alt="down arrow svg" />,
+                      ]
                       : null}
                   </div>
                 </div>
@@ -420,27 +420,27 @@ export class AppOpportunities {
             </div>
           </header>
         ) : (
-          // Header for the state after click on apply
-          <header class="hero-submit container">
-            <content-graphic
-              leftAlign={true}
-              img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-designer-candidate.svg' : '/assets/opportunities/opportunities-dev-candidate.svg'}
-              reverse={this.opporunityTypeCurrent === 'design' ? true : false}
-            >
-              <h3 class="original thin margin-bottom auto-align" slot="header">
-                <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.title`} />
-              </h3>
-              <p class="auto-align" slot="body">
-                <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.text`} />
-              </p>
-              <div class="footer-btn" slot="footer">
-                <button class="btn btn-primary apply-btn" onClick={this.scrollToApply.bind(this)}>
-                  <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.button`} />
-                </button>
-              </div>
-            </content-graphic>
-          </header>
-        )}
+            // Header for the state after click on apply
+            <header class="hero-submit container">
+              <content-graphic
+                leftAlign={true}
+                img-url={this.opporunityTypeCurrent === 'design' ? '/assets/opportunities/opportunities-designer-candidate.svg' : '/assets/opportunities/opportunities-dev-candidate.svg'}
+                reverse={this.opporunityTypeCurrent === 'design' ? true : false}
+              >
+                <h3 class="original thin margin-bottom auto-align" slot="header">
+                  <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.title`} />
+                </h3>
+                <p class="auto-align" slot="body">
+                  <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.text`} />
+                </p>
+                <div class="footer-btn" slot="footer">
+                  <button class="btn btn-primary apply-btn" onClick={this.scrollToApply.bind(this)}>
+                    <app-translate keyword={`opportunities.hero.${this.opporunityTypeCurrent}.button`} />
+                  </button>
+                </div>
+              </content-graphic>
+            </header>
+          )}
         {this.opporunityTypeCurrent ? (
           !this.canRequestInterview ? (
             // Content section for initial state
@@ -514,128 +514,128 @@ export class AppOpportunities {
               </div>
             </section>
           ) : (
-            // Content section for the state after click on apply
-            <section id="candidate-requisites" class="container">
-              <hr />
-              <content-graphic
-                leftAlign={true}
-                inverseOrder={true}
-                wider={true}
-                img-url={this.texts[this.opporunityTypeCurrent].candidateUrl}
-                reverse={this.opporunityTypeCurrent === 'develop' ? true : false}
-              >
-                <h3 class="original thin margin-bottom auto-align" slot="header">
-                  <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.title`} />
-                </h3>
-                <ul class="auto-align" slot="body">
-                  <li>
-                    <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text1`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text2`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text3`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text4`} />
-                  </li>
-                  {this.opporunityTypeCurrent === 'develop' ? (
+              // Content section for the state after click on apply
+              <section id="candidate-requisites" class="container">
+                <hr />
+                <content-graphic
+                  leftAlign={true}
+                  inverseOrder={true}
+                  wider={true}
+                  img-url={this.texts[this.opporunityTypeCurrent].candidateUrl}
+                  reverse={this.opporunityTypeCurrent === 'develop' ? true : false}
+                >
+                  <h3 class="original thin margin-bottom auto-align" slot="header">
+                    <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.title`} />
+                  </h3>
+                  <ul class="auto-align" slot="body">
                     <li>
-                      <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text5`} />
+                      <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text1`} />
                     </li>
-                  ) : null}
-                </ul>
-              </content-graphic>
-              <content-graphic
-                leftAlign={true}
-                inverseOrder={true}
-                wider={true}
-                img-url={this.texts[this.opporunityTypeCurrent].requisitesUrl}
-                reverse={this.opporunityTypeCurrent === 'develop' ? false : true}
-              >
-                <h3 class="original thin margin-bottom auto-align" slot="header">
-                  <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.title`} />
-                </h3>
-                <ul class="auto-align" slot="body">
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text1`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text2`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text3`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text4`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text5`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text6`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text7`} />
-                  </li>
-                  <li>
-                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text8`} />
-                  </li>
-                  {this.opporunityTypeCurrent === 'develop' ? (
                     <li>
-                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text9`} />
+                      <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text2`} />
                     </li>
-                  ) : null}
-                </ul>
-              </content-graphic>
-            </section>
-          )
+                    <li>
+                      <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text3`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text4`} />
+                    </li>
+                    {this.opporunityTypeCurrent === 'develop' ? (
+                      <li>
+                        <app-translate keyword={`opportunities.candidate.${this.opporunityTypeCurrent}.text5`} />
+                      </li>
+                    ) : null}
+                  </ul>
+                </content-graphic>
+                <content-graphic
+                  leftAlign={true}
+                  inverseOrder={true}
+                  wider={true}
+                  img-url={this.texts[this.opporunityTypeCurrent].requisitesUrl}
+                  reverse={this.opporunityTypeCurrent === 'develop' ? false : true}
+                >
+                  <h3 class="original thin margin-bottom auto-align" slot="header">
+                    <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.title`} />
+                  </h3>
+                  <ul class="auto-align" slot="body">
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text1`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text2`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text3`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text4`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text5`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text6`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text7`} />
+                    </li>
+                    <li>
+                      <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text8`} />
+                    </li>
+                    {this.opporunityTypeCurrent === 'develop' ? (
+                      <li>
+                        <app-translate keyword={`opportunities.requisites.${this.opporunityTypeCurrent}.text9`} />
+                      </li>
+                    ) : null}
+                  </ul>
+                </content-graphic>
+              </section>
+            )
         ) : null}
         {this.opporunityTypeCurrent
           ? [
-              <section id="apply" class="apply">
-                <div class="container">
-                  {!this.canRequestInterview ? (
-                    // First form with sliders
-                    <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
-                      <h2>
-                        <app-translate keyword="opportunities.skills.title" />
-                      </h2>
+            <section id="apply" class="apply">
+              <div class="container">
+                {!this.canRequestInterview ? (
+                  // First form with sliders
+                  <form class="apply-1" onSubmit={this.handleSliders.bind(this)}>
+                    <h2>
+                      <app-translate keyword="opportunities.skills.title" />
+                    </h2>
+                    <p>
+                      <app-translate keyword="opportunities.skills.text" />
+                    </p>
+
+                    <div class="slider-labels">
                       <p>
-                        <app-translate keyword="opportunities.skills.text" />
+                        <app-translate keyword="opportunities.skills.noob" />
                       </p>
+                      <p>
+                        <app-translate keyword="opportunities.skills.expert" />
+                      </p>
+                    </div>
 
-                      <div class="slider-labels">
-                        <p>
-                          <app-translate keyword="opportunities.skills.noob" />
-                        </p>
-                        <p>
-                          <app-translate keyword="opportunities.skills.expert" />
-                        </p>
-                      </div>
+                    <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.first.name} label={this.texts[this.opporunityTypeCurrent].sliders.first.label} />
+                    <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.second.name} label={this.texts[this.opporunityTypeCurrent].sliders.second.label} />
+                    <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.third.name} label={this.texts[this.opporunityTypeCurrent].sliders.third.label} />
+                    <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fourth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fourth.label} />
+                    <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fifth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fifth.label} />
 
-                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.first.name} label={this.texts[this.opporunityTypeCurrent].sliders.first.label} />
-                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.second.name} label={this.texts[this.opporunityTypeCurrent].sliders.second.label} />
-                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.third.name} label={this.texts[this.opporunityTypeCurrent].sliders.third.label} />
-                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fourth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fourth.label} />
-                      <app-slider name={this.texts[this.opporunityTypeCurrent].sliders.fifth.name} label={this.texts[this.opporunityTypeCurrent].sliders.fifth.label} />
-
-                      {!this.interviewButtonDisabled ? (
-                        <p>
-                          <app-translate keyword="opportunities.form.allset" />
-                        </p>
-                      ) : (
+                    {!this.interviewButtonDisabled ? (
+                      <p>
+                        <app-translate keyword="opportunities.form.allset" />
+                      </p>
+                    ) : (
                         <p>
                           <app-translate keyword="opportunities.form.almost" />
                         </p>
                       )}
 
-                      <button class="btn btn-primary apply-btn" type="submit" disabled={this.interviewButtonDisabled}>
-                        <app-translate keyword="opportunities.form.request" />
-                      </button>
-                    </form>
-                  ) : (
+                    <button class="btn btn-primary apply-btn" type="submit" disabled={this.interviewButtonDisabled}>
+                      <app-translate keyword="opportunities.form.request" />
+                    </button>
+                  </form>
+                ) : (
                     // Second form to submit the resume
                     <form class="apply-2" id="applyForm" onSubmit={this.handleSubmit.bind(this)}>
                       <h3>
@@ -690,30 +690,30 @@ export class AppOpportunities {
                       </p>
                       {this.opporunityTypeCurrent === 'develop'
                         ? [
-                            <app-input slimmer={true} placeholder={translate('contact.form.placeholder.github')} label={translate('contact.form.github')} name="github" type="text" required={true} />,
-                            <p class="error">
-                              <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                              </span>
-                              {this.githubError}
-                            </p>,
-                          ]
+                          <app-input slimmer={true} placeholder={translate('contact.form.placeholder.github')} label={translate('contact.form.github')} name="github" type="text" required={true} />,
+                          <p class="error">
+                            <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
+                              <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                            </span>
+                            {this.githubError}
+                          </p>,
+                        ]
                         : [
-                            <app-input
-                              slimmer={true}
-                              placeholder={translate('contact.form.placeholder.designProfile')}
-                              label={translate('contact.form.designProfile')}
-                              name="github"
-                              type="text"
-                              required={true}
-                            />,
-                            <p class="error">
-                              <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" />
-                              </span>
-                              {this.githubError}
-                            </p>,
-                          ]}
+                          <app-input
+                            slimmer={true}
+                            placeholder={translate('contact.form.placeholder.designProfile')}
+                            label={translate('contact.form.designProfile')}
+                            name="github"
+                            type="text"
+                            required={true}
+                          />,
+                          <p class="error">
+                            <span style={!this.githubError ? { display: 'none' } : this.errorIconStyles}>
+                              <i class="fa fa-exclamation-circle" aria-hidden="true" />
+                            </span>
+                            {this.githubError}
+                          </p>,
+                        ]}
 
                       <h3>
                         <app-translate keyword="opportunities.form.unique.title" />
@@ -750,9 +750,9 @@ export class AppOpportunities {
                       ) : null}
                     </form>
                   )}
-                </div>
-              </section>,
-            ]
+              </div>
+            </section>,
+          ]
           : null}
         <app-footer />
       </div>

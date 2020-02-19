@@ -21,25 +21,14 @@ describe('Opportunities Page', function () {
 
   it('User can toggle between "Developer" and "Designer"', function () {
     //cy.visit('http://localhost:3333/opportunities');
-    cy.reload();
-    cy.wait(3000);
-    cy.get('.hero-type-buttons button:first-child()')
-      .should('exist')
-      .contains('DEVELOP')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('#hero').should('have.class', 'header-dev-active');
-    cy.get('.hero-arrow-img')
-      .should('exist')
-      .contains('Let’s get to know each other…')
-      .and('be.visible');
-    cy.get('.hero-type-buttons button:last-child()')
-      .should('exist')
-      .contains('DESIGNER')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
+    cy.get('#hero')
+      .should('exist');
+    cy.get('#dev').click({ force: true });
+    cy.get('#dev').should('have.class', 'active');
+    cy.get('.hero-arrow-img').should('exist');
+    cy.get('#des').click({ force: true });
+    cy.get('#des').should('have.class', 'active');
+    cy.get('.hero-arrow-img').should('exist');
   });
 
   // DEVELOPER SELECTED
@@ -974,15 +963,41 @@ describe('Opportunities Page', function () {
     cy.reload();
     cy.wait(3000);
     cy.get('header').scrollIntoView();
-    cy.get('header')
-      .should('exist')
-      .and('be.visible');
-    cy.get('header')
-      .should('exist')
-      .and('be.visible');
-    cy.wait(3000);
-    cy.get('#apply')
-      .should('exist');
+    cy.get('#des').click({ force: true });
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('button[type=submit]')
+      .should('not.be.disabled')
+      .click();
+    cy.get('.content-graphic').should('exist');
   });
 
   /*it('The designer application displays with all fields', function () {
