@@ -980,10 +980,9 @@ describe('Opportunities Page', function () {
     cy.get('header')
       .should('exist')
       .and('be.visible');
+    cy.wait(2000);
     cy.get('#apply')
-      .contains('Submit your application')
-      .should('exist')
-      .and('be.visible');
+      .should('exist');
   });
 
   /*it('The designer application displays with all fields', function () {
