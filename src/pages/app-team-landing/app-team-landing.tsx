@@ -391,19 +391,21 @@ export class AppTeamLanding {
       surname: 'Moran',
       title: translate('about.team.member.title.developer'),
       headerText:
-        "Matt joined OpenForge in 2019 as a member of the development team. A self-taught developer with experience working for large institutions, he has one foot in modern web development, and one in the growing Microsoft ecosystem. Matt is also a strong advocate for Computer Science education, having taught programming to over 1000 students and contributed to graduate-level CS curriculum at the University of Pennsylvania. Alongside his work with OpenForge, Matt continues to tutor programming while fostering dogs at his house in Georgia.",
-      bodyText: 'In addition to developing applications, Matt has worked for OpenForge as a database expert, software architect, DevOps specialist, and project lead. With specialties in backend development, database design, and enterprise systems, he focuses on product security, stability, and integrity. He draws upon his continually expanding base of development practices to help customers find solutions for their needs.',
+        'Matt joined OpenForge in 2019 as a member of the development team. A self-taught developer with experience working for large institutions, he has one foot in modern web development, and one in the growing Microsoft ecosystem. Matt is also a strong advocate for Computer Science education, having taught programming to over 1000 students and contributed to graduate-level CS curriculum at the University of Pennsylvania. Alongside his work with OpenForge, Matt continues to tutor programming while fostering dogs at his house in Georgia.',
+      bodyText:
+        'In addition to developing applications, Matt has worked for OpenForge as a database expert, software architect, DevOps specialist, and project lead. With specialties in backend development, database design, and enterprise systems, he focuses on product security, stability, and integrity. He draws upon his continually expanding base of development practices to help customers find solutions for their needs.',
       skills: ['Angular', 'NGRX', 'Cordova', 'Node', 'SQL Server', ' C#', 'ASP.NET', 'Universal Windows Platform', 'Visual Studio', 'IIS', 'Azure', 'Serverless', 'DevOps', 'Git'],
       team: 'development',
       headshotPhoto: '/assets/headshot-matt.png',
       metatags: {
         title: 'Matt Moran - Software Engineer | OpenForge',
-        description: 'In addition to developing applications, Matt has worked for OpenForge as a database expert, software architect, DevOps specialist, and project lead. With specialties in backend development, database design, and enterprise systems, he focuses on product security, stability, and integrity. He draws upon his continually expanding base of development practices to help customers find solutions for their needs.',
+        description:
+          'In addition to developing applications, Matt has worked for OpenForge as a database expert, software architect, DevOps specialist, and project lead. With specialties in backend development, database design, and enterprise systems, he focuses on product security, stability, and integrity. He draws upon his continually expanding base of development practices to help customers find solutions for their needs.',
         keywords: 'Matt Moran',
         url: 'https://openforge.io/about/matt-moran/',
         image: 'https://openforge.io/assets/headshot-matt.png',
       },
-    }
+    },
   };
 
   @Watch('match')
@@ -464,11 +466,11 @@ export class AppTeamLanding {
     if (window.innerWidth > 767.98) {
       style = this.backgroundPhoto
         ? {
-          'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`,
-        }
+            'background-image': `linear-gradient(90deg, #000000 20%, rgba(255, 255, 255, 0) 70%), url(${this.backgroundPhoto})`,
+          }
         : {
-          'background-color': '#292A2D',
-        };
+            'background-color': '#292A2D',
+          };
     }
     window.addEventListener('resize', this.updateBackground);
 
@@ -477,63 +479,63 @@ export class AppTeamLanding {
         {/* header - hero */}
         {this.data[this.match.params.member]
           ? [
-            <div class="container-fluid">
-              <div class="row justify-content-center align-items-center hero" style={style}>
-                <div class="col-10 col-sm-12 d-block d-md-none">
-                  <app-img class="headshot-mobile" src={this.headshotPhoto} />
+              <div class="container-fluid">
+                <div class="row justify-content-center align-items-center hero" style={style}>
+                  <div class="col-10 col-sm-12 d-block d-md-none">
+                    <app-img class="headshot-mobile" src={this.headshotPhoto} />
+                  </div>
+                  <div class="col-11 col-sm-9 col-md-7 col-lg-6 align-self-start">
+                    <div class="header-text">
+                      <h1>{`${this.data[this.match.params.member].firstname} ${this.data[this.match.params.member].surname}`}</h1>
+                      <h3>{this.data[this.match.params.member].title}</h3>
+                      <app-img
+                        class="d-md-none badge"
+                        src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
+                        alt="Job Title Badge - Design, Development, Management"
+                      />
+                      <p>{this.data[this.match.params.member].headerText}</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 d-none d-md-block">{!this.backgroundPhoto && <app-img class="headshot" src={this.headshotPhoto} />}</div>
                 </div>
-                <div class="col-11 col-sm-9 col-md-7 col-lg-6 align-self-start">
-                  <div class="header-text">
-                    <h1>{`${this.data[this.match.params.member].firstname} ${this.data[this.match.params.member].surname}`}</h1>
-                    <h3>{this.data[this.match.params.member].title}</h3>
+
+                <div class="row align-items-center justify-content-center bio">
+                  <div class="col-9 col-sm-9 col-md-5 col-lg-4">
                     <app-img
-                      class="d-md-none badge"
+                      class="d-none d-md-block badge"
                       src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
                       alt="Job Title Badge - Design, Development, Management"
                     />
-                    <p>{this.data[this.match.params.member].headerText}</p>
                   </div>
-                </div>
-                <div class="col-md-4 d-none d-md-block">{!this.backgroundPhoto && <app-img class="headshot" src={this.headshotPhoto} />}</div>
-              </div>
-
-              <div class="row align-items-center justify-content-center bio">
-                <div class="col-9 col-sm-9 col-md-5 col-lg-4">
-                  <app-img
-                    class="d-none d-md-block badge"
-                    src={`/assets/team-landing-graphic-${this.data[this.match.params.member].team}-badge.png`}
-                    alt="Job Title Badge - Design, Development, Management"
-                  />
-                </div>
-                <div class="col-11 col-sm-9 col-md-7 col-lg-5">
-                  <h2>
-                    <app-translate keyword="about.landing.container.title1" />
-                    &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
+                  <div class="col-11 col-sm-9 col-md-7 col-lg-5">
+                    <h2>
+                      <app-translate keyword="about.landing.container.title1" />
+                      &nbsp;{this.data[this.match.params.member].firstname}&nbsp;
                       <app-translate keyword="about.landing.container.title2" />
-                  </h2>
-                  <p>{this.data[this.match.params.member].bodyText}</p>
-                  <h4>
-                    <app-translate keyword="about.landing.container.skills" />
-                  </h4>
-                  <div class="chips-container">
-                    {this.data[this.match.params.member].skills.map(skill => {
-                      return <label class="skill-chip">{skill}</label>;
-                    })}
+                    </h2>
+                    <p>{this.data[this.match.params.member].bodyText}</p>
+                    <h4>
+                      <app-translate keyword="about.landing.container.skills" />
+                    </h4>
+                    <div class="chips-container">
+                      {this.data[this.match.params.member].skills.map(skill => {
+                        return <label class="skill-chip">{skill}</label>;
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div id="members" class="row justify-content-center members">
-                <div class="col-10 col-lg-10">
-                  <h2>
-                    <app-translate keyword="about.landing.cta.title" />
-                  </h2>
-                  <app-members-section />
+                <div id="members" class="row justify-content-center members">
+                  <div class="col-10 col-lg-10">
+                    <h2>
+                      <app-translate keyword="about.landing.cta.title" />
+                    </h2>
+                    <app-members-section />
+                  </div>
                 </div>
-              </div>
-            </div>,
-            <app-footer />,
-          ]
+              </div>,
+              <app-footer />,
+            ]
           : null}
       </section>
     );

@@ -25,7 +25,7 @@ export class AppAbout {
         <div class="container-fluid">
           <div class="row align-items-center hero">
             <div class="col-12 col-md-11 offset-md-1">
-              <h1 data-cy='title-hero'>
+              <h1 data-cy="title-hero">
                 <app-translate class="d-none d-md-block" keyword="about.header.title" />
                 <app-translate class="d-block d-md-none" keyword="about.header.titleSmall" />
               </h1>

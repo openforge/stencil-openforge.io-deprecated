@@ -1,13 +1,12 @@
 describe('Home Page', function () {
   var env = 'http://localhost:3333';
-  beforeEach(() => {
-    cy.visit(env);
-  });
+
 
   describe('Home Page', function () {
 
     describe('Hero', function () {
       it('The home page hero text and animation displays', () => {
+        cy.visit(env);
         cy.get('[data-cy=title]').should('exist').and('contain', 'Mobile Solutions');
         cy.get('[data-cy=subtitle]').should('exist').and('contain', 'For A Digital World');
         cy.get('[data-cy=subpar]').should('exist').and('contain', 'As experts in user experience, design, and application development, we specialize in creating mobile first, user-centered solutions to bring your ideas to life on the small screen.');

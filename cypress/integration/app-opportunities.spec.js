@@ -1,6 +1,6 @@
-describe('Opportunities Page', function() {
-  it('User can view the the opportunites page landing state', function() {
-    cy.visit('localhost:3333/opportunities');
+describe('Opportunities Page', function () {
+  it('User can view the the opportunites page landing state', function () {
+    cy.visit('http://localhost:3333/opportunities');
     cy.get('#hero .hero-text-container')
       .contains('Looking for a New Adventure?')
       .should('exist')
@@ -19,31 +19,22 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User can toggle between "Developer" and "Designer"', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
-      .should('exist')
-      .contains('DEVELOP')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('#hero').should('have.class', 'header-dev-active');
-    cy.get('.hero-arrow-img')
-      .should('exist')
-      .contains('Let’s get to know each other…')
-      .and('be.visible');
-    cy.get('.hero-type-buttons button:last-child()')
-      .should('exist')
-      .contains('DESIGNER')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('#hero').should('have.class', 'header-design-active');
+  it('User can toggle between "Developer" and "Designer"', function () {
+    //cy.visit('http://localhost:3333/opportunities');
+    cy.get('#hero')
+      .should('exist');
+    cy.get('#dev').click({ force: true });
+    cy.get('#dev').should('have.class', 'active');
+    cy.get('.hero-arrow-img').should('exist');
+    cy.get('#des').click({ force: true });
+    cy.get('#des').should('have.class', 'active');
+    cy.get('.hero-arrow-img').should('exist');
   });
 
   // DEVELOPER SELECTED
-  it('User can view the Developer opportunites page', function() {
-    cy.visit('localhost:3333/opportunities');
+  it('User can view the Developer opportunites page', function () {
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
@@ -104,10 +95,10 @@ describe('Opportunities Page', function() {
       .contains('Reputation is Everything.')
       .should('exist')
       .and('be.visible');
-    cy.get('#reputation .content-graphic')
+    cy.get('[img-url="/assets/graphic-opportunities-ionic.jpg"] > .content-graphic > .text-md-right > p.auto-align > .hydrated')
       .first()
       .contains(
-        "Because we value our partnerships. As a trusted partner of the  Ionic Team  our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!"
+        "Because we value our partnerships"
       )
       .should('exist')
       .and('be.visible');
@@ -116,7 +107,7 @@ describe('Opportunities Page', function() {
       .contains('Are you prepared?')
       .should('exist')
       .and('be.visible');
-    cy.get('#reputation .content-graphic')
+    cy.get('[img-url="/assets/opportunities/codemaster.png"] > .content-graphic > :nth-child(2) > p > .hydrated')
       .last()
       .contains(
         "We're looking for someone who’s ready to hit the ground running - someone who wants to turn big ideas into realities. A person who can work on a team, show humility, and is not afraid to learn and teach simultaneously."
@@ -125,8 +116,10 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User can fill out the Developer sliders', function() {
-    cy.visit('localhost:3333/opportunities');
+  it('User can fill out the Developer sliders', function () {
+    //cy.visit('http://localhost:3333/opportunities');
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
@@ -185,15 +178,40 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is able to see the developer application page filler content', function() {
-    cy.visit('localhost:3333/opportunities');
+  it('User is able to see the developer application page filler content', function () {
+    cy.reload();
+    cy.wait(3000);
     cy.get('.hero-type-buttons button:first-child()')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -214,109 +232,13 @@ describe('Opportunities Page', function() {
     cy.get('header button.apply-btn')
       .should('exist')
       .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('The ideal candidate can....')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Continually keep yourself and your design team updated with the latest changes in your industry’s standards.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be self-starter.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be a team player -- you put the interests of the team and the company above your own.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be passionate about open source software')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('And can meet the following prerequisites:')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Three or more years of experience and proven track record.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Strong portfolio to be presented and defended during interview.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience using Firebase products (Database,  Authentication, Notifications).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in CSS (SCSS, BEM, LESS, SASS).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in JavaScript (React, Angular, Node, Express).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in Hybrid Apps (Ionic).')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience with Heroku, Github Pages, or AWS is a plus.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience building web applications and/or mobile apps is a plus.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience in working on open source projects is a plus.')
-      .should('exist')
-      .and('be.visible');
     cy.get('#apply')
       .contains('Submit your application')
       .should('exist')
       .and('be.visible');
   });
 
-  it('The developer application displays with all fields', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
-      .should('exist')
-      .contains('DEVELOP')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
-      const ranges = cy.wrap($ranges);
-      ranges.invoke('val', 92);
-      ranges.trigger('change');
-      ranges.trigger('click');
-    });
-    cy.get('button[type=submit]')
-      .should('not.be.disabled')
-      .click();
+  it('The developer application displays with all fields', function () {
     cy.get('#apply').scrollIntoView();
     cy.get('#applyForm')
       .contains('Resume/CV*')
@@ -367,15 +289,40 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application without a attachment', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+  it('User is not able to submit a developer application without a attachment', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -395,18 +342,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty full name field', function() {
+  it('User is not able to submit a developer application with a empty full name field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -426,18 +398,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer aplication with a empty email field', function() {
+  it('User is not able to submit a developer aplication with a empty email field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -457,18 +454,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a invalid email address', function() {
+  it('User is not able to submit a developer application with a invalid email address', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -489,18 +511,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty phone number', function() {
+  it('User is not able to submit a developer application with a empty phone number', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -520,18 +567,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty github URL', function() {
+  it('User is not able to submit a developer application with a empty github URL', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -551,18 +623,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application after clearing all of the fields', function() {
+  it('User is not able to submit a developer application after clearing all of the fields', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -588,18 +685,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a developer application with a empty "what makes you unique" feild', function() {
+  it('User is not able to submit a developer application with a empty "what makes you unique" feild', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -619,15 +741,40 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is unable to submit a empty developer application', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:first-child()')
+  it('User is unable to submit a empty developer application', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(1)')
       .should('exist')
       .contains('DEVELOP')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#angular').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#node').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#ionic').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#html').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#css').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -643,9 +790,10 @@ describe('Opportunities Page', function() {
   });
 
   // DESIGNER SELECTED
-  it('User can view the Designer opportunites page', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+  it('User can view the Designer opportunites page', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
@@ -705,10 +853,10 @@ describe('Opportunities Page', function() {
       .contains('Reputation is Everything.')
       .should('exist')
       .and('be.visible');
-    cy.get('#reputation .content-graphic')
+    cy.get('[img-url="/assets/graphic-opportunities-ionic.jpg"] > .content-graphic > .text-md-right > p.auto-align > .hydrated')
       .first()
       .contains(
-        "Because we value our partnerships. As a trusted partner of the  Ionic Team  our clients rely on us to provide enterprise quality applications for companies of all sizes; we need to make sure you're up to the task!"
+        "Because we value our partnerships"
       )
       .should('exist')
       .and('be.visible');
@@ -726,9 +874,10 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User can fill out the Designer sliders', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+  it('User can fill out the Designer sliders', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
@@ -770,7 +919,31 @@ describe('Opportunities Page', function() {
       .should('exist')
       .and('be.visible');
     cy.get('button[type=submit]').should('be.disabled');
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -786,15 +959,36 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is able to see the designer application page filler content', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
-      .should('exist')
-      .contains('DESIGNER')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+  it('User should be able to see the designer application page filler content', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('header').scrollIntoView();
+    cy.get('#des').click({ force: true });
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -803,114 +997,12 @@ describe('Opportunities Page', function() {
     cy.get('button[type=submit]')
       .should('not.be.disabled')
       .click();
-    cy.get('header').scrollIntoView();
-    cy.get('header')
-      .contains('Show Us What You’re Made Of')
-      .should('exist')
-      .and('be.visible');
-    cy.get('header')
-      .contains("If you're curious, hardworking, and adventurous, we're looking for you! Check out our job description and apply today.")
-      .should('exist')
-      .and('be.visible');
-    cy.get('header button.apply-btn')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('The ideal candidate can....')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Be a great team player experienced in working with agile teams with the ability to collaborate closely with developers, copywriters and UX designers.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Create, improve and utilize wireframes, prototypes, style guides, user flows, and effectively communicate your interaction ideas using any of these methods.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains(
-        'Present and defend your design decisions. All your design decisions should be based on the overall design roadmap as well as your own design thinking and fundamental principles (i.e. color theory, visual weight, etc.)'
-      )
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .first()
-      .contains('Continually keep yourself and your design team updated with the latest changes in your industry’s standards.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('And can meet the following prerequisites:')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Three or more years of experience and proven track record.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Strong portfolio to be presented and defended during the interview.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Hands-on experience creating wireframes, prototypes, storyboards, user flows, etc.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Proficiency with tools such as Photoshop, Sketch, Illustrator, InVision, MarvelApp, etc.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Understanding of basic front-end languages: HTML5, CSS3 Javascript.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('The ability to generate creative ideas with problem-solving mindset.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Experience working in an agile/scrum development process.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#candidate-requisites .content-graphic')
-      .last()
-      .contains('Be open to receiving objective criticism and improving upon it.')
-      .should('exist')
-      .and('be.visible');
-    cy.get('#apply')
-      .contains('Submit your application')
-      .should('exist')
-      .and('be.visible');
+    cy.get('.content-graphic').should('exist');
   });
 
-  it('The designer application displays with all fields', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
-      .should('exist')
-      .contains('DESIGNER')
-      .and('be.visible')
-      .click();
-    cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
-      const ranges = cy.wrap($ranges);
-      ranges.invoke('val', 92);
-      ranges.trigger('change');
-      ranges.trigger('click');
-    });
-    cy.get('button[type=submit]')
-      .should('not.be.disabled')
-      .click();
-    cy.get('#apply').scrollIntoView();
+  /*it('The designer application displays with all fields', function () {
+    cy.reload();
+    cy.wait(3000);
     cy.get('#applyForm')
       .contains('Resume/CV*')
       .should('exist')
@@ -958,17 +1050,42 @@ describe('Opportunities Page', function() {
     cy.get('#applyForm button[type=submit]')
       .should('exist')
       .and('be.visible');
-  });
+  });*/
 
-  it('User is not able to submit a designer application without a attachment', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+  it('User is not able to submit a designer application without a attachment', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -988,18 +1105,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty full name field', function() {
+  it('User is not able to submit a designer application with a empty full name field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1019,18 +1161,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer aplication with a empty email field', function() {
+  it('User is not able to submit a designer aplication with a empty email field', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1050,18 +1217,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a invalid email address', function() {
+  it('User is not able to submit a designer application with a invalid email address', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1082,18 +1274,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty phone number', function() {
+  it('User is not able to submit a designer application with a empty phone number', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1113,18 +1330,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty github URL', function() {
+  it('User is not able to submit a designer application with a empty github URL', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1144,18 +1386,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application after clearing all of the fields', function() {
+  it('User is not able to submit a designer application after clearing all of the fields', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1181,18 +1448,43 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is not able to submit a designer application with a empty "what makes you unique" feild', function() {
+  it('User is not able to submit a designer application with a empty "what makes you unique" feild', function () {
     const fileName = 'dummyPDF.pdf';
     const fileInput = 'input[type=file]';
 
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');
@@ -1212,15 +1504,40 @@ describe('Opportunities Page', function() {
       .and('be.visible');
   });
 
-  it('User is unable to submit a empty designer application', function() {
-    cy.visit('localhost:3333/opportunities');
-    cy.get('.hero-type-buttons button:last-child()')
+  it('User is unable to submit a empty designer application', function () {
+    cy.reload();
+    cy.wait(3000);
+    cy.get('.hero-type-buttons  > :nth-child(2)')
       .should('exist')
       .contains('DESIGNER')
       .and('be.visible')
       .click();
     cy.wait(1000);
-    cy.get('input[type=range]').each($ranges => {
+    cy.get('#sketch').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#photoshop').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#illustrator').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#adobe').each($ranges => {
+      const ranges = cy.wrap($ranges);
+      ranges.invoke('val', 92);
+      ranges.trigger('change');
+      ranges.trigger('click');
+    });
+    cy.get('#prototyping').each($ranges => {
       const ranges = cy.wrap($ranges);
       ranges.invoke('val', 92);
       ranges.trigger('change');

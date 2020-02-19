@@ -384,21 +384,21 @@ export class AppBlog {
                 </button>
               </div>
             ) : (
-                <ul class="blog-filters-list">
-                  {filters}
-                  <li class="blog-filter-item d-none d-lg-block">
-                    <div class="blog-search-group">
-                      <span class="blog-search-icon fa fa-search" />
-                      <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
-                    </div>
-                  </li>
-                  <li class="blog-filter-item d-none d-md-block d-lg-none" onClick={() => this.showSearchbar()}>
-                    <div class="blog-search-group">
-                      <span class="blog-search-icon fa fa-search" />
-                    </div>
-                  </li>
-                </ul>
-              )}
+              <ul class="blog-filters-list">
+                {filters}
+                <li class="blog-filter-item d-none d-lg-block">
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                    <input id="blog-search" type="text" class="blog-search-input" placeholder="Search the blog" onKeyUp={e => this.handleSearch(e.target['value'])} />
+                  </div>
+                </li>
+                <li class="blog-filter-item d-none d-md-block d-lg-none" onClick={() => this.showSearchbar()}>
+                  <div class="blog-search-group">
+                    <span class="blog-search-icon fa fa-search" />
+                  </div>
+                </li>
+              </ul>
+            )}
           </div>
         </div>
         <div class="row posts-row">
