@@ -970,7 +970,7 @@ describe('Opportunities Page', function () {
       .and('be.visible');
   });
 
-  it('User is able to see the designer application page filler content', function () {
+  it('User should be able to see the designer application page filler content', function () {
     cy.reload();
     cy.wait(3000);
     cy.get('header').scrollIntoView();
