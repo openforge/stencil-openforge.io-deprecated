@@ -980,7 +980,7 @@ describe('Opportunities Page', function () {
     cy.get('header')
       .should('exist')
       .and('be.visible');
-    cy.wait(2000);
+    cy.wait(3000);
     cy.get('#apply')
       .should('exist');
   });
