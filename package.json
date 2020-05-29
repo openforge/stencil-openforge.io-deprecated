@@ -31,7 +31,7 @@
     "@stencil/sass": "^1.1.0",
     "@types/jquery": "^3.3.31",
     "i18next": "^17.3.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "popper.js": "^1.16.0",
     "sticky-sidebar": "^3.3.1"
   },
