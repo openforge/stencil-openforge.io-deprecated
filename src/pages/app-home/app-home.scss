@@ -415,11 +415,13 @@
     .loudcloud {
       @include media-breakpoint-up(lg) {
         background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+        background-position: center;
         background-size: cover;
       }
       .content-panel-image {
         @include media-breakpoint-down(md) {
           background-image: url('/assets/home-graphic-loudcloud-pattern.jpg');
+          background-position: center;
           background-size: cover;
         }
       }
@@ -428,11 +430,13 @@
     .voyage {
       @include media-breakpoint-up(lg) {
         background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+        background-position: center;
         background-size: cover;
       }
       .content-panel-image {
         @include media-breakpoint-down(md) {
           background-image: url('/assets/home-graphic-voyage-pattern.jpg');
+          background-position: center;
           background-size: cover;
         }
       }
@@ -441,12 +445,49 @@
     .mobilemeasures {
       @include media-breakpoint-up(lg) {
         background-image: url('/assets/home-graphic-mobilemeasures-pattern.jpg');
+        background-position: center;
         background-size: cover;
       }
       .content-panel-image {
         @include media-breakpoint-down(md) {
           background-image: url('/assets/home-graphic-mobilemeasures-pattern.jpg');
+          background-position: center;
           background-size: cover;
+        }
+      }
+    }
+
+    &.webp {
+      .loudcloud {
+        @include media-breakpoint-up(lg) {
+          background-image: url('/assets/home-graphic-loudcloud-pattern.webp');
+        }
+        .content-panel-image {
+          @include media-breakpoint-down(md) {
+            background-image: url('/assets/home-graphic-loudcloud-pattern.webp');
+          }
+        }
+      }
+
+      .voyage {
+        @include media-breakpoint-up(lg) {
+          background-image: url('/assets/home-graphic-voyage-pattern.webp');
+        }
+        .content-panel-image {
+          @include media-breakpoint-down(md) {
+            background-image: url('/assets/home-graphic-voyage-pattern.webp');
+          }
+        }
+      }
+
+      .mobilemeasures {
+        @include media-breakpoint-up(lg) {
+          background-image: url('/assets/home-graphic-mobilemeasures-pattern.webp');
+        }
+        .content-panel-image {
+          @include media-breakpoint-down(md) {
+            background-image: url('/assets/home-graphic-mobilemeasures-pattern.webp');
+          }
         }
       }
     }

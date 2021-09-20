@@ -1,19 +1,21 @@
-import { Component, State, Prop, Watch, h } from '@stencil/core';
+import { Component, State, Prop, Watch, h, Build } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { translate } from '../../services/translation.service';
+import { BrowserService } from '../../services/browser.services';
 
 @Component({
   tag: 'app-team-landing',
   styleUrl: 'app-team-landing.scss',
 })
 export class AppTeamLanding {
-  // private allowWebp = localStorage.getItem('allowWebp') === 'true' ? true : false;
   backgroundPhoto: string;
   headshotPhoto: string;
   @Prop() match: MatchResults;
   @Prop() history: RouterHistory;
 
   @State() chips;
+  @State() browserService: BrowserService;
+
   data = {
     'jedidiah-weller': {
       firstname: 'Jedi',
@@ -135,7 +137,7 @@ export class AppTeamLanding {
           'As Project Manager, Billy ensures that our team and your team have the resources and requirements needed in order to successfully launch your product. Heading up our quality assurance process, Billy leads the team in testing all deliverables maintaining high quality standards.',
         keywords: 'William Billy Holloran',
         url: 'https://openforge.io/about/william-holloran/',
-        image: 'https://openforge.io/assets/bios-background-billy.jpg',
+        image: 'https://openforge.io/assets/bios-background-billy.png',
       },
     },
     'luis-chacon': {
@@ -156,7 +158,7 @@ export class AppTeamLanding {
           'Luis grew up in San José, Costa Rica where he received his Bachelor’s degree in Computer Science and Informatics. Then he traveled to Italy and Spain to study a Masters in Software Engineering with a full scholarship form the European Union. Since then he has developed applications for companies, start ups and government institutions before joining our team at OpenForge.',
         keywords: 'Luis Chacon',
         url: 'https://openforge.io/about/luis-chacon/',
-        image: 'https://openforge.io/assets/bios-background-luis.jpg',
+        image: 'https://openforge.io/assets/bios-background-luis.png',
       },
     },
     'claudio-del-valle': {
@@ -406,6 +408,9 @@ export class AppTeamLanding {
     }
   };
 
+  constructor() {
+    this.browserService = new BrowserService();
+  }
   @Watch('match')
   matchHandler() {
     this.changeMetadata();
@@ -437,11 +442,15 @@ export class AppTeamLanding {
   }
 
   changeImageFormat(img: string) {
-    // if (img && this.allowWebp) {
-    //   const idx = img.lastIndexOf('.');
-    //   return `${img.substring(0, idx)}.webp`;
-    // }
-    return img;
+    let result = img;
+    if (img && (Build.isBrowser && localStorage.getItem('allowWebp') === 'true')) {
+      const idx = img.lastIndexOf('.');
+      const ext = img.substring(idx + 1, img.length);
+      if (ext === 'png' || ext === 'jpg' || ext === 'jpeg') {
+        result = `${img.substring(0, idx)}.webp`;
+      }
+    }
+    return result;
   }
 
   updateBackground() {

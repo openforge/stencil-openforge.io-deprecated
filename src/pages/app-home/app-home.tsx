@@ -22,6 +22,8 @@ export class AppHome {
   timer: any;
   currItem = 0;
 
+  private isWebpAllowed = Build.isBrowser && localStorage.getItem('allowWebp') === 'true' ? true : false;
+
   componentWillLoad() {
     if (Build.isBrowser) {
       this.getFeaturedPost();
@@ -131,7 +133,13 @@ export class AppHome {
           </div>
         </header>
 
-        <section id="work" class="work">
+        <section
+          id="work"
+          class={{
+            work: true,
+            webp: this.isWebpAllowed,
+          }}
+        >
           <div class="main-content">
             <div id="sticky-sidebar" class="sidebar">
               <div id="sticky-sidebar-inner">

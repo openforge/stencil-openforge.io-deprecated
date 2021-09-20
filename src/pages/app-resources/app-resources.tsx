@@ -1,4 +1,4 @@
-import { Component, State, Prop, Listen, h } from '@stencil/core';
+import { Component, State, Prop, Listen, h, Build } from '@stencil/core';
 import { translate } from '../../services/translation.service';
 import { MatchResults, RouterHistory } from '@stencil/router';
 
@@ -7,7 +7,7 @@ import { MatchResults, RouterHistory } from '@stencil/router';
   styleUrl: 'app-resources.scss',
 })
 export class AppResources {
-  // private className = localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
+  private className = Build.isBrowser && localStorage.getItem('allowWebp') === 'true' ? 'webp' : 'hero';
 
   @State() formSubmitted = false;
   @State() formSubmitting = false;
@@ -141,7 +141,7 @@ export class AppResources {
       <div id="top" class="resources">
         {/* header - hero */}
         {!this.formSubmitted ? (
-          <header class="hero">
+          <header class={this.className}>
             <div class="overlay">
               <div class="container">
                 <div class="row align-items-center">
